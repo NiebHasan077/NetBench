@@ -1,0 +1,42 @@
+# NetBench-RAG — RAG Pipeline Dependencies
+# Python 3.11+ | CUDA 12.x | 2× RTX A6000
+
+# ── Core PyTorch (CUDA 12.8) ─────────────────────────────────────────────────
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch>=2.2.0
+
+# ── PDF Parsing ───────────────────────────────────────────────────────────────
+PyMuPDF>=1.24.0                  # fitz — PDF text + font metadata extraction
+
+# ── Embeddings & Reranking ────────────────────────────────────────────────────
+sentence-transformers>=3.0.0     # BAAI/bge-large-en-v1.5 + bge-reranker-v2-m3
+transformers>=4.40.0             # Local HF model backend (Llama inference)
+accelerate>=0.28.0               # device_map="auto" multi-GPU support
+safetensors>=0.4.0               # Fast model weight loading
+tokenizers>=0.15.0
+
+# ── Vector Database ───────────────────────────────────────────────────────────
+qdrant-client>=1.9.0             # Local disk-mode vector store
+
+# ── Keyword Search ────────────────────────────────────────────────────────────
+rank-bm25>=0.2.2                 # BM25Okapi in-memory index
+
+# ── LLM Backends ─────────────────────────────────────────────────────────────
+openai>=1.30.0                   # GPT-4o API
+
+# ── Configuration ─────────────────────────────────────────────────────────────
+pyyaml>=6.0.1                    # config.yaml parsing
+
+# ── CLI & Progress ────────────────────────────────────────────────────────────
+rich>=13.7.0                     # Formatted terminal output
+tqdm>=4.66.0                     # Indexing progress bars
+
+# ── Evaluation & Reporting ────────────────────────────────────────────────────
+google-genai>=1.0.0              # Gemini 2.5 Flash LLM-as-Judge
+openpyxl>=3.1.0                  # Excel report generation
+matplotlib>=3.8.0                # Benchmark plots
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+numpy>=1.26.0
+psutil>=5.9.0                    # Memory usage monitoring
+huggingface-hub>=0.22.0          # Model downloads

@@ -1,0 +1,1521 @@
+{
+  "metadata": {
+    "title": "HPN Q&A Benchmark v1.0",
+    "description": "Domain-specific question-answer pairs for High-Performance Networking, derived from the Falcon (SC21, TPDS23), Marlin (ICS23), AutoMDT (INDIS25), LDM (HPDC26), and GDM/FastBioDL papers.",
+    "total_questions": 90,
+    "categories": [
+      "BDP and TCP Fundamentals",
+      "Transfer Parameter Optimization",
+      "Online Optimization Algorithms",
+      "Fairness and Competing Transfers",
+      "Modular Architecture (Marlin/AutoMDT)",
+      "Deep Reinforcement Learning (LDM)",
+      "Domain-Specific Transfers (GDM/FastBioDL)",
+      "System Design and Deployment",
+      "Networking Fundamentals"
+    ],
+    "difficulty_levels": [
+      "easy",
+      "medium",
+      "hard"
+    ],
+    "source_papers": [
+      "Falcon SC21",
+      "Falcon TPDS23",
+      "Marlin ICS23",
+      "AutoMDT INDIS25",
+      "LDM HPDC26",
+      "GDM FastBioDL"
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q001",
+      "category": "BDP and TCP Fundamentals",
+      "difficulty": "easy",
+      "question": "What is the Bandwidth-Delay Product (BDP) and why is it important for high-performance network transfers?",
+      "reference_answer": "The Bandwidth-Delay Product (BDP) is defined as BDP = Bandwidth_path \u00d7 RTT. It represents the amount of unacknowledged data that must be in flight simultaneously to fully saturate a network path. For a single TCP stream, achievable throughput is bounded by W/RTT, where W is the congestion window. When W_max << BDP (as is common in wide-area high-speed networks), a single stream cannot fully utilize available bandwidth, motivating the use of application-level pipelining, concurrency, and parallelism to aggregate multiple streams and approach BDP.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "BDP",
+        "bandwidth-delay product",
+        "RTT",
+        "congestion window",
+        "TCP"
+      ]
+    },
+    {
+      "id": "Q002",
+      "category": "BDP and TCP Fundamentals",
+      "difficulty": "easy",
+      "question": "Why does a single TCP stream fail to fully utilize a 100 Gbps wide-area network link?",
+      "reference_answer": "A single TCP stream's throughput is bounded by W/RTT, where W is the congestion window. On wide-area networks with high bandwidth and high latency, the path BDP (Bandwidth \u00d7 RTT) far exceeds the maximum effective per-stream congestion window W_max due to memory and CPU limitations. For example, on research networks offering up to 100 Gbps, a single TCP connection is typically limited to ~30 Gbps because of these hardware constraints. Therefore, multiple concurrent streams or parallel transfers are needed to aggregate throughput and fill the path BDP.",
+      "source_paper": "Falcon TPDS23",
+      "keywords": [
+        "TCP",
+        "congestion window",
+        "wide-area network",
+        "100 Gbps",
+        "bandwidth utilization"
+      ]
+    },
+    {
+      "id": "Q003",
+      "category": "BDP and TCP Fundamentals",
+      "difficulty": "easy",
+      "question": "What is TCP slow-start and why is it particularly harmful for small-file transfers in HPC networks?",
+      "reference_answer": "TCP slow-start is a congestion control mechanism where a new TCP connection begins with a small congestion window and doubles it each RTT until a threshold is reached or congestion is detected. For small files, the transfer may complete before the congestion window grows to fully utilize the available bandwidth, meaning the link is severely underutilized. In HPC networks with high bandwidth, each new socket connection incurs this slow-start penalty. When transferring many small files without pipelining, each file opens a new connection and suffers its own slow-start ramp-up, dominating transfer time. Persistent pipelining (reusing connections) avoids repeated slow-start and is critical for small-file workloads.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "TCP slow-start",
+        "small files",
+        "pipelining",
+        "congestion window",
+        "HPC"
+      ]
+    },
+    {
+      "id": "Q004",
+      "category": "BDP and TCP Fundamentals",
+      "difficulty": "medium",
+      "question": "On a network path with 45 Gbps bandwidth and 85 ms RTT (FABRIC NEWY-CERN), what is the approximate BDP, and what does this imply for choosing a chunk size in parallel file transfer systems?",
+      "reference_answer": "BDP = Bandwidth \u00d7 RTT = 45 Gbps \u00d7 0.085 s = 3.825 Gb \u2248 478 MB. This means roughly 478 MB of data must be in flight at all times to saturate the link. For chunk-based parallelism, chunk sizes should be large enough that each chunk keeps a TCP stream busy (i.e., at least comparable to the per-stream congestion window), but not so large that tail latency from worker imbalance dominates. LDM uses a default chunk size of 512 MB, which is in the right ballpark for this path. Smaller chunks would introduce excessive scheduling and bookkeeping overhead relative to the data transferred.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "BDP",
+        "FABRIC",
+        "chunk size",
+        "tail latency",
+        "parallelism",
+        "512 MB"
+      ]
+    },
+    {
+      "id": "Q005",
+      "category": "BDP and TCP Fundamentals",
+      "difficulty": "hard",
+      "question": "Explain the mathematical relationship between concurrency, per-stream throughput, and aggregate throughput, and describe the conditions under which increasing concurrency beyond a threshold becomes harmful.",
+      "reference_answer": "Aggregate throughput T_agg = sum_{i=1}^{cc} T_i, where cc is the concurrency (number of concurrent file transfers) and T_i is per-stream throughput. Increasing cc aggregates throughput across streams, filling the BDP. However, beyond an optimal concurrency value cc*, further increases cause: (1) network congestion at bottleneck links, increasing packet loss rate L significantly (e.g., from <2% at cc=10 to >10% at cc=32 in a 100 Mbps network), (2) CPU and memory overburden on end hosts due to too many processes/threads, and (3) I/O contention in parallel file systems. Falcon's utility function u(n, t, L) = n*t - n*t*L*B captures this tradeoff, penalizing throughput proportionally to packet loss. The function is strictly concave for n <= 100, ensuring a unique optimal point. The coefficient B=10 is chosen to keep packet loss below 1-2% while achieving over 95% network utilization under common TCP variants.",
+      "source_paper": "Falcon SC21",
+      "keywords": [
+        "concurrency",
+        "packet loss",
+        "utility function",
+        "concave",
+        "I/O contention",
+        "optimal concurrency"
+      ]
+    },
+    {
+      "id": "Q006",
+      "category": "Transfer Parameter Optimization",
+      "difficulty": "easy",
+      "question": "What are the three main transfer parameters that must be coordinated to achieve high performance in HPC data transfers, and what distinct bottleneck does each address?",
+      "reference_answer": "The three key parameters are: (1) Pipelining \u2013 issuing back-to-back requests over persistent connections, which sustains continuous data flow, reduces per-file latency, preserves the TCP congestion window across successive transfers, and prevents repeated slow-start. Critical for small-file workloads where connection setup dominates. (2) Concurrency \u2013 maintaining multiple transfer units (files or chunks) in flight simultaneously, aggregating throughput across streams to fill the bandwidth-delay product. Primary mechanism when per-stream throughput is limited by W_max. (3) Parallelism \u2013 partitioning large files into bounded chunks transferred simultaneously, creating additional independent work units. Targets datasets with a few very large files where insufficient work units and tail latency from worker imbalance are the bottleneck.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "pipelining",
+        "concurrency",
+        "parallelism",
+        "bottleneck",
+        "HPN",
+        "transfer parameters"
+      ]
+    },
+    {
+      "id": "Q007",
+      "category": "Transfer Parameter Optimization",
+      "difficulty": "easy",
+      "question": "Why is concurrency-only optimization insufficient for heterogeneous scientific datasets that mix small and large files?",
+      "reference_answer": "Concurrency-only optimization works well for uniform medium-to-large file workloads where filling the bandwidth-delay product is the primary bottleneck. However, real scientific datasets are highly skewed. For many small files, per-file socket connection overheads and repeated TCP slow-start dominate\u2014increasing concurrency without pipelining still incurs connection setup cost per file, so pipelining is critical. For a few very large files, the number of independent work units becomes the bottleneck near completion\u2014parallelism (chunking) is needed to mitigate tail latency from worker imbalance. Inflating concurrency can mask poor buffer sizing and impose CPU/memory overhead without solving these fundamental bottlenecks.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "heterogeneous datasets",
+        "small files",
+        "large files",
+        "concurrency-only",
+        "pipelining",
+        "parallelism",
+        "tail latency"
+      ]
+    },
+    {
+      "id": "Q008",
+      "category": "Transfer Parameter Optimization",
+      "difficulty": "medium",
+      "question": "What is the role of chunk size in LDM's parallelism strategy, and how should it be chosen relative to the per-stream congestion window?",
+      "reference_answer": "In LDM, each file is transmitted using ceil(filesize/chunksize) parallel streams via offset-based random-access I/O. Chunk size controls the trade-off between tail latency and per-chunk overhead. Chunks that are too large cause worker imbalance near completion (a small number of remaining large chunks dominates completion time). Chunks that are too small introduce excess scheduling, bookkeeping, and offset-based I/O overhead. LDM's default is 512 MB. The chunk size need only be small enough to prevent tail effects from dominating, because slow-start overhead is already mitigated by infinite pipelining. Chunks should generally be larger than the per-stream congestion window to ensure each stream has enough data to fully ramp up\u2014values from several hundred MB to 1 GB are sufficient on modern HPNs.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "chunk size",
+        "parallelism",
+        "tail latency",
+        "worker imbalance",
+        "offset-based I/O",
+        "512 MB"
+      ]
+    },
+    {
+      "id": "Q009",
+      "category": "Transfer Parameter Optimization",
+      "difficulty": "medium",
+      "question": "Legacy file transfer tools like FTP and scp are designed for low-speed internet. What specific architectural limitations make them unsuitable for 100 Gbps HPC research networks?",
+      "reference_answer": "Legacy tools like FTP and scp transfer one file at a time using a single socket connection. This is fundamentally limited because: (1) a single TCP connection cannot fill the path BDP at 100 Gbps scale due to per-stream congestion window limits, (2) they do not support application-level concurrency or parallelism to aggregate multiple streams, (3) they lack adaptive mechanisms to tune transfer parameters to dynamic network and I/O conditions, and (4) they incur per-file TCP slow-start penalties without pipelining. Even tools like Globus, which supports concurrency, often use fixed conservative defaults that leave bandwidth underutilized when optimal settings depend on dataset composition and network state.",
+      "source_paper": "Falcon TPDS23",
+      "keywords": [
+        "FTP",
+        "scp",
+        "Globus",
+        "single stream",
+        "concurrency",
+        "adaptive optimization",
+        "HPC"
+      ]
+    },
+    {
+      "id": "Q010",
+      "category": "Transfer Parameter Optimization",
+      "difficulty": "hard",
+      "question": "Marlin introduces a modular decoupling of read, network, and write operations with independent concurrency control. Under what specific network and I/O conditions does this modular approach outperform monolithic (Falcon-style) approaches, and why?",
+      "reference_answer": "Marlin's modular architecture independently tunes concurrency for read (I/O from source disk), network (transfer threads), and write (I/O to destination disk) operations. It outperforms monolithic approaches when I/O and network operations have different throughput characteristics: (1) When write I/O is the bottleneck (e.g., writing to a slow disk), Marlin can stage files to high-speed cache (RAM or NVMe buffer) at the network rate, then write asynchronously\u2014achieving up to 2x speedup for small transfers with write bottlenecks. (2) When read I/O is the bottleneck, Marlin can set high read concurrency while keeping network concurrency lower. (3) When I/O throughput is asymmetric between source and destination (different storage systems), independent tuning avoids over-provisioning threads on the fast side. Monolithic approaches use the same concurrency for all operations, leading to resource waste and fairness issues when one operation is much slower than others.",
+      "source_paper": "Marlin ICS23",
+      "keywords": [
+        "Marlin",
+        "modular architecture",
+        "read concurrency",
+        "write concurrency",
+        "NVMe buffer",
+        "staging",
+        "I/O bottleneck"
+      ]
+    },
+    {
+      "id": "Q011",
+      "category": "Online Optimization Algorithms",
+      "difficulty": "easy",
+      "question": "What is Online Gradient Descent (OGD) and how does Falcon apply it to find optimal transfer concurrency?",
+      "reference_answer": "Online Gradient Descent (OGD) is an iterative optimization algorithm that adapts step size dynamically based on the gradient of the objective function. Falcon applies OGD to search for the optimal concurrency level in real-time. For a given concurrency n, Falcon evaluates concurrency values n+1 and n-1 via sample transfers and estimates the gradient \u03b3 = (u2-u1)/(2n\u03b5). It converts this to a rate change \u0394 = \u03b3/u_{n-\u03b5} and predicts the new concurrency n_new = n + \u03b8\u0394, where \u03b8 is a monotonically increasing learning factor that starts at 1 and increases when the search moves in the same direction, and resets otherwise. Falcon can find the optimal concurrency in as little as 20 seconds. Since the utility function is strictly concave for n \u2264 100, OGD converges to a global optimum.",
+      "source_paper": "Falcon SC21",
+      "keywords": [
+        "Online Gradient Descent",
+        "OGD",
+        "concurrency",
+        "gradient estimation",
+        "convergence",
+        "learning factor"
+      ]
+    },
+    {
+      "id": "Q012",
+      "category": "Online Optimization Algorithms",
+      "difficulty": "easy",
+      "question": "What is Bayesian Optimization and why was it adopted in Falcon/Marlin for transfer parameter tuning before being replaced by Gradient Descent?",
+      "reference_answer": "Bayesian Optimization (BO) is a black-box optimization method that uses a surrogate model (e.g., Gaussian Process) to estimate the analytical form of the objective function by processing observed samples via Bayes' theorem. It starts with a prior probability and updates to a posterior after each observation. BO was initially adopted because it can find the optimal solution within 4-5 search attempts. However, BO faces stability issues: it makes drastic changes in concurrency values between search steps, causing instability in production networks. Gradient Descent, which takes smoother steps guided by the utility function's gradient, was adopted instead as it provides faster convergence with better stability.",
+      "source_paper": "Falcon TPDS23",
+      "keywords": [
+        "Bayesian Optimization",
+        "Gaussian Process",
+        "surrogate model",
+        "stability",
+        "drastic changes",
+        "Gradient Descent"
+      ]
+    },
+    {
+      "id": "Q013",
+      "category": "Online Optimization Algorithms",
+      "difficulty": "medium",
+      "question": "Falcon's utility function is u(n, t, L) = n*t - n*t*L*B. Explain the role of each term and justify why this function is suitable for convergence to a fair and optimal solution.",
+      "reference_answer": "The utility function u(n, t, L) = n*t - n*t*L*B has: (1) n*t = total aggregate throughput (n concurrent transfers each with per-stream throughput t), which rewards high throughput. (2) n*t*L*B = penalty term that subtracts aggregate throughput proportionally to packet loss rate L scaled by constant B=10. This penalizes high concurrency that causes congestion. The function is strictly concave for n \u2264 100, guaranteeing a unique global maximum and thus suitability for gradient descent. The regret term (packet loss penalty) is key for fairness: game theory requires a regret term for utility functions to converge to Nash Equilibrium when multiple players compete. Without a penalty, naive throughput-maximizing utilities select high concurrency that causes unfair resource hoarding. With L as the regret term, Falcon converges to a stable Nash Equilibrium where all competing transfers share bandwidth fairly.",
+      "source_paper": "Falcon SC21",
+      "keywords": [
+        "utility function",
+        "packet loss",
+        "concave",
+        "Nash Equilibrium",
+        "regret term",
+        "fairness",
+        "game theory"
+      ]
+    },
+    {
+      "id": "Q014",
+      "category": "Online Optimization Algorithms",
+      "difficulty": "medium",
+      "question": "Compare Hill Climbing, Gradient Descent, and Bayesian Optimization as online search strategies for transfer parameter tuning. What are the practical tradeoffs among them?",
+      "reference_answer": "Hill Climbing: Explores neighboring concurrency values incrementally (e.g., \u00b11). Simple but slow to converge in large search spaces. Requires many sample transfers. Gradient Descent (GD/OGD): Uses the slope (gradient) of the utility function to take adaptive step sizes. Leverages the concavity of the utility function to jump toward the optimum quickly. Can find optimal in ~20 seconds. Requires two sample transfers per step for gradient estimation. Sensitive to step size parameter tuning but a monotonically increasing learning factor helps. Bayesian Optimization: Fits a surrogate model to predict the utility landscape, requiring fewer samples (4-5 to converge). However, makes large unpredictable jumps between samples, causing instability in production networks where abrupt concurrency changes disrupt ongoing transfers. In practice, Gradient Descent is preferred for production HPN environments due to its balance of convergence speed and stability.",
+      "source_paper": "Falcon SC21",
+      "keywords": [
+        "Hill Climbing",
+        "Gradient Descent",
+        "Bayesian Optimization",
+        "convergence",
+        "stability",
+        "sample transfers"
+      ]
+    },
+    {
+      "id": "Q015",
+      "category": "Online Optimization Algorithms",
+      "difficulty": "hard",
+      "question": "LDM replaces online transfer-based exploration with a lightweight offline simulator. Describe the simulator's design, how it is parameterized from real network measurements, and the training efficiency gain achieved.",
+      "reference_answer": "LDM's offline simulator emulates end-to-end transfer dynamics without running actual file transfers. Parameterization: During a 5-minute exploration phase, LDM runs lightweight memory-to-memory transfers while randomly varying concurrency, logging throughput T_n and concurrency CC_n per second. It estimates network bandwidth BW = max(T_n) and per-concurrency throughput TPT = max(T_n/CC_n). The convergence criterion assumes ideal linear scaling up to BW with no packet loss: optimal concurrency CC* = BW/TPT and max reward R_max = BW/(K*CC*). The simulator uses these estimates to model buffer, bandwidth, and throughput dynamics. Training: A PPO agent trains on the simulator, running multiple episodes until it reaches \u226590% of R_max for 1,000 additional episodes. This training converges in approximately 3-4 minutes (average 156 seconds). Compared to online DRL methods that require day-long exploration in real networks, this achieves a 2750x speedup in training time while learning policies that generalize to real conditions.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "offline simulator",
+        "PPO",
+        "exploration phase",
+        "parameterization",
+        "2750x speedup",
+        "memory-to-memory"
+      ]
+    },
+    {
+      "id": "Q016",
+      "category": "Fairness and Competing Transfers",
+      "difficulty": "easy",
+      "question": "What is Jain's Fairness Index and how is it used to evaluate competing transfer scenarios in HPN research?",
+      "reference_answer": "Jain's Fairness Index (JFI) is defined as F = (sum(x_i))^2 / (n * sum(x_i^2)), where x_i is the throughput of flow i and n is the number of flows. F ranges from [0,1], where 1 represents perfect fair sharing (all flows get equal throughput) and lower values indicate unfairness. In HPN research, JFI is used to evaluate whether competing concurrent transfers\u2014which share the same network link\u2014receive equitable bandwidth allocation. A good transfer optimizer should maintain JFI close to 1.0 when multiple transfers co-exist. LDM reports JFI > 0.95 for 1, 2, and 3 competing transfers on FABRIC NEWY-CERN, with brief dips only when transfers join or depart, after which the system quickly returns to a stable fair state.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "Jain's Fairness Index",
+        "JFI",
+        "fairness",
+        "competing transfers",
+        "bandwidth sharing"
+      ]
+    },
+    {
+      "id": "Q017",
+      "category": "Fairness and Competing Transfers",
+      "difficulty": "easy",
+      "question": "Why do existing transfer optimization tools like HARP fail to provide fairness among competing transfers?",
+      "reference_answer": "HARP and similar historical analysis-based tools set transfer parameters once at the beginning of a transfer based on historical data and hold them fixed. When a second transfer starts later (a 'late-comer'), it independently selects a transfer setting that maximizes its own throughput, often choosing a high concurrency setting that favors itself over the earlier transfer. Since HARP's utility function is purely throughput-maximizing (no regret/penalty term), it has no mechanism to back off when it causes congestion for competing transfers. This leads to highly unfair bandwidth allocation where late-comers can achieve 2x the throughput of earlier transfers. Furthermore, fixed settings cannot adapt to the addition or departure of competing transfers.",
+      "source_paper": "Falcon SC21",
+      "keywords": [
+        "HARP",
+        "fairness",
+        "late-comer",
+        "fixed settings",
+        "competing transfers",
+        "throughput-maximizing"
+      ]
+    },
+    {
+      "id": "Q018",
+      "category": "Fairness and Competing Transfers",
+      "difficulty": "medium",
+      "question": "How does Falcon guarantee convergence to Nash Equilibrium in shared network environments, and what theoretical property of its utility function enables this?",
+      "reference_answer": "Falcon guarantees Nash Equilibrium convergence through its game-theory-inspired utility function. The key property is strict concavity: the utility function u(n, t, L) = n*t - n*t*L*B is strictly concave for n \u2264 100. A strictly concave utility function guarantees that no player has an incentive to unilaterally deviate from the Nash Equilibrium, since any deviation reduces their own utility. The regret term (n*t*L*B) is critical: it penalizes high concurrency that causes packet loss, discouraging aggressive resource grabbing. When all competing transfers use the same utility function with regret, they collectively converge to a stable allocation where no single transfer can improve its utility by changing its strategy. Falcon also supports centralized scheduling mode where a central optimizer enforces policies, further improving stability and convergence speed.",
+      "source_paper": "Falcon TPDS23",
+      "keywords": [
+        "Nash Equilibrium",
+        "game theory",
+        "concave utility",
+        "regret term",
+        "centralized scheduler",
+        "stability"
+      ]
+    },
+    {
+      "id": "Q019",
+      "category": "Fairness and Competing Transfers",
+      "difficulty": "medium",
+      "question": "Describe Falcon's centralized scheduler mode. What advantages does it offer over the decentralized mode for managing multiple competing transfers?",
+      "reference_answer": "In centralized mode, Falcon offloads the online optimization module to a central scheduler that controls multiple transfer tasks simultaneously. The global optimizer uses the same utility function to search for optimal concurrency across all managed transfers and allocates concurrency among them based on defined policies. Advantages over decentralized mode: (1) Improved stability: transfers do not independently search for optimal settings, avoiding oscillations from simultaneous exploration by multiple agents. (2) Faster convergence: the central optimizer has global visibility into all transfer states, enabling more informed concurrency decisions. (3) Policy enforcement: administrators can define and enforce resource usage policies (e.g., priority transfers, bandwidth quotas per user/project) that individual transfers cannot override. (4) Better fairness: coordinated allocation avoids the late-comer problem where independently acting transfers choose self-favoring settings.",
+      "source_paper": "Falcon TPDS23",
+      "keywords": [
+        "centralized scheduler",
+        "decentralized",
+        "policy enforcement",
+        "stability",
+        "convergence",
+        "bandwidth quota"
+      ]
+    },
+    {
+      "id": "Q020",
+      "category": "Fairness and Competing Transfers",
+      "difficulty": "hard",
+      "question": "LDM achieves high throughput while maintaining fairness under competing transfers. Analytically explain how LDM's PPO-based concurrency controller achieves benign co-existence with a fixed-concurrency co-tenant without explicit inter-transfer coordination.",
+      "reference_answer": "LDM's PPO controller observes real-time throughput and packet loss rate as state variables and dynamically adjusts concurrency to maximize its utility (throughput minus packet loss penalty). When a fixed-concurrency co-tenant occupies bandwidth, several mechanisms enable benign coexistence: (1) The PPO agent's continuous action space allows smooth, fine-grained concurrency adjustments rather than coarse integer steps, reducing bandwidth oscillations. (2) The utility function penalizes packet loss: when co-tenant traffic causes congestion, packet loss rises, reducing LDM's utility at current concurrency, prompting the agent to reduce concurrency. (3) LDM was trained on diverse simulated conditions including varying background traffic levels, so the policy is robust to bandwidth fluctuations. Empirically, LDM sustains ~8 Gbps while the co-tenant at fixed concurrency 8 also maintains ~8 Gbps, demonstrating that LDM uses only residual capacity without causing noticeable slowdown to the co-tenant\u2014a form of implicit fairness through reactive adaptation rather than explicit negotiation.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "PPO",
+        "co-tenant",
+        "fairness",
+        "continuous action space",
+        "packet loss penalty",
+        "reactive adaptation"
+      ]
+    },
+    {
+      "id": "Q021",
+      "category": "Modular Architecture (Marlin/AutoMDT)",
+      "difficulty": "easy",
+      "question": "What architectural limitation does Marlin address compared to Falcon, and what is the fundamental design change it introduces?",
+      "reference_answer": "Falcon (and other prior work) uses a monolithic architecture that applies a single concurrency value across all phases of a file transfer: reading from source disk, transferring over the network, and writing to destination disk. This one-size-fits-all approach fails when one operation (e.g., write I/O) is significantly slower than the others, leading to either resource waste or performance bottlenecks. Marlin introduces a modular architecture that separates read, transfer (network), and write operations and independently tunes the concurrency for each component using its own utility function and gradient descent optimizer. This allows Marlin to use 'just enough' concurrency for each operation, keeping system overhead low while achieving comparable or better throughput.",
+      "source_paper": "Marlin ICS23",
+      "keywords": [
+        "Marlin",
+        "modular architecture",
+        "read/network/write",
+        "independent concurrency",
+        "monolithic",
+        "I/O bottleneck"
+      ]
+    },
+    {
+      "id": "Q022",
+      "category": "Modular Architecture (Marlin/AutoMDT)",
+      "difficulty": "medium",
+      "question": "Marlin uses a staging area (RAM or NVMe SSD) on the receiver side for small file transfers when write I/O is the bottleneck. Explain the mechanism and quantify the performance improvement from the paper.",
+      "reference_answer": "When write I/O is the bottleneck (destination disk write speed is slower than network throughput), Marlin exploits its modular design by staging received files in high-speed temporary storage\u2014main memory (RAM) or NVMe SSD\u2014on the receiver node at network speed, while asynchronously draining the staging area to the final destination disk. This decouples network transfer throughput from disk write speed. The network operation can proceed at its optimal concurrency while the write operation has its own concurrency tuned to the disk speed. Performance improvements from Table 3: for HPCLab to HPCLab transfers (Memory Buffer), Marlin reduces transfer time by 24.5% for 10 GB datasets and by 51.6% for 100 GB datasets compared to Falcon. For HPCLab to Campus Cluster (NVMe SSD Buffer), Marlin achieves 56.5% improvement for 500 GB and 52.9% for 5000 GB datasets. These gains arise because Marlin can attain higher read and network throughput by moving the entire dataset to the destination node faster using the staging buffer.",
+      "source_paper": "Marlin ICS23",
+      "keywords": [
+        "staging area",
+        "NVMe SSD",
+        "RAM buffer",
+        "write bottleneck",
+        "decoupling",
+        "56.5% improvement"
+      ]
+    },
+    {
+      "id": "Q023",
+      "category": "Modular Architecture (Marlin/AutoMDT)",
+      "difficulty": "medium",
+      "question": "What is the key contribution of AutoMDT (INDIS'25) relative to Marlin, and what problem in multi-dimensional transfer tuning does it address?",
+      "reference_answer": "AutoMDT (Automatic Multi-Dimensional Tuning, published at INDIS'25) extends Marlin's modular architecture with further automation of the multi-dimensional parameter tuning process. While Marlin decouples read/network/write operations and independently optimizes each, users still need to configure architectural parameters. AutoMDT provides a more automated end-to-end framework that reduces the need for manual configuration. The key problem addressed is the difficulty of multi-dimensional tuning: jointly optimizing multiple transfer parameters introduces an exponential search space, and naively extending single-parameter methods to cover multiple dimensions leads to slow convergence and prolonged suboptimal performance. AutoMDT's modular design allows each dimension to be tuned in its natural context, reducing effective search space dimensionality.",
+      "source_paper": "AutoMDT INDIS25",
+      "keywords": [
+        "AutoMDT",
+        "multi-dimensional tuning",
+        "automated",
+        "modular",
+        "search space",
+        "INDIS"
+      ]
+    },
+    {
+      "id": "Q024",
+      "category": "Modular Architecture (Marlin/AutoMDT)",
+      "difficulty": "hard",
+      "question": "The AutoMDT/Marlin simulator (Algorithm 1) models I/O and network dynamics. Describe how the simulator handles the interplay between sender buffer, receiver buffer, and the three thread types (read, network, write) to compute rewards.",
+      "reference_answer": "The I/O and Network Dynamics Simulator initializes buffer capacities, buffer usages, and throughputs per thread type. It maintains a task queue and processes tasks based on thread type: (1) Read threads: if the sender buffer is not full, a read task completes and increases throughput by TPT_r, updates sender buffer usage. (2) Network threads: if sender buffer > 0 and receiver buffer is not full, the network task transfers data, updates throughput by TPT_n, decreases sender buffer, and increases receiver buffer. (3) Write threads: if receiver buffer > 0, write task completes at TPT_w and decreases receiver buffer. Each task has duration d_task computed from the respective thread throughput. When the buffer is full, tasks are returned to the queue with a small time increment \u03b5. After processing, throughputs are normalized by finish times, and reward is computed from the utility function using aggregate throughput. This accurately models backpressure: a slow write operation fills the receiver buffer, blocking network threads, which then fills the sender buffer, blocking read threads\u2014faithfully capturing real-world I/O-network coupling.",
+      "source_paper": "AutoMDT INDIS25",
+      "keywords": [
+        "simulator",
+        "sender buffer",
+        "receiver buffer",
+        "read/network/write threads",
+        "backpressure",
+        "reward",
+        "PPO"
+      ]
+    },
+    {
+      "id": "Q025",
+      "category": "Deep Reinforcement Learning (LDM)",
+      "difficulty": "easy",
+      "question": "What is Proximal Policy Optimization (PPO) and why was it chosen as the RL algorithm in LDM?",
+      "reference_answer": "Proximal Policy Optimization (PPO) is a policy-based deep reinforcement learning algorithm that learns a stochastic policy mapping states to a distribution over actions. PPO uses a clipped surrogate objective to constrain policy updates, preventing excessively large updates that could destabilize training\u2014balancing exploration and stability. It is one of the most widely used RL algorithms due to its balance of stability and sample efficiency. LDM chose PPO because: (1) policy-driven DRL learns generalizable policies across diverse network conditions rather than overfitting specific actions, (2) the continuous action space naturally handles fine-grained concurrency values via Gaussian distributions, (3) PPO's stability properties are important in the non-stationary dynamics of HPN environments, and (4) PPO trains efficiently in the offline simulator within 3-4 minutes.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "PPO",
+        "Proximal Policy Optimization",
+        "clipped surrogate",
+        "continuous action space",
+        "policy-based",
+        "stability"
+      ]
+    },
+    {
+      "id": "Q026",
+      "category": "Deep Reinforcement Learning (LDM)",
+      "difficulty": "easy",
+      "question": "What are the four state variables in LDM's PPO state space, and why was this particular state representation chosen?",
+      "reference_answer": "LDM's PPO state space consists of four variables: (1) current throughput, (2) current concurrency, (3) throughput difference from the previous step, and (4) concurrency difference from the previous step. This representation was chosen because: using throughput alone is insufficient\u2014the same throughput can occur at different concurrency levels requiring different actions. Adding concurrency removes this ambiguity. The delta values (differences from previous step) provide temporal context, helping the agent distinguish trending states (increasing/decreasing throughput) from stable ones. Together, these four variables define a compact state that can be reliably mapped to an action without confusing the agent across distinct real-world scenarios. Irrelevant information is excluded to prevent the agent from learning misleading correlations.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "state space",
+        "PPO",
+        "throughput",
+        "concurrency",
+        "delta",
+        "state representation"
+      ]
+    },
+    {
+      "id": "Q027",
+      "category": "Deep Reinforcement Learning (LDM)",
+      "difficulty": "medium",
+      "question": "Compare LDM with a DRL baseline that tunes concurrency only (without pipelining or parallelism). Under what dataset compositions does LDM show the largest improvement and why?",
+      "reference_answer": "LDM vs DRL (concurrency-only): For Dataset A (medium files, ~1 GB), DRL matches LDM's throughput but uses ~33% more concurrency, since without pipelining or parallelism it relies on higher concurrency to fill the BDP. LDM achieves same throughput with fewer streams (lower overhead). For Dataset B (few very large files, 55 GB), LDM shows the largest improvement: 73% higher throughput than DRL on NEWY-CERN and 273% higher on MICH-MASS. DRL lacks parallelism, so large files are transferred sequentially per stream, causing a staircase tail as medium files drain and only a few large files remain\u2014creating a severe worker starvation bottleneck. LDM's chunk-based parallelism splits each 55 GB file into multiple parallel chunks, eliminating this bottleneck. For Dataset C (small files, ~100KB-1MB), both DRL and LDM suffer without pipelining, but LDM's persistent connections better preserve TCP state. The MICH-MASS gain is larger for Dataset B because lower per-stream bandwidth amplifies the relative benefit of parallelism.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "LDM vs DRL",
+        "large files",
+        "tail latency",
+        "worker starvation",
+        "parallelism",
+        "273% improvement"
+      ]
+    },
+    {
+      "id": "Q028",
+      "category": "Deep Reinforcement Learning (LDM)",
+      "difficulty": "medium",
+      "question": "LDM uses separate residual MLP networks for its PPO actor and critic. Describe the architecture and explain the purpose of residual connections and entropy regularization in this context.",
+      "reference_answer": "LDM's PPO policy and value networks are separate residual MLPs: Both first embed the 4-variable state into a 256-dimensional feature space using a linear layer followed by tanh activation. They then apply residual blocks with layer normalization, ReLU activations, and skip connections. Residual connections add the input directly to the block output (skip connection), enabling better gradient flow during backpropagation and allowing the network to learn complex state representations without vanishing gradients\u2014important for stable learning under non-stationary transfer dynamics. Policy head: outputs mean action (concurrency value) with a separate trainable (clamped) log-standard-deviation parameter, defining a Gaussian distribution for stochastic action sampling. Critic head: outputs a single scalar for advantage estimation. Entropy regularization: an entropy bonus is added to the PPO objective, encouraging the policy to maintain stochastic (exploratory) behavior. This prevents premature convergence to a deterministic policy that might overfit to simulator dynamics and fail to generalize to real networks with unseen conditions.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "residual MLP",
+        "skip connection",
+        "entropy regularization",
+        "Gaussian",
+        "policy network",
+        "value network",
+        "gradient flow"
+      ]
+    },
+    {
+      "id": "Q029",
+      "category": "Deep Reinforcement Learning (LDM)",
+      "difficulty": "hard",
+      "question": "LDM transforms the multi-parameter optimization problem (pipelining, parallelism, concurrency) into a single control dimension. Describe this reduction precisely and analyze the theoretical and practical implications of this design choice.",
+      "reference_answer": "LDM collapses multi-parameter tuning into a single control dimension through two key design decisions: (1) Pipelining is fixed to effectively infinite value: persistent socket connections are maintained throughout transfers (connection remains open until stalled by the concurrency controller or the transfer completes). This eliminates pipelining as a search variable. (2) Parallelism and concurrency are unified: files are logically partitioned into bounded chunks (max size configurable, default 512 MB), and concurrency now governs chunk-level execution rather than file-level execution. A file of size S uses ceil(S/chunksize) parallel chunks, automatically expressing parallelism through concurrency. Thus, the PPO agent controls a single composite variable: chunk concurrency. Theoretical implications: the exponential joint search space (3 parameters \u00d7 multiple values each) is reduced to a 1D continuous optimization problem, for which PPO converges efficiently. Practical implications: the agent's action directly maps to the utility function's primary input (concurrency), enabling faster learning. The tradeoff is reduced flexibility\u2014chunk size must be chosen correctly a priori, and infinite pipelining assumes persistent connections are always feasible, which may not hold under firewall or NAT constraints.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "multi-parameter reduction",
+        "chunk concurrency",
+        "infinite pipelining",
+        "single control dimension",
+        "exponential search space",
+        "design tradeoff"
+      ]
+    },
+    {
+      "id": "Q030",
+      "category": "Deep Reinforcement Learning (LDM)",
+      "difficulty": "hard",
+      "question": "LDM achieves a 9.5x throughput improvement over some baselines. Identify the specific scenario producing this gain and provide a mechanistic explanation at the level of TCP dynamics.",
+      "reference_answer": "The 9.5x improvement occurs for Dataset C (238,770 small files, 100 KB\u20131 MB) on certain testbeds compared to concurrency-only baselines without pipelining. The mechanism: (1) Without pipelining, each small file opens a new TCP connection. With ~50x more files than Dataset A, the cost of repeated socket teardown, reconnection, and TCP control-channel overhead becomes completely dominant. (2) TCP slow-start: each new connection starts with a 1-packet congestion window and must ramp up over multiple RTTs before it can utilize the link bandwidth. For a 100 KB file with 85 ms RTT, the file may complete entirely within the slow-start phase, achieving only a tiny fraction of the available bandwidth per transfer. (3) LDM's infinite pipelining keeps TCP connections persistent across successive file transfers in the same queue. The congestion window is preserved across transfers, avoiding repeated slow-start. Combined with LDM's PPO-controlled concurrency that finds the optimal number of persistent streams, this eliminates the dominant overhead. In contrast, Falcon and DRL repeatedly open/close connections, making each small file suffer full slow-start latency.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "9.5x improvement",
+        "small files",
+        "slow-start",
+        "persistent connections",
+        "control-channel overhead",
+        "Dataset C"
+      ]
+    },
+    {
+      "id": "Q031",
+      "category": "Domain-Specific Transfers (GDM/FastBioDL)",
+      "difficulty": "easy",
+      "question": "What problem does FastBioDL address in the genomics research community, and what are its primary performance improvements over the standard SRA Toolkit?",
+      "reference_answer": "FastBioDL addresses the critical bottleneck of large-scale genomic data acquisition from public repositories (NCBI SRA, ENA). Existing tools like SRA Toolkit's prefetch use static concurrency settings (fixed at 3 threads), making them incapable of adapting to dynamic network conditions and failing to exploit high-bandwidth HPC networks. FastBioDL introduces an adaptive concurrency controller using gradient descent and a utility function to dynamically adjust parallel HTTP/FTP socket streams in real-time. Performance improvements: (1) On real public datasets, FastBioDL achieves up to 4x speedup over prefetch in production scenarios (SRA download speed: Breast-RNA-seq 989 Mbps vs 518 Mbps for prefetch; HiFi-WGS 595 Mbps vs 247 Mbps). (2) In high-speed testbed environments, FastBioDL is up to 2.1x faster than fixed-concurrency alternatives. (3) Reduced download completion times by up to 43% in production scenarios.",
+      "source_paper": "GDM FastBioDL",
+      "keywords": [
+        "FastBioDL",
+        "SRA Toolkit",
+        "genomic datasets",
+        "adaptive concurrency",
+        "4x speedup",
+        "HTTP/FTP"
+      ]
+    },
+    {
+      "id": "Q032",
+      "category": "Domain-Specific Transfers (GDM/FastBioDL)",
+      "difficulty": "easy",
+      "question": "What types of genomic datasets were used to evaluate FastBioDL, and how do their file size characteristics test different aspects of the optimizer?",
+      "reference_answer": "Three genomic BioProjects were used: (1) Breast-RNA-seq (PRJNA762469): 10 human breast transcriptome files, 1.72\u20133.03 GB each (avg ~2.4 GB). Mid-sized short-read files test the optimizer's ability to adapt when both connection setup time and sustained throughput matter. (2) HiFi-WGS (PRJNA540705): 6 PacBio HiFi whole-genome reads, 8.10\u201310.81 GB each (avg ~9.5 GB). Large continuous objects stress bandwidth utilization and reveal ceiling effects of high concurrency. (3) Amplicon-Digester (PRJNA400087): 43 amplicon libraries, 13.4\u201366.5 MB each (avg ~40 MB). Very small files dominated by connection churn and metadata overhead. Together, these three datasets cover small, medium, and large file-size distributions from different sequencing technologies, ensuring performance claims generalize across diverse genomic workloads.",
+      "source_paper": "GDM FastBioDL",
+      "keywords": [
+        "Breast-RNA-seq",
+        "HiFi-WGS",
+        "Amplicon-Digester",
+        "file size distribution",
+        "SRA",
+        "ENA"
+      ]
+    },
+    {
+      "id": "Q033",
+      "category": "Domain-Specific Transfers (GDM/FastBioDL)",
+      "difficulty": "medium",
+      "question": "FastBioDL uses gradient descent rather than Bayesian Optimization as its concurrency controller. Given the genomic download context, what specific characteristics of genomic repository access make gradient descent the better choice?",
+      "reference_answer": "In the genomic download context, Bayesian Optimization is less suitable because: (1) Network variability: public genomic repositories (NCBI, ENA) are accessed over shared internet paths with highly variable bandwidth, RTT, and server-side throttling. BO's surrogate model fitted from a few samples may be stale when conditions change between exploration steps. (2) Drastic concurrency changes: BO sometimes makes large jumps in concurrency that can trigger server-side rate limiting or anti-abuse mechanisms on public repositories, disrupting downloads. (3) Small file counts: genomic datasets often have few files (6-43 in evaluation), leaving little time for extensive exploration. GD converges stably in fewer steps. (4) Continuous dynamics: gradient descent continuously adapts even after finding the initial optimum, tracking drifting network conditions\u2014critical for long downloads from shared repositories. Empirically, GD outperformed BO in the evaluation, particularly because BO suffers from constantly evolving system dynamics.",
+      "source_paper": "GDM FastBioDL",
+      "keywords": [
+        "Bayesian Optimization",
+        "gradient descent",
+        "repository throttling",
+        "network variability",
+        "genomic",
+        "convergence"
+      ]
+    },
+    {
+      "id": "Q034",
+      "category": "Domain-Specific Transfers (GDM/FastBioDL)",
+      "difficulty": "medium",
+      "question": "FastBioDL uses plain HTTP/FTP socket connections rather than specialized HPC transfer protocols like GridFTP or Globus. What advantage does this design choice offer for the genomics community?",
+      "reference_answer": "Using plain HTTP/FTP socket connections offers several advantages for the genomics community: (1) Democratization: specialized protocols like GridFTP and Globus require institutional infrastructure (Globus endpoint deployment, OAuth credentials, specialized daemons) that many small research labs and individual researchers cannot access. HTTP/FTP is universally available. (2) Repository compatibility: public genomic repositories (NCBI SRA, ENA) expose data via standard HTTP/FTP\u2014specialized transfer tools would require server-side support changes that repositories cannot provide. (3) No software dependencies: researchers can use FastBioDL without installing HPC middleware, lowering barriers to adoption. (4) Open-source accessibility: the approach democratizes high-performance data transfer for all researchers, not just those at large HPC centers. The paper demonstrates that adaptive concurrency control over plain sockets is sufficient to achieve near-optimal bandwidth utilization on modern high-speed networks, making specialized protocols unnecessary for this use case.",
+      "source_paper": "GDM FastBioDL",
+      "keywords": [
+        "HTTP",
+        "FTP",
+        "Globus",
+        "GridFTP",
+        "democratization",
+        "plain sockets",
+        "accessibility"
+      ]
+    },
+    {
+      "id": "Q035",
+      "category": "Domain-Specific Transfers (GDM/FastBioDL)",
+      "difficulty": "hard",
+      "question": "FastBioDL achieves up to 4x speedup over prefetch on the Amplicon-Digester dataset (very small files, avg 40 MB). Provide a quantitative analysis of why small files are particularly challenging and how adaptive concurrency addresses this.",
+      "reference_answer": "For the Amplicon-Digester dataset (avg 40 MB files): prefetch achieves 29.15 Mbps with fixed concurrency 3, while FastBioDL achieves 117.47 Mbps (4x speedup) with adaptive concurrency ~4.14. Analysis: At 40 MB per file, the transfer time at a target throughput of ~500 Mbps per thread would be ~0.64 seconds. With RTT of ~100 ms for transcontinental internet access, TCP slow-start would require multiple RTTs to ramp up, meaning a significant fraction of each transfer is spent in slow-start\u2014especially with prefetch's fixed concurrency of 3 which limits total aggregate throughput. With 43 files, there are 43 \u00d7 (connection setup + slow-start) cycles. FastBioDL's adaptive approach finds the optimal concurrency for this workload and potentially exploits pipelining or parallel downloads to amortize connection setup costs. Additionally, the utility function penalizes excessive concurrency that causes server-side throttling, so adaptive control avoids being rate-limited by NCBI's servers while still pushing throughput higher than conservative fixed settings.",
+      "source_paper": "GDM FastBioDL",
+      "keywords": [
+        "Amplicon-Digester",
+        "4x speedup",
+        "small files",
+        "slow-start",
+        "connection setup",
+        "server throttling"
+      ]
+    },
+    {
+      "id": "Q036",
+      "category": "System Design and Deployment",
+      "difficulty": "easy",
+      "question": "What is the ScienceDMZ architecture and why was it developed for research networks?",
+      "reference_answer": "ScienceDMZ is a network design architecture developed to separate research/scientific network traffic from general campus internet traffic at the network perimeter. It is implemented at the campus level and places dedicated high-performance data transfer nodes (DTNs), network monitoring infrastructure, and high-speed connections in a separate network segment (DMZ). The motivation is to minimize friction for science workflows: regular campus networks include firewalls, intrusion detection systems, and network policies optimized for general users that can severely throttle or block high-speed bulk data transfers (e.g., dropping many-stream transfers as suspicious). By isolating scientific transfers on a dedicated segment with Science DMZ-compatible policies, research networks can provide unimpeded 100 Gbps transfers between HPC facilities without interference from security appliances not designed for bulk data flows.",
+      "source_paper": "Falcon TPDS23",
+      "keywords": [
+        "ScienceDMZ",
+        "data transfer node",
+        "DMZ",
+        "campus network",
+        "firewall",
+        "bulk data"
+      ]
+    },
+    {
+      "id": "Q037",
+      "category": "System Design and Deployment",
+      "difficulty": "easy",
+      "question": "What research network testbeds are used in Falcon, Marlin, and LDM evaluations, and what are their key characteristics?",
+      "reference_answer": "Key testbeds used: (1) FABRIC: A national-scale programmable experimental network infrastructure. Used in LDM with paths: NEWY (New York) to CERN (Geneva, Switzerland) at ~45 Gbps stable throughput and 85 ms RTT; MICH (Michigan) to MASS (Massachusetts) at ~35 Gbps and 33 ms RTT. Nodes equipped with 8 CPU cores, 64 GB RAM, 1 TB NVMe SSD, NVIDIA Mellanox ConnectX-6 NIC (100 Gbps port). (2) CloudLab: Used in LDM with Clemson to Utah path at 1 Gbps and 67 ms RTT. (3) ESnet: National DOE research network. Used in Falcon evaluations. (4) XSEDE/Expanse and Stampede2: Production supercomputer clusters used for Falcon/Marlin. (5) HPCLab: Local area network at ~20 Gbps bandwidth. These testbeds together span a broad range of bandwidth-delay products, allowing assessment across both high-performance and constrained network environments.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "FABRIC",
+        "CloudLab",
+        "ESnet",
+        "XSEDE",
+        "Expanse",
+        "Stampede2",
+        "testbed",
+        "HPCLab"
+      ]
+    },
+    {
+      "id": "Q038",
+      "category": "System Design and Deployment",
+      "difficulty": "medium",
+      "question": "How does TCP buffer size limitation affect transfer performance on the Expanse supercomputer, and how does Marlin's architecture mitigate this compared to Falcon?",
+      "reference_answer": "On Bridges-2 and Expanse nodes, the maximum TCP buffer size is limited to 5.8 MiB (configured by system administrators). The path BDP for Expanse connections (10 Gbps \u00d7 15 ms) is approximately 17 MiB, which is 3x larger than the maximum TCP buffer. This means a single TCP stream can fill at most 5.8 MiB of the 17 MiB BDP, leaving significant bandwidth unused. Both Falcon and Marlin must therefore use multiple concurrent TCP connections to aggregate congestion windows. Since TCP buffer size is the limiting factor, both tools select high concurrency (~20 for Falcon, 3-5 for Marlin read/network/write independently). Marlin's advantage: with its modular architecture, Marlin can use 3-5 threads per operation while achieving comparable throughput to Falcon's 20 threads, because independent I/O and network tuning avoids unnecessary thread creation for slower operations. Marlin's lower concurrency significantly reduces CPU utilization and I/O contention, achieving fairness improvements over Falcon.",
+      "source_paper": "Marlin ICS23",
+      "keywords": [
+        "TCP buffer size",
+        "Expanse",
+        "5.8 MiB",
+        "BDP mismatch",
+        "concurrency",
+        "Marlin vs Falcon"
+      ]
+    },
+    {
+      "id": "Q039",
+      "category": "System Design and Deployment",
+      "difficulty": "medium",
+      "question": "LDM's workflow has three phases: exploration, offline training, and production. How does the system transition between these phases and what determines when training is complete?",
+      "reference_answer": "Phase 1 \u2013 Exploration and Logging: LDM runs lightweight memory-to-memory transfers for 5 minutes while randomly varying concurrency, logging throughput and concurrency per second. It estimates network bandwidth (BW = max throughput observed) and per-concurrency throughput (TPT = max T_n/CC_n). These parameters configure the simulator. Phase 2 \u2013 Offline Training: The simulator is initialized with BW, TPT, and derived quantities (CC* = BW/TPT, R_max = BW/(K*CC*)). A PPO agent trains through episodes: the simulator resets, the agent interacts for fixed steps, rewards accumulate, and network weights update via Adam optimizer with clipped surrogate objective. Training continues until the agent reaches \u226590% of R_max and then for 1,000 additional episodes without improvement (convergence criterion). Average training time: 156 seconds (~3-4 minutes). Phase 3 \u2013 Production: The best-performing policy network is loaded. At each step, it outputs a Gaussian distribution N(\u03bc, \u03c3) over concurrency values; an action is sampled and rounded to CC_{n+1}, clamped to [1, CC_max]. The agent continuously adapts to real network dynamics during the actual file transfer.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "exploration phase",
+        "offline training",
+        "production phase",
+        "convergence criterion",
+        "memory-to-memory",
+        "156 seconds"
+      ]
+    },
+    {
+      "id": "Q040",
+      "category": "System Design and Deployment",
+      "difficulty": "hard",
+      "question": "Compare the generalization properties of Falcon (gradient descent online), LDM (offline-trained PPO), and Marlin (modular gradient descent) when deployed across different TCP congestion control algorithms (e.g., CUBIC, BBR, HTCP). Which approach is most robust and why?",
+      "reference_answer": "Falcon (online GD): Adapts in real-time to whatever congestion control algorithm is active, since it measures actual packet loss and throughput. It generalizes by design\u2014its utility function penalizes packet loss regardless of which CC algorithm causes it. However, convergence time (20 seconds) means it may be slow to adapt when CC behavior changes mid-transfer. Marlin (modular GD): Same real-time adaptation as Falcon, but independently per operation. Inherits Falcon's generalization but with lower overhead. LDM (offline PPO): LDM is explicitly evaluated across TCP CC algorithms (CUBIC, BBR, HTCP). The PPO policy generalizes because: (1) the simulator captures abstract bandwidth-concurrency relationships independent of specific CC algorithm internals, (2) the state space (throughput, concurrency, and their deltas) captures the observable consequences of CC behavior rather than CC parameters directly, (3) entropy regularization prevents overfitting to one CC's dynamics. Empirically, LDM maintains high performance across CUBIC, BBR, and HTCP without retraining. LDM is arguably most robust because its offline policy can be pretrained to handle diverse CC dynamics, while Falcon/Marlin rely on real-time exploration that may temporarily underperform during CC-triggered congestion events.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "TCP congestion control",
+        "CUBIC",
+        "BBR",
+        "HTCP",
+        "generalization",
+        "robustness",
+        "CC algorithm"
+      ]
+    },
+    {
+      "id": "Q041",
+      "category": "BDP and TCP Fundamentals",
+      "difficulty": "medium",
+      "question": "Why does pipelining help more than concurrency for very small files (e.g., 1 MB), while concurrency helps more than pipelining for medium-sized files (e.g., 32 MB)?",
+      "reference_answer": "For 1 MB files: the per-stream congestion window on FABRIC MICH-MASS (35 Gbps, 33 ms) is approximately BDP_per_stream = 3 Gbps \u00d7 0.033 s \u2248 12 MB (throttled). A 1 MB file is smaller than this window, meaning the transfer completes before the window has room for even one RTT of full-rate data. Connection setup and control-plane overhead (SYN, SYN-ACK, FIN handshakes) dominate transfer time. Pipelining eliminates repeated connection setup by reusing persistent connections. Concurrency above the baseline provides limited benefit because even with N concurrent streams, each stream still independently suffers slow-start for each new connection. CC (concurrency only) peaks at 447 Mbps (concurrency 12), while pipelined configurations reach ~9.7 Gbps\u2014a 21x improvement. For 32 MB files: at 3 Gbps per-stream cap with ~12 MB congestion window, a 32 MB file is large enough that slow-start is relatively less significant (the stream can ramp up meaningfully before completing). Concurrency efficiently aggregates multiple independent streams. Pipelining is less critical because per-connection overhead is small relative to transfer duration. Both pipelining and concurrency contribute, but concurrency is the dominant mechanism.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "pipelining vs concurrency",
+        "1 MB files",
+        "32 MB files",
+        "connection setup",
+        "slow-start",
+        "BDP",
+        "congestion window"
+      ]
+    },
+    {
+      "id": "Q042",
+      "category": "Transfer Parameter Optimization",
+      "difficulty": "hard",
+      "question": "Describe how LDM implements offset-based chunk parallelism using random-access I/O. What are the advantages over traditional file-splitting (creating fragment files) approaches for parallelism?",
+      "reference_answer": "LDM implements parallelism using offset-based reads and writes: rather than splitting a file into separate fragment files on disk, it uses seek() or pread()/pwrite() system calls to access disjoint byte ranges of the same file concurrently from multiple worker threads. Each chunk is defined by (file_path, byte_offset, length). Workers independently read from source at their assigned offset and write to destination at the corresponding offset, all operating on the single source/destination file inode. Advantages over fragment-file approaches: (1) No extra disk space: file splitting creates N copies of data totaling original file size \u00d7 2 on the source side; offset-based reads use no additional space. (2) No copy computation: splitting requires reading and writing each byte twice (once to create fragment, once during transfer); offset I/O reads bytes once directly from original file. (3) No reassembly step: fragment approaches require sequential reassembly of fragments into final file after transfer, adding latency proportional to file size; offset-based writes directly reconstruct the file at the destination without post-processing. (4) Reduced metadata overhead: managing N fragment inodes versus one inode with offset tracking is more efficient in parallel file systems.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "offset-based I/O",
+        "pread/pwrite",
+        "file splitting",
+        "disk space",
+        "reassembly",
+        "metadata overhead",
+        "inode"
+      ]
+    },
+    {
+      "id": "Q043",
+      "category": "Online Optimization Algorithms",
+      "difficulty": "medium",
+      "question": "Falcon discovers optimal concurrency in approximately 20 seconds. What determines this convergence time, and what is the minimum useful experiment (sample transfer) duration for accurate utility function evaluation?",
+      "reference_answer": "Falcon's convergence time depends on: (1) Number of search steps: Gradient Descent requires 4-6 steps to converge (estimating gradient at current point, taking a step, repeat). (2) Sample transfer duration: Each sample transfer must run long enough to accurately estimate average throughput and packet loss. Falcon requires at least 3-5 seconds per sample transfer to get stable measurements (short transfers have high variance in packet loss and throughput estimates). (3) Two sample transfers per GD step: gradient estimation requires evaluating n+1 and n-1 concurrency values simultaneously. So approximately 6 steps \u00d7 2 samples \u00d7 ~1.5 seconds effective evaluation = ~18-20 seconds total. Minimum useful experiment duration: 3-5 seconds, as shorter intervals introduce noise from TCP dynamics (initial slow-start, burst effects) that would produce inaccurate gradient estimates and potentially incorrect step directions, slowing convergence or causing instability.",
+      "source_paper": "Falcon SC21",
+      "keywords": [
+        "20 seconds",
+        "convergence time",
+        "sample transfer",
+        "gradient estimation",
+        "3-5 seconds",
+        "stability"
+      ]
+    },
+    {
+      "id": "Q044",
+      "category": "Fairness and Competing Transfers",
+      "difficulty": "hard",
+      "question": "If three Falcon transfers compete simultaneously on a shared 40 Gbps link, describe the sequence of events from initial startup to Nash Equilibrium, including what happens to packet loss and throughput during the convergence process.",
+      "reference_answer": "Startup (t=0-20s): Each transfer independently executes online gradient descent. Transfers start at low concurrency, explore by sampling n+1 and n-1. Initially there is minimal interference as all start with low concurrency. Exploration phase (t=20-60s): As each transfer increases concurrency toward what would be optimal in isolation, their combined concurrency overloads the 40 Gbps link. Aggregate throughput approaches link capacity, and packet loss rises above 2%, triggering the utility function's penalty term. Each transfer's utility function penalizes the high concurrency settings. Convergence (t=60-120s): Each transfer's OGD converges to a lower concurrency than the isolated optimum, because the regret term (packet loss penalty) makes higher concurrency less attractive. The shared Nash Equilibrium emerges: each transfer settles at approximately 1/3 of the optimal single-transfer concurrency. Packet loss stabilizes below 2%. JFI approaches 1.0. Steady state: Each transfer achieves approximately 1/3 of link capacity (13.3 Gbps each), which is close to perfectly fair allocation. Transient disruptions occur when a transfer joins or departs, but the online nature of OGD allows each remaining transfer to quickly readjust.",
+      "source_paper": "Falcon SC21",
+      "keywords": [
+        "Nash Equilibrium",
+        "competing transfers",
+        "packet loss",
+        "OGD convergence",
+        "fair allocation",
+        "JFI"
+      ]
+    },
+    {
+      "id": "Q045",
+      "category": "Modular Architecture (Marlin/AutoMDT)",
+      "difficulty": "hard",
+      "question": "Marlin achieves fairness between competing transfers with different I/O performance behaviors. Explain the specific scenario where monolithic approaches fail at fairness and how Marlin's modular design addresses it.",
+      "reference_answer": "Failure scenario: Consider two competing transfers where Transfer A has a fast source disk (SSD) and Transfer B has a slow source disk (HDD). In a monolithic approach (Falcon), the optimal concurrency for each is determined jointly by network and disk performance. Transfer A, with a faster disk, can sustain higher concurrency at the network level before its disk becomes a bottleneck. It therefore converges to a higher network concurrency, claiming more network bandwidth. Transfer B, limited by its slow disk, converges to lower concurrency. The result is unfair bandwidth allocation\u2014Transfer A uses more network resources simply because it has better disk, even if both should receive equal network shares. Marlin's solution: by independently tuning I/O concurrency and network concurrency, Marlin separates the disk performance bottleneck from the network bandwidth allocation. Transfer B can maximize its disk read concurrency for its HDD independently while the network concurrency for both A and B is tuned by the same game-theoretic utility function over the shared network. Network fairness is achieved through the regret-penalizing utility on the network dimension alone, decoupled from each transfer's disk characteristics. Thus, both transfers compete fairly for network bandwidth regardless of I/O speed differences.",
+      "source_paper": "Marlin ICS23",
+      "keywords": [
+        "fairness",
+        "heterogeneous I/O",
+        "SSD vs HDD",
+        "decoupling",
+        "network fairness",
+        "Marlin modular"
+      ]
+    },
+    {
+      "id": "Q046",
+      "category": "System Design and Deployment",
+      "difficulty": "easy",
+      "question": "What is FABRIC and why is it used as a primary evaluation testbed in recent HPN research?",
+      "reference_answer": "FABRIC (Flexible Architecture for Building Research and Experimentation on a National-Scale) is a national-scale programmable experimental network infrastructure funded by the NSF. It provides researchers with dedicated network paths between geographically distributed nodes at multiple universities and research institutions. Key properties making it suitable for HPN research: (1) Dedicated bandwidth: experimenters get dedicated network slices rather than shared best-effort internet paths, enabling reproducible experiments. (2) High bandwidth: access links provisioned at 100 Gbps with high-speed end systems (NVMe SSDs, Mellanox ConnectX-6 NICs). (3) Long-haul paths: paths like NEWY-CERN (85 ms RTT) and MICH-MASS provide diverse bandwidth-delay products representative of real scientific network conditions. (4) Shared Layer 3: FABRIC is a shared routed network, so stable throughputs are below physical port rates, providing realistic experimental conditions similar to production ESnet/Internet2 environments.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "FABRIC",
+        "NSF",
+        "testbed",
+        "100 Gbps",
+        "NVMe",
+        "Mellanox ConnectX-6",
+        "reproducible"
+      ]
+    },
+    {
+      "id": "Q047",
+      "category": "Transfer Parameter Optimization",
+      "difficulty": "medium",
+      "question": "What is the key research insight behind the title 'Use Only What You Need: Judicious Parallelism for File Transfers' (Marlin ICS23)?",
+      "reference_answer": "The key insight is that previous transfer optimization approaches (including Falcon SC21) inflate concurrency to its optimal level for network performance, but this 'maximum beneficial concurrency' is actually higher than what is needed from I/O operations' perspective. By inflating concurrency to fill the network BDP, monolithic tools create more read and write threads than necessary, causing: (1) excessive CPU utilization managing too many processes, (2) I/O contention in parallel file systems when too many threads simultaneously access the same storage, and (3) unnecessary system overhead that wastes resources and can affect co-located workloads. 'Judicious' parallelism means using only as much concurrency as needed for each operation\u2014I/O threads set to the minimum needed to saturate I/O throughput, network threads set to fill the network BDP\u2014rather than applying a single high concurrency across all operations. This achieves comparable throughput with significantly lower overhead.",
+      "source_paper": "Marlin ICS23",
+      "keywords": [
+        "judicious parallelism",
+        "minimum necessary concurrency",
+        "I/O contention",
+        "system overhead",
+        "CPU utilization",
+        "co-located workloads"
+      ]
+    },
+    {
+      "id": "Q048",
+      "category": "BDP and TCP Fundamentals",
+      "difficulty": "hard",
+      "question": "Explain tail latency in the context of parallel file transfers, how it arises from worker imbalance, and why chunk-based parallelism (LDM) mitigates it more effectively than whole-file concurrency (Falcon).",
+      "reference_answer": "Tail latency in parallel transfers arises when the completion of the entire transfer is delayed by the slowest remaining worker (thread). In whole-file concurrency (Falcon): when transferring a mix of files, workers process different files independently. As the transfer progresses, large files become the bottleneck\u2014a worker transferring a 55 GB file takes much longer than workers on 1 GB files. As smaller files complete, workers sit idle while the few large files continue. Total transfer time = max completion time \u2248 time to transfer the largest file serially. This creates a staircase tail pattern in the throughput trace. In chunk-based parallelism (LDM): large files are split into multiple chunks (e.g., a 55 GB file becomes 55GB/512MB \u2248 107 chunks). All chunks are placed in a shared transfer queue. As workers complete smaller files/chunks, they immediately pick up chunks from the large file. Worker imbalance is drastically reduced because: (1) all chunks are similar size (\u2264512 MB), and (2) multiple workers can simultaneously transfer different chunks of the same large file. The last few chunks of a large file are processed by all available idle workers, eliminating the serial bottleneck.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "tail latency",
+        "worker imbalance",
+        "staircase pattern",
+        "chunk-based parallelism",
+        "transfer queue",
+        "55 GB files"
+      ]
+    },
+    {
+      "id": "Q049",
+      "category": "Online Optimization Algorithms",
+      "difficulty": "hard",
+      "question": "Compare the stability, convergence speed, and sample efficiency of online gradient descent (Falcon) vs. offline PPO (LDM) under non-stationary network conditions where bandwidth varies every 60 seconds.",
+      "reference_answer": "Under non-stationary conditions (bandwidth varying every 60 seconds): Falcon (online GD): Re-converges from scratch after each bandwidth change. Each reconvergence takes ~20 seconds of exploration with 2 sample transfers per GD step. During reconvergence, throughput may be suboptimal. However, Falcon continuously runs GD even after finding optimal, checking n+1 and n-1 periodically\u2014this makes it naturally reactive. Stability: high, since GD takes smooth gradient steps. Sample efficiency: ~6 steps \u00d7 2 samples = 12 sample transfers per reconvergence. If bandwidth changes every 60 seconds and reconvergence takes 20 seconds, Falcon spends ~33% of time suboptimally exploring. LDM (offline PPO): The PPO policy is trained on diverse simulated conditions including varying bandwidth. At inference time (production phase), the policy directly outputs an action based on the current state without exploration. When bandwidth drops, the agent observes reduced throughput and increased packet loss in the next state and immediately adjusts concurrency in the following step (1-second intervals). No sample transfers needed for reconvergence. Reconvergence time: potentially 2-5 seconds (time for the policy to observe state change and iterate to new equilibrium). Much faster than GD's 20 seconds. Sample efficiency: zero additional samples needed at runtime. Trade-off: if bandwidth changes in ways not represented in training, the policy may generalize less well than the model-free GD.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "non-stationary",
+        "bandwidth variation",
+        "online GD",
+        "offline PPO",
+        "reconvergence",
+        "sample efficiency",
+        "stability"
+      ]
+    },
+    {
+      "id": "Q050",
+      "category": "Deep Reinforcement Learning (LDM)",
+      "difficulty": "medium",
+      "question": "What is the production phase of LDM and how does the PPO agent make concurrency decisions at inference time?",
+      "reference_answer": "In the production phase, LDM loads the best-performing policy network (trained offline) and begins actual file transfers. At each step (probing interval), the policy network takes the current state vector (throughput, concurrency, throughput delta, concurrency delta) as input and outputs a Gaussian distribution N(\u03bc, \u03c3). An action (concurrency value) is sampled from this distribution, rounded to the nearest integer, and clamped to [1, CC_max]. This concurrency CC_{n+1} is applied to the running transfer by adjusting the number of active worker threads. Unlike the training phase where episodes reset, production is continuous\u2014the agent operates in a perpetual control loop over the entire dataset duration. The Gaussian action distribution (rather than a deterministic argmax) maintains some stochasticity during production, enabling continued adaptation to slowly drifting network conditions without explicit re-exploration. The probing window (default 5 seconds) determines how often the state is re-evaluated and concurrency updated.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "production phase",
+        "inference",
+        "Gaussian distribution",
+        "CC_{n+1}",
+        "probing window",
+        "continuous control"
+      ]
+    },
+    {
+      "id": "Q051",
+      "category": "Fairness and Competing Transfers",
+      "difficulty": "medium",
+      "question": "Explain the 'late-comer problem' in file transfer optimization and how Falcon's game-theoretic approach prevents it.",
+      "reference_answer": "The late-comer problem: In shared network environments, a transfer that starts after an earlier transfer is already underway (a 'late-comer') independently selects transfer settings to maximize its own throughput. Without a regret mechanism, a late-comer will choose high concurrency settings that favor itself, since the utility function (pure throughput) is maximized at high concurrency. This gives the late-comer an unfair advantage over the established transfer, which must now compete with more aggressive resource usage. HARP exemplifies this: late-comers achieve ~2x the throughput of earlier transfers. Falcon's prevention: The utility function u(n,t,L) = n*t - n*t*L*B penalizes high concurrency that causes packet loss. When a late-comer tries to grab too much bandwidth, it increases packet loss for all transfers, including itself. The penalty term makes this self-defeating\u2014the late-comer's own utility decreases. This discourages aggressive strategies and naturally leads all transfers to the Nash Equilibrium allocation where no individual transfer can improve its utility by changing its concurrency, achieving fair bandwidth sharing without explicit coordination.",
+      "source_paper": "Falcon SC21",
+      "keywords": [
+        "late-comer problem",
+        "Nash Equilibrium",
+        "regret",
+        "HARP",
+        "fair sharing",
+        "self-defeating"
+      ]
+    },
+    {
+      "id": "Q052",
+      "category": "System Design and Deployment",
+      "difficulty": "medium",
+      "question": "What is the role of NVMe SSDs and Mellanox ConnectX-6 NICs in achieving high-performance transfer results, and what bottleneck would arise without them?",
+      "reference_answer": "NVMe SSDs: Provide high random read/write IOPS and sequential throughput (multiple GB/s). Critical for keeping the I/O operations from being the bottleneck when network bandwidth is at 10-100 Gbps scale. Without NVMe, traditional HDDs (100-200 MB/s sequential) would be the primary bottleneck\u2014even optimal concurrency and pipelining cannot exceed disk throughput. At 45 Gbps network bandwidth, the storage subsystem must deliver ~5.6 GB/s to keep the network saturated, which requires NVMe (or RAID arrays). Mellanox ConnectX-6 NIC: A 100 Gbps SmartNIC supporting RDMA over Converged Ethernet (RoCE) and advanced offloading features. Provides line-rate packet processing without saturating CPU, enabling high-throughput TCP transfers at the application layer. Without a high-speed NIC, the NIC itself would be the bottleneck\u2014a 10 GbE NIC limits transfers to 10 Gbps regardless of network capacity. The NIC must also support multiple concurrent TCP streams (high concurrency) without performance degradation. Together, these components ensure that observed bottlenecks are in the network and algorithm layers (controllable by software optimization) rather than in fixed hardware.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "NVMe SSD",
+        "Mellanox ConnectX-6",
+        "100 Gbps NIC",
+        "I/O bottleneck",
+        "IOPS",
+        "storage throughput"
+      ]
+    },
+    {
+      "id": "Q053",
+      "category": "Transfer Parameter Optimization",
+      "difficulty": "easy",
+      "question": "What is the difference between network parallelism (multiple TCP connections per file) and concurrency (multiple files in flight simultaneously)?",
+      "reference_answer": "Network parallelism: Splitting a single file into multiple equal segments and transferring each segment over a separate TCP connection simultaneously (also called striping). Each connection carries a different byte range of the same file. Parallelism increases the number of concurrent TCP streams for one file, helping fill the BDP when a single stream's congestion window is insufficient. Used by GridFTP's striped transfers. Concurrency: Transferring multiple different files simultaneously, each over one or more connections. Concurrency aggregates throughput across independent file transfers. For a dataset with N files, setting concurrency=k means k files transfer simultaneously. Key differences: (1) Parallelism targets single-file bottlenecks (large files with congestion window limits); concurrency targets multiple-file datasets. (2) Parallelism requires more complex coordination (reassembly); concurrency is simpler (each file independent). (3) In LDM, parallelism and concurrency are unified via chunk-based design: concurrency controls how many chunks (from potentially the same large file or different files) are in flight simultaneously.",
+      "source_paper": "Marlin ICS23",
+      "keywords": [
+        "network parallelism",
+        "concurrency",
+        "striping",
+        "TCP streams",
+        "concurrency vs parallelism",
+        "GridFTP"
+      ]
+    },
+    {
+      "id": "Q054",
+      "category": "Modular Architecture (Marlin/AutoMDT)",
+      "difficulty": "easy",
+      "question": "How does Marlin identify which operation (read, network, or write) is the bottleneck during a transfer, and how does it tune concurrency in response?",
+      "reference_answer": "Marlin uses its game-theory-inspired utility function and online gradient descent independently for each of its three components: read, network, and write. Each component runs its own optimization loop: it samples different concurrency values for that component while holding others fixed, evaluates throughput achieved by that component, and uses gradient descent to converge to the concurrency that maximizes that component's throughput relative to its overhead. The bottleneck automatically identifies itself: the component that is slowest will have a higher optimal concurrency (it needs more threads to match the other components' rates). The non-bottleneck components converge to low concurrency (1-3 threads) since additional threads provide no throughput benefit but add overhead. Marlin thus 'automatically discovers the slowest operation of file transfers and tunes its concurrency in real-time to maximize performance while keeping concurrency for other operations at minimum.'",
+      "source_paper": "Marlin ICS23",
+      "keywords": [
+        "bottleneck identification",
+        "read/network/write",
+        "independent optimization",
+        "gradient descent",
+        "automatic discovery"
+      ]
+    },
+    {
+      "id": "Q055",
+      "category": "Domain-Specific Transfers (GDM/FastBioDL)",
+      "difficulty": "medium",
+      "question": "Why does FastBioDL's adaptive approach outperform both low-concurrency (prefetch, 3 threads) and high-concurrency (pysradb, 8 threads) static tools on the HiFi-WGS dataset?",
+      "reference_answer": "HiFi-WGS dataset: 6 PacBio files, 8.1-10.8 GB each. prefetch (3 threads) achieves 246.82 Mbps; pysradb (8 threads) achieves 220.56 Mbps (worse than prefetch due to excessive concurrency); FastBioDL achieves 594.75 Mbps with adaptive concurrency ~4.92. Why prefetch is suboptimal: 3 fixed threads may be insufficient to fill the BDP for large files over NCBI's servers, especially if per-server bandwidth limits apply. Missing throughput by under-utilizing parallel streams. Why pysradb (8 threads) is worse than prefetch: 8 concurrent connections to NCBI servers likely triggers server-side rate limiting or congestion. Too many connections compete at the server, causing increased latency and reduced per-connection throughput. With large files, connection overhead is less critical, but server overload dominates. Why FastBioDL wins: adaptive concurrency (~4.92) finds the sweet spot\u2014enough parallelism to fill the BDP and overcome slow-start, but not so many as to trigger server-side throttling. This intermediate value cannot be discovered by trial-and-error static settings without testing.",
+      "source_paper": "GDM FastBioDL",
+      "keywords": [
+        "HiFi-WGS",
+        "server throttling",
+        "adaptive concurrency",
+        "prefetch",
+        "pysradb",
+        "rate limiting"
+      ]
+    },
+    {
+      "id": "Q056",
+      "category": "Transfer Parameter Optimization",
+      "difficulty": "hard",
+      "question": "Analyze the 5.6 ablation configurations tested in LDM (CC only, P-CC, PP-CC, P-PP-CC, and LDM adaptive) across 1 MB and 32 MB file datasets. What does this ablation reveal about the relative contributions of pipelining, parallelism, and concurrency?",
+      "reference_answer": "From LDM's Section 5.6 ablation: For 1 MB files (FABRIC MICH-MASS, 35 Gbps, 33 ms): CC only peaks at 447 Mbps (concurrency 12). PP-CC (parallelism+concurrency): ~319 Mbps (parallelism adds scheduling overhead without benefit for small files already < chunk size). P-CC (pipelining+concurrency): reaches ~9.7 Gbps\u201421x improvement over CC. P-PP-CC: similar to P-CC (~9.7 Gbps). LDM adaptive: ~8.2 Gbps (slightly lower because PPO learns high concurrency is wasteful; utility function penalizes unnecessary concurrency). Conclusion for small files: Pipelining is the dominant contributor (21x gain). Parallelism is counterproductive (adds overhead). Concurrency helps to a point. For 32 MB files: CC alone performs competitively since files are large enough that slow-start is relatively less impactful. P-CC \u2248 CC since pipelining benefit is smaller for longer-running streams. PP-CC \u2248 P-CC for 32 MB files since each file exceeds per-stream window somewhat but not dramatically. LDM adaptive reaches ~9.7 Gbps. Conclusion for medium files: all three parameters contribute roughly equally; pipelining has diminishing returns as file size grows relative to connection setup cost.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "ablation study",
+        "pipelining",
+        "parallelism",
+        "concurrency",
+        "1 MB files",
+        "32 MB files",
+        "21x speedup"
+      ]
+    },
+    {
+      "id": "Q057",
+      "category": "Online Optimization Algorithms",
+      "difficulty": "easy",
+      "question": "What is a 'black-box' optimization approach in the context of HPN transfer optimization, and why does Falcon adopt it?",
+      "reference_answer": "A black-box optimization approach treats the system being optimized as an opaque function: inputs (transfer settings) are provided, outputs (performance metrics like throughput and packet loss) are observed, but the internal mechanisms are not modeled explicitly. Falcon adopts this because: (1) HPN environments are complex and heterogeneous\u2014network topology, congestion control algorithms, OS scheduler, storage systems, and background traffic all interact in ways too complex to model analytically. (2) Portability: black-box optimization works across different network types, protocols, and hardware without requiring customized models. (3) Simplicity: only observable metrics (throughput t_i, packet loss L_i) are needed, not TCP internals or router states. (4) Real-time adaptation: the black-box approach can adapt to dynamic conditions without needing to update a model. Falcon uses sample transfers as probes of the black-box, evaluating different concurrency values and using the utility function to guide the search.",
+      "source_paper": "Falcon SC21",
+      "keywords": [
+        "black-box optimization",
+        "sample transfers",
+        "no model",
+        "portability",
+        "dynamic conditions"
+      ]
+    },
+    {
+      "id": "Q058",
+      "category": "System Design and Deployment",
+      "difficulty": "medium",
+      "question": "What is the SRA Toolkit's prefetch tool and why is it the standard baseline for genomic data downloads despite its limitations?",
+      "reference_answer": "The SRA Toolkit's prefetch is the official command-line tool provided by NCBI for downloading data from the Sequence Read Archive. It is the de facto standard baseline because: (1) Official support: NCBI develops and maintains it, ensuring compatibility with all SRA accession formats and authentication. (2) Widespread adoption: Used by virtually all genomics researchers as the default download method. (3) Integrated pipeline: Works seamlessly with fasterq-dump and other SRA Toolkit components for downstream processing. Limitations: (1) Static concurrency: fixed at 3 threads, cannot adapt to network conditions or file characteristics. (2) No adaptive bandwidth utilization: same settings regardless of whether the user has 100 Mbps or 10 Gbps access. (3) Overhead: downloads SRA-format files that require conversion (fasterq-dump) to FASTQ, adding processing latency. (4) Sequential bottleneck: 3-thread limit means it significantly underutilizes modern high-bandwidth research networks, taking much longer than necessary for large WGS datasets.",
+      "source_paper": "GDM FastBioDL",
+      "keywords": [
+        "SRA Toolkit",
+        "prefetch",
+        "NCBI",
+        "3 threads",
+        "static concurrency",
+        "fasterq-dump",
+        "FASTQ"
+      ]
+    },
+    {
+      "id": "Q059",
+      "category": "Deep Reinforcement Learning (LDM)",
+      "difficulty": "hard",
+      "question": "LDM's simulation training achieves a 2750x speedup over online DRL. Compute an estimate of this speedup from first principles using LDM's reported values, and identify the key design decision enabling this.",
+      "reference_answer": "From LDM's reported values: offline training time \u2248 156 seconds (~2.6 minutes). Online DRL approaches (e.g., prior work [18] cited in LDM) require day-long online training. Day-long training \u2248 24 hours = 86,400 seconds. Speedup = 86,400 / 156 \u2248 554x from raw time. LDM reports 2750x, which accounts for total exploration overhead including failed transfers and degraded performance during online learning, not just wall-clock time. The key design decision enabling this speedup: designing the simulator to capture abstract network dynamics (bandwidth-concurrency-throughput relationships) without simulating individual packet-level TCP behavior. The simulator runs thousands of synthetic episodes in seconds by computing throughput as a function of concurrency analytically, rather than waiting for real network transfers to complete (which take 10-300 seconds each). This allows training on thousands of episodes in the time a single real-world transfer would take, achieving statistical coverage of diverse conditions that would take days of online exploration.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "2750x speedup",
+        "156 seconds",
+        "online DRL",
+        "simulator",
+        "episode",
+        "abstract dynamics"
+      ]
+    },
+    {
+      "id": "Q060",
+      "category": "System Design and Deployment",
+      "difficulty": "hard",
+      "question": "Across the research arc Falcon \u2192 Marlin \u2192 AutoMDT \u2192 LDM, identify the key limitation each paper identifies in its predecessor and the specific technical innovation introduced to address it. What remains as an open challenge?",
+      "reference_answer": "Falcon (SC21/TPDS23): Problem identified: Existing tools (HARP, Globus) use fixed settings, fail to adapt, and cannot guarantee fairness. Innovation: Game-theory-inspired utility function with online gradient descent for real-time optimal concurrency discovery + Nash Equilibrium guarantee. Marlin (ICS23): Problem identified: Falcon uses monolithic architecture applying same concurrency to read/network/write, causing unnecessary overhead on non-bottleneck operations and fairness issues between transfers with different I/O characteristics. Innovation: Modular architecture with independent per-operation concurrency tuning, staging area for write bottlenecks. AutoMDT (INDIS25): Problem identified: Multi-dimensional tuning (beyond Marlin's three dimensions) remains complex to configure and automate. Innovation: Further automation of multi-dimensional tuning, reducing manual configuration burden. LDM (HPDC26): Problem identified: Concurrency-only optimization fails for heterogeneous datasets (small files need pipelining, large files need parallelism); online exploration is slow (20s reconvergence); joint multi-parameter search space is exponential. Innovation: Unified chunk-level concurrency collapses multi-parameter problem into 1D; offline PPO training for fast convergence (156s vs days); offset-based parallelism without file splitting. Open challenges: (1) Joint optimization beyond concurrency (e.g., dynamic chunk size, TCP buffer tuning), (2) Cross-organization transfer orchestration with heterogeneous storage and security policies, (3) Integration with data management systems (Globus, Rucio) for automated science workflows, (4) Extension to RDMA-based transfers (InfiniBand, RoCE) beyond TCP.",
+      "source_paper": "LDM HPDC26",
+      "keywords": [
+        "research arc",
+        "Falcon",
+        "Marlin",
+        "AutoMDT",
+        "LDM",
+        "open challenges",
+        "limitations",
+        "innovations"
+      ]
+    },
+    {
+      "id": "Q061",
+      "category": "Networking Fundamentals",
+      "difficulty": "easy",
+      "question": "What is the OSI model and which layers are most relevant to high-performance data transfer optimization?",
+      "reference_answer": "The OSI (Open Systems Interconnection) model is a conceptual framework that standardizes network communication into 7 layers: Physical (1), Data Link (2), Network (3), Transport (4), Session (5), Presentation (6), and Application (7). For HPN data transfer optimization, the most relevant layers are: Layer 3 (Network) \u2013 IP routing, path selection, and QoS policies that determine the network path and available bandwidth. Layer 4 (Transport) \u2013 TCP/UDP congestion control, flow control, and reliability mechanisms that directly govern throughput and packet loss. Layer 7 (Application) \u2013 Where transfer parameters like concurrency, pipelining, and parallelism are controlled by the transfer application. Transfer optimizers like Falcon and LDM operate at Layer 7, using observable Layer 4 metrics (throughput, packet loss) to tune application-level parameters, while remaining agnostic to Layers 1-3.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "OSI model",
+        "TCP",
+        "Layer 4",
+        "Layer 7",
+        "transport layer",
+        "application layer"
+      ]
+    },
+    {
+      "id": "Q062",
+      "category": "Networking Fundamentals",
+      "difficulty": "easy",
+      "question": "What is the difference between throughput and bandwidth in computer networking?",
+      "reference_answer": "Bandwidth is the theoretical maximum rate at which data can be transmitted over a network link, measured in bits per second (bps). It is a property of the physical or logical link (e.g., a 100 Gbps Ethernet link has 100 Gbps bandwidth). Throughput is the actual rate at which data is successfully delivered from source to destination over a period of time. Throughput is always \u2264 bandwidth and is reduced by: TCP overhead (headers, ACKs), congestion control (slow-start, window limits), packet loss and retransmissions, queuing delays, protocol handshaking, and application-level bottlenecks (disk I/O, CPU). In HPN research, the goal of transfer optimization is to maximize throughput to approach available bandwidth, since even 100 Gbps links are routinely underutilized due to these factors.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "throughput",
+        "bandwidth",
+        "TCP overhead",
+        "utilization",
+        "packet loss",
+        "retransmissions"
+      ]
+    },
+    {
+      "id": "Q063",
+      "category": "Networking Fundamentals",
+      "difficulty": "easy",
+      "question": "What is Round-Trip Time (RTT) and how does it impact TCP throughput in high-bandwidth networks?",
+      "reference_answer": "Round-Trip Time (RTT) is the time for a packet to travel from sender to receiver and for an acknowledgment to return. It includes propagation delay (speed-of-light in fiber), transmission delay, and queuing delay at intermediate routers. RTT impacts TCP throughput through the fundamental equation: Throughput \u2264 W/RTT, where W is the congestion window size. High-bandwidth, long-distance networks (e.g., US to Europe, RTT ~85 ms) have very large bandwidth-delay products. Even with large congestion windows, high RTT means the sender must wait longer per ACK cycle. For example, at 85 ms RTT and W=64 KB (typical default), max TCP throughput is only 64 KB / 0.085 s \u2248 6 Mbps\u2014severely underutilizing a 100 Gbps link. Window scaling, parallel streams, and window size tuning are required to overcome RTT-imposed limits.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "RTT",
+        "round-trip time",
+        "TCP throughput",
+        "congestion window",
+        "window scaling",
+        "propagation delay"
+      ]
+    },
+    {
+      "id": "Q064",
+      "category": "Networking Fundamentals",
+      "difficulty": "easy",
+      "question": "What is packet loss in TCP networks, and how does TCP respond to it?",
+      "reference_answer": "Packet loss occurs when one or more transmitted packets fail to reach the destination, typically due to network congestion causing router buffer overflow (tail-drop or RED), bit errors on physical links (rare in fiber), or hardware failures. TCP interprets packet loss as a congestion signal. Responses depend on the TCP variant: TCP Reno/CUBIC: upon detecting loss (3 duplicate ACKs or timeout), reduces congestion window by half (multiplicative decrease) and re-enters congestion avoidance. Timeout causes dramatic reduction to 1 MSS (slow-start). TCP BBR: uses bandwidth and RTT measurements rather than loss as primary signals, maintaining high throughput even with some loss. In HPN transfer optimization, packet loss is used as a key metric in utility functions (e.g., Falcon) because it signals that concurrency has exceeded the network's capacity. Keeping packet loss below 1-2% while maintaining high throughput is the fundamental optimization goal.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "packet loss",
+        "congestion",
+        "TCP Reno",
+        "CUBIC",
+        "BBR",
+        "multiplicative decrease",
+        "slow-start"
+      ]
+    },
+    {
+      "id": "Q065",
+      "category": "Networking Fundamentals",
+      "difficulty": "medium",
+      "question": "Explain TCP CUBIC congestion control and why it is the default in most Linux systems for high-bandwidth networks.",
+      "reference_answer": "TCP CUBIC is a congestion control algorithm (default in Linux since kernel 2.6.19) designed specifically for high-bandwidth, high-latency networks where TCP Reno performs poorly. CUBIC's key innovation is its congestion window growth function: W(t) = C(t - K)^3 + W_max, where t is time since last congestion event, W_max is the window at which loss occurred, K is the time to reach W_max again, and C is a scaling constant. This cubic function provides: (1) Aggressive growth far from W_max (explores quickly), (2) Slow, cautious growth near W_max (avoids rapid re-triggering of loss), (3) Probing above W_max after reaching it (searches for more capacity). Compared to TCP Reno (linear growth): CUBIC is much faster to fill high-BDP paths because its cubic growth catches up to the bandwidth cap quickly after a loss event. It achieves significantly better throughput on long-fat networks (high RTT, high bandwidth). In HPN contexts, CUBIC is the baseline CC algorithm against which transfer optimizers are typically evaluated.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "TCP CUBIC",
+        "congestion window",
+        "cubic function",
+        "W_max",
+        "Linux default",
+        "high-bandwidth",
+        "long-fat network"
+      ]
+    },
+    {
+      "id": "Q066",
+      "category": "Networking Fundamentals",
+      "difficulty": "medium",
+      "question": "What is BBR (Bottleneck Bandwidth and RTT) congestion control and how does it differ from loss-based algorithms like CUBIC?",
+      "reference_answer": "BBR (Bottleneck Bandwidth and RTT) is a model-based congestion control algorithm developed by Google that measures the network's bottleneck bandwidth and minimum RTT to build an explicit model of the network pipe. Unlike loss-based algorithms (CUBIC, Reno) that use packet loss as the primary congestion signal, BBR uses bandwidth and delay measurements: it estimates the bottleneck bandwidth (BtlBw) by measuring the maximum delivery rate, and the minimum RTT (RTprop) by tracking the minimum observed RTT. BBR sets the congestion window to BtlBw \u00d7 RTprop (the BDP) and paces sending at BtlBw to avoid bufferbloat. Key differences from CUBIC: (1) BBR does not back off on packet loss\u2014it infers loss may be due to shallow buffers rather than congestion. (2) BBR achieves higher throughput on paths with random loss or shallow buffers. (3) BBR is less aggressive at filling large buffers (less bufferbloat). In HPN research, BBR's behavior can differ significantly from CUBIC, which is why LDM is tested for generalization across CC algorithms.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "BBR",
+        "bottleneck bandwidth",
+        "RTprop",
+        "BtlBw",
+        "bufferbloat",
+        "model-based",
+        "CUBIC comparison"
+      ]
+    },
+    {
+      "id": "Q067",
+      "category": "Networking Fundamentals",
+      "difficulty": "medium",
+      "question": "What is the difference between a long-fat network (LFN) and a standard LAN, and what specific TCP parameter tuning is required for optimal performance on LFNs?",
+      "reference_answer": "A Long-Fat Network (LFN, pronounced 'elephant') is a network with a large bandwidth-delay product (BDP = bandwidth \u00d7 RTT). Examples: transatlantic 100 Gbps links (BDP = 100 Gbps \u00d7 0.085 s \u2248 1 GB), or continental 10 Gbps paths (BDP = 10 Gbps \u00d7 0.04 s \u2248 50 MB). Standard LANs have small BDP (1 Gbps \u00d7 0.0001 s \u2248 12.5 KB). TCP parameter tuning for LFNs: (1) TCP window scaling (RFC 1323): default TCP window is 64 KB (limited by 16-bit field); window scaling allows windows up to 1 GB, enabling W \u2248 BDP. (2) Send/receive socket buffer sizes: OS must allocate buffers \u2265 BDP (e.g., sysctl net.core.rmem_max, net.ipv4.tcp_rmem). (3) Selective ACK (SACK): reduces retransmission overhead when multiple packets are lost. (4) TCP timestamp (RFC 1323): improves RTT estimation accuracy on high-speed links. Without these tunings, even a perfect 100 Gbps path will be limited to a few Mbps of TCP throughput due to default buffer constraints.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "LFN",
+        "long-fat network",
+        "window scaling",
+        "TCP buffer size",
+        "SACK",
+        "BDP",
+        "sysctl"
+      ]
+    },
+    {
+      "id": "Q068",
+      "category": "Networking Fundamentals",
+      "difficulty": "easy",
+      "question": "What is the difference between UDP and TCP, and in what HPC networking scenarios might UDP be preferred over TCP?",
+      "reference_answer": "TCP (Transmission Control Protocol): Connection-oriented, reliable, ordered delivery with flow control and congestion control. Provides guaranteed delivery through acknowledgments and retransmissions. Overhead: 3-way handshake, ACKs, window management, retransmissions. UDP (User Datagram Protocol): Connectionless, unreliable, no ordering guarantee, no congestion control. Minimal overhead\u2014just sends datagrams. In HPC networking, UDP may be preferred for: (1) High-frequency sensor/telemetry streams where occasional packet loss is acceptable and real-time delivery matters (e.g., detector readouts). (2) RDMA over Converged Ethernet (RoCE): uses UDP at Layer 4 but relies on lossless Ethernet infrastructure (PFC, ECN) for reliability, achieving near line-rate with very low CPU overhead. (3) custom protocols (e.g., UDT\u2014UDP-based Data Transfer Protocol) that implement their own congestion control better suited for high-BDP paths than TCP. (4) Multicast data distribution where TCP's per-receiver ACK storm would be unmanageable. However, for bulk scientific data transfers requiring guaranteed delivery (genomics, physics data), TCP remains standard.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "UDP",
+        "TCP",
+        "RDMA",
+        "RoCE",
+        "UDT",
+        "multicast",
+        "reliability",
+        "congestion control"
+      ]
+    },
+    {
+      "id": "Q069",
+      "category": "Networking Fundamentals",
+      "difficulty": "medium",
+      "question": "What is Quality of Service (QoS) in networking, and how is it implemented in research networks like Internet2 and ESnet?",
+      "reference_answer": "Quality of Service (QoS) refers to mechanisms that prioritize certain network traffic to guarantee performance characteristics (bandwidth, latency, jitter, packet loss) for specific flows or traffic classes. Core QoS mechanisms: (1) Traffic classification: marking packets with DSCP (Differentiated Services Code Point) values to indicate priority. (2) Traffic shaping/policing: rate limiting or smoothing traffic to prevent bursts. (3) Priority queuing: scheduling algorithms (FIFO, WFQ, CBWFQ) that serve high-priority queues first. (4) Bandwidth reservation: MPLS traffic engineering, RSVP. In research networks like Internet2 and ESnet: Science DMZ architecture separates high-priority bulk scientific transfers from regular campus traffic using VLANs and dedicated paths. ESnet provides on-demand bandwidth reservation via OSCARS (On-Demand Secure Circuits and Advance Reservation System). Internet2's AL2S (Advanced Layer 2 Service) provides dedicated circuit-switched paths for large transfers. These mechanisms ensure that HPC data transfers from experiments like LHC (hundreds of Gbps) receive dedicated bandwidth without competing with email traffic.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "QoS",
+        "DSCP",
+        "traffic shaping",
+        "Internet2",
+        "ESnet",
+        "OSCARS",
+        "bandwidth reservation",
+        "Science DMZ"
+      ]
+    },
+    {
+      "id": "Q070",
+      "category": "Networking Fundamentals",
+      "difficulty": "easy",
+      "question": "What is a Data Transfer Node (DTN) and why is it a critical component of the Science DMZ architecture?",
+      "reference_answer": "A Data Transfer Node (DTN) is a dedicated high-performance server specifically configured and optimized for large-scale scientific data transfers. DTNs are strategically placed in the Science DMZ (outside firewalls) to provide unimpeded access to the research network. Key characteristics: (1) Hardware: high-speed NICs (10/100 Gbps), NVMe SSDs in RAID, high-core-count CPUs, large RAM. (2) Software: optimized TCP stack settings (large socket buffers, window scaling), Globus Connect, GridFTP, bbcp. (3) Network placement: directly connected to the research network backbone, bypassing firewalls that throttle large flows. (4) No competing workloads: DTNs run only transfer software, avoiding I/O contention from user processes. DTNs are critical because: campus firewalls and IDS systems treat parallel large-data flows as suspicious and may drop or throttle them. By placing DTNs in the Science DMZ, researchers achieve wire-speed transfers to collaborators worldwide without security infrastructure interference.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "DTN",
+        "Data Transfer Node",
+        "Science DMZ",
+        "Globus Connect",
+        "GridFTP",
+        "firewall bypass",
+        "NVMe"
+      ]
+    },
+    {
+      "id": "Q071",
+      "category": "Networking Fundamentals",
+      "difficulty": "medium",
+      "question": "What is RDMA (Remote Direct Memory Access) and how does it differ from conventional socket-based data transfer in terms of CPU overhead and latency?",
+      "reference_answer": "RDMA (Remote Direct Memory Access) is a technology that allows one computer to directly read from or write to the memory of another computer without involving the remote CPU or OS kernel. Data flows directly between application memory buffers and the network adapter, bypassing the OS network stack. Comparison with socket-based transfers: (1) CPU overhead: Socket-based TCP requires the CPU to perform system calls, memory copies (kernel\u2194user space), and protocol processing for every send/receive. RDMA performs zero-copy transfers\u2014data moves directly from application buffer to NIC, eliminating kernel involvement and memory copies. This reduces CPU utilization from potentially 100% to near zero for high-speed transfers. (2) Latency: Socket TCP latency: microseconds to milliseconds per operation (kernel context switches, scheduling). RDMA latency: 1-2 microseconds end-to-end for small messages (comparable to local memory access). (3) Throughput: Both can achieve line-rate (100 Gbps+), but RDMA does so without CPU saturation. In HPC environments, RDMA over InfiniBand or RoCE (RDMA over Converged Ethernet) is used for MPI communication and storage access (NVMe-oF). File transfer tools like Falcon operate over conventional sockets (TCP), while RDMA is used at the HPC interconnect level.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "RDMA",
+        "zero-copy",
+        "InfiniBand",
+        "RoCE",
+        "CPU overhead",
+        "latency",
+        "socket comparison",
+        "NVMe-oF"
+      ]
+    },
+    {
+      "id": "Q072",
+      "category": "Networking Fundamentals",
+      "difficulty": "medium",
+      "question": "What is congestion collapse in computer networks and what mechanisms were developed to prevent it?",
+      "reference_answer": "Congestion collapse occurs when a network experiences a dramatic drop in useful throughput despite high link utilization, because most transmitted data consists of retransmitted packets that also get lost, creating a vicious cycle. The classic 1988 Internet congestion collapse: retransmissions flooded the network, causing more losses, causing more retransmissions\u2014useful throughput dropped to near zero on congested links. Van Jacobson's TCP congestion control mechanisms (1988) addressed this: (1) Slow start: begins with cwnd=1 MSS, doubles each RTT until loss\u2014prevents initial flooding. (2) Congestion avoidance: linear growth (additive increase) after threshold\u2014gradual probing. (3) Fast retransmit: retransmit after 3 duplicate ACKs without waiting for timeout. (4) Fast recovery: halve cwnd instead of resetting to 1 (multiplicative decrease). Modern additions: RED (Random Early Detection) at routers drops packets probabilistically before buffers fill, providing early congestion signals. ECN (Explicit Congestion Notification) marks packets instead of dropping them, allowing TCP to reduce rate before loss occurs. In HPN research, preventing congestion collapse while maximizing utilization is the fundamental tension that utility-function-based approaches (Falcon, LDM) address.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "congestion collapse",
+        "Van Jacobson",
+        "slow start",
+        "fast retransmit",
+        "RED",
+        "ECN",
+        "additive increase multiplicative decrease"
+      ]
+    },
+    {
+      "id": "Q073",
+      "category": "Networking Fundamentals",
+      "difficulty": "easy",
+      "question": "What is Globus and how does it differ from raw GridFTP for scientific data transfers?",
+      "reference_answer": "Globus is a research data management platform built on top of GridFTP that adds a cloud-based management layer for reliable, high-performance file transfers. GridFTP is a high-performance, secure protocol (extension of FTP) that supports parallel streams, striped transfers, and TCP buffer tuning for large-scale scientific transfers. Globus adds: (1) Reliability: automatically restarts failed transfers, checksums files, and provides transfer monitoring\u2014researchers don't need to babysit transfers. (2) Authentication: uses federated identity (OAuth, InCommon) so transfers work across institutional boundaries without shared passwords. (3) Management interface: web portal and REST API for managing transfers between registered endpoints worldwide. (4) Endpoint management: institutions register Globus endpoints (running GridFTP servers) once; researchers can then transfer to any endpoint. Limitations addressed by research tools: Globus/GridFTP use conservative fixed transfer settings (parallel streams, concurrency) that don't adapt to real-time network conditions, motivating adaptive tools like Falcon and LDM that can be integrated into GridFTP-compatible infrastructure.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "Globus",
+        "GridFTP",
+        "parallel streams",
+        "endpoint",
+        "OAuth",
+        "reliability",
+        "adaptive optimization"
+      ]
+    },
+    {
+      "id": "Q074",
+      "category": "Networking Fundamentals",
+      "difficulty": "hard",
+      "question": "Explain the AIMD (Additive Increase Multiplicative Decrease) algorithm in TCP and analyze why it leads to sawtooth throughput patterns in long-fat networks.",
+      "reference_answer": "AIMD (Additive Increase Multiplicative Decrease) is the core congestion avoidance mechanism in TCP variants. Algorithm: In congestion avoidance phase, for each RTT without loss: cwnd += 1 MSS (additive increase). Upon loss detection: cwnd = cwnd/2 (multiplicative decrease). This asymmetry ensures stability: increases are gradual, decreases are aggressive enough to relieve congestion quickly. The sawtooth pattern: cwnd grows linearly until loss, then drops by half, then grows again\u2014creating a characteristic sawtooth in throughput traces. Analysis on long-fat networks: For a 100 Gbps, 85 ms path, BDP = 100 Gbps \u00d7 0.085 s \u2248 1.06 GB = ~700,000 packets. To refill after a 50% decrease: cwnd must grow from 350,000 to 700,000 packets (350,000 additional packets). At 1 packet/RTT increase, this takes 350,000 RTTs \u00d7 85 ms = ~8.2 hours just to recover from one loss event. This is the fundamental inefficiency of AIMD on LFNs. Workarounds: High-speed TCP variants (CUBIC, HSTCP) use faster recovery; multiple parallel streams start independent slow-starts that collectively grow faster; window scale negotiation allows larger windows so the percentage impact of each loss event is smaller.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "AIMD",
+        "additive increase",
+        "multiplicative decrease",
+        "sawtooth",
+        "long-fat network",
+        "recovery time",
+        "BDP"
+      ]
+    },
+    {
+      "id": "Q075",
+      "category": "Networking Fundamentals",
+      "difficulty": "medium",
+      "question": "What is bufferbloat and how does it affect latency-sensitive and throughput-sensitive applications simultaneously?",
+      "reference_answer": "Bufferbloat is a phenomenon where excessively large buffers in network devices cause high latency and jitter when a link is congested, while providing little additional throughput benefit. Mechanism: when a bottleneck link is saturated, TCP's congestion window filling causes the router's transmit buffer to fill completely. With large buffers (MBs or GBs), packets queue for hundreds of milliseconds before being dropped or transmitted. Effects: (1) Latency-sensitive applications (VoIP, gaming, interactive SSH): experience dramatically increased and variable latency (100s of ms instead of normal propagation delay). (2) Throughput-sensitive applications (bulk transfers): maintain high throughput but incur high RTT from buffering, which slows TCP's ACK-paced sending rate and can cause congestion window miscalculation. (3) TCP congestion control: large buffers delay loss signals, causing TCP to continue sending at a rate above capacity before receiving feedback\u2014overshooting and creating standing queues. Solutions: AQM (Active Queue Management) algorithms like CoDel and FQ-CoDel maintain low queue occupancy by dropping/marking packets before buffers fill. BBR addresses bufferbloat by explicitly tracking minimum RTT and not filling buffers unnecessarily. In HPN research, bufferbloat can cause misleading RTT measurements that affect BDP calculations and concurrency optimization.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "bufferbloat",
+        "AQM",
+        "CoDel",
+        "standing queue",
+        "latency",
+        "RTT inflation",
+        "TCP buffer"
+      ]
+    },
+    {
+      "id": "Q076",
+      "category": "Networking Fundamentals",
+      "difficulty": "easy",
+      "question": "What is multipath TCP (MPTCP) and what advantages could it offer for HPC data transfers?",
+      "reference_answer": "Multipath TCP (MPTCP) is an extension to the standard TCP protocol (IETF RFC 8684) that allows a single TCP connection to use multiple network paths simultaneously between two hosts. It establishes multiple subflows (each a standard TCP flow) across different network interfaces or paths, transparently aggregating their bandwidth at the transport layer. Advantages for HPC data transfers: (1) Bandwidth aggregation: a host with multiple NICs (common on DTNs) can use all interfaces simultaneously through a single MPTCP connection, multiplying effective bandwidth. (2) Path diversity: if one path becomes congested or fails, MPTCP shifts traffic to less congested paths automatically, improving resilience. (3) Transparent to applications: existing transfer tools work unchanged since MPTCP looks like standard TCP to the application layer. (4) Better utilization: can use multiple ISP connections or parallel research network paths that would otherwise be idle. Limitations in practice: requires MPTCP support on both endpoints and intermediate routers/firewalls; load balancing across paths must be carefully managed to avoid reordering; in HPC environments, GridFTP/parallel streams already achieve similar bandwidth aggregation at the application layer.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "MPTCP",
+        "multipath TCP",
+        "subflow",
+        "bandwidth aggregation",
+        "path diversity",
+        "multiple NICs"
+      ]
+    },
+    {
+      "id": "Q077",
+      "category": "Networking Fundamentals",
+      "difficulty": "medium",
+      "question": "What is network jitter and how does it complicate adaptive transfer optimization compared to stable high-latency paths?",
+      "reference_answer": "Network jitter is the variation in packet delay (RTT variance) over time. Unlike stable high latency (constant RTT), jitter introduces unpredictability in when ACKs arrive and when the congestion window can be advanced. Effects on adaptive optimization: (1) Throughput measurement noise: short measurement intervals over jittery paths produce high variance in throughput estimates. A 3-5 second sample transfer on a jittery path may show throughput varying \u00b130%, making gradient estimation unreliable (Falcon's gradient calculation n+1, n-1 becomes noisy). (2) RTT measurement: BDP estimates based on RTT measurements are inaccurate when RTT varies (e.g., 50-200 ms range), causing either over-provisioning (too many streams \u2192 congestion) or under-provisioning. (3) Convergence instability: online gradient descent may oscillate rather than converge if utility function evaluations are noisy. (4) Timeout sensitivity: jitter can cause spurious TCP timeouts if RTT estimate variance is large, triggering unnecessary congestion window reductions. Mitigation strategies: use longer sample intervals to average out jitter, apply exponential moving averages to smooth measurements (as in TCP's RTO estimation via Jacobson/Karels algorithm), or use robust optimization methods that account for measurement noise (e.g., Bayesian Optimization's uncertainty quantification).",
+      "source_paper": "General Networking",
+      "keywords": [
+        "jitter",
+        "RTT variance",
+        "measurement noise",
+        "gradient estimation",
+        "convergence instability",
+        "EMA",
+        "RTO"
+      ]
+    },
+    {
+      "id": "Q078",
+      "category": "Networking Fundamentals",
+      "difficulty": "medium",
+      "question": "What is ECN (Explicit Congestion Notification) and how does it improve upon tail-drop for congestion signaling in high-speed networks?",
+      "reference_answer": "ECN (Explicit Congestion Notification, RFC 3168) is a mechanism that allows network routers to signal congestion to TCP endpoints by marking packets instead of dropping them. Mechanism: ECN-capable routers set the CE (Congestion Experienced) bit in the IP header when a queue is building. The receiver reflects this via the TCP ECE flag in the ACK. The sender reduces its congestion window (same as on loss) but without the packet being dropped and retransmitted. Advantages over tail-drop: (1) No wasted bandwidth from dropped and retransmitted packets\u2014the congestion signal arrives without data loss. (2) Earlier signaling: ECN marks before buffers overflow, enabling earlier rate reduction and preventing the buffer from filling completely. (3) Lower latency: since buffers don't fill as deep (signaling happens earlier), queuing latency is reduced. (4) Better throughput: eliminating retransmissions frees bandwidth for new data. In HPN contexts: ECN combined with DCQCN (Data Center Quantized Congestion Notification) is central to RDMA over Converged Ethernet (RoCE) deployments, where packet loss is catastrophic for RDMA performance. For TCP-based file transfers, ECN reduces packet loss events and improves throughput stability on lossless-capable research network segments.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "ECN",
+        "Explicit Congestion Notification",
+        "tail-drop",
+        "CE bit",
+        "ECE flag",
+        "DCQCN",
+        "RoCE",
+        "lossless"
+      ]
+    },
+    {
+      "id": "Q079",
+      "category": "Networking Fundamentals",
+      "difficulty": "hard",
+      "question": "Compare the Internet2 and ESnet research networks in terms of their architecture, capacity, and primary user communities. How do they support HPC scientific data transfers differently?",
+      "reference_answer": "Internet2: A nonprofit consortium owned by its member universities. Architecture: nationwide backbone using 100 Gbps links (upgrading to 400 Gbps), connecting 900+ research and education institutions. Key service: AL2S (Advanced Layer 2 Service) provides dynamic circuit-switched paths for dedicated bandwidth reservation (point-to-point or multipoint Ethernet). Also offers routed IP service (IP/optical). Primary users: universities, research institutions, government labs. Data services: Globus endpoint connectivity, cloud connector to AWS/Azure/GCP. ESnet (Energy Sciences Network): Operated by DOE (Department of Energy), designed specifically for DOE Office of Science research. Architecture: 100 Gbps backbone with OSCARS (On-Demand Secure Circuits and Advance Reservation System) for bandwidth reservation. Connects all major DOE national laboratories (NERSC, Argonne, Oak Ridge, SLAC, CERN via transatlantic links). Primary users: DOE labs, LHC experiments, ALMA, LSST. Specialization: designed for very high-volume scientific data from DOE experiments\u2014petabyte-scale annual transfers. Differences for HPC: ESnet optimized for massive unidirectional bulk transfers (experiment \u2192 analysis center), has dedicated Science DMZ infrastructure guidance, and provides OSCARS reservations for predictable bandwidth. Internet2 serves broader academic community with more varied traffic patterns. Both interconnect via peering points and support LHCONE (LHC Open Network Environment) for physics data.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "Internet2",
+        "ESnet",
+        "AL2S",
+        "OSCARS",
+        "100 Gbps",
+        "DOE",
+        "bandwidth reservation",
+        "LHCONE"
+      ]
+    },
+    {
+      "id": "Q080",
+      "category": "Networking Fundamentals",
+      "difficulty": "hard",
+      "question": "What is the role of TCP socket buffer sizes in determining maximum achievable throughput, and how should they be set for a 100 Gbps, 85 ms RTT path?",
+      "reference_answer": "TCP socket buffers (send buffer on sender, receive buffer on receiver) must be at least as large as the BDP to allow the sender to keep data in flight while waiting for ACKs. If buffers are smaller than BDP, the sender exhausts its send buffer before ACKs return, causing the sender to stall and leaving the network idle. Calculation for 100 Gbps, 85 ms RTT path: BDP = 100 Gbps \u00d7 0.085 s = 8.5 Gb = 1.0625 GB \u2248 1 GB. Therefore, socket buffers must be \u2265 1 GB. Linux settings: sysctl -w net.core.rmem_max=1073741824 (1 GB receive buffer max), net.ipv4.tcp_rmem='4096 131072 1073741824' (min, default, max), net.core.wmem_max=1073741824, net.ipv4.tcp_wmem='4096 131072 1073741824'. With TCP autotuning (net.ipv4.tcp_moderate_rcvbuf=1), the kernel dynamically adjusts buffers up to the max. Without proper buffer sizing, even 100 Gbps links are limited to: 64 KB (default) / 0.085 s \u2248 6 Mbps. This is why DTNs and HPC nodes require kernel parameter tuning in addition to application-level optimization (concurrency, pipelining) for full throughput.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "socket buffer",
+        "BDP",
+        "sysctl",
+        "1 GB buffer",
+        "autotuning",
+        "send buffer",
+        "receive buffer",
+        "kernel tuning"
+      ]
+    },
+    {
+      "id": "Q081",
+      "category": "Networking Fundamentals",
+      "difficulty": "medium",
+      "question": "What is network flow and how do flow-based measurements (NetFlow, IPFIX) help in understanding HPC network utilization patterns?",
+      "reference_answer": "A network flow is a unidirectional sequence of packets sharing the same 5-tuple: source IP, destination IP, source port, destination port, and protocol. Flows represent logical conversations between hosts. NetFlow (Cisco) and IPFIX (IETF standard, RFC 7011) are flow export protocols where routers sample and export flow records to collectors: start/end time, byte count, packet count, 5-tuple. In HPC network management: (1) Utilization analysis: identify top talkers (which hosts/sites consume most bandwidth), understand traffic matrices between HPC facilities. (2) Anomaly detection: sudden flow volume changes may indicate data exfiltration, DDoS, or misconfigured transfers. (3) Transfer characterization: distinguish short flows (mice) from long flows (elephants) to optimize scheduling\u2014elephant flows dominate bandwidth but mice are numerically dominant. (4) Capacity planning: identify bottleneck links and predict future demand from current flow patterns. (5) SLA verification: confirm that reserved bandwidth (e.g., OSCARS circuits) is being utilized as intended. For HPN research, flow data helps characterize real scientific workloads (file size distributions, inter-site traffic patterns) to inform simulation parameters and benchmark design.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "NetFlow",
+        "IPFIX",
+        "5-tuple",
+        "elephant flow",
+        "mice flow",
+        "traffic matrix",
+        "HPC utilization"
+      ]
+    },
+    {
+      "id": "Q082",
+      "category": "Networking Fundamentals",
+      "difficulty": "hard",
+      "question": "Explain the Superlinear Scaling Problem in parallel file systems (e.g., Lustre, GPFS) under high concurrency, and its implications for transfer optimization.",
+      "reference_answer": "The Superlinear Scaling Problem refers to the non-linear (and sometimes negative) relationship between concurrency (number of parallel I/O processes) and aggregate throughput in parallel file systems like Lustre and IBM Spectrum Scale (GPFS). Ideal behavior: throughput scales linearly with concurrency up to link saturation. Actual behavior: throughput initially scales linearly as concurrency increases, then plateaus, then may decline with further concurrency increases. Causes: (1) Metadata server contention: all I/O operations require metadata (open, close, stat, lock) served by a limited number of MDTs (Metadata Targets). With many concurrent processes, metadata operations become the bottleneck. (2) OST striping contention: when many processes access the same Object Storage Target simultaneously, lock contention and disk seek patterns degrade throughput. (3) Lock manager overhead: POSIX file locking and distributed locking (DLM) overhead grows super-linearly with concurrent writers to the same file. (4) Network contention on the storage network (typically InfiniBand or 25/100 GbE). Implications for transfer optimization: setting concurrency too high (e.g., Falcon at concurrency=30 on a Lustre system) can degrade total throughput compared to moderate concurrency (5-10). Marlin's 'judicious parallelism' directly addresses this: independently tune I/O concurrency to the system-specific optimum (often 3-7) rather than following network-optimal concurrency.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "parallel file system",
+        "Lustre",
+        "GPFS",
+        "metadata server",
+        "OST contention",
+        "superlinear",
+        "I/O bottleneck",
+        "lock contention"
+      ]
+    },
+    {
+      "id": "Q083",
+      "category": "Networking Fundamentals",
+      "difficulty": "medium",
+      "question": "What is the difference between latency-bound and bandwidth-bound transfers, and how should optimization strategies differ between them?",
+      "reference_answer": "Bandwidth-bound transfers: Transfer time is dominated by the time to push data through the link at its capacity. Typically occurs for large files (GBs-TBs) where transfer_time \u2248 data_size / bandwidth. Optimization target: maximize sustained throughput close to available bandwidth. Strategies: increase concurrency/parallelism to fill BDP, use large socket buffers, minimize protocol overhead per byte, use BBR or CUBIC for aggressive window growth. Latency-bound transfers: Transfer time is dominated by per-operation overhead (connection setup, TCP handshake, protocol processing) rather than data transmission time. Occurs for small files (KBs-MBs) where connection_setup_time >> data_transfer_time. Optimization target: minimize per-operation overhead. Strategies: pipelining (persistent connections eliminate per-file handshake), batching many small files into fewer large transfers, UDP/RDMA for ultra-low-latency operations, connection pooling. Mixed workloads (common in scientific transfers): require identifying the distribution of file sizes and applying different strategies. LDM addresses this directly: pipelining for small files (latency-bound), chunk parallelism for large files (bandwidth-bound at tail), concurrency for medium files (primarily bandwidth-bound). This is why concurrency-only optimizers fail on heterogeneous datasets.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "latency-bound",
+        "bandwidth-bound",
+        "small files",
+        "large files",
+        "pipelining",
+        "connection setup",
+        "mixed workloads"
+      ]
+    },
+    {
+      "id": "Q084",
+      "category": "Networking Fundamentals",
+      "difficulty": "easy",
+      "question": "What is GridFTP and what features make it well-suited for scientific data transfers compared to standard FTP?",
+      "reference_answer": "GridFTP is a high-performance, secure, reliable file transfer protocol developed by the Globus team (Argonne National Laboratory) as an extension to standard FTP. It is standardized by the Open Grid Forum (GFD.020) and widely deployed in scientific computing. Features making it suitable for scientific transfers: (1) Parallel data channels: supports multiple simultaneous data channels (streams) per transfer, enabling high-speed bulk data movement by aggregating multiple TCP connections. (2) Striped transfers: can stripe data across multiple servers simultaneously (parallel GridFTP servers). (3) Security: GSI (Grid Security Infrastructure) authentication using X.509 certificates, mutual authentication between parties. (4) Reliability: built-in restart/checkpoint capabilities, so interrupted transfers can resume rather than restart. (5) Third-party transfers: a client can initiate a transfer directly between two remote servers without the data passing through the client. (6) Integration with Grid middleware: works with Globus, Condor-G, gLite. Limitations: fixed/static parallelism parameters that don't adapt to real-time conditions\u2014motivating research tools like Falcon (which can be integrated with GridFTP's parameter tuning APIs) and LDM.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "GridFTP",
+        "parallel data channels",
+        "GSI authentication",
+        "third-party transfer",
+        "striped transfer",
+        "restart/checkpoint"
+      ]
+    },
+    {
+      "id": "Q085",
+      "category": "Networking Fundamentals",
+      "difficulty": "hard",
+      "question": "What is the Fair Queuing problem in shared network environments, and how do different queuing disciplines (FIFO, WFQ, DRR) handle it differently?",
+      "reference_answer": "The Fair Queuing problem: when multiple flows share a bottleneck link, naive FIFO queuing serves packets in arrival order, causing greedy flows (high-concurrency transfers) to monopolize bandwidth by flooding the queue. Fair queuing ensures each flow receives its equitable share. Queuing disciplines: (1) FIFO (First-In-First-Out): serves packets in arrival order. Trivially unfair\u2014large-concurrency flows send more packets and get proportionally more bandwidth. Simple to implement. (2) WFQ (Weighted Fair Queuing): maintains per-flow virtual queues, serving packets in order of their virtual finish time. Achieves max-min fairness (each flow gets min(its demand, equal share)). Computational complexity O(log N) per packet. Can assign weights to flows for differentiated service. (3) DRR (Deficit Round Robin): approximates WFQ with O(1) complexity per packet. Maintains per-flow deficit counters to handle variable packet sizes. Used in practical routers (Linux tc qdisc). (4) CoDel/FQ-CoDel: modern AQM that combines fair queuing with active queue management, targeting minimum queue depth. In HPN transfer optimization: application-level fair queuing (Falcon's game-theoretic utility function) complements but does not replace router-level queuing. Both layers contribute to fairness: routers ensure per-packet fairness while Falcon ensures per-transfer fairness at the session level.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "fair queuing",
+        "FIFO",
+        "WFQ",
+        "DRR",
+        "max-min fairness",
+        "CoDel",
+        "per-flow queuing",
+        "qdisc"
+      ]
+    },
+    {
+      "id": "Q086",
+      "category": "Networking Fundamentals",
+      "difficulty": "medium",
+      "question": "What is InfiniBand and how does it compare to Ethernet for HPC cluster interconnects?",
+      "reference_answer": "InfiniBand (IB) is a high-speed, low-latency networking technology widely used for HPC cluster interconnects. It was developed specifically for the demanding requirements of HPC (MPI communication, storage access). Key characteristics: (1) Bandwidth: HDR InfiniBand: 200 Gbps per port; NDR InfiniBand: 400 Gbps per port. (2) Latency: sub-microsecond (0.7-1.0 \u03bcs MPI latency), far lower than Ethernet. (3) Protocol: RDMA-native\u2014supports RDMA operations (read, write, send) directly. (4) Reliability: lossless fabric with credit-based flow control (no packet drops under normal conditions). (5) Offloading: protocol processing in NIC ASIC, near-zero CPU overhead. Comparison with Ethernet: 100/400 Gbps Ethernet is catching up in raw bandwidth, and RoCE (RDMA over Converged Ethernet) brings RDMA to Ethernet. However, IB has lower latency, native RDMA support, and lossless fabric by design. Ethernet requires lossless configuration (PFC + ECN + DCQCN) to support RoCE reliably, adding complexity. In HPN file transfer research (Falcon, LDM, Marlin): experiments typically run over WAN TCP connections between HPC sites, not over InfiniBand within a cluster. InfiniBand is relevant for intra-cluster data movement (parallel file system I/O, MPI), while WAN file transfer tools address the inter-site transfer problem.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "InfiniBand",
+        "HDR",
+        "NDR",
+        "RDMA",
+        "lossless",
+        "sub-microsecond",
+        "RoCE",
+        "HPC interconnect"
+      ]
+    },
+    {
+      "id": "Q087",
+      "category": "Networking Fundamentals",
+      "difficulty": "medium",
+      "question": "What is network slicing in the context of 5G and SDN, and could it benefit HPC scientific data transfers?",
+      "reference_answer": "Network slicing is a technology (central to 5G and SDN/NFV architectures) that creates multiple isolated, independent virtual networks (slices) on a shared physical network infrastructure. Each slice has dedicated or guaranteed resources (bandwidth, latency, reliability) and is optimized for a specific use case. How it works: SDN controller programs network devices (OpenFlow switches) to isolate traffic; NFV virtualizes network functions (firewalls, load balancers) per slice. Examples: a slice for IoT (low bandwidth, millions of devices), a slice for video (high bandwidth, low latency), a slice for critical infrastructure (high reliability). Potential benefits for HPC scientific data transfers: (1) Dedicated bandwidth: a 'science data' slice guarantees HPC transfers a reserved share of network capacity without competing with general internet traffic\u2014similar to what ESnet's OSCARS circuits provide today. (2) QoS enforcement: guaranteed latency bounds for time-sensitive data (real-time detector readouts). (3) Dynamic provisioning: slices can be dynamically allocated when large transfers are scheduled (workflow-driven). (4) Multi-domain: 5G network slicing could extend into mobile/edge HPC scenarios. Current analogs in research networks: ESnet's OSCARS and Internet2's AL2S already provide circuit-switching that approximates network slicing for large scientific flows.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "network slicing",
+        "5G",
+        "SDN",
+        "OpenFlow",
+        "NFV",
+        "OSCARS",
+        "guaranteed bandwidth",
+        "dynamic provisioning"
+      ]
+    },
+    {
+      "id": "Q088",
+      "category": "Networking Fundamentals",
+      "difficulty": "easy",
+      "question": "What is a parallel file system and why is it essential for HPC storage at petascale?",
+      "reference_answer": "A parallel file system is a distributed file system designed to provide high-bandwidth I/O by distributing data across many storage servers (Object Storage Targets in Lustre) and serving requests in parallel from multiple clients simultaneously. Unlike network file systems (NFS) with a single server, parallel file systems scale bandwidth linearly with the number of storage nodes. Key parallel file systems: Lustre (most widely deployed in TOP500 HPC systems), IBM Spectrum Scale (GPFS), PVFS/OrangeFS, BeeGFS. Core features: (1) Striping: files are striped across multiple OSTs, distributing I/O load. (2) Metadata separation: dedicated metadata servers (MDS) handle namespace operations (open, close, stat), separate from data servers. (3) Concurrent access: thousands of compute nodes simultaneously read/write to the same file system. (4) High aggregate bandwidth: major HPC systems achieve 1-3 TB/s aggregate I/O bandwidth (e.g., Frontier's Lustre: 5 PB storage, >5 TB/s). Relevance to HPN transfer: when transferring scientific datasets between HPC sites, both the source (read from parallel file system) and destination (write to parallel file system) I/O rates must match or exceed network transfer rates. This is why Marlin's independent I/O tuning is critical\u2014Lustre OST contention at high concurrency can make the file system the bottleneck despite having adequate network bandwidth.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "parallel file system",
+        "Lustre",
+        "GPFS",
+        "OST",
+        "MDS",
+        "striping",
+        "petascale",
+        "TB/s"
+      ]
+    },
+    {
+      "id": "Q089",
+      "category": "Networking Fundamentals",
+      "difficulty": "hard",
+      "question": "What is the 'incast' problem in datacenter and HPC networks, and how does it relate to TCP throughput collapse in high-concurrency transfer scenarios?",
+      "reference_answer": "The incast problem occurs when many servers simultaneously send data to a single receiver in a synchronized fashion (fan-in pattern), overwhelming the receiver's network buffer and causing TCP throughput collapse. Common scenario: a client requests a chunk of data from N storage nodes simultaneously; all N nodes respond at the same time, flooding the client-facing switch port's buffer. Mechanism: (1) Switch buffer overflow: all N flows arrive simultaneously at the bottleneck port; small switch buffers (4-32 KB in shallow-buffered datacenter switches) overflow. (2) Synchronized packet drops trigger synchronized TCP retransmissions. (3) TCP timeout synchronization: if multiple flows experience timeout-based retransmission simultaneously, they all back off for the same retransmission timeout (RTO) period, leaving the network idle (throughput collapses to near zero). (4) Short RTT exacerbates the problem: in datacenter networks (RTT ~100 \u03bcs), the minimum RTO (200 ms by default in Linux) means the link is idle for 2000\u00d7 the RTT. Relation to HPN transfer: in high-concurrency file transfers, many parallel streams completing simultaneously can cause incast-like bursts at the receiver, causing throughput drops. LDM's utility function (packet loss penalty) and Marlin's independent write concurrency tuning help prevent over-provisioning the receiver-side simultaneously arriving streams. Solutions: smaller RTOs, receiver-driven pacing, DCQCN, and carefully bounded concurrency.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "incast",
+        "TCP throughput collapse",
+        "synchronized retransmission",
+        "RTO",
+        "shallow buffer",
+        "datacenter",
+        "fan-in"
+      ]
+    },
+    {
+      "id": "Q090",
+      "category": "Networking Fundamentals",
+      "difficulty": "medium",
+      "question": "What is checkpointing in the context of large-scale file transfers, and how does it improve reliability for scientific data movement?",
+      "reference_answer": "Checkpointing in file transfers is the practice of periodically recording transfer progress (which bytes/files have been successfully received) so that a failed or interrupted transfer can be resumed from the last checkpoint rather than restarted from the beginning. Why it matters for scientific transfers: large scientific datasets (TB-scale) can take hours or days to transfer. Without checkpointing, a network failure, node crash, or timeout near the end requires retransferring the entire dataset\u2014wasting enormous time and bandwidth. Checkpointing mechanisms: (1) File-level checkpointing: track which complete files have been transferred (e.g., maintain a manifest of transferred files). Upon restart, skip already-transferred files. Globus implements this. (2) Byte-range checkpointing: record the last successfully received byte range within each file (more complex but handles partial file transfers). (3) MD5/SHA256 checksums: verify file integrity post-transfer and re-transfer only corrupted files. (4) Transfer manifests: lists of files with expected sizes and checksums, enabling verification and selective re-transfer. In the context of HPN optimization: adaptive tools like Falcon and LDM focus on maximizing throughput during active transfer, while checkpointing addresses reliability across the full transfer lifecycle including failures. Both layers are necessary for production scientific workflows.",
+      "source_paper": "General Networking",
+      "keywords": [
+        "checkpointing",
+        "resumable transfer",
+        "file manifest",
+        "MD5 checksum",
+        "Globus",
+        "reliability",
+        "byte-range"
+      ]
+    }
+  ]
+}
