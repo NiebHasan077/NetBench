@@ -1,0 +1,2343 @@
+{
+  "code_artifacts": [
+    {
+      "bytes": 8161,
+      "mtime_utc": "2026-05-09T20:48:24.036164+00:00",
+      "path": "training/prepare_data.py",
+      "sha256": "b56fec7019239a3acf12aad3bf59b19922df1a9bbe931be9a4de2554fd72e49e"
+    },
+    {
+      "bytes": 11709,
+      "mtime_utc": "2026-05-09T20:48:29.388159+00:00",
+      "path": "training/prepare_lora_data.py",
+      "sha256": "f27b2b82d4c50b02e94fb724c20c802cbbb95d70dfdba5532d45d129db2d9180"
+    },
+    {
+      "bytes": 23667,
+      "mtime_utc": "2026-05-09T20:48:39.616149+00:00",
+      "path": "training/prepare_instruction_data.py",
+      "sha256": "3596d69af041ad32c88c6f11ff2a4f72c0862fb62dc5ec58dcc8c5e2f2bc354e"
+    },
+    {
+      "bytes": 17146,
+      "mtime_utc": "2026-05-09T20:38:59.460292+00:00",
+      "path": "training/pretrain_transformers.py",
+      "sha256": "fb3558f09ab39dc36bb6753bd6b6c109e7e41c0d96c00a1c99d7fa6619ef4a59"
+    },
+    {
+      "bytes": 14940,
+      "mtime_utc": "2026-05-14T04:13:46.965498+00:00",
+      "path": "training/instruction_finetune.py",
+      "sha256": "1659574e0b9b4028d0d91c3fa8b1e7820b8c25943a8a7ee1d7263250b036344d"
+    },
+    {
+      "bytes": 30997,
+      "mtime_utc": "2026-05-05T01:35:28.929643+00:00",
+      "path": "training/lora_finetune.py",
+      "sha256": "9b9e5297bbd5c71a0e2d4df1a510437bbdcaba591edb8431bab68696a80e80b7"
+    },
+    {
+      "bytes": 7121,
+      "mtime_utc": "2026-05-05T01:35:28.929643+00:00",
+      "path": "training/merge_lora_adapter.py",
+      "sha256": "19d719b58db4867295cca82e5c396c53c6cd98edbd17a4622e6c1f5483619939"
+    },
+    {
+      "bytes": 55676,
+      "mtime_utc": "2026-05-14T04:15:18.909424+00:00",
+      "path": "evaluation/hpn_qa_benchmark.py",
+      "sha256": "8868e2db9bfee3e83cd7aa008749fc19a5d49f9e8ad9a55474f999ae1b90b8de"
+    },
+    {
+      "bytes": 42883,
+      "mtime_utc": "2026-05-13T19:38:37.932826+00:00",
+      "path": "evaluation/judge_responses.py",
+      "sha256": "20f3c5c0befe35812fc7ad43a2ba487e527dad5bb612213eb5ee911ba679d794"
+    },
+    {
+      "bytes": 37565,
+      "mtime_utc": "2026-05-05T01:35:28.925643+00:00",
+      "path": "evaluation/benchmark_report.py",
+      "sha256": "956cc1338b7ed5a17f4950f8eadc19797aff112c2bc2f46f2d56d73ac2bf7c2c"
+    },
+    {
+      "bytes": 24280,
+      "mtime_utc": "2026-05-05T01:35:28.925643+00:00",
+      "path": "evaluation/lm_adaptation_report.py",
+      "sha256": "97db74ca6df03765ccc3e9aaaaee7b991f49a9b367707cb94f25271e6bd1049a"
+    },
+    {
+      "bytes": 24077,
+      "mtime_utc": "2026-05-11T18:52:56.700537+00:00",
+      "path": "profiling/profile_inference.py",
+      "sha256": "8172aa4e3c0bc2c7cfdd038ae3aaf825142c75ce06f7c46bb3761a7f079ea67e"
+    },
+    {
+      "bytes": 9668,
+      "mtime_utc": "2026-05-11T18:54:01.096493+00:00",
+      "path": "profiling/profile_rag_inference.py",
+      "sha256": "7b260d1662f53bb49d5231b6530c1e172b764b1ea861da873b927c36938a8e69"
+    },
+    {
+      "bytes": 4403,
+      "mtime_utc": "2026-05-11T18:54:28.416475+00:00",
+      "path": "profiling/summarize_inference_profiles.py",
+      "sha256": "622adb3f804f9500153b8dde78986f896502b1a04ccf4c4404f1eb2037b62ec7"
+    },
+    {
+      "bytes": 6247,
+      "mtime_utc": "2026-05-05T01:35:28.929643+00:00",
+      "path": "utils/model_utils.py",
+      "sha256": "7a703f3d414c15f0c85610b06d57db50ea3d9d09251a40cba103679f72b9d27a"
+    },
+    {
+      "bytes": 992,
+      "mtime_utc": "2026-05-10T21:16:33.697650+00:00",
+      "path": "requirements.txt",
+      "sha256": "aefae3fdceea867ddec407d0c32819d5002c05dad6e00038a0c9e5becc366180"
+    },
+    {
+      "bytes": 7073,
+      "mtime_utc": "2026-05-05T01:41:36.833659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/config.yaml",
+      "sha256": "5486af0f5ed6199a4450626aee5822eb5e13ebee0ca36fb2a9d41de77d55c8dd"
+    },
+    {
+      "bytes": 14249,
+      "mtime_utc": "2026-05-09T20:48:34.624154+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/index_corpus.py",
+      "sha256": "a0c3794f493d37513692908e791f28696816120d3c278d7f7068889f0af6b820"
+    },
+    {
+      "bytes": 9211,
+      "mtime_utc": "2026-05-05T01:41:36.837659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/query.py",
+      "sha256": "6ea4da2265a4a3031aff8250936789eabe43952b12b315e00e0d8e60b648821f"
+    },
+    {
+      "bytes": 41507,
+      "mtime_utc": "2026-05-18T22:50:43.165975+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/evaluation/evaluate_rag.py",
+      "sha256": "9e7e789a373910498c5ae9a495bc20e6bbf671e954dde981550ac12cef1d06c4"
+    },
+    {
+      "bytes": 42941,
+      "mtime_utc": "2026-05-05T01:41:36.837659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/evaluation/judge_responses.py",
+      "sha256": "69545a88d8278a896f843d24fa7052eba036aeb2de10581c8eb1f9ca7283c99c"
+    },
+    {
+      "bytes": 35821,
+      "mtime_utc": "2026-05-05T01:41:36.837659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/evaluation/benchmark_report.py",
+      "sha256": "5f83ab78f286f7695d74e37a6f6c979bbc714f9ec7902b61bf87a6f07e00ecb5"
+    },
+    {
+      "bytes": 11465,
+      "mtime_utc": "2026-05-05T01:41:36.837659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/src/retriever.py",
+      "sha256": "49e132cbcbf52f7325e1b444e887c3fd01e6f484fa13692e71dc49c8a9937714"
+    },
+    {
+      "bytes": 23608,
+      "mtime_utc": "2026-05-05T01:41:36.837659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/src/generator.py",
+      "sha256": "1c29950708716b49216455d7bbaab28e38e4fbe4f04e1e6c7ecd4f491016655f"
+    },
+    {
+      "bytes": 14286,
+      "mtime_utc": "2026-05-05T01:41:36.837659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/src/store.py",
+      "sha256": "12d918ab92d4bdf15506871e2a9e424190cbd76e84a15bb1c7c7b76fb7e0249f"
+    },
+    {
+      "bytes": 18641,
+      "mtime_utc": "2026-05-05T01:41:36.837659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/src/chunker.py",
+      "sha256": "824b92ac239ac458c24620f8fd31d03faf03fa55396f5b8f53f29c49a983f086"
+    },
+    {
+      "bytes": 4239,
+      "mtime_utc": "2026-05-05T01:41:36.837659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/src/embedder.py",
+      "sha256": "13cd501da8f1ab5a021c3177454423fa577a56fbe4e41efeeaf4ab362bc6aa9f"
+    },
+    {
+      "bytes": 30043,
+      "mtime_utc": "2026-05-05T01:41:36.837659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/src/parser.py",
+      "sha256": "acb0504a39755762f8221ac95d87b3f7fbce28cacec7965091e3c987baf87148"
+    },
+    {
+      "bytes": 3210,
+      "mtime_utc": "2026-05-05T01:41:36.837659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/requirements.txt",
+      "sha256": "770cfd6f4096798de4e61ebda8780425117b20ecfce970ad1ec3493529c15bb0"
+    }
+  ],
+  "data_files": [
+    {
+      "bytes": 133709863,
+      "json_records": 2371,
+      "mtime_utc": "2026-05-10T20:19:26.361373+00:00",
+      "path": "data/raw/research_corpus_v3.json",
+      "sha256": "68c1148da5ec5688efd40c8f8c269cee51ee0617c6df28d33c43fcc1c5bb1048"
+    },
+    {
+      "bytes": 277528,
+      "jsonl_lines": 242,
+      "mtime_utc": "2026-05-05T01:35:28.921643+00:00",
+      "path": "data/prompts/hpn_benchmark_v5.0.jsonl",
+      "sha256": "598edbece4c03ab135ae4787e5917b44b0ed192a43c7473952c770a31e80c772"
+    },
+    {
+      "bytes": 18977960,
+      "jsonl_lines": 3320,
+      "mtime_utc": "2026-05-10T20:19:20.221735+00:00",
+      "path": "data/Instruct-FTD/v3_run_plus_json/train.jsonl",
+      "sha256": "a7d01645b3f35c78a74da8f944ecbbf371bf7d805bb8e0e57d384295feafa2e6"
+    },
+    {
+      "bytes": 988260,
+      "jsonl_lines": 174,
+      "mtime_utc": "2026-05-10T20:19:20.365728+00:00",
+      "path": "data/Instruct-FTD/v3_run_plus_json/validation.jsonl",
+      "sha256": "5abd7b48d08a59e1cdf98cb075ed01d9c27f7c6006bec72d39d9e74e535b08bf"
+    },
+    {
+      "bytes": 1956,
+      "json_keys": [
+        "available_json_anchor_count",
+        "available_json_anchor_count_after_existing_dedup",
+        "created_at_utc",
+        "input_total_count",
+        "input_train_count",
+        "input_validation_count",
+        "mode",
+        "output_total_count",
+        "output_train_count",
+        "output_validation_count",
+        "requested_json_count",
+        "run_id",
+        "selected_json_count",
+        "train_category_counts",
+        "train_json_count",
+        "train_task_type_counts",
+        "validation_category_counts",
+        "validation_json_count",
+        "validation_task_type_counts"
+      ],
+      "mtime_utc": "2026-05-10T20:19:20.153739+00:00",
+      "path": "data/Instruct-FTD/v3_run_plus_json/json_append_report.json",
+      "sha256": "fa4c8809e897626da05a118f9cda9094535d37124f34f75d4c3425766f7b78ef"
+    }
+  ],
+  "effective_preflight_from_latest_log": {
+    "corpus": "/workspace/portables/NetBench-LLM/data/raw/research_corpus_v3.json selected (133709863 bytes \u2014 largest candidate)",
+    "hardware": "2x GPU, 47 GB VRAM per card",
+    "hyperparams": "CPT batch=2x8  SFT batch=2x8  LoRA batch=4x4  rank=64",
+    "model": "Qwen3.5-2B",
+    "source_log": "outputs/by_model/qwen3.5-2b/logs/hpn-qwen3.5-2b-20260511-181856.log"
+  },
+  "environment": {
+    "collected_at_utc": "2026-05-24T18:15:24.854462+00:00",
+    "cwd": "/workspace/NetBench-LLM/NetBench-LLM",
+    "executable": "/workspace/NetBench-LLM/NetBench-LLM/.venv/bin/python",
+    "git_branch": "recovery/site-a/current-working-tree/direct",
+    "git_commit": "54a284a4d04f97b0a59dc05535f824ca9683f0e0",
+    "git_status_short": "",
+    "nvidia_smi_query": null,
+    "platform": "Linux-6.1.0-48-amd64-x86_64-with-glibc2.36",
+    "python": "3.11.2 (main, Apr  8 2026, 01:58:00) [GCC 12.2.0]",
+    "torch": {
+      "cuda": "12.8",
+      "cuda_available": false,
+      "device_count": 0,
+      "version": "2.11.0+cu128"
+    }
+  },
+  "logs": [
+    {
+      "bytes": 15757,
+      "interesting_lines_count": 8,
+      "interesting_lines_sample": [
+        "  HPN LLM Pipeline  \u2014  Model: Qwen3.5-2B",
+        "[18:12:03] Model: Qwen3.5-2B (qwen, shortcut=qwen-2b)",
+        "[18:12:09] Hardware: 2x GPU, 47 GB VRAM per card",
+        "[18:12:09] Hyperparams: CPT batch=2x8  SFT batch=2x8  LoRA batch=4x4  rank=64",
+        "[18:12:09] Corpus: /workspace/portables/NetBench-LLM/data/raw/research_corpus_v3.json selected (133709863 bytes \u2014 largest candidate)",
+        "[18:12:09] OK Preflight passed \u2014 GPUs: 2x47GB  Corpus: research_corpus_v3.json",
+        "[18:12:09] RUN download base",
+        "[18:12:24] RUN download official instruct"
+      ],
+      "mtime_utc": "2026-05-11T23:12:28.332661+00:00",
+      "path": "outputs/by_model/qwen3.5-2b/logs/hpn-qwen3.5-2b-20260511-181203.log",
+      "sha256": "6684fa1382fcf6c57dc08c68fe127118de532822b03a2d2c0dbe6cb0e2b41487"
+    },
+    {
+      "bytes": 1861634,
+      "interesting_lines_count": 1021,
+      "interesting_lines_sample": [
+        "  HPN LLM Pipeline  \u2014  Model: Qwen3.5-2B",
+        "[18:18:56] Model: Qwen3.5-2B (qwen, shortcut=qwen-2b)",
+        "[18:19:02] Hardware: 2x GPU, 47 GB VRAM per card",
+        "[18:19:02] Hyperparams: CPT batch=2x8  SFT batch=2x8  LoRA batch=4x4  rank=64",
+        "[18:19:02] Corpus: /workspace/portables/NetBench-LLM/data/raw/research_corpus_v3.json selected (133709863 bytes \u2014 largest candidate)",
+        "[18:19:03] OK Preflight passed \u2014 GPUs: 2x47GB  Corpus: research_corpus_v3.json",
+        "[18:19:03] WARN  SKIP base model \u2014 already complete: /workspace/portables/NetBench-LLM/models/base/Qwen3.5-2B-Base",
+        "[18:19:03] RUN download official instruct",
+        "[18:19:58] RUN prepare CPT data",
+        "[18:22:57] RUN prepare LoRA CPT data",
+        "[18:25:53] RUN prepare HPN SFT data",
+        "[18:26:25] RUN S4 Full HPN-CPT",
+        "05/11/2026 18:26:31 - WARNING - __main__ - eval_steps clamped to 448 (1x per epoch) to ensure evaluation runs",
+        "05/11/2026 18:26:31 - WARNING - __main__ - save_steps clamped to 448 (1x per epoch)",
+        " 17%|\u2588\u258b        | 448/2694 [2:29:23<12:31:10, 20.07s/it]{'loss': '2.414', 'grad_norm': '5.156', 'learning_rate': '6.691e-07', 'epoch': '0.01114'}",
+        "{'loss': '2.34', 'grad_norm': '3.078', 'learning_rate': '1.413e-06', 'epoch': '0.02228'}",
+        "{'loss': '2.342', 'grad_norm': '3.078', 'learning_rate': '2.156e-06', 'epoch': '0.03342'}",
+        "{'loss': '2.438', 'grad_norm': '3.156', 'learning_rate': '2.9e-06', 'epoch': '0.04456'}",
+        "{'loss': '2.379', 'grad_norm': '3.109', 'learning_rate': '3.643e-06', 'epoch': '0.05569'}",
+        "{'loss': '2.329', 'grad_norm': '3.188', 'learning_rate': '4.387e-06', 'epoch': '0.06683'}",
+        "{'loss': '2.399', 'grad_norm': '2.859', 'learning_rate': '5.13e-06', 'epoch': '0.07797'}",
+        "{'loss': '2.302', 'grad_norm': '2.672', 'learning_rate': '5.874e-06', 'epoch': '0.08911'}",
+        "{'loss': '2.344', 'grad_norm': '2.719', 'learning_rate': '6.617e-06', 'epoch': '0.1003'}",
+        "{'loss': '2.287', 'grad_norm': '2.859', 'learning_rate': '7.361e-06', 'epoch': '0.1114'}",
+        "{'loss': '2.276', 'grad_norm': '2.719', 'learning_rate': '8.104e-06', 'epoch': '0.1225'}",
+        "{'loss': '2.293', 'grad_norm': '2.578', 'learning_rate': '8.848e-06', 'epoch': '0.1337'}",
+        "{'loss': '2.241', 'grad_norm': '2.688', 'learning_rate': '9.591e-06', 'epoch': '0.1448'}",
+        "{'loss': '2.243', 'grad_norm': '2.484', 'learning_rate': '1.033e-05', 'epoch': '0.1559'}",
+        "{'loss': '2.221', 'grad_norm': '2.5', 'learning_rate': '1.108e-05', 'epoch': '0.1671'}",
+        "{'loss': '2.267', 'grad_norm': '2.5', 'learning_rate': '1.182e-05', 'epoch': '0.1782'}",
+        "{'loss': '2.282', 'grad_norm': '2.562', 'learning_rate': '1.257e-05', 'epoch': '0.1894'}",
+        "{'loss': '2.307', 'grad_norm': '2.781', 'learning_rate': '1.331e-05', 'epoch': '0.2005'}",
+        "{'loss': '2.315', 'grad_norm': '2.797', 'learning_rate': '1.405e-05', 'epoch': '0.2116'}",
+        "{'loss': '2.278', 'grad_norm': '2.781', 'learning_rate': '1.48e-05', 'epoch': '0.2228'}",
+        "{'loss': '2.286', 'grad_norm': '2.688', 'learning_rate': '1.554e-05', 'epoch': '0.2339'}",
+        "{'loss': '2.251', 'grad_norm': '2.562', 'learning_rate': '1.628e-05', 'epoch': '0.2451'}",
+        "{'loss': '2.288', 'grad_norm': '2.719', 'learning_rate': '1.703e-05', 'epoch': '0.2562'}",
+        "{'loss': '2.316', 'grad_norm': '2.609', 'learning_rate': '1.777e-05', 'epoch': '0.2673'}",
+        "{'loss': '2.261', 'grad_norm': '2.719', 'learning_rate': '1.851e-05', 'epoch': '0.2785'}",
+        "{'loss': '2.23', 'grad_norm': '2.672', 'learning_rate': '1.926e-05', 'epoch': '0.2896'}",
+        "{'loss': '2.247', 'grad_norm': '2.609', 'learning_rate': '2e-05', 'epoch': '0.3008'}",
+        "{'loss': '2.2', 'grad_norm': '2.625', 'learning_rate': '2e-05', 'epoch': '0.3119'}",
+        "{'loss': '2.244', 'grad_norm': '2.625', 'learning_rate': '2e-05', 'epoch': '0.323'}",
+        "{'loss': '2.24', 'grad_norm': '2.781', 'learning_rate': '1.999e-05', 'epoch': '0.3342'}",
+        "{'loss': '2.225', 'grad_norm': '2.734', 'learning_rate': '1.999e-05', 'epoch': '0.3453'}",
+        "{'loss': '2.23', 'grad_norm': '2.719', 'learning_rate': '1.998e-05', 'epoch': '0.3564'}",
+        "{'loss': '2.209', 'grad_norm': '2.562', 'learning_rate': '1.997e-05', 'epoch': '0.3676'}",
+        "{'loss': '2.287', 'grad_norm': '2.578', 'learning_rate': '1.996e-05', 'epoch': '0.3787'}",
+        "{'loss': '2.257', 'grad_norm': '2.625', 'learning_rate': '1.995e-05', 'epoch': '0.3899'}",
+        "{'loss': '2.198', 'grad_norm': '2.531', 'learning_rate': '1.993e-05', 'epoch': '0.401'}",
+        "{'loss': '2.26', 'grad_norm': '2.531', 'learning_rate': '1.992e-05', 'epoch': '0.4121'}",
+        "{'loss': '2.26', 'grad_norm': '2.391', 'learning_rate': '1.99e-05', 'epoch': '0.4233'}",
+        "{'loss': '2.183', 'grad_norm': '2.531', 'learning_rate': '1.988e-05', 'epoch': '0.4344'}",
+        "{'loss': '2.194', 'grad_norm': '2.484', 'learning_rate': '1.986e-05', 'epoch': '0.4456'}",
+        "{'loss': '2.237', 'grad_norm': '2.656', 'learning_rate': '1.984e-05', 'epoch': '0.4567'}",
+        "{'loss': '2.244', 'grad_norm': '2.656', 'learning_rate': '1.981e-05', 'epoch': '0.4678'}",
+        "{'loss': '2.221', 'grad_norm': '2.797', 'learning_rate': '1.979e-05', 'epoch': '0.479'}",
+        "{'loss': '2.179', 'grad_norm': '2.547', 'learning_rate': '1.976e-05', 'epoch': '0.4901'}",
+        "                                                 \u001b[A{'eval_loss': '2.219', 'eval_runtime': '165.2', 'eval_samples_per_second': '4.511', 'eval_steps_per_second': '2.258', 'epoch': '0.499'}",
+        " 33%|\u2588\u2588\u2588\u258e      | 896/2694 [5:00:04<9:49:30, 19.67s/it]{'loss': '2.233', 'grad_norm': '2.516', 'learning_rate': '1.973e-05', 'epoch': '0.5013'}",
+        "{'loss': '2.2', 'grad_norm': '2.453', 'learning_rate': '1.97e-05', 'epoch': '0.5124'}",
+        "{'loss': '2.235', 'grad_norm': '2.609', 'learning_rate': '1.967e-05', 'epoch': '0.5235'}",
+        "{'loss': '2.164', 'grad_norm': '2.766', 'learning_rate': '1.963e-05', 'epoch': '0.5347'}",
+        "{'loss': '2.175', 'grad_norm': '2.422', 'learning_rate': '1.96e-05', 'epoch': '0.5458'}",
+        "{'loss': '2.17', 'grad_norm': '2.609', 'learning_rate': '1.956e-05', 'epoch': '0.5569'}",
+        "{'loss': '2.273', 'grad_norm': '2.594', 'learning_rate': '1.952e-05', 'epoch': '0.5681'}",
+        "{'loss': '2.162', 'grad_norm': '2.375', 'learning_rate': '1.948e-05', 'epoch': '0.5792'}",
+        "{'loss': '2.17', 'grad_norm': '2.75', 'learning_rate': '1.944e-05', 'epoch': '0.5904'}",
+        "{'loss': '2.197', 'grad_norm': '2.469', 'learning_rate': '1.939e-05', 'epoch': '0.6015'}",
+        "{'loss': '2.253', 'grad_norm': '2.547', 'learning_rate': '1.935e-05', 'epoch': '0.6126'}",
+        "{'loss': '2.179', 'grad_norm': '2.641', 'learning_rate': '1.93e-05', 'epoch': '0.6238'}",
+        "{'loss': '2.207', 'grad_norm': '2.453', 'learning_rate': '1.925e-05', 'epoch': '0.6349'}",
+        "{'loss': '2.219', 'grad_norm': '2.484', 'learning_rate': '1.92e-05', 'epoch': '0.6461'}",
+        "{'loss': '2.172', 'grad_norm': '2.5', 'learning_rate': '1.915e-05', 'epoch': '0.6572'}",
+        "{'loss': '2.161', 'grad_norm': '2.422', 'learning_rate': '1.91e-05', 'epoch': '0.6683'}",
+        "{'loss': '2.207', 'grad_norm': '2.469', 'learning_rate': '1.905e-05', 'epoch': '0.6795'}",
+        "{'loss': '2.217', 'grad_norm': '2.578', 'learning_rate': '1.899e-05', 'epoch': '0.6906'}",
+        "{'loss': '2.158', 'grad_norm': '2.562', 'learning_rate': '1.893e-05', 'epoch': '0.7018'}",
+        "{'loss': '2.222', 'grad_norm': '2.656', 'learning_rate': '1.887e-05', 'epoch': '0.7129'}",
+        "{'loss': '2.172', 'grad_norm': '2.484', 'learning_rate': '1.881e-05', 'epoch': '0.724'}",
+        "{'loss': '2.112', 'grad_norm': '2.484', 'learning_rate': '1.875e-05', 'epoch': '0.7352'}",
+        "{'loss': '2.156', 'grad_norm': '2.438', 'learning_rate': '1.869e-05', 'epoch': '0.7463'}",
+        "{'loss': '2.258', 'grad_norm': '2.797', 'learning_rate': '1.862e-05', 'epoch': '0.7574'}",
+        "{'loss': '2.195', 'grad_norm': '2.5', 'learning_rate': '1.856e-05', 'epoch': '0.7686'}",
+        "{'loss': '2.182', 'grad_norm': '2.578', 'learning_rate': '1.849e-05', 'epoch': '0.7797'}",
+        "{'loss': '2.235', 'grad_norm': '2.484', 'learning_rate': '1.842e-05', 'epoch': '0.7909'}",
+        "{'loss': '2.226', 'grad_norm': '2.438', 'learning_rate': '1.835e-05', 'epoch': '0.802'}",
+        "{'loss': '2.218', 'grad_norm': '2.516', 'learning_rate': '1.828e-05', 'epoch': '0.8131'}",
+        "{'loss': '2.191', 'grad_norm': '2.781', 'learning_rate': '1.82e-05', 'epoch': '0.8243'}",
+        "{'loss': '2.186', 'grad_norm': '2.375', 'learning_rate': '1.813e-05', 'epoch': '0.8354'}",
+        "{'loss': '2.151', 'grad_norm': '2.5', 'learning_rate': '1.805e-05', 'epoch': '0.8466'}",
+        "{'loss': '2.159', 'grad_norm': '2.562', 'learning_rate': '1.797e-05', 'epoch': '0.8577'}",
+        "{'loss': '2.207', 'grad_norm': '2.625', 'learning_rate': '1.79e-05', 'epoch': '0.8688'}",
+        "{'loss': '2.185', 'grad_norm': '2.344', 'learning_rate': '1.782e-05', 'epoch': '0.88'}",
+        "{'loss': '2.231', 'grad_norm': '2.672', 'learning_rate': '1.773e-05', 'epoch': '0.8911'}",
+        "{'loss': '2.221', 'grad_norm': '2.641', 'learning_rate': '1.765e-05', 'epoch': '0.9023'}",
+        "{'loss': '2.152', 'grad_norm': '2.547', 'learning_rate': '1.757e-05', 'epoch': '0.9134'}",
+        "{'loss': '2.219', 'grad_norm': '2.656', 'learning_rate': '1.748e-05', 'epoch': '0.9245'}",
+        "{'loss': '2.057', 'grad_norm': '2.438', 'learning_rate': '1.74e-05', 'epoch': '0.9357'}",
+        "{'loss': '2.221', 'grad_norm': '2.438', 'learning_rate': '1.731e-05', 'epoch': '0.9468'}",
+        "{'loss': '2.21', 'grad_norm': '2.625', 'learning_rate': '1.722e-05', 'epoch': '0.958'}",
+        "{'loss': '2.207', 'grad_norm': '2.594', 'learning_rate': '1.713e-05', 'epoch': '0.9691'}",
+        "{'loss': '2.158', 'grad_norm': '2.547', 'learning_rate': '1.704e-05', 'epoch': '0.9802'}",
+        "{'loss': '2.191', 'grad_norm': '2.469', 'learning_rate': '1.694e-05', 'epoch': '0.9914'}",
+        "                                                 \u001b[A{'eval_loss': '2.179', 'eval_runtime': '161.1', 'eval_samples_per_second': '4.624', 'eval_steps_per_second': '2.315', 'epoch': '0.9981'}",
+        " 50%|\u2588\u2588\u2588\u2588\u2589     | 1344/2694 [7:30:07<7:24:28, 19.75s/it]{'loss': '2.162', 'grad_norm': '2.547', 'learning_rate': '1.685e-05', 'epoch': '1.002'}",
+        "{'loss': '2.01', 'grad_norm': '2.547', 'learning_rate': '1.676e-05', 'epoch': '1.013'}",
+        "{'loss': '2.042', 'grad_norm': '2.578', 'learning_rate': '1.666e-05', 'epoch': '1.025'}",
+        "{'loss': '2.049', 'grad_norm': '2.547', 'learning_rate': '1.656e-05', 'epoch': '1.036'}",
+        "{'loss': '2.015', 'grad_norm': '2.594', 'learning_rate': '1.646e-05', 'epoch': '1.047'}",
+        "{'loss': '2.047', 'grad_norm': '2.594', 'learning_rate': '1.636e-05', 'epoch': '1.058'}",
+        "{'loss': '2.041', 'grad_norm': '2.578', 'learning_rate': '1.626e-05', 'epoch': '1.069'}",
+        "{'loss': '2.126', 'grad_norm': '2.625', 'learning_rate': '1.616e-05', 'epoch': '1.08'}",
+        "{'loss': '2.042', 'grad_norm': '2.656', 'learning_rate': '1.606e-05', 'epoch': '1.091'}",
+        "{'loss': '2.081', 'grad_norm': '2.547', 'learning_rate': '1.596e-05', 'epoch': '1.102'}",
+        "{'loss': '1.98', 'grad_norm': '2.609', 'learning_rate': '1.585e-05', 'epoch': '1.114'}",
+        "{'loss': '2.013', 'grad_norm': '2.641', 'learning_rate': '1.575e-05', 'epoch': '1.125'}",
+        "{'loss': '2.031', 'grad_norm': '2.5', 'learning_rate': '1.564e-05', 'epoch': '1.136'}",
+        "{'loss': '2.012', 'grad_norm': '2.578', 'learning_rate': '1.553e-05', 'epoch': '1.147'}",
+        "{'loss': '2.142', 'grad_norm': '2.641', 'learning_rate': '1.542e-05', 'epoch': '1.158'}",
+        "{'loss': '2.086', 'grad_norm': '2.562', 'learning_rate': '1.531e-05', 'epoch': '1.169'}",
+        "{'loss': '2.029', 'grad_norm': '2.562', 'learning_rate': '1.52e-05', 'epoch': '1.18'}",
+        "{'loss': '1.962', 'grad_norm': '2.609', 'learning_rate': '1.509e-05', 'epoch': '1.192'}",
+        "{'loss': '2.026', 'grad_norm': '2.5', 'learning_rate': '1.498e-05', 'epoch': '1.203'}",
+        "{'loss': '2.077', 'grad_norm': '2.578', 'learning_rate': '1.487e-05', 'epoch': '1.214'}",
+        "{'loss': '1.961', 'grad_norm': '2.438', 'learning_rate': '1.475e-05', 'epoch': '1.225'}",
+        "{'loss': '2.09', 'grad_norm': '2.625', 'learning_rate': '1.464e-05', 'epoch': '1.236'}",
+        "{'loss': '2.05', 'grad_norm': '2.578', 'learning_rate': '1.453e-05', 'epoch': '1.247'}",
+        "{'loss': '2.081', 'grad_norm': '2.594', 'learning_rate': '1.441e-05', 'epoch': '1.258'}",
+        "{'loss': '2.036', 'grad_norm': '2.453', 'learning_rate': '1.429e-05', 'epoch': '1.27'}",
+        "{'loss': '2.017', 'grad_norm': '2.766', 'learning_rate': '1.418e-05', 'epoch': '1.281'}",
+        "{'loss': '2.004', 'grad_norm': '2.578', 'learning_rate': '1.406e-05', 'epoch': '1.292'}",
+        "{'loss': '2.107', 'grad_norm': '2.422', 'learning_rate': '1.394e-05', 'epoch': '1.303'}",
+        "{'loss': '2.064', 'grad_norm': '2.609', 'learning_rate': '1.382e-05', 'epoch': '1.314'}",
+        "{'loss': '2.024', 'grad_norm': '2.578', 'learning_rate': '1.37e-05', 'epoch': '1.325'}",
+        "{'loss': '2.097', 'grad_norm': '2.547', 'learning_rate': '1.358e-05', 'epoch': '1.336'}",
+        "{'loss': '2.023', 'grad_norm': '2.578', 'learning_rate': '1.346e-05', 'epoch': '1.348'}",
+        "{'loss': '2.073', 'grad_norm': '2.703', 'learning_rate': '1.334e-05', 'epoch': '1.359'}",
+        "{'loss': '1.949', 'grad_norm': '2.625', 'learning_rate': '1.321e-05', 'epoch': '1.37'}",
+        "{'loss': '2.097', 'grad_norm': '2.484', 'learning_rate': '1.309e-05', 'epoch': '1.381'}",
+        "{'loss': '2.019', 'grad_norm': '3.234', 'learning_rate': '1.297e-05', 'epoch': '1.392'}",
+        "{'loss': '2.029', 'grad_norm': '2.594', 'learning_rate': '1.284e-05', 'epoch': '1.403'}",
+        "{'loss': '2.058', 'grad_norm': '2.594', 'learning_rate': '1.272e-05', 'epoch': '1.414'}",
+        "{'loss': '1.977', 'grad_norm': '2.422', 'learning_rate': '1.259e-05', 'epoch': '1.426'}",
+        "{'loss': '2.005', 'grad_norm': '2.562', 'learning_rate': '1.247e-05', 'epoch': '1.437'}",
+        "{'loss': '2', 'grad_norm': '2.516', 'learning_rate': '1.234e-05', 'epoch': '1.448'}",
+        "{'loss': '2.078', 'grad_norm': '2.578', 'learning_rate': '1.222e-05', 'epoch': '1.459'}",
+        "{'loss': '2.014', 'grad_norm': '2.578', 'learning_rate': '1.209e-05', 'epoch': '1.47'}",
+        "{'loss': '2.049', 'grad_norm': '2.547', 'learning_rate': '1.196e-05', 'epoch': '1.481'}",
+        "{'loss': '2.079', 'grad_norm': '2.609', 'learning_rate': '1.184e-05', 'epoch': '1.492'}",
+        "                                                 \u001b[A{'eval_loss': '2.17', 'eval_runtime': '161.2', 'eval_samples_per_second': '4.623', 'eval_steps_per_second': '2.315', 'epoch': '1.497'}",
+        " 67%|\u2588\u2588\u2588\u2588\u2588\u2588\u258b   | 1792/2694 [10:00:17<4:56:20, 19.71s/it]{'loss': '2.007', 'grad_norm': '2.375', 'learning_rate': '1.171e-05', 'epoch': '1.503'}",
+        "{'loss': '2.004', 'grad_norm': '2.641', 'learning_rate': '1.158e-05', 'epoch': '1.515'}",
+        "{'loss': '2.057', 'grad_norm': '2.609', 'learning_rate': '1.145e-05', 'epoch': '1.526'}",
+        "{'loss': '2.015', 'grad_norm': '2.5', 'learning_rate': '1.132e-05', 'epoch': '1.537'}",
+        "{'loss': '2.046', 'grad_norm': '2.547', 'learning_rate': '1.12e-05', 'epoch': '1.548'}",
+        "{'loss': '2.018', 'grad_norm': '2.516', 'learning_rate': '1.107e-05', 'epoch': '1.559'}",
+        "{'loss': '2.052', 'grad_norm': '2.469', 'learning_rate': '1.094e-05', 'epoch': '1.57'}",
+        "{'loss': '2.093', 'grad_norm': '2.578', 'learning_rate': '1.081e-05', 'epoch': '1.581'}",
+        "{'loss': '2.069', 'grad_norm': '2.625', 'learning_rate': '1.068e-05', 'epoch': '1.593'}",
+        "{'loss': '2.062', 'grad_norm': '2.547', 'learning_rate': '1.055e-05', 'epoch': '1.604'}",
+        "{'loss': '2.089', 'grad_norm': '2.562', 'learning_rate': '1.042e-05', 'epoch': '1.615'}",
+        "{'loss': '2.019', 'grad_norm': '2.641', 'learning_rate': '1.029e-05', 'epoch': '1.626'}",
+        "{'loss': '1.972', 'grad_norm': '2.562', 'learning_rate': '1.016e-05', 'epoch': '1.637'}",
+        "{'loss': '2.07', 'grad_norm': '2.516', 'learning_rate': '1.003e-05', 'epoch': '1.648'}",
+        "{'loss': '1.994', 'grad_norm': '2.672', 'learning_rate': '9.903e-06', 'epoch': '1.659'}",
+        "{'loss': '2.075', 'grad_norm': '2.547', 'learning_rate': '9.773e-06', 'epoch': '1.671'}",
+        "{'loss': '2.063', 'grad_norm': '2.516', 'learning_rate': '9.644e-06', 'epoch': '1.682'}",
+        "{'loss': '2.029', 'grad_norm': '2.516', 'learning_rate': '9.514e-06', 'epoch': '1.693'}",
+        "{'loss': '1.998', 'grad_norm': '2.516', 'learning_rate': '9.385e-06', 'epoch': '1.704'}",
+        "{'loss': '2.034', 'grad_norm': '2.547', 'learning_rate': '9.256e-06', 'epoch': '1.715'}",
+        "{'loss': '2.086', 'grad_norm': '2.625', 'learning_rate': '9.127e-06', 'epoch': '1.726'}",
+        "{'loss': '2.041', 'grad_norm': '2.5', 'learning_rate': '8.998e-06', 'epoch': '1.737'}",
+        "{'loss': '2.078', 'grad_norm': '2.594', 'learning_rate': '8.869e-06', 'epoch': '1.749'}",
+        "{'loss': '2.008', 'grad_norm': '2.609', 'learning_rate': '8.74e-06', 'epoch': '1.76'}",
+        "{'loss': '2.043', 'grad_norm': '2.594', 'learning_rate': '8.612e-06', 'epoch': '1.771'}",
+        "{'loss': '2.043', 'grad_norm': '2.562', 'learning_rate': '8.484e-06', 'epoch': '1.782'}",
+        "{'loss': '2.013', 'grad_norm': '2.719', 'learning_rate': '8.356e-06', 'epoch': '1.793'}",
+        "{'loss': '2.057', 'grad_norm': '2.625', 'learning_rate': '8.228e-06', 'epoch': '1.804'}",
+        "{'loss': '2.107', 'grad_norm': '2.672', 'learning_rate': '8.101e-06', 'epoch': '1.815'}",
+        "{'loss': '1.98', 'grad_norm': '2.375', 'learning_rate': '7.974e-06', 'epoch': '1.827'}",
+        "{'loss': '2.006', 'grad_norm': '2.734', 'learning_rate': '7.847e-06', 'epoch': '1.838'}",
+        "{'loss': '2.018', 'grad_norm': '2.656', 'learning_rate': '7.721e-06', 'epoch': '1.849'}",
+        "{'loss': '2.016', 'grad_norm': '2.375', 'learning_rate': '7.595e-06', 'epoch': '1.86'}",
+        "{'loss': '2.026', 'grad_norm': '2.5', 'learning_rate': '7.469e-06', 'epoch': '1.871'}",
+        "{'loss': '1.994', 'grad_norm': '2.688', 'learning_rate': '7.344e-06', 'epoch': '1.882'}",
+        "{'loss': '2.053', 'grad_norm': '2.578', 'learning_rate': '7.219e-06', 'epoch': '1.893'}",
+        "{'loss': '2.046', 'grad_norm': '2.703', 'learning_rate': '7.095e-06', 'epoch': '1.904'}",
+        "{'loss': '1.99', 'grad_norm': '2.484', 'learning_rate': '6.971e-06', 'epoch': '1.916'}",
+        "{'loss': '2.078', 'grad_norm': '2.672', 'learning_rate': '6.848e-06', 'epoch': '1.927'}",
+        "{'loss': '2.053', 'grad_norm': '2.484', 'learning_rate': '6.726e-06', 'epoch': '1.938'}",
+        "{'loss': '2.048', 'grad_norm': '2.672', 'learning_rate': '6.603e-06', 'epoch': '1.949'}",
+        "{'loss': '2.016', 'grad_norm': '2.688', 'learning_rate': '6.482e-06', 'epoch': '1.96'}",
+        "{'loss': '2.026', 'grad_norm': '2.594', 'learning_rate': '6.361e-06', 'epoch': '1.971'}",
+        "{'loss': '1.981', 'grad_norm': '2.641', 'learning_rate': '6.241e-06', 'epoch': '1.982'}",
+        "{'loss': '1.999', 'grad_norm': '2.609', 'learning_rate': '6.121e-06', 'epoch': '1.994'}",
+        "                                                 \u001b[A{'eval_loss': '2.163', 'eval_runtime': '161.2', 'eval_samples_per_second': '4.622', 'eval_steps_per_second': '2.314', 'epoch': '1.996'}",
+        " 83%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258e | 2240/2694 [12:30:20<2:29:06, 19.71s/it]{'loss': '2.023', 'grad_norm': '2.594', 'learning_rate': '6.002e-06', 'epoch': '2.004'}",
+        "{'loss': '2.021', 'grad_norm': '2.625', 'learning_rate': '5.883e-06', 'epoch': '2.016'}",
+        "{'loss': '1.949', 'grad_norm': '2.469', 'learning_rate': '5.766e-06', 'epoch': '2.027'}",
+        "{'loss': '1.891', 'grad_norm': '2.625', 'learning_rate': '5.649e-06', 'epoch': '2.038'}",
+        "{'loss': '1.944', 'grad_norm': '2.562', 'learning_rate': '5.532e-06', 'epoch': '2.049'}",
+        "{'loss': '1.985', 'grad_norm': '2.734', 'learning_rate': '5.417e-06', 'epoch': '2.06'}",
+        "{'loss': '1.967', 'grad_norm': '2.609', 'learning_rate': '5.302e-06', 'epoch': '2.071'}",
+        "{'loss': '1.923', 'grad_norm': '2.734', 'learning_rate': '5.188e-06', 'epoch': '2.082'}",
+        "{'loss': '2.008', 'grad_norm': '2.562', 'learning_rate': '5.075e-06', 'epoch': '2.094'}",
+        "{'loss': '1.966', 'grad_norm': '2.625', 'learning_rate': '4.963e-06', 'epoch': '2.105'}",
+        "{'loss': '2.003', 'grad_norm': '2.859', 'learning_rate': '4.851e-06', 'epoch': '2.116'}",
+        "{'loss': '1.997', 'grad_norm': '2.734', 'learning_rate': '4.741e-06', 'epoch': '2.127'}",
+        "{'loss': '2', 'grad_norm': '2.656', 'learning_rate': '4.631e-06', 'epoch': '2.138'}",
+        "{'loss': '1.959', 'grad_norm': '2.703', 'learning_rate': '4.522e-06', 'epoch': '2.149'}",
+        "{'loss': '1.999', 'grad_norm': '2.578', 'learning_rate': '4.414e-06', 'epoch': '2.16'}",
+        "{'loss': '1.925', 'grad_norm': '2.766', 'learning_rate': '4.307e-06', 'epoch': '2.172'}",
+        "{'loss': '1.906', 'grad_norm': '2.578', 'learning_rate': '4.201e-06', 'epoch': '2.183'}",
+        "{'loss': '1.968', 'grad_norm': '2.609', 'learning_rate': '4.096e-06', 'epoch': '2.194'}",
+        "{'loss': '1.867', 'grad_norm': '2.672', 'learning_rate': '3.992e-06', 'epoch': '2.205'}",
+        "{'loss': '1.925', 'grad_norm': '2.703', 'learning_rate': '3.889e-06', 'epoch': '2.216'}",
+        "{'loss': '1.957', 'grad_norm': '2.625', 'learning_rate': '3.787e-06', 'epoch': '2.227'}",
+        "{'loss': '1.955', 'grad_norm': '2.672', 'learning_rate': '3.686e-06', 'epoch': '2.238'}",
+        "{'loss': '1.952', 'grad_norm': '3.031', 'learning_rate': '3.586e-06', 'epoch': '2.25'}",
+        "{'loss': '1.954', 'grad_norm': '2.594', 'learning_rate': '3.487e-06', 'epoch': '2.261'}",
+        "{'loss': '1.991', 'grad_norm': '2.562', 'learning_rate': '3.389e-06', 'epoch': '2.272'}",
+        "{'loss': '1.997', 'grad_norm': '2.578', 'learning_rate': '3.293e-06', 'epoch': '2.283'}",
+        "{'loss': '1.983', 'grad_norm': '2.75', 'learning_rate': '3.197e-06', 'epoch': '2.294'}",
+        "{'loss': '1.94', 'grad_norm': '2.562', 'learning_rate': '3.103e-06', 'epoch': '2.305'}",
+        "{'loss': '1.97', 'grad_norm': '2.781', 'learning_rate': '3.01e-06', 'epoch': '2.316'}",
+        "{'loss': '1.957', 'grad_norm': '2.547', 'learning_rate': '2.917e-06', 'epoch': '2.327'}",
+        "{'loss': '1.911', 'grad_norm': '2.625', 'learning_rate': '2.827e-06', 'epoch': '2.339'}",
+        "{'loss': '1.954', 'grad_norm': '2.734', 'learning_rate': '2.737e-06', 'epoch': '2.35'}",
+        "{'loss': '1.994', 'grad_norm': '2.766', 'learning_rate': '2.649e-06', 'epoch': '2.361'}",
+        "{'loss': '1.889', 'grad_norm': '2.609', 'learning_rate': '2.561e-06', 'epoch': '2.372'}",
+        "{'loss': '1.947', 'grad_norm': '2.672', 'learning_rate': '2.475e-06', 'epoch': '2.383'}",
+        "{'loss': '1.998', 'grad_norm': '2.859', 'learning_rate': '2.391e-06', 'epoch': '2.394'}",
+        "{'loss': '1.936', 'grad_norm': '2.578', 'learning_rate': '2.307e-06', 'epoch': '2.405'}",
+        "{'loss': '2.031', 'grad_norm': '2.641', 'learning_rate': '2.225e-06', 'epoch': '2.417'}",
+        "{'loss': '1.945', 'grad_norm': '2.703', 'learning_rate': '2.144e-06', 'epoch': '2.428'}",
+        "{'loss': '2.058', 'grad_norm': '2.656', 'learning_rate': '2.065e-06', 'epoch': '2.439'}",
+        "{'loss': '1.894', 'grad_norm': '2.594', 'learning_rate': '1.987e-06', 'epoch': '2.45'}",
+        "{'loss': '1.949', 'grad_norm': '2.578', 'learning_rate': '1.91e-06', 'epoch': '2.461'}",
+        "{'loss': '1.96', 'grad_norm': '2.578', 'learning_rate': '1.834e-06', 'epoch': '2.472'}",
+        "{'loss': '1.949', 'grad_norm': '2.625', 'learning_rate': '1.76e-06', 'epoch': '2.483'}",
+        "{'loss': '1.921', 'grad_norm': '2.656', 'learning_rate': '1.688e-06', 'epoch': '2.495'}",
+        "                                                 \u001b[A{'eval_loss': '2.175', 'eval_runtime': '161.1', 'eval_samples_per_second': '4.623', 'eval_steps_per_second': '2.315', 'epoch': '2.495'}",
+        "100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2589| 2688/2694 [15:00:26<01:58, 19.73s/it]{'loss': '1.98', 'grad_norm': '2.688', 'learning_rate': '1.616e-06', 'epoch': '2.506'}",
+        "{'loss': '1.948', 'grad_norm': '2.641', 'learning_rate': '1.546e-06', 'epoch': '2.517'}",
+        "{'loss': '1.882', 'grad_norm': '2.531', 'learning_rate': '1.478e-06', 'epoch': '2.528'}",
+        "{'loss': '1.941', 'grad_norm': '2.703', 'learning_rate': '1.411e-06', 'epoch': '2.539'}",
+        "{'loss': '1.962', 'grad_norm': '2.766', 'learning_rate': '1.345e-06', 'epoch': '2.55'}",
+        "{'loss': '1.975', 'grad_norm': '2.641', 'learning_rate': '1.281e-06', 'epoch': '2.561'}",
+        "{'loss': '1.913', 'grad_norm': '2.609', 'learning_rate': '1.218e-06', 'epoch': '2.573'}"
+      ],
+      "mtime_utc": "2026-05-13T22:15:08.766741+00:00",
+      "path": "outputs/by_model/qwen3.5-2b/logs/hpn-qwen3.5-2b-20260511-181856.log",
+      "sha256": "a5b23d3849eefd16a0f89dc5d81c567ac481be8f516cc94059d8e29999812bac"
+    }
+  ],
+  "lora_adapters": [
+    {
+      "adapter_config": {
+        "base_model_name_or_path": "/workspace/portables/NetBench-LLM/models/instruct-official/Qwen3.5-2B",
+        "bias": "none",
+        "lora_alpha": 128,
+        "lora_dropout": 0.05,
+        "modules_to_save": null,
+        "peft_type": "LORA",
+        "r": 64,
+        "target_modules": [
+          "o_proj",
+          "v_proj",
+          "up_proj",
+          "down_proj",
+          "gate_proj",
+          "q_proj",
+          "k_proj"
+        ],
+        "task_type": "CAUSAL_LM",
+        "use_rslora": false
+      },
+      "bytes": 1174,
+      "mtime_utc": "2026-05-13T10:22:55.626086+00:00",
+      "path": "models/lora/Qwen3.5-2B-instruct-lora-cpt/adapter_config.json",
+      "sha256": "95d4a3b00456eeb91a3af114ec91fc50bd9dc66b78708110becebc38676c886a"
+    },
+    {
+      "adapter_config": {
+        "base_model_name_or_path": "/workspace/portables/NetBench-LLM/models/lora-merged/Qwen3.5-2B-instruct-lora-cpt-merged",
+        "bias": "none",
+        "lora_alpha": 128,
+        "lora_dropout": 0.05,
+        "modules_to_save": null,
+        "peft_type": "LORA",
+        "r": 64,
+        "target_modules": [
+          "v_proj",
+          "o_proj",
+          "down_proj",
+          "k_proj",
+          "gate_proj",
+          "q_proj",
+          "up_proj"
+        ],
+        "task_type": "CAUSAL_LM",
+        "use_rslora": false
+      },
+      "bytes": 1193,
+      "mtime_utc": "2026-05-13T12:17:15.637708+00:00",
+      "path": "models/lora/Qwen3.5-2B-instruct-lora-cpt-then-sft/adapter_config.json",
+      "sha256": "a9407318262ac7a90b88d1fd782e39cab1fd18c8e91af2ad07ff4f2e2c18f827"
+    },
+    {
+      "adapter_config": {
+        "base_model_name_or_path": "/workspace/portables/NetBench-LLM/models/instruct-official/Qwen3.5-2B",
+        "bias": "none",
+        "lora_alpha": 128,
+        "lora_dropout": 0.05,
+        "modules_to_save": null,
+        "peft_type": "LORA",
+        "r": 64,
+        "target_modules": [
+          "down_proj",
+          "k_proj",
+          "v_proj",
+          "o_proj",
+          "up_proj",
+          "gate_proj",
+          "q_proj"
+        ],
+        "task_type": "CAUSAL_LM",
+        "use_rslora": false
+      },
+      "bytes": 1174,
+      "mtime_utc": "2026-05-12T19:40:00.884501+00:00",
+      "path": "models/lora/Qwen3.5-2B-instruct-lora-sft/adapter_config.json",
+      "sha256": "977787f53503948dfc8e137ec7fdabaf0b659f8c02b915fd268bd034aeba1edc"
+    }
+  ],
+  "model_configs": [
+    {
+      "bytes": 1789,
+      "config": {
+        "architectures": [
+          "Qwen3_5ForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 6144,
+        "max_position_embeddings": 262144,
+        "model_type": "qwen3_5_text",
+        "num_attention_heads": 8,
+        "num_hidden_layers": 24,
+        "num_key_value_heads": 2,
+        "tie_word_embeddings": true,
+        "vocab_size": 248320
+      },
+      "mtime_utc": "2026-05-11T23:12:21.040665+00:00",
+      "path": "models/base/Qwen3.5-2B-Base/config.json",
+      "sha256": "acef9650c8004a3c59d429db4e81c92e543910800e729e2809c4e88b88fe11cb"
+    },
+    {
+      "bytes": 1789,
+      "config": {
+        "architectures": [
+          "Qwen3_5ForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 6144,
+        "max_position_embeddings": 262144,
+        "model_type": "qwen3_5_text",
+        "num_attention_heads": 8,
+        "num_hidden_layers": 24,
+        "num_key_value_heads": 2,
+        "tie_word_embeddings": true,
+        "vocab_size": 248320
+      },
+      "mtime_utc": "2026-05-11T23:19:54.760798+00:00",
+      "path": "models/instruct-official/Qwen3.5-2B/config.json",
+      "sha256": "acef9650c8004a3c59d429db4e81c92e543910800e729e2809c4e88b88fe11cb"
+    },
+    {
+      "bytes": 1790,
+      "config": {
+        "architectures": [
+          "Qwen3_5ForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 6144,
+        "max_position_embeddings": 262144,
+        "model_type": "qwen3_5_text",
+        "num_attention_heads": 8,
+        "num_hidden_layers": 24,
+        "num_key_value_heads": 2,
+        "tie_word_embeddings": true,
+        "vocab_size": 248320
+      },
+      "mtime_utc": "2026-05-12T15:05:01.566866+00:00",
+      "path": "models/instruction/Qwen3.5-2B-cpt-full-sft/checkpoints/checkpoint-200/config.json",
+      "sha256": "0fd8e288a2b3621b444237017f48e8151d56df32dce748bc98b4028ef5269b77"
+    },
+    {
+      "bytes": 1790,
+      "config": {
+        "architectures": [
+          "Qwen3_5ForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 6144,
+        "max_position_embeddings": 262144,
+        "model_type": "qwen3_5_text",
+        "num_attention_heads": 8,
+        "num_hidden_layers": 24,
+        "num_key_value_heads": 2,
+        "tie_word_embeddings": true,
+        "vocab_size": 248320
+      },
+      "mtime_utc": "2026-05-12T16:07:45.721214+00:00",
+      "path": "models/instruction/Qwen3.5-2B-cpt-full-sft/checkpoints/checkpoint-609/config.json",
+      "sha256": "0fd8e288a2b3621b444237017f48e8151d56df32dce748bc98b4028ef5269b77"
+    },
+    {
+      "bytes": 1790,
+      "config": {
+        "architectures": [
+          "Qwen3_5ForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 6144,
+        "max_position_embeddings": 262144,
+        "model_type": "qwen3_5_text",
+        "num_attention_heads": 8,
+        "num_hidden_layers": 24,
+        "num_key_value_heads": 2,
+        "tie_word_embeddings": true,
+        "vocab_size": 248320
+      },
+      "mtime_utc": "2026-05-12T16:07:54.897209+00:00",
+      "path": "models/instruction/Qwen3.5-2B-cpt-full-sft/config.json",
+      "sha256": "0fd8e288a2b3621b444237017f48e8151d56df32dce748bc98b4028ef5269b77"
+    },
+    {
+      "bytes": 1790,
+      "config": {
+        "architectures": [
+          "Qwen3_5ForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 6144,
+        "max_position_embeddings": 262144,
+        "model_type": "qwen3_5_text",
+        "num_attention_heads": 8,
+        "num_hidden_layers": 24,
+        "num_key_value_heads": 2,
+        "tie_word_embeddings": true,
+        "vocab_size": 248320
+      },
+      "mtime_utc": "2026-05-12T16:38:56.009310+00:00",
+      "path": "models/instruction/Qwen3.5-2B-instruct-full-hpn-sft/checkpoints/checkpoint-200/config.json",
+      "sha256": "0fd8e288a2b3621b444237017f48e8151d56df32dce748bc98b4028ef5269b77"
+    },
+    {
+      "bytes": 1790,
+      "config": {
+        "architectures": [
+          "Qwen3_5ForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 6144,
+        "max_position_embeddings": 262144,
+        "model_type": "qwen3_5_text",
+        "num_attention_heads": 8,
+        "num_hidden_layers": 24,
+        "num_key_value_heads": 2,
+        "tie_word_embeddings": true,
+        "vocab_size": 248320
+      },
+      "mtime_utc": "2026-05-12T17:43:42.800766+00:00",
+      "path": "models/instruction/Qwen3.5-2B-instruct-full-hpn-sft/checkpoints/checkpoint-609/config.json",
+      "sha256": "0fd8e288a2b3621b444237017f48e8151d56df32dce748bc98b4028ef5269b77"
+    },
+    {
+      "bytes": 1790,
+      "config": {
+        "architectures": [
+          "Qwen3_5ForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 6144,
+        "max_position_embeddings": 262144,
+        "model_type": "qwen3_5_text",
+        "num_attention_heads": 8,
+        "num_hidden_layers": 24,
+        "num_key_value_heads": 2,
+        "tie_word_embeddings": true,
+        "vocab_size": 248320
+      },
+      "mtime_utc": "2026-05-12T17:43:52.384770+00:00",
+      "path": "models/instruction/Qwen3.5-2B-instruct-full-hpn-sft/config.json",
+      "sha256": "0fd8e288a2b3621b444237017f48e8151d56df32dce748bc98b4028ef5269b77"
+    },
+    {
+      "bytes": 1789,
+      "config": {
+        "architectures": [
+          "Qwen3_5ForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 6144,
+        "max_position_embeddings": 262144,
+        "model_type": "qwen3_5_text",
+        "num_attention_heads": 8,
+        "num_hidden_layers": 24,
+        "num_key_value_heads": 2,
+        "tie_word_embeddings": true,
+        "vocab_size": 248320
+      },
+      "mtime_utc": "2026-05-13T10:23:04.226077+00:00",
+      "path": "models/lora-merged/Qwen3.5-2B-instruct-lora-cpt-merged/config.json",
+      "sha256": "acef9650c8004a3c59d429db4e81c92e543910800e729e2809c4e88b88fe11cb"
+    },
+    {
+      "bytes": 1789,
+      "config": {
+        "architectures": [
+          "Qwen3_5ForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 6144,
+        "max_position_embeddings": 262144,
+        "model_type": "qwen3_5_text",
+        "num_attention_heads": 8,
+        "num_hidden_layers": 24,
+        "num_key_value_heads": 2,
+        "tie_word_embeddings": true,
+        "vocab_size": 248320
+      },
+      "mtime_utc": "2026-05-13T12:17:24.717705+00:00",
+      "path": "models/lora-merged/Qwen3.5-2B-instruct-lora-cpt-then-sft-merged/config.json",
+      "sha256": "acef9650c8004a3c59d429db4e81c92e543910800e729e2809c4e88b88fe11cb"
+    },
+    {
+      "bytes": 1789,
+      "config": {
+        "architectures": [
+          "Qwen3_5ForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 6144,
+        "max_position_embeddings": 262144,
+        "model_type": "qwen3_5_text",
+        "num_attention_heads": 8,
+        "num_hidden_layers": 24,
+        "num_key_value_heads": 2,
+        "tie_word_embeddings": true,
+        "vocab_size": 248320
+      },
+      "mtime_utc": "2026-05-12T19:40:09.928504+00:00",
+      "path": "models/lora-merged/Qwen3.5-2B-instruct-lora-sft-merged/config.json",
+      "sha256": "acef9650c8004a3c59d429db4e81c92e543910800e729e2809c4e88b88fe11cb"
+    },
+    {
+      "bytes": 1790,
+      "config": {
+        "architectures": [
+          "Qwen3_5ForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 6144,
+        "max_position_embeddings": 262144,
+        "model_type": "qwen3_5_text",
+        "num_attention_heads": 8,
+        "num_hidden_layers": 24,
+        "num_key_value_heads": 2,
+        "tie_word_embeddings": true,
+        "vocab_size": 248320
+      },
+      "mtime_utc": "2026-05-12T09:29:31.090771+00:00",
+      "path": "models/pretrained/Qwen3.5-2B-trained-new/checkpoints/checkpoint-1792/config.json",
+      "sha256": "0fd8e288a2b3621b444237017f48e8151d56df32dce748bc98b4028ef5269b77"
+    },
+    {
+      "bytes": 1790,
+      "config": {
+        "architectures": [
+          "Qwen3_5ForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 6144,
+        "max_position_embeddings": 262144,
+        "model_type": "qwen3_5_text",
+        "num_attention_heads": 8,
+        "num_hidden_layers": 24,
+        "num_key_value_heads": 2,
+        "tie_word_embeddings": true,
+        "vocab_size": 248320
+      },
+      "mtime_utc": "2026-05-12T14:34:22.619032+00:00",
+      "path": "models/pretrained/Qwen3.5-2B-trained-new/checkpoints/checkpoint-2694/config.json",
+      "sha256": "0fd8e288a2b3621b444237017f48e8151d56df32dce748bc98b4028ef5269b77"
+    },
+    {
+      "bytes": 1790,
+      "config": {
+        "architectures": [
+          "Qwen3_5ForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 6144,
+        "max_position_embeddings": 262144,
+        "model_type": "qwen3_5_text",
+        "num_attention_heads": 8,
+        "num_hidden_layers": 24,
+        "num_key_value_heads": 2,
+        "tie_word_embeddings": true,
+        "vocab_size": 248320
+      },
+      "mtime_utc": "2026-05-12T14:34:31.887035+00:00",
+      "path": "models/pretrained/Qwen3.5-2B-trained-new/config.json",
+      "sha256": "0fd8e288a2b3621b444237017f48e8151d56df32dce748bc98b4028ef5269b77"
+    }
+  ],
+  "model_slug": "qwen3.5-2b",
+  "outputs": {
+    "adaptation_reports": [
+      {
+        "bytes": 1112,
+        "json_preview": {
+          "base": {
+            "general": {
+              "batches": 37,
+              "loss": 2.489695,
+              "perplexity": 12.0576,
+              "tokens": 296960
+            },
+            "hpn": {
+              "batches": 187,
+              "loss": 2.472637,
+              "perplexity": 11.8537,
+              "tokens": 1525760
+            }
+          },
+          "base_model_path": "/workspace/portables/NetBench-LLM/models/instruct-official/Qwen3.5-2B",
+          "config": {
+            "batch_size": 4,
+            "max_general_batches": null,
+            "max_hpn_batches": null,
+            "quantize_4bit": false,
+            "seq_len": 2048
+          },
+          "forgetting_gap": 0.265926,
+          "hpn_data_dir": "/workspace/portables/NetBench-LLM/data/processed/lora/qwen3.5-2b",
+          "timestamp": "2026-05-13T17:08:55.538929",
+          "trained": {
+            "general": {
+              "batches": 37,
+              "loss": 2.755621,
+              "perplexity": 15.7308,
+              "tokens": 296960
+            },
+            "hpn": {
+              "batches": 187,
+              "loss": 2.214784,
+              "perplexity": 9.1594,
+              "tokens": 1525760
+            }
+          },
+          "trained_model_path": "/workspace/portables/NetBench-LLM/models/lora-merged/Qwen3.5-2B-instruct-lora-cpt-merged"
+        },
+        "mtime_utc": "2026-05-13T22:15:07.358740+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/adaptation_reports/adaptation_report_Qwen3.5-2B-instruct-lora-cpt-merged_20260513_171507.json",
+        "sha256": "6529c675062ac293f8dd026f6d30839bc5c529b8eeaa414ce9e7e29a2a1ffbd6"
+      },
+      {
+        "bytes": 5412,
+        "excel": {
+          "sheets": [
+            "Adaptation Report"
+          ]
+        },
+        "mtime_utc": "2026-05-13T22:15:07.402740+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/adaptation_reports/adaptation_report_Qwen3.5-2B-instruct-lora-cpt-merged_20260513_171507.xlsx",
+        "sha256": "c5856d2b18c7a181fd3f8b59b44de7246e6126858811fc66641229a446d7ffe5"
+      },
+      {
+        "bytes": 1084,
+        "json_preview": {
+          "base": {
+            "general": {
+              "batches": 37,
+              "loss": 2.300257,
+              "perplexity": 9.9767,
+              "tokens": 296960
+            },
+            "hpn": {
+              "batches": 187,
+              "loss": 2.368479,
+              "perplexity": 10.6811,
+              "tokens": 1525760
+            }
+          },
+          "base_model_path": "/workspace/portables/NetBench-LLM/models/base/Qwen3.5-2B-Base",
+          "config": {
+            "batch_size": 4,
+            "max_general_batches": null,
+            "max_hpn_batches": null,
+            "quantize_4bit": false,
+            "seq_len": 2048
+          },
+          "forgetting_gap": 0.215687,
+          "hpn_data_dir": "/workspace/portables/NetBench-LLM/data/processed/qwen3.5-2b",
+          "timestamp": "2026-05-13T17:02:40.929745",
+          "trained": {
+            "general": {
+              "batches": 37,
+              "loss": 2.515944,
+              "perplexity": 12.3783,
+              "tokens": 296960
+            },
+            "hpn": {
+              "batches": 187,
+              "loss": 2.175479,
+              "perplexity": 8.8064,
+              "tokens": 1525760
+            }
+          },
+          "trained_model_path": "/workspace/portables/NetBench-LLM/models/pretrained/Qwen3.5-2B-trained-new"
+        },
+        "mtime_utc": "2026-05-13T22:08:51.018446+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/adaptation_reports/adaptation_report_Qwen3.5-2B-trained-new_20260513_170851.json",
+        "sha256": "3a16c1ece6b117fcd485cbe80a0ed15281c8904cff2cfe1de52a70308d527e61"
+      },
+      {
+        "bytes": 5401,
+        "excel": {
+          "sheets": [
+            "Adaptation Report"
+          ]
+        },
+        "mtime_utc": "2026-05-13T22:08:51.066446+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/adaptation_reports/adaptation_report_Qwen3.5-2B-trained-new_20260513_170851.xlsx",
+        "sha256": "19e3bb19c447eec1a18002ee65a2af84d27f500123e2a4214a40f4f87ec43bc5"
+      }
+    ],
+    "answer_files": [
+      {
+        "bytes": 165454,
+        "excel": {
+          "metadata": {
+            "avg_generation_time_sec": "5.80",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "max_new_tokens": "512",
+            "model_name": "Qwen3.5-2B-cpt-full-sft",
+            "model_path": "/workspace/portables/NetBench-LLM/models/instruction/Qwen3.5-2B-cpt-full-sft",
+            "temperature": "0.0",
+            "timestamp": "2026-05-13T09:15:47.424893",
+            "top_p": "0.9",
+            "total_generation_time_sec": "1403.8",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-13T14:15:47.476902+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/answers/hpn_answers_Qwen3.5-2B-cpt-full-sft_v5.0.xlsx",
+        "sha256": "a63f0305e36261f8020533e50aa48f57707fb8b7665223c5cf6318c127cb19b1"
+      },
+      {
+        "bytes": 165393,
+        "excel": {
+          "metadata": {
+            "avg_generation_time_sec": "5.67",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "max_new_tokens": "512",
+            "model_name": "Qwen3.5-2B-instruct-full-hpn-sft",
+            "model_path": "/workspace/portables/NetBench-LLM/models/instruction/Qwen3.5-2B-instruct-full-hpn-sft",
+            "temperature": "0.0",
+            "timestamp": "2026-05-13T08:52:16.179189",
+            "top_p": "0.9",
+            "total_generation_time_sec": "1371.3",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-13T13:52:16.233075+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/answers/hpn_answers_Qwen3.5-2B-instruct-full-hpn-sft_v5.0.xlsx",
+        "sha256": "c88cff505d94d8ac9cae6d10c9c92728e9376aa914225b416902ca2abd7ca18b"
+      },
+      {
+        "bytes": 165171,
+        "excel": {
+          "metadata": {
+            "avg_generation_time_sec": "5.82",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "max_new_tokens": "512",
+            "model_name": "Qwen3.5-2B-instruct-lora-cpt-then-sft-merged",
+            "model_path": "/workspace/portables/NetBench-LLM/models/lora-merged/Qwen3.5-2B-instruct-lora-cpt-then-sft-merged",
+            "temperature": "0.0",
+            "timestamp": "2026-05-13T09:39:23.665466",
+            "top_p": "0.9",
+            "total_generation_time_sec": "1408.8",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-13T14:39:23.720695+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/answers/hpn_answers_Qwen3.5-2B-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+        "sha256": "a8d81f9d591fbd4ee6ce6eaf4acc89b081eab7eeeef6092f0792bc8c3fd0bcf1"
+      },
+      {
+        "bytes": 165628,
+        "excel": {
+          "metadata": {
+            "avg_generation_time_sec": "5.66",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "max_new_tokens": "512",
+            "model_name": "Qwen3.5-2B-instruct-lora-sft-merged",
+            "model_path": "/workspace/portables/NetBench-LLM/models/lora-merged/Qwen3.5-2B-instruct-lora-sft-merged",
+            "temperature": "0.0",
+            "timestamp": "2026-05-13T08:29:17.402897",
+            "top_p": "0.9",
+            "total_generation_time_sec": "1368.6",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-13T13:29:17.453304+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/answers/hpn_answers_Qwen3.5-2B-instruct-lora-sft-merged_v5.0.xlsx",
+        "sha256": "b7da8773cfd109640a290ee8a03b2751f9bb9094234af6ad8c01ce92ce862cb6"
+      },
+      {
+        "bytes": 234668,
+        "excel": {
+          "metadata": {
+            "avg_generation_time_sec": "12.09",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "max_new_tokens": "512",
+            "model_name": "Qwen3.5-2B",
+            "model_path": "/workspace/portables/NetBench-LLM/models/instruct-official/Qwen3.5-2B",
+            "temperature": "0.0",
+            "timestamp": "2026-05-13T08:06:21.227309",
+            "top_p": "0.9",
+            "total_generation_time_sec": "2925.6",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-13T13:06:21.292746+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/answers/hpn_answers_Qwen3.5-2B_v5.0.xlsx",
+        "sha256": "f2188b57c695c3e1e5a74b3aba6c1fe2a40a139c1d7779505fca875371b7f9d7"
+      }
+    ],
+    "judged_files": [
+      {
+        "bytes": 206791,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "8.53",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "Qwen3.5-2B-cpt-full-sft",
+            "source_answer_file": "/workspace/portables/NetBench-LLM/outputs/by_model/qwen3.5-2b/evaluations/answers/hpn_answers_Qwen3.5-2B-cpt-full-sft_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-13T14:46:19.522828",
+            "total_judging_time_sec": "2065.4",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-13T19:46:19.592971+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx",
+        "sha256": "bd7d0ca4b6ce3e668180134600a43dba26022b11d0178166351fcabc76e9573c"
+      },
+      {
+        "bytes": 207239,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "8.58",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "Qwen3.5-2B-instruct-full-hpn-sft",
+            "source_answer_file": "/workspace/portables/NetBench-LLM/outputs/by_model/qwen3.5-2b/evaluations/answers/hpn_answers_Qwen3.5-2B-instruct-full-hpn-sft_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-13T13:01:41.623434",
+            "total_judging_time_sec": "2075.7",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-13T18:01:41.687830+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-instruct-full-hpn-sft_by_gpt-5.1.xlsx",
+        "sha256": "c8dab804d5d50cbb7d20e59f4c4ad78cd1ac7c1b52d3e754aa62697a95eccb10"
+      },
+      {
+        "bytes": 206817,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "8.44",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "Qwen3.5-2B-instruct-lora-cpt-then-sft-merged",
+            "source_answer_file": "/workspace/portables/NetBench-LLM/outputs/by_model/qwen3.5-2b/evaluations/answers/hpn_answers_Qwen3.5-2B-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-13T14:11:53.981728",
+            "total_judging_time_sec": "2043.2",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-13T19:11:54.068924+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "sha256": "579fbc830464625060baf9cec0cbbc02b3dd2870e2ad26685a7449916a883520"
+      },
+      {
+        "bytes": 207163,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "8.44",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "Qwen3.5-2B-instruct-lora-sft-merged",
+            "source_answer_file": "/workspace/portables/NetBench-LLM/outputs/by_model/qwen3.5-2b/evaluations/answers/hpn_answers_Qwen3.5-2B-instruct-lora-sft-merged_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-13T12:27:05.796140",
+            "total_judging_time_sec": "2042.8",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-13T17:27:05.863513+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-instruct-lora-sft-merged_by_gpt-5.1.xlsx",
+        "sha256": "1fc87d5549b7564257f99bdb24091396fdaf1a562e014b4a5903b673a2d6e603"
+      },
+      {
+        "bytes": 274257,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "8.96",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "Qwen3.5-2B",
+            "source_answer_file": "/workspace/portables/NetBench-LLM/outputs/by_model/qwen3.5-2b/evaluations/answers/hpn_answers_Qwen3.5-2B_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-13T13:37:50.686205",
+            "total_judging_time_sec": "2169.0",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-13T18:37:50.765248+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx",
+        "sha256": "36a603cfaeb6dfad706279586db940b5a6631ca2a59bd5332e7bb49b54c575d9"
+      },
+      {
+        "bytes": 218100,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "8.56",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "RAG-Qwen3.5-2B-cpt-full-sft",
+            "source_answer_file": "/workspace/portables/NetBench-LLM/outputs/by_model/qwen3.5-2b/evaluations/rag_answers/hpn_answers_RAG-Qwen3.5-2B-cpt-full-sft_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-13T15:54:21.236804",
+            "total_judging_time_sec": "2072.4",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-13T20:54:21.306185+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx",
+        "sha256": "f3266698c097827db33b62a09d04e14a4359c10a3b3076f8ea3cec3c05afe271"
+      },
+      {
+        "bytes": 220291,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "8.30",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "RAG-Qwen3.5-2B-instruct-lora-cpt-then-sft-merged",
+            "source_answer_file": "/workspace/portables/NetBench-LLM/outputs/by_model/qwen3.5-2b/evaluations/rag_answers/hpn_answers_RAG-Qwen3.5-2B-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-13T15:19:48.690200",
+            "total_judging_time_sec": "2009.1",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-13T20:19:48.762133+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "sha256": "f925469da1ad7e1e551b9bce6ec4a3bddbeac9af2cf664c05f05693d30ffd232"
+      },
+      {
+        "bytes": 257496,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "8.64",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "RAG-Qwen3.5-2B",
+            "source_answer_file": "/workspace/portables/NetBench-LLM/outputs/by_model/qwen3.5-2b/evaluations/rag_answers/hpn_answers_RAG-Qwen3.5-2B_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-13T16:29:11.546877",
+            "total_judging_time_sec": "2090.2",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-13T21:29:11.618307+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx",
+        "sha256": "e950a99383855bb28bc31bc49bd335ebe0f6fc5041670f29ac6afe8a6e7ed864"
+      }
+    ],
+    "rag_answer_files": [
+      {
+        "bytes": 209405,
+        "excel": {
+          "metadata": {
+            "avg_pipeline_time_sec": "9.12",
+            "backend": "local",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "bm25_top_k": "30",
+            "generation_max_tokens": "512",
+            "generation_temperature": "0.0",
+            "model_name": "RAG-Qwen3.5-2B-cpt-full-sft",
+            "reranker_model": "BAAI/bge-reranker-v2-m3",
+            "reranker_top_n": "4",
+            "rrf_top_n": "20",
+            "timestamp": "2026-05-13T11:16:19.005930",
+            "total_pipeline_time_sec": "2206.7",
+            "total_questions": "242",
+            "vector_top_k": "30"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-13T16:16:19.083232+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/rag_answers/hpn_answers_RAG-Qwen3.5-2B-cpt-full-sft_v5.0.xlsx",
+        "sha256": "f221ceae51f81cd82bce1b371622a4286050451a949ffc9837e5300d3bc98e8e"
+      },
+      {
+        "bytes": 211290,
+        "excel": {
+          "metadata": {
+            "avg_pipeline_time_sec": "9.03",
+            "backend": "local",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "bm25_top_k": "30",
+            "generation_max_tokens": "512",
+            "generation_temperature": "0.0",
+            "model_name": "RAG-Qwen3.5-2B-instruct-lora-cpt-then-sft-merged",
+            "reranker_model": "BAAI/bge-reranker-v2-m3",
+            "reranker_top_n": "4",
+            "rrf_top_n": "20",
+            "timestamp": "2026-05-13T11:53:00.396670",
+            "total_pipeline_time_sec": "2184.5",
+            "total_questions": "242",
+            "vector_top_k": "30"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-13T16:53:00.471220+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/rag_answers/hpn_answers_RAG-Qwen3.5-2B-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+        "sha256": "c280916923504a15b6057983306e013807a1fe6b20e05eab4cde7af8b46d3d39"
+      },
+      {
+        "bytes": 250759,
+        "excel": {
+          "metadata": {
+            "avg_pipeline_time_sec": "14.77",
+            "backend": "local",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "bm25_top_k": "30",
+            "generation_max_tokens": "512",
+            "generation_temperature": "0.0",
+            "model_name": "RAG-Qwen3.5-2B",
+            "reranker_model": "BAAI/bge-reranker-v2-m3",
+            "reranker_top_n": "4",
+            "rrf_top_n": "20",
+            "timestamp": "2026-05-13T10:39:15.247195",
+            "total_pipeline_time_sec": "3574.8",
+            "total_questions": "242",
+            "vector_top_k": "30"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-13T15:39:15.323561+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/rag_answers/hpn_answers_RAG-Qwen3.5-2B_v5.0.xlsx",
+        "sha256": "2ae69db51efc7044d35a74aadb6a1de3c8fa681d882ac107d8a569c91061285b"
+      }
+    ],
+    "report_files": [
+      {
+        "bytes": 6030,
+        "mtime_utc": "2026-05-13T22:15:08.738741+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/reports/HPN_BENCHMARK_REPORT_v5.0_by_gpt-5.1.md",
+        "sha256": "9557988759cca6be450facb0d992d03e9f9fcf7bb74ae93873938bab20ee7997"
+      },
+      {
+        "bytes": 47145,
+        "excel": {
+          "sheets": [
+            "Comparison",
+            "Overall Summary",
+            "By Category",
+            "By Difficulty"
+          ]
+        },
+        "mtime_utc": "2026-05-13T22:15:08.734741+00:00",
+        "path": "outputs/by_model/qwen3.5-2b/evaluations/reports/hpn_benchmark_report_v5.0_by_gpt-5.1.xlsx",
+        "sha256": "81a7c3f8bf24be49c1e55f235b29be5df0a15443b0dfbcace705304e3b9d2305"
+      }
+    ]
+  },
+  "parallel_worker_files": [],
+  "pipeline_script": {
+    "bytes": 75979,
+    "mtime_utc": "2026-05-18T14:50:54.549165+00:00",
+    "path": "scripts/run_pipeline_specific.sh",
+    "sha256": "dd872f7bdd29b5148dd84284826d5ac52329c8cb5c6898529e3733a62293ec1d"
+  },
+  "pipeline_variables": {
+    "BENCHMARK_CUDA_DEVICES": "${BENCHMARK_CUDA_DEVICES:-}",
+    "BENCHMARK_FILE": "${LLM_DIR}/data/prompts/hpn_benchmark_v5.0.jsonl",
+    "BENCHMARK_GPU_WORKERS": "${BENCHMARK_GPU_WORKERS:-0}",
+    "BOLD": "\\033[1m",
+    "CORPUS_FILE": "${best}",
+    "CPT_BATCH": "1",
+    "CPT_EPOCHS": "3",
+    "CPT_GRAD_ACCUM": "16",
+    "CPT_LR": "2e-5",
+    "CYAN": "'\\033[0",
+    "DATA_CPT_DIR": "${LLM_DIR}/data/processed/${slug}",
+    "DATA_GENERAL_SFT_DIR": "${LLM_DIR}/data/instruction/${slug}-general",
+    "DATA_HPN_SFT_DIR": "${LLM_DIR}/data/instruction/${slug}-hpn",
+    "DATA_LORA_CPT_DIR": "${LLM_DIR}/data/processed/lora/${slug}",
+    "DEEPSPEED_CONFIG": "${DEEPSPEED_CONFIG:-${LLM_DIR}/configs/deepspeed_zero3_bf16_cpuoffload.json}",
+    "GEMINI_KEY_FILE": "${LLM_DIR}/gemini_api_key.txt",
+    "GPU_COUNT": "$(nvidia-smi --query-gpu=name --format=csv,noheader 2>/dev/null | wc -l || echo 0)",
+    "GREEN": "'\\033[0",
+    "HF_TOKEN_FILE": "${LLM_DIR}/hf_token.txt",
+    "HPN_INSTRUCT_JSONL": "${LLM_DIR}/data/Instruct-FTD/v3_run_plus_json",
+    "JUDGE_MODEL": "gpt-5.1",
+    "LLM_DIR": "$(cd \"${SCRIPT_DIR}/..\" && pwd)",
+    "LORA_ALPHA": "128",
+    "LORA_CPT_BATCH": "1",
+    "LORA_CPT_EPOCHS": "3",
+    "LORA_CPT_EVAL_BATCH": "1",
+    "LORA_CPT_GRAD_ACCUM": "16",
+    "LORA_LR": "2e-4",
+    "LORA_RANK": "64",
+    "LORA_SFT_BATCH": "1",
+    "LORA_SFT_EPOCHS": "3",
+    "LORA_SFT_EVAL_BATCH": "1",
+    "LORA_SFT_GRAD_ACCUM": "16",
+    "MAX_BUSY_GPU_MEMORY_MIB": "${MAX_BUSY_GPU_MEMORY_MIB:-4096}",
+    "MIN_MERGE_FREE_GIB": "${MIN_MERGE_FREE_GIB:-25}",
+    "MODEL_BASE_DIR": "models/base/Qwen3.5-9B-Base",
+    "MODEL_FAMILY": "qwen",
+    "MODEL_HF_BASE": "Qwen/Qwen3.5-9B-Base",
+    "MODEL_HF_INSTRUCT": "Qwen/Qwen3.5-9B",
+    "MODEL_INSTRUCT_DIR": "models/instruct-official/Qwen3.5-9B",
+    "MODEL_NAME": "Qwen3.5-9B",
+    "MODEL_PRETRAINED_DIR": "models/pretrained/Qwen3.5-9B-trained-new",
+    "MODEL_SHORTCUT": "custom",
+    "M_BASE": "$(path_from_llm_root \"${MODEL_BASE_DIR}\")",
+    "M_INSTRUCT_OFFICIAL": "$(path_from_llm_root \"${MODEL_INSTRUCT_DIR}\")",
+    "M_PRETRAINED": "$(path_from_llm_root \"${MODEL_PRETRAINED_DIR}\")",
+    "M_S2_LORA_SFT_ADAPTER": "${LLM_DIR}/models/lora/${MODEL_NAME}-instruct-lora-sft",
+    "M_S2_LORA_SFT_MERGED": "${LLM_DIR}/models/lora-merged/${MODEL_NAME}-instruct-lora-sft-merged",
+    "M_S3_FULL_HPN_SFT": "${LLM_DIR}/models/instruction/${MODEL_NAME}-instruct-full-hpn-sft",
+    "M_S4_FULL_SFT": "${LLM_DIR}/models/instruction/${MODEL_NAME}-cpt-full-sft",
+    "M_S4_LORA_SFT_ADAPTER": "${LLM_DIR}/models/lora/${MODEL_NAME}-cpt-lora-sft",
+    "M_S4_LORA_SFT_MERGED": "${LLM_DIR}/models/lora-merged/${MODEL_NAME}-cpt-lora-sft-merged",
+    "M_S5_LORA_CPT_ADAPTER": "${LLM_DIR}/models/lora/${MODEL_NAME}-instruct-lora-cpt",
+    "M_S5_LORA_CPT_MERGED": "${LLM_DIR}/models/lora-merged/${MODEL_NAME}-instruct-lora-cpt-merged",
+    "M_S5_LORA_SFT_ADAPTER": "${LLM_DIR}/models/lora/${MODEL_NAME}-instruct-lora-cpt-then-sft",
+    "M_S5_LORA_SFT_MERGED": "${LLM_DIR}/models/lora-merged/${MODEL_NAME}-instruct-lora-cpt-then-sft-merged",
+    "NC": "\\033[0m",
+    "OLLAMA_WAS_RUNNING": "false",
+    "OPENAI_KEY_FILE": "${LLM_DIR}/openai_api_key.txt",
+    "OPTIM_FULL": "${OPTIM_FULL:-paged_adamw_8bit}",
+    "OUT_ADAPT": "${OUT_MODEL_ROOT}/evaluations/adaptation_reports",
+    "OUT_ANSWERS": "${OUT_MODEL_ROOT}/evaluations/answers",
+    "OUT_JUDGED": "${OUT_MODEL_ROOT}/evaluations/judged",
+    "OUT_LOGS": "${OUT_MODEL_ROOT}/logs",
+    "OUT_MODEL_ROOT": "${LLM_DIR}/outputs/by_model/${slug}",
+    "OUT_PROFILE": "${OUT_MODEL_ROOT}/profiling_results",
+    "OUT_RAG_ANSWERS": "${OUT_MODEL_ROOT}/evaluations/rag_answers",
+    "OUT_REPORTS": "${OUT_MODEL_ROOT}/evaluations/reports",
+    "PROFILE_BENCHMARK_LIMIT": "10",
+    "PROFILE_MAX_NEW_TOKENS": "256",
+    "PROFILE_NUM_RUNS": "1",
+    "PROFILE_WARMUP_RUNS": "1",
+    "PYTORCH_CUDA_ALLOC_CONF": "${PYTORCH_CUDA_ALLOC_CONF:-expandable_segments:True}",
+    "RAG_DIR": "$(realpath -m \"${LLM_DIR}/../NetBench-RAG\")",
+    "RAG_ENV_ACTIVATED": "false",
+    "RAG_VENV_DIR": "",
+    "RED": "'\\033[0",
+    "RUN_DIRECT_CPU_PROFILING": "true",
+    "RUN_DIRECT_GPU_PROFILING": "true",
+    "RUN_RAG_CPU_PROFILING": "true",
+    "RUN_RAG_GPU_PROFILING": "true",
+    "RUN_S1": "true",
+    "RUN_S2": "true",
+    "RUN_S3": "true",
+    "RUN_S4": "true",
+    "RUN_S5": "true",
+    "RUN_S6": "true",
+    "RUN_S7": "true",
+    "RUN_S8": "true",
+    "S4_FULL_SFT_DATASET": "hpn",
+    "S4_USE_LORA_SFT": "false",
+    "SCREEN_LOG_FILE": "${SCREEN_LOG_FILE:-}",
+    "SCRIPT_DIR": "$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)",
+    "SFT_BATCH": "1",
+    "SFT_EPOCHS": "3",
+    "SFT_GRAD_ACCUM": "16",
+    "SFT_LR": "2e-5",
+    "SFT_MAX_SAMPLES": "5000",
+    "TORCHRUN_BIN": "${LLM_DIR}/.venv/bin/torchrun",
+    "TRAIN_GPU_WORKERS": "${TRAIN_GPU_WORKERS:-0}",
+    "USE_DEEPSPEED_FULL_TRAINING": "${USE_DEEPSPEED_FULL_TRAINING:-false}",
+    "USE_GNU_SCREEN": "true bash ${BASH_SOURCE[0]}",
+    "USE_QLORA": "false",
+    "USE_TORCHRUN_FULL_TRAINING": "${USE_TORCHRUN_FULL_TRAINING:-false}",
+    "VRAM_GB": "$(( (VRAM_MIB + 1023) / 1024 ))",
+    "VRAM_MIB": "$(nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits \\",
+    "YELLOW": "'\\033[1"
+  },
+  "rag": {
+    "artifacts": [
+      {
+        "bytes": 513,
+        "mtime_utc": "2026-05-11T07:25:41.126423+00:00",
+        "path": "/workspace/NetBench-LLM/NetBench-RAG/data/qdrant_store/meta.json",
+        "sha256": "e5ab8340151eb451f18db9c3bfc25cece61a8fb7a39e93de883cbc7a9324e9e5"
+      },
+      {
+        "bytes": 102959301,
+        "mtime_utc": "2026-05-11T07:45:27.366292+00:00",
+        "path": "/workspace/NetBench-LLM/NetBench-RAG/data/bm25_index.pkl",
+        "sha256": "f5642a0b40481c520cd19ffec5592b4682cf83f7a54a19562f44adc84184c043"
+      },
+      {
+        "bytes": 141501898,
+        "mtime_utc": "2026-05-11T07:45:18.674293+00:00",
+        "path": "/workspace/NetBench-LLM/NetBench-RAG/data/chunks_cache.pkl",
+        "sha256": "d855b3523422c889b7b5417a725e9af3d8735fbda9c29ec5e73989a315a2e53a"
+      },
+      {
+        "bytes": 0,
+        "mtime_utc": "2026-05-11T07:45:28.682291+00:00",
+        "path": "/workspace/NetBench-LLM/NetBench-RAG/.index_done",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "bytes": 7073,
+    "config": {
+      "chunking": {
+        "min_tokens": 100,
+        "overlap_tokens": 150,
+        "target_tokens": 1200,
+        "tokenizer_model": "bert-base-uncased"
+      },
+      "embedding": {
+        "batch_size": 64,
+        "device": "cuda",
+        "dimension": 1024,
+        "model": "BAAI/bge-large-en-v1.5",
+        "normalize": true,
+        "passage_instruction": "",
+        "query_instruction": "Represent this sentence for searching relevant passages: "
+      },
+      "generation": {
+        "backend": "openai",
+        "local": {
+          "device_map": "auto",
+          "do_sample": false,
+          "dtype": "bfloat16",
+          "max_new_tokens": 512,
+          "repetition_penalty": 1.1,
+          "temperature": 0.0
+        },
+        "openai": {
+          "max_tokens": 512,
+          "model": "gpt-4o",
+          "temperature": 0.0
+        },
+        "system_prompt": "You are an expert in high-performance networking (HPN),\nHPC data transfer systems, and computer networking.\n\nAnswer the question below in a focused response (100-350 words)\nusing the provided excerpts as your primary source.\nBe technically precise: include specific numbers, thresholds, or\nformulas where relevant. Explain the underlying reasoning, not just\nthe conclusion.\n"
+      },
+      "judge": {
+        "model": "gemini-2.5-flash",
+        "rate_limit_rpm": 15,
+        "retry_attempts": 3,
+        "retry_backoff_base": 2.0,
+        "weights": {
+          "clarity": 0.2,
+          "completeness": 0.3,
+          "conciseness": 0.1,
+          "correctness": 0.4
+        }
+      },
+      "parsing": {
+        "max_header_len": 120,
+        "min_abstract_chars": 100,
+        "min_header_len": 3,
+        "section_confidence_threshold": 0.4
+      },
+      "paths": {
+        "answers_dir": "outputs/answers/",
+        "benchmark": "data/prompts/hpn_qa_benchmark_v5_general_skills.json",
+        "bm25_index": "data/bm25_index.pkl",
+        "chunks_cache": "data/chunks_cache.pkl",
+        "corpus_json": "data/raw/research_corpus_v3.json",
+        "gemini_api_key": "gemini_api_key.txt",
+        "judged_dir": "outputs/judged/",
+        "local_model": "/workspace/NetBench-LLM/models/instruction/gemma-4-e4b-it",
+        "openai_api_key": "openai_api_key.txt",
+        "pdfs_dir": "pdfs/",
+        "qdrant_dir": "data/qdrant_store/",
+        "reports_dir": "outputs/reports/"
+      },
+      "qdrant": {
+        "collection_name": "netbench_rag",
+        "distance": "Cosine",
+        "indexed_fields": [
+          "paper_title",
+          "section_heading",
+          "source_file",
+          "parse_confidence"
+        ]
+      },
+      "retrieval": {
+        "acronym_expansion": {
+          "BBR": "bottleneck bandwidth and round-trip propagation",
+          "BDP": "bandwidth delay product",
+          "CC": "congestion control",
+          "CWND": "congestion window",
+          "DRL": "deep reinforcement learning",
+          "ECN": "explicit congestion notification",
+          "GridFTP": "grid file transfer protocol",
+          "HPCC": "high performance computing cluster",
+          "HPN": "high performance networking",
+          "MPI": "message passing interface",
+          "MPTCP": "multipath tcp",
+          "MTCP": "multi-path tcp",
+          "NIC": "network interface card",
+          "RDMA": "remote direct memory access",
+          "RL": "reinforcement learning",
+          "RPC": "remote procedure call",
+          "RTT": "round trip time",
+          "SDN": "software defined networking",
+          "TCP": "transmission control protocol",
+          "UDP": "user datagram protocol"
+        },
+        "bm25_lowercase": true,
+        "bm25_top_k": 30,
+        "reranker_device": "cuda",
+        "reranker_model": "BAAI/bge-reranker-v2-m3",
+        "reranker_top_n": 4,
+        "rrf_k": 60,
+        "rrf_top_n": 20,
+        "vector_top_k": 30
+      }
+    },
+    "mtime_utc": "2026-05-05T01:41:36.833659+00:00",
+    "path": "/workspace/NetBench-LLM/NetBench-RAG/config.yaml",
+    "sha256": "5486af0f5ed6199a4450626aee5822eb5e13ebee0ca36fb2a9d41de77d55c8dd"
+  },
+  "schema_version": "netbench-run-metadata-v1",
+  "training_args": [
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-12T15:05:04.758866+00:00",
+      "path": "models/instruction/Qwen3.5-2B-cpt-full-sft/checkpoints/checkpoint-200/training_args.bin",
+      "sha256": "446d8c05175d6ee1e2732701e7103f9fd722ddbfeaa279ecea60b5b22ac97e07",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 100,
+        "fp16": false,
+        "gradient_accumulation_steps": 8,
+        "gradient_checkpointing": true,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/instruction/Qwen3.5-2B-cpt-full-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 2,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 100,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-12T16:07:48.881212+00:00",
+      "path": "models/instruction/Qwen3.5-2B-cpt-full-sft/checkpoints/checkpoint-609/training_args.bin",
+      "sha256": "446d8c05175d6ee1e2732701e7103f9fd722ddbfeaa279ecea60b5b22ac97e07",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 100,
+        "fp16": false,
+        "gradient_accumulation_steps": 8,
+        "gradient_checkpointing": true,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/instruction/Qwen3.5-2B-cpt-full-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 2,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 100,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-12T16:07:58.189208+00:00",
+      "path": "models/instruction/Qwen3.5-2B-cpt-full-sft/training_args.bin",
+      "sha256": "446d8c05175d6ee1e2732701e7103f9fd722ddbfeaa279ecea60b5b22ac97e07",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 100,
+        "fp16": false,
+        "gradient_accumulation_steps": 8,
+        "gradient_checkpointing": true,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/instruction/Qwen3.5-2B-cpt-full-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 2,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 100,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-12T16:38:59.189309+00:00",
+      "path": "models/instruction/Qwen3.5-2B-instruct-full-hpn-sft/checkpoints/checkpoint-200/training_args.bin",
+      "sha256": "f3d5d8e9e09ef36bc33a08347b90edb0a9a293d166104c4e4cee644bdf6a8f77",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 100,
+        "fp16": false,
+        "gradient_accumulation_steps": 8,
+        "gradient_checkpointing": true,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/instruction/Qwen3.5-2B-instruct-full-hpn-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 2,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 100,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-12T17:43:46.152768+00:00",
+      "path": "models/instruction/Qwen3.5-2B-instruct-full-hpn-sft/checkpoints/checkpoint-609/training_args.bin",
+      "sha256": "f3d5d8e9e09ef36bc33a08347b90edb0a9a293d166104c4e4cee644bdf6a8f77",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 100,
+        "fp16": false,
+        "gradient_accumulation_steps": 8,
+        "gradient_checkpointing": true,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/instruction/Qwen3.5-2B-instruct-full-hpn-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 2,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 100,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-12T17:43:55.744771+00:00",
+      "path": "models/instruction/Qwen3.5-2B-instruct-full-hpn-sft/training_args.bin",
+      "sha256": "f3d5d8e9e09ef36bc33a08347b90edb0a9a293d166104c4e4cee644bdf6a8f77",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 100,
+        "fp16": false,
+        "gradient_accumulation_steps": 8,
+        "gradient_checkpointing": true,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/instruction/Qwen3.5-2B-instruct-full-hpn-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 2,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 100,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-13T08:51:10.172946+00:00",
+      "path": "models/lora/Qwen3.5-2B-instruct-lora-cpt/checkpoints/checkpoint-2421/training_args.bin",
+      "sha256": "cc8f4a164604be6d3c80620256e40f986a03d8c0f5642d8ff3e2ebc02a4f242a",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 269,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/lora/Qwen3.5-2B-instruct-lora-cpt/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 269,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 269,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-13T10:18:34.890367+00:00",
+      "path": "models/lora/Qwen3.5-2B-instruct-lora-cpt/checkpoints/checkpoint-2690/training_args.bin",
+      "sha256": "cc8f4a164604be6d3c80620256e40f986a03d8c0f5642d8ff3e2ebc02a4f242a",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 269,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/lora/Qwen3.5-2B-instruct-lora-cpt/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 269,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 269,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-13T10:22:55.086087+00:00",
+      "path": "models/lora/Qwen3.5-2B-instruct-lora-cpt/checkpoints/checkpoint-2694/training_args.bin",
+      "sha256": "cc8f4a164604be6d3c80620256e40f986a03d8c0f5642d8ff3e2ebc02a4f242a",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 269,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/lora/Qwen3.5-2B-instruct-lora-cpt/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 269,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 269,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-13T12:04:23.950000+00:00",
+      "path": "models/lora/Qwen3.5-2B-instruct-lora-cpt-then-sft/checkpoints/checkpoint-540/training_args.bin",
+      "sha256": "70ac8e0976aff14ff8d936bac6e48ef752645b5c79e75e45df1c126dea20abae",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 60,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/lora/Qwen3.5-2B-instruct-lora-cpt-then-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 60,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-13T12:15:22.505746+00:00",
+      "path": "models/lora/Qwen3.5-2B-instruct-lora-cpt-then-sft/checkpoints/checkpoint-600/training_args.bin",
+      "sha256": "70ac8e0976aff14ff8d936bac6e48ef752645b5c79e75e45df1c126dea20abae",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 60,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/lora/Qwen3.5-2B-instruct-lora-cpt-then-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 60,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-13T12:17:15.121708+00:00",
+      "path": "models/lora/Qwen3.5-2B-instruct-lora-cpt-then-sft/checkpoints/checkpoint-609/training_args.bin",
+      "sha256": "70ac8e0976aff14ff8d936bac6e48ef752645b5c79e75e45df1c126dea20abae",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 60,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/lora/Qwen3.5-2B-instruct-lora-cpt-then-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 60,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-12T19:26:58.680381+00:00",
+      "path": "models/lora/Qwen3.5-2B-instruct-lora-sft/checkpoints/checkpoint-540/training_args.bin",
+      "sha256": "dc2b14d2aa6a8846d1cc5a0ec41852dfc56e9bfb99cd8ebb876dfbcff8d32883",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 60,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/lora/Qwen3.5-2B-instruct-lora-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 60,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-12T19:38:06.260468+00:00",
+      "path": "models/lora/Qwen3.5-2B-instruct-lora-sft/checkpoints/checkpoint-600/training_args.bin",
+      "sha256": "dc2b14d2aa6a8846d1cc5a0ec41852dfc56e9bfb99cd8ebb876dfbcff8d32883",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 60,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/lora/Qwen3.5-2B-instruct-lora-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 60,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-12T19:40:00.328501+00:00",
+      "path": "models/lora/Qwen3.5-2B-instruct-lora-sft/checkpoints/checkpoint-609/training_args.bin",
+      "sha256": "dc2b14d2aa6a8846d1cc5a0ec41852dfc56e9bfb99cd8ebb876dfbcff8d32883",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 60,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/lora/Qwen3.5-2B-instruct-lora-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 60,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-12T09:29:34.426769+00:00",
+      "path": "models/pretrained/Qwen3.5-2B-trained-new/checkpoints/checkpoint-1792/training_args.bin",
+      "sha256": "47969cb7c382e4f2fa52fdf2b8a5e4732ea1a3ebdf366f293020cc5bdc7c4beb",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 448,
+        "fp16": false,
+        "gradient_accumulation_steps": 8,
+        "gradient_checkpointing": true,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/pretrained/Qwen3.5-2B-trained-new/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 2,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 448,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 269,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-12T14:34:25.927033+00:00",
+      "path": "models/pretrained/Qwen3.5-2B-trained-new/checkpoints/checkpoint-2694/training_args.bin",
+      "sha256": "47969cb7c382e4f2fa52fdf2b8a5e4732ea1a3ebdf366f293020cc5bdc7c4beb",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 448,
+        "fp16": false,
+        "gradient_accumulation_steps": 8,
+        "gradient_checkpointing": true,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/pretrained/Qwen3.5-2B-trained-new/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 2,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 448,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 269,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-12T14:34:35.215036+00:00",
+      "path": "models/pretrained/Qwen3.5-2B-trained-new/training_args.bin",
+      "sha256": "47969cb7c382e4f2fa52fdf2b8a5e4732ea1a3ebdf366f293020cc5bdc7c4beb",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 448,
+        "fp16": false,
+        "gradient_accumulation_steps": 8,
+        "gradient_checkpointing": true,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/pretrained/Qwen3.5-2B-trained-new/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 2,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 448,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 269,
+        "weight_decay": 0.01
+      }
+    }
+  ]
+}

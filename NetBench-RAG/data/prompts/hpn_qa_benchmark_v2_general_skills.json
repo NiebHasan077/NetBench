@@ -1,0 +1,1326 @@
+{
+  "metadata": {
+    "title": "HPN General Skills Benchmark v2.0",
+    "description": "General-skill question-answer pairs for High-Performance Networking, redesigned to evaluate transferable HPN reasoning rather than paper-specific implementation recall. The benchmark emphasizes conceptual understanding, quantitative reasoning, diagnosis, and scenario-based transfer tuning synthesized from Falcon (SC21, TPDS23), Marlin (ICS23), AutoMDT (SCW25), EDT/LDM-style multi-parameter optimization work, and related HPN transfer literature.",
+    "benchmark_goal": "Measure whether an LLM can extract general HPN skills from reading multiple specific HPN papers and apply them to new situations.",
+    "design_principles": [
+      "Favor general HPN concepts over system-specific details",
+      "Include scenario-based and task-based questions",
+      "Test end-to-end reasoning across TCP, network, and storage I/O",
+      "Balance throughput maximization against fairness, stability, and overhead",
+      "Preserve compatibility with the original JSON schema while adding question_type"
+    ],
+    "total_questions": 90,
+    "categories": [
+      "Network and Transport Foundations",
+      "BDP, RTT, and Window Reasoning",
+      "Small-File Transfer Optimization",
+      "Concurrency and Throughput Scaling",
+      "Parallelism and Chunking for Large Files",
+      "Bottleneck Diagnosis Across I/O and Network",
+      "Adaptive Optimization Methods",
+      "Fairness, Stability, and Multi-Tenant Sharing",
+      "Modular Architecture and Buffer Dynamics",
+      "Scenario-Based HPN Tuning and Design"
+    ],
+    "difficulty_levels": [
+      "easy",
+      "medium",
+      "hard"
+    ],
+    "question_types": [
+      "concept",
+      "reasoning",
+      "calculation",
+      "comparison",
+      "diagnosis",
+      "scenario"
+    ],
+    "source_papers": [
+      "Falcon SC21",
+      "Falcon TPDS23",
+      "Marlin ICS23",
+      "AutoMDT SCW25",
+      "EDT / LDM-style multi-parameter HPN optimization",
+      "General HPN transfer literature"
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q001",
+      "category": "Network and Transport Foundations",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "What makes high-performance networking (HPN) transfers different from ordinary internet file transfers?",
+      "reference_answer": "HPN transfers usually operate over very high-bandwidth paths, often across HPC sites, and move much larger datasets. The bottleneck is rarely just raw link speed; it is usually the interaction of bandwidth, RTT, TCP limits, storage I/O, CPU overhead, and transfer software behavior. That is why HPN tuning is an end-to-end systems problem rather than a simple “faster link = faster transfer” problem.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "HPN",
+        "HPC",
+        "wide-area transfer",
+        "end-to-end performance"
+      ]
+    },
+    {
+      "id": "Q002",
+      "category": "Network and Transport Foundations",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "Why do legacy tools such as scp or single-stream FTP underperform on modern HPN paths?",
+      "reference_answer": "They usually transfer one file at a time over one connection. On high-BDP paths, one stream often cannot keep enough data in flight to fill the link, and repeated connection setup adds extra latency and slow-start overhead. They also do not adapt well to dynamic network and storage conditions.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "scp",
+        "FTP",
+        "single stream",
+        "slow-start",
+        "BDP"
+      ]
+    },
+    {
+      "id": "Q003",
+      "category": "Network and Transport Foundations",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "What is the difference between bandwidth, throughput, and goodput?",
+      "reference_answer": "Bandwidth is the maximum capacity of the path, throughput is the actual rate at which data is transferred, and goodput is the useful application payload delivered excluding retransmissions and protocol overhead. In HPN, the gap between bandwidth and goodput is often where all the misery lives.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "bandwidth",
+        "throughput",
+        "goodput"
+      ]
+    },
+    {
+      "id": "Q004",
+      "category": "Network and Transport Foundations",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why can increasing link bandwidth alone fail to improve end-to-end transfer speed?",
+      "reference_answer": "Because the slowest stage may be elsewhere: source read speed, destination write speed, CPU, per-stream TCP limits, or application overhead. A 100 Gbps path does not help much if the sender can only read at 20 Gbps or each stream tops out far below the path BDP.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "end-to-end bottleneck",
+        "I/O",
+        "TCP limits"
+      ]
+    },
+    {
+      "id": "Q005",
+      "category": "Network and Transport Foundations",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "What role does RTT play in high-performance data transfer even when bandwidth is very high?",
+      "reference_answer": "RTT determines how long it takes acknowledgments to return, which directly affects how much in-flight data is needed to keep the pipe full. As RTT grows, the Bandwidth-Delay Product grows too, so more outstanding data or more streams are needed to reach high throughput.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "RTT",
+        "BDP",
+        "in-flight data"
+      ]
+    },
+    {
+      "id": "Q006",
+      "category": "Network and Transport Foundations",
+      "difficulty": "medium",
+      "question_type": "comparison",
+      "question": "Why are application-layer optimizations especially attractive in HPN environments?",
+      "reference_answer": "They can improve performance without changing the underlying transport protocol or requiring kernel modifications across multiple sites. Tuning pipelining, concurrency, and parallelism at the application layer is much easier to deploy in real production environments than redesigning the whole transport stack.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "application layer",
+        "pipelining",
+        "concurrency",
+        "parallelism"
+      ]
+    },
+    {
+      "id": "Q007",
+      "category": "Network and Transport Foundations",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Explain why high-performance transfer tuning is a systems problem rather than only a networking problem.",
+      "reference_answer": "Transfer speed depends on a pipeline: reading from storage, moving bytes through memory and CPU, sending them across the network, and writing them at the destination. Any stage can bottleneck the others, and the stages interact through queues and buffers. A network-only view misses those cross-layer couplings and can produce settings that look clever on paper but behave like a gremlin in production.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "systems thinking",
+        "I/O",
+        "network",
+        "buffers",
+        "pipeline"
+      ]
+    },
+    {
+      "id": "Q008",
+      "category": "Network and Transport Foundations",
+      "difficulty": "hard",
+      "question_type": "diagnosis",
+      "question": "What is the hidden cost of opening and closing many data connections during a transfer?",
+      "reference_answer": "Each new connection pays setup cost, often re-enters slow-start, consumes CPU and kernel resources, and may idle the data path between files. For workloads with many small files, that control overhead can dominate transfer time and destroy effective throughput.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "connection setup",
+        "slow-start",
+        "small files",
+        "CPU overhead"
+      ]
+    },
+    {
+      "id": "Q009",
+      "category": "Network and Transport Foundations",
+      "difficulty": "hard",
+      "question_type": "comparison",
+      "question": "Compare transport-layer tuning and application-layer tuning for high-performance data movement.",
+      "reference_answer": "Transport-layer tuning changes how a connection behaves, for example through congestion control or buffer settings. Application-layer tuning changes how work is structured across connections, such as how many transfers run at once, whether commands are pipelined, and whether large files are chunked. In practice, application-layer tuning is often the more deployable lever for HPN because it can compensate for transport limits without requiring network-wide changes.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "transport layer",
+        "application layer",
+        "congestion control",
+        "deployability"
+      ]
+    },
+    {
+      "id": "Q010",
+      "category": "BDP, RTT, and Window Reasoning",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "What is the Bandwidth-Delay Product (BDP), and what intuition should an HPN practitioner attach to it?",
+      "reference_answer": "BDP equals bandwidth × RTT. It is the amount of unacknowledged data that must be in flight to keep the path fully utilized. A path with a giant BDP is basically a giant pipe that stays half-empty unless you keep enough bytes moving through it.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "BDP",
+        "bandwidth",
+        "RTT",
+        "in-flight data"
+      ]
+    },
+    {
+      "id": "Q011",
+      "category": "BDP, RTT, and Window Reasoning",
+      "difficulty": "easy",
+      "question_type": "calculation",
+      "question": "A path has 100 Gbps bandwidth and 80 ms RTT. What is its approximate BDP?",
+      "reference_answer": "BDP = 100 Gbps × 0.08 s = 8 Gb, which is about 1 GB of in-flight data. So a sender needs roughly a gigabyte of outstanding data across all streams to fully fill that path.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "BDP",
+        "100 Gbps",
+        "80 ms",
+        "calculation"
+      ]
+    },
+    {
+      "id": "Q012",
+      "category": "BDP, RTT, and Window Reasoning",
+      "difficulty": "easy",
+      "question_type": "calculation",
+      "question": "If a single stream can keep at most 32 MB in flight on an 80 ms RTT path, what is the stream’s approximate throughput ceiling?",
+      "reference_answer": "Throughput ≈ 32 MB × 8 / 0.08 s = 3.2 Gbps. That is why one stream can look heroic in a LAN and then become hilariously inadequate on a long-fat network.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "32 MB",
+        "80 ms",
+        "throughput ceiling"
+      ]
+    },
+    {
+      "id": "Q013",
+      "category": "BDP, RTT, and Window Reasoning",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why does Wmax << BDP usually imply underutilization for a single TCP stream?",
+      "reference_answer": "If the maximum effective congestion or socket window is much smaller than the path BDP, the sender cannot keep enough data in flight before needing acknowledgments. The stream therefore leaves part of the path idle even when no other bottleneck exists.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "Wmax",
+        "BDP",
+        "TCP window",
+        "underutilization"
+      ]
+    },
+    {
+      "id": "Q014",
+      "category": "BDP, RTT, and Window Reasoning",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "If RTT doubles while bandwidth stays the same, what happens to the BDP and the amount of in-flight data required?",
+      "reference_answer": "The BDP doubles. That means the transfer needs roughly twice as much in-flight data, whether from larger windows, more streams, or both, to maintain the same utilization.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "RTT",
+        "BDP scaling",
+        "in-flight data"
+      ]
+    },
+    {
+      "id": "Q015",
+      "category": "BDP, RTT, and Window Reasoning",
+      "difficulty": "medium",
+      "question_type": "calculation",
+      "question": "A path has 40 Gbps bandwidth and 25 ms RTT. What is the approximate BDP in megabytes?",
+      "reference_answer": "BDP = 40 Gbps × 0.025 s = 1 Gb, which is about 125 MB. That is the rough in-flight target across all active streams.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "40 Gbps",
+        "25 ms",
+        "BDP"
+      ]
+    },
+    {
+      "id": "Q016",
+      "category": "BDP, RTT, and Window Reasoning",
+      "difficulty": "hard",
+      "question_type": "scenario",
+      "question": "If each stream reliably sustains 5 Gbps and the path can deliver about 40 Gbps, what is a reasonable first concurrency estimate?",
+      "reference_answer": "A reasonable first estimate is around 8 streams, because 8 × 5 Gbps ≈ 40 Gbps. It is only a starting point, not gospel, because actual performance can still be limited by I/O, fairness policies, packet loss, or per-stream variability.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "concurrency estimate",
+        "per-stream throughput",
+        "40 Gbps"
+      ]
+    },
+    {
+      "id": "Q017",
+      "category": "BDP, RTT, and Window Reasoning",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why should BDP be treated as a target for reasoning rather than an exact tuning rule?",
+      "reference_answer": "BDP tells you how much data should be in flight in principle, but it does not reveal the real bottleneck, the cost of extra streams, or how storage and CPU behave under load. In production, the best operating point balances utilization, overhead, stability, and fairness rather than mechanically chasing a formula.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "BDP heuristic",
+        "overhead",
+        "fairness",
+        "stability"
+      ]
+    },
+    {
+      "id": "Q018",
+      "category": "BDP, RTT, and Window Reasoning",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "How does per-connection throttling or a low per-stream cap change the concurrency you need?",
+      "reference_answer": "It lowers the contribution of each stream, so more streams are needed to reach the same aggregate throughput. If the cap is policy-imposed rather than protocol-imposed, the optimizer should account for it directly instead of naively blaming TCP for everything under the sun.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "per-stream cap",
+        "throttling",
+        "concurrency"
+      ]
+    },
+    {
+      "id": "Q019",
+      "category": "Small-File Transfer Optimization",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "What is pipelining in the context of data transfer?",
+      "reference_answer": "Pipelining sends multiple transfer commands back-to-back over persistent connections instead of waiting for each file to fully finish before issuing the next command. It reduces idle gaps and keeps the data channel warm.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "pipelining",
+        "persistent connection",
+        "small files"
+      ]
+    },
+    {
+      "id": "Q020",
+      "category": "Small-File Transfer Optimization",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why does pipelining usually help small-file workloads more than large-file workloads?",
+      "reference_answer": "For small files, control overhead, handshakes, and slow-start can be a large fraction of total transfer time. Pipelining amortizes those costs across many files, whereas large files already spend most of their time moving payload data.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "small files",
+        "control overhead",
+        "handshake"
+      ]
+    },
+    {
+      "id": "Q021",
+      "category": "Small-File Transfer Optimization",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "What is TCP slow-start, and why is it especially painful for many tiny files?",
+      "reference_answer": "Slow-start begins a new connection with a small congestion window and grows it over time. Tiny files may finish before the window grows enough to exploit available bandwidth, so repeatedly creating fresh connections leaves throughput stranded in the mud.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "TCP slow-start",
+        "tiny files",
+        "congestion window"
+      ]
+    },
+    {
+      "id": "Q022",
+      "category": "Small-File Transfer Optimization",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "You need to move 100,000 files of 64 KB each over a high-RTT path. Which transfer parameter deserves top priority first: pipelining, concurrency, or parallelism?",
+      "reference_answer": "Pipelining should be the first priority. The main enemy is per-file control and connection overhead, not a lack of work units or a shortage of giant files that need chunking.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "64 KB files",
+        "pipelining priority",
+        "high RTT"
+      ]
+    },
+    {
+      "id": "Q023",
+      "category": "Small-File Transfer Optimization",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "When does pipelining provide limited benefit?",
+      "reference_answer": "It helps less when files are already large enough that payload transfer dominates, when connections are already persistent and busy, or when the bottleneck is metadata lookup, disk I/O, or CPU rather than data-channel idleness.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "large files",
+        "metadata bottleneck",
+        "persistent connections"
+      ]
+    },
+    {
+      "id": "Q024",
+      "category": "Small-File Transfer Optimization",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why does a persistent connection help preserve transfer performance across successive small files?",
+      "reference_answer": "It avoids tearing down and recreating the data path, which means the sender can retain a grown congestion window and reduce repeated setup overhead. In plain terms: do not make TCP relearn the same lesson 100,000 times.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "persistent connection",
+        "congestion window",
+        "small files"
+      ]
+    },
+    {
+      "id": "Q025",
+      "category": "Small-File Transfer Optimization",
+      "difficulty": "hard",
+      "question_type": "comparison",
+      "question": "Distinguish pipelining from concurrency.",
+      "reference_answer": "Pipelining improves how commands are sequenced over existing channels so the next file starts quickly; concurrency increases how many files or transfer units are active at the same time. One attacks idle gaps, the other attacks insufficient aggregate in-flight data.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "pipelining vs concurrency",
+        "idle gaps",
+        "aggregate throughput"
+      ]
+    },
+    {
+      "id": "Q026",
+      "category": "Small-File Transfer Optimization",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why can raising concurrency fail to rescue a tiny-file workload when pipelining is absent?",
+      "reference_answer": "Because each file may still pay connection setup, command exchange, and slow-start overhead. More concurrent tiny transfers can simply multiply overhead and system pressure without eliminating the latency-dominated behavior.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "tiny files",
+        "concurrency limit",
+        "overhead"
+      ]
+    },
+    {
+      "id": "Q027",
+      "category": "Small-File Transfer Optimization",
+      "difficulty": "hard",
+      "question_type": "diagnosis",
+      "question": "What observations suggest that a transfer is operating in a small-file overhead-dominated regime?",
+      "reference_answer": "You may see low link utilization despite a fast path, many short-lived connections, high control-message frequency, frequent idle gaps between files, and only modest improvement from adding streams. Those are classic signs that latency and setup cost, not raw bandwidth, are in charge.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "diagnosis",
+        "small-file regime",
+        "low utilization"
+      ]
+    },
+    {
+      "id": "Q028",
+      "category": "Concurrency and Throughput Scaling",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "What does concurrency mean in high-performance file transfer?",
+      "reference_answer": "Concurrency is the number of files or transfer units being moved simultaneously. It is a way to aggregate throughput across multiple flows when one flow alone cannot fill the path.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "concurrency",
+        "simultaneous transfers"
+      ]
+    },
+    {
+      "id": "Q029",
+      "category": "Concurrency and Throughput Scaling",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why does increasing concurrency often improve throughput at first?",
+      "reference_answer": "Because multiple active streams increase total in-flight data and better exploit network and I/O parallelism. Early gains are often strong because the system is moving from underutilization toward saturation.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "throughput scaling",
+        "parallelism",
+        "in-flight data"
+      ]
+    },
+    {
+      "id": "Q030",
+      "category": "Concurrency and Throughput Scaling",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why can excessive concurrency hurt performance?",
+      "reference_answer": "Too many concurrent transfers can trigger packet loss, queue buildup, CPU overhead, memory pressure, metadata contention, and storage bottlenecks. Past some point, more streams add drama rather than useful throughput.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "excessive concurrency",
+        "packet loss",
+        "CPU",
+        "I/O contention"
+      ]
+    },
+    {
+      "id": "Q031",
+      "category": "Concurrency and Throughput Scaling",
+      "difficulty": "medium",
+      "question_type": "calculation",
+      "question": "A single stream delivers about 2 Gbps and you want roughly 16 Gbps on an unloaded path. What is a sensible first concurrency guess?",
+      "reference_answer": "About 8 concurrent streams is a sensible first guess because 8 × 2 Gbps ≈ 16 Gbps. Then you validate and adjust based on loss, CPU, disk behavior, and whether the path is actually shared.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "2 Gbps",
+        "16 Gbps",
+        "concurrency"
+      ]
+    },
+    {
+      "id": "Q032",
+      "category": "Concurrency and Throughput Scaling",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why is it a bad idea to give every new transfer the same large concurrency value on a shared system?",
+      "reference_answer": "Because each transfer would assume exclusive ownership of the bottleneck and collectively overwhelm the system. Per-transfer throughput would drop, overhead would rise, and fairness would become a circus.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "shared system",
+        "fairness",
+        "overhead"
+      ]
+    },
+    {
+      "id": "Q033",
+      "category": "Concurrency and Throughput Scaling",
+      "difficulty": "medium",
+      "question_type": "concept",
+      "question": "What is meant by 'just-enough concurrency'?",
+      "reference_answer": "It means using enough concurrent work to approach near-optimal throughput without creating unnecessary overhead or unfairness. The goal is not 'max streams', but the smallest concurrency that gets you close to the useful operating point.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "just-enough concurrency",
+        "utility",
+        "efficiency"
+      ]
+    },
+    {
+      "id": "Q034",
+      "category": "Concurrency and Throughput Scaling",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why do static concurrency values fail across time even for the same source, destination, and dataset?",
+      "reference_answer": "Background traffic, storage load, CPU contention, and policy throttles change over time. A value that was optimal yesterday may be too small during a quiet period or too aggressive during a busy one.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "static tuning",
+        "dynamic conditions",
+        "background load"
+      ]
+    },
+    {
+      "id": "Q035",
+      "category": "Concurrency and Throughput Scaling",
+      "difficulty": "hard",
+      "question_type": "scenario",
+      "question": "Under what dataset conditions is concurrency-only optimization most likely to work reasonably well?",
+      "reference_answer": "It works best when the dataset contains many medium-to-large files so there are plenty of independent work units, and when neither small-file latency effects nor giant-file tail effects dominate. In that regime, concurrency directly addresses the main limitation: insufficient aggregate in-flight data.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "dataset composition",
+        "medium files",
+        "concurrency-only"
+      ]
+    },
+    {
+      "id": "Q036",
+      "category": "Concurrency and Throughput Scaling",
+      "difficulty": "hard",
+      "question_type": "diagnosis",
+      "question": "What observations suggest that concurrency should be reduced rather than increased?",
+      "reference_answer": "If throughput has plateaued or started falling while loss, retransmissions, CPU use, disk wait, or queueing delay continue rising, the system is already past the sweet spot. That is the classic sign to back off instead of adding more threads like a caffeinated squirrel.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "backoff",
+        "packet loss",
+        "CPU",
+        "disk wait"
+      ]
+    },
+    {
+      "id": "Q037",
+      "category": "Parallelism and Chunking for Large Files",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "What does parallelism mean in high-performance file transfer?",
+      "reference_answer": "Parallelism means splitting a large file into multiple pieces or using multiple streams for one file so parts can be transferred simultaneously. It creates more independent work from a single large object.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "parallelism",
+        "chunking",
+        "large files"
+      ]
+    },
+    {
+      "id": "Q038",
+      "category": "Parallelism and Chunking for Large Files",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "When is parallelism especially useful?",
+      "reference_answer": "It is especially useful when the dataset has only a few very large files, so file-level concurrency alone cannot create enough active work units. It also helps reduce long tail effects near the end of a transfer.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "large files",
+        "tail latency",
+        "few files"
+      ]
+    },
+    {
+      "id": "Q039",
+      "category": "Parallelism and Chunking for Large Files",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why can concurrency alone fail when the dataset contains only a handful of giant files?",
+      "reference_answer": "Because concurrency is bounded by the number of active files. If there are only three files, file-level concurrency cannot exceed three unless you split those files into chunks or use intra-file parallelism.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "giant files",
+        "concurrency bound",
+        "few work units"
+      ]
+    },
+    {
+      "id": "Q040",
+      "category": "Parallelism and Chunking for Large Files",
+      "difficulty": "medium",
+      "question_type": "concept",
+      "question": "What main tradeoff governs chunk-size selection?",
+      "reference_answer": "Chunk size trades off per-chunk overhead against load balance. Small chunks improve flexibility and tail behavior but increase scheduling and bookkeeping overhead, while large chunks reduce overhead but can leave a few giant chunks dragging out completion.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "chunk size",
+        "load balance",
+        "overhead"
+      ]
+    },
+    {
+      "id": "Q041",
+      "category": "Parallelism and Chunking for Large Files",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "You need to move four 100 GB files over a high-RTT path where each stream is capped near 3 Gbps. Why is chunking likely to help?",
+      "reference_answer": "Chunking creates more transfer units than the original four files, allowing more streams to stay busy and reducing the risk that the transfer tail is dominated by one last monster file. It also makes it easier to match aggregate in-flight data to the path capacity.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "100 GB files",
+        "3 Gbps",
+        "chunking"
+      ]
+    },
+    {
+      "id": "Q042",
+      "category": "Parallelism and Chunking for Large Files",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why can very small chunks degrade performance?",
+      "reference_answer": "They increase scheduling overhead, metadata activity, random I/O pressure, and coordination cost. If chunks become too tiny, the system spends too much time managing work and not enough time moving useful data.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "small chunks",
+        "metadata overhead",
+        "random I/O"
+      ]
+    },
+    {
+      "id": "Q043",
+      "category": "Parallelism and Chunking for Large Files",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why can very large chunks degrade performance even when overhead is low?",
+      "reference_answer": "Large chunks reduce flexibility. Near the end of the transfer, a few remaining oversized chunks can dominate completion time, causing worker imbalance and a long staircase-shaped tail in throughput.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "large chunks",
+        "tail effect",
+        "worker imbalance"
+      ]
+    },
+    {
+      "id": "Q044",
+      "category": "Parallelism and Chunking for Large Files",
+      "difficulty": "hard",
+      "question_type": "comparison",
+      "question": "Distinguish file-level concurrency from intra-file parallelism.",
+      "reference_answer": "File-level concurrency runs multiple files at once. Intra-file parallelism creates multiple transfer units within the same file. They solve related but different problems: the first exploits many files, the second rescues performance when there are too few files.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "file-level concurrency",
+        "intra-file parallelism"
+      ]
+    },
+    {
+      "id": "Q045",
+      "category": "Parallelism and Chunking for Large Files",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "How should chunk size relate heuristically to per-stream window or BDP?",
+      "reference_answer": "A chunk should usually be large enough that each stream has meaningful work and does not spend most of its life in startup overhead. In practice, chunk size is often chosen comfortably above the effective per-stream window, while still being small enough to avoid severe tail imbalance.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "chunk size heuristic",
+        "BDP",
+        "window"
+      ]
+    },
+    {
+      "id": "Q046",
+      "category": "Bottleneck Diagnosis Across I/O and Network",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "How can you conceptually distinguish a network bottleneck from a source-read or destination-write bottleneck?",
+      "reference_answer": "Compare the sustainable rates of the major stages. If the network has plenty of headroom but the sender cannot read fast enough, the source is the bottleneck; if the receiver cannot persist data fast enough, the destination is the bottleneck; if both ends are healthy but the path saturates, the network is the likely limiter.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "bottleneck diagnosis",
+        "source read",
+        "destination write",
+        "network"
+      ]
+    },
+    {
+      "id": "Q047",
+      "category": "Bottleneck Diagnosis Across I/O and Network",
+      "difficulty": "easy",
+      "question_type": "calculation",
+      "question": "If the network can carry 80 Gbps, the source can read at 25 Gbps, and the destination can write at 70 Gbps, what is the end-to-end throughput ceiling?",
+      "reference_answer": "About 25 Gbps, because the source-read stage is the slowest component. End-to-end systems obey the least glamorous stage, not the headline bandwidth.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "80 Gbps",
+        "25 Gbps",
+        "70 Gbps",
+        "bottleneck"
+      ]
+    },
+    {
+      "id": "Q048",
+      "category": "Bottleneck Diagnosis Across I/O and Network",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why can optimizing only network concurrency fail to fix poor storage performance?",
+      "reference_answer": "Because more network threads cannot manufacture disk bandwidth out of thin air. If storage is the bottleneck, extra network aggressiveness mainly increases contention and buffering pressure.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "storage bottleneck",
+        "network concurrency"
+      ]
+    },
+    {
+      "id": "Q049",
+      "category": "Bottleneck Diagnosis Across I/O and Network",
+      "difficulty": "medium",
+      "question_type": "diagnosis",
+      "question": "What symptoms suggest the destination write path is limiting the transfer?",
+      "reference_answer": "Network utilization may fluctuate below capacity while destination-side buffers fill, write latency rises, and disk or filesystem wait time stays high. Increasing network threads then produces little benefit because the receiver cannot drain data fast enough.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "destination bottleneck",
+        "buffers",
+        "write latency"
+      ]
+    },
+    {
+      "id": "Q050",
+      "category": "Bottleneck Diagnosis Across I/O and Network",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why can background jobs change the optimal transfer settings even when endpoints and dataset stay the same?",
+      "reference_answer": "Because they alter the available CPU, disk bandwidth, queueing behavior, and share of the network bottleneck. The operating point is therefore dynamic, not a static property of the path alone.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "background jobs",
+        "dynamic tuning",
+        "resource contention"
+      ]
+    },
+    {
+      "id": "Q051",
+      "category": "Bottleneck Diagnosis Across I/O and Network",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "What is the danger of optimizing based on only one observed metric such as throughput?",
+      "reference_answer": "You may pick a setting that looks fast momentarily while causing unacceptable packet loss, CPU overhead, unfairness, or tail instability. A single metric can hide the cost of how the performance was achieved.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "throughput-only",
+        "multi-objective tuning",
+        "fairness"
+      ]
+    },
+    {
+      "id": "Q052",
+      "category": "Bottleneck Diagnosis Across I/O and Network",
+      "difficulty": "hard",
+      "question_type": "concept",
+      "question": "How can staged buffering help when the write side is slower than the network side?",
+      "reference_answer": "A fast intermediate buffer, such as RAM or NVMe, can absorb incoming data at network speed and let the slower destination writes proceed asynchronously. This decouples the write bottleneck from the network path and can improve overall throughput and stability.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "staging",
+        "RAM",
+        "NVMe",
+        "write bottleneck"
+      ]
+    },
+    {
+      "id": "Q053",
+      "category": "Bottleneck Diagnosis Across I/O and Network",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why is end-system heterogeneity a major issue in HPN tuning?",
+      "reference_answer": "Different sites may have different storage devices, CPU limits, per-stream throttles, and contention patterns. A setting that is sensible for one endpoint pair can be wasteful or unstable for another because the underlying thread-level performance of each stage is different.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "heterogeneity",
+        "storage devices",
+        "thread-level performance"
+      ]
+    },
+    {
+      "id": "Q054",
+      "category": "Bottleneck Diagnosis Across I/O and Network",
+      "difficulty": "hard",
+      "question_type": "scenario",
+      "question": "During a transfer, CPU usage becomes very high, packet loss stays low, and throughput stops improving as concurrency rises. What does that suggest?",
+      "reference_answer": "It suggests an end-host overhead bottleneck rather than a pure network-capacity bottleneck. The optimizer should likely back off or rebalance work because the host is spending more effort managing transfers than advancing them.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "CPU bottleneck",
+        "host overhead",
+        "diagnosis"
+      ]
+    },
+    {
+      "id": "Q055",
+      "category": "Adaptive Optimization Methods",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why do heuristic or historically trained parameter settings often fail in production HPN transfers?",
+      "reference_answer": "Because real transfers occur under changing conditions. Fixed or historically fitted settings can become suboptimal when background traffic, I/O load, or endpoint behavior shifts during the transfer.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "heuristics",
+        "historical models",
+        "dynamic networks"
+      ]
+    },
+    {
+      "id": "Q056",
+      "category": "Adaptive Optimization Methods",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "What does online optimization mean in the context of HPN data transfer?",
+      "reference_answer": "It means adjusting transfer parameters during the transfer based on current observations rather than committing to one fixed setting beforehand. The system learns while the data is moving.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "online optimization",
+        "adaptive tuning"
+      ]
+    },
+    {
+      "id": "Q057",
+      "category": "Adaptive Optimization Methods",
+      "difficulty": "easy",
+      "question_type": "comparison",
+      "question": "Compare hill climbing, gradient descent, and Bayesian optimization at a high level for transfer tuning.",
+      "reference_answer": "Hill climbing makes local incremental moves, gradient-style methods use directional information to adjust step size more intelligently, and Bayesian optimization uses a surrogate model to decide where to sample next. Each trades off simplicity, stability, and sample efficiency differently.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "hill climbing",
+        "gradient descent",
+        "Bayesian optimization"
+      ]
+    },
+    {
+      "id": "Q058",
+      "category": "Adaptive Optimization Methods",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why is convergence time a critical metric for HPN optimizers?",
+      "reference_answer": "Because time spent searching is time spent transferring below the best operating point. If many transfers last minutes rather than days, an optimizer that needs hours to settle is basically a very academic way to be late.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "convergence time",
+        "search overhead"
+      ]
+    },
+    {
+      "id": "Q059",
+      "category": "Adaptive Optimization Methods",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why does multi-parameter transfer tuning become hard so quickly?",
+      "reference_answer": "Because the search space grows combinatorially as more knobs are added. Even if each parameter has only a modest number of candidate values, jointly searching them all can explode the number of possible configurations.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "search space",
+        "multi-parameter",
+        "combinatorial"
+      ]
+    },
+    {
+      "id": "Q060",
+      "category": "Adaptive Optimization Methods",
+      "difficulty": "medium",
+      "question_type": "concept",
+      "question": "Why might an HPN system use a simulator to train a reinforcement learning agent?",
+      "reference_answer": "A simulator allows many training episodes cheaply and quickly without disrupting production networks. It can compress days of online trial-and-error into minutes of offline learning if the modeled dynamics are good enough.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "simulator",
+        "reinforcement learning",
+        "offline training"
+      ]
+    },
+    {
+      "id": "Q061",
+      "category": "Adaptive Optimization Methods",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "What advantage can joint optimization provide over optimizing each parameter independently?",
+      "reference_answer": "Joint optimization can learn interactions among parameters, such as how read, network, and write settings affect each other through shared buffers and queues. Independent tuning may find locally sensible values for each knob that work poorly together.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "joint optimization",
+        "parameter interaction",
+        "buffers"
+      ]
+    },
+    {
+      "id": "Q062",
+      "category": "Adaptive Optimization Methods",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "What is the tradeoff between fast convergence and stable convergence in transfer control?",
+      "reference_answer": "Very aggressive search can jump to promising settings quickly but may oscillate or overshoot when conditions are noisy. More conservative search is steadier but may spend too long in suboptimal regions. Good control tries to be bold without becoming a chaos goblin.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "convergence",
+        "stability",
+        "oscillation"
+      ]
+    },
+    {
+      "id": "Q063",
+      "category": "Adaptive Optimization Methods",
+      "difficulty": "hard",
+      "question_type": "scenario",
+      "question": "When should an adaptive controller back off even if instantaneous throughput rises slightly?",
+      "reference_answer": "It should back off if the marginal gain comes with disproportionate cost, such as rising packet loss, CPU pressure, unfairness, or queue growth. Sustainable goodput and stable sharing matter more than a brief throughput sugar rush.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "backoff",
+        "marginal utility",
+        "fairness",
+        "queue growth"
+      ]
+    },
+    {
+      "id": "Q064",
+      "category": "Fairness, Stability, and Multi-Tenant Sharing",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "Why does fairness matter in shared research networks and HPC environments?",
+      "reference_answer": "These environments serve many users and workflows simultaneously. A transfer method that grabs resources selfishly can degrade other jobs, increase instability, and make overall system performance worse even if one transfer looks fast.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "fairness",
+        "shared networks",
+        "multi-tenant"
+      ]
+    },
+    {
+      "id": "Q065",
+      "category": "Fairness, Stability, and Multi-Tenant Sharing",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "What is wrong with optimizing only for one transfer’s maximum throughput?",
+      "reference_answer": "It ignores the external cost imposed on other transfers and the shared infrastructure. The result can be congestion, unfair bandwidth capture, and lower total utility for the system as a whole.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "maximum throughput",
+        "externality",
+        "shared bottleneck"
+      ]
+    },
+    {
+      "id": "Q066",
+      "category": "Fairness, Stability, and Multi-Tenant Sharing",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "What is the basic intuition of Nash equilibrium in the context of competing transfers?",
+      "reference_answer": "It is a stable operating point where no transfer can improve its own objective by changing strategy alone while others keep theirs unchanged. In transfer tuning, it is the 'nobody has an obvious solo cheat code left' condition.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "Nash equilibrium",
+        "competing transfers"
+      ]
+    },
+    {
+      "id": "Q067",
+      "category": "Fairness, Stability, and Multi-Tenant Sharing",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "How can packet loss, queueing, or overhead be used as a penalty signal in a utility function?",
+      "reference_answer": "They act as regret terms that discourage overly aggressive settings. A utility that rewards throughput but penalizes congestion-related harm tends to prefer operating points that are both efficient and more stable under competition.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "utility function",
+        "packet loss",
+        "queueing",
+        "penalty"
+      ]
+    },
+    {
+      "id": "Q068",
+      "category": "Fairness, Stability, and Multi-Tenant Sharing",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "Two transfers share a bottleneck link, and the later arrival steals most of the bandwidth from the earlier one. Why is that considered a problem?",
+      "reference_answer": "Because the system is unstable and unfair: the outcome depends too strongly on arrival order rather than balanced resource sharing. It also makes performance unpredictable for users and can incentivize aggressive behavior.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "latecomer advantage",
+        "instability",
+        "fairness"
+      ]
+    },
+    {
+      "id": "Q069",
+      "category": "Fairness, Stability, and Multi-Tenant Sharing",
+      "difficulty": "medium",
+      "question_type": "concept",
+      "question": "What does stable sharing look like in a shared HPN transfer system?",
+      "reference_answer": "Competing transfers settle to relatively steady resource shares without large oscillations, and small disturbances do not cause wild swings. The shares need not be perfectly equal, but they should be policy-consistent and predictable.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "stable sharing",
+        "oscillation",
+        "policy"
+      ]
+    },
+    {
+      "id": "Q070",
+      "category": "Fairness, Stability, and Multi-Tenant Sharing",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why can aggressive active probing be harmful on production HPN paths?",
+      "reference_answer": "Probing itself injects traffic and can perturb the very system it is trying to measure. In shared environments, too much probing can create congestion, distort observations, and annoy everyone else on the link.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "active probing",
+        "production network",
+        "measurement overhead"
+      ]
+    },
+    {
+      "id": "Q071",
+      "category": "Fairness, Stability, and Multi-Tenant Sharing",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why might a central scheduler improve fairness and policy enforcement compared with independent local controllers?",
+      "reference_answer": "A central scheduler can observe all transfers together, coordinate resource allocation, and enforce caps, priorities, or quotas consistently. Independent controllers may act with incomplete information and accidentally create unstable competition.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "central scheduler",
+        "policy enforcement",
+        "global view"
+      ]
+    },
+    {
+      "id": "Q072",
+      "category": "Fairness, Stability, and Multi-Tenant Sharing",
+      "difficulty": "hard",
+      "question_type": "concept",
+      "question": "Besides maximizing throughput, what policy goals may matter in shared HPN systems?",
+      "reference_answer": "Important goals include fairness, bounded loss, stable behavior, low host overhead, priority for urgent flows, user or project quotas, and predictable completion times. Real systems optimize for governance as well as raw speed.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "policy goals",
+        "priority",
+        "quotas",
+        "predictability"
+      ]
+    },
+    {
+      "id": "Q073",
+      "category": "Modular Architecture and Buffer Dynamics",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "Why decouple read, network, and write concurrency in a transfer system?",
+      "reference_answer": "Because those stages often have different optimal levels of parallelism. Using one shared concurrency value for all of them can overprovision fast stages and underfeed the slow one.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "read concurrency",
+        "network concurrency",
+        "write concurrency"
+      ]
+    },
+    {
+      "id": "Q074",
+      "category": "Modular Architecture and Buffer Dynamics",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "When does a monolithic 'same concurrency everywhere' design waste resources?",
+      "reference_answer": "It wastes resources when source I/O, network, and destination I/O have different per-thread capacities. Then one stage dictates a concurrency level that is too high for some components and too low for others.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "monolithic design",
+        "resource waste",
+        "asymmetric stages"
+      ]
+    },
+    {
+      "id": "Q075",
+      "category": "Modular Architecture and Buffer Dynamics",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "How do memory buffers couple network and I/O behavior in a transfer pipeline?",
+      "reference_answer": "Buffers temporarily absorb mismatches between producer and consumer rates. If reads outrun the network or the network outruns writes, buffer occupancy changes and feeds back into what concurrency levels are sensible.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "buffers",
+        "pipeline",
+        "producer consumer"
+      ]
+    },
+    {
+      "id": "Q076",
+      "category": "Modular Architecture and Buffer Dynamics",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why can joint optimization of read, network, and write settings outperform three independent one-variable optimizers?",
+      "reference_answer": "Because the stages interact through shared queues and buffer occupancy. Changing one stage can change the effective behavior of the others, so a controller that reasons jointly can find a more coherent operating point.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "joint optimization",
+        "queues",
+        "buffer occupancy"
+      ]
+    },
+    {
+      "id": "Q077",
+      "category": "Modular Architecture and Buffer Dynamics",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "How can a modular architecture speed bottleneck identification?",
+      "reference_answer": "Separate controls and measurements let the system observe which stage saturates first and respond directly. Instead of vaguely increasing one global thread count, it can increase the right kind of work in the right place.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "bottleneck identification",
+        "modular control"
+      ]
+    },
+    {
+      "id": "Q078",
+      "category": "Modular Architecture and Buffer Dynamics",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "When might staging data to RAM or NVMe improve transfer performance?",
+      "reference_answer": "Staging helps when the network can move data faster than the final storage can persist it. A fast intermediate layer smooths the mismatch so the network remains busy while slower writes drain in the background.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "RAM staging",
+        "NVMe staging",
+        "write bottleneck"
+      ]
+    },
+    {
+      "id": "Q079",
+      "category": "Modular Architecture and Buffer Dynamics",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why can independent per-stage tuning still become unstable if component interactions are ignored?",
+      "reference_answer": "Because each tuner may react to symptoms caused by another stage and push the system in conflicting directions. Without modeling interactions, one controller’s 'fix' can become another controller’s problem.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "independent tuning",
+        "instability",
+        "interactions"
+      ]
+    },
+    {
+      "id": "Q080",
+      "category": "Modular Architecture and Buffer Dynamics",
+      "difficulty": "hard",
+      "question_type": "comparison",
+      "question": "Compare monolithic and modular tuning for a transfer where the source uses fast NVMe but the destination is a busy HDD-backed filesystem.",
+      "reference_answer": "A monolithic design may raise all thread counts to overcome the slow destination, wasting source and network resources. A modular design can keep read-side work moderate or high as needed, preserve network efficiency, and focus control on the slow write stage, potentially with staging.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "NVMe",
+        "HDD",
+        "modular vs monolithic"
+      ]
+    },
+    {
+      "id": "Q081",
+      "category": "Modular Architecture and Buffer Dynamics",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why is HPN transfer optimization better viewed as control over a pipeline than as turning a single knob?",
+      "reference_answer": "Because performance emerges from interactions among multiple stages, queues, and feedback loops over time. A single-knob view misses where the system stores slack, where contention appears, and how local decisions ripple through the rest of the pipeline.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "pipeline control",
+        "feedback loops",
+        "systems view"
+      ]
+    },
+    {
+      "id": "Q082",
+      "category": "Scenario-Based HPN Tuning and Design",
+      "difficulty": "easy",
+      "question_type": "scenario",
+      "question": "A dataset contains 4,096 files of 256 MB each on a moderate-RTT path. Which parameter is usually the main lever: pipelining, concurrency, or parallelism?",
+      "reference_answer": "Concurrency is usually the main lever because there are already many independent files and each file is not tiny enough for pipelining to dominate or huge enough for chunking to be essential. Some pipelining may still help, but concurrency is the primary workhorse.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "256 MB files",
+        "concurrency",
+        "scenario"
+      ]
+    },
+    {
+      "id": "Q083",
+      "category": "Scenario-Based HPN Tuning and Design",
+      "difficulty": "easy",
+      "question_type": "scenario",
+      "question": "A dataset contains 100,000 files of 32 KB each. What should the tuning priority order usually be?",
+      "reference_answer": "Prioritize pipelining first, then use enough concurrency to keep the path busy, and treat parallelism as largely irrelevant. The bottleneck is the repeated small-file overhead, not a shortage of work units inside each file.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "32 KB files",
+        "pipelining",
+        "priority order"
+      ]
+    },
+    {
+      "id": "Q084",
+      "category": "Scenario-Based HPN Tuning and Design",
+      "difficulty": "easy",
+      "question_type": "scenario",
+      "question": "A dataset contains three 200 GB checkpoint files on a high-RTT WAN. What should the tuning priority order usually be?",
+      "reference_answer": "Parallelism and concurrency should be emphasized, because there are too few files for file-level concurrency alone and each file is large enough to benefit from chunking. Pipelining matters much less than in a tiny-file workload.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "checkpoint files",
+        "parallelism",
+        "high RTT"
+      ]
+    },
+    {
+      "id": "Q085",
+      "category": "Scenario-Based HPN Tuning and Design",
+      "difficulty": "medium",
+      "question_type": "calculation",
+      "question": "A path has about 20 Gbps of available headroom, but each connection is effectively capped near 1 Gbps. What is a sensible initial concurrency estimate?",
+      "reference_answer": "Roughly 20 concurrent streams is a sensible initial estimate, because each contributes only about 1 Gbps. After that, the controller should validate whether the end hosts and shared network can tolerate that level without excessive overhead.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "1 Gbps cap",
+        "20 Gbps headroom",
+        "concurrency"
+      ]
+    },
+    {
+      "id": "Q086",
+      "category": "Scenario-Based HPN Tuning and Design",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "As concurrency increases from 8 to 32, throughput barely improves while loss, CPU use, and queueing all rise. What should the controller do?",
+      "reference_answer": "Back off toward the lower concurrency region that delivered nearly the same throughput with lower cost. The system has already crossed from useful parallelism into self-inflicted pain.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "concurrency backoff",
+        "loss",
+        "CPU",
+        "queueing"
+      ]
+    },
+    {
+      "id": "Q087",
+      "category": "Scenario-Based HPN Tuning and Design",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "The network path is healthy, but the destination is a busy HDD-backed filesystem shared with other jobs. What architecture is most appropriate?",
+      "reference_answer": "A modular architecture is more appropriate because it can treat the write stage separately from the network stage. Staging to a faster buffer and tuning write concurrency independently are often better than globally increasing all threads.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "busy HDD",
+        "modular architecture",
+        "staging"
+      ]
+    },
+    {
+      "id": "Q088",
+      "category": "Scenario-Based HPN Tuning and Design",
+      "difficulty": "hard",
+      "question_type": "scenario",
+      "question": "After a competing transfer finishes and frees capacity, what should an adaptive optimizer ideally do?",
+      "reference_answer": "It should quickly detect the new headroom and raise its operating point toward a better one, while still respecting fairness and system limits. Good adaptive control should reclaim capacity promptly rather than staying frozen at a previously safe-but-now-wasteful setting.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "adaptive optimizer",
+        "freed capacity",
+        "headroom"
+      ]
+    },
+    {
+      "id": "Q089",
+      "category": "Scenario-Based HPN Tuning and Design",
+      "difficulty": "hard",
+      "question_type": "comparison",
+      "question": "You must choose between a static conservative configuration and adaptive online tuning for transfers that last about 10 minutes on a variable network. What is the tradeoff?",
+      "reference_answer": "A static conservative setting is simpler and predictable but likely leaves bandwidth unused when conditions are favorable. Adaptive tuning can exploit available capacity and react to change, but only if it converges quickly enough that search overhead does not consume a large fraction of the transfer. For 10-minute transfers, convergence speed is the make-or-break issue.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "10-minute transfers",
+        "static vs adaptive",
+        "convergence"
+      ]
+    },
+    {
+      "id": "Q090",
+      "category": "Scenario-Based HPN Tuning and Design",
+      "difficulty": "hard",
+      "question_type": "scenario",
+      "question": "A mixed workload contains millions of tiny metadata-heavy files plus a handful of multi-hundred-GB files. What high-level transfer strategy is most appropriate?",
+      "reference_answer": "Use a hybrid strategy: strong pipelining for the tiny files, concurrency to aggregate throughput across many active work units, and chunk-based parallelism for the handful of giant files. The right controller should adapt among these modes instead of pretending one knob can solve every pathology in this beautifully cursed workload.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": [
+        "mixed workload",
+        "hybrid strategy",
+        "pipelining",
+        "parallelism",
+        "concurrency"
+      ]
+    }
+  ]
+}

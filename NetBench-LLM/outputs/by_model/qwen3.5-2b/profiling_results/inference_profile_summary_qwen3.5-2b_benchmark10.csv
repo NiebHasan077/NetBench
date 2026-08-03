@@ -1,0 +1,11 @@
+label,profile_type,device,model_name,question_count,avg_total_time_s,avg_retrieval_time_s,avg_generation_time_s,avg_tokens_per_second,avg_ms_per_token,avg_ttft_s,peak_gpu_vram_mb,peak_cpu_ram_mb,load_time_s
+direct-cpu-benchmark10-S1-Qwen3.5-2B-Instruct-Official,direct,cpu,Qwen3.5-2B,10,25.4042,,25.4042,10.08,99.23,0.0011,0,8362,1.51
+direct-cpu-benchmark10-S4-Qwen3.5-2B-CPT-SFT,direct,cpu,Qwen3.5-2B-cpt-full-sft,10,20.604,,20.604,9.9,101.19,0.0011,0,8355,1.53
+direct-cpu-benchmark10-S5-Qwen3.5-2B-LoRA-CPT-SFT,direct,cpu,Qwen3.5-2B-instruct-lora-cpt-then-sft-merged,10,24.7972,,24.7972,10.33,96.86,0.001,0,8355,1.48
+direct-gpu-benchmark10-S1-Qwen3.5-2B-Instruct-Official,direct,cuda,Qwen3.5-2B,10,6.3666,,6.3666,40.28,24.87,0.0011,1771,2231,2.02
+direct-gpu-benchmark10-S4-Qwen3.5-2B-CPT-SFT,direct,cuda,Qwen3.5-2B-cpt-full-sft,10,4.1151,,4.1151,42.82,23.41,0.0011,1771,2224,2.06
+direct-gpu-benchmark10-S5-Qwen3.5-2B-LoRA-CPT-SFT,direct,cuda,Qwen3.5-2B-instruct-lora-cpt-then-sft-merged,10,5.9149,,5.9149,41.85,23.91,0.0011,1771,2212,2.07
+rag-cpu-benchmark10-S7-Qwen3.5-2B-RAG-CPT-SFT,rag,cpu,Qwen3.5-2B-cpt-full-sft,10,43.1262,12.4522,30.674,7.08,,,0,13914,10.73
+rag-cpu-benchmark10-S8-Qwen3.5-2B-RAG-LoRA-CPT-SFT,rag,cpu,Qwen3.5-2B-instruct-lora-cpt-then-sft-merged,10,41.4129,10.4436,30.9692,7.53,,,0,13917,10.47
+rag-gpu-benchmark10-S7-Qwen3.5-2B-RAG-CPT-SFT,rag,cuda,Qwen3.5-2B-cpt-full-sft,10,8.5135,2.1719,6.3416,32.41,,,6633,5061,11.33
+rag-gpu-benchmark10-S8-Qwen3.5-2B-RAG-LoRA-CPT-SFT,rag,cuda,Qwen3.5-2B-instruct-lora-cpt-then-sft-merged,10,9.4071,2.2326,7.1745,32.67,,,6633,5071,11.41
