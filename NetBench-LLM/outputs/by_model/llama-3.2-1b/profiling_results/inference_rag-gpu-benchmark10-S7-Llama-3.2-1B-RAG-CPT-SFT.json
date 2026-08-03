@@ -1,0 +1,263 @@
+{
+  "profile_type": "rag",
+  "model_path": "/workspace/portables/NetBench-LLM/models/instruction/Llama-3.2-1B-cpt-full-sft",
+  "model_name": "Llama-3.2-1B-cpt-full-sft",
+  "run_name": "rag-gpu-benchmark10-S7-Llama-3.2-1B-RAG-CPT-SFT",
+  "device": "cuda",
+  "timestamp": "2026-05-11T14:13:52.324495",
+  "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+  "question_limit": 10,
+  "system": {
+    "timestamp": "2026-05-11T14:13:52.326205",
+    "hostname": "site-a",
+    "python": "3.11.2",
+    "torch": "2.11.0+cu128",
+    "device": "cuda",
+    "cpu": {
+      "model": "Intel(R) Xeon(R) w7-3455",
+      "physical_cores": 24,
+      "logical_cores": 48,
+      "total_ram_gb": 250.9
+    },
+    "cuda_version": "12.8",
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA RTX A6000",
+        "total_memory_mb": 48532
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA RTX A6000",
+        "total_memory_mb": 48541
+      }
+    ]
+  },
+  "model_load": {
+    "retriever_load_time_s": 9.18,
+    "generator_load_time_s": 1.82
+  },
+  "benchmark_prompts": [
+    {
+      "id": "NB-HPN-0026-q1",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why might a smart DTN implement network packet pacing specifically when transferring data from a high-bandwidth source to a low-bandwidth destination?",
+      "retrieval_time_s": 2.0018,
+      "generation_time_s": 2.8669,
+      "total_time_s": 4.8687,
+      "prompt_tokens": 4284,
+      "output_tokens": 184,
+      "generation_tokens_per_second": 64.18,
+      "retrieved_chunks": "Towards a Smart Data Transfer Node Zheng... \u00a72 Motivation | Toward a Smart Data Transfer Node Zhengc... \u00a72 Motivation | Toward a Smart Data Transfer Node Zhengc... \u00a71 Introduction | Towards a Smart Data Transfer Node Zheng... \u00a71 Introduction",
+      "reranker_scores": [
+        0.9945,
+        0.9889,
+        0.8418,
+        0.8287
+      ],
+      "answer_preview": "Implementing network packet pacing is a strategic decision made by a smart DTN to mitigate the negative impact of transferring data from a higher bandwidth endpoint to a lower bandwidth endpoint [2]. When transferring data from a high-bandwidth source to a low-bandwidth destination, the volume of tr"
+    },
+    {
+      "id": "NB-HPN-0159-q0",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "hard",
+      "question_type": "concept",
+      "question": "In host-based RDMA load balancing, how can a system detect network congestion without relying on specialized switch hardware like ECN (Explicit Congestion Notification) markings?",
+      "retrieval_time_s": 2.1562,
+      "generation_time_s": 2.2056,
+      "total_time_s": 4.3618,
+      "prompt_tokens": 4873,
+      "output_tokens": 130,
+      "generation_tokens_per_second": 58.94,
+      "retrieved_chunks": "arXiv:2506.08132v1 cs. NI 9 Jun 2025 Pre... \u00a73 Evaluation | This work is licensed under a Creative C... \u00a71 Introduction | STrack: A Reliable Multipath Transport f... \u00a75 Related Work | REPS: Recycled Entropy Packet Spraying f... \u00a71 Introduction",
+      "reranker_scores": [
+        0.9964,
+        0.986,
+        0.9859,
+        0.9771
+      ],
+      "answer_preview": "I cannot provide a specific answer to your question regarding detecting network congestion without specialized switch hardware like ECN (Explicit Congestion Notification) markings because the provided excerpts do not contain this information. While the text discusses the use of ECN to identify conge"
+    },
+    {
+      "id": "NB-HPN-2135-q1",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why is a periodic retransmission of the INT request necessary even if the initial in-band request was successfully sent?",
+      "retrieval_time_s": 1.9287,
+      "generation_time_s": 2.658,
+      "total_time_s": 4.5867,
+      "prompt_tokens": 4519,
+      "output_tokens": 159,
+      "generation_tokens_per_second": 59.82,
+      "retrieved_chunks": "A Flexible In-band Network Telemetry Fra... \u00a7III Int Framework | SPECIAL SECTION ON ARTIFICIAL INTELLIGEN... \u00a7II Related Work | noname manuscript No. will be inserted b... \u00a72 Related Work | FEDERAL UNIVERSITY OF PAMPA Ariel G es D... \u00a71 Overview",
+      "reranker_scores": [
+        0.9189,
+        0.6832,
+        0.6446,
+        0.4356
+      ],
+      "answer_preview": "When implementing in-band network telemetry (INT), the process involves a multi-step sequence where the controller sends an INT request to instruct the framework to monitor a flow [1]. Once the framework detects that the requested flow exists, it sends an in-band request to the destination node [1]."
+    },
+    {
+      "id": "NB-HPN-2121-q2",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "easy",
+      "question_type": "calculation",
+      "question": "Using the logic provided in the text, if a service has a Max-Min Fair (MmF) share of 40 Mbps but only achieves 30 Mbps under contention, what is the percentage of its MmF share that it has achieved, and what percentage of the total 40 Mbps share is the remaining unachieved bandwidth?",
+      "retrieval_time_s": 2.2564,
+      "generation_time_s": 2.0223,
+      "total_time_s": 4.2787,
+      "prompt_tokens": 4757,
+      "output_tokens": 109,
+      "generation_tokens_per_second": 53.9,
+      "retrieved_chunks": ". . Latest updates: h ps://dl.acm.org/do... \u00a71 Introduction | . . Latest updates: h ps://dl.acm.org/do... \u00a71 Introduction | . . Latest updates: h ps://dl.acm.org/do... \u00a73 Methodology | . . Latest updates: h ps://dl.acm.org/do... \u00a73 Methodology",
+      "reranker_scores": [
+        0.981,
+        0.9778,
+        0.8751,
+        0.8308
+      ],
+      "answer_preview": "I am sorry, but the provided information does not contain enough details to answer this question. While the text mentions that the service's MmF share is 40 Mbps and that it achieves 30 Mbps under contention, it does not specify the exact value of the remaining unachieved bandwidth or the percentage"
+    },
+    {
+      "id": "NB-HPN-1401-q1",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why might a parameter tuner choose to increase the number of TCP streams rather than simply increasing the size of a single TCP buffer when encountering kernel-level limitations?",
+      "retrieval_time_s": 2.0751,
+      "generation_time_s": 2.8091,
+      "total_time_s": 4.8842,
+      "prompt_tokens": 3893,
+      "output_tokens": 199,
+      "generation_tokens_per_second": 70.84,
+      "retrieved_chunks": "RUN-TIME ADAPTATION OF GRID DATA PLACEME... \u00a74 Implementation | Run-time Adaptation of Grid Data Placeme... \u00a74 Implementation | Dynamic Adaptation of Parallelism Level ... \u00a72 Related Work | Balancing TCP Buffer vs Parallel Streams... \u00a7Abstract",
+      "reranker_scores": [
+        0.9789,
+        0.9618,
+        0.9204,
+        0.91
+      ],
+      "answer_preview": "When a parameter tuner encounters kernel-level limitations\u2014such as a maximum TCP buffer size that is smaller than the optimal needed for the transfer\u2014the tuner typically chooses to increase the number of TCP streams [2]. By increasing the number of streams, the aggregate buffer size is increased, wh"
+    },
+    {
+      "id": "NB-HPN-0176-q1",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why does the BBR Startup phase inherently cause a temporary increase in network latency and queue size at the bottleneck?",
+      "retrieval_time_s": 1.9936,
+      "generation_time_s": 2.2841,
+      "total_time_s": 4.2777,
+      "prompt_tokens": 4875,
+      "output_tokens": 115,
+      "generation_tokens_per_second": 50.35,
+      "retrieved_chunks": "Received January 19 2021 accepted Februa... \u00a7I Introduction | Received January 19 2021 accepted Februa... \u00a7I Introduction | FaiRTT: An Empirical Approach for Enhanc... \u00a7II Related Work | 2BRobust - Overcoming TCP BBR Performanc... \u00a71 Introduction",
+      "reranker_scores": [
+        0.9689,
+        0.9629,
+        0.9588,
+        0.9583
+      ],
+      "answer_preview": "In the BBR congestion control algorithm, the Startup phase introduces a significant latency penalty because the system must rapidly increase the sending rate to measure available bandwidth [1]. Because the exponential increase in the sending rate creates a long-standing queue, the startup phase comp"
+    },
+    {
+      "id": "NB-HPN-0178-q1",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why does packet reordering specifically degrade the performance of TCP-based network services compared to other protocols?",
+      "retrieval_time_s": 1.9469,
+      "generation_time_s": 2.0245,
+      "total_time_s": 3.9714,
+      "prompt_tokens": 4358,
+      "output_tokens": 115,
+      "generation_tokens_per_second": 56.8,
+      "retrieved_chunks": "Scaling Stateful Network Services on Mul... \u00a71 Introduction | 1 Wai-xi Liu* Member IEEE Jun Cai Sen Li... \u00a7V Data-Driven Qall | Received January 8 2021 accepted Februar... \u00a7III Motivation | 1 On Packet Reordering in Time-Sensitive... \u00a7I Introduction",
+      "reranker_scores": [
+        0.9763,
+        0.9677,
+        0.8793,
+        0.8709
+      ],
+      "answer_preview": "Packet reordering is a common phenomenon in data centers where packets belonging to the same flow traverse different paths [2]. In standard TCP, packet reordering triggers a duplicate ACK mechanism, which reduces the congestion window and leads to lower goodput [2]. Specifically, TCP performs poorly"
+    },
+    {
+      "id": "NB-HPN-2032-q1",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why does a distributed multi-traffic scheduling approach, such as DMS, reduce the computational burden on the network compared to a centralized controller?",
+      "retrieval_time_s": 1.9977,
+      "generation_time_s": 2.1482,
+      "total_time_s": 4.1459,
+      "prompt_tokens": 4373,
+      "output_tokens": 132,
+      "generation_tokens_per_second": 61.45,
+      "retrieved_chunks": "arXiv:1708.07320v1 cs. NI 24 Aug 2017 A ... \u00a7I Introduction | DATACENTER TRAFFIC CONTROL TECHNIQUES AN... \u00a7IV Datacenter Traffic Control Management | arXiv:1708.07320v1 cs. NI 24 Aug 2017 A ... \u00a7III Ssbr | DATACENTER TRAFFIC CONTROL TECHNIQUES AN... \u00a7IV Datacenter Traffic Control Management",
+      "reranker_scores": [
+        0.9941,
+        0.9543,
+        0.9477,
+        0.8989
+      ],
+      "answer_preview": "In a distributed multi-traffic scheduling approach like DMS, the computational burden is significantly reduced because the decision-making process is shifted away from a centralized controller [1]. Instead of relying on a massive exchange of Channel State Information (CSI) messages, the system utili"
+    },
+    {
+      "id": "NB-HPN-0733-q1",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why is it technically challenging for human operators to manage performance monitoring in modern 100 Gbps research networks, and how does real-time telemetry address this?",
+      "retrieval_time_s": 2.2419,
+      "generation_time_s": 3.1767,
+      "total_time_s": 5.4187,
+      "prompt_tokens": 4374,
+      "output_tokens": 226,
+      "generation_tokens_per_second": 71.14,
+      "retrieved_chunks": "DOE Network 2025: Network Research Probl... \u00a73 Design | IEEE TRANSACTIONS ON NETWORK AND SERVICE... \u00a7I Introduction | Corresponding author: Oluwatosin Oladayo... \u00a71.1 Overview | Postprint This is the accepted version o... \u00a7I Introduction",
+      "reranker_scores": [
+        0.7731,
+        0.7138,
+        0.5951,
+        0.5138
+      ],
+      "answer_preview": "Modern research networks require high-speed, large-capacity storage systems and multihomed hosts or small clusters to sustain petabyte-per-hour transfer rates [2]. However, operators face significant challenges in maintaining performance monitoring when dealing with 100 Gbps interfaces and the deplo"
+    },
+    {
+      "id": "NB-HPN-1278-q1",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why does a 'full window loss' event in a TCP session lead to a much more severe throughput degradation than a single packet loss that triggers fast retransmit?",
+      "retrieval_time_s": 2.0187,
+      "generation_time_s": 2.8601,
+      "total_time_s": 4.8788,
+      "prompt_tokens": 4623,
+      "output_tokens": 217,
+      "generation_tokens_per_second": 75.87,
+      "retrieved_chunks": "The Nucleus 58 No. 1-4 2021 1-8 www.then... \u00a71 Introduction | International Journal of Science and Res... \u00a71 Introduction | TCP Behavior of a Busy Intemet Server: A... \u00a73 Analysis | TCP Behavior of a Busy Internet Server: ... \u00a73 Analysis",
+      "reranker_scores": [
+        0.9917,
+        0.9692,
+        0.9673,
+        0.9645
+      ],
+      "answer_preview": "In a TCP session, a 'full window loss' event occurs when the sender's entire window of data packets is lost [2]. This is defined as a condition where the sender does not receive any further acknowledgments for the data packets sent [2]. Unlike a single packet loss, which triggers a simple retransmis"
+    }
+  ],
+  "summary": {
+    "question_count": 10,
+    "avg_total_time_s": 4.5673,
+    "avg_retrieval_time_s": 2.0617,
+    "avg_generation_time_s": 2.5055,
+    "avg_prompt_tokens": 4492.9,
+    "avg_output_tokens": 158.6,
+    "avg_generation_tokens_per_second": 63.3,
+    "peak_cpu_ram_mb": 4747,
+    "peak_gpu_vram_mb": 6087
+  }
+}

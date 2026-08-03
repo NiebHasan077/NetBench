@@ -1,0 +1,2776 @@
+{
+  "code_artifacts": [
+    {
+      "bytes": 8161,
+      "mtime_utc": "2026-05-09T20:48:24.036164+00:00",
+      "path": "training/prepare_data.py",
+      "sha256": "b56fec7019239a3acf12aad3bf59b19922df1a9bbe931be9a4de2554fd72e49e"
+    },
+    {
+      "bytes": 11709,
+      "mtime_utc": "2026-05-09T20:48:29.388159+00:00",
+      "path": "training/prepare_lora_data.py",
+      "sha256": "f27b2b82d4c50b02e94fb724c20c802cbbb95d70dfdba5532d45d129db2d9180"
+    },
+    {
+      "bytes": 23667,
+      "mtime_utc": "2026-05-09T20:48:39.616149+00:00",
+      "path": "training/prepare_instruction_data.py",
+      "sha256": "3596d69af041ad32c88c6f11ff2a4f72c0862fb62dc5ec58dcc8c5e2f2bc354e"
+    },
+    {
+      "bytes": 17146,
+      "mtime_utc": "2026-05-09T20:38:59.460292+00:00",
+      "path": "training/pretrain_transformers.py",
+      "sha256": "fb3558f09ab39dc36bb6753bd6b6c109e7e41c0d96c00a1c99d7fa6619ef4a59"
+    },
+    {
+      "bytes": 14940,
+      "mtime_utc": "2026-05-14T04:13:46.965498+00:00",
+      "path": "training/instruction_finetune.py",
+      "sha256": "1659574e0b9b4028d0d91c3fa8b1e7820b8c25943a8a7ee1d7263250b036344d"
+    },
+    {
+      "bytes": 30997,
+      "mtime_utc": "2026-05-05T01:35:28.929643+00:00",
+      "path": "training/lora_finetune.py",
+      "sha256": "9b9e5297bbd5c71a0e2d4df1a510437bbdcaba591edb8431bab68696a80e80b7"
+    },
+    {
+      "bytes": 7121,
+      "mtime_utc": "2026-05-05T01:35:28.929643+00:00",
+      "path": "training/merge_lora_adapter.py",
+      "sha256": "19d719b58db4867295cca82e5c396c53c6cd98edbd17a4622e6c1f5483619939"
+    },
+    {
+      "bytes": 55676,
+      "mtime_utc": "2026-05-14T04:15:18.909424+00:00",
+      "path": "evaluation/hpn_qa_benchmark.py",
+      "sha256": "8868e2db9bfee3e83cd7aa008749fc19a5d49f9e8ad9a55474f999ae1b90b8de"
+    },
+    {
+      "bytes": 42883,
+      "mtime_utc": "2026-05-13T19:38:37.932826+00:00",
+      "path": "evaluation/judge_responses.py",
+      "sha256": "20f3c5c0befe35812fc7ad43a2ba487e527dad5bb612213eb5ee911ba679d794"
+    },
+    {
+      "bytes": 37565,
+      "mtime_utc": "2026-05-05T01:35:28.925643+00:00",
+      "path": "evaluation/benchmark_report.py",
+      "sha256": "956cc1338b7ed5a17f4950f8eadc19797aff112c2bc2f46f2d56d73ac2bf7c2c"
+    },
+    {
+      "bytes": 24280,
+      "mtime_utc": "2026-05-05T01:35:28.925643+00:00",
+      "path": "evaluation/lm_adaptation_report.py",
+      "sha256": "97db74ca6df03765ccc3e9aaaaee7b991f49a9b367707cb94f25271e6bd1049a"
+    },
+    {
+      "bytes": 24077,
+      "mtime_utc": "2026-05-11T18:52:56.700537+00:00",
+      "path": "profiling/profile_inference.py",
+      "sha256": "8172aa4e3c0bc2c7cfdd038ae3aaf825142c75ce06f7c46bb3761a7f079ea67e"
+    },
+    {
+      "bytes": 9668,
+      "mtime_utc": "2026-05-11T18:54:01.096493+00:00",
+      "path": "profiling/profile_rag_inference.py",
+      "sha256": "7b260d1662f53bb49d5231b6530c1e172b764b1ea861da873b927c36938a8e69"
+    },
+    {
+      "bytes": 4403,
+      "mtime_utc": "2026-05-11T18:54:28.416475+00:00",
+      "path": "profiling/summarize_inference_profiles.py",
+      "sha256": "622adb3f804f9500153b8dde78986f896502b1a04ccf4c4404f1eb2037b62ec7"
+    },
+    {
+      "bytes": 6247,
+      "mtime_utc": "2026-05-05T01:35:28.929643+00:00",
+      "path": "utils/model_utils.py",
+      "sha256": "7a703f3d414c15f0c85610b06d57db50ea3d9d09251a40cba103679f72b9d27a"
+    },
+    {
+      "bytes": 992,
+      "mtime_utc": "2026-05-10T21:16:33.697650+00:00",
+      "path": "requirements.txt",
+      "sha256": "aefae3fdceea867ddec407d0c32819d5002c05dad6e00038a0c9e5becc366180"
+    },
+    {
+      "bytes": 7073,
+      "mtime_utc": "2026-05-05T01:41:36.833659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/config.yaml",
+      "sha256": "5486af0f5ed6199a4450626aee5822eb5e13ebee0ca36fb2a9d41de77d55c8dd"
+    },
+    {
+      "bytes": 14249,
+      "mtime_utc": "2026-05-09T20:48:34.624154+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/index_corpus.py",
+      "sha256": "a0c3794f493d37513692908e791f28696816120d3c278d7f7068889f0af6b820"
+    },
+    {
+      "bytes": 9211,
+      "mtime_utc": "2026-05-05T01:41:36.837659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/query.py",
+      "sha256": "6ea4da2265a4a3031aff8250936789eabe43952b12b315e00e0d8e60b648821f"
+    },
+    {
+      "bytes": 41507,
+      "mtime_utc": "2026-05-18T22:50:43.165975+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/evaluation/evaluate_rag.py",
+      "sha256": "9e7e789a373910498c5ae9a495bc20e6bbf671e954dde981550ac12cef1d06c4"
+    },
+    {
+      "bytes": 42941,
+      "mtime_utc": "2026-05-05T01:41:36.837659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/evaluation/judge_responses.py",
+      "sha256": "69545a88d8278a896f843d24fa7052eba036aeb2de10581c8eb1f9ca7283c99c"
+    },
+    {
+      "bytes": 35821,
+      "mtime_utc": "2026-05-05T01:41:36.837659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/evaluation/benchmark_report.py",
+      "sha256": "5f83ab78f286f7695d74e37a6f6c979bbc714f9ec7902b61bf87a6f07e00ecb5"
+    },
+    {
+      "bytes": 11465,
+      "mtime_utc": "2026-05-05T01:41:36.837659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/src/retriever.py",
+      "sha256": "49e132cbcbf52f7325e1b444e887c3fd01e6f484fa13692e71dc49c8a9937714"
+    },
+    {
+      "bytes": 23608,
+      "mtime_utc": "2026-05-05T01:41:36.837659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/src/generator.py",
+      "sha256": "1c29950708716b49216455d7bbaab28e38e4fbe4f04e1e6c7ecd4f491016655f"
+    },
+    {
+      "bytes": 14286,
+      "mtime_utc": "2026-05-05T01:41:36.837659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/src/store.py",
+      "sha256": "12d918ab92d4bdf15506871e2a9e424190cbd76e84a15bb1c7c7b76fb7e0249f"
+    },
+    {
+      "bytes": 18641,
+      "mtime_utc": "2026-05-05T01:41:36.837659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/src/chunker.py",
+      "sha256": "824b92ac239ac458c24620f8fd31d03faf03fa55396f5b8f53f29c49a983f086"
+    },
+    {
+      "bytes": 4239,
+      "mtime_utc": "2026-05-05T01:41:36.837659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/src/embedder.py",
+      "sha256": "13cd501da8f1ab5a021c3177454423fa577a56fbe4e41efeeaf4ab362bc6aa9f"
+    },
+    {
+      "bytes": 30043,
+      "mtime_utc": "2026-05-05T01:41:36.837659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/src/parser.py",
+      "sha256": "acb0504a39755762f8221ac95d87b3f7fbce28cacec7965091e3c987baf87148"
+    },
+    {
+      "bytes": 3210,
+      "mtime_utc": "2026-05-05T01:41:36.837659+00:00",
+      "path": "/workspace/NetBench-LLM/NetBench-RAG/requirements.txt",
+      "sha256": "770cfd6f4096798de4e61ebda8780425117b20ecfce970ad1ec3493529c15bb0"
+    }
+  ],
+  "data_files": [
+    {
+      "bytes": 133709863,
+      "json_records": 2371,
+      "mtime_utc": "2026-05-10T20:19:26.361373+00:00",
+      "path": "data/raw/research_corpus_v3.json",
+      "sha256": "68c1148da5ec5688efd40c8f8c269cee51ee0617c6df28d33c43fcc1c5bb1048"
+    },
+    {
+      "bytes": 277528,
+      "jsonl_lines": 242,
+      "mtime_utc": "2026-05-05T01:35:28.921643+00:00",
+      "path": "data/prompts/hpn_benchmark_v5.0.jsonl",
+      "sha256": "598edbece4c03ab135ae4787e5917b44b0ed192a43c7473952c770a31e80c772"
+    },
+    {
+      "bytes": 18977960,
+      "jsonl_lines": 3320,
+      "mtime_utc": "2026-05-10T20:19:20.221735+00:00",
+      "path": "data/Instruct-FTD/v3_run_plus_json/train.jsonl",
+      "sha256": "a7d01645b3f35c78a74da8f944ecbbf371bf7d805bb8e0e57d384295feafa2e6"
+    },
+    {
+      "bytes": 988260,
+      "jsonl_lines": 174,
+      "mtime_utc": "2026-05-10T20:19:20.365728+00:00",
+      "path": "data/Instruct-FTD/v3_run_plus_json/validation.jsonl",
+      "sha256": "5abd7b48d08a59e1cdf98cb075ed01d9c27f7c6006bec72d39d9e74e535b08bf"
+    },
+    {
+      "bytes": 1956,
+      "json_keys": [
+        "available_json_anchor_count",
+        "available_json_anchor_count_after_existing_dedup",
+        "created_at_utc",
+        "input_total_count",
+        "input_train_count",
+        "input_validation_count",
+        "mode",
+        "output_total_count",
+        "output_train_count",
+        "output_validation_count",
+        "requested_json_count",
+        "run_id",
+        "selected_json_count",
+        "train_category_counts",
+        "train_json_count",
+        "train_task_type_counts",
+        "validation_category_counts",
+        "validation_json_count",
+        "validation_task_type_counts"
+      ],
+      "mtime_utc": "2026-05-10T20:19:20.153739+00:00",
+      "path": "data/Instruct-FTD/v3_run_plus_json/json_append_report.json",
+      "sha256": "fa4c8809e897626da05a118f9cda9094535d37124f34f75d4c3425766f7b78ef"
+    }
+  ],
+  "effective_preflight_from_latest_log": {
+    "corpus": "/workspace/portables/NetBench-LLM/data/raw/research_corpus_v3.json selected (133709863 bytes \u2014 largest candidate)",
+    "hardware": "2x GPU, 49140 MiB (~48 GiB) VRAM per card",
+    "hyperparams": "CPT batch=4x4  SFT batch=4x4  LoRA batch=8x2  rank=64",
+    "model": "Llama-3.2-1B",
+    "source_log": "outputs/by_model/llama-3.2-1b/logs/hpn-llama-3.2-1b-20260511-140650.log"
+  },
+  "environment": {
+    "collected_at_utc": "2026-05-24T18:15:24.853567+00:00",
+    "cwd": "/workspace/NetBench-LLM/NetBench-LLM",
+    "executable": "/workspace/NetBench-LLM/NetBench-LLM/.venv/bin/python",
+    "git_branch": "recovery/site-a/current-working-tree/direct",
+    "git_commit": "54a284a4d04f97b0a59dc05535f824ca9683f0e0",
+    "git_status_short": "",
+    "nvidia_smi_query": null,
+    "platform": "Linux-6.1.0-48-amd64-x86_64-with-glibc2.36",
+    "python": "3.11.2 (main, Apr  8 2026, 01:58:00) [GCC 12.2.0]",
+    "torch": {
+      "cuda": "12.8",
+      "cuda_available": false,
+      "device_count": 0,
+      "version": "2.11.0+cu128"
+    }
+  },
+  "logs": [
+    {
+      "bytes": 403625,
+      "interesting_lines_count": 283,
+      "interesting_lines_sample": [
+        "  HPN LLM Pipeline  \u2014  Model: Llama-3.2-1B",
+        "[16:24:06] Model: Llama-3.2-1B (llama, shortcut=1b)",
+        "[16:24:11] Hardware: 2x GPU, 49140 MiB (~48 GiB) VRAM per card",
+        "[16:24:11] Hyperparams: CPT batch=4x4  SFT batch=4x4  LoRA batch=8x2  rank=64",
+        "[16:24:11] Corpus: /workspace/portables/NetBench-LLM/data/raw/research_corpus_v3.json selected (133709863 bytes \u2014 largest candidate)",
+        "[16:24:11] OK Preflight passed \u2014 GPUs: 2x48GB  Corpus: research_corpus_v3.json",
+        "[16:24:11] WARN  SKIP base model \u2014 already complete: /workspace/portables/NetBench-LLM/models/base/Llama-3.2-1B-base",
+        "[16:24:11] WARN  SKIP instruct-official model \u2014 already complete: /workspace/portables/NetBench-LLM/models/instruct-official/Llama-3.2-1B-Instruct",
+        "[16:24:11] WARN  SKIP CPT data \u2014 already complete: /workspace/portables/NetBench-LLM/data/processed/llama-3.2-1b",
+        "[16:24:11] WARN  SKIP LoRA CPT data \u2014 already complete: /workspace/portables/NetBench-LLM/data/processed/lora/llama-3.2-1b",
+        "[16:24:11] WARN  SKIP HPN SFT data \u2014 already complete: /workspace/portables/NetBench-LLM/data/instruction/llama-3.2-1b-hpn",
+        "[16:24:29] RUN S4 Full HPN-CPT",
+        "05/10/2026 16:24:34 - WARNING - __main__ - eval_steps clamped to 431 (1x per epoch) to ensure evaluation runs",
+        "05/10/2026 16:24:34 - WARNING - __main__ - save_steps clamped to 431 (1x per epoch)",
+        " 17%|\u2588\u258b        | 431/2589 [30:47<2:34:47,  4.30s/it]{'loss': '2.625', 'grad_norm': '3.078', 'learning_rate': '6.977e-07', 'epoch': '0.01159'}",
+        "{'loss': '2.616', 'grad_norm': '2.953', 'learning_rate': '1.473e-06', 'epoch': '0.02317'}",
+        "{'loss': '2.519', 'grad_norm': '3.438', 'learning_rate': '2.248e-06', 'epoch': '0.03476'}",
+        "{'loss': '2.548', 'grad_norm': '3.047', 'learning_rate': '3.023e-06', 'epoch': '0.04635'}",
+        "{'loss': '2.55', 'grad_norm': '2.656', 'learning_rate': '3.798e-06', 'epoch': '0.05794'}",
+        "{'loss': '2.552', 'grad_norm': '2.391', 'learning_rate': '4.574e-06', 'epoch': '0.06952'}",
+        "{'loss': '2.524', 'grad_norm': '2.484', 'learning_rate': '5.349e-06', 'epoch': '0.08111'}",
+        "{'loss': '2.518', 'grad_norm': '2.422', 'learning_rate': '6.124e-06', 'epoch': '0.0927'}",
+        "{'loss': '2.516', 'grad_norm': '2.359', 'learning_rate': '6.899e-06', 'epoch': '0.1043'}",
+        "{'loss': '2.521', 'grad_norm': '2.375', 'learning_rate': '7.674e-06', 'epoch': '0.1159'}",
+        "{'loss': '2.466', 'grad_norm': '2.328', 'learning_rate': '8.45e-06', 'epoch': '0.1275'}",
+        "{'loss': '2.5', 'grad_norm': '2.219', 'learning_rate': '9.225e-06', 'epoch': '0.139'}",
+        "{'loss': '2.531', 'grad_norm': '2.266', 'learning_rate': '1e-05', 'epoch': '0.1506'}",
+        "{'loss': '2.503', 'grad_norm': '2.266', 'learning_rate': '1.078e-05', 'epoch': '0.1622'}",
+        "{'loss': '2.492', 'grad_norm': '2.219', 'learning_rate': '1.155e-05', 'epoch': '0.1738'}",
+        "{'loss': '2.486', 'grad_norm': '2.391', 'learning_rate': '1.233e-05', 'epoch': '0.1854'}",
+        "{'loss': '2.519', 'grad_norm': '2.328', 'learning_rate': '1.31e-05', 'epoch': '0.197'}",
+        "{'loss': '2.47', 'grad_norm': '2.359', 'learning_rate': '1.388e-05', 'epoch': '0.2086'}",
+        "{'loss': '2.522', 'grad_norm': '2.359', 'learning_rate': '1.465e-05', 'epoch': '0.2202'}",
+        "{'loss': '2.466', 'grad_norm': '2.531', 'learning_rate': '1.543e-05', 'epoch': '0.2317'}",
+        "{'loss': '2.474', 'grad_norm': '2.234', 'learning_rate': '1.62e-05', 'epoch': '0.2433'}",
+        "{'loss': '2.432', 'grad_norm': '2.312', 'learning_rate': '1.698e-05', 'epoch': '0.2549'}",
+        "{'loss': '2.509', 'grad_norm': '2.219', 'learning_rate': '1.775e-05', 'epoch': '0.2665'}",
+        "{'loss': '2.485', 'grad_norm': '2.281', 'learning_rate': '1.853e-05', 'epoch': '0.2781'}",
+        "{'loss': '2.46', 'grad_norm': '2.312', 'learning_rate': '1.93e-05', 'epoch': '0.2897'}",
+        "{'loss': '2.498', 'grad_norm': '2.281', 'learning_rate': '2e-05', 'epoch': '0.3013'}",
+        "{'loss': '2.444', 'grad_norm': '2.391', 'learning_rate': '2e-05', 'epoch': '0.3129'}",
+        "{'loss': '2.481', 'grad_norm': '2.266', 'learning_rate': '2e-05', 'epoch': '0.3244'}",
+        "{'loss': '2.48', 'grad_norm': '2.266', 'learning_rate': '1.999e-05', 'epoch': '0.336'}",
+        "{'loss': '2.482', 'grad_norm': '2.297', 'learning_rate': '1.998e-05', 'epoch': '0.3476'}",
+        "{'loss': '2.519', 'grad_norm': '2.25', 'learning_rate': '1.998e-05', 'epoch': '0.3592'}",
+        "{'loss': '2.399', 'grad_norm': '2.609', 'learning_rate': '1.997e-05', 'epoch': '0.3708'}",
+        "{'loss': '2.472', 'grad_norm': '2.438', 'learning_rate': '1.995e-05', 'epoch': '0.3824'}",
+        "{'loss': '2.418', 'grad_norm': '2.75', 'learning_rate': '1.994e-05', 'epoch': '0.394'}",
+        "{'loss': '2.425', 'grad_norm': '2.359', 'learning_rate': '1.992e-05', 'epoch': '0.4056'}",
+        "{'loss': '2.472', 'grad_norm': '2.266', 'learning_rate': '1.991e-05', 'epoch': '0.4171'}",
+        "{'loss': '2.507', 'grad_norm': '2.328', 'learning_rate': '1.989e-05', 'epoch': '0.4287'}",
+        "{'loss': '2.482', 'grad_norm': '2.25', 'learning_rate': '1.987e-05', 'epoch': '0.4403'}",
+        "{'loss': '2.465', 'grad_norm': '2.141', 'learning_rate': '1.984e-05', 'epoch': '0.4519'}",
+        "{'loss': '2.387', 'grad_norm': '2.156', 'learning_rate': '1.982e-05', 'epoch': '0.4635'}",
+        "{'loss': '2.429', 'grad_norm': '2.234', 'learning_rate': '1.979e-05', 'epoch': '0.4751'}",
+        "{'loss': '2.444', 'grad_norm': '2.234', 'learning_rate': '1.977e-05', 'epoch': '0.4867'}",
+        "{'loss': '2.389', 'grad_norm': '2.188', 'learning_rate': '1.974e-05', 'epoch': '0.4983'}",
+        "                                                 \u001b[A{'eval_loss': '2.403', 'eval_runtime': '55.91', 'eval_samples_per_second': '12.88', 'eval_steps_per_second': '6.439', 'epoch': '0.4994'}",
+        " 33%|\u2588\u2588\u2588\u258e      | 862/2589 [1:02:03<2:00:35,  4.19s/it]{'loss': '2.397', 'grad_norm': '2.234', 'learning_rate': '1.97e-05', 'epoch': '0.5098'}",
+        "{'loss': '2.435', 'grad_norm': '2.156', 'learning_rate': '1.967e-05', 'epoch': '0.5214'}",
+        "{'loss': '2.415', 'grad_norm': '2.344', 'learning_rate': '1.964e-05', 'epoch': '0.533'}",
+        "{'loss': '2.415', 'grad_norm': '2.219', 'learning_rate': '1.96e-05', 'epoch': '0.5446'}",
+        "{'loss': '2.414', 'grad_norm': '2.109', 'learning_rate': '1.956e-05', 'epoch': '0.5562'}",
+        "{'loss': '2.457', 'grad_norm': '2.188', 'learning_rate': '1.952e-05', 'epoch': '0.5678'}",
+        "{'loss': '2.384', 'grad_norm': '6.469', 'learning_rate': '1.948e-05', 'epoch': '0.5794'}",
+        "{'loss': '2.356', 'grad_norm': '2.156', 'learning_rate': '1.943e-05', 'epoch': '0.591'}",
+        "{'loss': '2.431', 'grad_norm': '2.25', 'learning_rate': '1.939e-05', 'epoch': '0.6025'}",
+        "{'loss': '2.36', 'grad_norm': '2.156', 'learning_rate': '1.934e-05', 'epoch': '0.6141'}",
+        "{'loss': '2.345', 'grad_norm': '2.156', 'learning_rate': '1.929e-05', 'epoch': '0.6257'}",
+        "{'loss': '2.394', 'grad_norm': '2.266', 'learning_rate': '1.924e-05', 'epoch': '0.6373'}",
+        "{'loss': '2.381', 'grad_norm': '2.141', 'learning_rate': '1.919e-05', 'epoch': '0.6489'}",
+        "{'loss': '2.417', 'grad_norm': '2.312', 'learning_rate': '1.913e-05', 'epoch': '0.6605'}",
+        "{'loss': '2.406', 'grad_norm': '2.25', 'learning_rate': '1.908e-05', 'epoch': '0.6721'}",
+        "{'loss': '2.39', 'grad_norm': '2.141', 'learning_rate': '1.902e-05', 'epoch': '0.6837'}",
+        "{'loss': '2.408', 'grad_norm': '2.188', 'learning_rate': '1.896e-05', 'epoch': '0.6952'}",
+        "{'loss': '2.399', 'grad_norm': '2.156', 'learning_rate': '1.89e-05', 'epoch': '0.7068'}",
+        "{'loss': '2.413', 'grad_norm': '2.016', 'learning_rate': '1.884e-05', 'epoch': '0.7184'}",
+        "{'loss': '2.366', 'grad_norm': '2.266', 'learning_rate': '1.878e-05', 'epoch': '0.73'}",
+        "{'loss': '2.369', 'grad_norm': '2.078', 'learning_rate': '1.871e-05', 'epoch': '0.7416'}",
+        "{'loss': '2.344', 'grad_norm': '2.703', 'learning_rate': '1.864e-05', 'epoch': '0.7532'}",
+        "{'loss': '2.408', 'grad_norm': '2.312', 'learning_rate': '1.857e-05', 'epoch': '0.7648'}",
+        "{'loss': '2.381', 'grad_norm': '2.109', 'learning_rate': '1.85e-05', 'epoch': '0.7764'}",
+        "{'loss': '2.34', 'grad_norm': '2.156', 'learning_rate': '1.843e-05', 'epoch': '0.7879'}",
+        "{'loss': '2.321', 'grad_norm': '2.234', 'learning_rate': '1.836e-05', 'epoch': '0.7995'}",
+        "{'loss': '2.417', 'grad_norm': '2.141', 'learning_rate': '1.829e-05', 'epoch': '0.8111'}",
+        "{'loss': '2.444', 'grad_norm': '2.141', 'learning_rate': '1.821e-05', 'epoch': '0.8227'}",
+        "{'loss': '2.429', 'grad_norm': '2.25', 'learning_rate': '1.813e-05', 'epoch': '0.8343'}",
+        "{'loss': '2.36', 'grad_norm': '2.156', 'learning_rate': '1.805e-05', 'epoch': '0.8459'}",
+        "{'loss': '2.457', 'grad_norm': '2.188', 'learning_rate': '1.797e-05', 'epoch': '0.8575'}",
+        "{'loss': '2.369', 'grad_norm': '2.125', 'learning_rate': '1.789e-05', 'epoch': '0.8691'}",
+        "{'loss': '2.372', 'grad_norm': '2.125', 'learning_rate': '1.781e-05', 'epoch': '0.8806'}",
+        "{'loss': '2.391', 'grad_norm': '2.25', 'learning_rate': '1.772e-05', 'epoch': '0.8922'}",
+        "{'loss': '2.402', 'grad_norm': '2.359', 'learning_rate': '1.763e-05', 'epoch': '0.9038'}",
+        "{'loss': '2.32', 'grad_norm': '2.125', 'learning_rate': '1.755e-05', 'epoch': '0.9154'}",
+        "{'loss': '2.417', 'grad_norm': '2.219', 'learning_rate': '1.746e-05', 'epoch': '0.927'}",
+        "{'loss': '2.412', 'grad_norm': '2.078', 'learning_rate': '1.737e-05', 'epoch': '0.9386'}",
+        "{'loss': '2.351', 'grad_norm': '2.156', 'learning_rate': '1.728e-05', 'epoch': '0.9502'}",
+        "{'loss': '2.424', 'grad_norm': '2.469', 'learning_rate': '1.718e-05', 'epoch': '0.9618'}",
+        "{'loss': '2.405', 'grad_norm': '2.25', 'learning_rate': '1.709e-05', 'epoch': '0.9733'}",
+        "{'loss': '2.394', 'grad_norm': '2.156', 'learning_rate': '1.699e-05', 'epoch': '0.9849'}",
+        "{'loss': '2.426', 'grad_norm': '2.109', 'learning_rate': '1.69e-05', 'epoch': '0.9965'}",
+        "                                                 \u001b[A{'eval_loss': '2.372', 'eval_runtime': '54.05', 'eval_samples_per_second': '13.32', 'eval_steps_per_second': '6.661', 'epoch': '0.9988'}",
+        " 50%|\u2588\u2588\u2588\u2588\u2589     | 1293/2589 [1:33:50<1:34:06,  4.36s/it]{'loss': '2.348', 'grad_norm': '2.156', 'learning_rate': '1.68e-05', 'epoch': '1.008'}",
+        "{'loss': '2.26', 'grad_norm': '2.203', 'learning_rate': '1.67e-05', 'epoch': '1.02'}",
+        "{'loss': '2.356', 'grad_norm': '2.25', 'learning_rate': '1.66e-05', 'epoch': '1.031'}",
+        "{'loss': '2.348', 'grad_norm': '2.203', 'learning_rate': '1.649e-05', 'epoch': '1.043'}",
+        "{'loss': '2.394', 'grad_norm': '2.156', 'learning_rate': '1.639e-05', 'epoch': '1.054'}",
+        "{'loss': '2.343', 'grad_norm': '2.312', 'learning_rate': '1.629e-05', 'epoch': '1.066'}",
+        "{'loss': '2.356', 'grad_norm': '2.281', 'learning_rate': '1.618e-05', 'epoch': '1.078'}",
+        "{'loss': '2.338', 'grad_norm': '2.344', 'learning_rate': '1.608e-05', 'epoch': '1.089'}",
+        "{'loss': '2.273', 'grad_norm': '2.203', 'learning_rate': '1.597e-05', 'epoch': '1.101'}",
+        "{'loss': '2.354', 'grad_norm': '2.312', 'learning_rate': '1.586e-05', 'epoch': '1.112'}",
+        "{'loss': '2.326', 'grad_norm': '2.203', 'learning_rate': '1.575e-05', 'epoch': '1.124'}",
+        "{'loss': '2.341', 'grad_norm': '2.266', 'learning_rate': '1.564e-05', 'epoch': '1.136'}",
+        "{'loss': '2.226', 'grad_norm': '2.203', 'learning_rate': '1.553e-05', 'epoch': '1.147'}",
+        "{'loss': '2.334', 'grad_norm': '2.172', 'learning_rate': '1.541e-05', 'epoch': '1.159'}",
+        "{'loss': '2.325', 'grad_norm': '2.234', 'learning_rate': '1.53e-05', 'epoch': '1.17'}",
+        "{'loss': '2.315', 'grad_norm': '2.172', 'learning_rate': '1.519e-05', 'epoch': '1.182'}",
+        "{'loss': '2.325', 'grad_norm': '2.641', 'learning_rate': '1.507e-05', 'epoch': '1.194'}",
+        "{'loss': '2.345', 'grad_norm': '2.234', 'learning_rate': '1.495e-05', 'epoch': '1.205'}",
+        "{'loss': '2.331', 'grad_norm': '2.359', 'learning_rate': '1.484e-05', 'epoch': '1.217'}",
+        "{'loss': '2.317', 'grad_norm': '2.188', 'learning_rate': '1.472e-05', 'epoch': '1.228'}",
+        "{'loss': '2.323', 'grad_norm': '2.141', 'learning_rate': '1.46e-05', 'epoch': '1.24'}",
+        "{'loss': '2.364', 'grad_norm': '2.188', 'learning_rate': '1.448e-05', 'epoch': '1.251'}",
+        "{'loss': '2.307', 'grad_norm': '2.141', 'learning_rate': '1.436e-05', 'epoch': '1.263'}",
+        "{'loss': '2.298', 'grad_norm': '2.125', 'learning_rate': '1.424e-05', 'epoch': '1.275'}",
+        "{'loss': '2.299', 'grad_norm': '2.281', 'learning_rate': '1.411e-05', 'epoch': '1.286'}",
+        "{'loss': '2.274', 'grad_norm': '2.281', 'learning_rate': '1.399e-05', 'epoch': '1.298'}",
+        "{'loss': '2.341', 'grad_norm': '2.078', 'learning_rate': '1.387e-05', 'epoch': '1.309'}",
+        "{'loss': '2.285', 'grad_norm': '2.172', 'learning_rate': '1.374e-05', 'epoch': '1.321'}",
+        "{'loss': '2.347', 'grad_norm': '2.188', 'learning_rate': '1.362e-05', 'epoch': '1.333'}",
+        "{'loss': '2.264', 'grad_norm': '2.203', 'learning_rate': '1.349e-05', 'epoch': '1.344'}",
+        "{'loss': '2.372', 'grad_norm': '2.125', 'learning_rate': '1.336e-05', 'epoch': '1.356'}",
+        "{'loss': '2.323', 'grad_norm': '2.234', 'learning_rate': '1.324e-05', 'epoch': '1.367'}",
+        "{'loss': '2.315', 'grad_norm': '2.047', 'learning_rate': '1.311e-05', 'epoch': '1.379'}",
+        "{'loss': '2.377', 'grad_norm': '2.094', 'learning_rate': '1.298e-05', 'epoch': '1.39'}",
+        "{'loss': '2.34', 'grad_norm': '2.156', 'learning_rate': '1.285e-05', 'epoch': '1.402'}",
+        "{'loss': '2.302', 'grad_norm': '2.047', 'learning_rate': '1.272e-05', 'epoch': '1.414'}",
+        "{'loss': '2.236', 'grad_norm': '2.156', 'learning_rate': '1.259e-05', 'epoch': '1.425'}",
+        "{'loss': '2.328', 'grad_norm': '2.203', 'learning_rate': '1.246e-05', 'epoch': '1.437'}",
+        "{'loss': '2.333', 'grad_norm': '2.234', 'learning_rate': '1.233e-05', 'epoch': '1.448'}",
+        "{'loss': '2.312', 'grad_norm': '2.172', 'learning_rate': '1.22e-05', 'epoch': '1.46'}",
+        "{'loss': '2.294', 'grad_norm': '2.141', 'learning_rate': '1.207e-05', 'epoch': '1.472'}",
+        "{'loss': '2.35', 'grad_norm': '2.125', 'learning_rate': '1.194e-05', 'epoch': '1.483'}",
+        "{'loss': '2.312', 'grad_norm': '2.344', 'learning_rate': '1.18e-05', 'epoch': '1.495'}",
+        "                                                 \u001b[A{'eval_loss': '2.361', 'eval_runtime': '56.21', 'eval_samples_per_second': '12.81', 'eval_steps_per_second': '6.405', 'epoch': '1.498'}",
+        " 67%|\u2588\u2588\u2588\u2588\u2588\u2588\u258b   | 1724/2589 [2:06:25<1:04:14,  4.46s/it]{'loss': '2.326', 'grad_norm': '2.188', 'learning_rate': '1.167e-05', 'epoch': '1.506'}",
+        "{'loss': '2.284', 'grad_norm': '2.172', 'learning_rate': '1.154e-05', 'epoch': '1.518'}",
+        "{'loss': '2.354', 'grad_norm': '2.172', 'learning_rate': '1.14e-05', 'epoch': '1.53'}",
+        "{'loss': '2.31', 'grad_norm': '2.172', 'learning_rate': '1.127e-05', 'epoch': '1.541'}",
+        "{'loss': '2.328', 'grad_norm': '2.203', 'learning_rate': '1.114e-05', 'epoch': '1.553'}",
+        "{'loss': '2.331', 'grad_norm': '2.141', 'learning_rate': '1.1e-05', 'epoch': '1.564'}",
+        "{'loss': '2.348', 'grad_norm': '2.188', 'learning_rate': '1.087e-05', 'epoch': '1.576'}",
+        "{'loss': '2.31', 'grad_norm': '2.219', 'learning_rate': '1.073e-05', 'epoch': '1.587'}",
+        "{'loss': '2.235', 'grad_norm': '2.172', 'learning_rate': '1.06e-05', 'epoch': '1.599'}",
+        "{'loss': '2.358', 'grad_norm': '2.188', 'learning_rate': '1.046e-05', 'epoch': '1.611'}",
+        "{'loss': '2.356', 'grad_norm': '2.219', 'learning_rate': '1.033e-05', 'epoch': '1.622'}",
+        "{'loss': '2.3', 'grad_norm': '2.234', 'learning_rate': '1.02e-05', 'epoch': '1.634'}",
+        "{'loss': '2.342', 'grad_norm': '2.219', 'learning_rate': '1.006e-05', 'epoch': '1.645'}",
+        "{'loss': '2.359', 'grad_norm': '2.219', 'learning_rate': '9.926e-06', 'epoch': '1.657'}",
+        "{'loss': '2.328', 'grad_norm': '2.172', 'learning_rate': '9.791e-06', 'epoch': '1.669'}",
+        "{'loss': '2.327', 'grad_norm': '2.281', 'learning_rate': '9.656e-06', 'epoch': '1.68'}",
+        "{'loss': '2.322', 'grad_norm': '2.125', 'learning_rate': '9.522e-06', 'epoch': '1.692'}",
+        "{'loss': '2.387', 'grad_norm': '2.281', 'learning_rate': '9.387e-06', 'epoch': '1.703'}",
+        "{'loss': '2.335', 'grad_norm': '2.25', 'learning_rate': '9.253e-06', 'epoch': '1.715'}",
+        "{'loss': '2.307', 'grad_norm': '2.156', 'learning_rate': '9.118e-06', 'epoch': '1.727'}",
+        "{'loss': '2.314', 'grad_norm': '2.078', 'learning_rate': '8.984e-06', 'epoch': '1.738'}",
+        "{'loss': '2.289', 'grad_norm': '2.219', 'learning_rate': '8.85e-06', 'epoch': '1.75'}",
+        "{'loss': '2.353', 'grad_norm': '2.078', 'learning_rate': '8.716e-06', 'epoch': '1.761'}",
+        "{'loss': '2.248', 'grad_norm': '2.125', 'learning_rate': '8.583e-06', 'epoch': '1.773'}",
+        "{'loss': '2.334', 'grad_norm': '2.188', 'learning_rate': '8.45e-06', 'epoch': '1.784'}",
+        "{'loss': '2.3', 'grad_norm': '2.141', 'learning_rate': '8.317e-06', 'epoch': '1.796'}",
+        "{'loss': '2.285', 'grad_norm': '2.141', 'learning_rate': '8.184e-06', 'epoch': '1.808'}",
+        "{'loss': '2.357', 'grad_norm': '2.406', 'learning_rate': '8.052e-06', 'epoch': '1.819'}",
+        "{'loss': '2.369', 'grad_norm': '2.156', 'learning_rate': '7.92e-06', 'epoch': '1.831'}",
+        "{'loss': '2.365', 'grad_norm': '1.984', 'learning_rate': '7.788e-06', 'epoch': '1.842'}",
+        "{'loss': '2.357', 'grad_norm': '2.219', 'learning_rate': '7.657e-06', 'epoch': '1.854'}",
+        "{'loss': '2.338', 'grad_norm': '2.219', 'learning_rate': '7.526e-06', 'epoch': '1.866'}",
+        "{'loss': '2.331', 'grad_norm': '2.172', 'learning_rate': '7.396e-06', 'epoch': '1.877'}",
+        "{'loss': '2.306', 'grad_norm': '2.203', 'learning_rate': '7.266e-06', 'epoch': '1.889'}",
+        "{'loss': '2.348', 'grad_norm': '2.109', 'learning_rate': '7.136e-06', 'epoch': '1.9'}",
+        "{'loss': '2.398', 'grad_norm': '2.219', 'learning_rate': '7.007e-06', 'epoch': '1.912'}",
+        "{'loss': '2.299', 'grad_norm': '2.172', 'learning_rate': '6.879e-06', 'epoch': '1.924'}",
+        "{'loss': '2.294', 'grad_norm': '2.156', 'learning_rate': '6.751e-06', 'epoch': '1.935'}",
+        "{'loss': '2.325', 'grad_norm': '2.188', 'learning_rate': '6.624e-06', 'epoch': '1.947'}",
+        "{'loss': '2.346', 'grad_norm': '2.156', 'learning_rate': '6.498e-06', 'epoch': '1.958'}",
+        "{'loss': '2.292', 'grad_norm': '2.266', 'learning_rate': '6.372e-06', 'epoch': '1.97'}",
+        "{'loss': '2.376', 'grad_norm': '2.141', 'learning_rate': '6.246e-06', 'epoch': '1.981'}",
+        "{'loss': '2.251', 'grad_norm': '2.141', 'learning_rate': '6.122e-06', 'epoch': '1.993'}",
+        "                                                 \u001b[A{'eval_loss': '2.356', 'eval_runtime': '57.97', 'eval_samples_per_second': '12.42', 'eval_steps_per_second': '6.21', 'epoch': '1.998'}",
+        " 83%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258e | 2155/2589 [2:38:52<31:35,  4.37s/it]{'loss': '2.291', 'grad_norm': '2.188', 'learning_rate': '5.998e-06', 'epoch': '2.005'}",
+        "{'loss': '2.279', 'grad_norm': '2.094', 'learning_rate': '5.875e-06', 'epoch': '2.016'}",
+        "{'loss': '2.276', 'grad_norm': '2.188', 'learning_rate': '5.752e-06', 'epoch': '2.028'}",
+        "{'loss': '2.272', 'grad_norm': '2.234', 'learning_rate': '5.631e-06', 'epoch': '2.039'}",
+        "{'loss': '2.333', 'grad_norm': '2.156', 'learning_rate': '5.51e-06', 'epoch': '2.051'}",
+        "{'loss': '2.298', 'grad_norm': '2.266', 'learning_rate': '5.39e-06', 'epoch': '2.063'}",
+        "{'loss': '2.225', 'grad_norm': '2.062', 'learning_rate': '5.271e-06', 'epoch': '2.074'}",
+        "{'loss': '2.285', 'grad_norm': '2.219', 'learning_rate': '5.152e-06', 'epoch': '2.086'}",
+        "{'loss': '2.286', 'grad_norm': '2.156', 'learning_rate': '5.035e-06', 'epoch': '2.097'}",
+        "{'loss': '2.323', 'grad_norm': '2.172', 'learning_rate': '4.919e-06', 'epoch': '2.109'}",
+        "{'loss': '2.264', 'grad_norm': '2.188', 'learning_rate': '4.803e-06', 'epoch': '2.121'}",
+        "{'loss': '2.308', 'grad_norm': '2.062', 'learning_rate': '4.688e-06', 'epoch': '2.132'}",
+        "{'loss': '2.307', 'grad_norm': '2.156', 'learning_rate': '4.575e-06', 'epoch': '2.144'}",
+        "{'loss': '2.261', 'grad_norm': '2.062', 'learning_rate': '4.462e-06', 'epoch': '2.155'}",
+        "{'loss': '2.29', 'grad_norm': '2.188', 'learning_rate': '4.35e-06', 'epoch': '2.167'}",
+        "{'loss': '2.263', 'grad_norm': '2.344', 'learning_rate': '4.239e-06', 'epoch': '2.178'}",
+        "{'loss': '2.263', 'grad_norm': '2.172', 'learning_rate': '4.13e-06', 'epoch': '2.19'}",
+        "{'loss': '2.251', 'grad_norm': '2.094', 'learning_rate': '4.021e-06', 'epoch': '2.202'}",
+        "{'loss': '2.282', 'grad_norm': '2.188', 'learning_rate': '3.914e-06', 'epoch': '2.213'}",
+        "{'loss': '2.291', 'grad_norm': '2.156', 'learning_rate': '3.807e-06', 'epoch': '2.225'}",
+        "{'loss': '2.296', 'grad_norm': '2.188', 'learning_rate': '3.702e-06', 'epoch': '2.236'}",
+        "{'loss': '2.265', 'grad_norm': '2.203', 'learning_rate': '3.598e-06', 'epoch': '2.248'}",
+        "{'loss': '2.3', 'grad_norm': '2.094', 'learning_rate': '3.495e-06', 'epoch': '2.26'}",
+        "{'loss': '2.431', 'grad_norm': '2.266', 'learning_rate': '3.393e-06', 'epoch': '2.271'}",
+        "{'loss': '2.278', 'grad_norm': '2.203', 'learning_rate': '3.293e-06', 'epoch': '2.283'}",
+        "{'loss': '2.31', 'grad_norm': '2.109', 'learning_rate': '3.193e-06', 'epoch': '2.294'}",
+        "{'loss': '2.275', 'grad_norm': '2.125', 'learning_rate': '3.095e-06', 'epoch': '2.306'}",
+        "{'loss': '2.307', 'grad_norm': '2.031', 'learning_rate': '2.998e-06', 'epoch': '2.317'}",
+        "{'loss': '2.278', 'grad_norm': '2.188', 'learning_rate': '2.903e-06', 'epoch': '2.329'}",
+        "{'loss': '2.293', 'grad_norm': '2.141', 'learning_rate': '2.808e-06', 'epoch': '2.341'}",
+        "{'loss': '2.28', 'grad_norm': '2.188', 'learning_rate': '2.715e-06', 'epoch': '2.352'}",
+        "{'loss': '2.28', 'grad_norm': '2.219', 'learning_rate': '2.624e-06', 'epoch': '2.364'}",
+        "{'loss': '2.317', 'grad_norm': '2.344', 'learning_rate': '2.533e-06', 'epoch': '2.375'}",
+        "{'loss': '2.275', 'grad_norm': '2.172', 'learning_rate': '2.445e-06', 'epoch': '2.387'}",
+        "{'loss': '2.259', 'grad_norm': '2.141', 'learning_rate': '2.357e-06', 'epoch': '2.399'}",
+        "{'loss': '2.312', 'grad_norm': '2.125', 'learning_rate': '2.271e-06', 'epoch': '2.41'}",
+        "{'loss': '2.256', 'grad_norm': '2.141', 'learning_rate': '2.186e-06', 'epoch': '2.422'}",
+        "{'loss': '2.284', 'grad_norm': '2.219', 'learning_rate': '2.102e-06', 'epoch': '2.433'}",
+        "{'loss': '2.281', 'grad_norm': '2.172', 'learning_rate': '2.021e-06', 'epoch': '2.445'}",
+        "{'loss': '2.295', 'grad_norm': '2.125', 'learning_rate': '1.94e-06', 'epoch': '2.457'}",
+        "{'loss': '2.27', 'grad_norm': '2.172', 'learning_rate': '1.861e-06', 'epoch': '2.468'}",
+        "{'loss': '2.291', 'grad_norm': '2.156', 'learning_rate': '1.783e-06', 'epoch': '2.48'}",
+        "{'loss': '2.313', 'grad_norm': '2.172', 'learning_rate': '1.707e-06', 'epoch': '2.491'}",
+        "                                                 \u001b[A{'eval_loss': '2.357', 'eval_runtime': '56.03', 'eval_samples_per_second': '12.85', 'eval_steps_per_second': '6.425', 'epoch': '2.497'}",
+        "100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2589| 2586/2589 [3:11:17<00:13,  4.36s/it]{'loss': '2.279', 'grad_norm': '2.234', 'learning_rate': '1.633e-06', 'epoch': '2.503'}",
+        "{'loss': '2.344', 'grad_norm': '2.875', 'learning_rate': '1.56e-06', 'epoch': '2.514'}",
+        "{'loss': '2.27', 'grad_norm': '2.125', 'learning_rate': '1.488e-06', 'epoch': '2.526'}",
+        "{'loss': '2.278', 'grad_norm': '2.156', 'learning_rate': '1.418e-06', 'epoch': '2.538'}",
+        "{'loss': '2.249', 'grad_norm': '2.141', 'learning_rate': '1.35e-06', 'epoch': '2.549'}",
+        "{'loss': '2.28', 'grad_norm': '2.172', 'learning_rate': '1.283e-06', 'epoch': '2.561'}",
+        "{'loss': '2.321', 'grad_norm': '2.312', 'learning_rate': '1.218e-06', 'epoch': '2.572'}",
+        "{'loss': '2.339', 'grad_norm': '2.172', 'learning_rate': '1.154e-06', 'epoch': '2.584'}",
+        "{'loss': '2.263', 'grad_norm': '2.188', 'learning_rate': '1.092e-06', 'epoch': '2.596'}",
+        "{'loss': '2.237', 'grad_norm': '2.234', 'learning_rate': '1.032e-06', 'epoch': '2.607'}",
+        "{'loss': '2.264', 'grad_norm': '2.188', 'learning_rate': '9.728e-07', 'epoch': '2.619'}",
+        "{'loss': '2.312', 'grad_norm': '2.234', 'learning_rate': '9.157e-07', 'epoch': '2.63'}",
+        "{'loss': '2.241', 'grad_norm': '2.469', 'learning_rate': '8.602e-07', 'epoch': '2.642'}",
+        "{'loss': '2.335', 'grad_norm': '2.141', 'learning_rate': '8.063e-07', 'epoch': '2.654'}",
+        "{'loss': '2.297', 'grad_norm': '2.203', 'learning_rate': '7.541e-07', 'epoch': '2.665'}",
+        "{'loss': '2.299', 'grad_norm': '2.172', 'learning_rate': '7.036e-07', 'epoch': '2.677'}"
+      ],
+      "mtime_utc": "2026-05-11T00:38:22.507174+00:00",
+      "path": "outputs/by_model/llama-3.2-1b/logs/hpn-llama-3.2-1b-20260510-162406.log",
+      "sha256": "031895047ba10ade613915f3d650b868ee2bc5e800b7c38635f1aa6682280e36"
+    },
+    {
+      "bytes": 1228203,
+      "interesting_lines_count": 719,
+      "interesting_lines_sample": [
+        "  HPN LLM Pipeline  \u2014  Model: Llama-3.2-1B",
+        "[19:45:53] Model: Llama-3.2-1B (llama, shortcut=1b)",
+        "[19:45:59] Hardware: 2x GPU, 49140 MiB (~48 GiB) VRAM per card",
+        "[19:45:59] Hyperparams: CPT batch=4x4  SFT batch=4x4  LoRA batch=8x2  rank=64",
+        "[19:45:59] Corpus: /workspace/portables/NetBench-LLM/data/raw/research_corpus_v3.json selected (133709863 bytes \u2014 largest candidate)",
+        "[19:45:59] OK Preflight passed \u2014 GPUs: 2x48GB  Corpus: research_corpus_v3.json",
+        "[19:45:59] WARN  SKIP base model \u2014 already complete: /workspace/portables/NetBench-LLM/models/base/Llama-3.2-1B-base",
+        "[19:45:59] WARN  SKIP instruct-official model \u2014 already complete: /workspace/portables/NetBench-LLM/models/instruct-official/Llama-3.2-1B-Instruct",
+        "[19:45:59] WARN  SKIP CPT data \u2014 already complete: /workspace/portables/NetBench-LLM/data/processed/llama-3.2-1b",
+        "[19:45:59] WARN  SKIP LoRA CPT data \u2014 already complete: /workspace/portables/NetBench-LLM/data/processed/lora/llama-3.2-1b",
+        "[19:45:59] WARN  SKIP HPN SFT data \u2014 already complete: /workspace/portables/NetBench-LLM/data/instruction/llama-3.2-1b-hpn",
+        "[19:46:16] WARN  SKIP S4 Full HPN-CPT \u2014 already complete: /workspace/portables/NetBench-LLM/models/pretrained/Llama-3.2-1B-trained-new",
+        "[19:46:16] RUN S4 Full HPN-SFT",
+        "05/10/2026 19:46:22 - WARNING - __main__ - save_steps clamped to 101 (1x per epoch)",
+        " 16%|\u2588\u258b        | 100/612 [04:44<21:04,  2.47s/it]{'loss': '2.006', 'grad_norm': '10.94', 'learning_rate': '2.951e-06', 'epoch': '0.0492'}",
+        "{'loss': '2.041', 'grad_norm': '8.125', 'learning_rate': '6.23e-06', 'epoch': '0.0984'}",
+        "{'loss': '1.853', 'grad_norm': '6.562', 'learning_rate': '9.508e-06', 'epoch': '0.1476'}",
+        "{'loss': '1.84', 'grad_norm': '6.281', 'learning_rate': '1.279e-05', 'epoch': '0.1968'}",
+        "{'loss': '1.779', 'grad_norm': '6.562', 'learning_rate': '1.607e-05', 'epoch': '0.246'}",
+        "{'loss': '1.786', 'grad_norm': '6.156', 'learning_rate': '1.934e-05', 'epoch': '0.2952'}",
+        "{'loss': '1.779', 'grad_norm': '6.344', 'learning_rate': '1.999e-05', 'epoch': '0.3444'}",
+        "{'loss': '1.776', 'grad_norm': '6.25', 'learning_rate': '1.995e-05', 'epoch': '0.3936'}",
+        "{'loss': '1.807', 'grad_norm': '6.656', 'learning_rate': '1.987e-05', 'epoch': '0.4428'}",
+        "{'loss': '1.742', 'grad_norm': '6.094', 'learning_rate': '1.977e-05', 'epoch': '0.492'}",
+        "                                               \u001b[A{'eval_loss': '1.686', 'eval_runtime': '8.703', 'eval_samples_per_second': '19.76', 'eval_steps_per_second': '4.941', 'epoch': '0.492'}",
+        " 33%|\u2588\u2588\u2588\u258e      | 200/612 [09:32<18:23,  2.68s/it]{'loss': '1.612', 'grad_norm': '6.812', 'learning_rate': '1.963e-05', 'epoch': '0.5412'}",
+        "{'loss': '1.669', 'grad_norm': '6.5', 'learning_rate': '1.946e-05', 'epoch': '0.5904'}",
+        "{'loss': '1.695', 'grad_norm': '6.062', 'learning_rate': '1.926e-05', 'epoch': '0.6396'}",
+        "{'loss': '1.718', 'grad_norm': '6.688', 'learning_rate': '1.903e-05', 'epoch': '0.6888'}",
+        "{'loss': '1.703', 'grad_norm': '6.312', 'learning_rate': '1.877e-05', 'epoch': '0.738'}",
+        "{'loss': '1.686', 'grad_norm': '7', 'learning_rate': '1.848e-05', 'epoch': '0.7872'}",
+        "{'loss': '1.627', 'grad_norm': '6', 'learning_rate': '1.816e-05', 'epoch': '0.8364'}",
+        "{'loss': '1.686', 'grad_norm': '5.844', 'learning_rate': '1.782e-05', 'epoch': '0.8856'}",
+        "{'loss': '1.7', 'grad_norm': '7.406', 'learning_rate': '1.745e-05', 'epoch': '0.9348'}",
+        "{'loss': '1.667', 'grad_norm': '6.781', 'learning_rate': '1.706e-05', 'epoch': '0.984'}",
+        "                                               \u001b[A{'eval_loss': '1.641', 'eval_runtime': '8.718', 'eval_samples_per_second': '19.73', 'eval_steps_per_second': '4.932', 'epoch': '0.984'}",
+        " 49%|\u2588\u2588\u2588\u2588\u2589     | 300/612 [14:33<16:28,  3.17s/it]{'loss': '1.523', 'grad_norm': '5.812', 'learning_rate': '1.665e-05', 'epoch': '1.03'}",
+        "{'loss': '1.482', 'grad_norm': '5.312', 'learning_rate': '1.621e-05', 'epoch': '1.079'}",
+        "{'loss': '1.353', 'grad_norm': '6.875', 'learning_rate': '1.575e-05', 'epoch': '1.128'}",
+        "{'loss': '1.398', 'grad_norm': '6.969', 'learning_rate': '1.528e-05', 'epoch': '1.177'}",
+        "{'loss': '1.527', 'grad_norm': '6.719', 'learning_rate': '1.478e-05', 'epoch': '1.226'}",
+        "{'loss': '1.513', 'grad_norm': '6.062', 'learning_rate': '1.428e-05', 'epoch': '1.276'}",
+        "{'loss': '1.474', 'grad_norm': '7.156', 'learning_rate': '1.375e-05', 'epoch': '1.325'}",
+        "{'loss': '1.474', 'grad_norm': '7.531', 'learning_rate': '1.322e-05', 'epoch': '1.374'}",
+        "{'loss': '1.418', 'grad_norm': '6.344', 'learning_rate': '1.268e-05', 'epoch': '1.423'}",
+        "{'loss': '1.432', 'grad_norm': '5.812', 'learning_rate': '1.212e-05', 'epoch': '1.472'}",
+        "                                               \u001b[A{'eval_loss': '1.637', 'eval_runtime': '8.747', 'eval_samples_per_second': '19.66', 'eval_steps_per_second': '4.916', 'epoch': '1.472'}",
+        " 65%|\u2588\u2588\u2588\u2588\u2588\u2588\u258c   | 400/612 [19:29<11:28,  3.25s/it]{'loss': '1.55', 'grad_norm': '7.125', 'learning_rate': '1.156e-05', 'epoch': '1.522'}",
+        "{'loss': '1.46', 'grad_norm': '7.344', 'learning_rate': '1.1e-05', 'epoch': '1.571'}",
+        "{'loss': '1.474', 'grad_norm': '6.531', 'learning_rate': '1.043e-05', 'epoch': '1.62'}",
+        "{'loss': '1.454', 'grad_norm': '7.156', 'learning_rate': '9.857e-06', 'epoch': '1.669'}",
+        "{'loss': '1.483', 'grad_norm': '6.469', 'learning_rate': '9.288e-06', 'epoch': '1.718'}",
+        "{'loss': '1.363', 'grad_norm': '6.688', 'learning_rate': '8.721e-06', 'epoch': '1.768'}",
+        "{'loss': '1.499', 'grad_norm': '7.375', 'learning_rate': '8.158e-06', 'epoch': '1.817'}",
+        "{'loss': '1.391', 'grad_norm': '6.719', 'learning_rate': '7.6e-06', 'epoch': '1.866'}",
+        "{'loss': '1.474', 'grad_norm': '6.469', 'learning_rate': '7.051e-06', 'epoch': '1.915'}",
+        "{'loss': '1.414', 'grad_norm': '7.125', 'learning_rate': '6.511e-06', 'epoch': '1.964'}",
+        "                                               \u001b[A{'eval_loss': '1.627', 'eval_runtime': '8.693', 'eval_samples_per_second': '19.79', 'eval_steps_per_second': '4.947', 'epoch': '1.964'}",
+        " 82%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258f | 500/612 [24:22<04:15,  2.28s/it]{'loss': '1.307', 'grad_norm': '6.688', 'learning_rate': '5.983e-06', 'epoch': '2.01'}",
+        "{'loss': '1.348', 'grad_norm': '7.156', 'learning_rate': '5.468e-06', 'epoch': '2.059'}",
+        "{'loss': '1.355', 'grad_norm': '6.406', 'learning_rate': '4.967e-06', 'epoch': '2.108'}",
+        "{'loss': '1.327', 'grad_norm': '7.188', 'learning_rate': '4.483e-06', 'epoch': '2.157'}",
+        "{'loss': '1.338', 'grad_norm': '6.5', 'learning_rate': '4.017e-06', 'epoch': '2.207'}",
+        "{'loss': '1.356', 'grad_norm': '6.781', 'learning_rate': '3.57e-06', 'epoch': '2.256'}",
+        "{'loss': '1.345', 'grad_norm': '6.969', 'learning_rate': '3.144e-06', 'epoch': '2.305'}",
+        "{'loss': '1.325', 'grad_norm': '6.844', 'learning_rate': '2.74e-06', 'epoch': '2.354'}",
+        "{'loss': '1.261', 'grad_norm': '6.875', 'learning_rate': '2.36e-06', 'epoch': '2.403'}",
+        "{'loss': '1.369', 'grad_norm': '7.062', 'learning_rate': '2.005e-06', 'epoch': '2.453'}",
+        "                                               \u001b[A{'eval_loss': '1.642', 'eval_runtime': '8.792', 'eval_samples_per_second': '19.56', 'eval_steps_per_second': '4.891', 'epoch': '2.453'}",
+        " 98%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a| 600/612 [29:07<00:34,  2.84s/it]{'loss': '1.294', 'grad_norm': '6.969', 'learning_rate': '1.675e-06', 'epoch': '2.502'}",
+        "{'loss': '1.271', 'grad_norm': '6.781', 'learning_rate': '1.373e-06', 'epoch': '2.551'}",
+        "{'loss': '1.434', 'grad_norm': '6.281', 'learning_rate': '1.099e-06', 'epoch': '2.6'}",
+        "{'loss': '1.388', 'grad_norm': '6.562', 'learning_rate': '8.538e-07', 'epoch': '2.649'}",
+        "{'loss': '1.339', 'grad_norm': '6.812', 'learning_rate': '6.382e-07', 'epoch': '2.699'}",
+        "{'loss': '1.302', 'grad_norm': '7', 'learning_rate': '4.531e-07', 'epoch': '2.748'}",
+        "{'loss': '1.323', 'grad_norm': '7.812', 'learning_rate': '2.99e-07', 'epoch': '2.797'}",
+        "{'loss': '1.353', 'grad_norm': '7.5', 'learning_rate': '1.765e-07', 'epoch': '2.846'}",
+        "{'loss': '1.298', 'grad_norm': '6.781', 'learning_rate': '8.586e-08', 'epoch': '2.895'}",
+        "{'loss': '1.363', 'grad_norm': '6.688', 'learning_rate': '2.746e-08', 'epoch': '2.945'}",
+        "                                               \u001b[A{'eval_loss': '1.643', 'eval_runtime': '8.365', 'eval_samples_per_second': '20.56', 'eval_steps_per_second': '5.141', 'epoch': '2.945'}",
+        "100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 612/612 [29:55<00:00,  2.54s/it]{'loss': '1.392', 'grad_norm': '6.344', 'learning_rate': '1.463e-09', 'epoch': '2.994'}",
+        "                                               \u001b[A{'eval_loss': '1.642', 'eval_runtime': '8.348', 'eval_samples_per_second': '20.6', 'eval_steps_per_second': '5.151', 'epoch': '3'}",
+        "{'train_runtime': '1811', 'train_samples_per_second': '5.385', 'train_steps_per_second': '0.338', 'train_loss': '1.515', 'epoch': '3'}",
+        "  epoch                    =        3.0",
+        "[20:16:38] RUN S3 Full HPN-SFT",
+        "05/10/2026 20:16:44 - WARNING - __main__ - save_steps clamped to 101 (1x per epoch)",
+        " 16%|\u2588\u258b        | 100/612 [04:36<20:19,  2.38s/it]{'loss': '2.062', 'grad_norm': '9.438', 'learning_rate': '2.951e-06', 'epoch': '0.0492'}",
+        "{'loss': '2.142', 'grad_norm': '7.062', 'learning_rate': '6.23e-06', 'epoch': '0.0984'}",
+        "{'loss': '1.946', 'grad_norm': '6.312', 'learning_rate': '9.508e-06', 'epoch': '0.1476'}",
+        "{'loss': '1.93', 'grad_norm': '6.469', 'learning_rate': '1.279e-05', 'epoch': '0.1968'}",
+        "{'loss': '1.813', 'grad_norm': '6.188', 'learning_rate': '1.607e-05', 'epoch': '0.246'}",
+        "{'loss': '1.822', 'grad_norm': '5.625', 'learning_rate': '1.934e-05', 'epoch': '0.2952'}",
+        "{'loss': '1.816', 'grad_norm': '5.906', 'learning_rate': '1.999e-05', 'epoch': '0.3444'}",
+        "{'loss': '1.833', 'grad_norm': '6.188', 'learning_rate': '1.995e-05', 'epoch': '0.3936'}",
+        "{'loss': '1.851', 'grad_norm': '6.125', 'learning_rate': '1.987e-05', 'epoch': '0.4428'}",
+        "{'loss': '1.787', 'grad_norm': '5.75', 'learning_rate': '1.977e-05', 'epoch': '0.492'}",
+        "                                               \u001b[A{'eval_loss': '1.735', 'eval_runtime': '8.395', 'eval_samples_per_second': '20.49', 'eval_steps_per_second': '5.122', 'epoch': '0.492'}",
+        " 33%|\u2588\u2588\u2588\u258e      | 200/612 [09:12<17:42,  2.58s/it]{'loss': '1.645', 'grad_norm': '5.75', 'learning_rate': '1.963e-05', 'epoch': '0.5412'}",
+        "{'loss': '1.702', 'grad_norm': '5.875', 'learning_rate': '1.946e-05', 'epoch': '0.5904'}",
+        "{'loss': '1.744', 'grad_norm': '5.375', 'learning_rate': '1.926e-05', 'epoch': '0.6396'}",
+        "{'loss': '1.763', 'grad_norm': '6.062', 'learning_rate': '1.903e-05', 'epoch': '0.6888'}",
+        "{'loss': '1.743', 'grad_norm': '5.875', 'learning_rate': '1.877e-05', 'epoch': '0.738'}",
+        "{'loss': '1.738', 'grad_norm': '6.219', 'learning_rate': '1.848e-05', 'epoch': '0.7872'}",
+        "{'loss': '1.644', 'grad_norm': '5.531', 'learning_rate': '1.816e-05', 'epoch': '0.8364'}",
+        "{'loss': '1.729', 'grad_norm': '5.406', 'learning_rate': '1.782e-05', 'epoch': '0.8856'}",
+        "{'loss': '1.734', 'grad_norm': '6.938', 'learning_rate': '1.745e-05', 'epoch': '0.9348'}",
+        "{'loss': '1.7', 'grad_norm': '6.281', 'learning_rate': '1.706e-05', 'epoch': '0.984'}",
+        "                                               \u001b[A{'eval_loss': '1.682', 'eval_runtime': '8.38', 'eval_samples_per_second': '20.53', 'eval_steps_per_second': '5.132', 'epoch': '0.984'}",
+        " 49%|\u2588\u2588\u2588\u2588\u2589     | 300/612 [14:04<16:07,  3.10s/it]{'loss': '1.543', 'grad_norm': '5.188', 'learning_rate': '1.665e-05', 'epoch': '1.03'}",
+        "{'loss': '1.509', 'grad_norm': '4.719', 'learning_rate': '1.621e-05', 'epoch': '1.079'}",
+        "{'loss': '1.379', 'grad_norm': '6.312', 'learning_rate': '1.575e-05', 'epoch': '1.128'}",
+        "{'loss': '1.435', 'grad_norm': '6.531', 'learning_rate': '1.528e-05', 'epoch': '1.177'}",
+        "{'loss': '1.56', 'grad_norm': '6.062', 'learning_rate': '1.478e-05', 'epoch': '1.226'}",
+        "{'loss': '1.555', 'grad_norm': '5.688', 'learning_rate': '1.428e-05', 'epoch': '1.276'}",
+        "{'loss': '1.516', 'grad_norm': '6.781', 'learning_rate': '1.375e-05', 'epoch': '1.325'}",
+        "{'loss': '1.527', 'grad_norm': '6.781', 'learning_rate': '1.322e-05', 'epoch': '1.374'}",
+        "{'loss': '1.447', 'grad_norm': '5.625', 'learning_rate': '1.268e-05', 'epoch': '1.423'}",
+        "{'loss': '1.464', 'grad_norm': '5.438', 'learning_rate': '1.212e-05', 'epoch': '1.472'}",
+        "                                               \u001b[A{'eval_loss': '1.679', 'eval_runtime': '8.366', 'eval_samples_per_second': '20.56', 'eval_steps_per_second': '5.14', 'epoch': '1.472'}",
+        " 65%|\u2588\u2588\u2588\u2588\u2588\u2588\u258c   | 400/612 [18:50<11:06,  3.15s/it]{'loss': '1.6', 'grad_norm': '6.375', 'learning_rate': '1.156e-05', 'epoch': '1.522'}",
+        "{'loss': '1.501', 'grad_norm': '6.5', 'learning_rate': '1.1e-05', 'epoch': '1.571'}",
+        "{'loss': '1.508', 'grad_norm': '5.938', 'learning_rate': '1.043e-05', 'epoch': '1.62'}",
+        "{'loss': '1.488', 'grad_norm': '6.469', 'learning_rate': '9.857e-06', 'epoch': '1.669'}",
+        "{'loss': '1.514', 'grad_norm': '5.844', 'learning_rate': '9.288e-06', 'epoch': '1.718'}",
+        "{'loss': '1.39', 'grad_norm': '6', 'learning_rate': '8.721e-06', 'epoch': '1.768'}",
+        "{'loss': '1.536', 'grad_norm': '6.5', 'learning_rate': '8.158e-06', 'epoch': '1.817'}",
+        "{'loss': '1.425', 'grad_norm': '5.75', 'learning_rate': '7.6e-06', 'epoch': '1.866'}",
+        "{'loss': '1.515', 'grad_norm': '5.875', 'learning_rate': '7.051e-06', 'epoch': '1.915'}",
+        "{'loss': '1.446', 'grad_norm': '5.969', 'learning_rate': '6.511e-06', 'epoch': '1.964'}",
+        "                                               \u001b[A{'eval_loss': '1.669', 'eval_runtime': '8.369', 'eval_samples_per_second': '20.55', 'eval_steps_per_second': '5.138', 'epoch': '1.964'}",
+        " 82%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258f | 500/612 [23:33<04:06,  2.20s/it]{'loss': '1.333', 'grad_norm': '5.906', 'learning_rate': '5.983e-06', 'epoch': '2.01'}",
+        "{'loss': '1.371', 'grad_norm': '6.312', 'learning_rate': '5.468e-06', 'epoch': '2.059'}",
+        "{'loss': '1.399', 'grad_norm': '6', 'learning_rate': '4.967e-06', 'epoch': '2.108'}",
+        "{'loss': '1.362', 'grad_norm': '6.25', 'learning_rate': '4.483e-06', 'epoch': '2.157'}",
+        "{'loss': '1.372', 'grad_norm': '5.906', 'learning_rate': '4.017e-06', 'epoch': '2.207'}",
+        "{'loss': '1.391', 'grad_norm': '6.062', 'learning_rate': '3.57e-06', 'epoch': '2.256'}",
+        "{'loss': '1.387', 'grad_norm': '6.188', 'learning_rate': '3.144e-06', 'epoch': '2.305'}",
+        "{'loss': '1.358', 'grad_norm': '6.219', 'learning_rate': '2.74e-06', 'epoch': '2.354'}",
+        "{'loss': '1.284', 'grad_norm': '6.219', 'learning_rate': '2.36e-06', 'epoch': '2.403'}",
+        "{'loss': '1.412', 'grad_norm': '6.688', 'learning_rate': '2.005e-06', 'epoch': '2.453'}",
+        "                                               \u001b[A{'eval_loss': '1.685', 'eval_runtime': '8.372', 'eval_samples_per_second': '20.55', 'eval_steps_per_second': '5.136', 'epoch': '2.453'}",
+        " 98%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a| 600/612 [28:11<00:34,  2.84s/it]{'loss': '1.317', 'grad_norm': '6.312', 'learning_rate': '1.675e-06', 'epoch': '2.502'}",
+        "{'loss': '1.307', 'grad_norm': '6.156', 'learning_rate': '1.373e-06', 'epoch': '2.551'}",
+        "{'loss': '1.484', 'grad_norm': '5.719', 'learning_rate': '1.099e-06', 'epoch': '2.6'}",
+        "{'loss': '1.432', 'grad_norm': '6.094', 'learning_rate': '8.538e-07', 'epoch': '2.649'}",
+        "{'loss': '1.369', 'grad_norm': '6.281', 'learning_rate': '6.382e-07', 'epoch': '2.699'}",
+        "{'loss': '1.321', 'grad_norm': '6.375', 'learning_rate': '4.531e-07', 'epoch': '2.748'}",
+        "{'loss': '1.36', 'grad_norm': '6.875', 'learning_rate': '2.99e-07', 'epoch': '2.797'}",
+        "{'loss': '1.39', 'grad_norm': '7.062', 'learning_rate': '1.765e-07', 'epoch': '2.846'}",
+        "{'loss': '1.335', 'grad_norm': '6.25', 'learning_rate': '8.586e-08', 'epoch': '2.895'}",
+        "{'loss': '1.4', 'grad_norm': '6.312', 'learning_rate': '2.746e-08', 'epoch': '2.945'}",
+        "                                               \u001b[A{'eval_loss': '1.686', 'eval_runtime': '8.372', 'eval_samples_per_second': '20.54', 'eval_steps_per_second': '5.136', 'epoch': '2.945'}",
+        "100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 612/612 [29:00<00:00,  2.54s/it]{'loss': '1.43', 'grad_norm': '5.75', 'learning_rate': '1.463e-09', 'epoch': '2.994'}",
+        "                                               \u001b[A{'eval_loss': '1.686', 'eval_runtime': '8.356', 'eval_samples_per_second': '20.59', 'eval_steps_per_second': '5.146', 'epoch': '3'}",
+        "{'train_runtime': '1755', 'train_samples_per_second': '5.556', 'train_steps_per_second': '0.349', 'train_loss': '1.554', 'epoch': '3'}",
+        "  epoch                    =        3.0",
+        "[20:46:04] RUN S2 LoRA HPN-SFT",
+        "05/10/2026 20:46:11 - INFO - __main__ - Steps per epoch:    203",
+        " 10%|\u2589         | 60/612 [04:42<44:20,  4.82s/it]{'loss': '2.046', 'grad_norm': '1.299', 'learning_rate': '2.951e-05', 'epoch': '0.04914'}",
+        "{'loss': '2.043', 'grad_norm': '1.346', 'learning_rate': '6.23e-05', 'epoch': '0.09828'}",
+        "{'loss': '1.812', 'grad_norm': '1', 'learning_rate': '9.508e-05', 'epoch': '0.1474'}",
+        "{'loss': '1.84', 'grad_norm': '1.055', 'learning_rate': '0.0001279', 'epoch': '0.1966'}",
+        "{'loss': '1.748', 'grad_norm': '1.005', 'learning_rate': '0.0001607', 'epoch': '0.2457'}",
+        "{'loss': '1.775', 'grad_norm': '0.9379', 'learning_rate': '0.0001934', 'epoch': '0.2948'}",
+        " 20%|\u2588\u2589        | 120/612 [09:13<35:12,  4.29s/it]{'eval_loss': '1.773', 'eval_runtime': '9.668', 'eval_samples_per_second': '17.79', 'eval_steps_per_second': '8.895', 'epoch': '0.2948'}",
+        "{'loss': '1.801', 'grad_norm': '0.9081', 'learning_rate': '0.0001999', 'epoch': '0.344'}",
+        "{'loss': '1.811', 'grad_norm': '0.9384', 'learning_rate': '0.0001995', 'epoch': '0.3931'}",
+        "{'loss': '1.833', 'grad_norm': '0.9412', 'learning_rate': '0.0001987', 'epoch': '0.4423'}",
+        "{'loss': '1.772', 'grad_norm': '0.8985', 'learning_rate': '0.0001977', 'epoch': '0.4914'}",
+        "{'loss': '1.641', 'grad_norm': '0.8972', 'learning_rate': '0.0001963', 'epoch': '0.5405'}",
+        "{'loss': '1.698', 'grad_norm': '0.9042', 'learning_rate': '0.0001946', 'epoch': '0.5897'}",
+        " 29%|\u2588\u2588\u2589       | 180/612 [13:33<28:50,  4.01s/it]{'eval_loss': '1.722', 'eval_runtime': '9.694', 'eval_samples_per_second': '17.74', 'eval_steps_per_second': '8.872', 'epoch': '0.5897'}",
+        "{'loss': '1.743', 'grad_norm': '0.8522', 'learning_rate': '0.0001926', 'epoch': '0.6388'}",
+        "{'loss': '1.762', 'grad_norm': '0.9517', 'learning_rate': '0.0001903', 'epoch': '0.688'}",
+        "{'loss': '1.733', 'grad_norm': '0.9445', 'learning_rate': '0.0001877', 'epoch': '0.7371'}",
+        "{'loss': '1.752', 'grad_norm': '0.9693', 'learning_rate': '0.0001848', 'epoch': '0.7862'}",
+        "{'loss': '1.651', 'grad_norm': '0.8833', 'learning_rate': '0.0001816', 'epoch': '0.8354'}",
+        "{'loss': '1.718', 'grad_norm': '0.8473', 'learning_rate': '0.0001782', 'epoch': '0.8845'}",
+        " 33%|\u2588\u2588\u2588\u258e      | 204/612 [15:26<23:45,  3.49s/it]{'eval_loss': '1.697', 'eval_runtime': '9.655', 'eval_samples_per_second': '17.82', 'eval_steps_per_second': '8.907', 'epoch': '0.8845'}",
+        "{'loss': '1.732', 'grad_norm': '1.088', 'learning_rate': '0.0001745', 'epoch': '0.9337'}",
+        "{'loss': '1.708', 'grad_norm': '0.9814', 'learning_rate': '0.0001706', 'epoch': '0.9828'}",
+        " 39%|\u2588\u2588\u2588\u2589      | 240/612 [18:13<25:11,  4.06s/it]{'loss': '1.455', 'grad_norm': '0.9007', 'learning_rate': '0.0001665', 'epoch': '1.029'}",
+        "{'loss': '1.371', 'grad_norm': '0.8012', 'learning_rate': '0.0001621', 'epoch': '1.079'}",
+        "{'loss': '1.253', 'grad_norm': '1.087', 'learning_rate': '0.0001575', 'epoch': '1.128'}",
+        "{'loss': '1.29', 'grad_norm': '1.052', 'learning_rate': '0.0001528', 'epoch': '1.177'}",
+        " 49%|\u2588\u2588\u2588\u2588\u2589     | 300/612 [23:05<26:23,  5.07s/it]{'eval_loss': '1.725', 'eval_runtime': '9.875', 'eval_samples_per_second': '17.42', 'eval_steps_per_second': '8.709', 'epoch': '1.177'}",
+        "{'loss': '1.433', 'grad_norm': '1.034', 'learning_rate': '0.0001478', 'epoch': '1.226'}",
+        "{'loss': '1.395', 'grad_norm': '0.9626', 'learning_rate': '0.0001428', 'epoch': '1.275'}",
+        "{'loss': '1.377', 'grad_norm': '1.113', 'learning_rate': '0.0001375', 'epoch': '1.324'}",
+        "{'loss': '1.398', 'grad_norm': '1.172', 'learning_rate': '0.0001322', 'epoch': '1.373'}",
+        "{'loss': '1.304', 'grad_norm': '1.027', 'learning_rate': '0.0001268', 'epoch': '1.423'}",
+        "{'loss': '1.317', 'grad_norm': '0.9606', 'learning_rate': '0.0001212', 'epoch': '1.472'}",
+        " 59%|\u2588\u2588\u2588\u2588\u2588\u2589    | 360/612 [27:47<22:20,  5.32s/it]{'eval_loss': '1.73', 'eval_runtime': '10.02', 'eval_samples_per_second': '17.17', 'eval_steps_per_second': '8.584', 'epoch': '1.472'}",
+        "{'loss': '1.462', 'grad_norm': '1.149', 'learning_rate': '0.0001156', 'epoch': '1.521'}",
+        "{'loss': '1.37', 'grad_norm': '1.194', 'learning_rate': '0.00011', 'epoch': '1.57'}",
+        "{'loss': '1.365', 'grad_norm': '1.042', 'learning_rate': '0.0001043', 'epoch': '1.619'}",
+        "{'loss': '1.347', 'grad_norm': '1.157', 'learning_rate': '9.857e-05', 'epoch': '1.668'}",
+        "{'loss': '1.352', 'grad_norm': '1.069', 'learning_rate': '9.288e-05', 'epoch': '1.717'}",
+        "{'loss': '1.25', 'grad_norm': '1.058', 'learning_rate': '8.721e-05', 'epoch': '1.767'}",
+        " 67%|\u2588\u2588\u2588\u2588\u2588\u2588\u258b   | 408/612 [31:37<11:30,  3.39s/it]{'eval_loss': '1.708', 'eval_runtime': '9.895', 'eval_samples_per_second': '17.38', 'eval_steps_per_second': '8.692', 'epoch': '1.767'}",
+        "{'loss': '1.398', 'grad_norm': '1.193', 'learning_rate': '8.158e-05', 'epoch': '1.816'}",
+        "{'loss': '1.28', 'grad_norm': '1.048', 'learning_rate': '7.6e-05', 'epoch': '1.865'}",
+        "{'loss': '1.367', 'grad_norm': '1.047', 'learning_rate': '7.051e-05', 'epoch': '1.914'}",
+        "{'loss': '1.294', 'grad_norm': '1.034', 'learning_rate': '6.511e-05', 'epoch': '1.963'}",
+        " 69%|\u2588\u2588\u2588\u2588\u2588\u2588\u258a   | 420/612 [32:39<15:28,  4.84s/it]{'loss': '1.141', 'grad_norm': '0.9539', 'learning_rate': '5.983e-05', 'epoch': '2.01'}",
+        "{'loss': '0.951', 'grad_norm': '1.433', 'learning_rate': '5.468e-05', 'epoch': '2.059'}",
+        " 78%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a  | 480/612 [37:16<11:24,  5.19s/it]{'eval_loss': '1.892', 'eval_runtime': '9.932', 'eval_samples_per_second': '17.32', 'eval_steps_per_second': '8.659', 'epoch': '2.059'}",
+        "{'loss': '0.9429', 'grad_norm': '1.115', 'learning_rate': '4.967e-05', 'epoch': '2.108'}",
+        "{'loss': '0.9224', 'grad_norm': '1.282', 'learning_rate': '4.483e-05', 'epoch': '2.157'}",
+        "{'loss': '0.9253', 'grad_norm': '1.163', 'learning_rate': '4.017e-05', 'epoch': '2.206'}",
+        "{'loss': '0.961', 'grad_norm': '1.218', 'learning_rate': '3.57e-05', 'epoch': '2.256'}",
+        "{'loss': '0.9568', 'grad_norm': '1.277', 'learning_rate': '3.144e-05', 'epoch': '2.305'}",
+        "{'loss': '0.928', 'grad_norm': '1.188', 'learning_rate': '2.74e-05', 'epoch': '2.354'}",
+        " 88%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a | 540/612 [41:44<04:38,  3.87s/it]{'eval_loss': '1.845', 'eval_runtime': '9.949', 'eval_samples_per_second': '17.29', 'eval_steps_per_second': '8.644', 'epoch': '2.354'}",
+        "{'loss': '0.8576', 'grad_norm': '1.236', 'learning_rate': '2.36e-05', 'epoch': '2.403'}",
+        "{'loss': '0.9393', 'grad_norm': '1.367', 'learning_rate': '2.005e-05', 'epoch': '2.452'}",
+        "{'loss': '0.8819', 'grad_norm': '1.312', 'learning_rate': '1.675e-05', 'epoch': '2.501'}",
+        "{'loss': '0.8598', 'grad_norm': '1.215', 'learning_rate': '1.373e-05', 'epoch': '2.55'}",
+        "{'loss': '1.02', 'grad_norm': '1.249', 'learning_rate': '1.099e-05', 'epoch': '2.6'}",
+        "{'loss': '0.9542', 'grad_norm': '1.236', 'learning_rate': '8.538e-06', 'epoch': '2.649'}",
+        " 98%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a| 600/612 [46:41<01:00,  5.06s/it]{'eval_loss': '1.854', 'eval_runtime': '9.932', 'eval_samples_per_second': '17.32', 'eval_steps_per_second': '8.659', 'epoch': '2.649'}",
+        "{'loss': '0.8915', 'grad_norm': '1.248', 'learning_rate': '6.382e-06', 'epoch': '2.698'}",
+        "{'loss': '0.871', 'grad_norm': '1.334', 'learning_rate': '4.531e-06', 'epoch': '2.747'}",
+        "{'loss': '0.9175', 'grad_norm': '1.412', 'learning_rate': '2.99e-06', 'epoch': '2.796'}",
+        "{'loss': '0.9071', 'grad_norm': '1.376', 'learning_rate': '1.765e-06', 'epoch': '2.845'}",
+        "{'loss': '0.8931', 'grad_norm': '1.333', 'learning_rate': '8.586e-07', 'epoch': '2.894'}",
+        "{'loss': '0.9604', 'grad_norm': '1.253', 'learning_rate': '2.746e-07', 'epoch': '2.943'}",
+        "100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 612/612 [47:43<00:00,  3.81s/it]{'eval_loss': '1.855', 'eval_runtime': '9.928', 'eval_samples_per_second': '17.33', 'eval_steps_per_second': '8.663', 'epoch': '2.943'}",
+        "{'loss': '0.9755', 'grad_norm': '1.191', 'learning_rate': '1.463e-08', 'epoch': '2.993'}",
+        "{'eval_loss': '1.855', 'eval_runtime': '9.897', 'eval_samples_per_second': '17.38', 'eval_steps_per_second': '8.689', 'epoch': '3'}",
+        "{'train_runtime': '2874', 'train_samples_per_second': '3.393', 'train_steps_per_second': '0.213', 'train_loss': '1.349', 'epoch': '3'}",
+        "  epoch                    =        3.0",
+        "[21:34:07] RUN S2 merge LoRA SFT",
+        "[21:34:18] RUN S5 LoRA HPN-CPT",
+        "05/10/2026 21:34:25 - INFO - __main__ - Steps per epoch:    862",
+        " 10%|\u2589         | 258/2589 [23:21<3:30:31,  5.42s/it]{'loss': '2.959', 'grad_norm': '1.127', 'learning_rate': '6.977e-06', 'epoch': '0.01159'}",
+        "{'loss': '2.895', 'grad_norm': '0.5252', 'learning_rate': '1.473e-05', 'epoch': '0.02317'}",
+        "{'loss': '2.748', 'grad_norm': '0.5284', 'learning_rate': '2.248e-05', 'epoch': '0.03476'}",
+        "{'loss': '2.756', 'grad_norm': '0.5098', 'learning_rate': '3.023e-05', 'epoch': '0.04635'}",
+        "{'loss': '2.744', 'grad_norm': '0.4421', 'learning_rate': '3.798e-05', 'epoch': '0.05794'}",
+        "{'loss': '2.742', 'grad_norm': '0.4474', 'learning_rate': '4.574e-05', 'epoch': '0.06952'}",
+        "{'loss': '2.695', 'grad_norm': '0.4668', 'learning_rate': '5.349e-05', 'epoch': '0.08111'}",
+        "{'loss': '2.677', 'grad_norm': '0.5304', 'learning_rate': '6.124e-05', 'epoch': '0.0927'}",
+        "{'loss': '2.675', 'grad_norm': '0.5069', 'learning_rate': '6.899e-05', 'epoch': '0.1043'}",
+        "{'loss': '2.671', 'grad_norm': '0.4934', 'learning_rate': '7.674e-05', 'epoch': '0.1159'}",
+        "{'loss': '2.605', 'grad_norm': '0.4791', 'learning_rate': '8.45e-05', 'epoch': '0.1275'}",
+        "{'loss': '2.646', 'grad_norm': '0.4643', 'learning_rate': '9.225e-05', 'epoch': '0.139'}",
+        "{'loss': '2.666', 'grad_norm': '0.4689', 'learning_rate': '0.0001', 'epoch': '0.1506'}",
+        "{'loss': '2.64', 'grad_norm': '0.4447', 'learning_rate': '0.0001078', 'epoch': '0.1622'}",
+        "{'loss': '2.626', 'grad_norm': '0.4295', 'learning_rate': '0.0001155', 'epoch': '0.1738'}"
+      ],
+      "mtime_utc": "2026-05-11T14:37:24.804618+00:00",
+      "path": "outputs/by_model/llama-3.2-1b/logs/hpn-llama-3.2-1b-20260510-194553.log",
+      "sha256": "6481d96b60045b180d17560d50636be486b430a979f0b87b4cd6d3414d4bd0e4"
+    },
+    {
+      "bytes": 70072,
+      "interesting_lines_count": 149,
+      "interesting_lines_sample": [
+        "  HPN LLM Pipeline  \u2014  Model: Llama-3.2-1B",
+        "[14:06:50] Model: Llama-3.2-1B (llama, shortcut=1b)",
+        "[14:06:56] Hardware: 2x GPU, 49140 MiB (~48 GiB) VRAM per card",
+        "[14:06:56] Hyperparams: CPT batch=4x4  SFT batch=4x4  LoRA batch=8x2  rank=64",
+        "[14:06:56] Corpus: /workspace/portables/NetBench-LLM/data/raw/research_corpus_v3.json selected (133709863 bytes \u2014 largest candidate)",
+        "[14:06:56] OK Preflight passed \u2014 GPUs: 2x48GB  Corpus: research_corpus_v3.json",
+        "[14:06:56] WARN  SKIP base model \u2014 already complete: /workspace/portables/NetBench-LLM/models/base/Llama-3.2-1B-base",
+        "[14:06:56] WARN  SKIP instruct-official model \u2014 already complete: /workspace/portables/NetBench-LLM/models/instruct-official/Llama-3.2-1B-Instruct",
+        "[14:06:56] WARN  SKIP CPT data \u2014 already complete: /workspace/portables/NetBench-LLM/data/processed/llama-3.2-1b",
+        "[14:06:56] WARN  SKIP LoRA CPT data \u2014 already complete: /workspace/portables/NetBench-LLM/data/processed/lora/llama-3.2-1b",
+        "[14:06:56] WARN  SKIP HPN SFT data \u2014 already complete: /workspace/portables/NetBench-LLM/data/instruction/llama-3.2-1b-hpn",
+        "[14:07:01] WARN  SKIP S4 Full HPN-CPT \u2014 already complete: /workspace/portables/NetBench-LLM/models/pretrained/Llama-3.2-1B-trained-new",
+        "[14:07:01] WARN  SKIP S4 Full HPN-SFT \u2014 already complete: /workspace/portables/NetBench-LLM/models/instruction/Llama-3.2-1B-cpt-full-sft",
+        "[14:07:01] WARN  SKIP S3 Full HPN-SFT \u2014 already complete: /workspace/portables/NetBench-LLM/models/instruction/Llama-3.2-1B-instruct-full-hpn-sft",
+        "[14:07:01] WARN  SKIP S2 LoRA HPN-SFT \u2014 already complete: /workspace/portables/NetBench-LLM/models/lora/Llama-3.2-1B-instruct-lora-sft",
+        "[14:07:01] WARN  SKIP S2 LoRA SFT merged \u2014 already complete: /workspace/portables/NetBench-LLM/models/lora-merged/Llama-3.2-1B-instruct-lora-sft-merged",
+        "[14:07:01] WARN  SKIP S5 LoRA HPN-CPT \u2014 already complete: /workspace/portables/NetBench-LLM/models/lora/Llama-3.2-1B-instruct-lora-cpt",
+        "[14:07:01] WARN  SKIP S5 LoRA CPT merged \u2014 already complete: /workspace/portables/NetBench-LLM/models/lora-merged/Llama-3.2-1B-instruct-lora-cpt-merged",
+        "[14:07:01] WARN  SKIP S5 LoRA HPN-SFT \u2014 already complete: /workspace/portables/NetBench-LLM/models/lora/Llama-3.2-1B-instruct-lora-cpt-then-sft",
+        "[14:07:01] WARN  SKIP S5 LoRA SFT merged \u2014 already complete: /workspace/portables/NetBench-LLM/models/lora-merged/Llama-3.2-1B-instruct-lora-cpt-then-sft-merged",
+        "[14:07:01] WARN  SKIP RAG index \u2014 already built (marker or /workspace/portables/NetBench-RAG/data/qdrant_store/ found)",
+        "[14:07:01] WARN  SKIP benchmark S1-Llama-3.2-1B-Instruct-Official \u2014 already exists: /workspace/portables/NetBench-LLM/outputs/evaluations/answers/hpn_answers_Llama-3.2-1B-Instruct_v5.0.xlsx",
+        "[14:07:01] WARN  SKIP benchmark S2-Llama-3.2-1B-Instruct-LoRA-SFT \u2014 already exists: /workspace/portables/NetBench-LLM/outputs/evaluations/answers/hpn_answers_Llama-3.2-1B-instruct-lora-sft-merged_v5.0.xlsx",
+        "[14:07:01] WARN  SKIP benchmark S3-Llama-3.2-1B-Instruct-Full-HPN-SFT \u2014 already exists: /workspace/portables/NetBench-LLM/outputs/evaluations/answers/hpn_answers_Llama-3.2-1B-instruct-full-hpn-sft_v5.0.xlsx",
+        "[14:07:01] WARN  SKIP benchmark S4-Llama-3.2-1B-CPT-SFT \u2014 already exists: /workspace/portables/NetBench-LLM/outputs/evaluations/answers/hpn_answers_Llama-3.2-1B-cpt-full-sft_v5.0.xlsx",
+        "[14:07:01] WARN  SKIP benchmark S5-Llama-3.2-1B-LoRA-CPT-SFT \u2014 already exists: /workspace/portables/NetBench-LLM/outputs/evaluations/answers/hpn_answers_Llama-3.2-1B-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+        "[14:07:01] WARN  SKIP RAG benchmark S6-Llama-3.2-1B-Instruct-Official \u2014 already exists: /workspace/portables/NetBench-RAG/outputs/answers/hpn_answers_RAG-Llama-3.2-1B-Instruct_v5.0.xlsx",
+        "[14:07:01] WARN  SKIP RAG benchmark S7-Llama-3.2-1B-CPT-SFT \u2014 already exists: /workspace/portables/NetBench-RAG/outputs/answers/hpn_answers_RAG-Llama-3.2-1B-cpt-full-sft_v5.0.xlsx",
+        "[14:07:01] WARN  SKIP RAG benchmark S8-Llama-3.2-1B-LoRA-CPT-SFT \u2014 already exists: /workspace/portables/NetBench-RAG/outputs/answers/hpn_answers_RAG-Llama-3.2-1B-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+        "[14:07:01] RUN judge all answers",
+        "   Output dir        : /workspace/portables/NetBench-LLM/outputs/evaluations/judged",
+        "\u267b\ufe0f  Found 242 already-judged questions in /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_Llama-3.2-1B-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_Llama-3.2-1B-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_Llama-3.2-1B-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "\u267b\ufe0f  Found 242 already-judged questions in /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_Llama-3.2-1B-instruct-lora-sft-merged_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_Llama-3.2-1B-instruct-lora-sft-merged_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_Llama-3.2-1B-instruct-lora-sft-merged_by_gpt-5.1.xlsx",
+        "\u267b\ufe0f  Found 242 already-judged questions in /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_Llama-3.2-1B-Instruct_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_Llama-3.2-1B-Instruct_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_Llama-3.2-1B-Instruct_by_gpt-5.1.xlsx",
+        "\u267b\ufe0f  Found 242 already-judged questions in /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_Llama-3.2-1B-instruct-full-hpn-sft_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_Llama-3.2-1B-instruct-full-hpn-sft_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_Llama-3.2-1B-instruct-full-hpn-sft_by_gpt-5.1.xlsx",
+        "\u267b\ufe0f  Found 242 already-judged questions in /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_Llama-3.2-1B-cpt-full-sft_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_Llama-3.2-1B-cpt-full-sft_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_Llama-3.2-1B-cpt-full-sft_by_gpt-5.1.xlsx",
+        "\u267b\ufe0f  Found 242 already-judged questions in /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_RAG-Llama-3.2-1B-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_RAG-Llama-3.2-1B-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_RAG-Llama-3.2-1B-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "\u267b\ufe0f  Found 242 already-judged questions in /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_RAG-Llama-3.2-1B-cpt-full-sft_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_RAG-Llama-3.2-1B-cpt-full-sft_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_RAG-Llama-3.2-1B-cpt-full-sft_by_gpt-5.1.xlsx",
+        "\u267b\ufe0f  Found 242 already-judged questions in /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_RAG-Llama-3.2-1B-Instruct_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_RAG-Llama-3.2-1B-Instruct_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /workspace/portables/NetBench-LLM/outputs/evaluations/judged/hpn_judged_RAG-Llama-3.2-1B-Instruct_by_gpt-5.1.xlsx",
+        "\ud83c\udfc1 All done! 8 file(s) judged in 1.1s",
+        "   Output files in: /workspace/portables/NetBench-LLM/outputs/evaluations/judged/",
+        "[14:07:03] OK judge all answers done",
+        "[14:07:03] RUN profile gpu S1-Llama-3.2-1B-Instruct-Official",
+        "2026-05-11 14:07:09 - INFO -   \ud83d\udcdd NB-HPN-0026-q1  (max_new_tokens=256)",
+        "2026-05-11 14:07:11 - INFO -   \ud83d\udcdd NB-HPN-0159-q0  (max_new_tokens=256)",
+        "2026-05-11 14:07:14 - INFO -   \ud83d\udcdd NB-HPN-2135-q1  (max_new_tokens=256)",
+        "2026-05-11 14:07:16 - INFO -   \ud83d\udcdd NB-HPN-2121-q2  (max_new_tokens=256)",
+        "2026-05-11 14:07:18 - INFO -   \ud83d\udcdd NB-HPN-1401-q1  (max_new_tokens=256)",
+        "2026-05-11 14:07:21 - INFO -   \ud83d\udcdd NB-HPN-0176-q1  (max_new_tokens=256)",
+        "2026-05-11 14:07:23 - INFO -   \ud83d\udcdd NB-HPN-0178-q1  (max_new_tokens=256)",
+        "2026-05-11 14:07:25 - INFO -   \ud83d\udcdd NB-HPN-2032-q1  (max_new_tokens=256)",
+        "2026-05-11 14:07:28 - INFO -   \ud83d\udcdd NB-HPN-0733-q1  (max_new_tokens=256)",
+        "2026-05-11 14:07:30 - INFO -   \ud83d\udcdd NB-HPN-1278-q1  (max_new_tokens=256)",
+        "[14:07:33] RUN profile gpu S4-Llama-3.2-1B-CPT-SFT",
+        "2026-05-11 14:07:39 - INFO -   \ud83d\udcdd NB-HPN-0026-q1  (max_new_tokens=256)",
+        "2026-05-11 14:07:39 - INFO -   \ud83d\udcdd NB-HPN-0159-q0  (max_new_tokens=256)",
+        "2026-05-11 14:07:40 - INFO -   \ud83d\udcdd NB-HPN-2135-q1  (max_new_tokens=256)",
+        "2026-05-11 14:07:41 - INFO -   \ud83d\udcdd NB-HPN-2121-q2  (max_new_tokens=256)",
+        "2026-05-11 14:07:42 - INFO -   \ud83d\udcdd NB-HPN-1401-q1  (max_new_tokens=256)",
+        "2026-05-11 14:07:43 - INFO -   \ud83d\udcdd NB-HPN-0176-q1  (max_new_tokens=256)",
+        "2026-05-11 14:07:44 - INFO -   \ud83d\udcdd NB-HPN-0178-q1  (max_new_tokens=256)",
+        "2026-05-11 14:07:45 - INFO -   \ud83d\udcdd NB-HPN-2032-q1  (max_new_tokens=256)",
+        "2026-05-11 14:07:46 - INFO -   \ud83d\udcdd NB-HPN-0733-q1  (max_new_tokens=256)",
+        "2026-05-11 14:07:48 - INFO -   \ud83d\udcdd NB-HPN-1278-q1  (max_new_tokens=256)",
+        "[14:07:50] RUN profile gpu S5-Llama-3.2-1B-LoRA-CPT-SFT",
+        "2026-05-11 14:07:55 - INFO -   \ud83d\udcdd NB-HPN-0026-q1  (max_new_tokens=256)",
+        "2026-05-11 14:07:57 - INFO -   \ud83d\udcdd NB-HPN-0159-q0  (max_new_tokens=256)",
+        "2026-05-11 14:07:58 - INFO -   \ud83d\udcdd NB-HPN-2135-q1  (max_new_tokens=256)",
+        "2026-05-11 14:07:59 - INFO -   \ud83d\udcdd NB-HPN-2121-q2  (max_new_tokens=256)",
+        "2026-05-11 14:08:01 - INFO -   \ud83d\udcdd NB-HPN-1401-q1  (max_new_tokens=256)",
+        "2026-05-11 14:08:02 - INFO -   \ud83d\udcdd NB-HPN-0176-q1  (max_new_tokens=256)",
+        "2026-05-11 14:08:02 - INFO -   \ud83d\udcdd NB-HPN-0178-q1  (max_new_tokens=256)",
+        "2026-05-11 14:08:04 - INFO -   \ud83d\udcdd NB-HPN-2032-q1  (max_new_tokens=256)",
+        "2026-05-11 14:08:05 - INFO -   \ud83d\udcdd NB-HPN-0733-q1  (max_new_tokens=256)",
+        "2026-05-11 14:08:06 - INFO -   \ud83d\udcdd NB-HPN-1278-q1  (max_new_tokens=256)",
+        "[14:08:09] RUN profile cpu S1-Llama-3.2-1B-Instruct-Official",
+        "2026-05-11 14:08:15 - INFO -   \ud83d\udcdd NB-HPN-0026-q1  (max_new_tokens=256)",
+        "2026-05-11 14:08:29 - INFO -   \ud83d\udcdd NB-HPN-0159-q0  (max_new_tokens=256)",
+        "2026-05-11 14:08:38 - INFO -   \ud83d\udcdd NB-HPN-2135-q1  (max_new_tokens=256)",
+        "2026-05-11 14:08:52 - INFO -   \ud83d\udcdd NB-HPN-2121-q2  (max_new_tokens=256)",
+        "2026-05-11 14:09:06 - INFO -   \ud83d\udcdd NB-HPN-1401-q1  (max_new_tokens=256)",
+        "2026-05-11 14:09:20 - INFO -   \ud83d\udcdd NB-HPN-0176-q1  (max_new_tokens=256)",
+        "2026-05-11 14:09:34 - INFO -   \ud83d\udcdd NB-HPN-0178-q1  (max_new_tokens=256)",
+        "2026-05-11 14:09:48 - INFO -   \ud83d\udcdd NB-HPN-2032-q1  (max_new_tokens=256)",
+        "2026-05-11 14:10:03 - INFO -   \ud83d\udcdd NB-HPN-0733-q1  (max_new_tokens=256)",
+        "2026-05-11 14:10:17 - INFO -   \ud83d\udcdd NB-HPN-1278-q1  (max_new_tokens=256)",
+        "[14:10:31] RUN profile cpu S4-Llama-3.2-1B-CPT-SFT",
+        "2026-05-11 14:10:37 - INFO -   \ud83d\udcdd NB-HPN-0026-q1  (max_new_tokens=256)",
+        "2026-05-11 14:10:43 - INFO -   \ud83d\udcdd NB-HPN-0159-q0  (max_new_tokens=256)",
+        "2026-05-11 14:10:48 - INFO -   \ud83d\udcdd NB-HPN-2135-q1  (max_new_tokens=256)",
+        "2026-05-11 14:10:55 - INFO -   \ud83d\udcdd NB-HPN-2121-q2  (max_new_tokens=256)",
+        "2026-05-11 14:11:00 - INFO -   \ud83d\udcdd NB-HPN-1401-q1  (max_new_tokens=256)",
+        "2026-05-11 14:11:07 - INFO -   \ud83d\udcdd NB-HPN-0176-q1  (max_new_tokens=256)",
+        "2026-05-11 14:11:10 - INFO -   \ud83d\udcdd NB-HPN-0178-q1  (max_new_tokens=256)",
+        "2026-05-11 14:11:16 - INFO -   \ud83d\udcdd NB-HPN-2032-q1  (max_new_tokens=256)",
+        "2026-05-11 14:11:22 - INFO -   \ud83d\udcdd NB-HPN-0733-q1  (max_new_tokens=256)",
+        "2026-05-11 14:11:30 - INFO -   \ud83d\udcdd NB-HPN-1278-q1  (max_new_tokens=256)",
+        "[14:11:36] RUN profile cpu S5-Llama-3.2-1B-LoRA-CPT-SFT",
+        "2026-05-11 14:11:42 - INFO -   \ud83d\udcdd NB-HPN-0026-q1  (max_new_tokens=256)",
+        "2026-05-11 14:11:49 - INFO -   \ud83d\udcdd NB-HPN-0159-q0  (max_new_tokens=256)",
+        "2026-05-11 14:12:00 - INFO -   \ud83d\udcdd NB-HPN-2135-q1  (max_new_tokens=256)",
+        "2026-05-11 14:12:04 - INFO -   \ud83d\udcdd NB-HPN-2121-q2  (max_new_tokens=256)",
+        "2026-05-11 14:12:09 - INFO -   \ud83d\udcdd NB-HPN-1401-q1  (max_new_tokens=256)",
+        "2026-05-11 14:12:20 - INFO -   \ud83d\udcdd NB-HPN-0176-q1  (max_new_tokens=256)",
+        "2026-05-11 14:12:27 - INFO -   \ud83d\udcdd NB-HPN-0178-q1  (max_new_tokens=256)",
+        "2026-05-11 14:12:35 - INFO -   \ud83d\udcdd NB-HPN-2032-q1  (max_new_tokens=256)",
+        "2026-05-11 14:12:39 - INFO -   \ud83d\udcdd NB-HPN-0733-q1  (max_new_tokens=256)",
+        "2026-05-11 14:12:45 - INFO -   \ud83d\udcdd NB-HPN-1278-q1  (max_new_tokens=256)",
+        "[14:12:51] RUN profile RAG gpu S7-Llama-3.2-1B-RAG-CPT-SFT",
+        "[14:13:54] RUN profile RAG gpu S8-Llama-3.2-1B-RAG-LoRA-CPT-SFT",
+        "[14:14:59] RUN profile RAG cpu S7-Llama-3.2-1B-RAG-CPT-SFT",
+        "[14:19:17] RUN profile RAG cpu S8-Llama-3.2-1B-RAG-LoRA-CPT-SFT",
+        "[14:24:08] RUN inference profiling summary",
+        "[14:24:08] RUN S4 adaptation report",
+        "[14:26:21] RUN S5 LoRA-CPT adaptation report",
+        "[14:28:36] RUN benchmark comparison report",
+        "   \ud83d\udccb Loaded 242 scored rows from: RAG-Llama-3.2-1B-Instruct (judged by gpt-5.1)",
+        "   \ud83d\udccb Loaded 242 scored rows from: Llama-3.2-1B-cpt-full-sft (judged by gpt-5.1)",
+        "   \ud83d\udccb Loaded 242 scored rows from: RAG-Llama-3.2-1B-instruct-lora-cpt-then-sft-merged (judged by gpt-5.1)",
+        "   \ud83d\udccb Loaded 242 scored rows from: Llama-3.2-1B-instruct-lora-cpt-then-sft-merged (judged by gpt-5.1)",
+        "   \ud83d\udccb Loaded 242 scored rows from: Llama-3.2-1B-instruct-lora-sft-merged (judged by gpt-5.1)",
+        "   \ud83d\udccb Loaded 242 scored rows from: Llama-3.2-1B-Instruct (judged by gpt-5.1)",
+        "   \ud83d\udccb Loaded 242 scored rows from: RAG-Llama-3.2-1B-cpt-full-sft (judged by gpt-5.1)",
+        "   \ud83d\udccb Loaded 242 scored rows from: Llama-3.2-1B-instruct-full-hpn-sft (judged by gpt-5.1)",
+        "Judged    : /workspace/portables/NetBench-LLM/outputs/evaluations/judged"
+      ],
+      "mtime_utc": "2026-05-11T19:28:37.215730+00:00",
+      "path": "outputs/by_model/llama-3.2-1b/logs/hpn-llama-3.2-1b-20260511-140650.log",
+      "sha256": "e69357fce0926cb139b19052ac950d34351c052ef5f38ede0b0ea4266c566ad2"
+    }
+  ],
+  "lora_adapters": [
+    {
+      "adapter_config": {
+        "base_model_name_or_path": "/workspace/portables/NetBench-LLM/models/instruct-official/Llama-3.2-1B-Instruct",
+        "bias": "none",
+        "lora_alpha": 128,
+        "lora_dropout": 0.05,
+        "modules_to_save": null,
+        "peft_type": "LORA",
+        "r": 64,
+        "target_modules": [
+          "o_proj",
+          "down_proj",
+          "k_proj",
+          "gate_proj",
+          "v_proj",
+          "up_proj",
+          "q_proj"
+        ],
+        "task_type": "CAUSAL_LM",
+        "use_rslora": false
+      },
+      "bytes": 1185,
+      "mtime_utc": "2026-05-11T06:38:23.164194+00:00",
+      "path": "models/lora/Llama-3.2-1B-instruct-lora-cpt/adapter_config.json",
+      "sha256": "35ee233bb4e951a0839ca34ca59ed6fe8ea2d2624747f4a19575dedc55097c51"
+    },
+    {
+      "adapter_config": {
+        "base_model_name_or_path": "/workspace/portables/NetBench-LLM/models/lora-merged/Llama-3.2-1B-instruct-lora-cpt-merged",
+        "bias": "none",
+        "lora_alpha": 128,
+        "lora_dropout": 0.05,
+        "modules_to_save": null,
+        "peft_type": "LORA",
+        "r": 64,
+        "target_modules": [
+          "up_proj",
+          "k_proj",
+          "v_proj",
+          "o_proj",
+          "q_proj",
+          "down_proj",
+          "gate_proj"
+        ],
+        "task_type": "CAUSAL_LM",
+        "use_rslora": false
+      },
+      "bytes": 1195,
+      "mtime_utc": "2026-05-11T07:25:25.766423+00:00",
+      "path": "models/lora/Llama-3.2-1B-instruct-lora-cpt-then-sft/adapter_config.json",
+      "sha256": "d17d00de6fe25f366ff4a4a13e5d6a873768b7473c8af1f39e6e27af4496ecc2"
+    },
+    {
+      "adapter_config": {
+        "base_model_name_or_path": "/workspace/portables/NetBench-LLM/models/instruct-official/Llama-3.2-1B-Instruct",
+        "bias": "none",
+        "lora_alpha": 128,
+        "lora_dropout": 0.05,
+        "modules_to_save": null,
+        "peft_type": "LORA",
+        "r": 64,
+        "target_modules": [
+          "up_proj",
+          "k_proj",
+          "down_proj",
+          "o_proj",
+          "q_proj",
+          "gate_proj",
+          "v_proj"
+        ],
+        "task_type": "CAUSAL_LM",
+        "use_rslora": false
+      },
+      "bytes": 1185,
+      "mtime_utc": "2026-05-11T02:34:06.518893+00:00",
+      "path": "models/lora/Llama-3.2-1B-instruct-lora-sft/adapter_config.json",
+      "sha256": "afc75576efc1c341a2b74a355fd4d39ecdb2bc58f284805bd722ee4eb2ae2b97"
+    }
+  ],
+  "model_configs": [
+    {
+      "bytes": 860,
+      "config": {
+        "architectures": [
+          "LlamaForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 8192,
+        "max_position_embeddings": 131072,
+        "model_type": "llama",
+        "num_attention_heads": 32,
+        "num_hidden_layers": 16,
+        "num_key_value_heads": 8,
+        "tie_word_embeddings": true,
+        "vocab_size": 128256
+      },
+      "mtime_utc": "2026-05-10T20:56:00.851875+00:00",
+      "path": "models/base/Llama-3.2-1B-base/config.json",
+      "sha256": "eef56b4ce67f3e36bb5d0293086b4e2f416f16dcc4b7e41cb0b8e886d2fff11f"
+    },
+    {
+      "bytes": 894,
+      "config": {
+        "architectures": [
+          "LlamaForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 8192,
+        "max_position_embeddings": 131072,
+        "model_type": "llama",
+        "num_attention_heads": 32,
+        "num_hidden_layers": 16,
+        "num_key_value_heads": 8,
+        "tie_word_embeddings": true,
+        "vocab_size": 128256
+      },
+      "mtime_utc": "2026-05-10T21:06:05.169838+00:00",
+      "path": "models/instruct-official/Llama-3.2-1B-Instruct/config.json",
+      "sha256": "5c7c66ed7ca9b443403c6437e72d4752535e57bae960d6ae60d1eb167120ef5e"
+    },
+    {
+      "bytes": 861,
+      "config": {
+        "architectures": [
+          "LlamaForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 8192,
+        "max_position_embeddings": 131072,
+        "model_type": "llama",
+        "num_attention_heads": 32,
+        "num_hidden_layers": 16,
+        "num_key_value_heads": 8,
+        "tie_word_embeddings": true,
+        "vocab_size": 128256
+      },
+      "mtime_utc": "2026-05-11T01:06:01.667247+00:00",
+      "path": "models/instruction/Llama-3.2-1B-cpt-full-sft/checkpoints/checkpoint-400/config.json",
+      "sha256": "d530cf35d4d7377d7e99b2aa6c70e4776df8be30e5ccca6ea4d991d095a5a4bb"
+    },
+    {
+      "bytes": 861,
+      "config": {
+        "architectures": [
+          "LlamaForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 8192,
+        "max_position_embeddings": 131072,
+        "model_type": "llama",
+        "num_attention_heads": 32,
+        "num_hidden_layers": 16,
+        "num_key_value_heads": 8,
+        "tie_word_embeddings": true,
+        "vocab_size": 128256
+      },
+      "mtime_utc": "2026-05-11T01:16:27.703189+00:00",
+      "path": "models/instruction/Llama-3.2-1B-cpt-full-sft/checkpoints/checkpoint-612/config.json",
+      "sha256": "d530cf35d4d7377d7e99b2aa6c70e4776df8be30e5ccca6ea4d991d095a5a4bb"
+    },
+    {
+      "bytes": 861,
+      "config": {
+        "architectures": [
+          "LlamaForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 8192,
+        "max_position_embeddings": 131072,
+        "model_type": "llama",
+        "num_attention_heads": 32,
+        "num_hidden_layers": 16,
+        "num_key_value_heads": 8,
+        "tie_word_embeddings": true,
+        "vocab_size": 128256
+      },
+      "mtime_utc": "2026-05-11T01:16:34.951188+00:00",
+      "path": "models/instruction/Llama-3.2-1B-cpt-full-sft/config.json",
+      "sha256": "d530cf35d4d7377d7e99b2aa6c70e4776df8be30e5ccca6ea4d991d095a5a4bb"
+    },
+    {
+      "bytes": 895,
+      "config": {
+        "architectures": [
+          "LlamaForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 8192,
+        "max_position_embeddings": 131072,
+        "model_type": "llama",
+        "num_attention_heads": 32,
+        "num_hidden_layers": 16,
+        "num_key_value_heads": 8,
+        "tie_word_embeddings": true,
+        "vocab_size": 128256
+      },
+      "mtime_utc": "2026-05-11T01:35:44.015403+00:00",
+      "path": "models/instruction/Llama-3.2-1B-instruct-full-hpn-sft/checkpoints/checkpoint-400/config.json",
+      "sha256": "119e7545cc8cae7cc9eb3127c45b0e6b9c190d2190b97973972d52542d16d8a3"
+    },
+    {
+      "bytes": 895,
+      "config": {
+        "architectures": [
+          "LlamaForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 8192,
+        "max_position_embeddings": 131072,
+        "model_type": "llama",
+        "num_attention_heads": 32,
+        "num_hidden_layers": 16,
+        "num_key_value_heads": 8,
+        "tie_word_embeddings": true,
+        "vocab_size": 128256
+      },
+      "mtime_utc": "2026-05-11T01:45:53.855606+00:00",
+      "path": "models/instruction/Llama-3.2-1B-instruct-full-hpn-sft/checkpoints/checkpoint-612/config.json",
+      "sha256": "119e7545cc8cae7cc9eb3127c45b0e6b9c190d2190b97973972d52542d16d8a3"
+    },
+    {
+      "bytes": 895,
+      "config": {
+        "architectures": [
+          "LlamaForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 8192,
+        "max_position_embeddings": 131072,
+        "model_type": "llama",
+        "num_attention_heads": 32,
+        "num_hidden_layers": 16,
+        "num_key_value_heads": 8,
+        "tie_word_embeddings": true,
+        "vocab_size": 128256
+      },
+      "mtime_utc": "2026-05-11T01:46:00.975607+00:00",
+      "path": "models/instruction/Llama-3.2-1B-instruct-full-hpn-sft/config.json",
+      "sha256": "119e7545cc8cae7cc9eb3127c45b0e6b9c190d2190b97973972d52542d16d8a3"
+    },
+    {
+      "bytes": 894,
+      "config": {
+        "architectures": [
+          "LlamaForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 8192,
+        "max_position_embeddings": 131072,
+        "model_type": "llama",
+        "num_attention_heads": 32,
+        "num_hidden_layers": 16,
+        "num_key_value_heads": 8,
+        "tie_word_embeddings": true,
+        "vocab_size": 128256
+      },
+      "mtime_utc": "2026-05-11T06:38:31.092188+00:00",
+      "path": "models/lora-merged/Llama-3.2-1B-instruct-lora-cpt-merged/config.json",
+      "sha256": "5c7c66ed7ca9b443403c6437e72d4752535e57bae960d6ae60d1eb167120ef5e"
+    },
+    {
+      "bytes": 894,
+      "config": {
+        "architectures": [
+          "LlamaForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 8192,
+        "max_position_embeddings": 131072,
+        "model_type": "llama",
+        "num_attention_heads": 32,
+        "num_hidden_layers": 16,
+        "num_key_value_heads": 8,
+        "tie_word_embeddings": true,
+        "vocab_size": 128256
+      },
+      "mtime_utc": "2026-05-11T07:25:33.846423+00:00",
+      "path": "models/lora-merged/Llama-3.2-1B-instruct-lora-cpt-then-sft-merged/config.json",
+      "sha256": "5c7c66ed7ca9b443403c6437e72d4752535e57bae960d6ae60d1eb167120ef5e"
+    },
+    {
+      "bytes": 894,
+      "config": {
+        "architectures": [
+          "LlamaForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 8192,
+        "max_position_embeddings": 131072,
+        "model_type": "llama",
+        "num_attention_heads": 32,
+        "num_hidden_layers": 16,
+        "num_key_value_heads": 8,
+        "tie_word_embeddings": true,
+        "vocab_size": 128256
+      },
+      "mtime_utc": "2026-05-11T02:34:15.006888+00:00",
+      "path": "models/lora-merged/Llama-3.2-1B-instruct-lora-sft-merged/config.json",
+      "sha256": "5c7c66ed7ca9b443403c6437e72d4752535e57bae960d6ae60d1eb167120ef5e"
+    },
+    {
+      "bytes": 861,
+      "config": {
+        "architectures": [
+          "LlamaForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 8192,
+        "max_position_embeddings": 131072,
+        "model_type": "llama",
+        "num_attention_heads": 32,
+        "num_hidden_layers": 16,
+        "num_key_value_heads": 8,
+        "tie_word_embeddings": true,
+        "vocab_size": 128256
+      },
+      "mtime_utc": "2026-05-10T23:31:59.673170+00:00",
+      "path": "models/pretrained/Llama-3.2-1B-trained-new/checkpoints/checkpoint-1724/config.json",
+      "sha256": "d530cf35d4d7377d7e99b2aa6c70e4776df8be30e5ccca6ea4d991d095a5a4bb"
+    },
+    {
+      "bytes": 861,
+      "config": {
+        "architectures": [
+          "LlamaForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 8192,
+        "max_position_embeddings": 131072,
+        "model_type": "llama",
+        "num_attention_heads": 32,
+        "num_hidden_layers": 16,
+        "num_key_value_heads": 8,
+        "tie_word_embeddings": true,
+        "vocab_size": 128256
+      },
+      "mtime_utc": "2026-05-11T00:38:04.823172+00:00",
+      "path": "models/pretrained/Llama-3.2-1B-trained-new/checkpoints/checkpoint-2589/config.json",
+      "sha256": "d530cf35d4d7377d7e99b2aa6c70e4776df8be30e5ccca6ea4d991d095a5a4bb"
+    },
+    {
+      "bytes": 861,
+      "config": {
+        "architectures": [
+          "LlamaForCausalLM"
+        ],
+        "hidden_size": 2048,
+        "intermediate_size": 8192,
+        "max_position_embeddings": 131072,
+        "model_type": "llama",
+        "num_attention_heads": 32,
+        "num_hidden_layers": 16,
+        "num_key_value_heads": 8,
+        "tie_word_embeddings": true,
+        "vocab_size": 128256
+      },
+      "mtime_utc": "2026-05-11T00:38:11.759173+00:00",
+      "path": "models/pretrained/Llama-3.2-1B-trained-new/config.json",
+      "sha256": "d530cf35d4d7377d7e99b2aa6c70e4776df8be30e5ccca6ea4d991d095a5a4bb"
+    }
+  ],
+  "model_slug": "llama-3.2-1b",
+  "outputs": {
+    "adaptation_reports": [
+      {
+        "bytes": 1127,
+        "json_preview": {
+          "base": {
+            "general": {
+              "batches": 36,
+              "loss": 2.565462,
+              "perplexity": 13.0067,
+              "tokens": 288768
+            },
+            "hpn": {
+              "batches": 180,
+              "loss": 2.859211,
+              "perplexity": 17.4478,
+              "tokens": 1474560
+            }
+          },
+          "base_model_path": "/workspace/portables/NetBench-LLM/models/instruct-official/Llama-3.2-1B-Instruct",
+          "config": {
+            "batch_size": 4,
+            "max_general_batches": null,
+            "max_hpn_batches": null,
+            "quantize_4bit": false,
+            "seq_len": 2048
+          },
+          "forgetting_gap": 0.30455,
+          "hpn_data_dir": "/workspace/portables/NetBench-LLM/data/processed/lora/llama-3.2-1b",
+          "timestamp": "2026-05-11T09:35:12.506187",
+          "trained": {
+            "general": {
+              "batches": 36,
+              "loss": 2.870012,
+              "perplexity": 17.6372,
+              "tokens": 288768
+            },
+            "hpn": {
+              "batches": 180,
+              "loss": 2.416328,
+              "perplexity": 11.2046,
+              "tokens": 1474560
+            }
+          },
+          "trained_model_path": "/workspace/portables/NetBench-LLM/models/lora-merged/Llama-3.2-1B-instruct-lora-cpt-merged"
+        },
+        "mtime_utc": "2026-05-11T14:37:23.456619+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/adaptation_reports/adaptation_report_Llama-3.2-1B-instruct-lora-cpt-merged_20260511_093723.json",
+        "sha256": "63a4bf48ab5680a0d3a894b51964241f6d2036d7815e206c9c6d1255bbe91687"
+      },
+      {
+        "bytes": 5416,
+        "excel": {
+          "sheets": [
+            "Adaptation Report"
+          ]
+        },
+        "mtime_utc": "2026-05-11T14:37:23.500619+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/adaptation_reports/adaptation_report_Llama-3.2-1B-instruct-lora-cpt-merged_20260511_093723.xlsx",
+        "sha256": "84ebdcf7948cbbcf0b84c03de0e3f2cdfe0d43e3952c0a6626457fbde4f6b55b"
+      },
+      {
+        "bytes": 1127,
+        "json_preview": {
+          "base": {
+            "general": {
+              "batches": 36,
+              "loss": 2.565462,
+              "perplexity": 13.0067,
+              "tokens": 288768
+            },
+            "hpn": {
+              "batches": 180,
+              "loss": 2.859211,
+              "perplexity": 17.4478,
+              "tokens": 1474560
+            }
+          },
+          "base_model_path": "/workspace/portables/NetBench-LLM/models/instruct-official/Llama-3.2-1B-Instruct",
+          "config": {
+            "batch_size": 4,
+            "max_general_batches": null,
+            "max_hpn_batches": null,
+            "quantize_4bit": false,
+            "seq_len": 2048
+          },
+          "forgetting_gap": 0.30455,
+          "hpn_data_dir": "/workspace/portables/NetBench-LLM/data/processed/lora/llama-3.2-1b",
+          "timestamp": "2026-05-11T14:26:25.036193",
+          "trained": {
+            "general": {
+              "batches": 36,
+              "loss": 2.870012,
+              "perplexity": 17.6372,
+              "tokens": 288768
+            },
+            "hpn": {
+              "batches": 180,
+              "loss": 2.416328,
+              "perplexity": 11.2046,
+              "tokens": 1474560
+            }
+          },
+          "trained_model_path": "/workspace/portables/NetBench-LLM/models/lora-merged/Llama-3.2-1B-instruct-lora-cpt-merged"
+        },
+        "mtime_utc": "2026-05-11T19:28:35.923731+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/adaptation_reports/adaptation_report_Llama-3.2-1B-instruct-lora-cpt-merged_20260511_142835.json",
+        "sha256": "6f8a69064a812518f17682cec11bf5d7bfe2f801b0040f6d67feebcfa268a025"
+      },
+      {
+        "bytes": 5415,
+        "excel": {
+          "sheets": [
+            "Adaptation Report"
+          ]
+        },
+        "mtime_utc": "2026-05-11T19:28:35.971731+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/adaptation_reports/adaptation_report_Llama-3.2-1B-instruct-lora-cpt-merged_20260511_142835.xlsx",
+        "sha256": "85cb9bf0cc1c7c566d9896c88f8a322ab7356af62d637f263aa930dd92fbf0ac"
+      },
+      {
+        "bytes": 1090,
+        "json_preview": {
+          "base": {
+            "general": {
+              "batches": 36,
+              "loss": 2.27259,
+              "perplexity": 9.7045,
+              "tokens": 288768
+            },
+            "hpn": {
+              "batches": 180,
+              "loss": 2.543344,
+              "perplexity": 12.7221,
+              "tokens": 1474560
+            }
+          },
+          "base_model_path": "/workspace/portables/NetBench-LLM/models/base/Llama-3.2-1B-base",
+          "config": {
+            "batch_size": 4,
+            "max_general_batches": null,
+            "max_hpn_batches": null,
+            "quantize_4bit": false,
+            "seq_len": 2048
+          },
+          "forgetting_gap": 0.119274,
+          "hpn_data_dir": "/workspace/portables/NetBench-LLM/data/processed/llama-3.2-1b",
+          "timestamp": "2026-05-11T09:32:56.875138",
+          "trained": {
+            "general": {
+              "batches": 36,
+              "loss": 2.391864,
+              "perplexity": 10.9339,
+              "tokens": 288768
+            },
+            "hpn": {
+              "batches": 180,
+              "loss": 2.356934,
+              "perplexity": 10.5585,
+              "tokens": 1474560
+            }
+          },
+          "trained_model_path": "/workspace/portables/NetBench-LLM/models/pretrained/Llama-3.2-1B-trained-new"
+        },
+        "mtime_utc": "2026-05-11T14:35:08.492671+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/adaptation_reports/adaptation_report_Llama-3.2-1B-trained-new_20260511_093508.json",
+        "sha256": "1ac60e0ff6c8e1781deefae4649d524575ebcbe23a19dcbf5386b5e1d8f829fd"
+      },
+      {
+        "bytes": 5405,
+        "excel": {
+          "sheets": [
+            "Adaptation Report"
+          ]
+        },
+        "mtime_utc": "2026-05-11T14:35:08.540671+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/adaptation_reports/adaptation_report_Llama-3.2-1B-trained-new_20260511_093508.xlsx",
+        "sha256": "6f6b55340bd3e97dcbb54fd43f92f3c77da3c973868568215b7e8450c77d5bc2"
+      },
+      {
+        "bytes": 1090,
+        "json_preview": {
+          "base": {
+            "general": {
+              "batches": 36,
+              "loss": 2.27259,
+              "perplexity": 9.7045,
+              "tokens": 288768
+            },
+            "hpn": {
+              "batches": 180,
+              "loss": 2.543344,
+              "perplexity": 12.7221,
+              "tokens": 1474560
+            }
+          },
+          "base_model_path": "/workspace/portables/NetBench-LLM/models/base/Llama-3.2-1B-base",
+          "config": {
+            "batch_size": 4,
+            "max_general_batches": null,
+            "max_hpn_batches": null,
+            "quantize_4bit": false,
+            "seq_len": 2048
+          },
+          "forgetting_gap": 0.119274,
+          "hpn_data_dir": "/workspace/portables/NetBench-LLM/data/processed/llama-3.2-1b",
+          "timestamp": "2026-05-11T14:24:11.938343",
+          "trained": {
+            "general": {
+              "batches": 36,
+              "loss": 2.391864,
+              "perplexity": 10.9339,
+              "tokens": 288768
+            },
+            "hpn": {
+              "batches": 180,
+              "loss": 2.356934,
+              "perplexity": 10.5585,
+              "tokens": 1474560
+            }
+          },
+          "trained_model_path": "/workspace/portables/NetBench-LLM/models/pretrained/Llama-3.2-1B-trained-new"
+        },
+        "mtime_utc": "2026-05-11T19:26:21.011798+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/adaptation_reports/adaptation_report_Llama-3.2-1B-trained-new_20260511_142621.json",
+        "sha256": "cc7e2dbd9f1b9cb496129db8c7235fcb11156e2c1799ebb0660b076f36338e43"
+      },
+      {
+        "bytes": 5404,
+        "excel": {
+          "sheets": [
+            "Adaptation Report"
+          ]
+        },
+        "mtime_utc": "2026-05-11T19:26:21.055798+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/adaptation_reports/adaptation_report_Llama-3.2-1B-trained-new_20260511_142621.xlsx",
+        "sha256": "e730eb83b34ab83d22275ee977db1f6a3286335d5ebc285f57d4a5611dbcf469"
+      }
+    ],
+    "answer_files": [
+      {
+        "bytes": 212067,
+        "excel": {
+          "metadata": {
+            "avg_generation_time_sec": "3.89",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "max_new_tokens": "512",
+            "model_name": "Llama-3.2-1B-Instruct",
+            "model_path": "/workspace/portables/NetBench-LLM/models/instruct-official/Llama-3.2-1B-Instruct",
+            "temperature": "0.0",
+            "timestamp": "2026-05-11T03:01:14.896888",
+            "top_p": "0.9",
+            "total_generation_time_sec": "940.3",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-11T08:01:14.949841+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/answers/hpn_answers_Llama-3.2-1B-Instruct_v5.0.xlsx",
+        "sha256": "6401d6bc710dd5d4e87caf37b497295edaefbc6412fc6b736cb0611ccab44cf8"
+      },
+      {
+        "bytes": 158897,
+        "excel": {
+          "metadata": {
+            "avg_generation_time_sec": "2.53",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "max_new_tokens": "512",
+            "model_name": "Llama-3.2-1B-cpt-full-sft",
+            "model_path": "/workspace/portables/NetBench-LLM/models/instruction/Llama-3.2-1B-cpt-full-sft",
+            "temperature": "0.0",
+            "timestamp": "2026-05-11T03:32:24.737609",
+            "top_p": "0.9",
+            "total_generation_time_sec": "611.5",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-11T08:32:24.788449+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/answers/hpn_answers_Llama-3.2-1B-cpt-full-sft_v5.0.xlsx",
+        "sha256": "9e4965d23612376378d2f7f1ffc60fdcb9149e8ff9d63df58a73933abd35c3fd"
+      },
+      {
+        "bytes": 160563,
+        "excel": {
+          "metadata": {
+            "avg_generation_time_sec": "2.53",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "max_new_tokens": "512",
+            "model_name": "Llama-3.2-1B-instruct-full-hpn-sft",
+            "model_path": "/workspace/portables/NetBench-LLM/models/instruction/Llama-3.2-1B-instruct-full-hpn-sft",
+            "temperature": "0.0",
+            "timestamp": "2026-05-11T03:22:06.402583",
+            "top_p": "0.9",
+            "total_generation_time_sec": "612.9",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-11T08:22:06.452905+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/answers/hpn_answers_Llama-3.2-1B-instruct-full-hpn-sft_v5.0.xlsx",
+        "sha256": "61569ec8d0af589f6407bd6db426fc8c9d3f1b3b8a58d14a55076edd1340ff66"
+      },
+      {
+        "bytes": 161357,
+        "excel": {
+          "metadata": {
+            "avg_generation_time_sec": "2.48",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "max_new_tokens": "512",
+            "model_name": "Llama-3.2-1B-instruct-lora-cpt-then-sft-merged",
+            "model_path": "/workspace/portables/NetBench-LLM/models/lora-merged/Llama-3.2-1B-instruct-lora-cpt-then-sft-merged",
+            "temperature": "0.0",
+            "timestamp": "2026-05-11T03:42:31.714418",
+            "top_p": "0.9",
+            "total_generation_time_sec": "600.2",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-11T08:42:31.764358+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/answers/hpn_answers_Llama-3.2-1B-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+        "sha256": "864e5c755b0ec7a19c934ac8d4d03a6824e5ea0cd14fd3cbca73d23d54428013"
+      },
+      {
+        "bytes": 161205,
+        "excel": {
+          "metadata": {
+            "avg_generation_time_sec": "2.58",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "max_new_tokens": "512",
+            "model_name": "Llama-3.2-1B-instruct-lora-sft-merged",
+            "model_path": "/workspace/portables/NetBench-LLM/models/lora-merged/Llama-3.2-1B-instruct-lora-sft-merged",
+            "temperature": "0.0",
+            "timestamp": "2026-05-11T03:11:46.614580",
+            "top_p": "0.9",
+            "total_generation_time_sec": "624.7",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-11T08:11:46.661465+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/answers/hpn_answers_Llama-3.2-1B-instruct-lora-sft-merged_v5.0.xlsx",
+        "sha256": "7e9bc90718ad456bf8afbdfd1d532fe317ff1b1ee19999233aab7ecee9ccaf94"
+      }
+    ],
+    "judged_files": [
+      {
+        "bytes": 255340,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "0.00",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "Llama-3.2-1B-Instruct",
+            "source_answer_file": "/workspace/portables/NetBench-LLM/outputs/evaluations/answers/hpn_answers_Llama-3.2-1B-Instruct_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-11T14:07:02.651826",
+            "total_judging_time_sec": "0.0",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-11T19:07:02.736025+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/judged/hpn_judged_Llama-3.2-1B-Instruct_by_gpt-5.1.xlsx",
+        "sha256": "5b5f120aa9ff2e9f4c432af96adab3e340af3255cbe3b39256696e1558bab550"
+      },
+      {
+        "bytes": 201012,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "0.00",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "Llama-3.2-1B-cpt-full-sft",
+            "source_answer_file": "/workspace/portables/NetBench-LLM/outputs/evaluations/answers/hpn_answers_Llama-3.2-1B-cpt-full-sft_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-11T14:07:02.910115",
+            "total_judging_time_sec": "0.0",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-11T19:07:02.984025+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/judged/hpn_judged_Llama-3.2-1B-cpt-full-sft_by_gpt-5.1.xlsx",
+        "sha256": "f0580364ed9a92725b3d2e056dd715c2c0e6f459f1703dd9386444ddb9e50cea"
+      },
+      {
+        "bytes": 201918,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "0.00",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "Llama-3.2-1B-instruct-full-hpn-sft",
+            "source_answer_file": "/workspace/portables/NetBench-LLM/outputs/evaluations/answers/hpn_answers_Llama-3.2-1B-instruct-full-hpn-sft_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-11T14:07:02.784584",
+            "total_judging_time_sec": "0.0",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-11T19:07:02.860025+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/judged/hpn_judged_Llama-3.2-1B-instruct-full-hpn-sft_by_gpt-5.1.xlsx",
+        "sha256": "fab4cc3a76da0ce343f78f6e137c3e7d3c8853e6f1a8a76294ff1a8ed143925f"
+      },
+      {
+        "bytes": 203224,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "0.00",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "Llama-3.2-1B-instruct-lora-cpt-then-sft-merged",
+            "source_answer_file": "/workspace/portables/NetBench-LLM/outputs/evaluations/answers/hpn_answers_Llama-3.2-1B-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-11T14:07:02.394038",
+            "total_judging_time_sec": "0.0",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-11T19:07:02.468024+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/judged/hpn_judged_Llama-3.2-1B-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "sha256": "1ec41f2e26307aab2c24714e64bf85a6707fa332de37f875d933052b3c3c1c71"
+      },
+      {
+        "bytes": 203070,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "0.00",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "Llama-3.2-1B-instruct-lora-sft-merged",
+            "source_answer_file": "/workspace/portables/NetBench-LLM/outputs/evaluations/answers/hpn_answers_Llama-3.2-1B-instruct-lora-sft-merged_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-11T14:07:02.518942",
+            "total_judging_time_sec": "0.0",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-11T19:07:02.596025+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/judged/hpn_judged_Llama-3.2-1B-instruct-lora-sft-merged_by_gpt-5.1.xlsx",
+        "sha256": "bc848b12d06ecc770ae781b200d7871f6b5610a292920fb5813ac32ce5e39a3c"
+      },
+      {
+        "bytes": 241525,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "0.00",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "RAG-Llama-3.2-1B-Instruct",
+            "source_answer_file": "/workspace/portables/NetBench-RAG/outputs/answers/hpn_answers_RAG-Llama-3.2-1B-Instruct_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-11T14:07:03.344940",
+            "total_judging_time_sec": "0.0",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-11T19:07:03.424025+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/judged/hpn_judged_RAG-Llama-3.2-1B-Instruct_by_gpt-5.1.xlsx",
+        "sha256": "1dff89779b3915ce07f04a1a6f7460487d6e0d24e90207a2690ff2f400e44d9d"
+      },
+      {
+        "bytes": 191983,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "0.00",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "RAG-Llama-3.2-1B-cpt-full-sft",
+            "source_answer_file": "/workspace/portables/NetBench-RAG/outputs/answers/hpn_answers_RAG-Llama-3.2-1B-cpt-full-sft_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-11T14:07:03.216622",
+            "total_judging_time_sec": "0.0",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-11T19:07:03.288025+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/judged/hpn_judged_RAG-Llama-3.2-1B-cpt-full-sft_by_gpt-5.1.xlsx",
+        "sha256": "6135298b514d624f8dfc4d0e8e2883b25cffae3bf9d02258b7dbffd1bb9151cb"
+      },
+      {
+        "bytes": 208185,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "0.00",
+            "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "RAG-Llama-3.2-1B-instruct-lora-cpt-then-sft-merged",
+            "source_answer_file": "/workspace/portables/NetBench-RAG/outputs/answers/hpn_answers_RAG-Llama-3.2-1B-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-11T14:07:03.087697",
+            "total_judging_time_sec": "0.0",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-11T19:07:03.160025+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/judged/hpn_judged_RAG-Llama-3.2-1B-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "sha256": "7a19f0703e6646b7bf7f1e7973402732549e9e2cbaa5724c331edbec90faddd2"
+      }
+    ],
+    "rag_answer_files": [],
+    "report_files": [
+      {
+        "bytes": 6302,
+        "mtime_utc": "2026-05-11T19:28:37.187730+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/reports/HPN_BENCHMARK_REPORT_v5.0_by_gpt-5.1.md",
+        "sha256": "8af2c7ffc1dd4737fb3eb480b67fb14c1bcf8eda47dcf3739e6e024ad91d7dec"
+      },
+      {
+        "bytes": 46850,
+        "excel": {
+          "sheets": [
+            "Comparison",
+            "Overall Summary",
+            "By Category",
+            "By Difficulty"
+          ]
+        },
+        "mtime_utc": "2026-05-11T19:28:37.183730+00:00",
+        "path": "outputs/by_model/llama-3.2-1b/evaluations/reports/hpn_benchmark_report_v5.0_by_gpt-5.1.xlsx",
+        "sha256": "954151645189f6402e89f709968b7edf5a1591a9f96f8c7f77f626a00ec20ad7"
+      }
+    ]
+  },
+  "parallel_worker_files": [],
+  "pipeline_script": {
+    "bytes": 75979,
+    "mtime_utc": "2026-05-18T14:50:54.549165+00:00",
+    "path": "scripts/run_pipeline_specific.sh",
+    "sha256": "dd872f7bdd29b5148dd84284826d5ac52329c8cb5c6898529e3733a62293ec1d"
+  },
+  "pipeline_variables": {
+    "BENCHMARK_CUDA_DEVICES": "${BENCHMARK_CUDA_DEVICES:-}",
+    "BENCHMARK_FILE": "${LLM_DIR}/data/prompts/hpn_benchmark_v5.0.jsonl",
+    "BENCHMARK_GPU_WORKERS": "${BENCHMARK_GPU_WORKERS:-0}",
+    "BOLD": "\\033[1m",
+    "CORPUS_FILE": "${best}",
+    "CPT_BATCH": "1",
+    "CPT_EPOCHS": "3",
+    "CPT_GRAD_ACCUM": "16",
+    "CPT_LR": "2e-5",
+    "CYAN": "'\\033[0",
+    "DATA_CPT_DIR": "${LLM_DIR}/data/processed/${slug}",
+    "DATA_GENERAL_SFT_DIR": "${LLM_DIR}/data/instruction/${slug}-general",
+    "DATA_HPN_SFT_DIR": "${LLM_DIR}/data/instruction/${slug}-hpn",
+    "DATA_LORA_CPT_DIR": "${LLM_DIR}/data/processed/lora/${slug}",
+    "DEEPSPEED_CONFIG": "${DEEPSPEED_CONFIG:-${LLM_DIR}/configs/deepspeed_zero3_bf16_cpuoffload.json}",
+    "GEMINI_KEY_FILE": "${LLM_DIR}/gemini_api_key.txt",
+    "GPU_COUNT": "$(nvidia-smi --query-gpu=name --format=csv,noheader 2>/dev/null | wc -l || echo 0)",
+    "GREEN": "'\\033[0",
+    "HF_TOKEN_FILE": "${LLM_DIR}/hf_token.txt",
+    "HPN_INSTRUCT_JSONL": "${LLM_DIR}/data/Instruct-FTD/v3_run_plus_json",
+    "JUDGE_MODEL": "gpt-5.1",
+    "LLM_DIR": "$(cd \"${SCRIPT_DIR}/..\" && pwd)",
+    "LORA_ALPHA": "128",
+    "LORA_CPT_BATCH": "1",
+    "LORA_CPT_EPOCHS": "3",
+    "LORA_CPT_EVAL_BATCH": "1",
+    "LORA_CPT_GRAD_ACCUM": "16",
+    "LORA_LR": "2e-4",
+    "LORA_RANK": "64",
+    "LORA_SFT_BATCH": "1",
+    "LORA_SFT_EPOCHS": "3",
+    "LORA_SFT_EVAL_BATCH": "1",
+    "LORA_SFT_GRAD_ACCUM": "16",
+    "MAX_BUSY_GPU_MEMORY_MIB": "${MAX_BUSY_GPU_MEMORY_MIB:-4096}",
+    "MIN_MERGE_FREE_GIB": "${MIN_MERGE_FREE_GIB:-25}",
+    "MODEL_BASE_DIR": "models/base/Qwen3.5-9B-Base",
+    "MODEL_FAMILY": "qwen",
+    "MODEL_HF_BASE": "Qwen/Qwen3.5-9B-Base",
+    "MODEL_HF_INSTRUCT": "Qwen/Qwen3.5-9B",
+    "MODEL_INSTRUCT_DIR": "models/instruct-official/Qwen3.5-9B",
+    "MODEL_NAME": "Qwen3.5-9B",
+    "MODEL_PRETRAINED_DIR": "models/pretrained/Qwen3.5-9B-trained-new",
+    "MODEL_SHORTCUT": "custom",
+    "M_BASE": "$(path_from_llm_root \"${MODEL_BASE_DIR}\")",
+    "M_INSTRUCT_OFFICIAL": "$(path_from_llm_root \"${MODEL_INSTRUCT_DIR}\")",
+    "M_PRETRAINED": "$(path_from_llm_root \"${MODEL_PRETRAINED_DIR}\")",
+    "M_S2_LORA_SFT_ADAPTER": "${LLM_DIR}/models/lora/${MODEL_NAME}-instruct-lora-sft",
+    "M_S2_LORA_SFT_MERGED": "${LLM_DIR}/models/lora-merged/${MODEL_NAME}-instruct-lora-sft-merged",
+    "M_S3_FULL_HPN_SFT": "${LLM_DIR}/models/instruction/${MODEL_NAME}-instruct-full-hpn-sft",
+    "M_S4_FULL_SFT": "${LLM_DIR}/models/instruction/${MODEL_NAME}-cpt-full-sft",
+    "M_S4_LORA_SFT_ADAPTER": "${LLM_DIR}/models/lora/${MODEL_NAME}-cpt-lora-sft",
+    "M_S4_LORA_SFT_MERGED": "${LLM_DIR}/models/lora-merged/${MODEL_NAME}-cpt-lora-sft-merged",
+    "M_S5_LORA_CPT_ADAPTER": "${LLM_DIR}/models/lora/${MODEL_NAME}-instruct-lora-cpt",
+    "M_S5_LORA_CPT_MERGED": "${LLM_DIR}/models/lora-merged/${MODEL_NAME}-instruct-lora-cpt-merged",
+    "M_S5_LORA_SFT_ADAPTER": "${LLM_DIR}/models/lora/${MODEL_NAME}-instruct-lora-cpt-then-sft",
+    "M_S5_LORA_SFT_MERGED": "${LLM_DIR}/models/lora-merged/${MODEL_NAME}-instruct-lora-cpt-then-sft-merged",
+    "NC": "\\033[0m",
+    "OLLAMA_WAS_RUNNING": "false",
+    "OPENAI_KEY_FILE": "${LLM_DIR}/openai_api_key.txt",
+    "OPTIM_FULL": "${OPTIM_FULL:-paged_adamw_8bit}",
+    "OUT_ADAPT": "${OUT_MODEL_ROOT}/evaluations/adaptation_reports",
+    "OUT_ANSWERS": "${OUT_MODEL_ROOT}/evaluations/answers",
+    "OUT_JUDGED": "${OUT_MODEL_ROOT}/evaluations/judged",
+    "OUT_LOGS": "${OUT_MODEL_ROOT}/logs",
+    "OUT_MODEL_ROOT": "${LLM_DIR}/outputs/by_model/${slug}",
+    "OUT_PROFILE": "${OUT_MODEL_ROOT}/profiling_results",
+    "OUT_RAG_ANSWERS": "${OUT_MODEL_ROOT}/evaluations/rag_answers",
+    "OUT_REPORTS": "${OUT_MODEL_ROOT}/evaluations/reports",
+    "PROFILE_BENCHMARK_LIMIT": "10",
+    "PROFILE_MAX_NEW_TOKENS": "256",
+    "PROFILE_NUM_RUNS": "1",
+    "PROFILE_WARMUP_RUNS": "1",
+    "PYTORCH_CUDA_ALLOC_CONF": "${PYTORCH_CUDA_ALLOC_CONF:-expandable_segments:True}",
+    "RAG_DIR": "$(realpath -m \"${LLM_DIR}/../NetBench-RAG\")",
+    "RAG_ENV_ACTIVATED": "false",
+    "RAG_VENV_DIR": "",
+    "RED": "'\\033[0",
+    "RUN_DIRECT_CPU_PROFILING": "true",
+    "RUN_DIRECT_GPU_PROFILING": "true",
+    "RUN_RAG_CPU_PROFILING": "true",
+    "RUN_RAG_GPU_PROFILING": "true",
+    "RUN_S1": "true",
+    "RUN_S2": "true",
+    "RUN_S3": "true",
+    "RUN_S4": "true",
+    "RUN_S5": "true",
+    "RUN_S6": "true",
+    "RUN_S7": "true",
+    "RUN_S8": "true",
+    "S4_FULL_SFT_DATASET": "hpn",
+    "S4_USE_LORA_SFT": "false",
+    "SCREEN_LOG_FILE": "${SCREEN_LOG_FILE:-}",
+    "SCRIPT_DIR": "$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)",
+    "SFT_BATCH": "1",
+    "SFT_EPOCHS": "3",
+    "SFT_GRAD_ACCUM": "16",
+    "SFT_LR": "2e-5",
+    "SFT_MAX_SAMPLES": "5000",
+    "TORCHRUN_BIN": "${LLM_DIR}/.venv/bin/torchrun",
+    "TRAIN_GPU_WORKERS": "${TRAIN_GPU_WORKERS:-0}",
+    "USE_DEEPSPEED_FULL_TRAINING": "${USE_DEEPSPEED_FULL_TRAINING:-false}",
+    "USE_GNU_SCREEN": "true bash ${BASH_SOURCE[0]}",
+    "USE_QLORA": "false",
+    "USE_TORCHRUN_FULL_TRAINING": "${USE_TORCHRUN_FULL_TRAINING:-false}",
+    "VRAM_GB": "$(( (VRAM_MIB + 1023) / 1024 ))",
+    "VRAM_MIB": "$(nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits \\",
+    "YELLOW": "'\\033[1"
+  },
+  "rag": {
+    "artifacts": [
+      {
+        "bytes": 513,
+        "mtime_utc": "2026-05-11T07:25:41.126423+00:00",
+        "path": "/workspace/NetBench-LLM/NetBench-RAG/data/qdrant_store/meta.json",
+        "sha256": "e5ab8340151eb451f18db9c3bfc25cece61a8fb7a39e93de883cbc7a9324e9e5"
+      },
+      {
+        "bytes": 102959301,
+        "mtime_utc": "2026-05-11T07:45:27.366292+00:00",
+        "path": "/workspace/NetBench-LLM/NetBench-RAG/data/bm25_index.pkl",
+        "sha256": "f5642a0b40481c520cd19ffec5592b4682cf83f7a54a19562f44adc84184c043"
+      },
+      {
+        "bytes": 141501898,
+        "mtime_utc": "2026-05-11T07:45:18.674293+00:00",
+        "path": "/workspace/NetBench-LLM/NetBench-RAG/data/chunks_cache.pkl",
+        "sha256": "d855b3523422c889b7b5417a725e9af3d8735fbda9c29ec5e73989a315a2e53a"
+      },
+      {
+        "bytes": 0,
+        "mtime_utc": "2026-05-11T07:45:28.682291+00:00",
+        "path": "/workspace/NetBench-LLM/NetBench-RAG/.index_done",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "bytes": 7073,
+    "config": {
+      "chunking": {
+        "min_tokens": 100,
+        "overlap_tokens": 150,
+        "target_tokens": 1200,
+        "tokenizer_model": "bert-base-uncased"
+      },
+      "embedding": {
+        "batch_size": 64,
+        "device": "cuda",
+        "dimension": 1024,
+        "model": "BAAI/bge-large-en-v1.5",
+        "normalize": true,
+        "passage_instruction": "",
+        "query_instruction": "Represent this sentence for searching relevant passages: "
+      },
+      "generation": {
+        "backend": "openai",
+        "local": {
+          "device_map": "auto",
+          "do_sample": false,
+          "dtype": "bfloat16",
+          "max_new_tokens": 512,
+          "repetition_penalty": 1.1,
+          "temperature": 0.0
+        },
+        "openai": {
+          "max_tokens": 512,
+          "model": "gpt-4o",
+          "temperature": 0.0
+        },
+        "system_prompt": "You are an expert in high-performance networking (HPN),\nHPC data transfer systems, and computer networking.\n\nAnswer the question below in a focused response (100-350 words)\nusing the provided excerpts as your primary source.\nBe technically precise: include specific numbers, thresholds, or\nformulas where relevant. Explain the underlying reasoning, not just\nthe conclusion.\n"
+      },
+      "judge": {
+        "model": "gemini-2.5-flash",
+        "rate_limit_rpm": 15,
+        "retry_attempts": 3,
+        "retry_backoff_base": 2.0,
+        "weights": {
+          "clarity": 0.2,
+          "completeness": 0.3,
+          "conciseness": 0.1,
+          "correctness": 0.4
+        }
+      },
+      "parsing": {
+        "max_header_len": 120,
+        "min_abstract_chars": 100,
+        "min_header_len": 3,
+        "section_confidence_threshold": 0.4
+      },
+      "paths": {
+        "answers_dir": "outputs/answers/",
+        "benchmark": "data/prompts/hpn_qa_benchmark_v5_general_skills.json",
+        "bm25_index": "data/bm25_index.pkl",
+        "chunks_cache": "data/chunks_cache.pkl",
+        "corpus_json": "data/raw/research_corpus_v3.json",
+        "gemini_api_key": "gemini_api_key.txt",
+        "judged_dir": "outputs/judged/",
+        "local_model": "/workspace/NetBench-LLM/models/instruction/gemma-4-e4b-it",
+        "openai_api_key": "openai_api_key.txt",
+        "pdfs_dir": "pdfs/",
+        "qdrant_dir": "data/qdrant_store/",
+        "reports_dir": "outputs/reports/"
+      },
+      "qdrant": {
+        "collection_name": "netbench_rag",
+        "distance": "Cosine",
+        "indexed_fields": [
+          "paper_title",
+          "section_heading",
+          "source_file",
+          "parse_confidence"
+        ]
+      },
+      "retrieval": {
+        "acronym_expansion": {
+          "BBR": "bottleneck bandwidth and round-trip propagation",
+          "BDP": "bandwidth delay product",
+          "CC": "congestion control",
+          "CWND": "congestion window",
+          "DRL": "deep reinforcement learning",
+          "ECN": "explicit congestion notification",
+          "GridFTP": "grid file transfer protocol",
+          "HPCC": "high performance computing cluster",
+          "HPN": "high performance networking",
+          "MPI": "message passing interface",
+          "MPTCP": "multipath tcp",
+          "MTCP": "multi-path tcp",
+          "NIC": "network interface card",
+          "RDMA": "remote direct memory access",
+          "RL": "reinforcement learning",
+          "RPC": "remote procedure call",
+          "RTT": "round trip time",
+          "SDN": "software defined networking",
+          "TCP": "transmission control protocol",
+          "UDP": "user datagram protocol"
+        },
+        "bm25_lowercase": true,
+        "bm25_top_k": 30,
+        "reranker_device": "cuda",
+        "reranker_model": "BAAI/bge-reranker-v2-m3",
+        "reranker_top_n": 4,
+        "rrf_k": 60,
+        "rrf_top_n": 20,
+        "vector_top_k": 30
+      }
+    },
+    "mtime_utc": "2026-05-05T01:41:36.833659+00:00",
+    "path": "/workspace/NetBench-LLM/NetBench-RAG/config.yaml",
+    "sha256": "5486af0f5ed6199a4450626aee5822eb5e13ebee0ca36fb2a9d41de77d55c8dd"
+  },
+  "schema_version": "netbench-run-metadata-v1",
+  "training_args": [
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-11T01:06:04.043247+00:00",
+      "path": "models/instruction/Llama-3.2-1B-cpt-full-sft/checkpoints/checkpoint-400/training_args.bin",
+      "sha256": "2bf0a6dfaee10287ef38e20dc95f2cf1f3e47ce26f093ec51b22735617709926",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 100,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/instruction/Llama-3.2-1B-cpt-full-sft/checkpoints",
+        "per_device_eval_batch_size": 4,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 100,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-11T01:16:30.091189+00:00",
+      "path": "models/instruction/Llama-3.2-1B-cpt-full-sft/checkpoints/checkpoint-612/training_args.bin",
+      "sha256": "2bf0a6dfaee10287ef38e20dc95f2cf1f3e47ce26f093ec51b22735617709926",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 100,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/instruction/Llama-3.2-1B-cpt-full-sft/checkpoints",
+        "per_device_eval_batch_size": 4,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 100,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-11T01:16:37.375188+00:00",
+      "path": "models/instruction/Llama-3.2-1B-cpt-full-sft/training_args.bin",
+      "sha256": "2bf0a6dfaee10287ef38e20dc95f2cf1f3e47ce26f093ec51b22735617709926",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 100,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/instruction/Llama-3.2-1B-cpt-full-sft/checkpoints",
+        "per_device_eval_batch_size": 4,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 100,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-11T01:35:46.399404+00:00",
+      "path": "models/instruction/Llama-3.2-1B-instruct-full-hpn-sft/checkpoints/checkpoint-400/training_args.bin",
+      "sha256": "eb1c7e3f77a3e9173b222f01365ede32f46819c72c893f9085e88a1ba19deb5e",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 100,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/instruction/Llama-3.2-1B-instruct-full-hpn-sft/checkpoints",
+        "per_device_eval_batch_size": 4,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 100,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-11T01:45:56.263607+00:00",
+      "path": "models/instruction/Llama-3.2-1B-instruct-full-hpn-sft/checkpoints/checkpoint-612/training_args.bin",
+      "sha256": "eb1c7e3f77a3e9173b222f01365ede32f46819c72c893f9085e88a1ba19deb5e",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 100,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/instruction/Llama-3.2-1B-instruct-full-hpn-sft/checkpoints",
+        "per_device_eval_batch_size": 4,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 100,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-11T01:46:03.335607+00:00",
+      "path": "models/instruction/Llama-3.2-1B-instruct-full-hpn-sft/training_args.bin",
+      "sha256": "eb1c7e3f77a3e9173b222f01365ede32f46819c72c893f9085e88a1ba19deb5e",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 100,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/instruction/Llama-3.2-1B-instruct-full-hpn-sft/checkpoints",
+        "per_device_eval_batch_size": 4,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 100,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-11T06:12:19.572588+00:00",
+      "path": "models/lora/Llama-3.2-1B-instruct-lora-cpt/checkpoints/checkpoint-2322/training_args.bin",
+      "sha256": "8214e6a1b7d52977293a65eb18d4487378f0413d2de55a6671a69492183a621a",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 258,
+        "fp16": false,
+        "gradient_accumulation_steps": 2,
+        "gradient_checkpointing": true,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/lora/Llama-3.2-1B-instruct-lora-cpt/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 8,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 258,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 258,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-11T06:36:15.280262+00:00",
+      "path": "models/lora/Llama-3.2-1B-instruct-lora-cpt/checkpoints/checkpoint-2580/training_args.bin",
+      "sha256": "8214e6a1b7d52977293a65eb18d4487378f0413d2de55a6671a69492183a621a",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 258,
+        "fp16": false,
+        "gradient_accumulation_steps": 2,
+        "gradient_checkpointing": true,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/lora/Llama-3.2-1B-instruct-lora-cpt/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 8,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 258,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 258,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-11T06:38:22.656195+00:00",
+      "path": "models/lora/Llama-3.2-1B-instruct-lora-cpt/checkpoints/checkpoint-2589/training_args.bin",
+      "sha256": "8214e6a1b7d52977293a65eb18d4487378f0413d2de55a6671a69492183a621a",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 258,
+        "fp16": false,
+        "gradient_accumulation_steps": 2,
+        "gradient_checkpointing": true,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/lora/Llama-3.2-1B-instruct-lora-cpt/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 8,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 258,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 258,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-11T07:19:38.646487+00:00",
+      "path": "models/lora/Llama-3.2-1B-instruct-lora-cpt-then-sft/checkpoints/checkpoint-540/training_args.bin",
+      "sha256": "0163249b50078fe22dd50b3135245f785e680898a4f8eedf4989fe6d384c6533",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 60,
+        "fp16": false,
+        "gradient_accumulation_steps": 2,
+        "gradient_checkpointing": true,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/lora/Llama-3.2-1B-instruct-lora-cpt-then-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 8,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 60,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-11T07:24:25.770424+00:00",
+      "path": "models/lora/Llama-3.2-1B-instruct-lora-cpt-then-sft/checkpoints/checkpoint-600/training_args.bin",
+      "sha256": "0163249b50078fe22dd50b3135245f785e680898a4f8eedf4989fe6d384c6533",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 60,
+        "fp16": false,
+        "gradient_accumulation_steps": 2,
+        "gradient_checkpointing": true,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/lora/Llama-3.2-1B-instruct-lora-cpt-then-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 8,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 60,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-11T07:25:25.310423+00:00",
+      "path": "models/lora/Llama-3.2-1B-instruct-lora-cpt-then-sft/checkpoints/checkpoint-612/training_args.bin",
+      "sha256": "0163249b50078fe22dd50b3135245f785e680898a4f8eedf4989fe6d384c6533",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 60,
+        "fp16": false,
+        "gradient_accumulation_steps": 2,
+        "gradient_checkpointing": true,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/lora/Llama-3.2-1B-instruct-lora-cpt-then-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 8,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 60,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-11T02:28:07.015141+00:00",
+      "path": "models/lora/Llama-3.2-1B-instruct-lora-sft/checkpoints/checkpoint-540/training_args.bin",
+      "sha256": "93573c9365799989834be7c44dd5eba7b4c9d973d48629cb3853540b454043a4",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 60,
+        "fp16": false,
+        "gradient_accumulation_steps": 2,
+        "gradient_checkpointing": true,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/lora/Llama-3.2-1B-instruct-lora-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 8,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 60,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-11T02:33:04.382932+00:00",
+      "path": "models/lora/Llama-3.2-1B-instruct-lora-sft/checkpoints/checkpoint-600/training_args.bin",
+      "sha256": "93573c9365799989834be7c44dd5eba7b4c9d973d48629cb3853540b454043a4",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 60,
+        "fp16": false,
+        "gradient_accumulation_steps": 2,
+        "gradient_checkpointing": true,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/lora/Llama-3.2-1B-instruct-lora-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 8,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 60,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-11T02:34:06.030894+00:00",
+      "path": "models/lora/Llama-3.2-1B-instruct-lora-sft/checkpoints/checkpoint-612/training_args.bin",
+      "sha256": "93573c9365799989834be7c44dd5eba7b4c9d973d48629cb3853540b454043a4",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 60,
+        "fp16": false,
+        "gradient_accumulation_steps": 2,
+        "gradient_checkpointing": true,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/lora/Llama-3.2-1B-instruct-lora-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 8,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 60,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-10T23:32:02.321168+00:00",
+      "path": "models/pretrained/Llama-3.2-1B-trained-new/checkpoints/checkpoint-1724/training_args.bin",
+      "sha256": "ff8dff2dc093a6970f193d0be86a82de5e5bb9d9931317295d69943e878b80f4",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 431,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/pretrained/Llama-3.2-1B-trained-new/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 431,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 258,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-11T00:38:07.275173+00:00",
+      "path": "models/pretrained/Llama-3.2-1B-trained-new/checkpoints/checkpoint-2589/training_args.bin",
+      "sha256": "ff8dff2dc093a6970f193d0be86a82de5e5bb9d9931317295d69943e878b80f4",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 431,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/pretrained/Llama-3.2-1B-trained-new/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 431,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 258,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5393,
+      "mtime_utc": "2026-05-11T00:38:14.191173+00:00",
+      "path": "models/pretrained/Llama-3.2-1B-trained-new/training_args.bin",
+      "sha256": "ff8dff2dc093a6970f193d0be86a82de5e5bb9d9931317295d69943e878b80f4",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 431,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": true,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/workspace/portables/NetBench-LLM/models/pretrained/Llama-3.2-1B-trained-new/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 431,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 258,
+        "weight_decay": 0.01
+      }
+    }
+  ]
+}

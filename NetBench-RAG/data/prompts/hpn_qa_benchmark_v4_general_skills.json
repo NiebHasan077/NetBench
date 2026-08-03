@@ -1,0 +1,940 @@
+{
+  "metadata": {
+    "title": "HPN General Skills Benchmark v4.0",
+    "description": "General-skill question-answer pairs for High-Performance Networking (HPN). Questions test transferable HPN reasoning and practical tuning knowledge. Reference answers are self-contained and include enough background that an LLM-as-Judge can evaluate model responses without needing separate domain expertise. Questions are derived from multiple HPN research papers and general HPN literature.",
+    "benchmark_goal": "Measure whether an LLM has internalized practical, general HPN skills from reading research papers and can apply them to realistic transfer tuning scenarios.",
+    "design_principles": [
+      "Reference answers are self-contained with 60-150 words and include domain context",
+      "Questions provide enough background that they can be answered in isolation",
+      "Acronyms are defined inline in questions where first used",
+      "Mix of conceptual, quantitative, scenario, and task-based questions",
+      "No question is answerable purely from general CS/networking textbooks",
+      "Concrete numbers, thresholds, and actionable recommendations in answers",
+      "Source papers marked for each question"
+    ],
+    "total_questions": 90,
+    "categories": [
+      "Transfer Parameters: Definitions and Roles",
+      "Concurrency Tuning and Scaling",
+      "Pipelining and Small-File Optimization",
+      "Parallelism and Large-File Optimization",
+      "Dataset Partitioning and Mixed Workloads",
+      "BDP-Based Reasoning and Window Sizing",
+      "Bottleneck Diagnosis and End-to-End Reasoning",
+      "Adaptive and Online Optimization",
+      "Fairness, Stability, and Shared Networks",
+      "Practical HPN Scenarios and Design"
+    ],
+    "difficulty_levels": ["easy", "medium", "hard"],
+    "question_types": ["concept", "reasoning", "calculation", "comparison", "diagnosis", "scenario", "task"],
+    "source_papers": [
+      "Falcon SC21 (Arifuzzaman & Arslan, 2021)",
+      "Falcon TPDS23 (Arifuzzaman et al., 2023)",
+      "Dynamic Protocol Tuning (Arslan, Ross & Kosar, Euro-Par 2013)",
+      "Dynamic Adaptation of Parallelism (Balman & Kosar, CISIS 2009)",
+      "General HPN literature"
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q001",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "In the context of high-performance network (HPN) file transfers, three application-layer parameters are commonly tuned: concurrency, parallelism, and pipelining. What does each parameter control, and how do they differ from each other?",
+      "reference_answer": "Concurrency is the number of files being transferred simultaneously, where each file gets its own transfer process and network connection. Parallelism is the number of parallel TCP data streams (network connections) used to transfer a single file, which aggregates bandwidth for large files. Pipelining sends multiple file transfer commands back-to-back over a persistent control channel instead of waiting for each file to fully complete before issuing the next command. Concurrency provides both I/O and network parallelism; parallelism only adds network connections for one file; pipelining merely pre-issues commands and creates no new connections or processes, so it has negligible overhead.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["concurrency", "parallelism", "pipelining", "definition"]
+    },
+    {
+      "id": "Q002",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "In high-performance file transfer optimization, why is concurrency generally found to be the single most influential parameter for improving throughput across all file sizes?",
+      "reference_answer": "Concurrency provides both I/O parallelism and network parallelism simultaneously. Each concurrent transfer creates a separate process with its own disk I/O thread and its own network connection. This means increasing concurrency addresses two bottlenecks at once: it enables parallel reads and writes on storage systems like Lustre or RAID arrays that need multiple threads for full performance, and it puts more data in flight across the network to fill high-bandwidth pipes. In contrast, parallelism only adds network connections (not I/O threads), and pipelining only reduces inter-file gaps. Experimental results across XSEDE and LONI production networks consistently show concurrency as the strongest throughput driver.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["concurrency", "most influential", "I/O parallelism", "network parallelism"]
+    },
+    {
+      "id": "Q003",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "easy",
+      "question_type": "comparison",
+      "question": "A transfer system sets concurrency to 5 and parallelism to 4. How many total network connections does this create, and what does each parameter contribute?",
+      "reference_answer": "This creates 5 × 4 = 20 total network connections. Concurrency = 5 means 5 files are being transferred simultaneously, each with its own transfer process and I/O thread. Parallelism = 4 means each of those 5 file transfers uses 4 parallel TCP data streams (connections) to move different portions of the file simultaneously. Concurrency contributes both I/O parallelism (5 separate disk-read or disk-write operations) and network utilization (5 base connections). Parallelism multiplies the network connections per file to better fill high-bandwidth paths, but does not add new I/O processes. The total of 20 connections can significantly increase network utilization but also increases CPU and memory overhead on end hosts.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["concurrency", "parallelism", "total connections", "calculation"]
+    },
+    {
+      "id": "Q004",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "In HPN file transfers, pipelining has negligible impact on system resources compared to concurrency and parallelism. Why is this the case?",
+      "reference_answer": "Pipelining merely sends the next file transfer command to the server before the previous transfer completes, so the server can start the next transfer immediately with zero idle gap. It does not create any additional processes, threads, or network connections — it only pre-queues commands on the existing control channel. In contrast, increasing concurrency spawns new transfer processes with separate I/O threads and network connections, consuming CPU, memory, and disk I/O bandwidth. Increasing parallelism opens additional TCP streams per file, consuming network buffer memory and CPU for connection management. Because pipelining's resource cost is essentially zero, it should always be enabled when transferring many small files where inter-file overhead dominates.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["pipelining", "negligible overhead", "no new connections", "command pre-queue"]
+    },
+    {
+      "id": "Q005",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why do legacy file transfer tools like scp and single-stream FTP typically achieve only a few Gbps on modern research networks that offer 10-100 Gbps bandwidth?",
+      "reference_answer": "Legacy tools transfer one file at a time over a single network connection. On high-bandwidth paths, a single TCP connection is typically limited to well below the link capacity due to TCP buffer size limits, congestion window constraints, and CPU overhead. Additionally, these tools lack I/O parallelism: they read from disk with one thread, so they cannot fully utilize parallel file systems like Lustre or RAID arrays that need concurrent access from multiple threads for full I/O performance. They also cannot adapt to changing network conditions. The result is often less than 2-8 Gbps throughput on paths capable of 40+ Gbps. Application-layer parameter tuning (concurrency, parallelism, pipelining) can improve this by 2-6x or more.",
+      "source_paper": "Falcon TPDS23",
+      "keywords": ["legacy tools", "scp", "FTP", "single stream", "underutilization"]
+    },
+    {
+      "id": "Q006",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why are application-layer transfer optimizations (tuning concurrency, parallelism, pipelining) more practical for production deployment than transport-layer optimizations (e.g., replacing TCP congestion control)?",
+      "reference_answer": "Application-layer optimizations operate entirely in user space and do not require root access, kernel modifications, or cooperation from network administrators at remote endpoints. The same application-layer tuning approach works with any transport protocol (TCP Cubic, Reno, BBR, HTCP) and any transfer application (FTP, GridFTP, bbcp). This is crucial in HPC environments where users cannot install custom kernels. Furthermore, file transfers in high-speed networks are often limited by storage I/O performance rather than network congestion control, and transport-layer changes cannot address I/O bottlenecks. Application-layer concurrency directly addresses I/O parallelism. The algorithms can be implemented as standalone clients or integrated into data scheduling services without special server-side configuration.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["application-layer", "user space", "protocol agnostic", "no root access"]
+    },
+    {
+      "id": "Q007",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "How does the system overhead profile differ among concurrency, parallelism, and pipelining, and what does this imply for choosing which parameter to prioritize for a given workload?",
+      "reference_answer": "Concurrency creates multiple transfer processes with separate I/O threads and network connections, causing overhead on CPU, memory, storage I/O contention, and network congestion. It has the highest potential overhead but also the highest potential reward since it improves both I/O and network utilization. Parallelism creates additional network connections per file without new I/O processes, mainly burdening the network and connection management. Pipelining has negligible overhead since it only pre-issues commands on existing control channels. This implies: for small-file workloads, enable pipelining first (free benefit); for medium/large datasets with many files, tune concurrency (primary driver); for datasets with very few large files, add parallelism to create enough network connections when concurrency is limited by file count.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": ["overhead profile", "parameter prioritization", "workload-dependent"]
+    },
+    {
+      "id": "Q008",
+      "category": "Concurrency Tuning and Scaling",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "When transferring files over a high-speed network, increasing the number of files transferred simultaneously (concurrency) from 1 to about 10 typically produces a dramatic improvement in throughput. But increasing further from 10 to 30 often shows diminishing returns. Why does this diminishing-returns pattern occur?",
+      "reference_answer": "At low concurrency, each additional transfer thread opens a new I/O stream and network connection, directly increasing aggregate I/O throughput toward the storage system's capacity and putting more data in flight on the network. Once enough concurrent threads fully utilize the storage system and the available network bandwidth, adding more threads provides no additional throughput but increases CPU usage, memory consumption, I/O contention on shared file systems, and packet loss due to network congestion at the bottleneck link. The marginal throughput gain per additional concurrent transfer becomes negligible while the marginal cost (overhead) keeps rising. Experimental data shows packet loss stays below 2% up to the optimal concurrency but can reach 10% at high values like 32.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["diminishing returns", "saturation", "overhead increase", "packet loss"]
+    },
+    {
+      "id": "Q009",
+      "category": "Concurrency Tuning and Scaling",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "In HPN transfer tuning, the concept of 'just-enough concurrency' means choosing a concurrency level that is high enough for near-optimal throughput but no higher. Why is this preferable to simply using the maximum possible concurrency?",
+      "reference_answer": "Just-enough concurrency balances performance against system burden. For example, in one testbed, concurrency 10 yields 32 Gbps with 60% CPU utilization, while concurrency 30 yields only 26 Gbps (lower!) with 70% CPU utilization and severe I/O contention that reduces a colocated write application's throughput from 2.4 Gbps to 0.5 Gbps. Excess concurrency wastes resources without improving transfer speed and harms other users and applications sharing the same endpoints and network. Using a utility function that rewards throughput but penalizes overhead (packet loss, CPU usage, I/O contention) naturally guides the optimizer toward just-enough concurrency rather than maximum concurrency.",
+      "source_paper": "Falcon TPDS23",
+      "keywords": ["just-enough concurrency", "overhead", "colocated impact", "utility function"]
+    },
+    {
+      "id": "Q010",
+      "category": "Concurrency Tuning and Scaling",
+      "difficulty": "medium",
+      "question_type": "calculation",
+      "question": "Consider a network where the bottleneck link has 100 Mbps bandwidth. Each concurrent file transfer process can read from the source disk at 10 Mbps. How many concurrent transfers are needed to fully utilize the network bandwidth? What negative effects would you expect if you doubled that number?",
+      "reference_answer": "10 concurrent transfers are needed because 10 × 10 Mbps = 100 Mbps, which matches the bottleneck bandwidth. If you double to 20 concurrent transfers, the aggregate I/O throughput would be 200 Mbps but the network can only deliver 100 Mbps, so throughput stays at approximately 100 Mbps. However, the excess traffic causes significant packet loss at the network bottleneck (experimental data shows loss rising from under 2% to around 10%), wastes CPU and memory on the end hosts creating unnecessary processes, and increases I/O contention on the disk subsystem. The extra 10 processes consume resources without delivering any throughput benefit.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["concurrency calculation", "bottleneck", "packet loss", "diminishing returns"]
+    },
+    {
+      "id": "Q011",
+      "category": "Concurrency Tuning and Scaling",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why is the optimal concurrency level for file transfers different across different networks and even different for the same network path at different times?",
+      "reference_answer": "The optimal concurrency depends on many static factors (network bandwidth, file system type, NIC capacity, round-trip time, TCP buffer sizes) and dynamic factors (background traffic load, competing transfers, storage contention from other users). For example, a local-area lab network with NVMe SSDs and 40 Gbps bandwidth may need concurrency of about 9, while a wide-area transfer between supercomputers with Lustre file systems over a shared 40 Gbps path may need concurrency of 24. Even between the same endpoints with the same dataset, the optimal can shift because background traffic changes available bandwidth and other users' jobs change available storage I/O. This is why static tuning (setting parameters once) cannot guarantee consistently good performance.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["dynamic optimality", "static vs dynamic factors", "background traffic"]
+    },
+    {
+      "id": "Q012",
+      "category": "Concurrency Tuning and Scaling",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "You observe a file transfer achieving maximum throughput at concurrency 10 with packet loss below 2%. At concurrency 32, throughput remains roughly the same but packet loss has risen to 10%. What concurrency would you recommend and why?",
+      "reference_answer": "Recommend concurrency 10. Since throughput is the same at both settings, the higher concurrency provides no performance benefit while tripling packet loss, wasting CPU cycles on unnecessary processes, and increasing I/O contention on the storage system. The 10% packet loss wastes significant network bandwidth on retransmissions and may negatively impact other transfers sharing the network. A well-designed utility function would penalize the increased packet loss and overhead at concurrency 32, automatically preferring concurrency 10. This is the principle of just-enough concurrency: use the minimum concurrency that achieves near-optimal throughput to minimize system burden and be fair to other users.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["recommendation", "packet loss", "just-enough concurrency"]
+    },
+    {
+      "id": "Q013",
+      "category": "Concurrency Tuning and Scaling",
+      "difficulty": "hard",
+      "question_type": "scenario",
+      "question": "A transfer is running alone at concurrency 48, achieving 1 Gbps on a 1 Gbps bottleneck link. A second, independent transfer starts on the same path. What concurrency should each transfer ideally converge to, and why not just keep both at 48?",
+      "reference_answer": "Each transfer should reduce its concurrency to roughly the 20-33 range. Even though keeping both at 48 (total 96 concurrent streams) would also split the bandwidth roughly 500 Mbps each, the excessive total concurrency would cause dramatically higher packet loss at the bottleneck link, higher CPU utilization on endpoints, and more storage I/O contention — all without improving actual throughput. A utility function that penalizes excessive concurrency and packet loss would guide each transfer to reduce its resource usage once it detects the new competitor (via lower per-stream throughput or increased loss). The ideal outcome is that both transfers achieve their fair share (~500 Mbps each) using the minimum total concurrency needed.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["competing transfers", "concurrency reduction", "fair sharing"]
+    },
+    {
+      "id": "Q014",
+      "category": "Concurrency Tuning and Scaling",
+      "difficulty": "hard",
+      "question_type": "diagnosis",
+      "question": "A transfer uses concurrency 30 on a shared cluster. Transfer throughput is 26 Gbps (below the 32 Gbps achieved at concurrency 10), CPU utilization is 70%, and a colocated application's I/O throughput has dropped from 2.4 Gbps to 0.5 Gbps. What is the problem and what should be done?",
+      "reference_answer": "The concurrency is far too high. The transfer has passed the point of diminishing returns: concurrency 10 delivers higher transfer throughput (32 Gbps) with lower CPU usage (~60%). At concurrency 30, the excessive number of processes creates I/O contention that actually degrades transfer throughput to 26 Gbps while severely impacting the colocated application (80% I/O reduction). The fix is to reduce concurrency to around 10, which simultaneously improves transfer throughput, reduces CPU usage, and restores the colocated application's performance. This scenario demonstrates why a transfer optimizer should consider not just throughput but also overhead metrics like CPU usage and impact on colocated workloads.",
+      "source_paper": "Falcon TPDS23",
+      "keywords": ["over-concurrency", "I/O contention", "colocated workload", "diagnosis"]
+    },
+    {
+      "id": "Q015",
+      "category": "Concurrency Tuning and Scaling",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Experimental data shows that data transfer jobs tend to hang and become unresponsive when more than 25-30 concurrent jobs are initiated simultaneously on a shared system. What causes this, and how should a transfer optimizer account for it?",
+      "reference_answer": "Resource starvation causes this behavior. With 25-30+ concurrent transfer jobs, the system's CPU, memory, disk I/O, and network resources become so overloaded that individual transfer processes cannot make progress. Each process competes for context switches, file descriptors, TCP buffer memory, and disk access, leading to timeouts, connection drops, and hangs. A transfer optimizer should impose a maximum concurrency limit (e.g., 10 in policy-restricted shared environments) and increase concurrency only gradually while monitoring throughput. If throughput does not improve meaningfully with each additional concurrent stream, the optimizer should stop increasing. Many shared network testbeds enforce policies limiting concurrent connections for this reason.",
+      "source_paper": "Dynamic Adaptation of Parallelism (Balman & Kosar, 2009)",
+      "keywords": ["resource starvation", "concurrency limit", "system hang", "policy"]
+    },
+    {
+      "id": "Q016",
+      "category": "Pipelining and Small-File Optimization",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "When transferring a dataset of many small files (e.g., 100,000 files of 32-64 KB each), why does pipelining (pre-issuing transfer commands before the current file finishes) help more than for large files?",
+      "reference_answer": "For small files, the per-file overhead — connection command exchange, server acknowledgment, and TCP slow-start ramp-up — can take as long or longer than the actual data transfer itself. Without pipelining, the control channel sits idle between each file while waiting for the completion acknowledgment before sending the next command. This idle gap, which is at least one round-trip time (RTT), becomes a dominant fraction of total transfer time when files are tiny. Pipelining queues multiple transfer commands at the server, so the next file transfer starts immediately after the previous one finishes, eliminating these idle gaps. For large files, the actual data transfer time dwarfs the per-file overhead, so pipelining's benefit is proportionally much smaller.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["pipelining", "small files", "per-file overhead", "RTT gap"]
+    },
+    {
+      "id": "Q017",
+      "category": "Pipelining and Small-File Optimization",
+      "difficulty": "easy",
+      "question_type": "scenario",
+      "question": "You need to transfer a dataset of 100,000 files, each 32 KB, over a wide-area network with high round-trip time. Which of the three main transfer parameters (concurrency, parallelism, pipelining) should you prioritize, and in what order?",
+      "reference_answer": "Priority order: (1) Pipelining first — with 32 KB files, per-file overhead dominates actual transfer time, and pipelining eliminates idle gaps between files at essentially zero resource cost. (2) Concurrency second — multiple concurrent streams aggregate throughput across the network and keep multiple I/O threads busy. However, without pipelining, each concurrent stream still wastes time on inter-file gaps. (3) Parallelism last — since each file is only 32 KB, splitting it across multiple TCP connections provides no benefit and adds connection overhead. Experimental results show that tuning pipelining together with concurrency can yield up to 30% higher throughput for small-file workloads compared to tuning concurrency alone.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["small files", "priority order", "pipelining first", "parallelism irrelevant"]
+    },
+    {
+      "id": "Q018",
+      "category": "Pipelining and Small-File Optimization",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why can increasing concurrency (more files in parallel) fail to rescue a small-file transfer workload when pipelining is not enabled?",
+      "reference_answer": "Even with high concurrency, each concurrent stream still transfers files one at a time and incurs per-file overhead: completing the current file, waiting for the server's completion acknowledgment (at least one RTT), issuing the command for the next file, waiting for the server response, and starting the new transfer. For tiny files, this overhead per file can equal or exceed the actual data transfer time. Adding more concurrent streams simply multiplies the number of streams experiencing this same per-file overhead — it does not eliminate the idle gaps within each individual stream. Pipelining is specifically needed to remove the sequential idle gap between files within each stream by pre-queuing commands at the server.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["concurrency limitation", "per-stream overhead", "pipelining necessity"]
+    },
+    {
+      "id": "Q019",
+      "category": "Pipelining and Small-File Optimization",
+      "difficulty": "medium",
+      "question_type": "calculation",
+      "question": "In one heuristic approach, the pipelining level for small files is set based on the Bandwidth-Delay Product (BDP = bandwidth × RTT) and the average file size: pipelining ≈ ceil(BDP / avgFileSize) - 1. For a network with BDP of 75 MB and an average file size of 3 MB, what pipelining level does this formula suggest, and what is the intuition behind it?",
+      "reference_answer": "pipelining = ceil(75 MB / 3 MB) - 1 = ceil(25) - 1 = 24. The intuition is that BDP represents the amount of data that should be 'in flight' on the network to keep the pipe full. If each file is only 3 MB, you need roughly BDP/fileSize = 25 files' worth of transfer commands queued up to keep the network busy without idle gaps. The minus-1 adjustment accounts for the file currently being transferred. By pre-issuing 24 commands, the server always has the next file ready to send immediately when the current transfer completes, preventing the control channel from becoming the bottleneck. As file sizes increase, this ratio decreases and pipelining becomes less important.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["pipelining formula", "BDP", "calculation", "intuition"]
+    },
+    {
+      "id": "Q020",
+      "category": "Pipelining and Small-File Optimization",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why does setting a high pipelining level for large files sometimes cause performance degradation rather than improvement?",
+      "reference_answer": "When pipelining is set high for large files, the transfer system queues many large-file transfer commands on a single control channel. Since large files take a long time to transfer, the queued commands pile up on one channel while other available channels sit idle. This causes poor utilization of concurrent control channels because the workload becomes unbalanced: one channel is overloaded with queued commands while others have nothing to do. The result is that some channels finish early and cannot help others because the pipelined commands are already committed to specific channels. For large files, the inter-file idle gap (one RTT) is negligible compared to the minutes-long transfer time of each file, so pipelining's benefit disappears while its channel-imbalance cost remains.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["pipelining degradation", "large files", "channel imbalance", "overcommit"]
+    },
+    {
+      "id": "Q021",
+      "category": "Parallelism and Large-File Optimization",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "When is tuning parallelism (multiple TCP connections per file) more important than tuning concurrency (multiple files at once)?",
+      "reference_answer": "Parallelism becomes more important when the dataset contains only a handful of very large files. With just a few files, concurrency is limited to the file count — for example, 4 files means maximum concurrency of 4. If the path can support much higher utilization, parallelism allows each file to use multiple TCP streams, creating more total connections. Setting parallelism to 4 on 4 files gives 16 total connections, much better filling a high-bandwidth path. Parallelism is essentially the 'fallback' parameter when there aren't enough files to drive concurrency high enough. For datasets with many moderate-to-large files, concurrency alone usually provides sufficient network connections and adding parallelism is unnecessary.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": ["parallelism", "few large files", "concurrency limitation"]
+    },
+    {
+      "id": "Q022",
+      "category": "Parallelism and Large-File Optimization",
+      "difficulty": "medium",
+      "question_type": "calculation",
+      "question": "In one heuristic approach, the parallelism level is set as: parallelism = Min(ceil(BDP/bufferSize), ceil(avgFileSize/bufferSize)) + 1. For a network with BDP = 90 MB, TCP buffer size = 32 MB, and average file size = 1 GB, what parallelism does this formula suggest?",
+      "reference_answer": "parallelism = Min(ceil(90/32), ceil(1000/32)) + 1 = Min(3, 32) + 1 = 3 + 1 = 4. The formula takes the smaller of two values: the number of parallel streams needed to fill the network pipe (BDP/bufferSize), and the number that can meaningfully split the file (fileSize/bufferSize). Adding 1 provides a margin. For this case, the BDP-based term (3) is the binding constraint — there is no point opening more parallel streams than needed to fill the bandwidth-delay product. The file-size term (32) would only become binding if files were very small, in which case parallelism would be limited to avoid splitting tiny files into impractically small chunks.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["parallelism formula", "BDP", "buffer size", "calculation"]
+    },
+    {
+      "id": "Q023",
+      "category": "Parallelism and Large-File Optimization",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "You need to move four 100 GB files over a high-RTT path where each stream is capped near 3 Gbps. Why is concurrency alone insufficient, and what parameter combination would better utilize the path?",
+      "reference_answer": "With only 4 files, maximum concurrency is 4, giving 4 × 3 Gbps = 12 Gbps, which may be far below the path's 40+ Gbps capacity. Adding parallelism — for example, 4 parallel streams per file — creates 16 total connections capable of 48 Gbps aggregate, much closer to the path capacity. The recommended approach is: set concurrency to 4 (the maximum possible given the file count), add parallelism of 4-8 per file to create enough network connections to fill the pipe, and leave pipelining low since inter-file gaps are negligible relative to the hours-long transfer time of 100 GB files. Monitor packet loss and throughput to avoid overshooting the optimal parallelism level.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": ["few large files", "concurrency limitation", "parallelism addition"]
+    },
+    {
+      "id": "Q024",
+      "category": "Parallelism and Large-File Optimization",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "In adaptive parallelism tuning, one approach gradually increases the number of parallel TCP streams while monitoring throughput per chunk of data transferred. What is the advantage of this gradual approach over immediately jumping to a high parallelism value?",
+      "reference_answer": "The gradual approach avoids overshooting the optimal parallelism level, which would waste resources and potentially degrade performance. Each additional parallel stream is tested: if throughput improves compared to the best throughput seen so far, the parallelism count is increased by one more. If throughput no longer improves or decreases, the search stops at the current level. This is safer than jumping to a high value because: (1) there is overhead in reconfiguring GridFTP connections each time parallelism changes, so minimizing unnecessary changes is important; (2) excessive parallel streams can cause packet loss, buffer exhaustion, and contention; (3) the optimal number depends on current conditions that cannot be predicted in advance. The upper theoretical limit for throughput with N parallel streams, buffer size W, and RTT R is (N×W)/R.",
+      "source_paper": "Dynamic Adaptation of Parallelism (Balman & Kosar, 2009)",
+      "keywords": ["gradual increase", "adaptive parallelism", "overshoot avoidance"]
+    },
+    {
+      "id": "Q025",
+      "category": "Dataset Partitioning and Mixed Workloads",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "When transferring a dataset that contains a mix of small and large files, one approach partitions the files into size-based chunks and applies different transfer parameters to each chunk. Why is this better than using the same parameters for all files?",
+      "reference_answer": "Different file sizes benefit from fundamentally different parameter combinations. Small files need high pipelining and moderate concurrency but minimal parallelism, because their bottleneck is per-file overhead. Large files need parallelism and low-to-moderate concurrency but minimal pipelining, because their bottleneck is filling the network pipe for individual large transfers. Using a single parameter set for all files forces a compromise that underperforms for both types. For example, high pipelining optimized for small files would cause channel imbalance for large files, while high parallelism optimized for large files wastes connections on small files. Partitioning allows each chunk to use its optimal parameter combination.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["dataset partitioning", "mixed files", "per-chunk parameters"]
+    },
+    {
+      "id": "Q026",
+      "category": "Dataset Partitioning and Mixed Workloads",
+      "difficulty": "medium",
+      "question_type": "concept",
+      "question": "One heuristic partitions files into four categories based on the Bandwidth-Delay Product (BDP): Small (< BDP/10), Middle (< BDP/2), Large (< BDP×20), and Huge (≥ BDP×20). For a network with BDP = 75 MB, what are the file-size boundaries for each category?",
+      "reference_answer": "Small: files less than 75/10 = 7.5 MB. Middle: files from 7.5 MB to less than 75/2 = 37.5 MB. Large: files from 37.5 MB to less than 75×20 = 1,500 MB (1.5 GB). Huge: files 1.5 GB and larger. The rationale is that BDP represents the 'natural scale' of the network path. Files much smaller than BDP are dominated by per-file overhead (pipelining matters most). Files near BDP are a transitional zone. Files much larger than BDP are dominated by bulk data transfer time (parallelism matters most). Using BDP as the partitioning basis makes the chunk boundaries automatically adapt to different network conditions — a high-BDP path shifts the boundaries upward.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["BDP-based partitioning", "Small/Middle/Large/Huge", "file categories"]
+    },
+    {
+      "id": "Q027",
+      "category": "Dataset Partitioning and Mixed Workloads",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "When transferring a mixed dataset using a Multi-Chunk approach that runs small-file and large-file chunks concurrently, why does this outperform transferring each chunk sequentially?",
+      "reference_answer": "In sequential (Single-Chunk) transfer, the small-file chunks drag down overall throughput because even with optimal pipelining and concurrency, small-file transfer throughput is significantly worse than large-file throughput due to unavoidable per-file overhead (disk reads of many tiny files, metadata operations). Running small and large chunks concurrently allows the large-file transfers to maintain high throughput on some channels while small files transfer on other channels. This minimizes the time spent in the 'low-throughput small-file phase.' Additionally, when the large chunk finishes first, its channels can be reassigned to help the small chunk, further reducing total transfer time. The Multi-Chunk approach made more effective use of concurrency at higher levels where Single-Chunk plateaued.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["Multi-Chunk", "concurrent chunk transfer", "channel reallocation"]
+    },
+    {
+      "id": "Q028",
+      "category": "Dataset Partitioning and Mixed Workloads",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "In the Pro-Active Multi-Chunk (ProMC) approach, channels are allocated to chunks using weights: Small chunks get weight 6×size, Middle gets 3×size, Large gets 2×size, and Huge gets 1×size. Why are small chunks weighted more heavily than large chunks?",
+      "reference_answer": "Small chunks need proportionally more channel resources because their per-file transfer throughput is inherently lower due to per-file overhead, metadata operations, and disk read inefficiencies for many tiny files. Without extra channels, a small chunk with the same total data size as a large chunk would take much longer to finish, creating a bottleneck that delays the entire transfer. The higher weight for small chunks allocates more concurrent channels to them, compensating for their lower per-channel throughput. ProMC also monitors each chunk's estimated completion time periodically and dynamically reassigns channels from fast-finishing chunks to slow chunks, but this is costly so it waits for three consecutive periods showing a significant difference before acting.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["ProMC", "weighted channel allocation", "small file compensation"]
+    },
+    {
+      "id": "Q029",
+      "category": "Dataset Partitioning and Mixed Workloads",
+      "difficulty": "hard",
+      "question_type": "scenario",
+      "question": "A mixed workload contains millions of tiny metadata-heavy files plus a handful of multi-hundred-GB checkpoint files. How should the transfer be configured?",
+      "reference_answer": "Use a hybrid partitioning strategy. Partition the dataset into small-file and large-file chunks using BDP-based thresholds. For the small files: enable high pipelining (e.g., BDP/avgFileSize commands queued), moderate concurrency, and allocate proportionally more channels to this chunk since its per-channel throughput is lower. For the large checkpoint files: use parallelism with multiple TCP streams per file, minimal pipelining, and allocate fewer channels since each channel achieves high throughput. Run both chunks concurrently so the large files' high throughput fills the network while small files transfer in parallel. When the large-file chunk finishes, reallocate its channels to help the small-file chunk. This combined approach can yield 30%+ throughput improvement over concurrency-only tuning for mixed datasets.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": ["mixed workload", "hybrid strategy", "channel reallocation"]
+    },
+    {
+      "id": "Q030",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "The Bandwidth-Delay Product (BDP) is calculated as BDP = bandwidth × RTT (round-trip time). For a network path with 10 Gbps bandwidth and 60 ms RTT, what is the BDP, and what practical meaning does this number have for a data transfer engineer?",
+      "reference_answer": "BDP = 10 Gbps × 0.060 s = 0.6 Gb = 600 Mb = 75 MB. This means approximately 75 MB of data must be 'in flight' (sent but not yet acknowledged) at any time to keep the 10 Gbps network pipe fully utilized. If a single TCP connection has a buffer/window size of 32 MB, it can only keep 32 MB in flight, achieving roughly 32/75 = 43% utilization of the link. To fill the pipe, you need either larger TCP buffers, multiple parallel streams (parallelism), or multiple concurrent file transfers (concurrency). BDP is the fundamental number that determines how much application-layer parallelism is needed for a given path.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["BDP", "calculation", "in-flight data", "practical meaning"]
+    },
+    {
+      "id": "Q031",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "medium",
+      "question_type": "calculation",
+      "question": "A single TCP stream can keep at most W bytes in flight (its window/buffer size). The throughput of that single stream is approximately W/RTT. If W = 32 MB and RTT = 80 ms, what is the maximum throughput of a single stream, and how many such streams would be needed to fill a 40 Gbps path?",
+      "reference_answer": "Single stream throughput = W/RTT = 32 MB / 0.08 s = 400 MB/s = 3.2 Gbps. To fill a 40 Gbps path: 40 / 3.2 ≈ 12.5, so approximately 13 parallel streams are needed. This is why single-stream tools like scp achieve only 3-4 Gbps on high-bandwidth paths — they are fundamentally limited by their TCP window size relative to the RTT. The formula (N×W)/R gives the theoretical upper bound for N parallel streams: 13 × 32 MB / 0.08 s = 52 Gbps, which exceeds the path capacity, confirming that 13 streams would be sufficient. In practice, slightly more streams may be needed due to TCP overhead and contention.",
+      "source_paper": "Dynamic Adaptation of Parallelism (Balman & Kosar, 2009)",
+      "keywords": ["W/RTT", "stream throughput", "stream count", "calculation"]
+    },
+    {
+      "id": "Q032",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "If the round-trip time (RTT) of a network path doubles while bandwidth stays the same, what happens to the Bandwidth-Delay Product (BDP = bandwidth × RTT) and what must change in the transfer configuration?",
+      "reference_answer": "The BDP doubles because BDP = bandwidth × RTT. This means twice as much data needs to be in flight simultaneously to keep the path fully utilized. If per-stream TCP window sizes stay the same, each stream's throughput is halved (since throughput ≈ window/RTT). To maintain the same aggregate throughput, you must either double the number of concurrent streams/parallel connections, or double the TCP buffer sizes (which may not be under user control). This is why wide-area transfers across long RTT paths (e.g., 60-90 ms) typically require much higher concurrency or parallelism than local-area transfers (e.g., <1 ms RTT). The BDP-based partitioning thresholds also shift, potentially reclassifying files into different size categories.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": ["RTT doubling", "BDP increase", "more streams needed"]
+    },
+    {
+      "id": "Q033",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "The Bandwidth-Delay Product (BDP = bandwidth × RTT) gives a theoretical target for how much data should be in flight on a network path. Why should BDP be treated as a reasoning guideline for transfer tuning rather than an exact formula that directly determines optimal parameters?",
+      "reference_answer": "BDP gives the theoretical amount of in-flight data needed to fill the pipe, but several practical factors make it imprecise as a tuning rule: (1) Available bandwidth is not the same as link capacity — competing traffic reduces the effective bandwidth. (2) RTT varies with queue depth and congestion, so BDP is not constant. (3) Storage I/O or CPU bottlenecks may limit throughput before the BDP target is reached, making additional network streams pointless. (4) Per-stream TCP behavior depends on the specific congestion control algorithm. (5) End-system overhead (process creation, context switching) creates costs not captured by BDP. BDP is useful for initial estimation — setting approximate pipelining, parallelism, and concurrency values — but the actual optimal settings must be discovered through runtime probing and adaptive adjustment.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": ["BDP limitations", "practical vs theoretical", "runtime discovery"]
+    },
+    {
+      "id": "Q034",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "hard",
+      "question_type": "calculation",
+      "question": "Two XSEDE network paths have the following specifications: Path A: 10 Gbps, RTT 60 ms, TCP buffer 32 MB. Path B: 10 Gbps, RTT 10 ms, TCP buffer 16 MB. Calculate the Bandwidth-Delay Product (BDP = bandwidth × RTT) for each and estimate the minimum number of parallel streams needed to fill each path.",
+      "reference_answer": "Path A: BDP = 10 Gbps × 0.060 s = 600 Mb = 75 MB. Per-stream throughput = 32 MB / 0.060 s = 533 MB/s = 4.27 Gbps. Streams needed = ceil(10/4.27) = 3 streams minimum. Path B: BDP = 10 Gbps × 0.010 s = 100 Mb = 12.5 MB. Per-stream throughput = 16 MB / 0.010 s = 1600 MB/s = 12.8 Gbps. Streams needed = ceil(10/12.8) = 1 stream minimum. Path A needs more streams despite the same bandwidth because its higher RTT means each stream keeps less data in flight relative to the pipe capacity. Path B's low RTT allows a single stream to nearly fill the pipe. This explains why the same transfer parameters perform differently across networks — XSEDE (high RTT) needs more parallelism than LONI (low RTT).",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["BDP comparison", "two paths", "stream calculation", "RTT effect"]
+    },
+    {
+      "id": "Q035",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "easy",
+      "question_type": "calculation",
+      "question": "A transfer pipeline has three stages: source storage reads at 25 Gbps, the network can carry 80 Gbps, and the destination storage writes at 70 Gbps. What is the maximum end-to-end transfer throughput, and which stage is the bottleneck?",
+      "reference_answer": "The maximum end-to-end throughput is approximately 25 Gbps, because the source-read stage is the slowest component and acts as the bottleneck. End-to-end transfer throughput follows the bottleneck (min-rate) principle: the slowest stage in the pipeline determines the maximum achievable throughput, regardless of how fast the other stages are. Increasing network parallelism or destination write capacity cannot push throughput above what the source storage can deliver. To improve performance, the source storage bottleneck must be addressed — for example, by using multiple I/O threads (concurrency) to achieve higher aggregate read throughput from a parallel file system or RAID array.",
+      "source_paper": "Falcon TPDS23",
+      "keywords": ["bottleneck", "pipeline", "min-rate principle", "source limitation"]
+    },
+    {
+      "id": "Q036",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why can increasing network-layer parameters (more TCP connections, larger buffers) fail to improve a file transfer that is limited by disk I/O performance at the endpoints?",
+      "reference_answer": "If the storage system (either source read or destination write) is the bottleneck, adding more network connections simply creates idle capacity on the network side — the network connections cannot move data faster than the storage system can supply or absorb it. Extra network connections consume CPU and memory resources on the endpoints without providing throughput benefit, and may actually degrade performance by increasing I/O contention on the already-stressed disk subsystem. The correct response to a storage bottleneck is to increase I/O concurrency (multiple processes reading/writing simultaneously) rather than network parallelism. This is why concurrency is more effective than parallelism as a general-purpose parameter — it improves both I/O and network utilization simultaneously.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["storage bottleneck", "network optimization mismatch", "I/O concurrency needed"]
+    },
+    {
+      "id": "Q037",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "medium",
+      "question_type": "diagnosis",
+      "question": "During a file transfer, you observe: throughput has plateaued, CPU usage on the sender is very high (70%+), packet loss is low (<1%), and increasing concurrency does not improve throughput. What is the likely bottleneck and what should you do?",
+      "reference_answer": "The likely bottleneck is the sender's CPU. Low packet loss confirms the network is not congested, but high CPU usage indicates the transfer processes are consuming all available compute resources for data handling, connection management, and system calls. Increasing concurrency will worsen this since more processes compete for the same limited CPU cycles. Potential actions: reduce concurrency to free CPU for the active transfer processes, check for expensive operations like encryption or compression that could be offloaded, reduce parallelism to lower per-connection management overhead, or move transfers to a dedicated data transfer node with more CPU capacity. The combination of low packet loss + high CPU + throughput plateau is a classic sign of end-host CPU limitation.",
+      "source_paper": "Falcon TPDS23",
+      "keywords": ["CPU bottleneck", "diagnosis", "low loss + high CPU", "reduce concurrency"]
+    },
+    {
+      "id": "Q038",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why does the same dataset transferred between the same two sites often achieve dramatically different throughput on different test runs, even when the network bandwidth and hardware have not changed?",
+      "reference_answer": "Because the operating environment is shared and dynamic. Background traffic from other users changes the available network bandwidth. Other users' computational jobs alter available CPU cycles. Storage system load fluctuates as other jobs read from or write to the same parallel file system, changing available I/O bandwidth. Queue sizes at network switches vary with traffic patterns. Even system-level factors like OS scheduler decisions and TCP buffer availability change. In production HPC networks, XSEDE sites showed significantly different transfer performance at different times of day due to this variability. This is the fundamental reason why static parameter settings cannot guarantee consistent performance — conditions change between and even during transfers.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["dynamic conditions", "variability", "shared environment", "static settings fail"]
+    },
+    {
+      "id": "Q039",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why is it dangerous to optimize a transfer based solely on throughput as the success metric, without considering packet loss, CPU usage, and impact on other users?",
+      "reference_answer": "A throughput-only approach may find a setting that delivers high transfer speed while causing severe side effects that hurt the overall system. High packet loss (e.g., 10%) wastes significant network capacity on retransmissions and causes congestion for all users sharing the link. High CPU usage starves colocated applications. Excessive I/O contention degrades other users' storage performance — experiments show a colocated application's I/O dropping from 2.4 Gbps to 0.5 Gbps at high concurrency. Furthermore, a throughput-only utility function is not strictly concave, which means competing transfers using it cannot be mathematically guaranteed to converge to a fair, stable resource allocation. A good utility function must include penalty terms for packet loss and excessive resource usage to guide toward just-enough concurrency.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["throughput-only danger", "side effects", "fairness failure", "utility function"]
+    },
+    {
+      "id": "Q040",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "hard",
+      "question_type": "scenario",
+      "question": "The network path is healthy with low utilization, but the destination is a busy HDD-backed filesystem shared with other jobs. Transfer throughput is stuck at 3 Gbps on a path capable of 40 Gbps. What is your diagnosis and what options exist to improve performance?",
+      "reference_answer": "The destination storage is the bottleneck. The shared HDD filesystem is contended by other jobs, limiting write throughput regardless of available network capacity. Options: (1) Stage data to a local RAM disk or NVMe buffer at the destination, decoupling the fast network transfer from the slow disk write — the network delivers data at full speed into fast intermediate storage, which drains to the slow HDD asynchronously. (2) Reduce transfer concurrency to minimize I/O contention with other jobs on the shared filesystem. (3) Schedule transfers during off-peak hours when fewer jobs compete for storage. (4) If possible, write to a different, less contended storage target. Increasing network parameters (parallelism, buffer sizes) would not help since the bottleneck is storage, not network.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": ["storage bottleneck", "staging", "HDD contention", "write-limited"]
+    },
+    {
+      "id": "Q041",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "What does 'online optimization' mean in the context of HPN file transfer, and how does it differ from using pre-configured fixed settings?",
+      "reference_answer": "Online optimization means adjusting transfer parameters (concurrency, parallelism, pipelining) during the transfer itself based on real-time performance measurements, rather than committing to fixed settings chosen before the transfer starts. The system uses a feedback loop: select a parameter setting, run a sample transfer with that setting for a few seconds, measure throughput and packet loss, evaluate the result using a utility function, and predict a better parameter setting. This process repeats throughout the transfer. Fixed settings cannot adapt to changing network conditions, background traffic, or storage load variations. Online optimization discovers the optimal settings for current conditions and re-discovers them when conditions change, typically converging in 20-35 seconds.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["online optimization", "feedback loop", "real-time adaptation", "vs fixed"]
+    },
+    {
+      "id": "Q042",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why do historically trained transfer optimization models (models trained on past transfer logs) often fail when deployed in a new network environment?",
+      "reference_answer": "They are trained on transfer logs collected under specific network conditions — particular bandwidth, RTT, storage systems, background load patterns — and when deployed in an environment with different characteristics, their predictions are inaccurate. For example, a model trained on 10 Gbps network logs makes poor predictions on a 40 Gbps path because the performance profiles and optimal parameter values are fundamentally different. Re-training requires collecting new transfer logs under diverse conditions in the new environment, which can take weeks or months. Additionally, even within the same environment, conditions change over time due to variable background traffic and storage load, causing the historically trained model's predictions to become stale. This is why runtime-adaptive approaches that learn during the transfer are more robust.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["historical models", "generalization failure", "environment mismatch"]
+    },
+    {
+      "id": "Q043",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "medium",
+      "question_type": "comparison",
+      "question": "Compare hill climbing and gradient descent as online search algorithms for finding optimal concurrency in HPN file transfers. Which converges faster and why?",
+      "reference_answer": "Hill climbing uses a fixed step size of 1, testing adjacent concurrency values one at a time. If the optimal concurrency is 48, it must evaluate nearly all 47 intermediate values, taking over 250 seconds. Gradient descent uses the slope (gradient) of the utility function to determine both direction and step size, taking larger steps when the gradient is steep and smaller steps near the optimum. It can converge in as few as 4-5 sample evaluations (20-30 seconds), about 7x faster than hill climbing. The convergence speed difference is especially critical when multiple transfers compete: hill climbing's slow convergence means competing transfers take extremely long to reach a fair sharing equilibrium, while gradient descent converges to fair shares within seconds.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["hill climbing", "gradient descent", "convergence speed", "7x faster"]
+    },
+    {
+      "id": "Q044",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why must an online transfer optimizer continue searching even after finding the current optimal concurrency, rather than locking in the discovered value?",
+      "reference_answer": "Network and storage conditions are dynamic: background traffic changes, competing transfers start or finish, and storage system load fluctuates. An optimizer that stops searching after finding the initial optimal will become stuck at a setting that becomes suboptimal as conditions change. For example, if a competing transfer finishes and frees bandwidth, the locked-in optimizer would fail to increase concurrency to reclaim the available capacity. Continuous exploration means periodically evaluating concurrency values slightly above and below the current optimal (e.g., n+1 and n-1 every 20 seconds) to detect shifts. Gradient descent naturally supports this by continuously computing gradients and adjusting. The Pro-Active Multi-Chunk approach also recalculates estimated chunk completion times every 5 seconds and reallocates channels when conditions change.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": ["continuous exploration", "dynamic conditions", "re-optimization"]
+    },
+    {
+      "id": "Q045",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why is convergence time a critical performance metric for online transfer optimizers? What convergence time is considered acceptable, and what happens if it is too slow?",
+      "reference_answer": "During the convergence phase, the transfer runs with suboptimal settings, yielding lower throughput than the eventual optimal. Most transfers in high-speed networks run for only a few minutes, so an optimizer that takes hours to converge (like some stochastic approximation methods) is impractical. Acceptable convergence time is about 20-35 seconds (4-5 sample evaluations). Gradient descent and Bayesian optimization achieve this, while hill climbing takes 250+ seconds. If convergence time exceeds the transfer duration, a static conservative setting actually outperforms the adaptive approach because the transfer finishes before the optimizer finds anything better. The minimum dataset size for adaptive optimization to break even is typically 27-84 GB depending on the network speed.",
+      "source_paper": "Falcon TPDS23",
+      "keywords": ["convergence time", "20-35 seconds", "break-even size", "practical requirement"]
+    },
+    {
+      "id": "Q046",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "hard",
+      "question_type": "comparison",
+      "question": "Compare gradient descent and Bayesian optimization for HPN transfer tuning in terms of their behavior in shared networks where other (non-adaptive) transfers are running.",
+      "reference_answer": "Gradient descent explores incrementally, starting from a low concurrency and gradually increasing. It identifies the search direction first and builds confidence before taking larger steps. When competing against non-adaptive transfers (like Globus or HARP), it affects their performance only marginally — about 15-20% throughput reduction — because it converges to a moderate concurrency that uses spare capacity without being aggressive. Bayesian optimization can probe any value in the search space during its random sampling phase, including very high concurrency values (>40). Against non-adaptive competitors, this aggressive probing causes severe degradation — around 70% throughput reduction for the other transfers — because the BO agent grabs most of the bandwidth during exploration. Therefore, gradient descent is the better fit for shared production networks.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["GD vs BO", "friendliness", "15-20% vs 70% impact", "shared networks"]
+    },
+    {
+      "id": "Q047",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "In an adaptive approach to tuning parallelism within a single data transfer, one algorithm transfers data chunk by chunk and increases the parallel stream count by one only if the current chunk's throughput exceeds the best throughput seen so far. What are the advantages and limitations of this additive-increase approach?",
+      "reference_answer": "Advantages: (1) It is simple and requires no external measurements, models, or profiling — it relies only on the transfer's own observed throughput. (2) It gradually reaches a near-optimal parallelism level without overshooting, avoiding the resource starvation and connection overhead that come from jumping to a high parallelism value. (3) It adapts to current conditions without needing historical data. Limitations: (1) It is slow to converge because it only increases by one stream at a time. (2) There is reconfiguration overhead each time the parallelism level changes (resetting GridFTP data channels). (3) It may settle at a local optimum if throughput temporarily dips due to network variability rather than true over-parallelism. (4) It only increases parallelism, lacking a mechanism to decrease when conditions worsen.",
+      "source_paper": "Dynamic Adaptation of Parallelism (Balman & Kosar, 2009)",
+      "keywords": ["additive increase", "advantages", "limitations", "no external profiling"]
+    },
+    {
+      "id": "Q048",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "hard",
+      "question_type": "scenario",
+      "question": "When should an adaptive transfer controller reduce concurrency (back off) even if instantaneous throughput increases slightly when adding more concurrent streams?",
+      "reference_answer": "The controller should back off when the throughput improvement rate per additional concurrent stream falls below a meaningful threshold — for example, less than 2% gain per additional stream. Even if absolute throughput increases slightly, the marginal gain may not justify the increased packet loss, CPU overhead, I/O contention, and impact on other users. A utility function that divides throughput by K^n (where K=1.02 and n is the concurrency level) naturally implements this: each additional stream must contribute at least 2% throughput improvement to increase the utility value. Without such a threshold, the optimizer would keep increasing concurrency until the system collapses from resource exhaustion. The controller should also back off if packet loss rises above 1-2% or if CPU utilization becomes excessive.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["back off", "marginal gain threshold", "2% minimum", "utility function"]
+    },
+    {
+      "id": "Q049",
+      "category": "Fairness, Stability, and Shared Networks",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "In shared research networks where multiple independent file transfers compete for bandwidth, why can a simple 'maximize my throughput' strategy (utility = total throughput) fail to produce fair resource sharing?",
+      "reference_answer": "A throughput-only utility function u(n,t) = n × t (where n is concurrency and t is per-stream throughput) is linear in concurrency, so its second derivative is zero. Game theory requires the utility function to be strictly concave (negative second derivative) for competing agents to be guaranteed to converge to a Nash equilibrium — a fair, stable allocation. With a linear utility, a late-arriving transfer can choose aggressive settings that maximize its own throughput at the expense of existing transfers, creating an unfair 'late-comer advantage.' Experiments show that when a second HARP transfer starts alongside an existing one, the late-comer gets nearly 2x the throughput of the first transfer because the throughput-only objective has no mechanism to enforce restraint.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["throughput-only", "strict concavity", "Nash equilibrium", "late-comer advantage"]
+    },
+    {
+      "id": "Q050",
+      "category": "Fairness, Stability, and Shared Networks",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "How can packet loss rate and concurrency count be incorporated into a transfer utility function to ensure both high performance and fair sharing among competing transfers?",
+      "reference_answer": "The utility function should include two penalty (regret) terms beyond raw throughput. First, a packet loss penalty: multiply throughput by (1 - loss_rate × B) where B=10, which keeps loss below 1-2% while achieving over 95% network utilization. Second, a concurrency penalty in nonlinear form: divide throughput by K^n (where K=1.02 and n is concurrency), which requires at least 2% throughput gain per additional concurrent stream. The nonlinear form is critical because linear penalties either under-penalize (1% per stream: good for single transfer but causes suboptimal convergence with competitors) or over-penalize (2% per stream: converges to 45% below optimal throughput). The combined utility u = (n×t)/(K^n) - n×t×L×B is strictly concave, guaranteeing Nash equilibrium when multiple agents using this function compete.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["utility function", "packet loss penalty", "nonlinear concurrency penalty", "Nash equilibrium"]
+    },
+    {
+      "id": "Q051",
+      "category": "Fairness, Stability, and Shared Networks",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "Two independent file transfers share a bottleneck link. Transfer 1 started first and was achieving 7.5 Gbps. Transfer 2 starts later and quickly achieves 15 Gbps while Transfer 1 drops to 5 Gbps. The later arrival is getting nearly 2x the throughput of the earlier one. What went wrong with the system design?",
+      "reference_answer": "The system lacks a mechanism for fair convergence. This 'late-comer advantage' occurs when the optimization algorithm tunes settings only once (at transfer start) based on current conditions. Transfer 2 starts and sees Transfer 1 already using some bandwidth, so it picks aggressive settings that maximize its own throughput given the remaining capacity. Transfer 1 does not re-tune in response, so it is stuck with settings that were optimal before Transfer 2 existed. This is exactly what happens with historically-trained optimizers like HARP. To fix this, both transfers need: (1) continuous re-optimization that detects competitors and adapts, and (2) a strictly concave utility function that penalizes excessive resource usage, ensuring each transfer voluntarily limits itself to a fair share.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["late-comer advantage", "unfair sharing", "one-time tuning failure"]
+    },
+    {
+      "id": "Q052",
+      "category": "Fairness, Stability, and Shared Networks",
+      "difficulty": "medium",
+      "question_type": "concept",
+      "question": "What does it look like when competing file transfers achieve stable, fair sharing of a bottleneck resource? Describe the expected behavior when transfers join and leave.",
+      "reference_answer": "When there is only one transfer, it converges to the optimal concurrency for the full path capacity (e.g., concurrency 48 for 1 Gbps throughput). When a second transfer joins, the first transfer detects the competitor (via reduced per-stream throughput or increased packet loss) and reduces its concurrency to the 20-33 range, letting the second transfer claim its fair share (~500 Mbps each). When a third transfer joins, all three reduce concurrency to around 10-23 each, sharing roughly equally (~333 Mbps each). When one transfer finishes, the remaining transfers detect the freed capacity and increase their concurrency to reclaim the available bandwidth. Throughout, each transfer maintains roughly equal throughput with minimal fluctuations. This convergence should happen within tens of seconds, not minutes.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["stable sharing", "join/leave behavior", "dynamic adjustment"]
+    },
+    {
+      "id": "Q053",
+      "category": "Fairness, Stability, and Shared Networks",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why is a nonlinear penalty for concurrency necessary in the utility function, and why does a simple linear penalty (subtracting a fixed percentage per concurrency level) fail?",
+      "reference_answer": "A linear penalty faces a dilemma. If the per-concurrency penalty is large (e.g., C=0.02, meaning 2% cost per additional stream), the utility peaks at a suboptimal concurrency value (e.g., 25 when optimal is 48), sacrificing 45% of throughput. If the penalty is small (e.g., C=0.01, meaning 1% per stream), single-transfer performance is good, but when multiple transfers compete, the penalty is too weak to distinguish the overhead signal from natural throughput measurement noise, causing both transfers to settle at unnecessarily high concurrency (36-38 instead of optimal 24 each). A nonlinear penalty (dividing by K^n where K=1.02) solves both problems: it demands at least 2% throughput gain per additional stream, and the exponential growth ensures the utility function is strictly concave — mathematically guaranteeing convergence to Nash equilibrium for up to ~100 concurrent streams.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["nonlinear vs linear penalty", "concavity", "K=1.02", "dilemma"]
+    },
+    {
+      "id": "Q054",
+      "category": "Fairness, Stability, and Shared Networks",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "What advantages does a centralized transfer scheduler offer over decentralized independent transfer agents for managing competing transfers on shared infrastructure?",
+      "reference_answer": "A centralized scheduler reduces the problem from a multi-player non-cooperative game (slow convergence) to a single-optimizer problem (fast convergence). Specific advantages: (1) Faster convergence — centralized scheduling removes the independent search by multiple agents, reducing throughput fluctuations. (2) Improved stability — fewer oscillations because a single optimizer coordinates all transfers. (3) Policy enforcement — system administrators can embed resource limits (maximum throughput, maximum concurrency) in authorization tokens (e.g., JWTs) to control individual transfers. For example, one transfer can be limited to 5 Gbps while others share remaining capacity equally. (4) Ease of use — users interact with a single web interface instead of logging into both source and destination endpoints. The tradeoff is a single point of failure and reduced user privacy.",
+      "source_paper": "Falcon TPDS23",
+      "keywords": ["centralized scheduler", "faster convergence", "policy enforcement", "JWT"]
+    },
+    {
+      "id": "Q055",
+      "category": "Fairness, Stability, and Shared Networks",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "The Max-Fair Multi-Chunk (FairMC) algorithm limits the number of channels allocated to large file chunks and gives most channels to small file chunks. Why does this 'fairness-oriented' approach achieve lower throughput than the Multi-Chunk (MC) approach that allocates channels more aggressively?",
+      "reference_answer": "FairMC prioritizes network and end-system fairness over maximum throughput by deliberately limiting concurrency for large files to prevent them from dominating shared resources. Large files transfer efficiently with few channels (high per-channel throughput), so FairMC allocates only 1-2 channels for large chunks and gives remaining channels to small chunks. However, this means large-file throughput is artificially limited even when spare capacity exists. The MC approach distributes channels more aggressively, allows large chunks to use more channels, and achieves higher total throughput but may use more network resources. FairMC's design makes sense in shared environments with strict fairness policies — it deliberately sacrifices peak performance to be a better neighbor to other network users.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["FairMC", "fairness vs throughput tradeoff", "channel allocation"]
+    },
+    {
+      "id": "Q056",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "What is a 'black-box' approach to transfer optimization, and why is it the appropriate strategy for optimizing file transfers across diverse HPC production environments?",
+      "reference_answer": "A black-box approach treats the transfer system as an opaque function: it inputs parameter settings (concurrency, parallelism, pipelining) and observes only output metrics (throughput, packet loss) without assuming any knowledge of internal system details. This is appropriate because production HPC clusters and research networks do not share real-time internal metrics — storage server utilization, network queue depths, file system load, NIC buffer occupancy — that would be needed for a white-box analytical model. Additionally, the heterogeneity of environments (different storage systems like Lustre, GPFS, NVMe RAID; different NIC capacities like 10/40/100 Gbps; different TCP stacks) means any assumptions built into a model would break at some sites. The black-box approach needs only throughput and packet loss, which the transfer application measures directly.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["black-box", "no internal metrics", "heterogeneity", "observable outputs"]
+    },
+    {
+      "id": "Q057",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why is it beneficial for the transfer optimization process to run in a separate thread from the actual data transfer, rather than in the same thread?",
+      "reference_answer": "Running optimization in a separate thread ensures that performance measurement, utility function calculation, and next-parameter prediction do not interfere with actual data movement. If the optimizer ran in the same thread as the transfer, the transfer would pause during each evaluation cycle — measuring throughput, computing the utility value, and predicting the next concurrency/parallelism setting — which would reduce throughput during those pauses. With a separate thread, the transfer continues moving data at the current settings while the optimizer processes metrics and prepares the next configuration change in the background. This is especially important because each sample evaluation takes 3-5 seconds, during which uninterrupted data transfer is critical for maintaining high throughput.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["separate thread", "non-interference", "background optimization"]
+    },
+    {
+      "id": "Q058",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why is it impractical to find the optimal transfer concurrency using exhaustive search (trying every possible value), even though it would guarantee finding the best setting?",
+      "reference_answer": "Each concurrency value takes 3-5 seconds to evaluate accurately (due to TCP connection establishment, slow-start ramp-up, and measurement stabilization). For a search space of 1 to 50, exhaustive search would take 150-250 seconds of evaluation time during which the transfer runs at suboptimal settings. For wide-area transfers, this evaluation cost is higher (5 seconds per value) than for local-area transfers (3 seconds). By the time the exhaustive search finishes, conditions may have changed (background traffic, competing transfers), making the result stale. Gradient descent achieves similar accuracy in 20-35 seconds using only 4-5 evaluations by leveraging the gradient to take intelligent variable-size steps instead of testing every value. This 7x speed advantage makes gradient descent practical where exhaustive search is not.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["exhaustive search", "evaluation cost", "3-5 seconds per value", "gradient descent advantage"]
+    },
+    {
+      "id": "Q059",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "When configuring file transfers between two HPC sites, profiling tools like iPerf (for network bandwidth) and bonnie++ (for disk I/O speed) are commonly used before starting transfers. What information do these tools provide, and how does it help with transfer optimization?",
+      "reference_answer": "iPerf measures the true network bandwidth capacity between endpoints using memory-to-memory transfers, independent of storage. bonnie++ measures disk I/O performance (sequential read/write speeds). Together, they identify the bottleneck resource in the transfer pipeline: if iPerf shows 40 Gbps network capacity but actual file transfers achieve only 10 Gbps, the bottleneck is likely storage I/O or transfer software configuration, not the network. These measurements establish the 'ceiling' for each pipeline stage, helping set expectations and determine whether the transfer optimizer has room for improvement. They also help calculate BDP (bandwidth × RTT, with RTT measurable via ping) and determine appropriate TCP buffer sizes. However, these are point-in-time measurements that may not reflect conditions during the actual transfer.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["iPerf", "bonnie++", "profiling", "bottleneck identification"]
+    },
+    {
+      "id": "Q060",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "The adaptive parallelism-tuning approach from Balman & Kosar (2009) proposes using performance information from actual data transfers to set parameters, rather than external network profiling tools. What is the advantage of this approach?",
+      "reference_answer": "The main advantage is that it does not pollute the network with extra probing packets and does not put extra load on the system from extraneous measurements. External profiling tools like bandwidth estimators (e.g., iPerf) require dedicated measurement flows that consume bandwidth and CPU, and their results may not reflect conditions during the actual transfer. By using the throughput of actual data chunks being transferred, the adaptive approach captures the real end-to-end performance including all bottlenecks (disk, CPU, network, contention) simultaneously, without any additional overhead. It also adapts continuously as the transfer progresses, detecting changes in conditions without needing to stop and re-measure. The approach does not require any complex optimization model — it simply increases parallelism when throughput improves and holds steady when it does not.",
+      "source_paper": "Dynamic Adaptation of Parallelism (Balman & Kosar, 2009)",
+      "keywords": ["no external profiling", "actual transfer data", "zero probing overhead"]
+    },
+    {
+      "id": "Q061",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "A dataset of 1,000 files (each 1 GB) needs to be transferred between two supercomputers connected by a shared 40 Gbps wide-area network. The destination uses a Lustre parallel file system. Recommend a transfer configuration strategy.",
+      "reference_answer": "Use an adaptive online optimizer that tunes concurrency in real-time. With 1 GB files, concurrency is the primary parameter: each file is large enough that pipelining overhead is negligible, and parallelism is unnecessary because 1,000 files provide ample opportunity for file-level concurrency. Start with low concurrency (2-3) and use gradient descent to find the optimal within 20-35 seconds. Expect the optimal to be around 9-24 depending on Lustre configuration and background load. Use a utility function with nonlinear concurrency penalty (K=1.02) and packet loss penalty (B=10) to avoid overwhelming the shared network and Lustre system. The optimizer should continue searching throughout the transfer since background load on the shared 40 Gbps network changes the optimal settings over time. Each sample evaluation should take about 5 seconds due to the wide-area RTT.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["1GB files", "concurrency primary", "adaptive", "Lustre"]
+    },
+    {
+      "id": "Q062",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "hard",
+      "question_type": "calculation",
+      "question": "An online optimizer converges to optimal throughput of 27.5 Gbps in 20 seconds, starting from an initial throughput of 7.9 Gbps. A static concurrency setting of 4 gives a constant 20.5 Gbps. Approximately how long must the transfer run for the adaptive optimizer to outperform the static approach in total data transferred?",
+      "reference_answer": "Using the break-even formula: t2 = (η - α) × t1 / (2 × (η - β)), where η = 27.5 Gbps (optimal throughput), α = 7.9 Gbps (initial throughput), β = 20.5 Gbps (static throughput), and t1 = 20s (convergence time). t2 = (27.5 - 7.9) × 20 / (2 × (27.5 - 20.5)) = 19.6 × 20 / 14 ≈ 28 seconds. So the transfer must last at least 28 seconds for the adaptive approach to break even. At the static rate of 20.5 Gbps, this translates to approximately 72 GB minimum dataset size. For transfers shorter than this, the static concurrency of 4 would actually deliver more total data because the adaptive optimizer spends too much time in the suboptimal search phase. In practice, 72 GB is small relative to typical HPN workloads.",
+      "source_paper": "Falcon TPDS23",
+      "keywords": ["break-even", "28 seconds", "72 GB minimum", "static vs adaptive"]
+    },
+    {
+      "id": "Q063",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "hard",
+      "question_type": "task",
+      "question": "You must choose between a static conservative configuration (fixed concurrency 4) and adaptive online optimization for a series of file transfers across different network environments. Under what conditions would you prefer each approach?",
+      "reference_answer": "Choose static concurrency when: (1) transfers are very short (under 28-30 seconds or under ~70-80 GB), so the adaptive optimizer cannot converge before the transfer finishes; (2) the environment is extremely predictable with no competing transfers and stable load; (3) simplicity and predictability are more important than maximum throughput; (4) the system lacks the software infrastructure for adaptive optimization. Choose adaptive optimization when: (1) transfers are large enough to amortize the 20-35 second convergence cost; (2) the network is shared and conditions change frequently with variable background traffic; (3) multiple independent transfers may compete for bandwidth; (4) maximizing throughput while maintaining fairness is important; (5) transfers span heterogeneous networks where a single static setting cannot be optimal everywhere.",
+      "source_paper": "Falcon TPDS23",
+      "keywords": ["static vs adaptive", "decision criteria", "break-even", "conditions"]
+    },
+    {
+      "id": "Q064",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "hard",
+      "question_type": "scenario",
+      "question": "An optimizer probes concurrency 50 on a shared 40 Gbps network that is already 75% utilized by other (non-adaptive) transfers. The probe achieves high instantaneous throughput for itself. Should the optimizer keep this setting?",
+      "reference_answer": "No. While the optimizer sees high throughput for itself, it is likely causing severe performance degradation for other transfers on the shared network — experiments show Bayesian Optimization can cause up to 70% throughput reduction for non-adaptive competitors during aggressive probing. The high concurrency creates excessive packet loss, congestion, and I/O contention that affect everyone. A properly designed utility function with packet loss and concurrency penalties would detect the increased packet loss and assign lower utility despite the high throughput. Additionally, the other transfers may react by changing their behavior, creating instability. A gradient descent approach would converge to a moderate concurrency (e.g., 16-18) that claims the optimizer's fair share (~10 Gbps of the 40 Gbps) plus some spare capacity, affecting others by only 15-20%.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["aggressive probing", "shared network", "70% degradation", "fair share"]
+    },
+    {
+      "id": "Q065",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "hard",
+      "question_type": "scenario",
+      "question": "A transfer achieves 7.5 Gbps at concurrency 24 but could achieve 10 Gbps at concurrency 49 on a shared wide-area network. Why might an optimizer prefer concurrency 24 despite the lower throughput?",
+      "reference_answer": "Because concurrency 24 achieves 75% of maximum throughput using 50% fewer concurrent streams. The utility function with nonlinear concurrency penalty (K=1.02) assigns higher utility to concurrency 24 because doubling concurrency for only 33% more throughput means each additional stream contributes diminishing throughput gain — less than the 2% threshold required by K=1.02. The extra 25 streams at concurrency 49 create unnecessary overhead: more processes competing for CPU, more I/O contention on shared file systems, and more network connections causing higher packet loss. In a shared environment, those extra resources are better left available for other users' transfers and applications. The optimizer's utility function mathematically captures this tradeoff, naturally preferring efficiency over raw throughput.",
+      "source_paper": "Falcon TPDS23",
+      "keywords": ["75% throughput", "50% less concurrency", "efficiency preference"]
+    },
+    {
+      "id": "Q066",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why do XSEDE (high-RTT wide-area) and LONI (low-RTT local-area) production networks show very different transfer performance characteristics, even when both have 10 Gbps bandwidth?",
+      "reference_answer": "Despite the same 10 Gbps bandwidth, the networks differ in RTT and end-system disk performance, which dramatically affect transfer optimization. XSEDE has high RTT (60-71 ms), resulting in large BDP (75-90 MB) that requires many parallel streams to fill the pipe. However, XSEDE sites have highly tuned, parallelized disk subsystems that deliver high I/O throughput. LONI has low RTT (10 ms), giving small BDP (9 MB) that a single stream can nearly fill, but LONI's disk performance is much lower than XSEDE sites. The result is that XSEDE achieves higher end-to-end throughput despite higher RTT because its disk subsystems are not the bottleneck. This demonstrates that end-to-end performance depends on the weakest link in the entire pipeline, not just network characteristics.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["XSEDE vs LONI", "RTT vs disk", "pipeline bottleneck", "same bandwidth different performance"]
+    },
+    {
+      "id": "Q067",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why might a transfer tool that statically assigns pipelining commands to channels perform poorly compared to one that dynamically balances work across channels?",
+      "reference_answer": "Static pipelining assignment can cause channel imbalance. For example, if pipelining evenly distributes file transfer commands across channels, one channel may be assigned the files contributing to the dominant portion of total dataset size (many large files), while another gets mostly small files. The small-file channel finishes much earlier but cannot help the large-file channel because the commands are already committed. Dynamic approaches like the Multi-Chunk algorithm monitor each channel's progress every 5 seconds, calculate estimated completion times, and reallocate channels from fast-finishing chunks to slow chunks. This ensures that all channels stay busy and no channel sits idle while others are overloaded, significantly improving overall throughput especially for mixed datasets.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["static vs dynamic assignment", "channel imbalance", "work rebalancing"]
+    },
+    {
+      "id": "Q068",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "In HPN file transfer, what is the hidden cost of opening and closing many TCP connections during a transfer, and why is this cost more significant on high-RTT wide-area network paths?",
+      "reference_answer": "Each new TCP connection requires a three-way handshake (at least 1.5 RTT) and then enters the slow-start phase, during which the congestion window grows gradually from a small initial value. During slow-start, the connection transfers at well below its eventual peak rate. If connections are frequently torn down and recreated (e.g., for each file), the transfer spends a significant fraction of time in this suboptimal ramp-up phase. On high-RTT paths (e.g., 60-80 ms), each handshake takes ~90-120 ms and slow-start takes many more round trips to ramp up, so the penalty per connection is much larger than on a low-RTT LAN (<1 ms). This is why persistent connections and pipelining are more important for wide-area transfers, and why the evaluation of each transfer configuration takes 3-5 seconds on wide-area paths versus 3 seconds locally.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": ["connection cost", "slow-start", "high RTT penalty", "persistent connections"]
+    },
+    {
+      "id": "Q069",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "When staging data to a fast intermediate buffer (like RAM or NVMe) at the destination can improve transfer performance, why does this help, and when is it appropriate?",
+      "reference_answer": "Staging helps when the network can deliver data faster than the destination's final storage can write it. A fast intermediate buffer (RAM or NVMe) accepts incoming data at network speed, decoupling the fast network transfer from the slow final write. The data drains from the buffer to the slow storage asynchronously after or during the network transfer. This is particularly useful when the destination is a busy HDD-backed shared filesystem where write throughput is limited by mechanical disk speeds and I/O contention from other users. For example, if the network delivers 40 Gbps but the shared HDD filesystem can only absorb 3 Gbps, staging captures all 40 Gbps into NVMe and lets the HDD catch up later. It is not appropriate when the network itself is the bottleneck, or when the intermediate buffer is too small to hold the incoming data burst.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": ["staging", "fast buffer", "decouple network from storage", "HDD bottleneck"]
+    },
+    {
+      "id": "Q070",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "hard",
+      "question_type": "task",
+      "question": "Design a transfer configuration for moving a mixed dataset (file sizes ranging from 3 MB to 20 GB, with small files making up about 55-65% of the total) between two XSEDE sites with 10 Gbps bandwidth, 60 ms RTT, and TCP buffer size 32 MB.",
+      "reference_answer": "Step 1: Calculate BDP = 10 Gbps × 0.060 s = 75 MB. Step 2: Partition files using BDP thresholds — Small: <7.5 MB, Middle: <37.5 MB, Large: <1.5 GB, Huge: ≥1.5 GB. Step 3: Set per-chunk parameters. For Small chunk (dominant at 55-65%): pipelining = ceil(75/avgSmallFileSize) - 1 (high value), parallelism = Min(ceil(75/32), ceil(avgFileSize/32)) + 1 = 4, allocate 6x weight for channel allocation. For Huge chunk (files >1.5 GB): pipelining ≈ 0 (negligible benefit), parallelism = 4, concurrency limited to 2. Step 4: Use ProMC approach — allocate channels proportionally by weighted chunk size, run small and large chunks concurrently, and monitor completion times every 5 seconds to reallocate channels from fast-finishing chunks to slow ones. Step 5: Limit maximum total concurrency to policy-allowed limit (e.g., 10 connections).",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["mixed dataset design", "BDP partitioning", "ProMC", "XSEDE"]
+    },
+    {
+      "id": "Q071",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "hard",
+      "question_type": "task",
+      "question": "You are designing a file transfer optimization system for a research network with 100+ sites, each with different storage systems, NIC capacities, and network paths. What design principles should guide the system architecture?",
+      "reference_answer": "Key design principles: (1) Black-box approach — make no assumptions about underlying infrastructure since each site's internals are inaccessible; rely only on observable metrics (throughput, packet loss). (2) Application-layer operation — work in user space with any transfer protocol (FTP, GridFTP, bbcp) without requiring root access or kernel changes. (3) Online optimization with gradient descent — converges in 20-35 seconds, explores systematically without aggressive probing, friendly to non-adaptive transfers (only 15-20% impact). (4) Utility function with nonlinear concurrency penalty (K=1.02) and packet loss penalty (B=10) for fairness guarantees. (5) Continuous re-optimization throughout transfers. (6) Support both centralized (for policy enforcement and managed transfers) and decentralized (for user independence) deployment modes. (7) BDP-aware dataset partitioning that automatically adapts parameter combinations to different file sizes and network conditions.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": ["design principles", "multi-site", "heterogeneous", "system design"]
+    },
+    {
+      "id": "Q072",
+      "category": "Dataset Partitioning and Mixed Workloads",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why does the throughput of transferring a dataset dominated by small files tend to be much worse than a dataset dominated by large files, even when using optimal parameters for each?",
+      "reference_answer": "Small files suffer from inherent per-file overhead that cannot be eliminated even with optimal parameter tuning. Each small file requires: disk metadata operations (open, close, stat), transfer protocol command exchange (at least one RTT per file without pipelining), and potential TCP slow-start if connections are not reused. For a 1 KB file, this overhead can take longer than the actual data transfer. Large files amortize all these per-file costs over gigabytes of data transfer, so overhead becomes a negligible fraction of total time. Even with high pipelining and concurrency, the aggregate throughput of millions of small-file transfers is fundamentally limited by the rate at which the system can process file metadata and protocol commands. This is why dataset partitioning approaches give extra channels to small-file chunks.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["small file overhead", "per-file cost", "metadata", "unavoidable limitation"]
+    },
+    {
+      "id": "Q073",
+      "category": "Concurrency Tuning and Scaling",
+      "difficulty": "medium",
+      "question_type": "concept",
+      "question": "In one heuristic approach, the concurrency level for file transfer chunks is set as: concurrency = Min(BDP/avgFileSize, fileCount, maxConcurrency). For a chunk of 500 files with average size 100 MB on a path with BDP = 75 MB and a maximum allowed concurrency of 10, what concurrency does this formula suggest?",
+      "reference_answer": "concurrency = Min(75/100, 500, 10) = Min(0.75, 500, 10) = 0.75, which rounds up to 1. This result means the average file (100 MB) is larger than the BDP (75 MB), so even a single file can keep enough data in flight to fill the pipe — high concurrency is not needed for network utilization. The three terms capture different constraints: BDP/avgFileSize estimates how many files are needed to fill the network pipe (network constraint), fileCount limits concurrency to the available number of files (data constraint), and maxConcurrency enforces system policy limits (resource constraint). For very small files, BDP/avgFileSize would be very large, but the policy limit (10) would cap it. This formula naturally adapts to different file sizes and network conditions.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["concurrency formula", "BDP-based", "three constraints", "calculation"]
+    },
+    {
+      "id": "Q074",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "In the adaptive data transfer scheduling approach (Balman & Kosar, 2009), the scheduler maintains a record for each source-destination pair containing: total parallel streams, number of concurrent jobs, and current throughput. Why is tracking state per source-destination pair useful?",
+      "reference_answer": "Different source-destination pairs have different network characteristics (bandwidth, RTT, packet loss) and different end-system capabilities (disk speed, CPU, memory). The optimal parallelism level for a transfer between two specific hosts depends on these pair-specific conditions. By maintaining state per pair, the scheduler can: (1) reuse learned optimal settings for subsequent transfers between the same hosts, avoiding redundant search; (2) account for the impact of existing concurrent jobs to the same destination when scheduling new ones; (3) prevent resource starvation by tracking the total number of connections to each remote host and limiting it when necessary. The per-host tracking (total jobs and connections per remote host) complements this by enabling global resource management across all source-destination pairs sharing a host.",
+      "source_paper": "Dynamic Adaptation of Parallelism (Balman & Kosar, 2009)",
+      "keywords": ["per-pair state", "learned settings", "resource tracking", "scheduling"]
+    },
+    {
+      "id": "Q075",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "End-system disk performance varies dramatically across HPC sites. One study found that LONI sites had much lower disk performance than XSEDE sites, despite both having 10 Gbps network connections. How did this disk difference affect transfer optimization results?",
+      "reference_answer": "The lower disk performance at LONI sites meant that the transfer bottleneck was disk I/O rather than the network, so increasing network-oriented parameters (parallelism, concurrency) showed much smaller throughput improvements compared to XSEDE. On XSEDE, where disk subsystems are highly tuned and parallelized, increasing concurrency from 1 to 10 could improve throughput by 5-7x because the disks could keep up with higher data rates. On LONI, the same increase in concurrency produced much smaller gains because the slow disk I/O could not feed data fast enough to utilize the additional network connections. This demonstrates that transfer optimization results are heavily dependent on the weakest component in the end-to-end pipeline — network tuning alone cannot overcome poor endpoint storage performance.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["disk performance", "LONI vs XSEDE", "endpoint bottleneck", "diminished gains"]
+    },
+    {
+      "id": "Q076",
+      "category": "Fairness, Stability, and Shared Networks",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Many shared HPC network environments enforce policies limiting the maximum number of simultaneous file transfer connections (e.g., a limit of 10). Why do these policies exist, and how should transfer optimization algorithms respect them?",
+      "reference_answer": "These policies exist because excessive connections from a single user can cause resource starvation for other users sharing the same network and endpoint infrastructure. Each connection consumes TCP buffer memory, CPU cycles for packet processing, file descriptors, and disk I/O capacity. At 25-30+ concurrent connections, systems can become unresponsive due to resource exhaustion. Transfer optimization algorithms should respect these limits by incorporating the policy maximum as a hard constraint — for example, using Min(computed_optimal, policy_max) when setting concurrency. Even without explicit policies, throughput gains experience diminishing returns above certain concurrency levels, so self-limiting algorithms that seek just-enough concurrency naturally stay within reasonable bounds. The FairMC algorithm specifically limits large-file concurrency to 1-2 channels to respect fairness policies.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": ["connection limits", "policy", "resource starvation", "FairMC"]
+    },
+    {
+      "id": "Q077",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "In the context of HPN file transfer optimization, what is the key difference between a heuristic-based approach (which uses fixed, predefined parameter values for different file-size categories) and an adaptive dynamic approach (which adjusts parameters during the transfer based on observed performance)?",
+      "reference_answer": "A heuristic-based approach sets fixed parameter values based on predefined rules — for example, assigning specific pipelining, parallelism, and concurrency values for three file-size categories (less than 50 MB, 50-250 MB, greater than 250 MB) and not changing them once set. This is simple and predictable but cannot adapt to different network conditions or background traffic. An adaptive dynamic approach measures actual transfer performance in real time and adjusts parameters accordingly. It uses feedback: try a setting, measure throughput and loss, evaluate with a utility function, and compute a better setting. Experiments consistently show that adaptive approaches outperform fixed heuristics by significant margins, especially as concurrency increases beyond low levels, because they can exploit available capacity that heuristics leave untapped.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["heuristic vs adaptive", "fixed settings", "real-time adjustment", "Globus Online"]
+    },
+    {
+      "id": "Q078",
+      "category": "Dataset Partitioning and Mixed Workloads",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "In the Multi-Chunk approach, when a chunk finishes transferring, its channels are reassigned to other chunks based on estimated completion time. Why is this dynamic channel reallocation important for overall transfer performance?",
+      "reference_answer": "Without dynamic reallocation, channels that finish their assigned chunk early would sit idle while other chunks still have work to do, wasting available concurrency capacity. The completion time varies widely across chunks because small-file chunks transfer much more slowly per byte than large-file chunks due to per-file overhead. By reassigning freed channels to the chunk with the longest estimated remaining time, the algorithm ensures maximum utilization of available channels throughout the transfer. The estimated completion time is calculated every 5 seconds by dividing remaining data size by current throughput. In practice, large-file chunks often finish first (high per-channel throughput), and their freed channels are reassigned to small-file chunks (low per-channel throughput), significantly reducing total transfer time for small-file-dominated datasets.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["channel reallocation", "idle channel prevention", "completion time estimation"]
+    },
+    {
+      "id": "Q079",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "The theoretical upper limit for throughput using N parallel TCP streams, each with buffer/window size W, over a path with RTT R is (N×W)/R. What practical limitations prevent this theoretical maximum from being achieved?",
+      "reference_answer": "Several factors prevent reaching the theoretical (N×W)/R maximum: (1) TCP congestion control may not maintain a full window size W at all times — packet loss events cause window reduction and slow recovery. (2) Disk I/O may not be fast enough to supply data for all N streams at full rate, making storage the actual bottleneck. (3) CPU overhead from managing N connections (context switching, interrupt handling, buffer copies) consumes cycles that could be used for data movement. (4) End-system memory limitations may prevent allocating N full-size buffers. (5) Network path sharing with other traffic reduces effective available bandwidth below the link capacity. (6) Each additional parallel stream adds proportionally less throughput due to TCP competition among co-located streams, especially under packet loss. This is why adaptive approaches test actual throughput rather than relying on the formula.",
+      "source_paper": "Dynamic Adaptation of Parallelism (Balman & Kosar, 2009)",
+      "keywords": ["NW/R limit", "practical limitations", "congestion control", "I/O bound"]
+    },
+    {
+      "id": "Q080",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "Two research institutions want to exchange data regularly. One has Internet2 connectivity at 100 Gbps and the other at 10 Gbps. Both have parallel file systems. How does this asymmetry affect transfer optimization?",
+      "reference_answer": "The transfer is constrained by the 10 Gbps endpoint regardless of direction. When sending from the 100 Gbps site, the destination's 10 Gbps NIC limits throughput — high sender-side concurrency would just create excess data that queues and drops at the destination. When sending from the 10 Gbps site, the source NIC limits output. The optimizer should converge to relatively low concurrency values since the effective path capacity is 10 Gbps (well below what high concurrency would target). High concurrency might still be needed for I/O parallelism on the parallel file systems, but the utility function should correctly identify that throughput plateaus quickly. The key insight is that HPN optimization must consider both endpoints' capabilities, not just the backbone network speed — the slowest component in the end-to-end pipeline determines achievable throughput.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": ["asymmetric endpoints", "NIC limitation", "10 Gbps constraint"]
+    },
+    {
+      "id": "Q081",
+      "category": "Concurrency Tuning and Scaling",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why do static concurrency values fail across time even when transferring between the same source, destination, and dataset?",
+      "reference_answer": "The operating environment on production HPC networks is never static. Background traffic from other users changes the available share of bottleneck network links from hour to hour. Other users' computational jobs change the available CPU cycles on data transfer nodes. Storage system load on shared parallel file systems (Lustre, GPFS) fluctuates as other jobs read and write data, directly affecting available I/O bandwidth. Network queue sizes at routers and switches change with traffic patterns, affecting effective RTT and packet loss rates. Even policy throttles may vary by time of day. A concurrency value of 9 that was optimal at 2 AM when the network was idle may cause congestion at 2 PM when dozens of other transfers are active. This is the fundamental argument for continuous online optimization rather than one-time tuning.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["static failure", "temporal variation", "dynamic environment", "continuous optimization"]
+    },
+    {
+      "id": "Q082",
+      "category": "Pipelining and Small-File Optimization",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why does TCP slow-start make the transfer of many tiny files particularly inefficient, and how do pipelining and persistent connections help mitigate this?",
+      "reference_answer": "TCP slow-start begins each new connection with a very small congestion window (typically 2-10 segments) and doubles it each RTT until loss occurs or the window reaches a threshold. For a tiny file (e.g., 32 KB), the entire file may complete within the slow-start phase before the connection ever reaches full throughput. If a new connection is established for each file, every file pays this slow-start penalty, and the aggregate throughput is dominated by the ramp-up overhead rather than actual data transfer. Persistent connections (data channel reuse) mitigate this by keeping the same TCP connection alive across multiple file transfers, preserving the grown congestion window. Pipelining complements this by eliminating the idle gap between files on the persistent connection, so the window never collapses due to inactivity. Together, they ensure that the connection stays 'warmed up' across the entire file set.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": ["TCP slow-start", "tiny files", "persistent connections", "window preservation"]
+    },
+    {
+      "id": "Q083",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why is the tradeoff between fast convergence and stable convergence important in transfer optimization, and how does gradient descent balance these competing goals?",
+      "reference_answer": "Fast convergence minimizes time spent at suboptimal settings but risks overshooting the optimal value (e.g., jumping to concurrency 50 when optimal is 24), destabilizing the system and causing packet loss spikes. Stable convergence avoids overshoot but may take too long, wasting bandwidth during the extended search period. Gradient descent balances this with an adaptive step size policy: it starts with small steps (learning factor θ=1), increases the step size as long as the search consistently moves in the same direction (building confidence), and resets the step size when the direction changes (detecting overshoot). This allows it to take large steps on the initial steep part of the utility curve (fast convergence) and small steps near the optimal (stable convergence). The result is convergence in 20-35 seconds without the instability of Bayesian optimization's large random jumps.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["fast vs stable", "adaptive step size", "learning factor", "overshoot avoidance"]
+    },
+    {
+      "id": "Q084",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why is end-system heterogeneity across HPC sites a major challenge for transfer tuning, and why does it make building analytical performance models nearly impossible?",
+      "reference_answer": "HPC sites have vastly different configurations: storage systems (Lustre, GPFS, NVMe RAID arrays, HDD arrays), NIC capacities (10/40/100 Gbps), CPU architectures, and network topologies. The optimal concurrency might be 9 for a lab with NVMe SSDs on 40 Gbps LAN, 3 for a campus cluster with GPFS on 10 Gbps, and 24 for supercomputers connected over 40 Gbps WAN with Lustre. Building analytical models would require real-time performance metrics from all components — storage server utilization, network queue sizes, file system metadata rates — but HPC clusters and research network providers do not share these metrics externally. Even internal configurations change with software updates, hardware maintenance, and policy changes. This forces black-box optimization approaches that use only externally observable metrics (throughput, packet loss, RTT) and discover optimal settings through runtime experimentation rather than prediction.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["heterogeneity", "analytical model impossible", "black-box necessity"]
+    },
+    {
+      "id": "Q085",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why is it important that a file transfer optimization algorithm operates at the application layer and works entirely in user space?",
+      "reference_answer": "Application-layer, user-space operation means: (1) No root access needed — users on shared HPC systems typically cannot modify kernel parameters or install custom network stacks. (2) No server-side changes needed — the optimization runs entirely on the client side, requiring no modifications to the remote transfer server. (3) Protocol independence — the same optimization works with any transfer application (FTP, GridFTP, bbcp) and any TCP variant (Cubic, Reno, BBR). (4) Cross-platform compatibility — works on any Linux-based operating system without kernel module compilation. (5) Easy deployment — can be implemented as a standalone service, a library, or integrated into data scheduling tools like Stork without infrastructure changes. These properties are critical for adoption in production HPC environments where administrative changes require lengthy approval processes.",
+      "source_paper": "Dynamic Protocol Tuning (Arslan et al., 2013)",
+      "keywords": ["user space", "no root", "protocol independent", "easy deployment"]
+    },
+    {
+      "id": "Q086",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "As concurrency increases from 8 to 32, you observe that throughput barely improves while packet loss, CPU use, and storage I/O contention all rise. What should the transfer optimizer do, and what mechanism enables it to make the right decision?",
+      "reference_answer": "The optimizer should back off to concurrency near 8 (or the value that last showed meaningful throughput improvement). The throughput plateau combined with rising overhead metrics indicates the transfer has reached its effective maximum throughput and additional concurrency only adds cost. A utility function with packet loss and concurrency penalties would naturally handle this: the packet loss penalty (multiplying throughput by 1 - loss×B with B=10) reduces utility as loss rises, and the nonlinear concurrency penalty (dividing by K^n with K=1.02) reduces utility for each additional stream that does not contribute at least 2% throughput improvement. The combined utility at concurrency 32 would be lower than at concurrency 8, causing gradient descent to converge back toward 8. Continuing to increase concurrency would waste resources and harm other users.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["back off", "overhead plateau", "utility function mechanism"]
+    },
+    {
+      "id": "Q087",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "medium",
+      "question_type": "calculation",
+      "question": "If each stream reliably sustains 5 Gbps and the path can deliver about 40 Gbps of usable bandwidth, what is a reasonable first concurrency estimate? What caveats apply to this estimate?",
+      "reference_answer": "A reasonable first estimate is about 8 streams, because 8 × 5 Gbps = 40 Gbps. However, this is only a starting point, not a definitive answer. Caveats: (1) The actual per-stream throughput of 5 Gbps may change as more streams are added due to TCP competition and increased overhead. (2) Storage I/O or CPU may become bottlenecks before 40 Gbps network throughput is reached. (3) The 40 Gbps 'usable bandwidth' may change as background traffic varies. (4) Packet loss may increase before all 8 streams reach full speed, indicating the effective capacity is lower. (5) The 5 Gbps per-stream estimate itself may be based on conditions that change. The estimate should be validated by actually running 8 streams and measuring achieved throughput, loss, and CPU usage, then adjusting up or down based on observations.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": ["initial estimate", "8 streams", "caveats", "validate and adjust"]
+    },
+    {
+      "id": "Q088",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "hard",
+      "question_type": "scenario",
+      "question": "After a competing transfer finishes and frees up network capacity on a shared bottleneck link, what should an adaptive transfer optimizer ideally do?",
+      "reference_answer": "The optimizer should detect the newly available capacity through improved per-stream throughput or reduced packet loss at the current concurrency setting, then gradually increase its concurrency to reclaim the freed bandwidth. It should increase incrementally (not jump to a high value) to avoid overshooting and causing congestion. In practice, the optimizer's continuous exploration (periodically testing n+1 and n-1 around the current optimal every 20 seconds) naturally detects the improved conditions: testing n+1 will show higher utility than the current n, triggering a search in the upward direction. With gradient descent, the positive gradient drives the step size to increase, quickly converging to the new higher optimal. The key is gradual, evidence-based increase rather than an aggressive jump to grab the freed capacity.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["capacity reclaim", "gradual increase", "continuous exploration"]
+    },
+    {
+      "id": "Q089",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "In the game theory-inspired approach to transfer optimization, the concept of 'regret' is incorporated into the utility function. What role does regret play, and why is it essential for fair sharing?",
+      "reference_answer": "Regret is the penalty an agent incurs for using excessive resources beyond what is justified by throughput improvement. Without regret, every transfer would maximize its concurrency to grab as much bandwidth as possible, leading to network congestion and unfair outcomes (e.g., late-comers stealing bandwidth). The regret terms — packet loss penalty and nonlinear concurrency penalty — ensure that increasing concurrency beyond the efficient point actually decreases utility. This makes the utility function strictly concave, which is the mathematical requirement for competing agents to converge to Nash equilibrium (a fair, stable allocation) without explicit coordination. Each transfer voluntarily limits itself because the cost of extra resources exceeds the throughput benefit. This self-enforcing mechanism eliminates the need for centralized coordination while guaranteeing fair outcomes.",
+      "source_paper": "Falcon SC21",
+      "keywords": ["regret", "game theory", "self-limiting", "Nash equilibrium", "voluntary restraint"]
+    },
+    {
+      "id": "Q090",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why is it important to use a dataset with many moderate-sized files (e.g., 1000 × 1 GB) rather than a single very large file when evaluating and testing transfer optimization algorithms?",
+      "reference_answer": "A dataset of many files enables meaningful testing of concurrency, which requires multiple files to be transferred simultaneously. With a single file, concurrency is limited to 1 (unless the optimizer supports intra-file chunking), preventing evaluation of the most influential transfer parameter. Many files also provide enough samples for the optimizer to learn and converge — gradient descent needs 4-5 sample evaluations, each testing a different concurrency value. The dataset must be large enough that the optimizer's convergence time (20-35 seconds) is amortized over the total transfer time. A 1 TB dataset (1000 × 1 GB) at 25 Gbps takes about 5 minutes, giving the optimizer ample time to converge and demonstrate sustained optimal performance. Single-file tests mainly evaluate parallelism, which is a secondary parameter.",
+      "source_paper": "Cross-paper HPN synthesis",
+      "keywords": ["evaluation dataset", "many files needed", "concurrency testing", "convergence amortization"]
+    }
+  ]
+}
