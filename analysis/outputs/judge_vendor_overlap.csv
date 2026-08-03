@@ -1,0 +1,8 @@
+kind,name,n,gpt-5.1_mean,gemini-3.5-flash_mean,offset,gpt-5.1_rank,gemini-3.5-flash_rank
+slice,judge1_vendor (gpt-4o),1,4.2197,4.4395,0.2198,,
+slice,judge2_vendor (gemma/gemini systems),23,3.4565,3.6412,0.1847,,
+slice,neutral (neither vendor),39,3.6193,3.8399,0.2206,,
+slice,all systems,63,3.5694,3.7769,0.2075,,
+api,claude-sonnet-4-6,1,4.403,4.6657,0.2627,4,4
+api,gemini-2.5-pro,1,4.3579,4.6146,0.2567,5,8
+api,gpt-4o,1,4.2197,4.4395,0.2198,10,16

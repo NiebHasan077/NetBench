@@ -1,0 +1,1362 @@
+{
+  "artifact_counts": {
+    "adaptation_report_files": 2,
+    "direct_answer_workbooks": 4,
+    "judged_workbooks": 6,
+    "log_files_private_only": 11,
+    "parallel_worker_json_files": 16,
+    "profiling_files": 12,
+    "rag_answer_workbooks": 2,
+    "report_files": 2
+  },
+  "code_artifacts": [
+    {
+      "bytes": 7073,
+      "mtime_utc": "2026-06-11T23:17:25.985439+00:00",
+      "path": "NetBench-RAG/config.yaml",
+      "sha256": "5486af0f5ed6199a4450626aee5822eb5e13ebee0ca36fb2a9d41de77d55c8dd"
+    },
+    {
+      "bytes": 6013,
+      "mtime_utc": "2026-06-11T23:17:37.925442+00:00",
+      "path": "NetBench-RAG/docs/CHAT_GUIDE.md",
+      "sha256": "be1013ad6a8deb1dd42985b5293016f818990838d0cbf5dffc6847151599efec"
+    },
+    {
+      "bytes": 12260,
+      "mtime_utc": "2026-06-11T23:17:38.053442+00:00",
+      "path": "NetBench-RAG/docs/EVALUATION_GUIDE.md",
+      "sha256": "4091d039e8e88a617720d799dfb62520438cf80b0a8fa695f9861bc8a622e199"
+    },
+    {
+      "bytes": 3204,
+      "mtime_utc": "2026-06-11T23:17:38.189442+00:00",
+      "path": "NetBench-RAG/docs/QUICKSTART.md",
+      "sha256": "84563f37e790cdcee9c9933cb1cf503360a8791074198a86d7f074d908b4c225"
+    },
+    {
+      "bytes": 34,
+      "mtime_utc": "2026-06-11T23:17:31.949441+00:00",
+      "path": "NetBench-RAG/evaluation/__init__.py",
+      "sha256": "e638cba0c46f9e81872404dfa0a4b6a4b25090679704b23a4eaf5a1b65d71163"
+    },
+    {
+      "bytes": 35821,
+      "mtime_utc": "2026-06-11T23:17:32.697441+00:00",
+      "path": "NetBench-RAG/evaluation/benchmark_report.py",
+      "sha256": "5f83ab78f286f7695d74e37a6f6c979bbc714f9ec7902b61bf87a6f07e00ecb5"
+    },
+    {
+      "bytes": 40831,
+      "mtime_utc": "2026-06-11T23:17:32.821441+00:00",
+      "path": "NetBench-RAG/evaluation/evaluate_rag.py",
+      "sha256": "14abc925d88c8c8ed164ac75fdae83b1a1564ce331fb95c29307dd8574182213"
+    },
+    {
+      "bytes": 42941,
+      "mtime_utc": "2026-06-11T23:17:32.949441+00:00",
+      "path": "NetBench-RAG/evaluation/judge_responses.py",
+      "sha256": "69545a88d8278a896f843d24fa7052eba036aeb2de10581c8eb1f9ca7283c99c"
+    },
+    {
+      "bytes": 0,
+      "mtime_utc": "2026-06-11T23:17:23.609439+00:00",
+      "path": "NetBench-RAG/src/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 18641,
+      "mtime_utc": "2026-06-11T23:17:25.149439+00:00",
+      "path": "NetBench-RAG/src/chunker.py",
+      "sha256": "824b92ac239ac458c24620f8fd31d03faf03fa55396f5b8f53f29c49a983f086"
+    },
+    {
+      "bytes": 4239,
+      "mtime_utc": "2026-06-11T23:17:25.313439+00:00",
+      "path": "NetBench-RAG/src/embedder.py",
+      "sha256": "13cd501da8f1ab5a021c3177454423fa577a56fbe4e41efeeaf4ab362bc6aa9f"
+    },
+    {
+      "bytes": 23608,
+      "mtime_utc": "2026-06-11T23:17:25.437439+00:00",
+      "path": "NetBench-RAG/src/generator.py",
+      "sha256": "1c29950708716b49216455d7bbaab28e38e4fbe4f04e1e6c7ecd4f491016655f"
+    },
+    {
+      "bytes": 30043,
+      "mtime_utc": "2026-06-11T23:17:25.565439+00:00",
+      "path": "NetBench-RAG/src/parser.py",
+      "sha256": "acb0504a39755762f8221ac95d87b3f7fbce28cacec7965091e3c987baf87148"
+    },
+    {
+      "bytes": 11465,
+      "mtime_utc": "2026-06-11T23:17:25.693439+00:00",
+      "path": "NetBench-RAG/src/retriever.py",
+      "sha256": "49e132cbcbf52f7325e1b444e887c3fd01e6f484fa13692e71dc49c8a9937714"
+    },
+    {
+      "bytes": 14286,
+      "mtime_utc": "2026-06-11T23:17:25.777439+00:00",
+      "path": "NetBench-RAG/src/store.py",
+      "sha256": "12d918ab92d4bdf15506871e2a9e424190cbd76e84a15bb1c7c7b76fb7e0249f"
+    },
+    {
+      "bytes": 628,
+      "mtime_utc": "2026-06-11T23:10:24.637329+00:00",
+      "path": "configs/deepspeed_zero3_bf16.json",
+      "sha256": "2e0c8cb5f11bdaec9ee92a5a750f643c429053b85e90810bb1df42d513362386"
+    },
+    {
+      "bytes": 174,
+      "mtime_utc": "2026-06-11T23:10:34.257340+00:00",
+      "path": "evaluation/__init__.py",
+      "sha256": "ded35ddedb95e37f09be548b00c927d3d6d2417efdb7eedb966d67f455937518"
+    },
+    {
+      "bytes": 37565,
+      "mtime_utc": "2026-06-11T23:10:34.765341+00:00",
+      "path": "evaluation/benchmark_report.py",
+      "sha256": "956cc1338b7ed5a17f4950f8eadc19797aff112c2bc2f46f2d56d73ac2bf7c2c"
+    },
+    {
+      "bytes": 6830,
+      "mtime_utc": "2026-06-11T23:10:34.893341+00:00",
+      "path": "evaluation/compare_models.py",
+      "sha256": "f8f99b8f7c99dda2097063634a562f6f6eab0fe8d915093a436e3080c49e1ae4"
+    },
+    {
+      "bytes": 5966,
+      "mtime_utc": "2026-06-11T23:10:35.057341+00:00",
+      "path": "evaluation/evaluate_model.py",
+      "sha256": "2a15af912d618366980c1f4f9bf4cd26ab05d30e2c390bc9f53bdc6ca04188ec"
+    },
+    {
+      "bytes": 15076,
+      "mtime_utc": "2026-06-11T23:10:35.181341+00:00",
+      "path": "evaluation/filter_judged.py",
+      "sha256": "e211442d33c740035e6988a33aeafeb22d89e2a8ab9cd3eb1638d1abab2f899d"
+    },
+    {
+      "bytes": 55676,
+      "mtime_utc": "2026-06-11T23:10:35.309342+00:00",
+      "path": "evaluation/hpn_qa_benchmark.py",
+      "sha256": "8868e2db9bfee3e83cd7aa008749fc19a5d49f9e8ad9a55474f999ae1b90b8de"
+    },
+    {
+      "bytes": 42883,
+      "mtime_utc": "2026-06-11T23:10:35.433342+00:00",
+      "path": "evaluation/judge_responses.py",
+      "sha256": "20f3c5c0befe35812fc7ad43a2ba487e527dad5bb612213eb5ee911ba679d794"
+    },
+    {
+      "bytes": 24280,
+      "mtime_utc": "2026-06-11T23:10:35.561342+00:00",
+      "path": "evaluation/lm_adaptation_report.py",
+      "sha256": "97db74ca6df03765ccc3e9aaaaee7b991f49a9b367707cb94f25271e6bd1049a"
+    },
+    {
+      "bytes": 79,
+      "mtime_utc": "2026-06-11T23:12:05.429366+00:00",
+      "path": "profiling/__init__.py",
+      "sha256": "5e0cccdf9501012750c8e06c8db418bcb9bc7517994c002d287e449759821170"
+    },
+    {
+      "bytes": 30809,
+      "mtime_utc": "2026-06-11T23:12:06.417367+00:00",
+      "path": "profiling/generate_profile_report.py",
+      "sha256": "43842873415532326d7577a1f4b6b23e96801329007f1873bb7c72ad816b92e3"
+    },
+    {
+      "bytes": 24077,
+      "mtime_utc": "2026-06-11T23:12:06.541367+00:00",
+      "path": "profiling/profile_inference.py",
+      "sha256": "8172aa4e3c0bc2c7cfdd038ae3aaf825142c75ce06f7c46bb3761a7f079ea67e"
+    },
+    {
+      "bytes": 9668,
+      "mtime_utc": "2026-06-11T23:12:06.669367+00:00",
+      "path": "profiling/profile_rag_inference.py",
+      "sha256": "7b260d1662f53bb49d5231b6530c1e172b764b1ea861da873b927c36938a8e69"
+    },
+    {
+      "bytes": 50877,
+      "mtime_utc": "2026-06-11T23:12:06.793366+00:00",
+      "path": "profiling/profile_training.py",
+      "sha256": "bd69282db8f04cd9080cdcdf5b8c0e584e0b390fc13e48223d7f5abe6c561460"
+    },
+    {
+      "bytes": 19489,
+      "mtime_utc": "2026-06-11T23:12:06.921367+00:00",
+      "path": "profiling/report_excel.py",
+      "sha256": "2ac112d9cb780cab17b83b1d72015d5bcedf906339660e2ce089d79ddf1f6494"
+    },
+    {
+      "bytes": 14300,
+      "mtime_utc": "2026-06-11T23:12:07.041367+00:00",
+      "path": "profiling/report_plots.py",
+      "sha256": "8a265258993a2c6ab4155b90aa189e763df4ccf1a1d1f6be879d30a35e995b8f"
+    },
+    {
+      "bytes": 4403,
+      "mtime_utc": "2026-06-11T23:12:07.125367+00:00",
+      "path": "profiling/summarize_inference_profiles.py",
+      "sha256": "622adb3f804f9500153b8dde78986f896502b1a04ccf4c4404f1eb2037b62ec7"
+    },
+    {
+      "bytes": 72384,
+      "mtime_utc": "2026-06-11T23:12:11.953368+00:00",
+      "path": "scripts/run_pipeline.sh",
+      "sha256": "28a176e261e162afa2e12369434a9fee4f3ee58d267ed85febe7d28278a7e85a"
+    },
+    {
+      "bytes": 79763,
+      "mtime_utc": "2026-06-11T23:59:41.126613+00:00",
+      "path": "scripts/run_pipeline_specific.sh",
+      "sha256": "60dfb1a80ea77dfddeef5d553f232c7e3e6ad11b8ab42ef9ae2c622cd4b54eae"
+    },
+    {
+      "bytes": 95,
+      "mtime_utc": "2026-06-11T23:12:16.861369+00:00",
+      "path": "training/__init__.py",
+      "sha256": "ce97f33a3490fb9a2b238b777230937b0e77e19383e59087e012f732cad695bb"
+    },
+    {
+      "bytes": 18587,
+      "mtime_utc": "2026-06-11T23:12:17.969369+00:00",
+      "path": "training/instruction_finetune.py",
+      "sha256": "067eb30de2de3724b6fe51273963de92c28ffe582c5ca7185b72fc7f044353e5"
+    },
+    {
+      "bytes": 30997,
+      "mtime_utc": "2026-06-11T23:12:18.097369+00:00",
+      "path": "training/lora_finetune.py",
+      "sha256": "9b9e5297bbd5c71a0e2d4df1a510437bbdcaba591edb8431bab68696a80e80b7"
+    },
+    {
+      "bytes": 7121,
+      "mtime_utc": "2026-06-11T23:12:18.225369+00:00",
+      "path": "training/merge_lora_adapter.py",
+      "sha256": "19d719b58db4867295cca82e5c396c53c6cd98edbd17a4622e6c1f5483619939"
+    },
+    {
+      "bytes": 8161,
+      "mtime_utc": "2026-06-11T23:12:18.345369+00:00",
+      "path": "training/prepare_data.py",
+      "sha256": "b56fec7019239a3acf12aad3bf59b19922df1a9bbe931be9a4de2554fd72e49e"
+    },
+    {
+      "bytes": 23667,
+      "mtime_utc": "2026-06-11T23:12:18.473369+00:00",
+      "path": "training/prepare_instruction_data.py",
+      "sha256": "3596d69af041ad32c88c6f11ff2a4f72c0862fb62dc5ec58dcc8c5e2f2bc354e"
+    },
+    {
+      "bytes": 11709,
+      "mtime_utc": "2026-06-11T23:12:18.597369+00:00",
+      "path": "training/prepare_lora_data.py",
+      "sha256": "f27b2b82d4c50b02e94fb724c20c802cbbb95d70dfdba5532d45d129db2d9180"
+    },
+    {
+      "bytes": 17146,
+      "mtime_utc": "2026-06-11T23:12:18.721369+00:00",
+      "path": "training/pretrain_transformers.py",
+      "sha256": "fb3558f09ab39dc36bb6753bd6b6c109e7e41c0d96c00a1c99d7fa6619ef4a59"
+    },
+    {
+      "bytes": 188,
+      "mtime_utc": "2026-06-11T23:12:23.949370+00:00",
+      "path": "utils/__init__.py",
+      "sha256": "053bc29485bb27a8006673f21d52c263c554685e16eee43ee324b0df0e67f3ee"
+    },
+    {
+      "bytes": 7427,
+      "mtime_utc": "2026-06-11T23:12:25.061371+00:00",
+      "path": "utils/check_system.py",
+      "sha256": "9cde9d05d4e36b265e852b7837564aa5d51944bd850c993800bc43bdd396a560"
+    },
+    {
+      "bytes": 8650,
+      "mtime_utc": "2026-06-11T23:12:25.189371+00:00",
+      "path": "utils/count_tokens.py",
+      "sha256": "4914e6b6cd05d66dd241f85746fc66125ad0875741dbd94df0dfa7bd12ec6b8b"
+    },
+    {
+      "bytes": 5192,
+      "mtime_utc": "2026-06-11T23:12:25.313371+00:00",
+      "path": "utils/download_models.py",
+      "sha256": "0d6c6f6f7423488077b1d425d7060e287f2b2f8852455d669fb720e90ef1e946"
+    },
+    {
+      "bytes": 6247,
+      "mtime_utc": "2026-06-11T23:12:25.437371+00:00",
+      "path": "utils/model_utils.py",
+      "sha256": "7a703f3d414c15f0c85610b06d57db50ea3d9d09251a40cba103679f72b9d27a"
+    },
+    {
+      "bytes": 1836,
+      "mtime_utc": "2026-06-11T23:12:25.561371+00:00",
+      "path": "utils/setup_token.py",
+      "sha256": "0ede1c08ffde51d1fb5c275a4960e5a29c483d064bcfa937e4471564b3819ccf"
+    }
+  ],
+  "effective_preflight_from_latest_log": {
+    "corpus": "research_corpus_v3.json",
+    "hardware": "4 x NVIDIA H100 80GB HBM3 GPUs, 81559 MiB (~80 GiB) VRAM per card in logs",
+    "hyperparams": "CPT batch=1x16  SFT batch=1x16  LoRA batch=4x4  rank=64",
+    "model": "Qwen3.5-27B",
+    "source_log": "outputs/by_model/qwen3.5-27b/logs/hpn-qwen3.5-27b-20260611-110924.log"
+  },
+  "environment": {
+    "collected_at_utc": "2026-06-11T23:33:06.273150+00:00",
+    "cwd": "/workspace/portables",
+    "executable": "/usr/bin/python3",
+    "host_collecting_metadata": "site-a",
+    "incoming_path": "/workspace/incoming/site-c-qwen3.5-27b",
+    "platform": "linux",
+    "source_git_supplied": false
+  },
+  "evidence_status": "recovered_from_artifact",
+  "execution_script": {
+    "note": "User clarified after v1 import that this model used run_pipeline_specific.sh rather than run_pipeline.sh.",
+    "path": "scripts/run_pipeline_specific.sh",
+    "sha256": "60dfb1a80ea77dfddeef5d553f232c7e3e6ad11b8ab42ef9ae2c622cd4b54eae"
+  },
+  "hardware_from_profiling": {
+    "cpu": "Intel(R) Xeon(R) Platinum 8480+",
+    "cuda_versions": [
+      "13.0"
+    ],
+    "gpu_total_memory_mb": [
+      "81071"
+    ],
+    "gpus": [
+      "NVIDIA H100 80GB HBM3"
+    ],
+    "hostnames": [
+      "site-c-node-2"
+    ],
+    "python_versions": [
+      "3.11.7"
+    ],
+    "ram_gb": "1006.9",
+    "torch_versions": [
+      "2.12.0+cu130"
+    ]
+  },
+  "limitations": [
+    "No source .git directories were supplied for this The Mill qwen3.5-27b import.",
+    "The execution script identified after import is scripts/run_pipeline_specific.sh; it records Qwen3.5-27B settings and disables S4/S7 because no verified Qwen3.5-27B base checkpoint was available.",
+    "The exact execution-time source checkout was not recorded.",
+    "Metadata summaries were regenerated from supplied workbooks, reports, profiling JSON, and logs.",
+    "Model weights, checkpoints, raw corpora, RAG indexes, virtual environments, caches, logs, and credentials are excluded from the publication snapshot.",
+    "Transferred source tree omitted some baseline documentation, prompt files, helper scripts, and raw data placeholders relative to the stable publication branch; reusable baseline assets remain on main."
+  ],
+  "logs_private_only": [
+    {
+      "bytes": 44644,
+      "interesting_lines_count": 30,
+      "interesting_lines_sample": [
+        "HPN LLM Pipeline  \u2014  Model: Qwen3.5-27B",
+        "[17:47:22] Model: Qwen3.5-27B (qwen, shortcut=custom)",
+        "[17:47:22] Base-CPT variants disabled (RUN_S4=false, RUN_S7=false); base repo/dir unused.",
+        "[17:47:28] Hardware: 4x GPU, 815590 MiB (~797 GiB) VRAM per card",
+        "[17:47:28] Hyperparams: CPT batch=2x4  SFT batch=2x4  LoRA batch=4x4  rank=64",
+        "[17:47:36] Full-training GPU workers: 4 (torchrun=true, deepspeed=true, torchrun_bin=torchrun)",
+        "[17:47:36] Benchmark GPU workers: 4 (CUDA devices=0,1,2,3)",
+        "[17:47:36] OK Preflight passed \u2014 GPUs: 4x797GB  Corpus: research_corpus_v3.json",
+        "[17:47:36] RUN download official instruct (custom HF ID)",
+        "[17:54:25] RUN prepare LoRA CPT data",
+        "05/31/2026 17:54:30 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "[17:57:39] RUN prepare HPN SFT data",
+        "05/31/2026 17:57:44 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "[17:58:09] RUN S3 Full HPN-SFT",
+        "05/31/2026 17:58:17 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "05/31/2026 17:58:17 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "05/31/2026 17:58:17 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "05/31/2026 17:58:17 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "05/31/2026 18:00:17 - WARNING - __main__ - save_steps clamped to 101 (1x per epoch)",
+        "05/31/2026 18:00:17 - WARNING - __main__ - save_steps adjusted from 101 to 100 because load_best_model_at_end=True requires save_steps to be a round multiple of eval_steps"
+      ],
+      "mtime_utc": "2026-06-11T23:11:03.561352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/logs/hpn-qwen3.5-27b-20260531-174721.log",
+      "sha256": "ea7a1e4fc9d9541f694ed219ab219a667ffbc4ea6008acb8fd28593da45c7d35"
+    },
+    {
+      "bytes": 47008,
+      "interesting_lines_count": 17,
+      "interesting_lines_sample": [
+        "HPN LLM Pipeline  \u2014  Model: Qwen3.5-27B",
+        "[19:13:11] Model: Qwen3.5-27B (qwen, shortcut=custom)",
+        "[19:13:11] Base-CPT variants disabled (RUN_S4=false, RUN_S7=false); base repo/dir unused.",
+        "[19:13:17] Hardware: 4x GPU, 81559 MiB (~80 GiB) VRAM per card",
+        "[19:13:17] Hyperparams: CPT batch=1x16  SFT batch=1x16  LoRA batch=4x4  rank=64",
+        "[19:13:17] Full-training GPU workers: 1 (torchrun=false, deepspeed=false, torchrun_bin=torchrun)",
+        "[19:13:17] Benchmark GPU workers: 4 (CUDA devices=0,1,2,3)",
+        "[19:13:17] OK Preflight passed \u2014 GPUs: 4x80GB  Corpus: research_corpus_v3.json",
+        "[19:13:17] WARN  SKIP instruct-official model \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruct-official/Qwen3.5-27B",
+        "[19:13:17] WARN  SKIP LoRA CPT data \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/processed/lora/qwen3.5-27b",
+        "[19:13:17] WARN  SKIP HPN SFT data \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/instruction/qwen3.5-27b-hpn",
+        "[19:13:17] RUN S3 Full HPN-SFT",
+        "05/31/2026 19:13:21 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "05/31/2026 19:13:50 - WARNING - __main__ - eval_steps clamped to 50 (1x per epoch) to ensure evaluation runs",
+        "05/31/2026 19:13:50 - WARNING - __main__ - save_steps clamped to 50 (1x per epoch)",
+        "05/31/2026 19:13:50 - WARNING - __main__ - Model is sharded via device_map='auto' \u2014 disabling DataParallel. For better multi-GPU utilisation, launch with torchrun/DeepSpeed.",
+        "05/31/2026 19:13:50 - WARNING - accelerate.utils.other - [RANK 0] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher."
+      ],
+      "mtime_utc": "2026-06-11T23:11:03.689353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/logs/hpn-qwen3.5-27b-20260531-191311.log",
+      "sha256": "cbc6f427377b5f298add933e47c5bc644f936890ea8fe994b84816d42a38a95e"
+    },
+    {
+      "bytes": 16930,
+      "interesting_lines_count": 17,
+      "interesting_lines_sample": [
+        "HPN LLM Pipeline  \u2014  Model: Qwen3.5-27B",
+        "[09:22:54] Model: Qwen3.5-27B (qwen, shortcut=custom)",
+        "[09:22:54] Base-CPT variants disabled (RUN_S4=false, RUN_S7=false); base repo/dir unused.",
+        "[09:23:07] Hardware: 4x GPU, 81559 MiB (~80 GiB) VRAM per card",
+        "[09:23:07] Hyperparams: CPT batch=1x16  SFT batch=1x16  LoRA batch=4x4  rank=64",
+        "[09:23:07] Full-training GPU workers: 1 (torchrun=false, deepspeed=false, torchrun_bin=torchrun)",
+        "[09:23:07] Benchmark GPU workers: 4 (CUDA devices=0,1,2,3)",
+        "[09:23:07] OK Preflight passed \u2014 GPUs: 4x80GB  Corpus: research_corpus_v3.json",
+        "[09:23:07] WARN  SKIP instruct-official model \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruct-official/Qwen3.5-27B",
+        "[09:23:07] WARN  SKIP LoRA CPT data \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/processed/lora/qwen3.5-27b",
+        "[09:23:07] WARN  SKIP HPN SFT data \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/instruction/qwen3.5-27b-hpn",
+        "[09:23:07] RUN S3 Full HPN-SFT",
+        "06/01/2026 09:23:11 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "06/01/2026 09:23:41 - WARNING - __main__ - eval_steps clamped to 50 (1x per epoch) to ensure evaluation runs",
+        "06/01/2026 09:23:41 - WARNING - __main__ - save_steps clamped to 50 (1x per epoch)",
+        "06/01/2026 09:23:41 - WARNING - __main__ - Model is sharded via device_map='auto' \u2014 disabling DataParallel. For better multi-GPU utilisation, launch with torchrun/DeepSpeed.",
+        "06/01/2026 09:23:41 - WARNING - accelerate.utils.other - [RANK 0] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher."
+      ],
+      "mtime_utc": "2026-06-11T23:11:03.813353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/logs/hpn-qwen3.5-27b-20260601-092254.log",
+      "sha256": "d5caa54ac9128ab7df3950529d389674bb7fe9c1e3a6b81644c4f538716d05ca"
+    },
+    {
+      "bytes": 14656,
+      "interesting_lines_count": 19,
+      "interesting_lines_sample": [
+        "HPN LLM Pipeline  \u2014  Model: Qwen3.5-27B",
+        "[09:34:16] Model: Qwen3.5-27B (qwen, shortcut=custom)",
+        "[09:34:16] Base-CPT variants disabled (RUN_S4=false, RUN_S7=false); base repo/dir unused.",
+        "[09:34:22] Hardware: 4x GPU, 81559 MiB (~80 GiB) VRAM per card",
+        "[09:34:22] Hyperparams: CPT batch=1x16  SFT batch=1x16  LoRA batch=4x4  rank=64",
+        "[09:34:22] Full-training GPU workers: 1 (torchrun=false, deepspeed=false, torchrun_bin=torchrun)",
+        "[09:34:22] Benchmark GPU workers: 4 (CUDA devices=0,1,2,3)",
+        "[09:34:22] OK Preflight passed \u2014 GPUs: 4x80GB  Corpus: research_corpus_v3.json",
+        "[09:34:22] WARN  SKIP instruct-official model \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruct-official/Qwen3.5-27B",
+        "[09:34:22] WARN  SKIP LoRA CPT data \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/processed/lora/qwen3.5-27b",
+        "[09:34:22] WARN  SKIP HPN SFT data \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/instruction/qwen3.5-27b-hpn",
+        "[09:34:22] RESUME S3 Full HPN-SFT from checkpoint: [09:34:22] WARN  Ignoring incomplete checkpoint directory: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruction/Qwen3.5-27B-instruct-full-hpn-sft/checkpoints/checkpoint-100",
+        "[09:34:22] RUN S3 Full HPN-SFT",
+        "06/01/2026 09:34:26 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "06/01/2026 09:34:47 - WARNING - __main__ - eval_steps clamped to 50 (1x per epoch) to ensure evaluation runs",
+        "06/01/2026 09:34:47 - WARNING - __main__ - save_steps clamped to 50 (1x per epoch)",
+        "06/01/2026 09:34:47 - WARNING - __main__ - Model is sharded via device_map='auto' \u2014 disabling DataParallel. For better multi-GPU utilisation, launch with torchrun/DeepSpeed.",
+        "06/01/2026 09:34:47 - WARNING - accelerate.utils.other - [RANK 0] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.",
+        "ValueError: Can't find a valid checkpoint at [09:34:22] WARN  Ignoring incomplete checkpoint directory: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruction/Qwen3.5-27B-instruct-full-hpn-sft/checkpoints/checkpoint-100"
+      ],
+      "mtime_utc": "2026-06-11T23:11:03.937353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/logs/hpn-qwen3.5-27b-20260601-093416.log",
+      "sha256": "1b2d507b3daef0bfd921bf151fbe11988fb888ce7b4fe4474565101bfef90398"
+    },
+    {
+      "bytes": 100349,
+      "interesting_lines_count": 18,
+      "interesting_lines_sample": [
+        "HPN LLM Pipeline  \u2014  Model: Qwen3.5-27B",
+        "[09:40:00] Model: Qwen3.5-27B (qwen, shortcut=custom)",
+        "[09:40:00] Base-CPT variants disabled (RUN_S4=false, RUN_S7=false); base repo/dir unused.",
+        "[09:40:06] Hardware: 4x GPU, 81559 MiB (~80 GiB) VRAM per card",
+        "[09:40:06] Hyperparams: CPT batch=1x16  SFT batch=1x16  LoRA batch=4x4  rank=64",
+        "[09:40:06] Full-training GPU workers: 1 (torchrun=false, deepspeed=false, torchrun_bin=torchrun)",
+        "[09:40:06] Benchmark GPU workers: 4 (CUDA devices=0,1,2,3)",
+        "[09:40:06] OK Preflight passed \u2014 GPUs: 4x80GB  Corpus: research_corpus_v3.json",
+        "[09:40:06] WARN  SKIP instruct-official model \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruct-official/Qwen3.5-27B",
+        "[09:40:06] WARN  SKIP LoRA CPT data \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/processed/lora/qwen3.5-27b",
+        "[09:40:06] WARN  SKIP HPN SFT data \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/instruction/qwen3.5-27b-hpn",
+        "[09:40:06] WARN  Ignoring incomplete checkpoint directory: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruction/Qwen3.5-27B-instruct-full-hpn-sft/checkpoints/checkpoint-100",
+        "[09:40:06] RUN S3 Full HPN-SFT",
+        "06/01/2026 09:40:10 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "06/01/2026 09:40:29 - WARNING - __main__ - eval_steps clamped to 50 (1x per epoch) to ensure evaluation runs",
+        "06/01/2026 09:40:29 - WARNING - __main__ - save_steps clamped to 50 (1x per epoch)",
+        "06/01/2026 09:40:29 - WARNING - __main__ - Model is sharded via device_map='auto' \u2014 disabling DataParallel. For better multi-GPU utilisation, launch with torchrun/DeepSpeed.",
+        "06/01/2026 09:40:29 - WARNING - accelerate.utils.other - [RANK 0] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher."
+      ],
+      "mtime_utc": "2026-06-11T23:11:04.065353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/logs/hpn-qwen3.5-27b-20260601-094000.log",
+      "sha256": "e7e29860da68989f7ba1219cf8611a7902bf71a385ff33c0c1ae92f546f62ea3"
+    },
+    {
+      "bytes": 194245,
+      "interesting_lines_count": 18,
+      "interesting_lines_sample": [
+        "HPN LLM Pipeline  \u2014  Model: Qwen3.5-27B",
+        "[09:58:54] Model: Qwen3.5-27B (qwen, shortcut=custom)",
+        "[09:58:54] Base-CPT variants disabled (RUN_S4=false, RUN_S7=false); base repo/dir unused.",
+        "[09:59:00] Hardware: 4x GPU, 81559 MiB (~80 GiB) VRAM per card",
+        "[09:59:00] Hyperparams: CPT batch=1x16  SFT batch=1x16  LoRA batch=4x4  rank=64",
+        "[09:59:00] Full-training GPU workers: 1 (torchrun=false, deepspeed=false, torchrun_bin=torchrun)",
+        "[09:59:00] Benchmark GPU workers: 4 (CUDA devices=0,1,2,3)",
+        "[09:59:00] OK Preflight passed \u2014 GPUs: 4x80GB  Corpus: research_corpus_v3.json",
+        "[09:59:00] WARN  SKIP instruct-official model \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruct-official/Qwen3.5-27B",
+        "[09:59:00] WARN  SKIP LoRA CPT data \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/processed/lora/qwen3.5-27b",
+        "[09:59:00] WARN  SKIP HPN SFT data \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/instruction/qwen3.5-27b-hpn",
+        "[09:59:00] WARN  Ignoring incompatible checkpoint config for source model: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruction/Qwen3.5-27B-instruct-full-hpn-sft/checkpoints/checkpoint-50",
+        "[09:59:00] RUN S3 Full HPN-SFT",
+        "06/01/2026 09:59:04 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "06/01/2026 09:59:33 - WARNING - __main__ - eval_steps clamped to 50 (1x per epoch) to ensure evaluation runs",
+        "06/01/2026 09:59:33 - WARNING - __main__ - Intermediate checkpoints disabled; only the final model will be saved.",
+        "06/01/2026 09:59:33 - WARNING - __main__ - Model is sharded via device_map='auto' \u2014 disabling DataParallel. For better multi-GPU utilisation, launch with torchrun/DeepSpeed.",
+        "06/01/2026 09:59:33 - WARNING - accelerate.utils.other - [RANK 0] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher."
+      ],
+      "mtime_utc": "2026-06-11T23:11:04.197353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/logs/hpn-qwen3.5-27b-20260601-095854.log",
+      "sha256": "f09e9026a0041b8ae762d8bd016b3168e5ab57c3d102a7c3db4c4b4fc4461a5a"
+    },
+    {
+      "bytes": 744258,
+      "interesting_lines_count": 28,
+      "interesting_lines_sample": [
+        "HPN LLM Pipeline  \u2014  Model: Qwen3.5-27B",
+        "[21:14:25] Model: Qwen3.5-27B (qwen, shortcut=custom)",
+        "[21:14:25] Base-CPT variants disabled (RUN_S4=false, RUN_S7=false); base repo/dir unused.",
+        "[21:14:38] Hardware: 4x GPU, 81559 MiB (~80 GiB) VRAM per card",
+        "[21:14:38] Hyperparams: CPT batch=1x16  SFT batch=1x16  LoRA batch=4x4  rank=64",
+        "[21:14:38] Full-training GPU workers: 1 (torchrun=false, deepspeed=false, torchrun_bin=torchrun)",
+        "[21:14:38] Benchmark GPU workers: 4 (CUDA devices=0,1,2,3)",
+        "[21:14:38] OK Preflight passed \u2014 GPUs: 4x80GB  Corpus: research_corpus_v3.json",
+        "[21:14:38] WARN  SKIP instruct-official model \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruct-official/Qwen3.5-27B",
+        "[21:14:38] WARN  SKIP LoRA CPT data \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/processed/lora/qwen3.5-27b",
+        "[21:14:38] WARN  SKIP HPN SFT data \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/instruction/qwen3.5-27b-hpn",
+        "[21:14:38] WARN  Ignoring incompatible checkpoint config for source model: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruction/Qwen3.5-27B-instruct-full-hpn-sft/checkpoints/checkpoint-50",
+        "[21:14:38] RUN S3 Full HPN-SFT",
+        "06/04/2026 21:14:42 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "06/04/2026 21:15:12 - WARNING - __main__ - eval_steps clamped to 50 (1x per epoch) to ensure evaluation runs",
+        "06/04/2026 21:15:12 - WARNING - __main__ - Intermediate checkpoints disabled; only the final model will be saved.",
+        "06/04/2026 21:15:12 - WARNING - __main__ - Model is sharded via device_map='auto' \u2014 disabling DataParallel. For better multi-GPU utilisation, launch with torchrun/DeepSpeed.",
+        "06/04/2026 21:15:12 - WARNING - accelerate.utils.other - [RANK 0] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.",
+        "[02:51:05] RUN S2 LoRA HPN-SFT",
+        "06/05/2026 02:51:13 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured."
+      ],
+      "mtime_utc": "2026-06-11T23:11:04.329353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/logs/hpn-qwen3.5-27b-20260604-211425.log",
+      "sha256": "1cdb07515417a555ca1e84f7ef03fb3689c70e18bb038de90c5080ca6285551c"
+    },
+    {
+      "bytes": 132486,
+      "interesting_lines_count": 18,
+      "interesting_lines_sample": [
+        "HPN LLM Pipeline  \u2014  Model: Qwen3.5-27B",
+        "[09:49:47] Model: Qwen3.5-27B (qwen, shortcut=custom)",
+        "[09:49:47] Base-CPT variants disabled (RUN_S4=false, RUN_S7=false); base repo/dir unused.",
+        "[09:50:00] Hardware: 4x GPU, 81559 MiB (~80 GiB) VRAM per card",
+        "[09:50:00] Hyperparams: CPT batch=1x16  SFT batch=1x16  LoRA batch=4x4  rank=64",
+        "[09:50:00] Full-training GPU workers: 1 (torchrun=false, deepspeed=false, torchrun_bin=torchrun)",
+        "[09:50:00] Benchmark GPU workers: 4 (CUDA devices=0,1,2,3)",
+        "[09:50:00] OK Preflight passed \u2014 GPUs: 4x80GB  Corpus: research_corpus_v3.json",
+        "[09:50:00] WARN  SKIP instruct-official model \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruct-official/Qwen3.5-27B",
+        "[09:50:00] WARN  SKIP LoRA CPT data \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/processed/lora/qwen3.5-27b",
+        "[09:50:00] WARN  SKIP HPN SFT data \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/instruction/qwen3.5-27b-hpn",
+        "[09:50:00] WARN  SKIP S3 Full HPN-SFT \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruction/Qwen3.5-27B-instruct-full-hpn-sft",
+        "[09:50:00] WARN  SKIP S2 LoRA HPN-SFT \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/lora/Qwen3.5-27B-instruct-lora-sft",
+        "[09:50:00] WARN  SKIP S2 LoRA SFT merged \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/lora-merged/Qwen3.5-27B-instruct-lora-sft-merged",
+        "[09:50:00] RUN S5 LoRA HPN-CPT",
+        "06/08/2026 09:50:04 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "06/08/2026 09:50:38 - WARNING - __main__ - Model is sharded via device_map='auto' \u2014 disabling DataParallel. For better multi-GPU utilisation, launch with: torchrun --nproc_per_node=NUM_GPUS training/lora_finetune.py ...",
+        "06/08/2026 09:50:38 - WARNING - accelerate.utils.other - [RANK 0] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher."
+      ],
+      "mtime_utc": "2026-06-11T23:11:04.453353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/logs/hpn-qwen3.5-27b-20260608-094947.log",
+      "sha256": "a25a1e752ba3a23d995d5739033db4e3691ef8e02cf723d8e99346616454dfc2"
+    },
+    {
+      "bytes": 602198,
+      "interesting_lines_count": 34,
+      "interesting_lines_sample": [
+        "HPN LLM Pipeline  \u2014  Model: Qwen3.5-27B",
+        "[17:42:56] Model: Qwen3.5-27B (qwen, shortcut=custom)",
+        "[17:42:56] Base-CPT variants disabled (RUN_S4=false, RUN_S7=false); base repo/dir unused.",
+        "[17:43:09] Hardware: 4x GPU, 81559 MiB (~80 GiB) VRAM per card",
+        "[17:43:09] Hyperparams: CPT batch=1x16  SFT batch=1x16  LoRA batch=4x4  rank=64",
+        "[17:43:09] Full-training GPU workers: 1 (torchrun=false, deepspeed=false, torchrun_bin=torchrun)",
+        "[17:43:09] Benchmark GPU workers: 4 (CUDA devices=0,1,2,3)",
+        "[17:43:09] OK Preflight passed \u2014 GPUs: 4x80GB  Corpus: research_corpus_v3.json",
+        "[17:43:09] WARN  SKIP instruct-official model \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruct-official/Qwen3.5-27B",
+        "[17:43:09] WARN  SKIP LoRA CPT data \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/processed/lora/qwen3.5-27b",
+        "[17:43:09] WARN  SKIP HPN SFT data \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/instruction/qwen3.5-27b-hpn",
+        "[17:43:10] WARN  SKIP S3 Full HPN-SFT \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruction/Qwen3.5-27B-instruct-full-hpn-sft",
+        "[17:43:10] WARN  SKIP S2 LoRA HPN-SFT \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/lora/Qwen3.5-27B-instruct-lora-sft",
+        "[17:43:10] WARN  SKIP S2 LoRA SFT merged \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/lora-merged/Qwen3.5-27B-instruct-lora-sft-merged",
+        "[17:43:10] RUN S5 LoRA HPN-CPT",
+        "06/10/2026 17:43:15 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "06/10/2026 17:43:47 - WARNING - __main__ - Model is sharded via device_map='auto' \u2014 disabling DataParallel. For better multi-GPU utilisation, launch with: torchrun --nproc_per_node=NUM_GPUS training/lora_finetune.py ...",
+        "06/10/2026 17:43:47 - WARNING - accelerate.utils.other - [RANK 0] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.",
+        "[20:53:59] RUN S5 merge LoRA CPT",
+        "[20:55:49] RUN S5 LoRA HPN-SFT"
+      ],
+      "mtime_utc": "2026-06-11T23:11:04.589353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/logs/hpn-qwen3.5-27b-20260610-174256.log",
+      "sha256": "51b41a481af47489e82a22503d80a23466f8eec84fd429fd1c1d6a26dca4adbf"
+    },
+    {
+      "bytes": 34384,
+      "interesting_lines_count": 25,
+      "interesting_lines_sample": [
+        "HPN LLM Pipeline  \u2014  Model: Qwen3.5-27B",
+        "[10:58:06] Model: Qwen3.5-27B (qwen, shortcut=custom)",
+        "[10:58:06] Base-CPT variants disabled (RUN_S4=false, RUN_S7=false); base repo/dir unused.",
+        "[10:58:12] Hardware: 4x GPU, 81559 MiB (~80 GiB) VRAM per card",
+        "[10:58:12] Hyperparams: CPT batch=1x16  SFT batch=1x16  LoRA batch=4x4  rank=64",
+        "[10:58:12] Full-training GPU workers: 1 (torchrun=false, deepspeed=false, torchrun_bin=torchrun)",
+        "[10:58:12] Benchmark GPU workers: 4 (CUDA devices=0,1,2,3)",
+        "[10:58:12] OK Preflight passed \u2014 GPUs: 4x80GB  Corpus: research_corpus_v3.json",
+        "[10:58:12] WARN  SKIP instruct-official model \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruct-official/Qwen3.5-27B",
+        "[10:58:12] WARN  SKIP LoRA CPT data \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/processed/lora/qwen3.5-27b",
+        "[10:58:12] WARN  SKIP HPN SFT data \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/instruction/qwen3.5-27b-hpn",
+        "[10:58:13] WARN  SKIP S3 Full HPN-SFT \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruction/Qwen3.5-27B-instruct-full-hpn-sft",
+        "[10:58:13] WARN  SKIP S2 LoRA HPN-SFT \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/lora/Qwen3.5-27B-instruct-lora-sft",
+        "[10:58:13] WARN  SKIP S2 LoRA SFT merged \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/lora-merged/Qwen3.5-27B-instruct-lora-sft-merged",
+        "[10:58:13] WARN  SKIP S5 LoRA HPN-CPT \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/lora/Qwen3.5-27B-instruct-lora-cpt",
+        "[10:58:13] WARN  SKIP S5 LoRA CPT merged \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/lora-merged/Qwen3.5-27B-instruct-lora-cpt-merged",
+        "[10:58:13] WARN  SKIP S5 LoRA HPN-SFT \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/lora/Qwen3.5-27B-instruct-lora-cpt-then-sft",
+        "[10:58:13] WARN  SKIP S5 LoRA SFT merged \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/lora-merged/Qwen3.5-27B-instruct-lora-cpt-then-sft-merged",
+        "[10:58:13] WARN  SKIP RAG index \u2014 already built (marker or /share/ceph/scratch/user/my-projects-qwen27b/NetBench-RAG/data/qdrant_store/ found)",
+        "[10:58:13] WARN  SKIP benchmark S1-Qwen3.5-27B-Instruct-Official \u2014 already exists: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/outputs/by_model/qwen3.5-27b/evaluations/answers/hpn_answers_Qwen3.5-27B_v5.0.xlsx"
+      ],
+      "mtime_utc": "2026-06-11T23:11:04.713353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/logs/hpn-qwen3.5-27b-20260611-105806.log",
+      "sha256": "e12c57f3058589ce0da3746d74566ed72ec853b9351bb297f8911c68678fad45"
+    },
+    {
+      "bytes": 375479,
+      "interesting_lines_count": 64,
+      "interesting_lines_sample": [
+        "HPN LLM Pipeline  \u2014  Model: Qwen3.5-27B",
+        "[11:09:24] Model: Qwen3.5-27B (qwen, shortcut=custom)",
+        "[11:09:24] Base-CPT variants disabled (RUN_S4=false, RUN_S7=false); base repo/dir unused.",
+        "[11:09:30] Hardware: 4x GPU, 81559 MiB (~80 GiB) VRAM per card",
+        "[11:09:30] Hyperparams: CPT batch=1x16  SFT batch=1x16  LoRA batch=4x4  rank=64",
+        "[11:09:30] Full-training GPU workers: 1 (torchrun=false, deepspeed=false, torchrun_bin=torchrun)",
+        "[11:09:30] Benchmark GPU workers: 4 (CUDA devices=0,1,2,3)",
+        "[11:09:30] OK Preflight passed \u2014 GPUs: 4x80GB  Corpus: research_corpus_v3.json",
+        "[11:09:30] WARN  SKIP instruct-official model \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruct-official/Qwen3.5-27B",
+        "[11:09:30] WARN  SKIP LoRA CPT data \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/processed/lora/qwen3.5-27b",
+        "[11:09:30] WARN  SKIP HPN SFT data \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/instruction/qwen3.5-27b-hpn",
+        "[11:09:30] WARN  SKIP S3 Full HPN-SFT \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruction/Qwen3.5-27B-instruct-full-hpn-sft",
+        "[11:09:30] WARN  SKIP S2 LoRA HPN-SFT \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/lora/Qwen3.5-27B-instruct-lora-sft",
+        "[11:09:30] WARN  SKIP S2 LoRA SFT merged \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/lora-merged/Qwen3.5-27B-instruct-lora-sft-merged",
+        "[11:09:31] WARN  SKIP S5 LoRA HPN-CPT \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/lora/Qwen3.5-27B-instruct-lora-cpt",
+        "[11:09:31] WARN  SKIP S5 LoRA CPT merged \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/lora-merged/Qwen3.5-27B-instruct-lora-cpt-merged",
+        "[11:09:31] WARN  SKIP S5 LoRA HPN-SFT \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/lora/Qwen3.5-27B-instruct-lora-cpt-then-sft",
+        "[11:09:31] WARN  SKIP S5 LoRA SFT merged \u2014 already complete: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/lora-merged/Qwen3.5-27B-instruct-lora-cpt-then-sft-merged",
+        "[11:09:31] WARN  SKIP RAG index \u2014 already built (marker or /share/ceph/scratch/user/my-projects-qwen27b/NetBench-RAG/data/qdrant_store/ found)",
+        "[11:09:31] WARN  SKIP benchmark S1-Qwen3.5-27B-Instruct-Official \u2014 already exists: /share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/outputs/by_model/qwen3.5-27b/evaluations/answers/hpn_answers_Qwen3.5-27B_v5.0.xlsx"
+      ],
+      "mtime_utc": "2026-06-11T23:11:04.837353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/logs/hpn-qwen3.5-27b-20260611-110924.log",
+      "sha256": "307d044c83c7e81928d12575af48b4db2e0ce3b566bc88fb96272b911af6e245"
+    }
+  ],
+  "machine_id": "site-c",
+  "metadata_note": "RAG answer temperature/max_tokens were filled from recovered NetBench-RAG config.yaml because the RAG answer workbook metadata sheet does not record those fields. Execution-script provenance corrected in v2 after user clarification: qwen3.5-27b used scripts/run_pipeline_specific.sh.",
+  "model_slug": "qwen3.5-27b",
+  "models_compared": [
+    {
+      "model": "Qwen3.5-27B-instruct-lora-cpt-then-sft-merged",
+      "scored_questions": 242
+    },
+    {
+      "model": "RAG-Qwen3.5-27B-instruct-lora-cpt-then-sft-merged",
+      "scored_questions": 242
+    },
+    {
+      "model": "Qwen3.5-27B-instruct-full-hpn-sft",
+      "scored_questions": 242
+    },
+    {
+      "model": "RAG-Qwen3.5-27B",
+      "scored_questions": 242
+    },
+    {
+      "model": "Qwen3.5-27B",
+      "scored_questions": 242
+    },
+    {
+      "model": "Qwen3.5-27B-instruct-lora-sft-merged",
+      "scored_questions": 242
+    }
+  ],
+  "overall_report_row": "| **Overall** | 4.09 | 4.35 | 4.00 | 4.24 | 3.05 | 4.04 |",
+  "profiling": [
+    {
+      "device": "cpu",
+      "model_name": "Qwen3.5-27B",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_direct-cpu-benchmark10-S1-Qwen3.5-27B-Instruct-Official.json",
+      "profile_type": "direct",
+      "summary": {
+        "avg_ms_per_token": 453.18,
+        "avg_tokens_per_second": 2.21,
+        "avg_ttft_s": 0.0013,
+        "peak_cpu_ram_mb": 50074,
+        "peak_gpu_vram_mb": 0
+      },
+      "timestamp": "2026-06-11T14:32:52.780949"
+    },
+    {
+      "device": "cpu",
+      "model_name": "Qwen3.5-27B-instruct-full-hpn-sft",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_direct-cpu-benchmark10-S3-Qwen3.5-27B-Instruct-Full-HPN-SFT.json",
+      "profile_type": "direct",
+      "summary": {
+        "avg_ms_per_token": 436.1,
+        "avg_tokens_per_second": 2.29,
+        "avg_ttft_s": 0.0012,
+        "peak_cpu_ram_mb": 50035,
+        "peak_gpu_vram_mb": 0
+      },
+      "timestamp": "2026-06-11T14:52:39.999610"
+    },
+    {
+      "device": "cpu",
+      "model_name": "Qwen3.5-27B-instruct-lora-cpt-then-sft-merged",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_direct-cpu-benchmark10-S5-Qwen3.5-27B-LoRA-CPT-SFT.json",
+      "profile_type": "direct",
+      "summary": {
+        "avg_ms_per_token": 584.71,
+        "avg_tokens_per_second": 1.71,
+        "avg_ttft_s": 0.0011,
+        "peak_cpu_ram_mb": 103755,
+        "peak_gpu_vram_mb": 0
+      },
+      "timestamp": "2026-06-11T15:11:13.693334"
+    },
+    {
+      "device": "cuda",
+      "model_name": "Qwen3.5-27B",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_direct-gpu-benchmark10-S1-Qwen3.5-27B-Instruct-Official.json",
+      "profile_type": "direct",
+      "summary": {
+        "avg_ms_per_token": 76.42,
+        "avg_tokens_per_second": 14.39,
+        "avg_ttft_s": 0.0012,
+        "peak_cpu_ram_mb": 3687,
+        "peak_gpu_vram_mb": 11229
+      },
+      "timestamp": "2026-06-11T14:04:47.311295"
+    },
+    {
+      "device": "cuda",
+      "model_name": "Qwen3.5-27B-instruct-full-hpn-sft",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_direct-gpu-benchmark10-S3-Qwen3.5-27B-Instruct-Full-HPN-SFT.json",
+      "profile_type": "direct",
+      "summary": {
+        "avg_ms_per_token": 76.59,
+        "avg_tokens_per_second": 14.36,
+        "avg_ttft_s": 0.0012,
+        "peak_cpu_ram_mb": 3680,
+        "peak_gpu_vram_mb": 11229
+      },
+      "timestamp": "2026-06-11T14:08:41.249318"
+    },
+    {
+      "device": "cuda",
+      "model_name": "Qwen3.5-27B-instruct-lora-cpt-then-sft-merged",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_direct-gpu-benchmark10-S5-Qwen3.5-27B-LoRA-CPT-SFT.json",
+      "profile_type": "direct",
+      "summary": {
+        "avg_ms_per_token": 80.22,
+        "avg_tokens_per_second": 13.77,
+        "avg_ttft_s": 0.0012,
+        "peak_cpu_ram_mb": 3520,
+        "peak_gpu_vram_mb": 11229
+      },
+      "timestamp": "2026-06-11T14:11:46.485542"
+    },
+    {
+      "device": "cpu",
+      "model_name": "Qwen3.5-27B",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_rag-cpu-benchmark10-S6-Qwen3.5-27B-RAG-Instruct-Official.json",
+      "profile_type": "rag",
+      "summary": {
+        "avg_generation_time_s": 188.8323,
+        "avg_generation_tokens_per_second": 1.88,
+        "avg_output_tokens": 354.6,
+        "avg_prompt_tokens": 4625.6,
+        "avg_retrieval_time_s": 10.7777,
+        "avg_total_time_s": 199.61,
+        "peak_cpu_ram_mb": 55892,
+        "peak_gpu_vram_mb": 0,
+        "question_count": 10
+      },
+      "timestamp": "2026-06-11T16:02:57.267232"
+    },
+    {
+      "device": "cpu",
+      "model_name": "Qwen3.5-27B-instruct-lora-cpt-then-sft-merged",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_rag-cpu-benchmark10-S8-Qwen3.5-27B-RAG-LoRA-CPT-SFT.json",
+      "profile_type": "rag",
+      "summary": {
+        "avg_generation_time_s": 227.7301,
+        "avg_generation_tokens_per_second": 0.95,
+        "avg_output_tokens": 216.0,
+        "avg_prompt_tokens": 4625.6,
+        "avg_retrieval_time_s": 10.9464,
+        "avg_total_time_s": 238.6765,
+        "peak_cpu_ram_mb": 109199,
+        "peak_gpu_vram_mb": 0,
+        "question_count": 10
+      },
+      "timestamp": "2026-06-11T16:43:33.120207"
+    },
+    {
+      "device": "cuda",
+      "model_name": "Qwen3.5-27B",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_rag-gpu-benchmark10-S6-Qwen3.5-27B-RAG-Instruct-Official.json",
+      "profile_type": "rag",
+      "summary": {
+        "avg_generation_time_s": 40.7661,
+        "avg_generation_tokens_per_second": 9.01,
+        "avg_output_tokens": 367.2,
+        "avg_prompt_tokens": 4625.6,
+        "avg_retrieval_time_s": 1.0469,
+        "avg_total_time_s": 41.8129,
+        "peak_cpu_ram_mb": 11492,
+        "peak_gpu_vram_mb": 16242,
+        "question_count": 10
+      },
+      "timestamp": "2026-06-11T15:22:35.875405"
+    },
+    {
+      "device": "cuda",
+      "model_name": "Qwen3.5-27B-instruct-lora-cpt-then-sft-merged",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_rag-gpu-benchmark10-S8-Qwen3.5-27B-RAG-LoRA-CPT-SFT.json",
+      "profile_type": "rag",
+      "summary": {
+        "avg_generation_time_s": 27.6059,
+        "avg_generation_tokens_per_second": 7.69,
+        "avg_output_tokens": 212.2,
+        "avg_prompt_tokens": 4625.6,
+        "avg_retrieval_time_s": 1.0046,
+        "avg_total_time_s": 28.6105,
+        "peak_cpu_ram_mb": 9949,
+        "peak_gpu_vram_mb": 16242,
+        "question_count": 10
+      },
+      "timestamp": "2026-06-11T15:28:06.070396"
+    }
+  ],
+  "rag_configuration_recovered": {
+    "bm25_top_k": 30,
+    "chunk_overlap_tokens": 150,
+    "chunk_target_tokens": 1200,
+    "config_path": "NetBench-RAG/config.yaml",
+    "embedding_batch_size": 64,
+    "embedding_model": "BAAI/bge-large-en-v1.5",
+    "local_generation_max_new_tokens": 512,
+    "local_generation_temperature": 0.0,
+    "reranker_top_n": 4,
+    "rrf_top_n": 20,
+    "vector_top_k": 30
+  },
+  "result_artifacts": [
+    {
+      "bytes": 140388,
+      "mtime_utc": "2026-06-11T23:10:57.613351+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/answers/.parallel_Qwen3.5-27B-instruct-full-hpn-sft_v5.0/worker_0.json",
+      "sha256": "6cb7900ab4122f26420f095fa22ca4a81ebead605cbba4416e704804b0c97aa6"
+    },
+    {
+      "bytes": 139917,
+      "mtime_utc": "2026-06-11T23:10:57.741351+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/answers/.parallel_Qwen3.5-27B-instruct-full-hpn-sft_v5.0/worker_1.json",
+      "sha256": "f8af2b4429e5d83cb4eaba158bb65237c151ba4f6d189ba59513b419738471ae"
+    },
+    {
+      "bytes": 137955,
+      "mtime_utc": "2026-06-11T23:10:57.869351+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/answers/.parallel_Qwen3.5-27B-instruct-full-hpn-sft_v5.0/worker_2.json",
+      "sha256": "45a542f5bb9eb42107ef361fc599e346e4d0a469965040629d718d76d3807879"
+    },
+    {
+      "bytes": 138866,
+      "mtime_utc": "2026-06-11T23:10:58.001351+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/answers/.parallel_Qwen3.5-27B-instruct-full-hpn-sft_v5.0/worker_3.json",
+      "sha256": "a647fec2e6018152c395d73be9f6614cd9b753579fb438471cbc6764b3c5670e"
+    },
+    {
+      "bytes": 139348,
+      "mtime_utc": "2026-06-11T23:10:58.569351+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/answers/.parallel_Qwen3.5-27B-instruct-lora-cpt-then-sft-merged_v5.0/worker_0.json",
+      "sha256": "a7c06c43ec7f0823bbe7761a71bcc7ef2998a9ae30b229a1d548bc25e69a6e4e"
+    },
+    {
+      "bytes": 139180,
+      "mtime_utc": "2026-06-11T23:10:58.693352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/answers/.parallel_Qwen3.5-27B-instruct-lora-cpt-then-sft-merged_v5.0/worker_1.json",
+      "sha256": "f1d4f35a49bede80c95da736e5b489d2cd5043aba641791978783984dfcbbc58"
+    },
+    {
+      "bytes": 138331,
+      "mtime_utc": "2026-06-11T23:10:58.821352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/answers/.parallel_Qwen3.5-27B-instruct-lora-cpt-then-sft-merged_v5.0/worker_2.json",
+      "sha256": "435c2d8256c0a573673259a2d425c1d0b9f707948a336febd98b2159a0d3b1da"
+    },
+    {
+      "bytes": 138534,
+      "mtime_utc": "2026-06-11T23:10:58.949352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/answers/.parallel_Qwen3.5-27B-instruct-lora-cpt-then-sft-merged_v5.0/worker_3.json",
+      "sha256": "c92ed59b52d2b51949541d9fabc44af20d60e3282cb2435b946717ce589bc48e"
+    },
+    {
+      "bytes": 139032,
+      "mtime_utc": "2026-06-11T23:10:59.329352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/answers/.parallel_Qwen3.5-27B-instruct-lora-sft-merged_v5.0/worker_0.json",
+      "sha256": "91110d82073ec00045dadacdfc6ee33e5e29cf373697eec29b4d734785e89bc5"
+    },
+    {
+      "bytes": 140759,
+      "mtime_utc": "2026-06-11T23:10:59.457352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/answers/.parallel_Qwen3.5-27B-instruct-lora-sft-merged_v5.0/worker_1.json",
+      "sha256": "16b4e40dbee83b54c4090b35fd711487043a56a2cbc50b4c5808c44921c1410b"
+    },
+    {
+      "bytes": 140527,
+      "mtime_utc": "2026-06-11T23:10:59.585352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/answers/.parallel_Qwen3.5-27B-instruct-lora-sft-merged_v5.0/worker_2.json",
+      "sha256": "19a9cf00982a078bf58e89c0a171e0462f062dc5930c93962fc518ffb6c3ac74"
+    },
+    {
+      "bytes": 138521,
+      "mtime_utc": "2026-06-11T23:10:59.713352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/answers/.parallel_Qwen3.5-27B-instruct-lora-sft-merged_v5.0/worker_3.json",
+      "sha256": "d5f33658ba0398c75013a45acbe234265b3430ee8b92c705a455b1397a0312fe"
+    },
+    {
+      "bytes": 203410,
+      "mtime_utc": "2026-06-11T23:11:00.093352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/answers/.parallel_Qwen3.5-27B_v5.0/worker_0.json",
+      "sha256": "957e16ce7eb93c94c0ec6d6adf0749f83d1b0ac73886c3b1a0926fbc6968c072"
+    },
+    {
+      "bytes": 201367,
+      "mtime_utc": "2026-06-11T23:11:00.221352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/answers/.parallel_Qwen3.5-27B_v5.0/worker_1.json",
+      "sha256": "40517dc51f9fd13e2d07ea75b62d35fff50ad358ad715db79b3836c091b98cb3"
+    },
+    {
+      "bytes": 199880,
+      "mtime_utc": "2026-06-11T23:11:00.353352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/answers/.parallel_Qwen3.5-27B_v5.0/worker_2.json",
+      "sha256": "58fec420d385ad0ea630744aa8fcb03e564095f59a38fa913312b36ae327981c"
+    },
+    {
+      "bytes": 201476,
+      "mtime_utc": "2026-06-11T23:11:00.481352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/answers/.parallel_Qwen3.5-27B_v5.0/worker_3.json",
+      "sha256": "00e160037af217f53800a99c0d8603724c3592988329607ea29e20739ec6a35f"
+    },
+    {
+      "bytes": 165171,
+      "mtime_utc": "2026-06-11T23:11:00.617352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/answers/hpn_answers_Qwen3.5-27B-instruct-full-hpn-sft_v5.0.xlsx",
+      "sha256": "48614e794fba6578f6d234ddaf3d393f47171b9d44e9fdb4c7b72573138d6d18"
+    },
+    {
+      "bytes": 164676,
+      "mtime_utc": "2026-06-11T23:11:00.745352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/answers/hpn_answers_Qwen3.5-27B-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+      "sha256": "28e1b37eb5134a2b7b521b5e17f1233027a49500e4156402f1149d4e31f51ca3"
+    },
+    {
+      "bytes": 165532,
+      "mtime_utc": "2026-06-11T23:11:00.873352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/answers/hpn_answers_Qwen3.5-27B-instruct-lora-sft-merged_v5.0.xlsx",
+      "sha256": "8cf75fbe2e91781258d5a7ebbaede655929a17438bf031c1f6848b2197238cc7"
+    },
+    {
+      "bytes": 236179,
+      "mtime_utc": "2026-06-11T23:11:00.997352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/answers/hpn_answers_Qwen3.5-27B_v5.0.xlsx",
+      "sha256": "4a97e19a312d9d1f8308959792d85bec2e8645c6bf3e3b4ceeb6e87a26900800"
+    },
+    {
+      "bytes": 207383,
+      "mtime_utc": "2026-06-11T23:11:02.393352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/rag_answers/hpn_answers_RAG-Qwen3.5-27B-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+      "sha256": "b381978cf565bfc1063e5864ce1c9a27ddeeab3fdb5bbbc3fa3fe3f6fabfaf64"
+    },
+    {
+      "bytes": 276322,
+      "mtime_utc": "2026-06-11T23:11:02.521352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/rag_answers/hpn_answers_RAG-Qwen3.5-27B_v5.0.xlsx",
+      "sha256": "dfac65682ed0f3324538268422f718cafa598ed314be6287f50b8d54d7241e1a"
+    },
+    {
+      "bytes": 204140,
+      "mtime_utc": "2026-06-11T23:11:01.369352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/judged/hpn_judged_Qwen3.5-27B-instruct-full-hpn-sft_by_gpt-5.1.xlsx",
+      "sha256": "d5bdb1856116c0fec9749b49ec0da0f01e75a67cbd43db70a9700f69b8b05daf"
+    },
+    {
+      "bytes": 202857,
+      "mtime_utc": "2026-06-11T23:11:01.497352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/judged/hpn_judged_Qwen3.5-27B-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+      "sha256": "b23cf28cd1d429761d56b9efb08b0ec922e1679dc029fbad2778e38369059b1b"
+    },
+    {
+      "bytes": 203891,
+      "mtime_utc": "2026-06-11T23:11:01.621352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/judged/hpn_judged_Qwen3.5-27B-instruct-lora-sft-merged_by_gpt-5.1.xlsx",
+      "sha256": "f6af208e22630f753d7495505ca83570e020a28cbb48967e83fc4b3f0ec26fcb"
+    },
+    {
+      "bytes": 278524,
+      "mtime_utc": "2026-06-11T23:11:01.757352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/judged/hpn_judged_Qwen3.5-27B_by_gpt-5.1.xlsx",
+      "sha256": "16fe7b9c3d34fdc112a71a20609a1aa6680b386e5e5ce9a17912cd66b7bd3c35"
+    },
+    {
+      "bytes": 214556,
+      "mtime_utc": "2026-06-11T23:11:01.885352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/judged/hpn_judged_RAG-Qwen3.5-27B-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+      "sha256": "32c4a0ea0ef6f9021156888cf8e35140280f28354ee47c344054422cd7270b3b"
+    },
+    {
+      "bytes": 283232,
+      "mtime_utc": "2026-06-11T23:11:02.021352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/judged/hpn_judged_RAG-Qwen3.5-27B_by_gpt-5.1.xlsx",
+      "sha256": "e67800f57a37e4f00b8e6ae20a2d0ffb67c4f70ff0d19faa293b6ca9d00d35c2"
+    },
+    {
+      "bytes": 5036,
+      "mtime_utc": "2026-06-11T23:11:02.969352+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/reports/HPN_BENCHMARK_REPORT_v5.0_by_gpt-5.1.md",
+      "sha256": "60c51ffc8b66e4ac9342df1867ad40a8758afc369a9d6c7ba6a6331e22149be9"
+    },
+    {
+      "bytes": 43561,
+      "mtime_utc": "2026-06-11T23:11:03.097353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/reports/hpn_benchmark_report_v5.0_by_gpt-5.1.xlsx",
+      "sha256": "f7bee7b0d8b400cd7120a61bb248efafd66a382c93eb3e8cb589a5aa04e771f1"
+    },
+    {
+      "bytes": 1111,
+      "mtime_utc": "2026-06-11T23:10:56.701351+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/adaptation_reports/adaptation_report_Qwen3.5-27B-instruct-lora-cpt-merged_20260611_165713.json",
+      "sha256": "72d21e80b615315d067e44a03b265bf6d9b1922705f1bc7520a30d1bd88a9d48"
+    },
+    {
+      "bytes": 5411,
+      "mtime_utc": "2026-06-11T23:10:56.825351+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/evaluations/adaptation_reports/adaptation_report_Qwen3.5-27B-instruct-lora-cpt-merged_20260611_165713.xlsx",
+      "sha256": "150ce2b936e49b4816e55839ef44a7a5606c45cd177c2855257d1c8323587f53"
+    },
+    {
+      "bytes": 10486,
+      "mtime_utc": "2026-06-11T23:11:06.221353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_direct-cpu-benchmark10-S1-Qwen3.5-27B-Instruct-Official.json",
+      "sha256": "a90a2d9adbf669acd566180eedc3d6402f39987505becedb355375ed04638c0e"
+    },
+    {
+      "bytes": 10509,
+      "mtime_utc": "2026-06-11T23:11:06.345353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_direct-cpu-benchmark10-S3-Qwen3.5-27B-Instruct-Full-HPN-SFT.json",
+      "sha256": "710fb2f3df693e484edf5374567448593e249fddd8c9175de88cef6ef6aba98e"
+    },
+    {
+      "bytes": 10517,
+      "mtime_utc": "2026-06-11T23:11:06.469353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_direct-cpu-benchmark10-S5-Qwen3.5-27B-LoRA-CPT-SFT.json",
+      "sha256": "3c877b18ad635ff15a4bbea6f96691d3743a514a14e3d510ae962980d1e7ec35"
+    },
+    {
+      "bytes": 11045,
+      "mtime_utc": "2026-06-11T23:11:06.557353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_direct-gpu-benchmark10-S1-Qwen3.5-27B-Instruct-Official.json",
+      "sha256": "288a2f01b6042200b32f0f22bc01e01e2ec67be6a344f287a21a4cecdb9b5127"
+    },
+    {
+      "bytes": 11039,
+      "mtime_utc": "2026-06-11T23:11:06.685353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_direct-gpu-benchmark10-S3-Qwen3.5-27B-Instruct-Full-HPN-SFT.json",
+      "sha256": "1b1384bf0f38c4414e55a18e8ebc332b164e46c4a3fdb3b52a417b7ad9af7549"
+    },
+    {
+      "bytes": 11055,
+      "mtime_utc": "2026-06-11T23:11:06.769353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_direct-gpu-benchmark10-S5-Qwen3.5-27B-LoRA-CPT-SFT.json",
+      "sha256": "f476a450c4cc5a257e58d8642def832904e7a6b2198e7f2912d681692090d8cf"
+    },
+    {
+      "bytes": 781,
+      "mtime_utc": "2026-06-11T23:11:05.261353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_profile_summary_qwen3.5-27b_benchmark10.csv",
+      "sha256": "52ea31bf68abff53062b0c3e5132cf23e7b179e7ec11c3abb0d43cfd0432a63d"
+    },
+    {
+      "bytes": 1012,
+      "mtime_utc": "2026-06-11T23:11:05.385353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_profile_summary_qwen3.5-27b_benchmark10.md",
+      "sha256": "1a14779fb3857738082b88dc20fbc5d08e21e1eababf285a5b12660bc0685107"
+    },
+    {
+      "bytes": 14043,
+      "mtime_utc": "2026-06-11T23:11:05.513353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_rag-cpu-benchmark10-S6-Qwen3.5-27B-RAG-Instruct-Official.json",
+      "sha256": "398f0acd40b65539c6e8f2b0ce89e1a74193a381889f68dcb689079bb9040efc"
+    },
+    {
+      "bytes": 14100,
+      "mtime_utc": "2026-06-11T23:11:05.597353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_rag-cpu-benchmark10-S8-Qwen3.5-27B-RAG-LoRA-CPT-SFT.json",
+      "sha256": "0bd2da5645690878408ae8301af6d7e5c20d1f5015f9aa6f94c855b69d1a4337"
+    },
+    {
+      "bytes": 14524,
+      "mtime_utc": "2026-06-11T23:11:05.725353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_rag-gpu-benchmark10-S6-Qwen3.5-27B-RAG-Instruct-Official.json",
+      "sha256": "cd635bab423238887254db7a25f0d5ed1ea9c425e8e212aa400e26ff0ec1fe66"
+    },
+    {
+      "bytes": 14567,
+      "mtime_utc": "2026-06-11T23:11:05.849353+00:00",
+      "path": "outputs/by_model/qwen3.5-27b/profiling_results/inference_rag-gpu-benchmark10-S8-Qwen3.5-27B-RAG-LoRA-CPT-SFT.json",
+      "sha256": "efecf4a8863abb4089a6d34bef4f741001e32fea78e133d0724af5f55de4abf5"
+    }
+  ],
+  "run_id": "site-c/qwen3.5-27b",
+  "snapshot_branch": "snapshot/site-c/qwen3.5-27b",
+  "snapshot_tag": "snapshot-site-c-qwen3.5-27b-v1",
+  "summary_rows": [
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/qwen3.5-27b/evaluations/answers/hpn_answers_Qwen3.5-27B-instruct-full-hpn-sft_v5.0.xlsx",
+      "group": "answer_files",
+      "judge_model": "",
+      "max_tokens": "512",
+      "model_name": "Qwen3.5-27B-instruct-full-hpn-sft",
+      "sha256": "48614e794fba6578f6d234ddaf3d393f47171b9d44e9fdb4c7b72573138d6d18",
+      "temperature": "0.0",
+      "timestamp": "2026-06-11T01:51:33.223995",
+      "top_p": "0.9",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/qwen3.5-27b/evaluations/answers/hpn_answers_Qwen3.5-27B-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+      "group": "answer_files",
+      "judge_model": "",
+      "max_tokens": "512",
+      "model_name": "Qwen3.5-27B-instruct-lora-cpt-then-sft-merged",
+      "sha256": "28e1b37eb5134a2b7b521b5e17f1233027a49500e4156402f1149d4e31f51ca3",
+      "temperature": "0.0",
+      "timestamp": "2026-06-11T02:04:32.015109",
+      "top_p": "0.9",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/qwen3.5-27b/evaluations/answers/hpn_answers_Qwen3.5-27B-instruct-lora-sft-merged_v5.0.xlsx",
+      "group": "answer_files",
+      "judge_model": "",
+      "max_tokens": "512",
+      "model_name": "Qwen3.5-27B-instruct-lora-sft-merged",
+      "sha256": "8cf75fbe2e91781258d5a7ebbaede655929a17438bf031c1f6848b2197238cc7",
+      "temperature": "0.0",
+      "timestamp": "2026-06-11T01:38:38.130236",
+      "top_p": "0.9",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/qwen3.5-27b/evaluations/answers/hpn_answers_Qwen3.5-27B_v5.0.xlsx",
+      "group": "answer_files",
+      "judge_model": "",
+      "max_tokens": "512",
+      "model_name": "Qwen3.5-27B",
+      "sha256": "4a97e19a312d9d1f8308959792d85bec2e8645c6bf3e3b4ceeb6e87a26900800",
+      "temperature": "0.0",
+      "timestamp": "2026-06-11T01:25:42.620765",
+      "top_p": "0.9",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/qwen3.5-27b/evaluations/rag_answers/hpn_answers_RAG-Qwen3.5-27B-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+      "group": "rag_answer_files",
+      "judge_model": "",
+      "max_tokens": "512",
+      "model_name": "RAG-Qwen3.5-27B-instruct-lora-cpt-then-sft-merged",
+      "sha256": "b381978cf565bfc1063e5864ce1c9a27ddeeab3fdb5bbbc3fa3fe3f6fabfaf64",
+      "temperature": "0.0",
+      "timestamp": "2026-06-11T11:52:04.425656",
+      "top_p": "",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/qwen3.5-27b/evaluations/rag_answers/hpn_answers_RAG-Qwen3.5-27B_v5.0.xlsx",
+      "group": "rag_answer_files",
+      "judge_model": "",
+      "max_tokens": "512",
+      "model_name": "RAG-Qwen3.5-27B",
+      "sha256": "dfac65682ed0f3324538268422f718cafa598ed314be6287f50b8d54d7241e1a",
+      "temperature": "0.0",
+      "timestamp": "2026-06-11T11:34:30.216616",
+      "top_p": "",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/qwen3.5-27b/evaluations/judged/hpn_judged_Qwen3.5-27B-instruct-full-hpn-sft_by_gpt-5.1.xlsx",
+      "group": "judged_files",
+      "judge_model": "gpt-5.1",
+      "max_tokens": "",
+      "model_name": "Qwen3.5-27B-instruct-full-hpn-sft",
+      "sha256": "d5bdb1856116c0fec9749b49ec0da0f01e75a67cbd43db70a9700f69b8b05daf",
+      "temperature": "",
+      "timestamp": "2026-06-11T12:35:29.579088",
+      "top_p": "",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/qwen3.5-27b/evaluations/judged/hpn_judged_Qwen3.5-27B-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+      "group": "judged_files",
+      "judge_model": "gpt-5.1",
+      "max_tokens": "",
+      "model_name": "Qwen3.5-27B-instruct-lora-cpt-then-sft-merged",
+      "sha256": "b23cf28cd1d429761d56b9efb08b0ec922e1679dc029fbad2778e38369059b1b",
+      "temperature": "",
+      "timestamp": "2026-06-11T12:13:48.714767",
+      "top_p": "",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/qwen3.5-27b/evaluations/judged/hpn_judged_Qwen3.5-27B-instruct-lora-sft-merged_by_gpt-5.1.xlsx",
+      "group": "judged_files",
+      "judge_model": "gpt-5.1",
+      "max_tokens": "",
+      "model_name": "Qwen3.5-27B-instruct-lora-sft-merged",
+      "sha256": "f6af208e22630f753d7495505ca83570e020a28cbb48967e83fc4b3f0ec26fcb",
+      "temperature": "",
+      "timestamp": "2026-06-11T13:18:33.810120",
+      "top_p": "",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/qwen3.5-27b/evaluations/judged/hpn_judged_Qwen3.5-27B_by_gpt-5.1.xlsx",
+      "group": "judged_files",
+      "judge_model": "gpt-5.1",
+      "max_tokens": "",
+      "model_name": "Qwen3.5-27B",
+      "sha256": "16fe7b9c3d34fdc112a71a20609a1aa6680b386e5e5ce9a17912cd66b7bd3c35",
+      "temperature": "",
+      "timestamp": "2026-06-11T12:57:20.932640",
+      "top_p": "",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/qwen3.5-27b/evaluations/judged/hpn_judged_RAG-Qwen3.5-27B-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+      "group": "judged_files",
+      "judge_model": "gpt-5.1",
+      "max_tokens": "",
+      "model_name": "RAG-Qwen3.5-27B-instruct-lora-cpt-then-sft-merged",
+      "sha256": "32c4a0ea0ef6f9021156888cf8e35140280f28354ee47c344054422cd7270b3b",
+      "temperature": "",
+      "timestamp": "2026-06-11T13:39:11.812862",
+      "top_p": "",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/qwen3.5-27b/evaluations/judged/hpn_judged_RAG-Qwen3.5-27B_by_gpt-5.1.xlsx",
+      "group": "judged_files",
+      "judge_model": "gpt-5.1",
+      "max_tokens": "",
+      "model_name": "RAG-Qwen3.5-27B",
+      "sha256": "e67800f57a37e4f00b8e6ae20a2d0ffb67c4f70ff0d19faa293b6ca9d00d35c2",
+      "temperature": "",
+      "timestamp": "2026-06-11T14:00:47.733614",
+      "top_p": "",
+      "total_questions": 242
+    }
+  ],
+  "training_rows": [
+    {
+      "effective_batch": "16",
+      "epochs": "3",
+      "eval_batch": "",
+      "grad_accum": "16",
+      "learning_rate": "2e-5",
+      "lora_alpha": "",
+      "notes": "The Mill qwen3.5-27b recovered logs show the effective successful/resumed profile as CPT batch=1x16; an earlier failed attempt used 2x4/4 workers.",
+      "precision": "bf16 evidence in recovered scripts/logs",
+      "rank": "",
+      "source": "scripts/run_pipeline_specific.sh + logs",
+      "stage": "CPT full-weight continual pre-training",
+      "train_batch": "1"
+    },
+    {
+      "effective_batch": "16",
+      "epochs": "3",
+      "eval_batch": "",
+      "grad_accum": "16",
+      "learning_rate": "2e-5",
+      "lora_alpha": "",
+      "notes": "Same qwen3.5-27b recovered effective profile as CPT; full-training GPU workers usually recorded as 1 with torchrun=false/deepspeed=false.",
+      "precision": "bf16 evidence in recovered scripts/logs",
+      "rank": "",
+      "source": "scripts/run_pipeline_specific.sh + logs",
+      "stage": "Full-weight instruction SFT",
+      "train_batch": "1"
+    },
+    {
+      "effective_batch": "16",
+      "epochs": "3",
+      "eval_batch": "",
+      "grad_accum": "4",
+      "learning_rate": "2e-4",
+      "lora_alpha": "128",
+      "notes": "Logs record LoRA batch=4x4 and rank=64; USE_QLORA=false in recovered script.",
+      "precision": "bf16 evidence in recovered scripts/logs",
+      "rank": "64",
+      "source": "scripts/run_pipeline_specific.sh + logs",
+      "stage": "LoRA CPT/SFT variants",
+      "train_batch": "4"
+    },
+    {
+      "effective_batch": "",
+      "epochs": "",
+      "eval_batch": "",
+      "grad_accum": "",
+      "learning_rate": "",
+      "lora_alpha": "",
+      "notes": "benchmark GPU workers=4, CUDA devices=0,1,2,3; temperature=0.0, max_tokens=512; direct top_p=0.9 where recorded.",
+      "precision": "",
+      "rank": "",
+      "source": "scripts/run_pipeline_specific.sh + workbook metadata",
+      "stage": "Benchmark answer generation",
+      "train_batch": ""
+    },
+    {
+      "effective_batch": "",
+      "epochs": "",
+      "eval_batch": "",
+      "grad_accum": "",
+      "learning_rate": "",
+      "lora_alpha": "",
+      "notes": "judge_model=gpt-5.1; recovered judge implementation uses temperature=0.0.",
+      "precision": "",
+      "rank": "",
+      "source": "scripts/run_pipeline_specific.sh + judged workbooks",
+      "stage": "Judge scoring",
+      "train_batch": ""
+    }
+  ]
+}

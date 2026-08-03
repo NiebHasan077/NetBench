@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-05-11T09:35:12.506187",
+  "base_model_path": "/workspace/portables/NetBench-LLM/models/instruct-official/Llama-3.2-1B-Instruct",
+  "trained_model_path": "/workspace/portables/NetBench-LLM/models/lora-merged/Llama-3.2-1B-instruct-lora-cpt-merged",
+  "hpn_data_dir": "/workspace/portables/NetBench-LLM/data/processed/lora/llama-3.2-1b",
+  "config": {
+    "batch_size": 4,
+    "seq_len": 2048,
+    "max_hpn_batches": null,
+    "max_general_batches": null,
+    "quantize_4bit": false
+  },
+  "base": {
+    "hpn": {
+      "loss": 2.859211,
+      "perplexity": 17.4478,
+      "batches": 180,
+      "tokens": 1474560
+    },
+    "general": {
+      "loss": 2.565462,
+      "perplexity": 13.0067,
+      "batches": 36,
+      "tokens": 288768
+    }
+  },
+  "trained": {
+    "hpn": {
+      "loss": 2.416328,
+      "perplexity": 11.2046,
+      "batches": 180,
+      "tokens": 1474560
+    },
+    "general": {
+      "loss": 2.870012,
+      "perplexity": 17.6372,
+      "batches": 36,
+      "tokens": 288768
+    }
+  },
+  "forgetting_gap": 0.30455
+}

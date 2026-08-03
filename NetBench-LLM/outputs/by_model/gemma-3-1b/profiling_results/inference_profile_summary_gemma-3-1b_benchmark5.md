@@ -1,0 +1,12 @@
+| label | profile_type | device | model_name | question_count | avg_total_time_s | avg_retrieval_time_s | avg_generation_time_s | avg_tokens_per_second | avg_ms_per_token | avg_ttft_s | peak_gpu_vram_mb | peak_cpu_ram_mb | load_time_s |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| direct-gpu-benchmark5-S1-gemma-3-1b-Instruct-Official | direct | cuda | gemma-3-1b-Instruct | 5 | 25.9388 |  | 25.9388 | 27.93 | 104.08 | 0.0015 | 1960 | 2330 | 9.59 |
+| direct-gpu-benchmark5-S4-gemma-3-1b-CPT-SFT | direct | cuda | gemma-3-1b-cpt-full-sft | 5 | 28.6118 |  | 28.6118 | 23.97 | 111.76 | 0.0014 | 1961 | 2407 | 6.83 |
+| direct-gpu-benchmark5-S5-gemma-3-1b-LoRA-CPT-SFT | direct | cuda | gemma-3-1b-instruct-lora-cpt-then-sft-merged | 5 | 28.9116 |  | 28.9116 | 19.18 | 132.52 | 0.0015 | 1961 | 2372 | 5.97 |
+| direct-cpu-benchmark5-S1-gemma-3-1b-Instruct-Official | direct | cpu | gemma-3-1b-Instruct | 5 | 51.7733 |  | 51.7733 | 4.54 | 220.29 | 0.0013 | 0 | 4653 | 3.3 |
+| direct-cpu-benchmark5-S4-gemma-3-1b-CPT-SFT | direct | cpu | gemma-3-1b-cpt-full-sft | 5 | 55.7897 |  | 55.7897 | 4.46 | 224.26 | 0.0013 | 0 | 4640 | 3.19 |
+| direct-cpu-benchmark5-S5-gemma-3-1b-LoRA-CPT-SFT | direct | cpu | gemma-3-1b-instruct-lora-cpt-then-sft-merged | 5 | 53.6822 |  | 53.6822 | 4.55 | 219.6 | 0.0013 | 0 | 4642 | 3.24 |
+| rag-gpu-benchmark5-S7-gemma-3-1b-RAG-CPT-SFT | rag | cuda | gemma-3-1b-cpt-full-sft | 5 | 71.3387 | 1.7634 | 69.5753 | 2.9 |  |  | 4833 | 5502 | 30.05 |
+| rag-gpu-benchmark5-S8-gemma-3-1b-RAG-LoRA-CPT-SFT | rag | cuda | gemma-3-1b-instruct-lora-cpt-then-sft-merged | 5 | 61.078 | 1.0975 | 59.9805 | 2.69 |  |  | 4833 | 5418 | 15.53 |
+| rag-cpu-benchmark5-S7-gemma-3-1b-RAG-CPT-SFT | rag | cpu | gemma-3-1b-cpt-full-sft | 5 | 305.5177 | 182.8588 | 122.6589 | 1.86 |  |  | 0 | 9697 | 13.62 |
+| rag-cpu-benchmark5-S8-gemma-3-1b-RAG-LoRA-CPT-SFT | rag | cpu | gemma-3-1b-instruct-lora-cpt-then-sft-merged | 5 | 293.6501 | 182.555 | 111.095 | 1.62 |  |  | 0 | 9768 | 13.42 |

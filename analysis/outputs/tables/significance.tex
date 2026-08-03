@@ -1,0 +1,46 @@
+\begin{table*}[t]\centering\footnotesize
+\caption{Primary paired contrasts on per-question overall score (primary family), closed-book contrasts; the open-book and matched-RAG contrasts continue in Table~\ref{tab:sigrag}. $\Delta$: mean paired difference; $p_{BH}$: Benjamini--Hochberg-adjusted $p$-value; $d_z$: paired effect size; \textbf{PS}: practically significant. Test, FDR control, and thresholds in \S\ref{sec:stats}.}
+\label{tab:sig}
+\begin{tabular}{lllrrrc}
+\toprule
+Model & Contrast & Description & $\Delta$ [95\% CI] & $p_{BH}$ & $d_z$ & PS \\
+\midrule \multicolumn{7}{l}{\textit{Closed-book adaptation}} \\ \midrule
+llama-3.2-1b & P1 vs P3 & Instruct vs full SFT & +0.27 [+0.18,+0.36] & <.001 & +0.39 & \checkmark \\
+llama-3.2-1b & P1 vs P4 & Instruct vs full CPT+SFT & +0.36 [+0.26,+0.46] & <.001 & +0.46 & \checkmark \\
+llama-3.2-1b & P3 vs P4 & full SFT vs full CPT+SFT & +0.09 [-0.01,+0.18] & 0.121 & +0.12 &  \\
+llama-3.2-1b & P2 vs P5 & LoRA SFT vs LoRA CPT+SFT & +0.09 [+0.00,+0.18] & 0.043 & +0.13 &  \\
+llama-3.2-1b & P1 vs P5 & Instruct vs LoRA CPT+SFT & +0.42 [+0.32,+0.53] & <.001 & +0.52 & \checkmark \\
+gemma-3-1b & P1 vs P3 & Instruct vs full SFT & +0.23 [+0.14,+0.31] & <.001 & +0.34 &  \\
+gemma-3-1b & P1 vs P4 & Instruct vs full CPT+SFT & +0.12 [+0.02,+0.21] & 0.030 & +0.16 &  \\
+gemma-3-1b & P3 vs P4 & full SFT vs full CPT+SFT & -0.11 [-0.21,-0.01] & 0.038 & -0.15 &  \\
+gemma-3-1b & P2 vs P5 & LoRA SFT vs LoRA CPT+SFT & +0.12 [+0.03,+0.22] & 0.011 & +0.17 &  \\
+gemma-3-1b & P1 vs P5 & Instruct vs LoRA CPT+SFT & +0.34 [+0.25,+0.44] & <.001 & +0.46 & \checkmark \\
+qwen3.5-2b & P1 vs P3 & Instruct vs full SFT & +0.68 [+0.56,+0.80] & <.001 & +0.74 & \checkmark \\
+qwen3.5-2b & P1 vs P4 & Instruct vs full CPT+SFT & +0.81 [+0.71,+0.92] & <.001 & +1.01 & \checkmark \\
+qwen3.5-2b & P3 vs P4 & full SFT vs full CPT+SFT & +0.13 [+0.03,+0.24] & 0.020 & +0.16 &  \\
+qwen3.5-2b & P2 vs P5 & LoRA SFT vs LoRA CPT+SFT & +0.11 [-0.00,+0.22] & 0.056 & +0.13 &  \\
+qwen3.5-2b & P1 vs P5 & Instruct vs LoRA CPT+SFT & +0.72 [+0.60,+0.83] & <.001 & +0.79 & \checkmark \\
+llama-3.1-8b & P1 vs P3 & Instruct vs full SFT & +0.12 [+0.00,+0.23] & 0.009 & +0.13 &  \\
+llama-3.1-8b & P1 vs P4 & Instruct vs full CPT+SFT & +0.26 [+0.14,+0.38] & <.001 & +0.28 & \checkmark \\
+llama-3.1-8b & P3 vs P4 & full SFT vs full CPT+SFT & +0.14 [+0.03,+0.25] & 0.019 & +0.16 &  \\
+llama-3.1-8b & P2 vs P5 & LoRA SFT vs LoRA CPT+SFT & +0.01 [-0.10,+0.12] & 0.842 & +0.01 &  \\
+llama-3.1-8b & P1 vs P5 & Instruct vs LoRA CPT+SFT & +0.25 [+0.12,+0.37] & <.001 & +0.26 &  \\
+qwen3.5-9b & P1 vs P3 & Instruct vs full SFT & -0.00 [-0.12,+0.12] & 0.580 & -0.00 &  \\
+qwen3.5-9b & P1 vs P4 & Instruct vs full CPT+SFT & +0.11 [-0.00,+0.22] & 0.019 & +0.12 &  \\
+qwen3.5-9b & P3 vs P4 & full SFT vs full CPT+SFT & +0.11 [+0.01,+0.22] & 0.044 & +0.14 &  \\
+qwen3.5-9b & P2 vs P5 & LoRA SFT vs LoRA CPT+SFT & +0.08 [-0.02,+0.18] & 0.132 & +0.11 &  \\
+qwen3.5-9b & P1 vs P5 & Instruct vs LoRA CPT+SFT & +0.09 [-0.03,+0.21] & 0.030 & +0.10 &  \\
+gemma-3-12b & P1 vs P3 & Instruct vs full SFT & -0.09 [-0.20,+0.02] & 0.243 & -0.10 &  \\
+gemma-3-12b & P1 vs P4 & Instruct vs full CPT+SFT & -0.07 [-0.19,+0.05] & 0.249 & -0.08 &  \\
+gemma-3-12b & P3 vs P4 & full SFT vs full CPT+SFT & +0.02 [-0.09,+0.13] & 0.895 & +0.02 &  \\
+gemma-3-12b & P2 vs P5 & LoRA SFT vs LoRA CPT+SFT & +0.05 [-0.06,+0.16] & 0.440 & +0.06 &  \\
+gemma-3-12b & P1 vs P5 & Instruct vs LoRA CPT+SFT & -0.07 [-0.19,+0.05] & 0.476 & -0.07 &  \\
+gemma-3-27b & P1 vs P3 & Instruct vs full SFT & -0.30 [-0.42,-0.18] & <.001 & -0.31 & \checkmark \\
+gemma-3-27b & P2 vs P5 & LoRA SFT vs LoRA CPT+SFT & +0.08 [-0.03,+0.19] & 0.166 & +0.09 &  \\
+gemma-3-27b & P1 vs P5 & Instruct vs LoRA CPT+SFT & -0.08 [-0.20,+0.04] & 0.238 & -0.09 &  \\
+qwen3.5-27b & P1 vs P3 & Instruct vs full SFT & -0.15 [-0.26,-0.05] & 0.039 & -0.18 &  \\
+qwen3.5-27b & P2 vs P5 & LoRA SFT vs LoRA CPT+SFT & +0.06 [-0.04,+0.15] & 0.161 & +0.07 &  \\
+qwen3.5-27b & P1 vs P5 & Instruct vs LoRA CPT+SFT & -0.06 [-0.15,+0.04] & 0.400 & -0.07 &  \\
+\bottomrule
+\end{tabular}
+\end{table*}

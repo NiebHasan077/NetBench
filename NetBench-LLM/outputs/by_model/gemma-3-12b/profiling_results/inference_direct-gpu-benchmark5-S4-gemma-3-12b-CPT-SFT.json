@@ -1,0 +1,179 @@
+{
+  "model_path": "/work2/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-12b-cpt-full-sft",
+  "model_name": "gemma-3-12b-cpt-full-sft",
+  "device": "cuda",
+  "profile_type": "direct",
+  "prompt_source": "/work2/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+  "timestamp": "2026-06-07T11:36:36.178496",
+  "system": {
+    "timestamp": "2026-06-07T11:27:09.584092",
+    "hostname": "site-b-node-2",
+    "python": "3.12.11",
+    "torch": "2.11.0+cu128",
+    "device": "cuda",
+    "cpu": {
+      "model": "Intel(R) Xeon(R) Platinum 8468",
+      "physical_cores": 96,
+      "logical_cores": 96,
+      "total_ram_gb": 1006.9
+    },
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA H100",
+        "total_memory_mb": 95321
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA H100",
+        "total_memory_mb": 95321
+      },
+      {
+        "index": 2,
+        "name": "NVIDIA H100",
+        "total_memory_mb": 95321
+      },
+      {
+        "index": 3,
+        "name": "NVIDIA H100",
+        "total_memory_mb": 95321
+      }
+    ],
+    "cuda_version": "12.8"
+  },
+  "model_load": {
+    "load_time_s": 23.88,
+    "gpu_vram_after_load_mb": 5943
+  },
+  "benchmark_prompts": [
+    {
+      "name": "NB-HPN-0026-q1",
+      "instruction_preview": "Why might a smart DTN implement network packet pacing specifically when transferring data from a high-bandwidth source t",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 392.5675,
+      "avg_tokens_per_second": 0.65,
+      "avg_ms_per_token": 1533.47,
+      "avg_ttft_s": 0.002,
+      "peak_gpu_vram_mb": 5784,
+      "runs": [
+        {
+          "input_tokens": 48,
+          "new_tokens": 256,
+          "total_time_s": 392.5675,
+          "ttft_s": 0.002,
+          "tokens_per_second": 0.65,
+          "ms_per_token": 1533.47,
+          "peak_gpu_vram_mb": 5784,
+          "cpu_ram_mb": 3501,
+          "text_preview": "In a Delay-Tolerant Networking (DTN) environment, transferring data from a high-bandwidth node to a low-bandwidth node without network packet pacing can lead to significant packet loss. The primary re"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-0159-q0",
+      "instruction_preview": "In host-based RDMA load balancing, how can a system detect network congestion without relying on specialized switch hard",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 24.6613,
+      "avg_tokens_per_second": 10.38,
+      "avg_ms_per_token": 96.33,
+      "avg_ttft_s": 0.0021,
+      "peak_gpu_vram_mb": 5784,
+      "runs": [
+        {
+          "input_tokens": 54,
+          "new_tokens": 256,
+          "total_time_s": 24.6613,
+          "ttft_s": 0.0021,
+          "tokens_per_second": 10.38,
+          "ms_per_token": 96.33,
+          "peak_gpu_vram_mb": 5784,
+          "cpu_ram_mb": 3552,
+          "text_preview": "In the absence of switch hardware capable of performing ECN marking, a system can detect network congestion by monitoring the Round-Trip Time (RTT) of messages. While ECN is a standard method for mark"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-2135-q1",
+      "instruction_preview": "Why is a periodic retransmission of the INT request necessary even if the initial in-band request was successfully sent?",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 21.884,
+      "avg_tokens_per_second": 11.7,
+      "avg_ms_per_token": 85.48,
+      "avg_ttft_s": 0.0019,
+      "peak_gpu_vram_mb": 5786,
+      "runs": [
+        {
+          "input_tokens": 44,
+          "new_tokens": 256,
+          "total_time_s": 21.884,
+          "ttft_s": 0.0019,
+          "tokens_per_second": 11.7,
+          "ms_per_token": 85.48,
+          "peak_gpu_vram_mb": 5786,
+          "cpu_ram_mb": 3586,
+          "text_preview": "In the context of the IS-IS (Intermediate System to Intermediate System) protocol, the periodic retransmission of the INT (Intermediate Node Termination) request serves as a critical mechanism for mai"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-2121-q2",
+      "instruction_preview": "Using the logic provided in the text, if a service has a Max-Min Fair (MmF) share of 40 Mbps but only achieves 30 Mbps u",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 69.5911,
+      "avg_tokens_per_second": 3.68,
+      "avg_ms_per_token": 271.84,
+      "avg_ttft_s": 0.0018,
+      "peak_gpu_vram_mb": 5787,
+      "runs": [
+        {
+          "input_tokens": 91,
+          "new_tokens": 256,
+          "total_time_s": 69.5911,
+          "ttft_s": 0.0018,
+          "tokens_per_second": 3.68,
+          "ms_per_token": 271.84,
+          "peak_gpu_vram_mb": 5787,
+          "cpu_ram_mb": 3735,
+          "text_preview": "To determine the percentage of the Max-Min Fair (MmF) share that the service has achieved, we first identify the achieved bandwidth, which is 30 Mbps, and compare it to the total MmF share, which is 4"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-1401-q1",
+      "instruction_preview": "Why might a parameter tuner choose to increase the number of TCP streams rather than simply increasing the size of a sin",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 16.0461,
+      "avg_tokens_per_second": 15.95,
+      "avg_ms_per_token": 62.68,
+      "avg_ttft_s": 0.0021,
+      "peak_gpu_vram_mb": 5784,
+      "runs": [
+        {
+          "input_tokens": 52,
+          "new_tokens": 256,
+          "total_time_s": 16.0461,
+          "ttft_s": 0.0021,
+          "tokens_per_second": 15.95,
+          "ms_per_token": 62.68,
+          "peak_gpu_vram_mb": 5784,
+          "cpu_ram_mb": 3784,
+          "text_preview": "When a parameter tuner faces limitations within the kernel, such as the maximum size of a TCP buffer being constrained to 16384 bytes, they cannot simply scale the buffer size indefinitely to accommod"
+        }
+      ]
+    }
+  ],
+  "output_length_scaling": [],
+  "input_length_scaling": [],
+  "summary": {
+    "avg_tokens_per_second": 8.47,
+    "avg_ms_per_token": 409.96,
+    "peak_gpu_vram_mb": 5787,
+    "peak_cpu_ram_mb": 3784,
+    "avg_ttft_s": 0.002
+  }
+}

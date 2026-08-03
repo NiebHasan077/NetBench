@@ -1,0 +1,51 @@
+# Misconception list seeds Phase 5c adversarial generation. Add/edit before that phase.
+# Each entry should be an HPN belief that LLMs (and casual readers) commonly get wrong.
+
+misconceptions:
+  - id: M001
+    statement: "More parallel TCP streams always increase throughput on a high-bandwidth path."
+    why_wrong: "Beyond the BDP, additional streams add CPU/memory overhead and increase loss/contention without raising throughput."
+
+  - id: M002
+    statement: "TCP fairness on a shared high-speed link is automatic."
+    why_wrong: "Concurrent transfers and CC variants (CUBIC vs BBR vs Reno) interact unfairly; static tuning often starves competing flows."
+
+  - id: M003
+    statement: "Concurrency and parallelism are interchangeable knobs."
+    why_wrong: "Concurrency adds I/O *and* network parallelism (separate processes); parallelism only adds streams within a single file."
+
+  - id: M004
+    statement: "Higher concurrency is always safe in shared research networks."
+    why_wrong: "Aggressive concurrency causes packet loss and unfair sharing; throughput-only utility ignores fairness penalties."
+
+  - id: M005
+    statement: "Pipelining materially improves large-file transfers."
+    why_wrong: "Pipelining only removes inter-file gaps; large-file throughput is bounded by BDP and storage, not control-channel latency."
+
+  - id: M006
+    statement: "BBR strictly outperforms CUBIC on high-RTT links."
+    why_wrong: "BBR can be aggressive against CUBIC competitors and underperform under shallow buffers or asymmetric paths."
+
+  - id: M007
+    statement: "RDMA/RoCE removes the need for any congestion or buffer tuning."
+    why_wrong: "RoCEv2 still needs PFC/ECN tuning; lossless fabrics fail catastrophically under misconfiguration."
+
+  - id: M008
+    statement: "Single-stream throughput on 100 Gbps links is just a CPU/buffer issue."
+    why_wrong: "BDP-limited window sizing dominates: even with infinite CPU, one stream cannot fill 100 Gbps × 80 ms RTT without huge windows."
+
+  - id: M009
+    statement: "Bayesian optimization always converges faster than gradient descent for transfer tuning."
+    why_wrong: "Bayesian methods probe aggressively (loss spikes) and converge slowly under nonstationary network conditions."
+
+  - id: M010
+    statement: "Fixed-window/static tuning works fine if you pick the right defaults."
+    why_wrong: "Network conditions (RTT, loss, competing load, storage) drift; static tuning silently underperforms."
+
+  - id: M011
+    statement: "Disk write throughput is rarely the bottleneck on modern HPC clusters."
+    why_wrong: "Lustre/GPFS metadata and stripe contention regularly cap large transfers below network capacity."
+
+  - id: M012
+    statement: "iperf reaching link rate proves the file-transfer pipeline can too."
+    why_wrong: "iperf is memory-to-memory; real transfers add disk I/O, filesystem, encryption, checksumming overhead."

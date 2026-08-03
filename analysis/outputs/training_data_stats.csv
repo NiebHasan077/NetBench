@@ -1,0 +1,11 @@
+# Adaptation-data scale (provenance for Table tab:traindata).
+# Raw data is gitignored; regenerate these numbers with:
+#   analysis/.venv/bin/python analysis/count_corpus_tokens.py <research_corpus_v3.json>
+#   analysis/.venv/bin/python analysis/count_sft_tokens.py <Instruct-FTD/v3_run_plus_json>
+# sft_papers = distinct paper_id over train+validation. Tokens: cl100k_base.
+key,value
+corpus_papers,2371
+corpus_tokens,29765344
+sft_papers,849
+sft_examples,3494
+sft_tokens,2064932

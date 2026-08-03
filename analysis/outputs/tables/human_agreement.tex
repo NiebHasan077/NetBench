@@ -1,0 +1,19 @@
+\begin{table}[H]\centering\footnotesize
+\caption{Judge--consensus alignment: two domain experts (authors) independently blind-scored all 125 responses (5 systems $\times$ 25 stratified questions) under the judge's exact rubric and information set; the human reference is their per-response consensus (mean). Bias is judge $-$ consensus (positive $=$ judge more lenient).}
+\label{tab:humanagree}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\multicolumn{5}{@{}l}{\textit{System-ranking agreement (5 systems)}} \\
+Kendall $\tau_b$ & \multicolumn{4}{r}{1.00} \\
+Spearman $\rho$ & \multicolumn{4}{r}{1.00} \\
+Pearson $r$ (mean overall) & \multicolumn{4}{r}{0.99} \\
+\midrule \multicolumn{5}{@{}l}{\textit{Per-response, by dimension}} \\
+Dimension & Pearson & MAE & Bias & QWK \\ \midrule
+Correctness & 0.86 & 0.50 & +0.31 & 0.77 \\
+Completeness & 0.86 & 0.47 & +0.20 & 0.82 \\
+Clarity & 0.70 & 0.33 & +0.12 & 0.68 \\
+Conciseness & 0.68 & 0.43 & -0.04 & 0.55 \\
+\midrule Overall (composite) & 0.89 & 0.38 & +0.20 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

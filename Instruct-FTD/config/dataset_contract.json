@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0.0",
+  "project": "Instruct-FTD",
+  "description": "Canonical local instruction dataset contract for HPN-focused synthetic SFT data.",
+  "final_artifacts": {
+    "train": "data/final/train.jsonl",
+    "validation": "data/final/validation.jsonl"
+  },
+  "required_fields": [
+    "system",
+    "question",
+    "response",
+    "category"
+  ],
+  "optional_fields": [
+    "source_split",
+    "task_type",
+    "difficulty",
+    "paper_id",
+    "paper_title",
+    "source_pdf",
+    "question_type",
+    "prompt_length_bucket",
+    "generation_family",
+    "evidence",
+    "anchor_source",
+    "anchor_source_category",
+    "hermes_category",
+    "hermes_subcategory",
+    "hermes_task",
+    "metadata"
+  ],
+  "mixture_targets": {
+    "hpn": 0.6,
+    "rag": 0.2,
+    "generic": 0.2
+  },
+  "source_splits": [
+    "hpn",
+    "rag",
+    "generic"
+  ],
+  "difficulty_levels": [
+    "easy",
+    "medium",
+    "hard"
+  ],
+  "question_types": [
+    "concept",
+    "reasoning",
+    "calculation",
+    "comparison",
+    "diagnosis",
+    "scenario",
+    "task",
+    "structured_output"
+  ],
+  "prompt_length_buckets": [
+    "short",
+    "medium",
+    "long",
+    "xlong"
+  ],
+  "categories": [
+    "hpn_fact_qa",
+    "hpn_concept_explanation",
+    "hpn_comparison",
+    "hpn_limitation_analysis",
+    "hpn_calculation",
+    "hpn_diagnosis",
+    "hpn_scenario",
+    "hpn_task",
+    "rag_grounded_qa",
+    "rag_unanswerable",
+    "generic_orca",
+    "generic_dolly",
+    "generic_json"
+  ],
+  "task_types": [
+    "fact_qa",
+    "concept_explanation",
+    "method_summary",
+    "comparison",
+    "limitation_analysis",
+    "numerical_reasoning",
+    "diagnosis",
+    "scenario",
+    "task",
+    "rag_grounded_qa",
+    "rag_unanswerable",
+    "generic_anchor",
+    "json_response"
+  ],
+  "hpn_behavior_target": {
+    "source_reference": "../NetBench-LLM/evaluation/hpn_qa_benchmark.py",
+    "system_prompt_style": "HPN expert with focused, technically precise, reasoned answers",
+    "response_length_words": {
+      "min": 100,
+      "max": 350
+    }
+  },
+  "downstream_integration": {
+    "project": "../NetBench-LLM",
+    "expected_loader_shape": [
+      "system",
+      "question",
+      "response",
+      "category"
+    ],
+    "template_rendering_owner": "NetBench-LLM Direct Pipeline"
+  }
+}

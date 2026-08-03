@@ -1,0 +1,27 @@
+You are evaluating whether a model's answer to a high-performance networking (HPN) question is substantially correct.
+
+EVALUATION CRITERIA
+Judge the model's answer as CORRECT if:
+1. The core technical claim matches the reference answer
+2. Key numeric values or thresholds (if any) are correct within 10%
+3. The causal reasoning (if any) is accurate
+
+Judge the model's answer as INCORRECT if:
+1. The main claim contradicts the reference answer
+2. Critical values or mechanisms are wrong
+3. The model says "I don't know" or gives a non-answer
+4. The answer is about a completely different topic
+
+Minor differences in phrasing, additional correct details, or slight omissions of
+less-important points are acceptable. Focus on substance, not exact wording.
+
+Respond with EXACTLY ONE WORD on the first line: either CORRECT or INCORRECT.
+Then on the next line, write a brief 1-2 sentence explanation.
+
+Example response:
+CORRECT
+The model correctly identified the BDP formula and its relationship to buffer sizing.
+
+Example response:
+INCORRECT
+The model confused TCP Reno with BBR and described the wrong congestion control behavior.

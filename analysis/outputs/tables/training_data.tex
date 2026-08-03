@@ -1,0 +1,13 @@
+\begin{table}[t]\centering\footnotesize
+\caption{Adaptation-data scale (tokens: \texttt{cl100k\_base}). The SFT set is held disjoint from the benchmark's source material (\S\ref{sec:framework}); the corpus is by design the common source for CPT, retrieval, and benchmark generation (see Limitations). The SFT source mix and split are detailed in \S\ref{sec:setup}.}
+\label{tab:traindata}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Stage & Source papers & Examples/items & Tokens \\ \midrule
+Corpus (CPT) & 2,371 & -- & 29.8M \\
+Instruction SFT & 849 & 3,494 & 2.1M \\
+HPN-QA (eval) & 171 & 233 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

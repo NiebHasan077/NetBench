@@ -1,0 +1,20 @@
+\begin{table}[H]\centering\footnotesize
+\caption{Agreement between the primary judge (GPT-5.1) and the second judge (Gemini-3.5-Flash) over 14,679 paired per-question judgements across 63 evaluated systems.}
+\label{tab:judgeagree}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\multicolumn{5}{@{}l}{\textit{System-ranking agreement}} \\
+Kendall $\tau_b$ & \multicolumn{4}{r}{0.93} \\
+Spearman $\rho$ & \multicolumn{4}{r}{0.99} \\
+Pearson $r$ (system means) & \multicolumn{4}{r}{0.99} \\
+\midrule \multicolumn{5}{@{}l}{\textit{Per-question, by dimension}} \\
+Dimension & Pearson & Spearman & MAE & QWK \\ \midrule
+Correctness & 0.88 & 0.86 & 0.41 & 0.87 \\
+Completeness & 0.86 & 0.87 & 0.48 & 0.84 \\
+Clarity & 0.61 & 0.58 & 0.47 & 0.56 \\
+Conciseness & 0.49 & 0.47 & 0.67 & 0.41 \\
+Overall & 0.89 & 0.88 & 0.44 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

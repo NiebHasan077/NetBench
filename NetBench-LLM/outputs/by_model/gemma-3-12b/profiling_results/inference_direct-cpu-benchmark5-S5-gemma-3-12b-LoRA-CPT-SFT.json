@@ -1,0 +1,156 @@
+{
+  "model_path": "/work2/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-12b-instruct-lora-cpt-then-sft-merged",
+  "model_name": "gemma-3-12b-instruct-lora-cpt-then-sft-merged",
+  "device": "cpu",
+  "profile_type": "direct",
+  "prompt_source": "/work2/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+  "timestamp": "2026-06-07T15:17:20.482736",
+  "system": {
+    "timestamp": "2026-06-07T14:25:19.830889",
+    "hostname": "site-b-node-2",
+    "python": "3.12.11",
+    "torch": "2.11.0+cu128",
+    "device": "cpu",
+    "cpu": {
+      "model": "Intel(R) Xeon(R) Platinum 8468",
+      "physical_cores": 96,
+      "logical_cores": 96,
+      "total_ram_gb": 1006.9
+    }
+  },
+  "model_load": {
+    "load_time_s": 961.91,
+    "gpu_vram_after_load_mb": 0
+  },
+  "benchmark_prompts": [
+    {
+      "name": "NB-HPN-0026-q1",
+      "instruction_preview": "Why might a smart DTN implement network packet pacing specifically when transferring data from a high-bandwidth source t",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 360.9898,
+      "avg_tokens_per_second": 0.45,
+      "avg_ms_per_token": 2214.66,
+      "avg_ttft_s": 0.002,
+      "peak_gpu_vram_mb": 0,
+      "runs": [
+        {
+          "input_tokens": 48,
+          "new_tokens": 163,
+          "total_time_s": 360.9898,
+          "ttft_s": 0.002,
+          "tokens_per_second": 0.45,
+          "ms_per_token": 2214.66,
+          "peak_gpu_vram_mb": 0,
+          "cpu_ram_mb": 47500,
+          "text_preview": "When transferring data from a high-bandwidth source to a low-bandwidth destination, a significant disparity in throughput capacity exists between the sender and the receiver. This imbalance often lead"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-0159-q0",
+      "instruction_preview": "In host-based RDMA load balancing, how can a system detect network congestion without relying on specialized switch hard",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 294.3597,
+      "avg_tokens_per_second": 0.47,
+      "avg_ms_per_token": 2148.61,
+      "avg_ttft_s": 0.002,
+      "peak_gpu_vram_mb": 0,
+      "runs": [
+        {
+          "input_tokens": 54,
+          "new_tokens": 137,
+          "total_time_s": 294.3597,
+          "ttft_s": 0.002,
+          "tokens_per_second": 0.47,
+          "ms_per_token": 2148.61,
+          "peak_gpu_vram_mb": 0,
+          "cpu_ram_mb": 47502,
+          "text_preview": "In host-based RDMA load balancing schemes that do not utilize ECN-supported switches, network congestion detection is a significant challenge. Without ECN markings to indicate buffer occupancy, the ho"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-2135-q1",
+      "instruction_preview": "Why is a periodic retransmission of the INT request necessary even if the initial in-band request was successfully sent?",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 429.5949,
+      "avg_tokens_per_second": 0.47,
+      "avg_ms_per_token": 2116.23,
+      "avg_ttft_s": 0.002,
+      "peak_gpu_vram_mb": 0,
+      "runs": [
+        {
+          "input_tokens": 44,
+          "new_tokens": 203,
+          "total_time_s": 429.5949,
+          "ttft_s": 0.002,
+          "tokens_per_second": 0.47,
+          "ms_per_token": 2116.23,
+          "peak_gpu_vram_mb": 0,
+          "cpu_ram_mb": 47562,
+          "text_preview": "In a reliable communication system, such as the one used for INT (In-band Network Telemetry) requests, a periodic retransmission of the request is necessary to handle potential packet losses and ensur"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-2121-q2",
+      "instruction_preview": "Using the logic provided in the text, if a service has a Max-Min Fair (MmF) share of 40 Mbps but only achieves 30 Mbps u",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 501.7481,
+      "avg_tokens_per_second": 0.46,
+      "avg_ms_per_token": 2153.43,
+      "avg_ttft_s": 0.002,
+      "peak_gpu_vram_mb": 0,
+      "runs": [
+        {
+          "input_tokens": 91,
+          "new_tokens": 233,
+          "total_time_s": 501.7481,
+          "ttft_s": 0.002,
+          "tokens_per_second": 0.46,
+          "ms_per_token": 2153.43,
+          "peak_gpu_vram_mb": 0,
+          "cpu_ram_mb": 47545,
+          "text_preview": "To find the percentage of the MmF share achieved, we first divide the achieved bandwidth (30 Mbps) by the MmF share (40 Mbps): 30 Mbps / 40 Mbps = 0.75. To express this as a percentage, we multiply by"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-1401-q1",
+      "instruction_preview": "Why might a parameter tuner choose to increase the number of TCP streams rather than simply increasing the size of a sin",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 541.9981,
+      "avg_tokens_per_second": 0.47,
+      "avg_ms_per_token": 2117.18,
+      "avg_ttft_s": 0.002,
+      "peak_gpu_vram_mb": 0,
+      "runs": [
+        {
+          "input_tokens": 52,
+          "new_tokens": 256,
+          "total_time_s": 541.9981,
+          "ttft_s": 0.002,
+          "tokens_per_second": 0.47,
+          "ms_per_token": 2117.18,
+          "peak_gpu_vram_mb": 0,
+          "cpu_ram_mb": 47544,
+          "text_preview": "When a parameter tuner reaches kernel-level limitations, increasing the number of TCP streams can be a viable alternative to increasing the size of a single TCP buffer. Here's why: 1. Kernel Limitatio"
+        }
+      ]
+    }
+  ],
+  "output_length_scaling": [],
+  "input_length_scaling": [],
+  "summary": {
+    "avg_tokens_per_second": 0.46,
+    "avg_ms_per_token": 2150.02,
+    "peak_gpu_vram_mb": 0,
+    "peak_cpu_ram_mb": 47544,
+    "avg_ttft_s": 0.002
+  }
+}

@@ -1,0 +1,176 @@
+# ─────────────────────────────────────────────────────────────────────────
+# collect_papers — Profile Template
+# ─────────────────────────────────────────────────────────────────────────
+# Copy this file to a new name (e.g. ml-systems.yaml) and fill in the
+# fields for your domain.  Then run:
+#
+#   python collect_papers.py --profile profiles/ml-systems.yaml
+#
+# Fields marked REQUIRED must be present.  All others are optional and
+# show their default values below.
+# ─────────────────────────────────────────────────────────────────────────
+
+
+# REQUIRED ─────────────────────────────────────────────────────────────────
+
+# Human-readable name for the domain.  Used in log output and to derive
+# default directory names (slugified).
+name: "My Research Domain"
+
+# Your email address.  OpenAlex routes requests that include a mailto into
+# their "polite pool" which is faster and more reliable.
+# https://docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication
+mailto: "your_email@example.com"
+
+
+# SEARCH STRATEGIES ────────────────────────────────────────────────────────
+# At least one of `journals` or `keywords` must be non-empty.
+
+# Journal sources — these must have stable OpenAlex source IDs.
+# Use the OpenAlex web UI (https://openalex.org/sources) to find IDs.
+# Leave empty ([]) if you only want keyword search.
+#
+# Each entry needs:
+#   search: Full journal name to search for in OpenAlex sources API
+#   match:  Substring that must appear in the result name to accept it
+#           (prevents partial-name collisions)
+journals: []
+# Example:
+# journals:
+#   - search: "IEEE/ACM Transactions on Networking"
+#     match: "Transactions on Networking"
+#   - search: "Journal of Machine Learning Research"
+#     match: "Machine Learning Research"
+
+
+# Keyword buckets — each string is one OpenAlex full-text search query.
+# Each query is run separately and results are merged + deduplicated.
+#
+# Tips:
+#   • Use quoted phrases for exact matches: "congestion control"
+#   • Use OR to broaden a bucket: "RDMA" OR "InfiniBand"
+#   • Combine two specific terms to reduce cross-domain noise:
+#       '"P4" "programmable switch"'  (rather than just '"P4"')
+# Leave empty ([]) if you only want journal search.
+keywords: []
+# Example:
+# keywords:
+#   - '"transformer" "language model" training'
+#   - '"mixture of experts" LLM'
+#   - '"distributed training" GPU cluster'
+
+
+# FILTERS ──────────────────────────────────────────────────────────────────
+
+# OpenAlex subfield filter — restricts keyword searches to specific CS
+# subfields, preventing cross-domain matches.
+# Find subfield IDs at: https://api.openalex.org/subfields
+# Set to null (or omit) to search across all subfields.
+#
+# Common subfield IDs:
+#   1702 = Artificial Intelligence
+#   1703 = Computational Theory and Mathematics
+#   1705 = Computer Networks and Communications
+#   1706 = Computer Science Applications
+#   1707 = Computer Vision and Pattern Recognition
+#   1708 = Hardware and Architecture
+#   1712 = Software
+subfield_filter: null
+# Example (Computer Networks + Hardware):
+# subfield_filter: "primary_topic.subfield.id:subfields/1705|subfields/1708"
+
+
+# YEAR RANGE ───────────────────────────────────────────────────────────────
+
+# Oldest publication year to include.
+year_min: 2018
+
+# Newest publication year to include.  Update annually.
+year_max: 2026
+
+
+# FETCH LIMITS ─────────────────────────────────────────────────────────────
+
+# Maximum number of results fetched per journal source or keyword bucket.
+# A value of 150 with ~20 keyword buckets targets ~3000 candidate papers.
+# Raise to 300-500 for a more exhaustive corpus (slower, more API calls).
+max_per_query: 150
+
+
+# DOMAIN DESCRIPTION ───────────────────────────────────────────────────────
+# Plain-English description of what papers belong in this domain.
+# Used by the optional LLM abstract validator (Phase 3) to decide relevance.
+# Leave empty if LLM validation is not enabled.
+domain_description: >
+  Replace this with a 2-4 sentence description of your research domain.
+  Be specific about the topics, techniques, and systems that are in scope.
+  This text is passed directly to the LLM as the relevance criterion.
+
+
+# OUTPUT PATHS ─────────────────────────────────────────────────────────────
+# All paths can be absolute or relative.
+# Relative paths are resolved from the directory containing this profile file.
+
+# Directory containing a Check-Exists paperbase index (title_index.json).
+# Papers whose normalized title appears in that index are skipped.
+# Set to null (or omit) if you have no existing paperbase to dedup against.
+paperbase_dir: null
+# Example (sibling directory):
+# paperbase_dir: "../../My-Check-Exists"
+
+# Directory where downloaded PDFs are written.
+# Default (if omitted): <profile_dir>/../downloads/<slugified_name>/
+# e.g. profiles/../downloads/my_research_domain/
+downloads_dir: null
+# Example (explicit path):
+# downloads_dir: "../downloads/my-domain"
+
+
+# LLM VALIDATION ───────────────────────────────────────────────────────────
+# Optional LLM-based abstract relevance filter.  When enabled, collect_papers
+# calls the configured LLM for each candidate paper (after dedup checks) and
+# downloads only papers the LLM classifies as relevant to this domain.
+#
+# Requires either Ollama running locally (free, private, no rate limits) or
+# an OpenAI-compatible API endpoint (OpenAI, Together AI, LM Studio, …).
+#
+# Ollama quick-start:
+#   ollama serve              # start the server (background daemon)
+#   ollama pull llama3        # download the model once (~4 GB)
+#
+# Set enabled: false (or remove this section entirely) to disable.
+
+# llm_validation:
+#   enabled: false
+#   backend: ollama             # "ollama" | "openai"
+#   model: "llama3"             # any model available in your backend
+#   base_url: "http://localhost:11434"
+#   api_key: ""                 # leave empty for Ollama; Bearer token for OpenAI
+#   temperature: 0              # 0 = fully deterministic responses
+#   timeout: 30                 # seconds per LLM call
+#   fallback_on_no_abstract: "download"   # "download" (safe) | "skip"
+#   skip_journal_papers: true   # bypass LLM for journal-sourced papers (already domain-filtered)
+
+
+# SEMANTIC SCHOLAR ─────────────────────────────────────────────────────────
+# Optional Semantic Scholar API integration.  When enabled, run with
+# --sources s2 (S2 only) or --sources all (OpenAlex + S2) to search the
+# Semantic Scholar Academic Graph API for open-access papers.
+#
+# Only papers with a freely downloadable PDF are kept (open_access_only).
+#
+# Register for a free API key (raises rate limit to 1 req/s):
+#   https://www.semanticscholar.org/product/api
+#
+# Set enabled: false (or remove this section entirely) to disable.
+
+# semantic_scholar:
+#   enabled: false
+#   api_key: ""                         # optional fallback key
+#   api_key_env: "S2_API_KEY"        # preferred public-repo interface
+#   fields_of_study:                    # S2 field-of-study filter
+#     - "Computer Science"
+#   max_per_query: 100                  # max papers per keyword bucket
+#   keywords:                           # S2 keyword query strings
+#     - '"your topic" OR "alternative term"'
+#     - '"another topic" specific-term'

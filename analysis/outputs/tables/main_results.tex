@@ -1,0 +1,21 @@
+\begin{table*}[t]\centering\footnotesize
+\caption{Overall HPN-QA score (1--5; GPT-5.1 judge) per model and adaptation variant. Closed-book P1--P5; open-book (RAG) P6--P8. Blank cells mark variants not run (Table~\ref{tab:models}). Bottom tier: frontier API baselines (closed-book, no adaptation; shown under P1). Paired differences quoted in the text are computed on unrounded per-question scores and can differ from differences of the rounded cells shown here by $0.01$.}
+\label{tab:main}
+\begin{tabular}{llcccccccc}
+\toprule
+Tier & Model & P1 & P2 & P3 & P4 & P5 & P6 & P7 & P8 \\ \midrule
+small & gemma-3-1b & 2.40 & 2.62 & 2.63 & 2.52 & 2.74 & 3.02 & 2.84 & 2.91 \\
+ & llama-3.2-1b & 2.40 & 2.73 & 2.68 & 2.77 & 2.82 & 2.93 & 3.01 & 3.12 \\
+ & qwen3.5-2b & 2.63 & 3.24 & 3.31 & 3.45 & 3.35 & 3.88 & 3.90 & 4.00 \\
+medium & gemma-3-12b & 3.61 & 3.49 & 3.52 & 3.54 & 3.54 & 4.30 & 4.10 & 4.14 \\
+ & llama-3.1-8b & 3.30 & 3.55 & 3.42 & 3.56 & 3.55 & 3.96 & 4.09 & 4.11 \\
+ & qwen3.5-9b & 3.71 & 3.72 & 3.71 & 3.83 & 3.81 & 4.36 & 4.32 & 4.27 \\
+large & gemma-3-27b & 3.80 & 3.64 & 3.50 & -- & 3.71 & 4.42 & -- & 4.14 \\
+ & qwen3.5-27b & 4.14 & 4.03 & 3.99 & -- & 4.09 & 4.53 & -- & 4.46 \\
+\midrule
+API & claude-sonnet-4-6 & 4.40 &  &  &  &  &  &  &  \\
+ & gemini-2.5-pro & 4.36 &  &  &  &  &  &  &  \\
+ & gpt-4o & 4.22 &  &  &  &  &  &  &  \\
+\bottomrule
+\end{tabular}
+\end{table*}

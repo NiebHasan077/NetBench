@@ -1,0 +1,68 @@
+# NetBench Benchmark Generator -- runtime configuration
+# Generated artifacts are intentionally ignored by the publication repository.
+# Provide the local paper corpus under NetBench-LLM/data/raw/ before running.
+
+paths:
+  corpus: ../NetBench-LLM/data/raw/research_corpus_v3.json
+  v4_benchmark: ../NetBench-LLM/data/prompts/hpn_qa_benchmark_v4_general_skills.json
+  data_dir: data
+  benchmark_dir: benchmark
+  reports_dir: reports
+  prompts_dir: prompts
+  logs_dir: data/_logs
+  openai_key_env: OPENAI_API_KEY
+  gemini_key_env: GEMINI_API_KEY
+
+models:
+  ollama_host: http://localhost:11434
+  card_generator: qwen3.5:9b
+  question_generator: gemma4:26b
+  question_generator_fallback: gemma4:26b
+  critic: gemma4:26b
+  calibration:
+    weak: llama3.2:3b
+    mid: qwen3.5:9b
+    strong: gemma4:26b
+  embedding: BAAI/bge-large-en-v1.5
+  judge_a: gpt-4o
+  judge_b: gemini-2.5-pro
+
+ollama:
+  request_timeout_seconds: 600
+  max_retries: 1
+  json_retry_temperature: 0.2
+  default_temperature: 0.7
+  default_num_predict: 4096
+
+chunking:
+  window_tokens: 1000
+  overlap_tokens: 100
+
+filter:
+  top_k_papers: 300
+  min_score: 0.45
+
+clustering:
+  min_cluster_size: 3
+  cluster_selection_method: leaf
+
+generation:
+  per_card_questions: 4
+  synthesis_pairs_per_cluster: 8
+  synthesis_target: 80
+  adversarial_target: 30
+
+validation:
+  ngram_leak_size: 8
+  leak_cosine_threshold: 0.92
+  dedup_cosine_threshold: 0.88
+
+splits:
+  benchmark_version: v5.0
+  dev: 30
+  test: 200
+  synthesis: 50
+  adversarial: 20
+  total: 300
+
+seed: 42

@@ -1,0 +1,6 @@
+PLACEHOLDER — finalized in Phase 9.
+prompt_version: v5.0-judge
+
+Used by GPT-4o (judge_a) and Gemini 2.5 Pro (judge_b) only.
+Returns JSON with correctness (1-5), completeness (1-5), reasoning (1-5),
+practicality (1-5), and explanation. See PLAN.md §11 of the original concept doc.

@@ -1,0 +1,120 @@
+# Credentials and local environment configuration
+**/hf_token.txt
+**/openai_api_key.txt
+**/gemini_api_key.txt
+**/*api_key*.txt
+**/credentials.json
+**/.env
+**/.env.*
+**/*.key
+
+# Local-only material kept outside the release
+*.bundle
+*.zip
+*.docx
+/incoming/
+/Benchmarking-papers/
+
+# Python environments and generated caches
+**/.venv/
+**/venv/
+**/env/
+**/__pycache__/
+**/.cache/
+**/*.py[cod]
+
+# Logs and generated profiling captures retained outside the publication tree
+**/*.log
+**/*.nsys-rep
+**/*.sqlite
+
+# Consolidated per-model outputs on main: keep curated results, exclude raw shards/logs
+/NetBench-LLM/outputs/by_model/**/answers/.parallel_*/
+/NetBench-LLM/outputs/by_model/**/answers/.shards/
+/NetBench-LLM/outputs/by_model/**/logs/
+
+# Analysis: regenerable bulk score tables (rebuild via analysis/aggregate_scores.py)
+/analysis/outputs/scores_long.csv
+/analysis/outputs/scores_overall.csv
+
+# Model weights, checkpoints, and generated trainer state
+/NetBench-LLM/models/
+/NetBench-LLM/checkpoints/
+/NetBench-LLM/**/checkpoint-*/
+**/*.safetensors
+**/*.gguf
+**/*.ckpt
+**/pytorch_model*.bin
+**/adapter_model*.bin
+**/optimizer.pt
+**/scheduler.pt
+**/rng_state*.pth
+
+# Direct Pipeline derived/tokenized training data; reviewed raw inputs are allowed
+/NetBench-LLM/data/processed/
+/NetBench-LLM/data/instruction/
+/NetBench-LLM/data/Instruct-FTD/
+/NetBench-LLM/processed_data*/
+/NetBench-LLM/tokenized_data*/
+/NetBench-LLM/instruction_data*/
+
+# RAG derived retrieval/index stores; reviewed raw inputs are allowed
+/NetBench-RAG/data/qdrant_store/
+/NetBench-RAG/data/bm25_index.pkl
+/NetBench-RAG/data/chunks_cache.pkl
+/NetBench-RAG/.index_done
+/NetBench-RAG/data/backup_corpus*
+/NetBench-RAG/data/processed/
+/NetBench-RAG/data/embeddings/
+/NetBench-RAG/data/**/*.faiss
+/NetBench-RAG/data/**/*.index
+/NetBench-RAG/data/**/*index*.pkl
+
+# Previously recovered corpora remain private/screened; do not publish accidentally
+/NetBench-LLM/data/raw/research_corpus*
+/NetBench-RAG/data/raw/research_corpus*
+
+# Dataset-provenance source modules: generated/private artifacts stay local
+/Benchmark-Generator/.git/
+/Benchmark-Generator/.venv/
+/Benchmark-Generator/venv/
+/Benchmark-Generator/env/
+/Benchmark-Generator/data/
+/Benchmark-Generator/benchmark/
+/Benchmark-Generator/reports/
+/Benchmark-Generator/**/*.log
+
+/Instruct-FTD/.git/
+/Instruct-FTD/.venv/
+/Instruct-FTD/venv/
+/Instruct-FTD/env/
+/Instruct-FTD/pdfs/
+/Instruct-FTD/data/
+/Instruct-FTD/reports/
+/Instruct-FTD/logs/
+/Instruct-FTD/research_corpus*.json
+/Instruct-FTD/**/*.log
+
+# Full data-provenance source modules: keep PDFs, corpora, indexes, and logs local
+/Collect-papers/.git/
+/Collect-papers/.venv/
+/Collect-papers/venv/
+/Collect-papers/env/
+/Collect-papers/downloads/
+/Collect-papers/metadata.jsonl
+/Collect-papers/failed_downloads.jsonl
+/Collect-papers/paperbase/title_index.json
+/Collect-papers/paperbase/duplicate_candidates.json
+/Collect-papers/paperbase/confirmed_duplicates.json
+/Collect-papers/paperbase/deletion_log.json
+/Collect-papers/downloads/*/validation_cache.json
+
+/Paper2Corpus/.git/
+/Paper2Corpus/.venv/
+/Paper2Corpus/venv/
+/Paper2Corpus/env/
+/Paper2Corpus/pdfs/
+/Paper2Corpus/all_papers.txt
+/Paper2Corpus/all_papers_cleaned.txt
+/Paper2Corpus/research_corpus*.json
+/Paper2Corpus/pipeline_output.log

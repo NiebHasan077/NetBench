@@ -1,0 +1,73 @@
+base_model,size_group,group,contrast,description,n,mean_a,mean_b,mean_diff,median_diff,ci95_lo,ci95_hi,p_raw,p_bh,bh_sig,cohens_dz,practically_sig,provisional
+llama-3.2-1b,small,closed_book,P1 vs P3,Instruct vs full SFT,233,2.403,2.677,0.273,0.2,0.183,0.361,0.0,0.0,True,0.392,True,False
+llama-3.2-1b,small,closed_book,P1 vs P4,Instruct vs full CPT+SFT,233,2.403,2.766,0.363,0.3,0.263,0.463,0.0,0.0,True,0.464,True,False
+llama-3.2-1b,small,closed_book,P3 vs P4,full SFT vs full CPT+SFT,233,2.677,2.766,0.089,0.0,-0.006,0.184,0.09395,0.12079,False,0.121,False,False
+llama-3.2-1b,small,closed_book,P2 vs P5,LoRA SFT vs LoRA CPT+SFT,233,2.734,2.824,0.091,0.0,0.003,0.178,0.03196,0.04341,True,0.133,False,False
+llama-3.2-1b,small,closed_book,P1 vs P5,Instruct vs LoRA CPT+SFT,233,2.403,2.824,0.421,0.3,0.316,0.525,0.0,0.0,True,0.52,True,False
+llama-3.2-1b,small,open_book,P6 vs P7,RAG-Instruct vs RAG-CPT+SFT,233,2.93,3.011,0.081,0.1,-0.047,0.208,0.10597,0.13172,False,0.082,False,False
+llama-3.2-1b,small,open_book,P6 vs P8,RAG-Instruct vs RAG-LoRA-CPT+SFT,233,2.93,3.123,0.193,0.1,0.085,0.301,0.00053,0.00108,True,0.23,False,False
+llama-3.2-1b,small,rag_effect,P1 vs P6,add RAG to Instruct (matched model),233,2.403,2.93,0.526,0.4,0.41,0.64,0.0,0.0,True,0.595,True,False
+llama-3.2-1b,small,rag_effect,P4 vs P7,add RAG to full CPT+SFT (matched model),233,2.766,3.011,0.245,0.3,0.109,0.38,0.00054,0.00108,True,0.234,False,False
+llama-3.2-1b,small,rag_effect,P5 vs P8,add RAG to LoRA CPT+SFT (matched model),233,2.824,3.123,0.298,0.1,0.178,0.421,3e-05,7e-05,True,0.313,True,False
+gemma-3-1b,small,closed_book,P1 vs P3,Instruct vs full SFT,233,2.403,2.628,0.225,0.1,0.142,0.309,0.0,0.0,True,0.344,False,False
+gemma-3-1b,small,closed_book,P1 vs P4,Instruct vs full CPT+SFT,233,2.403,2.518,0.115,0.1,0.023,0.206,0.02028,0.0298,True,0.161,False,False
+gemma-3-1b,small,closed_book,P3 vs P4,full SFT vs full CPT+SFT,233,2.628,2.518,-0.11,0.0,-0.206,-0.015,0.02703,0.03815,True,-0.147,False,False
+gemma-3-1b,small,closed_book,P2 vs P5,LoRA SFT vs LoRA CPT+SFT,233,2.62,2.744,0.124,0.0,0.027,0.22,0.0062,0.01115,True,0.165,False,False
+gemma-3-1b,small,closed_book,P1 vs P5,Instruct vs LoRA CPT+SFT,233,2.403,2.744,0.341,0.3,0.247,0.436,0.0,0.0,True,0.464,True,False
+gemma-3-1b,small,open_book,P6 vs P7,RAG-Instruct vs RAG-CPT+SFT,233,3.015,2.839,-0.176,-0.1,-0.295,-0.061,0.00879,0.01543,True,-0.191,False,False
+gemma-3-1b,small,open_book,P6 vs P8,RAG-Instruct vs RAG-LoRA-CPT+SFT,233,3.015,2.91,-0.105,-0.1,-0.221,0.012,0.11933,0.14563,False,-0.116,False,False
+gemma-3-1b,small,rag_effect,P1 vs P6,add RAG to Instruct (matched model),233,2.403,3.015,0.612,0.5,0.49,0.736,0.0,0.0,True,0.639,True,False
+gemma-3-1b,small,rag_effect,P4 vs P7,add RAG to full CPT+SFT (matched model),233,2.518,2.839,0.322,0.2,0.207,0.442,0.0,1e-05,True,0.345,True,False
+gemma-3-1b,small,rag_effect,P5 vs P8,add RAG to LoRA CPT+SFT (matched model),233,2.744,2.91,0.166,0.0,0.045,0.288,0.0241,0.03471,True,0.175,False,False
+qwen3.5-2b,small,closed_book,P1 vs P3,Instruct vs full SFT,233,2.634,3.315,0.682,0.7,0.563,0.797,0.0,0.0,True,0.744,True,False
+qwen3.5-2b,small,closed_book,P1 vs P4,Instruct vs full CPT+SFT,233,2.634,3.448,0.815,0.8,0.712,0.917,0.0,0.0,True,1.011,True,False
+qwen3.5-2b,small,closed_book,P3 vs P4,full SFT vs full CPT+SFT,233,3.315,3.448,0.133,0.0,0.029,0.237,0.01249,0.01955,True,0.163,False,False
+qwen3.5-2b,small,closed_book,P2 vs P5,LoRA SFT vs LoRA CPT+SFT,233,3.242,3.352,0.11,0.0,-0.0,0.222,0.04314,0.05648,False,0.128,False,False
+qwen3.5-2b,small,closed_book,P1 vs P5,Instruct vs LoRA CPT+SFT,233,2.634,3.352,0.718,0.7,0.6,0.832,0.0,0.0,True,0.793,True,False
+qwen3.5-2b,small,open_book,P6 vs P7,RAG-Instruct vs RAG-CPT+SFT,233,3.881,3.896,0.015,0.0,-0.107,0.133,0.30368,0.33639,False,0.016,False,False
+qwen3.5-2b,small,open_book,P6 vs P8,RAG-Instruct vs RAG-LoRA-CPT+SFT,233,3.881,4.001,0.12,0.0,0.003,0.231,0.01165,0.01902,True,0.133,False,False
+qwen3.5-2b,small,rag_effect,P1 vs P6,add RAG to Instruct (matched model),233,2.634,3.881,1.247,1.3,1.112,1.377,0.0,0.0,True,1.21,True,False
+qwen3.5-2b,small,rag_effect,P4 vs P7,add RAG to full CPT+SFT (matched model),233,3.448,3.896,0.447,0.5,0.303,0.59,0.0,0.0,True,0.398,True,False
+qwen3.5-2b,small,rag_effect,P5 vs P8,add RAG to LoRA CPT+SFT (matched model),233,3.352,4.001,0.649,0.7,0.506,0.788,0.0,0.0,True,0.582,True,False
+llama-3.1-8b,medium,closed_book,P1 vs P3,Instruct vs full SFT,233,3.304,3.424,0.119,0.1,0.004,0.23,0.0049,0.00905,True,0.134,False,False
+llama-3.1-8b,medium,closed_book,P1 vs P4,Instruct vs full CPT+SFT,233,3.304,3.562,0.258,0.1,0.138,0.379,0.0,1e-05,True,0.277,True,False
+llama-3.1-8b,medium,closed_book,P3 vs P4,full SFT vs full CPT+SFT,233,3.424,3.562,0.139,0.0,0.026,0.254,0.01131,0.01893,True,0.156,False,False
+llama-3.1-8b,medium,closed_book,P2 vs P5,LoRA SFT vs LoRA CPT+SFT,233,3.546,3.553,0.007,0.0,-0.102,0.118,0.83001,0.8417,False,0.008,False,False
+llama-3.1-8b,medium,closed_book,P1 vs P5,Instruct vs LoRA CPT+SFT,233,3.304,3.553,0.248,0.2,0.123,0.372,3e-05,6e-05,True,0.256,False,False
+llama-3.1-8b,medium,open_book,P6 vs P7,RAG-Instruct vs RAG-CPT+SFT,233,3.962,4.088,0.126,0.1,0.038,0.213,0.00225,0.00427,True,0.189,False,False
+llama-3.1-8b,medium,open_book,P6 vs P8,RAG-Instruct vs RAG-LoRA-CPT+SFT,233,3.962,4.107,0.145,0.1,0.054,0.238,0.00063,0.00122,True,0.206,False,False
+llama-3.1-8b,medium,rag_effect,P1 vs P6,add RAG to Instruct (matched model),233,3.304,3.962,0.658,0.6,0.522,0.787,0.0,0.0,True,0.637,True,False
+llama-3.1-8b,medium,rag_effect,P4 vs P7,add RAG to full CPT+SFT (matched model),233,3.562,4.088,0.526,0.4,0.385,0.665,0.0,0.0,True,0.486,True,False
+llama-3.1-8b,medium,rag_effect,P5 vs P8,add RAG to LoRA CPT+SFT (matched model),233,3.553,4.107,0.555,0.6,0.411,0.694,0.0,0.0,True,0.501,True,False
+qwen3.5-9b,medium,closed_book,P1 vs P3,Instruct vs full SFT,233,3.713,3.711,-0.002,0.1,-0.122,0.119,0.56427,0.58039,False,-0.002,False,False
+qwen3.5-9b,medium,closed_book,P1 vs P4,Instruct vs full CPT+SFT,233,3.713,3.825,0.112,0.1,-0.002,0.223,0.01188,0.01902,True,0.125,False,False
+qwen3.5-9b,medium,closed_book,P3 vs P4,full SFT vs full CPT+SFT,233,3.711,3.825,0.114,0.0,0.012,0.216,0.03266,0.04354,True,0.141,False,False
+qwen3.5-9b,medium,closed_book,P2 vs P5,LoRA SFT vs LoRA CPT+SFT,233,3.721,3.806,0.084,0.0,-0.019,0.185,0.1061,0.13172,False,0.106,False,False
+qwen3.5-9b,medium,closed_book,P1 vs P5,Instruct vs LoRA CPT+SFT,233,3.713,3.806,0.092,0.1,-0.025,0.209,0.02026,0.0298,True,0.101,False,False
+qwen3.5-9b,medium,open_book,P6 vs P7,RAG-Instruct vs RAG-CPT+SFT,233,4.358,4.324,-0.034,0.0,-0.115,0.049,0.31813,0.34705,False,-0.052,False,False
+qwen3.5-9b,medium,open_book,P6 vs P8,RAG-Instruct vs RAG-LoRA-CPT+SFT,233,4.358,4.27,-0.088,0.0,-0.173,-0.002,0.01719,0.02633,True,-0.132,False,False
+qwen3.5-9b,medium,rag_effect,P1 vs P6,add RAG to Instruct (matched model),233,3.713,4.358,0.644,0.6,0.509,0.777,0.0,0.0,True,0.619,True,False
+qwen3.5-9b,medium,rag_effect,P4 vs P7,add RAG to full CPT+SFT (matched model),233,3.825,4.324,0.499,0.4,0.355,0.638,0.0,0.0,True,0.455,True,False
+qwen3.5-9b,medium,rag_effect,P5 vs P8,add RAG to LoRA CPT+SFT (matched model),233,3.806,4.27,0.464,0.4,0.327,0.597,0.0,0.0,True,0.441,True,False
+gemma-3-12b,medium,closed_book,P1 vs P3,Instruct vs full SFT,233,3.614,3.523,-0.091,0.0,-0.203,0.019,0.2122,0.24252,False,-0.103,False,False
+gemma-3-12b,medium,closed_book,P1 vs P4,Instruct vs full CPT+SFT,233,3.614,3.541,-0.073,0.0,-0.192,0.048,0.22099,0.24862,False,-0.076,False,False
+gemma-3-12b,medium,closed_book,P3 vs P4,full SFT vs full CPT+SFT,233,3.523,3.541,0.018,0.0,-0.091,0.128,0.89452,0.89452,False,0.021,False,False
+gemma-3-12b,medium,closed_book,P2 vs P5,LoRA SFT vs LoRA CPT+SFT,233,3.489,3.543,0.054,0.0,-0.056,0.161,0.41553,0.43998,False,0.064,False,False
+gemma-3-12b,medium,closed_book,P1 vs P5,Instruct vs LoRA CPT+SFT,233,3.614,3.543,-0.07,0.0,-0.192,0.049,0.45633,0.47617,False,-0.074,False,False
+gemma-3-12b,medium,open_book,P6 vs P7,RAG-Instruct vs RAG-CPT+SFT,233,4.303,4.101,-0.202,-0.1,-0.288,-0.115,0.0,0.0,True,-0.3,False,False
+gemma-3-12b,medium,open_book,P6 vs P8,RAG-Instruct vs RAG-LoRA-CPT+SFT,233,4.303,4.138,-0.165,-0.1,-0.257,-0.076,9e-05,0.00019,True,-0.234,False,False
+gemma-3-12b,medium,rag_effect,P1 vs P6,add RAG to Instruct (matched model),233,3.614,4.303,0.689,0.5,0.555,0.825,0.0,0.0,True,0.647,True,False
+gemma-3-12b,medium,rag_effect,P4 vs P7,add RAG to full CPT+SFT (matched model),233,3.541,4.101,0.56,0.5,0.424,0.7,0.0,0.0,True,0.521,True,False
+gemma-3-12b,medium,rag_effect,P5 vs P8,add RAG to LoRA CPT+SFT (matched model),233,3.543,4.138,0.594,0.6,0.458,0.728,0.0,0.0,True,0.567,True,False
+gemma-3-27b,large,closed_book,P1 vs P3,Instruct vs full SFT,233,3.796,3.5,-0.296,-0.1,-0.42,-0.177,2e-05,4e-05,True,-0.314,True,False
+gemma-3-27b,large,closed_book,P2 vs P5,LoRA SFT vs LoRA CPT+SFT,233,3.636,3.714,0.079,0.0,-0.034,0.187,0.14029,0.16559,False,0.093,False,False
+gemma-3-27b,large,closed_book,P1 vs P5,Instruct vs LoRA CPT+SFT,233,3.796,3.714,-0.082,0.0,-0.2,0.035,0.20457,0.23756,False,-0.089,False,False
+gemma-3-27b,large,open_book,P6 vs P8,RAG-Instruct vs RAG-LoRA-CPT+SFT,233,4.425,4.142,-0.283,-0.2,-0.362,-0.205,0.0,0.0,True,-0.464,True,False
+gemma-3-27b,large,rag_effect,P1 vs P6,add RAG to Instruct (matched model),233,3.796,4.425,0.63,0.5,0.488,0.77,0.0,0.0,True,0.576,True,False
+gemma-3-27b,large,rag_effect,P5 vs P8,add RAG to LoRA CPT+SFT (matched model),233,3.714,4.142,0.428,0.3,0.303,0.548,0.0,0.0,True,0.444,True,False
+qwen3.5-27b,large,closed_book,P1 vs P3,Instruct vs full SFT,233,4.141,3.99,-0.151,0.0,-0.258,-0.048,0.02851,0.03947,True,-0.184,False,False
+qwen3.5-27b,large,closed_book,P2 vs P5,LoRA SFT vs LoRA CPT+SFT,233,4.03,4.086,0.057,0.0,-0.041,0.154,0.13391,0.1607,False,0.073,False,False
+qwen3.5-27b,large,closed_book,P1 vs P5,Instruct vs LoRA CPT+SFT,233,4.141,4.086,-0.055,0.0,-0.151,0.04,0.3725,0.40029,False,-0.073,False,False
+qwen3.5-27b,large,open_book,P6 vs P8,RAG-Instruct vs RAG-LoRA-CPT+SFT,233,4.528,4.465,-0.063,0.0,-0.128,0.0,0.0103,0.01766,True,-0.125,False,False
+qwen3.5-27b,large,rag_effect,P1 vs P6,add RAG to Instruct (matched model),233,4.141,4.528,0.387,0.3,0.276,0.498,0.0,0.0,True,0.454,True,False
+qwen3.5-27b,large,rag_effect,P5 vs P8,add RAG to LoRA CPT+SFT (matched model),233,4.086,4.465,0.379,0.3,0.274,0.482,0.0,0.0,True,0.469,True,False

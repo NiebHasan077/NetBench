@@ -1,0 +1,30 @@
+# Large local source assets
+pdfs/
+
+# Generated data artifacts
+data/intermediate/
+data/final/
+reports/
+logs/
+docs/phase-04-prompt-families.json
+
+# Local secrets
+hf_token.txt
+openai_api_key.txt
+gemini_api_key.txt
+ollama_api_key.txt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.cache/
+.pytest_cache/
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+
+# Runtime outputs
+*.log

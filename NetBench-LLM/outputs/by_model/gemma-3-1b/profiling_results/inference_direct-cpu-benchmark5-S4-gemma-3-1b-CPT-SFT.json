@@ -1,0 +1,156 @@
+{
+  "model_path": "/work2/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-cpt-full-sft",
+  "model_name": "gemma-3-1b-cpt-full-sft",
+  "device": "cpu",
+  "profile_type": "direct",
+  "prompt_source": "/work2/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+  "timestamp": "2026-05-14T19:21:12.181095",
+  "system": {
+    "timestamp": "2026-05-14T19:16:25.958247",
+    "hostname": "site-b-node-1",
+    "python": "3.12.11",
+    "torch": "2.11.0+cu128",
+    "device": "cpu",
+    "cpu": {
+      "model": "Intel(R) Xeon(R) Platinum 8468",
+      "physical_cores": 96,
+      "logical_cores": 96,
+      "total_ram_gb": 1006.9
+    }
+  },
+  "model_load": {
+    "load_time_s": 3.19,
+    "gpu_vram_after_load_mb": 0
+  },
+  "benchmark_prompts": [
+    {
+      "name": "NB-HPN-0026-q1",
+      "instruction_preview": "Why might a smart DTN implement network packet pacing specifically when transferring data from a high-bandwidth source t",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 57.2822,
+      "avg_tokens_per_second": 4.47,
+      "avg_ms_per_token": 223.76,
+      "avg_ttft_s": 0.0012,
+      "peak_gpu_vram_mb": 0,
+      "runs": [
+        {
+          "input_tokens": 48,
+          "new_tokens": 256,
+          "total_time_s": 57.2822,
+          "ttft_s": 0.0012,
+          "tokens_per_second": 4.47,
+          "ms_per_token": 223.76,
+          "peak_gpu_vram_mb": 0,
+          "cpu_ram_mb": 4629,
+          "text_preview": "Pacing is used to prevent bufferbloat in high-bandwidth networks. When a high-bandwidth source transmits data to a low-bandwidth destination, the network can experience bufferbloat. Bufferbloat occurs"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-0159-q0",
+      "instruction_preview": "In host-based RDMA load balancing, how can a system detect network congestion without relying on specialized switch hard",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 52.6523,
+      "avg_tokens_per_second": 4.46,
+      "avg_ms_per_token": 224.05,
+      "avg_ttft_s": 0.0014,
+      "peak_gpu_vram_mb": 0,
+      "runs": [
+        {
+          "input_tokens": 54,
+          "new_tokens": 235,
+          "total_time_s": 52.6523,
+          "ttft_s": 0.0014,
+          "tokens_per_second": 4.46,
+          "ms_per_token": 224.05,
+          "peak_gpu_vram_mb": 0,
+          "cpu_ram_mb": 4636,
+          "text_preview": "In host-based RDMA load balancing, you can leverage the existing capabilities of standard RDMA NICs to detect congestion. Specifically, you can implement a simple flow-based flow completion time (FCT)"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-2135-q1",
+      "instruction_preview": "Why is a periodic retransmission of the INT request necessary even if the initial in-band request was successfully sent?",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 57.1305,
+      "avg_tokens_per_second": 4.48,
+      "avg_ms_per_token": 223.17,
+      "avg_ttft_s": 0.0012,
+      "peak_gpu_vram_mb": 0,
+      "runs": [
+        {
+          "input_tokens": 44,
+          "new_tokens": 256,
+          "total_time_s": 57.1305,
+          "ttft_s": 0.0012,
+          "tokens_per_second": 4.48,
+          "ms_per_token": 223.17,
+          "peak_gpu_vram_mb": 0,
+          "cpu_ram_mb": 4636,
+          "text_preview": "The periodic retransmission is necessary because the retransmissions are required to ensure that the initial transmission of the INT request is not lost in the network. In the case of the initial tran"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-2121-q2",
+      "instruction_preview": "Using the logic provided in the text, if a service has a Max-Min Fair (MmF) share of 40 Mbps but only achieves 30 Mbps u",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 54.6174,
+      "avg_tokens_per_second": 4.41,
+      "avg_ms_per_token": 226.63,
+      "avg_ttft_s": 0.0014,
+      "peak_gpu_vram_mb": 0,
+      "runs": [
+        {
+          "input_tokens": 91,
+          "new_tokens": 241,
+          "total_time_s": 54.6174,
+          "ttft_s": 0.0014,
+          "tokens_per_second": 4.41,
+          "ms_per_token": 226.63,
+          "peak_gpu_vram_mb": 0,
+          "cpu_ram_mb": 4640,
+          "text_preview": "To calculate the percentage of the Max-Min Fair share that the service has achieved, you must divide the actual Mbps received by the service's MmF share by the total Mbps of the service's MmF share. I"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-1401-q1",
+      "instruction_preview": "Why might a parameter tuner choose to increase the number of TCP streams rather than simply increasing the size of a sin",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 57.2663,
+      "avg_tokens_per_second": 4.47,
+      "avg_ms_per_token": 223.7,
+      "avg_ttft_s": 0.0014,
+      "peak_gpu_vram_mb": 0,
+      "runs": [
+        {
+          "input_tokens": 52,
+          "new_tokens": 256,
+          "total_time_s": 57.2663,
+          "ttft_s": 0.0014,
+          "tokens_per_second": 4.47,
+          "ms_per_token": 223.7,
+          "peak_gpu_vram_mb": 0,
+          "cpu_ram_mb": 4640,
+          "text_preview": "When a TCP buffer is insufficient to hold all necessary data, the system may choose to increase the number of TCP streams. This is because the kernel typically limits the number of available TCP strea"
+        }
+      ]
+    }
+  ],
+  "output_length_scaling": [],
+  "input_length_scaling": [],
+  "summary": {
+    "avg_tokens_per_second": 4.46,
+    "avg_ms_per_token": 224.26,
+    "peak_gpu_vram_mb": 0,
+    "peak_cpu_ram_mb": 4640,
+    "avg_ttft_s": 0.0013
+  }
+}

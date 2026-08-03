@@ -1,0 +1,1185 @@
+{
+  "artifact_counts": {
+    "adaptation_report_files": 2,
+    "direct_answer_workbooks": 4,
+    "direct_profiling_files_relocated_from_root_outputs": 6,
+    "judged_workbooks": 6,
+    "log_files_private_only": 3,
+    "parallel_worker_json_files": 16,
+    "rag_answer_workbooks": 2,
+    "rag_profiling_files_in_by_model": 6,
+    "report_files": 2
+  },
+  "code_artifacts": [
+    {
+      "bytes": 6985,
+      "mtime_utc": "2026-06-17T19:45:46.687239+00:00",
+      "path": "NetBench-RAG/config.yaml",
+      "sha256": "a96fcec9d5cb40c2d622fec833fdd7703b47c4229749b62f8dcab005d551e895"
+    },
+    {
+      "bytes": 6013,
+      "mtime_utc": "2026-06-17T19:46:54.231261+00:00",
+      "path": "NetBench-RAG/docs/CHAT_GUIDE.md",
+      "sha256": "be1013ad6a8deb1dd42985b5293016f818990838d0cbf5dffc6847151599efec"
+    },
+    {
+      "bytes": 12260,
+      "mtime_utc": "2026-06-17T19:46:54.375262+00:00",
+      "path": "NetBench-RAG/docs/EVALUATION_GUIDE.md",
+      "sha256": "4091d039e8e88a617720d799dfb62520438cf80b0a8fa695f9861bc8a622e199"
+    },
+    {
+      "bytes": 3204,
+      "mtime_utc": "2026-06-17T19:46:54.515262+00:00",
+      "path": "NetBench-RAG/docs/QUICKSTART.md",
+      "sha256": "84563f37e790cdcee9c9933cb1cf503360a8791074198a86d7f074d908b4c225"
+    },
+    {
+      "bytes": 34,
+      "mtime_utc": "2026-06-17T19:47:02.767264+00:00",
+      "path": "NetBench-RAG/evaluation/__init__.py",
+      "sha256": "e638cba0c46f9e81872404dfa0a4b6a4b25090679704b23a4eaf5a1b65d71163"
+    },
+    {
+      "bytes": 35821,
+      "mtime_utc": "2026-06-17T19:47:04.003265+00:00",
+      "path": "NetBench-RAG/evaluation/benchmark_report.py",
+      "sha256": "5f83ab78f286f7695d74e37a6f6c979bbc714f9ec7902b61bf87a6f07e00ecb5"
+    },
+    {
+      "bytes": 40831,
+      "mtime_utc": "2026-06-17T19:47:04.151265+00:00",
+      "path": "NetBench-RAG/evaluation/evaluate_rag.py",
+      "sha256": "14abc925d88c8c8ed164ac75fdae83b1a1564ce331fb95c29307dd8574182213"
+    },
+    {
+      "bytes": 42941,
+      "mtime_utc": "2026-06-17T19:47:04.295265+00:00",
+      "path": "NetBench-RAG/evaluation/judge_responses.py",
+      "sha256": "69545a88d8278a896f843d24fa7052eba036aeb2de10581c8eb1f9ca7283c99c"
+    },
+    {
+      "bytes": 14249,
+      "mtime_utc": "2026-06-17T19:47:24.147272+00:00",
+      "path": "NetBench-RAG/index_corpus.py",
+      "sha256": "a0c3794f493d37513692908e791f28696816120d3c278d7f7068889f0af6b820"
+    },
+    {
+      "bytes": 9211,
+      "mtime_utc": "2026-06-17T19:47:24.383272+00:00",
+      "path": "NetBench-RAG/query.py",
+      "sha256": "6ea4da2265a4a3031aff8250936789eabe43952b12b315e00e0d8e60b648821f"
+    },
+    {
+      "bytes": 0,
+      "mtime_utc": "2026-06-17T19:45:57.039243+00:00",
+      "path": "NetBench-RAG/src/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 18641,
+      "mtime_utc": "2026-06-17T19:45:59.775244+00:00",
+      "path": "NetBench-RAG/src/chunker.py",
+      "sha256": "824b92ac239ac458c24620f8fd31d03faf03fa55396f5b8f53f29c49a983f086"
+    },
+    {
+      "bytes": 4239,
+      "mtime_utc": "2026-06-17T19:45:59.911244+00:00",
+      "path": "NetBench-RAG/src/embedder.py",
+      "sha256": "13cd501da8f1ab5a021c3177454423fa577a56fbe4e41efeeaf4ab362bc6aa9f"
+    },
+    {
+      "bytes": 28415,
+      "mtime_utc": "2026-06-17T19:46:00.055244+00:00",
+      "path": "NetBench-RAG/src/generator.py",
+      "sha256": "290ef87662da1590fa1e4e8c5796a03f1248900c178b605d040cd38783a12e3d"
+    },
+    {
+      "bytes": 30043,
+      "mtime_utc": "2026-06-17T19:46:00.199244+00:00",
+      "path": "NetBench-RAG/src/parser.py",
+      "sha256": "acb0504a39755762f8221ac95d87b3f7fbce28cacec7965091e3c987baf87148"
+    },
+    {
+      "bytes": 11465,
+      "mtime_utc": "2026-06-17T19:46:00.339244+00:00",
+      "path": "NetBench-RAG/src/retriever.py",
+      "sha256": "49e132cbcbf52f7325e1b444e887c3fd01e6f484fa13692e71dc49c8a9937714"
+    },
+    {
+      "bytes": 14286,
+      "mtime_utc": "2026-06-17T19:46:00.479244+00:00",
+      "path": "NetBench-RAG/src/store.py",
+      "sha256": "12d918ab92d4bdf15506871e2a9e424190cbd76e84a15bb1c7c7b76fb7e0249f"
+    },
+    {
+      "bytes": 698,
+      "mtime_utc": "2026-06-17T19:42:56.099185+00:00",
+      "path": "configs/ds_zero3.json",
+      "sha256": "b4d1353b31f2fd61dee14873639b5d8a9ae662395b750728a3ee4577d5d0815a"
+    },
+    {
+      "bytes": 174,
+      "mtime_utc": "2026-06-17T19:43:01.283186+00:00",
+      "path": "evaluation/__init__.py",
+      "sha256": "ded35ddedb95e37f09be548b00c927d3d6d2417efdb7eedb966d67f455937518"
+    },
+    {
+      "bytes": 37565,
+      "mtime_utc": "2026-06-17T19:43:02.239187+00:00",
+      "path": "evaluation/benchmark_report.py",
+      "sha256": "956cc1338b7ed5a17f4950f8eadc19797aff112c2bc2f46f2d56d73ac2bf7c2c"
+    },
+    {
+      "bytes": 6830,
+      "mtime_utc": "2026-06-17T19:43:02.379187+00:00",
+      "path": "evaluation/compare_models.py",
+      "sha256": "f8f99b8f7c99dda2097063634a562f6f6eab0fe8d915093a436e3080c49e1ae4"
+    },
+    {
+      "bytes": 5966,
+      "mtime_utc": "2026-06-17T19:43:02.523187+00:00",
+      "path": "evaluation/evaluate_model.py",
+      "sha256": "2a15af912d618366980c1f4f9bf4cd26ab05d30e2c390bc9f53bdc6ca04188ec"
+    },
+    {
+      "bytes": 15076,
+      "mtime_utc": "2026-06-17T19:43:02.667187+00:00",
+      "path": "evaluation/filter_judged.py",
+      "sha256": "e211442d33c740035e6988a33aeafeb22d89e2a8ab9cd3eb1638d1abab2f899d"
+    },
+    {
+      "bytes": 55676,
+      "mtime_utc": "2026-06-17T19:43:02.807187+00:00",
+      "path": "evaluation/hpn_qa_benchmark.py",
+      "sha256": "8868e2db9bfee3e83cd7aa008749fc19a5d49f9e8ad9a55474f999ae1b90b8de"
+    },
+    {
+      "bytes": 42882,
+      "mtime_utc": "2026-06-17T19:43:02.947187+00:00",
+      "path": "evaluation/judge_responses.py",
+      "sha256": "97ac938896c634ee9ee7834166df86818e43c79380c8b75bf68357ba0f498215"
+    },
+    {
+      "bytes": 24280,
+      "mtime_utc": "2026-06-17T19:43:03.095187+00:00",
+      "path": "evaluation/lm_adaptation_report.py",
+      "sha256": "97db74ca6df03765ccc3e9aaaaee7b991f49a9b367707cb94f25271e6bd1049a"
+    },
+    {
+      "bytes": 79,
+      "mtime_utc": "2026-06-17T19:44:46.439220+00:00",
+      "path": "profiling/__init__.py",
+      "sha256": "5e0cccdf9501012750c8e06c8db418bcb9bc7517994c002d287e449759821170"
+    },
+    {
+      "bytes": 30809,
+      "mtime_utc": "2026-06-17T19:44:48.767220+00:00",
+      "path": "profiling/generate_profile_report.py",
+      "sha256": "43842873415532326d7577a1f4b6b23e96801329007f1873bb7c72ad816b92e3"
+    },
+    {
+      "bytes": 35594,
+      "mtime_utc": "2026-06-17T19:44:48.915220+00:00",
+      "path": "profiling/profile_inference.py",
+      "sha256": "fa2dca84c633f372e8b120a7234fb9e66496b5d396f1cbe77b4de95008c8e80b"
+    },
+    {
+      "bytes": 15090,
+      "mtime_utc": "2026-06-17T19:44:49.055221+00:00",
+      "path": "profiling/profile_rag_inference.py",
+      "sha256": "be40206e6a114a294587678c17f8b6766d37627ac1610291e8b5b73f90f41f0e"
+    },
+    {
+      "bytes": 50877,
+      "mtime_utc": "2026-06-17T19:44:49.203221+00:00",
+      "path": "profiling/profile_training.py",
+      "sha256": "bd69282db8f04cd9080cdcdf5b8c0e584e0b390fc13e48223d7f5abe6c561460"
+    },
+    {
+      "bytes": 19489,
+      "mtime_utc": "2026-06-17T19:44:49.347221+00:00",
+      "path": "profiling/report_excel.py",
+      "sha256": "2ac112d9cb780cab17b83b1d72015d5bcedf906339660e2ce089d79ddf1f6494"
+    },
+    {
+      "bytes": 14300,
+      "mtime_utc": "2026-06-17T19:44:49.487221+00:00",
+      "path": "profiling/report_plots.py",
+      "sha256": "8a265258993a2c6ab4155b90aa189e763df4ccf1a1d1f6be879d30a35e995b8f"
+    },
+    {
+      "bytes": 4403,
+      "mtime_utc": "2026-06-17T19:44:49.635221+00:00",
+      "path": "profiling/summarize_inference_profiles.py",
+      "sha256": "622adb3f804f9500153b8dde78986f896502b1a04ccf4c4404f1eb2037b62ec7"
+    },
+    {
+      "bytes": 21391,
+      "mtime_utc": "2026-06-17T19:44:54.895222+00:00",
+      "path": "scripts/collect_run_metadata.py",
+      "sha256": "f020848fd55616c3c5e37c613d542697440df4c7c9009c700dffe0b7c8b954c3"
+    },
+    {
+      "bytes": 82105,
+      "mtime_utc": "2026-06-17T19:44:55.191223+00:00",
+      "path": "scripts/run_pipeline_specific.sh",
+      "sha256": "34de9ff94ce8cb39812faaad68f400b3f9a55ceb10a6af933d43fb9120d7c3d7"
+    },
+    {
+      "bytes": 95,
+      "mtime_utc": "2026-06-17T19:44:58.335224+00:00",
+      "path": "training/__init__.py",
+      "sha256": "ce97f33a3490fb9a2b238b777230937b0e77e19383e59087e012f732cad695bb"
+    },
+    {
+      "bytes": 20664,
+      "mtime_utc": "2026-06-17T19:45:00.551224+00:00",
+      "path": "training/instruction_finetune.py",
+      "sha256": "e63b9661ee75fade821f85d40fe5d67b1970460184dfcd036cca161efc837747"
+    },
+    {
+      "bytes": 32926,
+      "mtime_utc": "2026-06-17T19:45:00.695224+00:00",
+      "path": "training/lora_finetune.py",
+      "sha256": "2b25e2602fdc4b50bf7c9d4558dfb849618908743c1dde87e4ca6f01c4530b94"
+    },
+    {
+      "bytes": 7121,
+      "mtime_utc": "2026-06-17T19:45:00.839224+00:00",
+      "path": "training/merge_lora_adapter.py",
+      "sha256": "19d719b58db4867295cca82e5c396c53c6cd98edbd17a4622e6c1f5483619939"
+    },
+    {
+      "bytes": 8161,
+      "mtime_utc": "2026-06-17T19:45:00.979224+00:00",
+      "path": "training/prepare_data.py",
+      "sha256": "b56fec7019239a3acf12aad3bf59b19922df1a9bbe931be9a4de2554fd72e49e"
+    },
+    {
+      "bytes": 23667,
+      "mtime_utc": "2026-06-17T19:45:01.123224+00:00",
+      "path": "training/prepare_instruction_data.py",
+      "sha256": "3596d69af041ad32c88c6f11ff2a4f72c0862fb62dc5ec58dcc8c5e2f2bc354e"
+    },
+    {
+      "bytes": 11709,
+      "mtime_utc": "2026-06-17T19:45:01.267225+00:00",
+      "path": "training/prepare_lora_data.py",
+      "sha256": "f27b2b82d4c50b02e94fb724c20c802cbbb95d70dfdba5532d45d129db2d9180"
+    },
+    {
+      "bytes": 18079,
+      "mtime_utc": "2026-06-17T19:45:01.399225+00:00",
+      "path": "training/pretrain_transformers.py",
+      "sha256": "40a406ba02d1e8ee44ed2cf32daee1e3a8c7c8d00049a4aa3b712d90ec772153"
+    },
+    {
+      "bytes": 188,
+      "mtime_utc": "2026-06-17T19:45:04.583226+00:00",
+      "path": "utils/__init__.py",
+      "sha256": "053bc29485bb27a8006673f21d52c263c554685e16eee43ee324b0df0e67f3ee"
+    },
+    {
+      "bytes": 7427,
+      "mtime_utc": "2026-06-17T19:45:06.087226+00:00",
+      "path": "utils/check_system.py",
+      "sha256": "9cde9d05d4e36b265e852b7837564aa5d51944bd850c993800bc43bdd396a560"
+    },
+    {
+      "bytes": 8650,
+      "mtime_utc": "2026-06-17T19:45:06.227226+00:00",
+      "path": "utils/count_tokens.py",
+      "sha256": "4914e6b6cd05d66dd241f85746fc66125ad0875741dbd94df0dfa7bd12ec6b8b"
+    },
+    {
+      "bytes": 5192,
+      "mtime_utc": "2026-06-17T19:45:06.367226+00:00",
+      "path": "utils/download_models.py",
+      "sha256": "0d6c6f6f7423488077b1d425d7060e287f2b2f8852455d669fb720e90ef1e946"
+    },
+    {
+      "bytes": 6247,
+      "mtime_utc": "2026-06-17T19:45:06.507226+00:00",
+      "path": "utils/model_utils.py",
+      "sha256": "7a703f3d414c15f0c85610b06d57db50ea3d9d09251a40cba103679f72b9d27a"
+    },
+    {
+      "bytes": 1836,
+      "mtime_utc": "2026-06-17T19:45:06.651226+00:00",
+      "path": "utils/setup_token.py",
+      "sha256": "0ede1c08ffde51d1fb5c275a4960e5a29c483d064bcfa937e4471564b3819ccf"
+    }
+  ],
+  "effective_preflight_from_latest_log": {
+    "corpus": "research_corpus_v3.json",
+    "hardware": "4 x NVIDIA H100 80GB HBM3 GPUs, 81559 MiB (~80 GiB) VRAM per card in logs",
+    "hyperparams": "CPT batch=1x16  SFT batch=1x16  LoRA batch=1x16 eval=1  rank=64  device_map=balanced_low_0",
+    "model": "gemma-3-27b",
+    "source_log": "outputs/by_model/gemma-3-27b/logs/hpn-gemma-3-27b-20260615-161213.log",
+    "variant_toggles": "RUN_S1/S2/S3/S5/S6/S8=true; RUN_S4/S7=false"
+  },
+  "environment": {
+    "collected_at_utc": "2026-06-17T20:04:55.127202+00:00",
+    "cwd": "/workspace/portables",
+    "executable": "/usr/bin/python3",
+    "host_collecting_metadata": "site-a",
+    "incoming_path": "/workspace/incoming/site-c-gemma3-27b",
+    "platform": "linux",
+    "source_git_supplied": false
+  },
+  "evidence_status": "recovered_from_artifact",
+  "execution_script": {
+    "note": "User identified this as the pipeline script for the The Mill gemma-3-27b run.",
+    "path": "scripts/run_pipeline_specific.sh",
+    "sha256": "34de9ff94ce8cb39812faaad68f400b3f9a55ceb10a6af933d43fb9120d7c3d7"
+  },
+  "hardware_from_profiling": {
+    "cpu": "Intel(R) Xeon(R) Platinum 8480+",
+    "cuda_versions": [
+      "13.0"
+    ],
+    "gpu_total_memory_mb": [
+      "81071"
+    ],
+    "gpus": [
+      "NVIDIA H100 80GB HBM3"
+    ],
+    "hostnames": [
+      "site-c-node-2"
+    ],
+    "python_versions": [
+      "3.11.7"
+    ],
+    "ram_gb": "1006.9",
+    "torch_versions": [
+      "2.12.0+cu130"
+    ]
+  },
+  "limitations": [
+    "No source .git directories were supplied for this The Mill gemma-3-27b import.",
+    "Credential confirmation text supplied by the user referred to qwen-3.5-27b; publication push requires corrected confirmation for gemma-3-27b.",
+    "The exact execution-time source checkout was not recorded.",
+    "Metadata summaries were regenerated from supplied workbooks, reports, profiling JSON, and logs.",
+    "Transferred source tree included leftover gemma-3-12b output evidence; that leftover evidence is excluded from this gemma-3-27b snapshot.",
+    "Model weights, checkpoints, raw corpora, RAG indexes, virtual environments, caches, logs, and credentials are excluded from the publication snapshot."
+  ],
+  "logs_private_only": [
+    {
+      "bytes": 156067,
+      "interesting_lines_count": 21,
+      "interesting_lines_sample": [
+        "HPN LLM Pipeline  \u2014  Model: gemma-3-27b",
+        "[12:06:58] Model: gemma-3-27b (gemma, shortcut=custom)",
+        "[12:06:58] Base-CPT variants disabled (RUN_S4=false, RUN_S7=false); base repo/dir unused.",
+        "[12:07:05] Hardware: 4x GPU, 81559 MiB (~80 GiB) VRAM per card",
+        "[12:07:05] Hyperparams: CPT batch=1x16  SFT batch=1x16  LoRA batch=4x4  rank=64",
+        "[12:07:05] Full-training GPU workers: 1 (torchrun=false, deepspeed=false, torchrun_bin=torchrun)",
+        "[12:07:05] Benchmark GPU workers: 4 (CUDA devices=0,1,2,3)",
+        "[12:07:05] OK Preflight passed \u2014 GPUs: 4x80GB  Corpus: research_corpus_v3.json",
+        "[12:07:05] RUN download official instruct (custom HF ID)",
+        "[13:18:40] RUN prepare LoRA CPT data",
+        "06/15/2026 13:18:50 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "[13:22:02] RUN prepare HPN SFT data",
+        "06/15/2026 13:22:06 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "[13:22:45] RUN S3 Full HPN-SFT",
+        "06/15/2026 13:22:49 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "06/15/2026 13:23:18 - WARNING - __main__ - Model loaded with device_map='auto' \u2014 disabling Trainer DataParallel. For better multi-GPU utilisation, launch with torchrun + DeepSpeed.",
+        "06/15/2026 13:23:18 - WARNING - accelerate.utils.other - [RANK 0] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.",
+        "[14:42:09] RUN S2 LoRA HPN-SFT",
+        "06/15/2026 14:42:24 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "06/15/2026 14:43:07 - WARNING - __main__ - Model loaded with device_map='auto' \u2014 disabling Trainer DataParallel. For better multi-GPU utilisation, launch with: torchrun --nproc_per_node=NUM_GPUS training/lora_finetune.py ...",
+        "06/15/2026 14:43:07 - WARNING - accelerate.utils.other - [RANK 0] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher."
+      ],
+      "mtime_utc": "2026-06-17T19:43:37.095198+00:00",
+      "path": "outputs/by_model/gemma-3-27b/logs/hpn-gemma-3-27b-20260615-120657.log",
+      "sha256": "e7c5940233d55f82601778d2cb25590c01cf0618e4e170ece44ac8bfeac98924"
+    },
+    {
+      "bytes": 26577,
+      "interesting_lines_count": 16,
+      "interesting_lines_sample": [
+        "HPN LLM Pipeline  \u2014  Model: gemma-3-27b",
+        "[14:59:18] Model: gemma-3-27b (gemma, shortcut=custom)",
+        "[14:59:18] Base-CPT variants disabled (RUN_S4=false, RUN_S7=false); base repo/dir unused.",
+        "[14:59:26] Hardware: 4x GPU, 81559 MiB (~80 GiB) VRAM per card",
+        "[14:59:26] Hyperparams: CPT batch=1x16  SFT batch=1x16  LoRA batch=4x4  rank=64",
+        "[14:59:26] Full-training GPU workers: 1 (torchrun=false, deepspeed=false, torchrun_bin=torchrun)",
+        "[14:59:26] Benchmark GPU workers: 4 (CUDA devices=0,1,2,3)",
+        "[14:59:26] OK Preflight passed \u2014 GPUs: 4x80GB  Corpus: research_corpus_v3.json",
+        "[14:59:26] WARN  SKIP instruct-official model \u2014 model weights already complete: /share/ceph/scratch/user/my-projects-gemma3/NetBench-LLM/models/instruct-official/gemma-3-27b-it",
+        "[14:59:26] WARN  SKIP LoRA CPT data \u2014 already complete: /share/ceph/scratch/user/my-projects-gemma3/NetBench-LLM/data/processed/lora/gemma-3-27b",
+        "[14:59:26] WARN  SKIP HPN SFT data \u2014 already complete: /share/ceph/scratch/user/my-projects-gemma3/NetBench-LLM/data/instruction/gemma-3-27b-hpn",
+        "[14:59:26] WARN  SKIP S3 Full HPN-SFT \u2014 already complete: /share/ceph/scratch/user/my-projects-gemma3/NetBench-LLM/models/instruction/gemma-3-27b-instruct-full-hpn-sft",
+        "[14:59:26] RUN S2 LoRA HPN-SFT",
+        "06/15/2026 14:59:30 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "06/15/2026 14:59:58 - WARNING - __main__ - Model loaded with device_map='auto' \u2014 disabling Trainer DataParallel. For better multi-GPU utilisation, launch with: torchrun --nproc_per_node=NUM_GPUS training/lora_finetune.py ...",
+        "06/15/2026 14:59:58 - WARNING - accelerate.utils.other - [RANK 0] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher."
+      ],
+      "mtime_utc": "2026-06-17T19:43:37.235198+00:00",
+      "path": "outputs/by_model/gemma-3-27b/logs/hpn-gemma-3-27b-20260615-145918.log",
+      "sha256": "b760970dcf8303e9bbd2d9a10bdb0e2d1af41306c25b8b2764d0b2f22742cf32"
+    },
+    {
+      "bytes": 2550125,
+      "interesting_lines_count": 80,
+      "interesting_lines_sample": [
+        "HPN LLM Pipeline  \u2014  Model: gemma-3-27b",
+        "[16:12:13] Model: gemma-3-27b (gemma, shortcut=custom)",
+        "[16:12:13] Base-CPT variants disabled (RUN_S4=false, RUN_S7=false); base repo/dir unused.",
+        "[16:12:20] Hardware: 4x GPU, 81559 MiB (~80 GiB) VRAM per card",
+        "[16:12:20] Hyperparams: CPT batch=1x16  SFT batch=1x16  LoRA batch=1x16 eval=1  rank=64  device_map=balanced_low_0",
+        "[16:12:20] Full-training GPU workers: 1 (torchrun=false, deepspeed=false, torchrun_bin=torchrun)",
+        "[16:12:20] Benchmark GPU workers: 4 (CUDA devices=0,1,2,3)",
+        "[16:12:20] OK Preflight passed \u2014 GPUs: 4x80GB  Corpus: research_corpus_v3.json",
+        "[16:12:20] WARN  SKIP instruct-official model \u2014 model weights already complete: /share/ceph/scratch/user/my-projects-gemma3/NetBench-LLM/models/instruct-official/gemma-3-27b-it",
+        "[16:12:20] WARN  SKIP LoRA CPT data \u2014 already complete: /share/ceph/scratch/user/my-projects-gemma3/NetBench-LLM/data/processed/lora/gemma-3-27b",
+        "[16:12:20] WARN  SKIP HPN SFT data \u2014 already complete: /share/ceph/scratch/user/my-projects-gemma3/NetBench-LLM/data/instruction/gemma-3-27b-hpn",
+        "[16:12:20] WARN  SKIP S3 Full HPN-SFT \u2014 already complete: /share/ceph/scratch/user/my-projects-gemma3/NetBench-LLM/models/instruction/gemma-3-27b-instruct-full-hpn-sft",
+        "[16:12:20] RUN S2 LoRA HPN-SFT",
+        "06/15/2026 16:12:24 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "06/15/2026 16:13:05 - WARNING - __main__ - Model loaded with device_map='balanced_low_0' \u2014 disabling Trainer DataParallel. For better multi-GPU utilisation, launch with: torchrun --nproc_per_node=NUM_GPUS training/lora_finetune.py ...",
+        "06/15/2026 16:13:05 - WARNING - accelerate.utils.other - [RANK 0] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.",
+        "[17:46:27] RUN S2 merge LoRA SFT",
+        "06/15/2026 17:46:31 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "[17:47:55] RUN S5 LoRA HPN-CPT",
+        "06/15/2026 17:48:02 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "06/15/2026 17:48:28 - WARNING - __main__ - Model loaded with device_map='balanced_low_0' \u2014 disabling Trainer DataParallel. For better multi-GPU utilisation, launch with: torchrun --nproc_per_node=NUM_GPUS training/lora_finetune.py ...",
+        "06/15/2026 17:48:28 - WARNING - accelerate.utils.other - [RANK 0] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.",
+        "[09:21:15] RUN S5 merge LoRA CPT",
+        "06/16/2026 09:21:27 - WARNING - huggingface_hub._login - Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.",
+        "[09:23:06] RUN S5 LoRA HPN-SFT"
+      ],
+      "mtime_utc": "2026-06-17T19:43:37.579198+00:00",
+      "path": "outputs/by_model/gemma-3-27b/logs/hpn-gemma-3-27b-20260615-161213.log",
+      "sha256": "6b50b55a05fbfd79c031311a4f97e5a21db7e220b530843532b4e03a340b57f1"
+    }
+  ],
+  "machine_id": "site-c",
+  "metadata_note": "Metadata summaries were regenerated from supplied workbooks, reports, profiling JSON, run_pipeline_specific.sh, and logs. Direct profiling files were supplied under root outputs/profiling_results and are projected into outputs/by_model/gemma-3-27b/profiling_results in the snapshot.",
+  "model_slug": "gemma-3-27b",
+  "models_compared": [
+    {
+      "model": "RAG-gemma-3-27b-instruct-lora-cpt-then-sft-merged",
+      "scored_questions": 242
+    },
+    {
+      "model": "gemma-3-27b-instruct-full-hpn-sft",
+      "scored_questions": 242
+    },
+    {
+      "model": "gemma-3-27b-instruct-lora-sft-merged",
+      "scored_questions": 242
+    },
+    {
+      "model": "gemma-3-27b-it",
+      "scored_questions": 242
+    },
+    {
+      "model": "gemma-3-27b-instruct-lora-cpt-then-sft-merged",
+      "scored_questions": 242
+    },
+    {
+      "model": "RAG-gemma-3-27b-it",
+      "scored_questions": 242
+    }
+  ],
+  "overall_report_row": "| **Overall** | 4.05 | 3.53 | 3.66 | 3.79 | 3.74 | 4.33 |",
+  "profiling": [
+    {
+      "device": "cpu",
+      "model_name": "gemma-3-27b-it",
+      "original_incoming_path": "",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_rag-cpu-benchmark10-S6-gemma-3-27b-RAG-Instruct-Official.json",
+      "profile_type": "rag",
+      "status": "complete",
+      "summary": {
+        "avg_generation_time_s": 275.8323,
+        "avg_generation_tokens_per_second": 0.86,
+        "avg_output_tokens": 236.3,
+        "avg_prompt_tokens": 4618.2,
+        "avg_retrieval_time_s": 11.3414,
+        "avg_total_time_s": 287.1736,
+        "peak_cpu_ram_mb": 112227,
+        "peak_gpu_vram_mb": 0,
+        "question_count": 10
+      },
+      "timestamp": "2026-06-16T18:41:09.839467"
+    },
+    {
+      "device": "cpu",
+      "model_name": "gemma-3-27b-instruct-lora-cpt-then-sft-merged",
+      "original_incoming_path": "",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_rag-cpu-benchmark10-S8-gemma-3-27b-RAG-LoRA-CPT-SFT.json",
+      "profile_type": "rag",
+      "status": "complete",
+      "summary": {
+        "avg_generation_time_s": 248.1128,
+        "avg_generation_tokens_per_second": 0.83,
+        "avg_output_tokens": 206.4,
+        "avg_prompt_tokens": 4618.2,
+        "avg_retrieval_time_s": 11.1842,
+        "avg_total_time_s": 259.2971,
+        "peak_cpu_ram_mb": 112468,
+        "peak_gpu_vram_mb": 0,
+        "question_count": 10
+      },
+      "timestamp": "2026-06-16T19:25:12.185964"
+    },
+    {
+      "device": "cuda",
+      "model_name": "gemma-3-27b-it",
+      "original_incoming_path": "",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_rag-gpu-benchmark10-S6-gemma-3-27b-RAG-Instruct-Official.json",
+      "profile_type": "rag",
+      "status": "complete",
+      "summary": {
+        "avg_generation_time_s": 30.4557,
+        "avg_generation_tokens_per_second": 7.7,
+        "avg_output_tokens": 234.4,
+        "avg_prompt_tokens": 4618.2,
+        "avg_retrieval_time_s": 1.6043,
+        "avg_total_time_s": 32.06,
+        "peak_cpu_ram_mb": 9528,
+        "peak_gpu_vram_mb": 17858,
+        "question_count": 10
+      },
+      "timestamp": "2026-06-16T17:46:25.344366"
+    },
+    {
+      "device": "cuda",
+      "model_name": "gemma-3-27b-instruct-lora-cpt-then-sft-merged",
+      "original_incoming_path": "",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_rag-gpu-benchmark10-S8-gemma-3-27b-RAG-LoRA-CPT-SFT.json",
+      "profile_type": "rag",
+      "status": "complete",
+      "summary": {
+        "avg_generation_time_s": 29.3759,
+        "avg_generation_tokens_per_second": 7.11,
+        "avg_output_tokens": 208.8,
+        "avg_prompt_tokens": 4618.2,
+        "avg_retrieval_time_s": 1.5835,
+        "avg_total_time_s": 30.9594,
+        "peak_cpu_ram_mb": 9701,
+        "peak_gpu_vram_mb": 17858,
+        "question_count": 10
+      },
+      "timestamp": "2026-06-16T17:52:34.767776"
+    },
+    {
+      "device": "cpu",
+      "model_name": "gemma-3-27b-it",
+      "original_incoming_path": "outputs/profiling_results/inference_direct-cpu-benchmark10-S1-gemma-3-27b-Instruct-Official.json",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_direct-cpu-benchmark10-S1-gemma-3-27b-Instruct-Official.json",
+      "profile_type": "direct",
+      "status": "complete",
+      "summary": {
+        "avg_ms_per_token": 674.76,
+        "avg_tokens_per_second": 1.48,
+        "avg_ttft_s": 0.0018,
+        "peak_cpu_ram_mb": 105794,
+        "peak_gpu_vram_mb": 0
+      },
+      "timestamp": "2026-06-16T17:00:01.822039"
+    },
+    {
+      "device": "cpu",
+      "model_name": "gemma-3-27b-instruct-full-hpn-sft",
+      "original_incoming_path": "outputs/profiling_results/inference_direct-cpu-benchmark10-S3-gemma-3-27b-Instruct-Full-HPN-SFT.json",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_direct-cpu-benchmark10-S3-gemma-3-27b-Instruct-Full-HPN-SFT.json",
+      "profile_type": "direct",
+      "status": "complete",
+      "summary": {
+        "avg_ms_per_token": 632.27,
+        "avg_tokens_per_second": 1.58,
+        "avg_ttft_s": 0.0017,
+        "peak_cpu_ram_mb": 105817,
+        "peak_gpu_vram_mb": 0
+      },
+      "timestamp": "2026-06-16T17:18:21.406783"
+    },
+    {
+      "device": "cpu",
+      "model_name": "gemma-3-27b-instruct-lora-cpt-then-sft-merged",
+      "original_incoming_path": "outputs/profiling_results/inference_direct-cpu-benchmark10-S5-gemma-3-27b-LoRA-CPT-SFT.json",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_direct-cpu-benchmark10-S5-gemma-3-27b-LoRA-CPT-SFT.json",
+      "profile_type": "direct",
+      "status": "complete",
+      "summary": {
+        "avg_ms_per_token": 627.29,
+        "avg_tokens_per_second": 1.59,
+        "avg_ttft_s": 0.0018,
+        "peak_cpu_ram_mb": 105844,
+        "peak_gpu_vram_mb": 0
+      },
+      "timestamp": "2026-06-16T17:40:02.328728"
+    },
+    {
+      "device": "cuda",
+      "model_name": "gemma-3-27b-it",
+      "original_incoming_path": "outputs/profiling_results/inference_direct-gpu-benchmark10-S1-gemma-3-27b-Instruct-Official.json",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_direct-gpu-benchmark10-S1-gemma-3-27b-Instruct-Official.json",
+      "profile_type": "direct",
+      "status": "complete",
+      "summary": {
+        "avg_ms_per_token": 75.58,
+        "avg_tokens_per_second": 14.84,
+        "avg_ttft_s": 0.0035,
+        "peak_cpu_ram_mb": 3477,
+        "peak_gpu_vram_mb": 13020
+      },
+      "timestamp": "2026-06-16T16:25:39.455018"
+    },
+    {
+      "device": "cuda",
+      "model_name": "gemma-3-27b-instruct-full-hpn-sft",
+      "original_incoming_path": "outputs/profiling_results/inference_direct-gpu-benchmark10-S3-gemma-3-27b-Instruct-Full-HPN-SFT.json",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_direct-gpu-benchmark10-S3-gemma-3-27b-Instruct-Full-HPN-SFT.json",
+      "profile_type": "direct",
+      "status": "complete",
+      "summary": {
+        "avg_ms_per_token": 77.8,
+        "avg_tokens_per_second": 14.62,
+        "avg_ttft_s": 0.0036,
+        "peak_cpu_ram_mb": 3606,
+        "peak_gpu_vram_mb": 13023
+      },
+      "timestamp": "2026-06-16T16:28:45.781370"
+    },
+    {
+      "device": "cuda",
+      "model_name": "gemma-3-27b-instruct-lora-cpt-then-sft-merged",
+      "original_incoming_path": "outputs/profiling_results/inference_direct-gpu-benchmark10-S5-gemma-3-27b-LoRA-CPT-SFT.json",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_direct-gpu-benchmark10-S5-gemma-3-27b-LoRA-CPT-SFT.json",
+      "profile_type": "direct",
+      "status": "complete",
+      "summary": {
+        "avg_ms_per_token": 86.05,
+        "avg_tokens_per_second": 13.58,
+        "avg_ttft_s": 0.0034,
+        "peak_cpu_ram_mb": 3604,
+        "peak_gpu_vram_mb": 13023
+      },
+      "timestamp": "2026-06-16T16:32:00.982736"
+    }
+  ],
+  "rag_configuration_recovered": {
+    "bm25_top_k": 30,
+    "chunk_overlap_tokens": 150,
+    "chunk_target_tokens": 1200,
+    "config_path": "NetBench-RAG/config.yaml",
+    "embedding_batch_size": 64,
+    "embedding_model": "BAAI/bge-large-en-v1.5",
+    "local_generation_max_new_tokens": 512,
+    "local_generation_temperature": 0.0,
+    "reranker_top_n": 4,
+    "rrf_top_n": 20,
+    "vector_top_k": 30
+  },
+  "result_artifacts": [
+    {
+      "bytes": 142218,
+      "mtime_utc": "2026-06-17T19:43:29.683195+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/answers/.parallel_gemma-3-27b-instruct-full-hpn-sft_v5.0/worker_0.json",
+      "sha256": "91f5e6898d94b5ceb95b424908357728e8f235abf7689d0090f9b5662bcbfaba"
+    },
+    {
+      "bytes": 142462,
+      "mtime_utc": "2026-06-17T19:43:29.827195+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/answers/.parallel_gemma-3-27b-instruct-full-hpn-sft_v5.0/worker_1.json",
+      "sha256": "9d95b34f853a6b2582367f3766337854e313ab9cac9a3b89d68120848ddb93b7"
+    },
+    {
+      "bytes": 140138,
+      "mtime_utc": "2026-06-17T19:43:29.971195+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/answers/.parallel_gemma-3-27b-instruct-full-hpn-sft_v5.0/worker_2.json",
+      "sha256": "ea8e67052dae8c03c0f7f7100af383de5800a8fd78aa874a98b1fd6aff6de894"
+    },
+    {
+      "bytes": 140811,
+      "mtime_utc": "2026-06-17T19:43:30.115196+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/answers/.parallel_gemma-3-27b-instruct-full-hpn-sft_v5.0/worker_3.json",
+      "sha256": "e6775d3a0ef8d9e304e564a5c7b32ef4abed29f4b3ae054a71d444c1ef6750ad"
+    },
+    {
+      "bytes": 143979,
+      "mtime_utc": "2026-06-17T19:43:30.551196+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/answers/.parallel_gemma-3-27b-instruct-lora-cpt-then-sft-merged_v5.0/worker_0.json",
+      "sha256": "f7218af054406a11251d485b699e9dde9f51a3da635500aea571841486405b4d"
+    },
+    {
+      "bytes": 142117,
+      "mtime_utc": "2026-06-17T19:43:30.691196+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/answers/.parallel_gemma-3-27b-instruct-lora-cpt-then-sft-merged_v5.0/worker_1.json",
+      "sha256": "e45df4f5d00ef1f75adb9ccf3d311dca346456687e5a978cfd05a2313b36d84b"
+    },
+    {
+      "bytes": 139593,
+      "mtime_utc": "2026-06-17T19:43:30.867196+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/answers/.parallel_gemma-3-27b-instruct-lora-cpt-then-sft-merged_v5.0/worker_2.json",
+      "sha256": "17c2e4e86011e2ce5f15ba315b0b86d7d7c9179aa884204f0419861d1a620b82"
+    },
+    {
+      "bytes": 139559,
+      "mtime_utc": "2026-06-17T19:43:31.007196+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/answers/.parallel_gemma-3-27b-instruct-lora-cpt-then-sft-merged_v5.0/worker_3.json",
+      "sha256": "5b3654af91710ca9016bc61e8deb663c545afb1f60b35d48e05e244e9856625a"
+    },
+    {
+      "bytes": 142464,
+      "mtime_utc": "2026-06-17T19:43:31.439196+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/answers/.parallel_gemma-3-27b-instruct-lora-sft-merged_v5.0/worker_0.json",
+      "sha256": "4f48478df162eea50ceb44e4cbc8b5ffe5319590da6cb46371c096792e366017"
+    },
+    {
+      "bytes": 142995,
+      "mtime_utc": "2026-06-17T19:43:31.579196+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/answers/.parallel_gemma-3-27b-instruct-lora-sft-merged_v5.0/worker_1.json",
+      "sha256": "a29df02f0d8148071d0d14e543ee407f03139860d6fe62ffaf461350d04a306e"
+    },
+    {
+      "bytes": 139401,
+      "mtime_utc": "2026-06-17T19:43:31.723196+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/answers/.parallel_gemma-3-27b-instruct-lora-sft-merged_v5.0/worker_2.json",
+      "sha256": "e7e88df3e42646be0d2fd9396748077bcbfb2491559f81fb66eb9fe77aeda57d"
+    },
+    {
+      "bytes": 141627,
+      "mtime_utc": "2026-06-17T19:43:31.875196+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/answers/.parallel_gemma-3-27b-instruct-lora-sft-merged_v5.0/worker_3.json",
+      "sha256": "9300deaba85b3bc9b91f8bad3d49ec765c19bd0a9371882c5a8ea7f17564b363"
+    },
+    {
+      "bytes": 194605,
+      "mtime_utc": "2026-06-17T19:43:32.303196+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/answers/.parallel_gemma-3-27b-it_v5.0/worker_0.json",
+      "sha256": "cf9eee2184b8b8b6996eba8b5af5ce5db105b617904cef3b489bcd5e3da71efb"
+    },
+    {
+      "bytes": 192744,
+      "mtime_utc": "2026-06-17T19:43:32.491196+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/answers/.parallel_gemma-3-27b-it_v5.0/worker_1.json",
+      "sha256": "ef9f58eba6c72ec069d65a7c6d8c058454508dfa4005e1f4deceba17da824e52"
+    },
+    {
+      "bytes": 190935,
+      "mtime_utc": "2026-06-17T19:43:32.651196+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/answers/.parallel_gemma-3-27b-it_v5.0/worker_2.json",
+      "sha256": "45d3ff33aae09dd11ed251b55305b88c67a76e3b213bbc5497b53c2dc4b19cd5"
+    },
+    {
+      "bytes": 192192,
+      "mtime_utc": "2026-06-17T19:43:32.807196+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/answers/.parallel_gemma-3-27b-it_v5.0/worker_3.json",
+      "sha256": "47e648b2e78568b87565808a87f779f6bdc0c8cc43cae4d2f04c6cf2149d5e21"
+    },
+    {
+      "bytes": 169578,
+      "mtime_utc": "2026-06-17T19:43:33.015197+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/answers/hpn_answers_gemma-3-27b-instruct-full-hpn-sft_v5.0.xlsx",
+      "sha256": "866eed07ddbf7e0d1f8e364a63bb301fe97cd49d05c4c09d9bd46c1a31b9ec9e"
+    },
+    {
+      "bytes": 169610,
+      "mtime_utc": "2026-06-17T19:43:33.223197+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/answers/hpn_answers_gemma-3-27b-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+      "sha256": "a70cde65e20923bfbd5e54f49c3454b29199bbf4b70bd51a0affbdd1684a74b4"
+    },
+    {
+      "bytes": 169551,
+      "mtime_utc": "2026-06-17T19:43:33.431197+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/answers/hpn_answers_gemma-3-27b-instruct-lora-sft-merged_v5.0.xlsx",
+      "sha256": "de3225b6e24d5333d0a9ad7e1cf6003d01cdc31da18b0b7d44b53d0f3877e81f"
+    },
+    {
+      "bytes": 254970,
+      "mtime_utc": "2026-06-17T19:43:33.687197+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/answers/hpn_answers_gemma-3-27b-it_v5.0.xlsx",
+      "sha256": "82ed543ebbef5291d333dc9f7ecee147438d72ce611eee1b7e464d47b4fbea5d"
+    },
+    {
+      "bytes": 209648,
+      "mtime_utc": "2026-06-17T19:43:35.871197+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/rag_answers/hpn_answers_RAG-gemma-3-27b-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+      "sha256": "2dbd623aaedfc124f593d45f1ed5c1e8d6afc4da970aa0afd9e435e9d414b058"
+    },
+    {
+      "bytes": 236491,
+      "mtime_utc": "2026-06-17T19:43:36.091197+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/rag_answers/hpn_answers_RAG-gemma-3-27b-it_v5.0.xlsx",
+      "sha256": "9378e77af6898425daec9dbe41147c17194c570c2a75575eb2fe68cb451ac47f"
+    },
+    {
+      "bytes": 218316,
+      "mtime_utc": "2026-06-17T19:43:34.231197+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/judged/hpn_judged_RAG-gemma-3-27b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+      "sha256": "a8865fa849bc185bde65c4397aaab0abdba91e6ca09c9960015977ff13803af9"
+    },
+    {
+      "bytes": 243150,
+      "mtime_utc": "2026-06-17T19:43:34.487197+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/judged/hpn_judged_RAG-gemma-3-27b-it_by_gpt-5.1.xlsx",
+      "sha256": "538ae2012a087a88088eee620570aaabe881c70be2ec870bf63411d28e697c6f"
+    },
+    {
+      "bytes": 211022,
+      "mtime_utc": "2026-06-17T19:43:34.695197+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/judged/hpn_judged_gemma-3-27b-instruct-full-hpn-sft_by_gpt-5.1.xlsx",
+      "sha256": "2da44276da80c61e54b1adf972e1e594c6128e5b8da36889e98e08b0214a0f5c"
+    },
+    {
+      "bytes": 209938,
+      "mtime_utc": "2026-06-17T19:43:34.903197+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/judged/hpn_judged_gemma-3-27b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+      "sha256": "45c017e8e1cfc1537732398990718a191cacc5c00a9edb32fd80a8df093f1786"
+    },
+    {
+      "bytes": 209891,
+      "mtime_utc": "2026-06-17T19:43:35.115197+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/judged/hpn_judged_gemma-3-27b-instruct-lora-sft-merged_by_gpt-5.1.xlsx",
+      "sha256": "4eaa553736437ad294311c86c3982fd373269f8440d740f7b2c8a12c115f4d0b"
+    },
+    {
+      "bytes": 297975,
+      "mtime_utc": "2026-06-17T19:43:35.375197+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/judged/hpn_judged_gemma-3-27b-it_by_gpt-5.1.xlsx",
+      "sha256": "4f4189c18f620ffa6fc841ca2a9c644f87a3860107bfcf56abf7c889189d5f80"
+    },
+    {
+      "bytes": 5084,
+      "mtime_utc": "2026-06-17T19:43:36.515198+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/reports/HPN_BENCHMARK_REPORT_v5.0_by_gpt-5.1.md",
+      "sha256": "088948fb8085ad47abc871fb175408b871f45a00aca2d5b9231f7ca8681b2421"
+    },
+    {
+      "bytes": 43500,
+      "mtime_utc": "2026-06-17T19:43:36.663198+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/reports/hpn_benchmark_report_v5.0_by_gpt-5.1.xlsx",
+      "sha256": "d671b552dfd51945c820ff16102f1f43143f3d775aab4a62b457d7b06f70b6a9"
+    },
+    {
+      "bytes": 1113,
+      "mtime_utc": "2026-06-17T19:43:28.803195+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/adaptation_reports/adaptation_report_gemma-3-27b-instruct-lora-cpt-merged_20260616_193602.json",
+      "sha256": "df7a9a0e4b391dfcc38ecfd8411bebd42ff7627a03b2e4757cc5020800a02e48"
+    },
+    {
+      "bytes": 5404,
+      "mtime_utc": "2026-06-17T19:43:28.943195+00:00",
+      "path": "outputs/by_model/gemma-3-27b/evaluations/adaptation_reports/adaptation_report_gemma-3-27b-instruct-lora-cpt-merged_20260616_193602.xlsx",
+      "sha256": "fce395d45deb006ebf19e1cb95ef9a9ef0c067438607f733c5675713be0b2aa4"
+    },
+    {
+      "bytes": 785,
+      "mtime_utc": "2026-06-17T19:43:38.007198+00:00",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_profile_summary_gemma-3-27b_benchmark10.csv",
+      "sha256": "7ae4ddf55fdd6b2e960d90dd6bbf3c1b66c486818cad0f2ade23f47e876a0adb"
+    },
+    {
+      "bytes": 1016,
+      "mtime_utc": "2026-06-17T19:43:38.147198+00:00",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_profile_summary_gemma-3-27b_benchmark10.md",
+      "sha256": "c17a9c2bb77e3787ed912c0c10822b1ae1f3f985a5ab4fdb66440c1afce70005"
+    },
+    {
+      "bytes": 16683,
+      "mtime_utc": "2026-06-17T19:43:38.291198+00:00",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_rag-cpu-benchmark10-S6-gemma-3-27b-RAG-Instruct-Official.json",
+      "sha256": "14ee0c18d7ffbdb2f334c6343c61bc93fb6235cc34cd3ee90c434ed3c907327c"
+    },
+    {
+      "bytes": 16695,
+      "mtime_utc": "2026-06-17T19:43:38.431198+00:00",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_rag-cpu-benchmark10-S8-gemma-3-27b-RAG-LoRA-CPT-SFT.json",
+      "sha256": "6907dfd54dc89f767043a9a700ab8e85d5852211ac8db854855d147b8e977f72"
+    },
+    {
+      "bytes": 17150,
+      "mtime_utc": "2026-06-17T19:43:38.575198+00:00",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_rag-gpu-benchmark10-S6-gemma-3-27b-RAG-Instruct-Official.json",
+      "sha256": "dca66a67ed9dde2d958fbaf5cf088cfa280e0365825f5b6ce4bb40ccc8b375bc"
+    },
+    {
+      "bytes": 17170,
+      "mtime_utc": "2026-06-17T19:43:38.719198+00:00",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_rag-gpu-benchmark10-S8-gemma-3-27b-RAG-LoRA-CPT-SFT.json",
+      "sha256": "09695baeb3600319d0fbb822425f9f69f7885de71680db3a382b8a7fdd0db701"
+    },
+    {
+      "bytes": 13758,
+      "mtime_utc": "2026-06-17T19:43:39.427198+00:00",
+      "original_incoming_path": "outputs/profiling_results/inference_direct-cpu-benchmark10-S1-gemma-3-27b-Instruct-Official.json",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_direct-cpu-benchmark10-S1-gemma-3-27b-Instruct-Official.json",
+      "sha256": "fe85a292b351393961063b90480d50a94bcaba312ce89ca1e9d15b26b2a17252"
+    },
+    {
+      "bytes": 13779,
+      "mtime_utc": "2026-06-17T19:43:39.567199+00:00",
+      "original_incoming_path": "outputs/profiling_results/inference_direct-cpu-benchmark10-S3-gemma-3-27b-Instruct-Full-HPN-SFT.json",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_direct-cpu-benchmark10-S3-gemma-3-27b-Instruct-Full-HPN-SFT.json",
+      "sha256": "1776747f8a102ddda2d87d574a29220d4aa92d13a0c815007a95c8787878af44"
+    },
+    {
+      "bytes": 13798,
+      "mtime_utc": "2026-06-17T19:43:39.707199+00:00",
+      "original_incoming_path": "outputs/profiling_results/inference_direct-cpu-benchmark10-S5-gemma-3-27b-LoRA-CPT-SFT.json",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_direct-cpu-benchmark10-S5-gemma-3-27b-LoRA-CPT-SFT.json",
+      "sha256": "93d1044e9fcb51b143b079ec1b7f2d9731652c2344d12b85bb865c3bc3d73054"
+    },
+    {
+      "bytes": 14303,
+      "mtime_utc": "2026-06-17T19:43:39.847199+00:00",
+      "original_incoming_path": "outputs/profiling_results/inference_direct-gpu-benchmark10-S1-gemma-3-27b-Instruct-Official.json",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_direct-gpu-benchmark10-S1-gemma-3-27b-Instruct-Official.json",
+      "sha256": "5590213f07b4ca8ce14626b331dcd431dbab7531ef359d2c5663dfe68ff23069"
+    },
+    {
+      "bytes": 14318,
+      "mtime_utc": "2026-06-17T19:43:39.991199+00:00",
+      "original_incoming_path": "outputs/profiling_results/inference_direct-gpu-benchmark10-S3-gemma-3-27b-Instruct-Full-HPN-SFT.json",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_direct-gpu-benchmark10-S3-gemma-3-27b-Instruct-Full-HPN-SFT.json",
+      "sha256": "9c9679dce75d2108bd5bb2b90fdbc4168da641b2728fba363c94568711bfe0b0"
+    },
+    {
+      "bytes": 14336,
+      "mtime_utc": "2026-06-17T19:43:40.131199+00:00",
+      "original_incoming_path": "outputs/profiling_results/inference_direct-gpu-benchmark10-S5-gemma-3-27b-LoRA-CPT-SFT.json",
+      "path": "outputs/by_model/gemma-3-27b/profiling_results/inference_direct-gpu-benchmark10-S5-gemma-3-27b-LoRA-CPT-SFT.json",
+      "sha256": "c40604c9fd744fa466482571ecf55637faac4fdcaff6dd436ad6aeadc1282d3d"
+    }
+  ],
+  "run_id": "site-c/gemma-3-27b",
+  "snapshot_branch": "snapshot/site-c/gemma-3-27b",
+  "snapshot_tag": "snapshot-site-c-gemma-3-27b-v1",
+  "summary_rows": [
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-gemma3/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/gemma-3-27b/evaluations/answers/hpn_answers_gemma-3-27b-instruct-full-hpn-sft_v5.0.xlsx",
+      "group": "answer_files",
+      "judge_model": "",
+      "max_tokens": "512",
+      "model_name": "gemma-3-27b-instruct-full-hpn-sft",
+      "sha256": "866eed07ddbf7e0d1f8e364a63bb301fe97cd49d05c4c09d9bd46c1a31b9ec9e",
+      "temperature": "0.0",
+      "timestamp": "2026-06-16T11:44:54.353434",
+      "top_p": "0.9",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-gemma3/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/gemma-3-27b/evaluations/answers/hpn_answers_gemma-3-27b-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+      "group": "answer_files",
+      "judge_model": "",
+      "max_tokens": "512",
+      "model_name": "gemma-3-27b-instruct-lora-cpt-then-sft-merged",
+      "sha256": "a70cde65e20923bfbd5e54f49c3454b29199bbf4b70bd51a0affbdd1684a74b4",
+      "temperature": "0.0",
+      "timestamp": "2026-06-16T11:57:41.047044",
+      "top_p": "0.9",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-gemma3/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/gemma-3-27b/evaluations/answers/hpn_answers_gemma-3-27b-instruct-lora-sft-merged_v5.0.xlsx",
+      "group": "answer_files",
+      "judge_model": "",
+      "max_tokens": "512",
+      "model_name": "gemma-3-27b-instruct-lora-sft-merged",
+      "sha256": "de3225b6e24d5333d0a9ad7e1cf6003d01cdc31da18b0b7d44b53d0f3877e81f",
+      "temperature": "0.0",
+      "timestamp": "2026-06-16T11:32:18.248867",
+      "top_p": "0.9",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-gemma3/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/gemma-3-27b/evaluations/answers/hpn_answers_gemma-3-27b-it_v5.0.xlsx",
+      "group": "answer_files",
+      "judge_model": "",
+      "max_tokens": "512",
+      "model_name": "gemma-3-27b-it",
+      "sha256": "82ed543ebbef5291d333dc9f7ecee147438d72ce611eee1b7e464d47b4fbea5d",
+      "temperature": "0.0",
+      "timestamp": "2026-06-16T11:19:37.794893",
+      "top_p": "0.9",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-gemma3/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/gemma-3-27b/evaluations/rag_answers/hpn_answers_RAG-gemma-3-27b-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+      "group": "rag_answer_files",
+      "judge_model": "",
+      "max_tokens": "512",
+      "model_name": "RAG-gemma-3-27b-instruct-lora-cpt-then-sft-merged",
+      "sha256": "2dbd623aaedfc124f593d45f1ed5c1e8d6afc4da970aa0afd9e435e9d414b058",
+      "temperature": "0.0",
+      "timestamp": "2026-06-16T14:57:34.841194",
+      "top_p": "",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-gemma3/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/gemma-3-27b/evaluations/rag_answers/hpn_answers_RAG-gemma-3-27b-it_v5.0.xlsx",
+      "group": "rag_answer_files",
+      "judge_model": "",
+      "max_tokens": "512",
+      "model_name": "RAG-gemma-3-27b-it",
+      "sha256": "9378e77af6898425daec9dbe41147c17194c570c2a75575eb2fe68cb451ac47f",
+      "temperature": "0.0",
+      "timestamp": "2026-06-16T13:34:19.615503",
+      "top_p": "",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-gemma3/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/gemma-3-27b/evaluations/judged/hpn_judged_RAG-gemma-3-27b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+      "group": "judged_files",
+      "judge_model": "gpt-5.1",
+      "max_tokens": "",
+      "model_name": "RAG-gemma-3-27b-instruct-lora-cpt-then-sft-merged",
+      "sha256": "a8865fa849bc185bde65c4397aaab0abdba91e6ca09c9960015977ff13803af9",
+      "temperature": "",
+      "timestamp": "2026-06-16T16:21:39.884562",
+      "top_p": "",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-gemma3/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/gemma-3-27b/evaluations/judged/hpn_judged_RAG-gemma-3-27b-it_by_gpt-5.1.xlsx",
+      "group": "judged_files",
+      "judge_model": "gpt-5.1",
+      "max_tokens": "",
+      "model_name": "RAG-gemma-3-27b-it",
+      "sha256": "538ae2012a087a88088eee620570aaabe881c70be2ec870bf63411d28e697c6f",
+      "temperature": "",
+      "timestamp": "2026-06-16T16:07:58.708871",
+      "top_p": "",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-gemma3/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/gemma-3-27b/evaluations/judged/hpn_judged_gemma-3-27b-instruct-full-hpn-sft_by_gpt-5.1.xlsx",
+      "group": "judged_files",
+      "judge_model": "gpt-5.1",
+      "max_tokens": "",
+      "model_name": "gemma-3-27b-instruct-full-hpn-sft",
+      "sha256": "2da44276da80c61e54b1adf972e1e594c6128e5b8da36889e98e08b0214a0f5c",
+      "temperature": "",
+      "timestamp": "2026-06-16T15:26:25.952252",
+      "top_p": "",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-gemma3/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/gemma-3-27b/evaluations/judged/hpn_judged_gemma-3-27b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+      "group": "judged_files",
+      "judge_model": "gpt-5.1",
+      "max_tokens": "",
+      "model_name": "gemma-3-27b-instruct-lora-cpt-then-sft-merged",
+      "sha256": "45c017e8e1cfc1537732398990718a191cacc5c00a9edb32fd80a8df093f1786",
+      "temperature": "",
+      "timestamp": "2026-06-16T15:39:45.116711",
+      "top_p": "",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-gemma3/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/gemma-3-27b/evaluations/judged/hpn_judged_gemma-3-27b-instruct-lora-sft-merged_by_gpt-5.1.xlsx",
+      "group": "judged_files",
+      "judge_model": "gpt-5.1",
+      "max_tokens": "",
+      "model_name": "gemma-3-27b-instruct-lora-sft-merged",
+      "sha256": "4eaa553736437ad294311c86c3982fd373269f8440d740f7b2c8a12c115f4d0b",
+      "temperature": "",
+      "timestamp": "2026-06-16T15:11:20.743155",
+      "top_p": "",
+      "total_questions": 242
+    },
+    {
+      "benchmark_file": "/share/ceph/scratch/user/my-projects-gemma3/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+      "file": "outputs/by_model/gemma-3-27b/evaluations/judged/hpn_judged_gemma-3-27b-it_by_gpt-5.1.xlsx",
+      "group": "judged_files",
+      "judge_model": "gpt-5.1",
+      "max_tokens": "",
+      "model_name": "gemma-3-27b-it",
+      "sha256": "4f4189c18f620ffa6fc841ca2a9c644f87a3860107bfcf56abf7c889189d5f80",
+      "temperature": "",
+      "timestamp": "2026-06-16T15:54:07.929352",
+      "top_p": "",
+      "total_questions": 242
+    }
+  ],
+  "training_rows": [
+    {
+      "effective_batch": "16",
+      "epochs": "3",
+      "eval_batch": "",
+      "grad_accum": "16",
+      "learning_rate": "2e-5",
+      "lora_alpha": "",
+      "notes": "S4/S7 base-CPT variants disabled for this no-base run; CPT full-weight stage not part of reported enabled variants, but script settings are retained.",
+      "precision": "bf16 evidence in recovered scripts/logs",
+      "rank": "",
+      "source": "scripts/run_pipeline_specific.sh + logs",
+      "stage": "CPT full-weight continual pre-training",
+      "train_batch": "1"
+    },
+    {
+      "effective_batch": "16",
+      "epochs": "3",
+      "eval_batch": "",
+      "grad_accum": "16",
+      "learning_rate": "2e-5",
+      "lora_alpha": "",
+      "notes": "Recovered logs record full-training GPU workers=1 with torchrun=false and deepspeed=false.",
+      "precision": "bf16 evidence in recovered scripts/logs",
+      "rank": "",
+      "source": "scripts/run_pipeline_specific.sh + logs",
+      "stage": "Full-weight instruction SFT",
+      "train_batch": "1"
+    },
+    {
+      "effective_batch": "16",
+      "epochs": "3",
+      "eval_batch": "1",
+      "grad_accum": "16",
+      "learning_rate": "2e-4",
+      "lora_alpha": "128",
+      "notes": "Final script/log evidence records LoRA batch=1x16 eval=1, rank=64, alpha=128, USE_QLORA=false, LORA_DEVICE_MAP=balanced_low_0.",
+      "precision": "bf16 evidence in recovered scripts/logs",
+      "rank": "64",
+      "source": "scripts/run_pipeline_specific.sh + logs",
+      "stage": "LoRA CPT/SFT variants",
+      "train_batch": "1"
+    },
+    {
+      "effective_batch": "",
+      "epochs": "",
+      "eval_batch": "",
+      "grad_accum": "",
+      "learning_rate": "",
+      "lora_alpha": "",
+      "notes": "benchmark GPU workers=4, CUDA devices=0,1,2,3; temperature=0.0, max_tokens=512; direct top_p=0.9 where recorded.",
+      "precision": "",
+      "rank": "",
+      "source": "scripts/run_pipeline_specific.sh + workbook metadata",
+      "stage": "Benchmark answer generation",
+      "train_batch": ""
+    },
+    {
+      "effective_batch": "",
+      "epochs": "",
+      "eval_batch": "",
+      "grad_accum": "",
+      "learning_rate": "",
+      "lora_alpha": "",
+      "notes": "judge_model=gpt-5.1; recovered judge implementation uses temperature=0.0.",
+      "precision": "",
+      "rank": "",
+      "source": "scripts/run_pipeline_specific.sh + judged workbooks",
+      "stage": "Judge scoring",
+      "train_batch": ""
+    }
+  ]
+}

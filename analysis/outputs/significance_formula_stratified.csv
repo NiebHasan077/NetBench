@@ -1,0 +1,721 @@
+stratum_type,stratum,base_model,group,contrast,n,mean_diff,ci95_lo,ci95_hi,p_raw,p_bh,bh_sig,cohens_dz,practically_sig,exploratory
+category,Adaptive and Online Optimization,llama-3.2-1b,closed_book,P1 vs P3,26,0.462,0.181,0.735,0.00554,0.02188,True,0.637,True,True
+category,Adaptive and Online Optimization,llama-3.2-1b,closed_book,P1 vs P4,26,0.45,0.212,0.688,0.00236,0.01935,True,0.701,True,True
+category,Adaptive and Online Optimization,llama-3.2-1b,closed_book,P3 vs P4,26,-0.012,-0.242,0.204,0.71421,0.76751,False,-0.019,False,True
+category,Adaptive and Online Optimization,llama-3.2-1b,closed_book,P2 vs P5,26,0.081,-0.208,0.35,0.42376,0.55474,False,0.107,False,True
+category,Adaptive and Online Optimization,llama-3.2-1b,closed_book,P1 vs P5,26,0.427,0.135,0.735,0.00573,0.02188,True,0.532,True,True
+category,Adaptive and Online Optimization,llama-3.2-1b,open_book,P6 vs P7,26,0.015,-0.362,0.369,0.45913,0.59031,False,0.016,False,True
+category,Adaptive and Online Optimization,llama-3.2-1b,open_book,P6 vs P8,26,0.262,0.023,0.485,0.02629,0.07886,False,0.42,False,True
+category,Adaptive and Online Optimization,llama-3.2-1b,rag_effect,P1 vs P6,26,0.346,0.012,0.696,0.05765,0.14216,False,0.382,False,True
+category,Adaptive and Online Optimization,llama-3.2-1b,rag_effect,P4 vs P7,26,-0.088,-0.427,0.258,0.57625,0.69042,False,-0.097,False,True
+category,Adaptive and Online Optimization,llama-3.2-1b,rag_effect,P5 vs P8,26,0.181,-0.146,0.515,0.26977,0.43164,False,0.203,False,True
+category,Adaptive and Online Optimization,gemma-3-1b,closed_book,P1 vs P3,26,0.265,0.019,0.504,0.05335,0.13792,False,0.409,False,True
+category,Adaptive and Online Optimization,gemma-3-1b,closed_book,P1 vs P4,26,0.031,-0.277,0.331,0.9678,0.98143,False,0.038,False,True
+category,Adaptive and Online Optimization,gemma-3-1b,closed_book,P3 vs P4,26,-0.235,-0.562,0.062,0.19819,0.33186,False,-0.279,False,True
+category,Adaptive and Online Optimization,gemma-3-1b,closed_book,P2 vs P5,26,0.338,0.088,0.6,0.01774,0.05553,False,0.502,False,True
+category,Adaptive and Online Optimization,gemma-3-1b,closed_book,P1 vs P5,26,0.404,0.177,0.638,0.00445,0.02188,True,0.66,True,True
+category,Adaptive and Online Optimization,gemma-3-1b,open_book,P6 vs P7,26,-0.1,-0.423,0.223,0.63758,0.72377,False,-0.118,False,True
+category,Adaptive and Online Optimization,gemma-3-1b,open_book,P6 vs P8,26,-0.208,-0.558,0.123,0.3382,0.48474,False,-0.231,False,True
+category,Adaptive and Online Optimization,gemma-3-1b,rag_effect,P1 vs P6,26,0.542,0.296,0.8,0.00091,0.01641,True,0.823,True,True
+category,Adaptive and Online Optimization,gemma-3-1b,rag_effect,P4 vs P7,26,0.412,0.015,0.815,0.06121,0.14216,False,0.387,False,True
+category,Adaptive and Online Optimization,gemma-3-1b,rag_effect,P5 vs P8,26,-0.069,-0.385,0.235,0.75323,0.78598,False,-0.083,False,True
+category,Adaptive and Online Optimization,qwen3.5-2b,closed_book,P1 vs P3,26,0.758,0.273,1.227,0.00513,0.02188,True,0.598,True,True
+category,Adaptive and Online Optimization,qwen3.5-2b,closed_book,P1 vs P4,26,0.977,0.6,1.365,0.0002,0.00735,True,0.965,True,True
+category,Adaptive and Online Optimization,qwen3.5-2b,closed_book,P3 vs P4,26,0.219,-0.146,0.615,0.62625,0.72377,False,0.213,False,True
+category,Adaptive and Online Optimization,qwen3.5-2b,closed_book,P2 vs P5,26,0.092,-0.204,0.369,0.28822,0.45013,False,0.122,False,True
+category,Adaptive and Online Optimization,qwen3.5-2b,closed_book,P1 vs P5,26,0.796,0.346,1.212,0.00272,0.01935,True,0.693,True,True
+category,Adaptive and Online Optimization,qwen3.5-2b,open_book,P6 vs P7,26,-0.242,-0.596,0.081,0.33124,0.48474,False,-0.273,False,True
+category,Adaptive and Online Optimization,qwen3.5-2b,open_book,P6 vs P8,26,0.031,-0.396,0.442,0.73654,0.77986,False,0.028,False,True
+category,Adaptive and Online Optimization,qwen3.5-2b,rag_effect,P1 vs P6,26,1.246,0.762,1.715,0.00016,0.00735,True,0.972,True,True
+category,Adaptive and Online Optimization,qwen3.5-2b,rag_effect,P4 vs P7,26,0.027,-0.546,0.577,0.71264,0.76751,False,0.018,False,True
+category,Adaptive and Online Optimization,qwen3.5-2b,rag_effect,P5 vs P8,26,0.481,0.004,0.954,0.0596,0.14216,False,0.38,False,True
+category,Adaptive and Online Optimization,llama-3.1-8b,closed_book,P1 vs P3,26,0.192,-0.142,0.508,0.19072,0.33186,False,0.224,False,True
+category,Adaptive and Online Optimization,llama-3.1-8b,closed_book,P1 vs P4,26,0.35,0.061,0.6,0.00204,0.01935,True,0.485,True,True
+category,Adaptive and Online Optimization,llama-3.1-8b,closed_book,P3 vs P4,26,0.158,-0.081,0.388,0.14017,0.26599,False,0.253,False,True
+category,Adaptive and Online Optimization,llama-3.1-8b,closed_book,P2 vs P5,26,0.177,-0.146,0.488,0.19771,0.33186,False,0.21,False,True
+category,Adaptive and Online Optimization,llama-3.1-8b,closed_book,P1 vs P5,26,0.438,0.138,0.712,0.00257,0.01935,True,0.569,True,True
+category,Adaptive and Online Optimization,llama-3.1-8b,open_book,P6 vs P7,26,0.192,-0.085,0.473,0.14408,0.26599,False,0.26,False,True
+category,Adaptive and Online Optimization,llama-3.1-8b,open_book,P6 vs P8,26,0.188,-0.158,0.523,0.32361,0.48474,False,0.209,False,True
+category,Adaptive and Online Optimization,llama-3.1-8b,rag_effect,P1 vs P6,26,0.585,0.142,1.004,0.01087,0.03557,True,0.52,True,True
+category,Adaptive and Online Optimization,llama-3.1-8b,rag_effect,P4 vs P7,26,0.427,-0.046,0.904,0.11019,0.23334,False,0.337,False,True
+category,Adaptive and Online Optimization,llama-3.1-8b,rag_effect,P5 vs P8,26,0.335,-0.023,0.685,0.13719,0.26599,False,0.356,False,True
+category,Adaptive and Online Optimization,qwen3.5-9b,closed_book,P1 vs P3,26,-0.015,-0.4,0.335,0.58494,0.69042,False,-0.016,False,True
+category,Adaptive and Online Optimization,qwen3.5-9b,closed_book,P1 vs P4,26,0.015,-0.362,0.362,0.70204,0.76751,False,0.016,False,True
+category,Adaptive and Online Optimization,qwen3.5-9b,closed_book,P3 vs P4,26,0.031,-0.292,0.327,0.53769,0.66906,False,0.037,False,True
+category,Adaptive and Online Optimization,qwen3.5-9b,closed_book,P2 vs P5,26,-0.131,-0.481,0.204,0.64335,0.72377,False,-0.143,False,True
+category,Adaptive and Online Optimization,qwen3.5-9b,closed_book,P1 vs P5,26,-0.069,-0.415,0.25,0.95707,0.98143,False,-0.078,False,True
+category,Adaptive and Online Optimization,qwen3.5-9b,open_book,P6 vs P7,26,-0.088,-0.354,0.177,0.38234,0.5194,False,-0.127,False,True
+category,Adaptive and Online Optimization,qwen3.5-9b,open_book,P6 vs P8,26,-0.035,-0.235,0.2,0.37118,0.51394,False,-0.061,False,True
+category,Adaptive and Online Optimization,qwen3.5-9b,rag_effect,P1 vs P6,26,0.7,0.265,1.123,0.00522,0.02188,True,0.622,True,True
+category,Adaptive and Online Optimization,qwen3.5-9b,rag_effect,P4 vs P7,26,0.596,0.123,1.042,0.01027,0.03523,True,0.484,True,True
+category,Adaptive and Online Optimization,qwen3.5-9b,rag_effect,P5 vs P8,26,0.735,0.327,1.127,0.00296,0.01935,True,0.688,True,True
+category,Adaptive and Online Optimization,gemma-3-12b,closed_book,P1 vs P3,26,-0.123,-0.515,0.273,0.53896,0.66906,False,-0.119,False,True
+category,Adaptive and Online Optimization,gemma-3-12b,closed_book,P1 vs P4,26,-0.192,-0.581,0.208,0.29383,0.45013,False,-0.184,False,True
+category,Adaptive and Online Optimization,gemma-3-12b,closed_book,P3 vs P4,26,-0.069,-0.473,0.308,0.98704,0.98704,False,-0.067,False,True
+category,Adaptive and Online Optimization,gemma-3-12b,closed_book,P2 vs P5,26,-0.177,-0.523,0.173,0.11593,0.23849,False,-0.191,False,True
+category,Adaptive and Online Optimization,gemma-3-12b,closed_book,P1 vs P5,26,-0.281,-0.712,0.138,0.24898,0.40742,False,-0.252,False,True
+category,Adaptive and Online Optimization,gemma-3-12b,open_book,P6 vs P7,26,-0.492,-0.881,-0.15,0.00603,0.02188,True,-0.501,True,True
+category,Adaptive and Online Optimization,gemma-3-12b,open_book,P6 vs P8,26,-0.208,-0.488,0.023,0.04921,0.13692,False,-0.306,False,True
+category,Adaptive and Online Optimization,gemma-3-12b,rag_effect,P1 vs P6,26,0.835,0.408,1.262,0.00202,0.01935,True,0.739,True,True
+category,Adaptive and Online Optimization,gemma-3-12b,rag_effect,P4 vs P7,26,0.535,-0.012,1.069,0.06525,0.14236,False,0.375,False,True
+category,Adaptive and Online Optimization,gemma-3-12b,rag_effect,P5 vs P8,26,0.908,0.423,1.365,0.00261,0.01935,True,0.725,True,True
+category,Adaptive and Online Optimization,gemma-3-27b,closed_book,P1 vs P3,26,-0.358,-0.712,-0.031,0.14388,0.26599,False,-0.392,False,True
+category,Adaptive and Online Optimization,gemma-3-27b,closed_book,P2 vs P5,26,-0.092,-0.485,0.308,0.58086,0.69042,False,-0.087,False,True
+category,Adaptive and Online Optimization,gemma-3-27b,closed_book,P1 vs P5,26,-0.288,-0.654,0.077,0.14832,0.26698,False,-0.301,False,True
+category,Adaptive and Online Optimization,gemma-3-27b,open_book,P6 vs P8,26,-0.308,-0.577,-0.1,0.00562,0.02188,True,-0.487,True,True
+category,Adaptive and Online Optimization,gemma-3-27b,rag_effect,P1 vs P6,26,0.665,0.296,1.058,0.00072,0.01641,True,0.661,True,True
+category,Adaptive and Online Optimization,gemma-3-27b,rag_effect,P5 vs P8,26,0.646,0.273,1.027,0.00608,0.02188,True,0.65,True,True
+category,Adaptive and Online Optimization,qwen3.5-27b,closed_book,P1 vs P3,26,-0.288,-0.565,-0.035,0.05364,0.13792,False,-0.408,False,True
+category,Adaptive and Online Optimization,qwen3.5-27b,closed_book,P2 vs P5,26,0.069,-0.223,0.35,0.34335,0.48474,False,0.093,False,True
+category,Adaptive and Online Optimization,qwen3.5-27b,closed_book,P1 vs P5,26,-0.185,-0.504,0.123,0.41614,0.55474,False,-0.226,False,True
+category,Adaptive and Online Optimization,qwen3.5-27b,open_book,P6 vs P8,26,-0.081,-0.262,0.112,0.06359,0.14236,False,-0.165,False,True
+category,Adaptive and Online Optimization,qwen3.5-27b,rag_effect,P1 vs P6,26,0.319,0.085,0.569,0.00569,0.02188,True,0.497,True,True
+category,Adaptive and Online Optimization,qwen3.5-27b,rag_effect,P5 vs P8,26,0.423,0.069,0.773,0.04944,0.13692,False,0.458,False,True
+category,BDP-Based Reasoning and Window Sizing,llama-3.2-1b,closed_book,P1 vs P3,30,0.067,-0.197,0.34,0.81091,0.94103,False,0.089,False,True
+category,BDP-Based Reasoning and Window Sizing,llama-3.2-1b,closed_book,P1 vs P4,30,0.193,-0.1,0.513,0.19331,0.55286,False,0.226,False,True
+category,BDP-Based Reasoning and Window Sizing,llama-3.2-1b,closed_book,P3 vs P4,30,0.127,-0.183,0.433,0.3241,0.57945,False,0.146,False,True
+category,BDP-Based Reasoning and Window Sizing,llama-3.2-1b,closed_book,P2 vs P5,30,0.123,-0.097,0.35,0.30618,0.56525,False,0.195,False,True
+category,BDP-Based Reasoning and Window Sizing,llama-3.2-1b,closed_book,P1 vs P5,30,0.17,-0.143,0.527,0.26984,0.56423,False,0.18,False,True
+category,BDP-Based Reasoning and Window Sizing,llama-3.2-1b,open_book,P6 vs P7,30,-0.067,-0.45,0.3,0.84564,0.94103,False,-0.063,False,True
+category,BDP-Based Reasoning and Window Sizing,llama-3.2-1b,open_book,P6 vs P8,30,0.01,-0.313,0.327,0.86262,0.94103,False,0.011,False,True
+category,BDP-Based Reasoning and Window Sizing,llama-3.2-1b,rag_effect,P1 vs P6,30,0.197,-0.063,0.463,0.13878,0.45363,False,0.265,False,True
+category,BDP-Based Reasoning and Window Sizing,llama-3.2-1b,rag_effect,P4 vs P7,30,-0.063,-0.39,0.247,0.75473,0.89083,False,-0.071,False,True
+category,BDP-Based Reasoning and Window Sizing,llama-3.2-1b,rag_effect,P5 vs P8,30,0.037,-0.313,0.377,0.73744,0.88493,False,0.037,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-1b,closed_book,P1 vs P3,30,0.02,-0.153,0.197,0.98926,0.98926,False,0.04,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-1b,closed_book,P1 vs P4,30,-0.077,-0.25,0.09,0.49254,0.68198,False,-0.157,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-1b,closed_book,P3 vs P4,30,-0.097,-0.32,0.133,0.43784,0.62963,False,-0.149,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-1b,closed_book,P2 vs P5,30,0.127,-0.223,0.46,0.38895,0.60879,False,0.131,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-1b,closed_book,P1 vs P5,30,0.17,-0.093,0.473,0.29995,0.56525,False,0.213,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-1b,open_book,P6 vs P7,30,-0.207,-0.597,0.137,0.37431,0.59944,False,-0.196,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-1b,open_book,P6 vs P8,30,-0.253,-0.633,0.083,0.22027,0.56423,False,-0.248,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-1b,rag_effect,P1 vs P6,30,0.287,-0.067,0.67,0.2499,0.56423,False,0.274,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-1b,rag_effect,P4 vs P7,30,0.157,-0.167,0.483,0.34858,0.5913,False,0.172,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-1b,rag_effect,P5 vs P8,30,-0.137,-0.447,0.12,0.26368,0.56423,False,-0.169,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-2b,closed_book,P1 vs P3,30,0.617,0.253,0.923,0.00015,0.00353,True,0.645,True,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-2b,closed_book,P1 vs P4,30,0.677,0.3,1.013,0.00031,0.00551,True,0.665,True,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-2b,closed_book,P3 vs P4,30,0.06,-0.217,0.323,0.62619,0.79098,False,0.078,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-2b,closed_book,P2 vs P5,30,-0.18,-0.56,0.177,0.5504,0.73386,False,-0.173,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-2b,closed_book,P1 vs P5,30,0.457,0.043,0.86,0.02345,0.14069,False,0.392,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-2b,open_book,P6 vs P7,30,-0.363,-0.813,0.103,0.14491,0.45363,False,-0.28,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-2b,open_book,P6 vs P8,30,-0.03,-0.5,0.43,0.85054,0.94103,False,-0.023,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-2b,rag_effect,P1 vs P6,30,1.097,0.667,1.48,0.00011,0.00353,True,0.958,True,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-2b,rag_effect,P4 vs P7,30,0.057,-0.297,0.4,0.60246,0.77459,False,0.057,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-2b,rag_effect,P5 vs P8,30,0.61,0.203,1.013,0.01627,0.13601,False,0.529,False,True
+category,BDP-Based Reasoning and Window Sizing,llama-3.1-8b,closed_book,P1 vs P3,30,-0.2,-0.497,0.073,0.30323,0.56525,False,-0.241,False,True
+category,BDP-Based Reasoning and Window Sizing,llama-3.1-8b,closed_book,P1 vs P4,30,-0.043,-0.45,0.35,0.96366,0.97724,False,-0.038,False,True
+category,BDP-Based Reasoning and Window Sizing,llama-3.1-8b,closed_book,P3 vs P4,30,0.157,-0.22,0.537,0.43842,0.62963,False,0.145,False,True
+category,BDP-Based Reasoning and Window Sizing,llama-3.1-8b,closed_book,P2 vs P5,30,0.003,-0.327,0.327,0.84891,0.94103,False,0.004,False,True
+category,BDP-Based Reasoning and Window Sizing,llama-3.1-8b,closed_book,P1 vs P5,30,-0.01,-0.377,0.337,0.71637,0.87422,False,-0.01,False,True
+category,BDP-Based Reasoning and Window Sizing,llama-3.1-8b,open_book,P6 vs P7,30,0.21,-0.127,0.503,0.08554,0.35491,False,0.236,False,True
+category,BDP-Based Reasoning and Window Sizing,llama-3.1-8b,open_book,P6 vs P8,30,0.273,-0.097,0.593,0.01575,0.13601,False,0.288,False,True
+category,BDP-Based Reasoning and Window Sizing,llama-3.1-8b,rag_effect,P1 vs P6,30,0.153,-0.22,0.51,0.40383,0.61864,False,0.147,False,True
+category,BDP-Based Reasoning and Window Sizing,llama-3.1-8b,rag_effect,P4 vs P7,30,0.407,-0.05,0.843,0.06444,0.2965,False,0.32,False,True
+category,BDP-Based Reasoning and Window Sizing,llama-3.1-8b,rag_effect,P5 vs P8,30,0.437,-0.017,0.83,0.01332,0.13601,False,0.366,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-9b,closed_book,P1 vs P3,30,0.07,-0.213,0.353,0.52357,0.71127,False,0.088,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-9b,closed_book,P1 vs P4,30,-0.063,-0.4,0.263,0.92342,0.96357,False,-0.068,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-9b,closed_book,P3 vs P4,30,-0.133,-0.47,0.187,0.44299,0.62963,False,-0.147,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-9b,closed_book,P2 vs P5,30,0.193,-0.103,0.507,0.19965,0.55286,False,0.216,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-9b,closed_book,P1 vs P5,30,0.007,-0.31,0.337,0.58846,0.77035,False,0.007,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-9b,open_book,P6 vs P7,30,-0.053,-0.357,0.23,0.95942,0.97724,False,-0.065,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-9b,open_book,P6 vs P8,30,-0.197,-0.503,0.09,0.26341,0.56423,False,-0.235,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-9b,rag_effect,P1 vs P6,30,0.267,-0.087,0.637,0.23391,0.56423,False,0.258,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-9b,rag_effect,P4 vs P7,30,0.277,-0.123,0.677,0.27428,0.56423,False,0.245,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-9b,rag_effect,P5 vs P8,30,0.063,-0.4,0.493,0.69639,0.86448,False,0.05,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-12b,closed_book,P1 vs P3,30,-0.42,-0.81,-0.053,0.02557,0.14162,False,-0.396,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-12b,closed_book,P1 vs P4,30,-0.397,-0.793,-0.017,0.08873,0.35491,False,-0.36,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-12b,closed_book,P3 vs P4,30,0.023,-0.327,0.377,0.90898,0.96357,False,0.024,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-12b,closed_book,P2 vs P5,30,-0.083,-0.35,0.203,0.44599,0.62963,False,-0.106,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-12b,closed_book,P1 vs P5,30,-0.46,-0.833,-0.1,0.01785,0.13601,False,-0.441,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-12b,open_book,P6 vs P7,30,-0.36,-0.65,-0.087,0.02078,0.13601,False,-0.454,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-12b,open_book,P6 vs P8,30,-0.397,-0.76,-0.05,0.03497,0.17984,False,-0.398,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-12b,rag_effect,P1 vs P6,30,0.2,-0.19,0.573,0.26432,0.56423,False,0.185,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-12b,rag_effect,P4 vs P7,30,0.237,-0.113,0.573,0.10994,0.37693,False,0.243,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-12b,rag_effect,P5 vs P8,30,0.263,-0.09,0.62,0.10583,0.37693,False,0.262,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-27b,closed_book,P1 vs P3,30,-0.523,-0.903,-0.147,0.01058,0.13601,False,-0.491,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-27b,closed_book,P2 vs P5,30,-0.273,-0.563,-0.017,0.10914,0.37693,False,-0.353,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-27b,closed_book,P1 vs P5,30,-0.317,-0.647,0.023,0.01907,0.13601,False,-0.337,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-27b,open_book,P6 vs P8,30,-0.63,-0.907,-0.36,0.00012,0.00353,True,-0.822,True,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-27b,rag_effect,P1 vs P6,30,0.267,-0.1,0.62,0.06589,0.2965,False,0.267,False,True
+category,BDP-Based Reasoning and Window Sizing,gemma-3-27b,rag_effect,P5 vs P8,30,-0.047,-0.42,0.297,0.92342,0.96357,False,-0.046,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-27b,closed_book,P1 vs P3,30,-0.19,-0.533,0.153,0.35314,0.5913,False,-0.197,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-27b,closed_book,P2 vs P5,30,-0.16,-0.417,0.087,0.22465,0.56423,False,-0.226,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-27b,closed_book,P1 vs P5,30,-0.17,-0.443,0.1,0.28944,0.56525,False,-0.221,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-27b,open_book,P6 vs P8,30,-0.077,-0.253,0.107,0.37465,0.59944,False,-0.151,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-27b,rag_effect,P1 vs P6,30,0.167,-0.17,0.51,0.32997,0.57945,False,0.172,False,True
+category,BDP-Based Reasoning and Window Sizing,qwen3.5-27b,rag_effect,P5 vs P8,30,0.26,-0.033,0.56,0.16174,0.48521,False,0.309,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,llama-3.2-1b,closed_book,P1 vs P3,51,0.404,0.239,0.578,4e-05,0.00028,True,0.651,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,llama-3.2-1b,closed_book,P1 vs P4,51,0.496,0.284,0.718,2e-05,0.00016,True,0.633,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,llama-3.2-1b,closed_book,P3 vs P4,51,0.092,-0.092,0.286,0.43137,0.66082,False,0.134,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,llama-3.2-1b,closed_book,P2 vs P5,51,0.071,-0.088,0.235,0.45142,0.66208,False,0.118,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,llama-3.2-1b,closed_book,P1 vs P5,51,0.514,0.327,0.71,0.0,3e-05,True,0.728,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,llama-3.2-1b,open_book,P6 vs P7,51,-0.025,-0.31,0.245,0.73881,0.80966,False,-0.025,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,llama-3.2-1b,open_book,P6 vs P8,51,-0.024,-0.235,0.192,0.79948,0.83424,False,-0.03,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,llama-3.2-1b,rag_effect,P1 vs P6,51,0.671,0.449,0.89,0.0,3e-05,True,0.827,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,llama-3.2-1b,rag_effect,P4 vs P7,51,0.149,-0.163,0.451,0.37106,0.5937,False,0.134,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,llama-3.2-1b,rag_effect,P5 vs P8,51,0.133,-0.106,0.384,0.54634,0.7152,False,0.147,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-1b,closed_book,P1 vs P3,51,0.016,-0.178,0.204,0.70616,0.79443,False,0.022,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-1b,closed_book,P1 vs P4,51,0.061,-0.125,0.249,0.69397,0.79443,False,0.088,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-1b,closed_book,P3 vs P4,51,0.045,-0.167,0.249,0.69018,0.79443,False,0.058,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-1b,closed_book,P2 vs P5,51,0.171,0.022,0.322,0.04894,0.11745,False,0.31,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-1b,closed_book,P1 vs P5,51,0.216,0.024,0.404,0.03005,0.07727,False,0.308,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-1b,open_book,P6 vs P7,51,-0.073,-0.347,0.2,0.54165,0.7152,False,-0.072,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-1b,open_book,P6 vs P8,51,0.025,-0.231,0.273,0.83016,0.85387,False,0.028,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-1b,rag_effect,P1 vs P6,51,0.298,0.063,0.527,0.01427,0.04281,True,0.348,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-1b,rag_effect,P4 vs P7,51,0.165,-0.08,0.422,0.324,0.53019,False,0.177,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-1b,rag_effect,P5 vs P8,51,0.108,-0.145,0.373,0.75082,0.80966,False,0.114,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-2b,closed_book,P1 vs P3,51,0.663,0.431,0.888,0.0,1e-05,True,0.792,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-2b,closed_book,P1 vs P4,51,0.818,0.618,1.031,0.0,0.0,True,1.066,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-2b,closed_book,P3 vs P4,51,0.155,-0.045,0.365,0.16911,0.29698,False,0.205,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-2b,closed_book,P2 vs P5,51,0.114,-0.116,0.355,0.66366,0.79443,False,0.131,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-2b,closed_book,P1 vs P5,51,0.686,0.451,0.925,0.0,3e-05,True,0.782,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-2b,open_book,P6 vs P7,51,0.237,-0.01,0.484,0.06491,0.15076,False,0.264,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-2b,open_book,P6 vs P8,51,0.304,0.094,0.512,0.00958,0.03137,True,0.396,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-2b,rag_effect,P1 vs P6,51,1.006,0.765,1.243,0.0,0.0,True,1.147,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-2b,rag_effect,P4 vs P7,51,0.425,0.129,0.727,0.02466,0.06576,False,0.386,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-2b,rag_effect,P5 vs P8,51,0.624,0.333,0.9,0.00024,0.00147,True,0.585,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,llama-3.1-8b,closed_book,P1 vs P3,51,0.116,-0.139,0.349,0.0843,0.18968,False,0.129,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,llama-3.1-8b,closed_book,P1 vs P4,51,0.42,0.196,0.655,0.0008,0.00385,True,0.498,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,llama-3.1-8b,closed_book,P3 vs P4,51,0.304,0.092,0.531,0.01892,0.05449,False,0.38,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,llama-3.1-8b,closed_book,P2 vs P5,51,-0.169,-0.382,0.055,0.10117,0.20233,False,-0.21,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,llama-3.1-8b,closed_book,P1 vs P5,51,0.218,-0.059,0.488,0.0913,0.1992,False,0.218,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,llama-3.1-8b,open_book,P6 vs P7,51,-0.014,-0.188,0.169,0.67854,0.79443,False,-0.021,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,llama-3.1-8b,open_book,P6 vs P8,51,0.067,-0.086,0.235,0.45978,0.66208,False,0.112,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,llama-3.1-8b,rag_effect,P1 vs P6,51,0.776,0.498,1.049,0.0,5e-05,True,0.765,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,llama-3.1-8b,rag_effect,P4 vs P7,51,0.343,0.047,0.639,0.09667,0.20233,False,0.318,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,llama-3.1-8b,rag_effect,P5 vs P8,51,0.625,0.314,0.939,0.00113,0.00477,True,0.545,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-9b,closed_book,P1 vs P3,51,-0.002,-0.304,0.288,0.54621,0.7152,False,-0.002,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-9b,closed_book,P1 vs P4,51,0.108,-0.155,0.361,0.21356,0.35759,False,0.115,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-9b,closed_book,P3 vs P4,51,0.11,-0.067,0.296,0.45109,0.66208,False,0.164,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-9b,closed_book,P2 vs P5,51,0.075,-0.133,0.298,0.86147,0.87085,False,0.094,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-9b,closed_book,P1 vs P5,51,0.029,-0.275,0.331,0.6472,0.79443,False,0.026,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-9b,open_book,P6 vs P7,51,-0.022,-0.239,0.204,0.51518,0.7152,False,-0.027,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-9b,open_book,P6 vs P8,51,-0.116,-0.294,0.063,0.10656,0.20735,False,-0.176,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-9b,rag_effect,P1 vs P6,51,0.684,0.39,0.971,1e-05,0.0001,True,0.651,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-9b,rag_effect,P4 vs P7,51,0.555,0.273,0.835,0.00122,0.00479,True,0.541,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-9b,rag_effect,P5 vs P8,51,0.539,0.28,0.796,0.00028,0.00156,True,0.564,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-12b,closed_book,P1 vs P3,51,0.061,-0.163,0.284,0.70616,0.79443,False,0.074,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-12b,closed_book,P1 vs P4,51,0.192,-0.067,0.443,0.11922,0.2201,False,0.203,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-12b,closed_book,P3 vs P4,51,0.131,-0.116,0.378,0.5219,0.7152,False,0.144,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-12b,closed_book,P2 vs P5,51,0.067,-0.145,0.284,0.56129,0.72166,False,0.084,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-12b,closed_book,P1 vs P5,51,0.19,-0.033,0.42,0.20528,0.3519,False,0.226,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-12b,open_book,P6 vs P7,51,-0.137,-0.304,0.024,0.04445,0.11036,False,-0.227,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-12b,open_book,P6 vs P8,51,-0.12,-0.284,0.033,0.101,0.20233,False,-0.204,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-12b,rag_effect,P1 vs P6,51,0.698,0.441,0.965,1e-05,8e-05,True,0.734,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-12b,rag_effect,P4 vs P7,51,0.369,0.082,0.661,0.00534,0.01831,True,0.353,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-12b,rag_effect,P5 vs P8,51,0.388,0.151,0.622,0.00393,0.01414,True,0.443,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-27b,closed_book,P1 vs P3,51,-0.212,-0.471,0.029,0.16839,0.29698,False,-0.229,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-27b,closed_book,P2 vs P5,51,0.206,-0.027,0.445,0.11796,0.2201,False,0.237,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-27b,closed_book,P1 vs P5,51,-0.024,-0.263,0.214,0.87085,0.87085,False,-0.027,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-27b,open_book,P6 vs P8,51,-0.188,-0.355,-0.025,0.02277,0.06306,False,-0.305,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-27b,rag_effect,P1 vs P6,51,0.549,0.261,0.837,0.00078,0.00385,True,0.519,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,gemma-3-27b,rag_effect,P5 vs P8,51,0.384,0.114,0.655,0.01125,0.03523,True,0.389,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-27b,closed_book,P1 vs P3,51,-0.047,-0.282,0.188,0.79794,0.83424,False,-0.054,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-27b,closed_book,P2 vs P5,51,0.047,-0.163,0.259,0.75343,0.80966,False,0.061,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-27b,closed_book,P1 vs P5,51,0.082,-0.102,0.267,0.41171,0.64442,False,0.121,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-27b,open_book,P6 vs P8,51,0.012,-0.139,0.173,0.62417,0.78843,False,0.02,False,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-27b,rag_effect,P1 vs P6,51,0.443,0.2,0.686,0.00127,0.00479,True,0.485,True,True
+category,Bottleneck Diagnosis and End-to-End Reasoning,qwen3.5-27b,rag_effect,P5 vs P8,51,0.373,0.178,0.576,0.00097,0.00438,True,0.511,True,True
+category,"Fairness, Stability, and Shared Networks",llama-3.2-1b,closed_book,P1 vs P3,15,0.22,-0.013,0.467,0.07508,0.22524,False,0.45,False,True
+category,"Fairness, Stability, and Shared Networks",llama-3.2-1b,closed_book,P1 vs P4,15,0.333,0.08,0.62,0.08383,0.23086,False,0.602,False,True
+category,"Fairness, Stability, and Shared Networks",llama-3.2-1b,closed_book,P3 vs P4,15,0.113,-0.1,0.313,0.28553,0.47809,False,0.272,False,True
+category,"Fairness, Stability, and Shared Networks",llama-3.2-1b,closed_book,P2 vs P5,15,0.227,-0.04,0.513,0.08528,0.23086,False,0.399,False,True
+category,"Fairness, Stability, and Shared Networks",llama-3.2-1b,closed_book,P1 vs P5,15,0.56,0.187,0.933,0.01703,0.14013,False,0.735,False,True
+category,"Fairness, Stability, and Shared Networks",llama-3.2-1b,open_book,P6 vs P7,15,0.32,-0.073,0.747,0.2327,0.4409,False,0.377,False,True
+category,"Fairness, Stability, and Shared Networks",llama-3.2-1b,open_book,P6 vs P8,15,0.467,0.133,0.807,0.02141,0.14013,False,0.675,False,True
+category,"Fairness, Stability, and Shared Networks",llama-3.2-1b,rag_effect,P1 vs P6,15,0.093,-0.28,0.427,0.388,0.58201,False,0.13,False,True
+category,"Fairness, Stability, and Shared Networks",llama-3.2-1b,rag_effect,P4 vs P7,15,0.08,-0.42,0.58,0.80164,0.88294,False,0.078,False,True
+category,"Fairness, Stability, and Shared Networks",llama-3.2-1b,rag_effect,P5 vs P8,15,0.0,-0.32,0.327,0.83379,0.88294,False,0.0,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-1b,closed_book,P1 vs P3,15,0.24,-0.0,0.5,0.06387,0.22524,False,0.463,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-1b,closed_book,P1 vs P4,15,0.173,-0.1,0.487,0.34634,0.55414,False,0.287,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-1b,closed_book,P3 vs P4,15,-0.067,-0.34,0.28,0.27871,0.47809,False,-0.106,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-1b,closed_book,P2 vs P5,15,0.087,-0.193,0.407,0.85859,0.89592,False,0.141,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-1b,closed_book,P1 vs P5,15,0.293,0.007,0.587,0.10222,0.2529,False,0.483,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-1b,open_book,P6 vs P7,15,-0.24,-0.607,0.167,0.15158,0.33072,False,-0.3,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-1b,open_book,P6 vs P8,15,-0.213,-0.793,0.34,0.53006,0.6815,False,-0.186,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-1b,rag_effect,P1 vs P6,15,0.627,0.16,1.153,0.04113,0.18507,False,0.607,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-1b,rag_effect,P4 vs P7,15,0.213,-0.133,0.647,0.50649,0.67945,False,0.266,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-1b,rag_effect,P5 vs P8,15,0.12,-0.32,0.593,0.71194,0.84032,False,0.129,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-2b,closed_book,P1 vs P3,15,1.247,0.853,1.66,0.00065,0.02349,True,1.499,True,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-2b,closed_book,P1 vs P4,15,1.0,0.667,1.373,0.00098,0.02349,True,1.391,True,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-2b,closed_book,P3 vs P4,15,-0.247,-0.68,0.12,0.52924,0.6815,False,-0.299,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-2b,closed_book,P2 vs P5,15,0.047,-0.247,0.333,0.69466,0.8336,False,0.079,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-2b,closed_book,P1 vs P5,15,1.093,0.74,1.487,0.00065,0.02349,True,1.433,True,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-2b,open_book,P6 vs P7,15,0.093,-0.187,0.34,0.25813,0.47656,False,0.169,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-2b,open_book,P6 vs P8,15,0.093,-0.187,0.367,0.47991,0.66449,False,0.164,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-2b,rag_effect,P1 vs P6,15,1.2,0.74,1.673,0.00186,0.03347,True,1.274,True,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-2b,rag_effect,P4 vs P7,15,0.293,-0.133,0.673,0.16156,0.34212,False,0.36,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-2b,rag_effect,P5 vs P8,15,0.2,-0.227,0.607,0.36331,0.56867,False,0.236,False,True
+category,"Fairness, Stability, and Shared Networks",llama-3.1-8b,closed_book,P1 vs P3,15,0.1,-0.367,0.513,0.27191,0.47809,False,0.11,False,True
+category,"Fairness, Stability, and Shared Networks",llama-3.1-8b,closed_book,P1 vs P4,15,0.02,-0.507,0.52,0.69466,0.8336,False,0.019,False,True
+category,"Fairness, Stability, and Shared Networks",llama-3.1-8b,closed_book,P3 vs P4,15,-0.08,-0.44,0.247,0.82401,0.88294,False,-0.113,False,True
+category,"Fairness, Stability, and Shared Networks",llama-3.1-8b,closed_book,P2 vs P5,15,-0.073,-0.453,0.307,0.83389,0.88294,False,-0.093,False,True
+category,"Fairness, Stability, and Shared Networks",llama-3.1-8b,closed_book,P1 vs P5,15,0.047,-0.493,0.587,0.7797,0.87716,False,0.042,False,True
+category,"Fairness, Stability, and Shared Networks",llama-3.1-8b,open_book,P6 vs P7,15,0.02,-0.247,0.3,0.97207,0.97207,False,0.035,False,True
+category,"Fairness, Stability, and Shared Networks",llama-3.1-8b,open_book,P6 vs P8,15,0.007,-0.273,0.313,0.93721,0.95757,False,0.011,False,True
+category,"Fairness, Stability, and Shared Networks",llama-3.1-8b,rag_effect,P1 vs P6,15,0.66,0.247,1.1,0.01498,0.14013,False,0.75,False,True
+category,"Fairness, Stability, and Shared Networks",llama-3.1-8b,rag_effect,P4 vs P7,15,0.66,0.16,1.08,0.01807,0.14013,False,0.697,False,True
+category,"Fairness, Stability, and Shared Networks",llama-3.1-8b,rag_effect,P5 vs P8,15,0.62,0.067,1.12,0.04081,0.18507,False,0.575,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-9b,closed_book,P1 vs P3,15,-0.047,-0.593,0.547,0.7773,0.87716,False,-0.039,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-9b,closed_book,P1 vs P4,15,0.26,-0.227,0.793,0.50959,0.67945,False,0.244,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-9b,closed_book,P3 vs P4,15,0.307,-0.073,0.753,0.32773,0.53628,False,0.358,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-9b,closed_book,P2 vs P5,15,0.153,-0.133,0.48,0.55599,0.70231,False,0.241,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-9b,closed_book,P1 vs P5,15,0.213,-0.293,0.753,0.388,0.58201,False,0.195,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-9b,open_book,P6 vs P7,15,-0.02,-0.247,0.247,0.43135,0.61072,False,-0.04,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-9b,open_book,P6 vs P8,15,-0.167,-0.407,0.033,0.07465,0.22524,False,-0.367,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-9b,rag_effect,P1 vs P6,15,0.827,0.267,1.36,0.01587,0.14013,False,0.733,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-9b,rag_effect,P4 vs P7,15,0.547,0.08,1.033,0.06391,0.22524,False,0.552,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-9b,rag_effect,P5 vs P8,15,0.447,-0.033,0.88,0.07359,0.22524,False,0.479,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-12b,closed_book,P1 vs P3,15,-0.373,-0.754,-0.0,0.10537,0.2529,False,-0.478,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-12b,closed_book,P1 vs P4,15,-0.287,-0.687,0.113,0.22119,0.43042,False,-0.356,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-12b,closed_book,P3 vs P4,15,0.087,-0.287,0.44,0.57599,0.71502,False,0.117,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-12b,closed_book,P2 vs P5,15,0.093,-0.313,0.473,0.43259,0.61072,False,0.116,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-12b,closed_book,P1 vs P5,15,-0.327,-0.76,0.107,0.19591,0.39183,False,-0.37,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-12b,open_book,P6 vs P7,15,-0.293,-0.573,-0.027,0.06904,0.22524,False,-0.53,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-12b,open_book,P6 vs P8,15,-0.367,-0.713,-0.053,0.04627,0.19595,False,-0.546,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-12b,rag_effect,P1 vs P6,15,0.547,0.12,1.027,0.02365,0.14191,False,0.593,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-12b,rag_effect,P4 vs P7,15,0.54,0.1,0.98,0.03825,0.18507,False,0.602,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-12b,rag_effect,P5 vs P8,15,0.507,-0.007,1.013,0.09,0.23144,False,0.485,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-27b,closed_book,P1 vs P3,15,-0.307,-0.707,0.1,0.17282,0.35552,False,-0.371,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-27b,closed_book,P2 vs P5,15,-0.067,-0.5,0.353,0.94427,0.95757,False,-0.075,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-27b,closed_book,P1 vs P5,15,-0.247,-0.793,0.3,0.43251,0.61072,False,-0.22,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-27b,open_book,P6 vs P8,15,-0.34,-0.58,-0.12,0.02001,0.14013,False,-0.728,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-27b,rag_effect,P1 vs P6,15,0.573,0.067,1.073,0.03528,0.18507,False,0.548,False,True
+category,"Fairness, Stability, and Shared Networks",gemma-3-27b,rag_effect,P5 vs P8,15,0.48,0.107,0.827,0.01958,0.14013,False,0.649,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-27b,closed_book,P1 vs P3,15,-0.36,-0.753,-0.027,0.27985,0.47809,False,-0.474,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-27b,closed_book,P2 vs P5,15,-0.053,-0.547,0.46,0.75961,0.87716,False,-0.052,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-27b,closed_book,P1 vs P5,15,-0.413,-0.813,-0.06,0.11141,0.25875,False,-0.523,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-27b,open_book,P6 vs P8,15,-0.213,-0.487,0.007,0.14099,0.31724,False,-0.412,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-27b,rag_effect,P1 vs P6,15,0.133,0.013,0.247,0.06767,0.22524,False,0.54,False,True
+category,"Fairness, Stability, and Shared Networks",qwen3.5-27b,rag_effect,P5 vs P8,15,0.333,0.02,0.733,0.08657,0.23086,False,0.447,False,True
+category,Pipelining and Small-File Optimization,llama-3.2-1b,closed_book,P1 vs P3,12,0.242,-0.05,0.558,0.25098,0.42024,False,0.424,False,True
+category,Pipelining and Small-File Optimization,llama-3.2-1b,closed_book,P1 vs P4,12,0.592,0.108,1.142,0.05078,0.14625,False,0.625,False,True
+category,Pipelining and Small-File Optimization,llama-3.2-1b,closed_book,P3 vs P4,12,0.35,-0.058,0.85,0.20703,0.36957,False,0.42,False,True
+category,Pipelining and Small-File Optimization,llama-3.2-1b,closed_book,P2 vs P5,12,-0.408,-0.808,-0.042,0.07812,0.20089,False,-0.575,False,True
+category,Pipelining and Small-File Optimization,llama-3.2-1b,closed_book,P1 vs P5,12,0.025,-0.4,0.425,0.82617,0.89307,False,0.032,False,True
+category,Pipelining and Small-File Optimization,llama-3.2-1b,open_book,P6 vs P7,12,-0.125,-0.533,0.292,0.56934,0.75554,False,-0.164,False,True
+category,Pipelining and Small-File Optimization,llama-3.2-1b,open_book,P6 vs P8,12,0.075,-0.342,0.525,0.89648,0.92248,False,0.093,False,True
+category,Pipelining and Small-File Optimization,llama-3.2-1b,rag_effect,P1 vs P6,12,0.592,0.142,1.092,0.03906,0.12784,False,0.674,False,True
+category,Pipelining and Small-File Optimization,llama-3.2-1b,rag_effect,P4 vs P7,12,-0.125,-0.733,0.375,0.90967,0.92248,False,-0.123,False,True
+category,Pipelining and Small-File Optimization,llama-3.2-1b,rag_effect,P5 vs P8,12,0.642,0.225,1.108,0.02734,0.11472,False,0.788,False,True
+category,Pipelining and Small-File Optimization,gemma-3-1b,closed_book,P1 vs P3,12,0.583,0.208,0.983,0.04492,0.13477,False,0.799,False,True
+category,Pipelining and Small-File Optimization,gemma-3-1b,closed_book,P1 vs P4,12,0.475,0.125,0.833,0.05371,0.14874,False,0.73,False,True
+category,Pipelining and Small-File Optimization,gemma-3-1b,closed_book,P3 vs P4,12,-0.108,-0.442,0.2,0.50488,0.68588,False,-0.18,False,True
+category,Pipelining and Small-File Optimization,gemma-3-1b,closed_book,P2 vs P5,12,-0.158,-0.75,0.342,0.82031,0.89307,False,-0.159,False,True
+category,Pipelining and Small-File Optimization,gemma-3-1b,closed_book,P1 vs P5,12,0.5,0.267,0.758,0.00146,0.01318,True,1.103,True,True
+category,Pipelining and Small-File Optimization,gemma-3-1b,open_book,P6 vs P7,12,-0.383,-1.058,0.2,0.50342,0.68588,False,-0.333,False,True
+category,Pipelining and Small-File Optimization,gemma-3-1b,open_book,P6 vs P8,12,-0.208,-0.525,0.075,0.31055,0.50817,False,-0.373,False,True
+category,Pipelining and Small-File Optimization,gemma-3-1b,rag_effect,P1 vs P6,12,1.025,0.592,1.525,0.00049,0.01172,True,1.197,True,True
+category,Pipelining and Small-File Optimization,gemma-3-1b,rag_effect,P4 vs P7,12,0.167,-0.267,0.65,0.57715,0.75554,False,0.197,False,True
+category,Pipelining and Small-File Optimization,gemma-3-1b,rag_effect,P5 vs P8,12,0.317,-0.234,1.0,0.81152,0.89307,False,0.276,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-2b,closed_book,P1 vs P3,12,0.6,0.183,0.992,0.02344,0.10547,False,0.787,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-2b,closed_book,P1 vs P4,12,0.658,0.392,0.933,0.00049,0.01172,True,1.322,True,True
+category,Pipelining and Small-File Optimization,qwen3.5-2b,closed_book,P3 vs P4,12,0.058,-0.275,0.367,0.66797,0.81493,False,0.098,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-2b,closed_book,P2 vs P5,12,0.1,-0.183,0.4,0.64062,0.81493,False,0.184,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-2b,closed_book,P1 vs P5,12,0.675,0.267,1.042,0.01855,0.09375,False,0.926,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-2b,open_book,P6 vs P7,12,-0.05,-0.542,0.408,0.96875,0.96875,False,-0.057,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-2b,open_book,P6 vs P8,12,0.125,-0.15,0.4,0.49023,0.68588,False,0.25,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-2b,rag_effect,P1 vs P6,12,1.558,1.108,2.025,0.00049,0.01172,True,1.802,True,True
+category,Pipelining and Small-File Optimization,qwen3.5-2b,rag_effect,P4 vs P7,12,0.85,0.267,1.417,0.0415,0.12993,False,0.798,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-2b,rag_effect,P5 vs P8,12,1.008,0.617,1.408,0.00098,0.01318,True,1.373,True,True
+category,Pipelining and Small-File Optimization,llama-3.1-8b,closed_book,P1 vs P3,12,0.392,-0.133,0.908,0.20117,0.36957,False,0.405,False,True
+category,Pipelining and Small-File Optimization,llama-3.1-8b,closed_book,P1 vs P4,12,0.575,0.058,1.092,0.06348,0.16927,False,0.596,False,True
+category,Pipelining and Small-File Optimization,llama-3.1-8b,closed_book,P3 vs P4,12,0.183,-0.375,0.7,0.44531,0.65434,False,0.186,False,True
+category,Pipelining and Small-File Optimization,llama-3.1-8b,closed_book,P2 vs P5,12,0.108,-0.225,0.467,0.69043,0.81493,False,0.171,False,True
+category,Pipelining and Small-File Optimization,llama-3.1-8b,closed_book,P1 vs P5,12,0.617,0.017,1.2,0.08398,0.20527,False,0.574,False,True
+category,Pipelining and Small-File Optimization,llama-3.1-8b,open_book,P6 vs P7,12,0.167,-0.183,0.517,0.36133,0.56556,False,0.26,False,True
+category,Pipelining and Small-File Optimization,llama-3.1-8b,open_book,P6 vs P8,12,0.308,0.042,0.583,0.12305,0.26057,False,0.624,False,True
+category,Pipelining and Small-File Optimization,llama-3.1-8b,rag_effect,P1 vs P6,12,0.858,0.4,1.35,0.00781,0.05114,False,0.968,False,True
+category,Pipelining and Small-File Optimization,llama-3.1-8b,rag_effect,P4 vs P7,12,0.45,-0.075,1.0,0.1543,0.30859,False,0.452,False,True
+category,Pipelining and Small-File Optimization,llama-3.1-8b,rag_effect,P5 vs P8,12,0.55,0.125,1.025,0.03711,0.12723,False,0.66,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-9b,closed_book,P1 vs P3,12,-0.283,-0.65,0.1,0.22266,0.3817,False,-0.402,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-9b,closed_book,P1 vs P4,12,0.167,-0.225,0.583,0.50391,0.68588,False,0.221,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-9b,closed_book,P3 vs P4,12,0.45,0.058,0.9,0.08838,0.20527,False,0.569,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-9b,closed_book,P2 vs P5,12,0.1,-0.458,0.65,0.83105,0.89307,False,0.097,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-9b,closed_book,P1 vs P5,12,-0.058,-0.517,0.433,0.82031,0.89307,False,-0.065,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-9b,open_book,P6 vs P7,12,-0.217,-0.467,-0.017,0.11719,0.25568,False,-0.522,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-9b,open_book,P6 vs P8,12,0.117,-0.292,0.642,0.90234,0.92248,False,0.135,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-9b,rag_effect,P1 vs P6,12,0.625,0.092,1.05,0.03223,0.11602,False,0.691,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-9b,rag_effect,P4 vs P7,12,0.242,-0.333,0.725,0.21045,0.36957,False,0.245,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-9b,rag_effect,P5 vs P8,12,0.8,0.383,1.242,0.00635,0.0457,True,1.017,True,True
+category,Pipelining and Small-File Optimization,gemma-3-12b,closed_book,P1 vs P3,12,0.375,0.042,0.75,0.08594,0.20527,False,0.58,False,True
+category,Pipelining and Small-File Optimization,gemma-3-12b,closed_book,P1 vs P4,12,0.208,-0.317,0.833,0.81543,0.89307,False,0.197,False,True
+category,Pipelining and Small-File Optimization,gemma-3-12b,closed_book,P3 vs P4,12,-0.167,-0.55,0.217,0.4375,0.65434,False,-0.235,False,True
+category,Pipelining and Small-File Optimization,gemma-3-12b,closed_book,P2 vs P5,12,0.358,-0.158,0.95,0.33594,0.5375,False,0.349,False,True
+category,Pipelining and Small-File Optimization,gemma-3-12b,closed_book,P1 vs P5,12,0.45,0.192,0.742,0.00195,0.01562,True,0.863,True,True
+category,Pipelining and Small-File Optimization,gemma-3-12b,open_book,P6 vs P7,12,-0.408,-0.708,-0.108,0.0293,0.11472,False,-0.744,False,True
+category,Pipelining and Small-File Optimization,gemma-3-12b,open_book,P6 vs P8,12,-0.283,-0.783,0.167,0.41211,0.63132,False,-0.318,False,True
+category,Pipelining and Small-File Optimization,gemma-3-12b,rag_effect,P1 vs P6,12,1.208,0.8,1.6,0.00098,0.01318,True,1.608,True,True
+category,Pipelining and Small-File Optimization,gemma-3-12b,rag_effect,P4 vs P7,12,0.592,-0.075,1.267,0.20605,0.36957,False,0.482,False,True
+category,Pipelining and Small-File Optimization,gemma-3-12b,rag_effect,P5 vs P8,12,0.475,-0.083,1.067,0.15039,0.30859,False,0.445,False,True
+category,Pipelining and Small-File Optimization,gemma-3-27b,closed_book,P1 vs P3,12,-0.333,-0.75,0.075,0.16016,0.31166,False,-0.436,False,True
+category,Pipelining and Small-File Optimization,gemma-3-27b,closed_book,P2 vs P5,12,0.6,0.208,1.008,0.01758,0.09375,False,0.815,False,True
+category,Pipelining and Small-File Optimization,gemma-3-27b,closed_book,P1 vs P5,12,0.55,0.2,0.9,0.01465,0.08789,False,0.85,False,True
+category,Pipelining and Small-File Optimization,gemma-3-27b,open_book,P6 vs P8,12,-0.55,-0.925,-0.192,0.01953,0.09375,False,-0.812,False,True
+category,Pipelining and Small-File Optimization,gemma-3-27b,rag_effect,P1 vs P6,12,1.017,0.575,1.458,0.00146,0.01318,True,1.23,True,True
+category,Pipelining and Small-File Optimization,gemma-3-27b,rag_effect,P5 vs P8,12,-0.083,-0.542,0.392,0.65234,0.81493,False,-0.097,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-27b,closed_book,P1 vs P3,12,-0.05,-0.575,0.384,0.90234,0.92248,False,-0.057,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-27b,closed_book,P2 vs P5,12,0.05,-0.475,0.558,0.6875,0.81493,False,0.053,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-27b,closed_book,P1 vs P5,12,0.075,-0.325,0.467,0.67969,0.81493,False,0.104,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-27b,open_book,P6 vs P8,12,-0.25,-0.508,0.025,0.09766,0.21973,False,-0.506,False,True
+category,Pipelining and Small-File Optimization,qwen3.5-27b,rag_effect,P1 vs P6,12,0.892,0.517,1.258,0.00146,0.01318,True,1.303,True,True
+category,Pipelining and Small-File Optimization,qwen3.5-27b,rag_effect,P5 vs P8,12,0.567,0.167,1.017,0.03027,0.11472,False,0.714,False,True
+category,Practical HPN Scenarios and Design,llama-3.2-1b,closed_book,P1 vs P3,21,0.529,0.252,0.805,0.0037,0.02958,True,0.779,True,True
+category,Practical HPN Scenarios and Design,llama-3.2-1b,closed_book,P1 vs P4,21,0.381,0.205,0.548,0.00206,0.01853,True,0.906,True,True
+category,Practical HPN Scenarios and Design,llama-3.2-1b,closed_book,P3 vs P4,21,-0.148,-0.419,0.138,0.21865,0.36611,False,-0.219,False,True
+category,Practical HPN Scenarios and Design,llama-3.2-1b,closed_book,P2 vs P5,21,-0.195,-0.467,0.076,0.20466,0.35084,False,-0.3,False,True
+category,Practical HPN Scenarios and Design,llama-3.2-1b,closed_book,P1 vs P5,21,0.467,0.205,0.743,0.0048,0.03369,True,0.728,True,True
+category,Practical HPN Scenarios and Design,llama-3.2-1b,open_book,P6 vs P7,21,-0.048,-0.386,0.29,0.83729,0.94001,False,-0.059,False,True
+category,Practical HPN Scenarios and Design,llama-3.2-1b,open_book,P6 vs P8,21,0.338,-0.043,0.719,0.0979,0.19051,False,0.368,False,True
+category,Practical HPN Scenarios and Design,llama-3.2-1b,rag_effect,P1 vs P6,21,0.586,0.305,0.876,0.00132,0.01582,True,0.84,True,True
+category,Practical HPN Scenarios and Design,llama-3.2-1b,rag_effect,P4 vs P7,21,0.157,-0.157,0.467,0.37526,0.5629,False,0.21,False,True
+category,Practical HPN Scenarios and Design,llama-3.2-1b,rag_effect,P5 vs P8,21,0.457,0.11,0.838,0.03487,0.10916,False,0.521,False,True
+category,Practical HPN Scenarios and Design,gemma-3-1b,closed_book,P1 vs P3,21,0.21,0.033,0.395,0.05208,0.13922,False,0.48,False,True
+category,Practical HPN Scenarios and Design,gemma-3-1b,closed_book,P1 vs P4,21,-0.005,-0.233,0.21,0.95872,0.97578,False,-0.009,False,True
+category,Practical HPN Scenarios and Design,gemma-3-1b,closed_book,P3 vs P4,21,-0.214,-0.448,-0.019,0.06854,0.15893,False,-0.41,False,True
+category,Practical HPN Scenarios and Design,gemma-3-1b,closed_book,P2 vs P5,21,0.019,-0.267,0.314,0.96223,0.97578,False,0.027,False,True
+category,Practical HPN Scenarios and Design,gemma-3-1b,closed_book,P1 vs P5,21,0.19,-0.033,0.424,0.19752,0.34686,False,0.345,False,True
+category,Practical HPN Scenarios and Design,gemma-3-1b,open_book,P6 vs P7,21,0.071,-0.138,0.281,0.5072,0.70228,False,0.143,False,True
+category,Practical HPN Scenarios and Design,gemma-3-1b,open_book,P6 vs P8,21,-0.086,-0.476,0.286,0.60203,0.75108,False,-0.095,False,True
+category,Practical HPN Scenarios and Design,gemma-3-1b,rag_effect,P1 vs P6,21,0.357,0.067,0.7,0.04847,0.13922,False,0.47,False,True
+category,Practical HPN Scenarios and Design,gemma-3-1b,rag_effect,P4 vs P7,21,0.433,0.11,0.771,0.02935,0.10564,False,0.545,False,True
+category,Practical HPN Scenarios and Design,gemma-3-1b,rag_effect,P5 vs P8,21,0.081,-0.267,0.419,0.53787,0.73069,False,0.097,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-2b,closed_book,P1 vs P3,21,0.276,-0.052,0.576,0.06719,0.15893,False,0.367,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-2b,closed_book,P1 vs P4,21,0.667,0.41,0.962,0.0003,0.01582,True,1.014,True,True
+category,Practical HPN Scenarios and Design,qwen3.5-2b,closed_book,P3 vs P4,21,0.39,0.114,0.705,0.02188,0.09266,False,0.557,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-2b,closed_book,P2 vs P5,21,0.19,-0.033,0.429,0.14213,0.2624,False,0.344,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-2b,closed_book,P1 vs P5,21,0.6,0.343,0.871,0.00089,0.01582,True,0.939,True,True
+category,Practical HPN Scenarios and Design,qwen3.5-2b,open_book,P6 vs P7,21,0.071,-0.376,0.51,0.62909,0.75491,False,0.068,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-2b,open_book,P6 vs P8,21,0.233,-0.19,0.648,0.227,0.36701,False,0.231,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-2b,rag_effect,P1 vs P6,21,0.91,0.467,1.338,0.00181,0.01853,True,0.871,True,True
+category,Practical HPN Scenarios and Design,qwen3.5-2b,rag_effect,P4 vs P7,21,0.314,-0.233,0.81,0.11355,0.21515,False,0.249,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-2b,rag_effect,P5 vs P8,21,0.543,0.133,0.948,0.02384,0.09534,False,0.548,False,True
+category,Practical HPN Scenarios and Design,llama-3.1-8b,closed_book,P1 vs P3,21,0.505,0.157,0.857,0.00953,0.05277,False,0.607,False,True
+category,Practical HPN Scenarios and Design,llama-3.1-8b,closed_book,P1 vs P4,21,0.652,0.21,1.105,0.01372,0.06176,False,0.624,False,True
+category,Practical HPN Scenarios and Design,llama-3.1-8b,closed_book,P3 vs P4,21,0.148,-0.152,0.452,0.40764,0.59899,False,0.201,False,True
+category,Practical HPN Scenarios and Design,llama-3.1-8b,closed_book,P2 vs P5,21,0.005,-0.31,0.314,0.94045,0.97578,False,0.006,False,True
+category,Practical HPN Scenarios and Design,llama-3.1-8b,closed_book,P1 vs P5,21,0.624,0.214,1.038,0.01293,0.06176,False,0.634,False,True
+category,Practical HPN Scenarios and Design,llama-3.1-8b,open_book,P6 vs P7,21,0.086,-0.21,0.381,0.60112,0.75108,False,0.119,False,True
+category,Practical HPN Scenarios and Design,llama-3.1-8b,open_book,P6 vs P8,21,0.081,-0.29,0.443,0.60503,0.75108,False,0.093,False,True
+category,Practical HPN Scenarios and Design,llama-3.1-8b,rag_effect,P1 vs P6,21,1.014,0.557,1.457,0.00077,0.01582,True,0.942,True,True
+category,Practical HPN Scenarios and Design,llama-3.1-8b,rag_effect,P4 vs P7,21,0.448,-0.005,0.881,0.06444,0.15893,False,0.422,False,True
+category,Practical HPN Scenarios and Design,llama-3.1-8b,rag_effect,P5 vs P8,21,0.471,0.043,0.848,0.02755,0.10441,False,0.489,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-9b,closed_book,P1 vs P3,21,-0.119,-0.543,0.3,0.70218,0.8288,False,-0.118,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-9b,closed_book,P1 vs P4,21,0.276,0.029,0.529,0.04003,0.1201,False,0.462,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-9b,closed_book,P3 vs P4,21,0.395,-0.014,0.795,0.05221,0.13922,False,0.406,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-9b,closed_book,P2 vs P5,21,0.086,-0.138,0.31,0.4203,0.60523,False,0.16,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-9b,closed_book,P1 vs P5,21,0.157,-0.124,0.443,0.22938,0.36701,False,0.231,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-9b,open_book,P6 vs P7,21,-0.129,-0.495,0.171,0.6021,0.75108,False,-0.161,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-9b,open_book,P6 vs P8,21,-0.267,-0.638,0.019,0.09754,0.19051,False,-0.332,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-9b,rag_effect,P1 vs P6,21,0.743,0.262,1.176,0.01188,0.0611,False,0.676,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-9b,rag_effect,P4 vs P7,21,0.338,-0.243,0.852,0.07064,0.15893,False,0.256,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-9b,rag_effect,P5 vs P8,21,0.319,-0.276,0.838,0.08527,0.17614,False,0.237,False,True
+category,Practical HPN Scenarios and Design,gemma-3-12b,closed_book,P1 vs P3,21,-0.081,-0.314,0.143,0.82383,0.94001,False,-0.148,False,True
+category,Practical HPN Scenarios and Design,gemma-3-12b,closed_book,P1 vs P4,21,-0.043,-0.333,0.257,0.97933,0.97933,False,-0.06,False,True
+category,Practical HPN Scenarios and Design,gemma-3-12b,closed_book,P3 vs P4,21,0.038,-0.238,0.3,0.86151,0.94001,False,0.061,False,True
+category,Practical HPN Scenarios and Design,gemma-3-12b,closed_book,P2 vs P5,21,-0.005,-0.271,0.262,0.96222,0.97578,False,-0.007,False,True
+category,Practical HPN Scenarios and Design,gemma-3-12b,closed_book,P1 vs P5,21,0.076,-0.281,0.438,0.58605,0.75108,False,0.087,False,True
+category,Practical HPN Scenarios and Design,gemma-3-12b,open_book,P6 vs P7,21,-0.267,-0.548,0.024,0.08562,0.17614,False,-0.385,False,True
+category,Practical HPN Scenarios and Design,gemma-3-12b,open_book,P6 vs P8,21,-0.314,-0.667,0.024,0.1613,0.29034,False,-0.376,False,True
+category,Practical HPN Scenarios and Design,gemma-3-12b,rag_effect,P1 vs P6,21,0.91,0.548,1.267,0.00059,0.01582,True,1.061,True,True
+category,Practical HPN Scenarios and Design,gemma-3-12b,rag_effect,P4 vs P7,21,0.686,0.31,1.057,0.00571,0.03425,True,0.754,True,True
+category,Practical HPN Scenarios and Design,gemma-3-12b,rag_effect,P5 vs P8,21,0.519,-0.029,1.038,0.07915,0.17268,False,0.397,False,True
+category,Practical HPN Scenarios and Design,gemma-3-27b,closed_book,P1 vs P3,21,-0.252,-0.676,0.143,0.46853,0.66145,False,-0.254,False,True
+category,Practical HPN Scenarios and Design,gemma-3-27b,closed_book,P2 vs P5,21,0.21,-0.11,0.533,0.32016,0.49045,False,0.269,False,True
+category,Practical HPN Scenarios and Design,gemma-3-27b,closed_book,P1 vs P5,21,0.043,-0.238,0.31,0.73225,0.85036,False,0.066,False,True
+category,Practical HPN Scenarios and Design,gemma-3-27b,open_book,P6 vs P8,21,-0.314,-0.595,-0.048,0.03444,0.10916,False,-0.472,False,True
+category,Practical HPN Scenarios and Design,gemma-3-27b,rag_effect,P1 vs P6,21,0.757,0.31,1.2,0.00515,0.03369,True,0.718,True,True
+category,Practical HPN Scenarios and Design,gemma-3-27b,rag_effect,P5 vs P8,21,0.4,0.024,0.757,0.06291,0.15893,False,0.453,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-27b,closed_book,P1 vs P3,21,-0.024,-0.333,0.262,0.86167,0.94001,False,-0.033,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-27b,closed_book,P2 vs P5,21,0.0,-0.3,0.314,0.88792,0.95419,False,0.0,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-27b,closed_book,P1 vs P5,21,-0.043,-0.305,0.238,0.61603,0.75177,False,-0.066,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-27b,open_book,P6 vs P8,21,-0.2,-0.495,0.043,0.29992,0.46944,False,-0.302,False,True
+category,Practical HPN Scenarios and Design,qwen3.5-27b,rag_effect,P1 vs P6,21,0.681,0.376,0.971,0.00129,0.01582,True,0.947,True,True
+category,Practical HPN Scenarios and Design,qwen3.5-27b,rag_effect,P5 vs P8,21,0.524,0.09,0.933,0.03455,0.10916,False,0.511,False,True
+category,Transfer Parameters: Definitions and Roles,llama-3.2-1b,closed_book,P1 vs P3,55,0.127,-0.071,0.325,0.12776,0.19572,False,0.166,False,True
+category,Transfer Parameters: Definitions and Roles,llama-3.2-1b,closed_book,P1 vs P4,55,0.316,0.071,0.558,0.00538,0.01138,True,0.337,True,True
+category,Transfer Parameters: Definitions and Roles,llama-3.2-1b,closed_book,P3 vs P4,55,0.189,-0.015,0.404,0.1871,0.25199,False,0.234,False,True
+category,Transfer Parameters: Definitions and Roles,llama-3.2-1b,closed_book,P2 vs P5,55,0.184,-0.007,0.38,0.06487,0.10393,False,0.252,False,True
+category,Transfer Parameters: Definitions and Roles,llama-3.2-1b,closed_book,P1 vs P5,55,0.422,0.167,0.664,0.00025,0.00064,True,0.451,True,True
+category,Transfer Parameters: Definitions and Roles,llama-3.2-1b,open_book,P6 vs P7,55,0.275,-0.038,0.587,0.04984,0.08397,False,0.234,False,True
+category,Transfer Parameters: Definitions and Roles,llama-3.2-1b,open_book,P6 vs P8,55,0.327,0.085,0.569,0.00567,0.01166,True,0.359,True,True
+category,Transfer Parameters: Definitions and Roles,llama-3.2-1b,rag_effect,P1 vs P6,55,0.76,0.493,1.027,1e-05,2e-05,True,0.744,True,True
+category,Transfer Parameters: Definitions and Roles,llama-3.2-1b,rag_effect,P4 vs P7,55,0.718,0.445,0.989,2e-05,6e-05,True,0.689,True,True
+category,Transfer Parameters: Definitions and Roles,llama-3.2-1b,rag_effect,P5 vs P8,55,0.665,0.398,0.933,3e-05,9e-05,True,0.66,True,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-1b,closed_book,P1 vs P3,55,0.34,0.153,0.531,0.00082,0.00197,True,0.466,True,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-1b,closed_book,P1 vs P4,55,0.276,0.076,0.473,0.00673,0.01347,True,0.36,True,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-1b,closed_book,P3 vs P4,55,-0.064,-0.265,0.14,0.54273,0.6344,False,-0.082,False,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-1b,closed_book,P2 vs P5,55,0.165,-0.015,0.351,0.09851,0.15419,False,0.235,False,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-1b,closed_book,P1 vs P5,55,0.591,0.376,0.809,0.0,1e-05,True,0.726,True,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-1b,open_book,P6 vs P7,55,-0.307,-0.535,-0.078,0.0136,0.02646,True,-0.357,True,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-1b,open_book,P6 vs P8,55,-0.031,-0.249,0.189,0.72451,0.75601,False,-0.037,False,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-1b,rag_effect,P1 vs P6,55,1.156,0.909,1.393,0.0,0.0,True,1.25,True,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-1b,rag_effect,P4 vs P7,55,0.573,0.324,0.831,0.00019,0.00052,True,0.59,True,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-1b,rag_effect,P5 vs P8,55,0.535,0.265,0.802,0.00061,0.00151,True,0.515,True,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-2b,closed_book,P1 vs P3,55,0.745,0.507,0.973,0.0,1e-05,True,0.833,True,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-2b,closed_book,P1 vs P4,55,1.0,0.809,1.193,0.0,0.0,True,1.353,True,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-2b,closed_book,P3 vs P4,55,0.255,0.031,0.489,0.03283,0.06061,False,0.296,False,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-2b,closed_book,P2 vs P5,55,0.158,-0.084,0.4,0.17963,0.24873,False,0.174,False,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-2b,closed_book,P1 vs P5,55,0.84,0.625,1.06,0.0,0.0,True,1.009,True,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-2b,open_book,P6 vs P7,55,0.151,-0.069,0.365,0.18899,0.25199,False,0.184,False,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-2b,open_book,P6 vs P8,55,0.165,-0.016,0.356,0.2317,0.30332,False,0.232,False,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-2b,rag_effect,P1 vs P6,55,1.673,1.429,1.911,0.0,0.0,True,1.8,True,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-2b,rag_effect,P4 vs P7,55,0.824,0.596,1.047,0.0,0.0,True,0.967,True,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-2b,rag_effect,P5 vs P8,55,0.998,0.745,1.253,0.0,0.0,True,1.016,True,True
+category,Transfer Parameters: Definitions and Roles,llama-3.1-8b,closed_book,P1 vs P3,55,0.091,-0.171,0.344,0.4009,0.48124,False,0.093,False,True
+category,Transfer Parameters: Definitions and Roles,llama-3.1-8b,closed_book,P1 vs P4,55,0.14,-0.084,0.358,0.13833,0.2075,False,0.166,False,True
+category,Transfer Parameters: Definitions and Roles,llama-3.1-8b,closed_book,P3 vs P4,55,0.049,-0.225,0.324,0.58567,0.64874,False,0.048,False,True
+category,Transfer Parameters: Definitions and Roles,llama-3.1-8b,closed_book,P2 vs P5,55,0.135,-0.109,0.385,0.15948,0.23434,False,0.141,False,True
+category,Transfer Parameters: Definitions and Roles,llama-3.1-8b,closed_book,P1 vs P5,55,0.278,0.036,0.518,0.02367,0.04486,True,0.3,True,True
+category,Transfer Parameters: Definitions and Roles,llama-3.1-8b,open_book,P6 vs P7,55,0.291,0.153,0.436,0.00011,0.0003,True,0.536,True,True
+category,Transfer Parameters: Definitions and Roles,llama-3.1-8b,open_book,P6 vs P8,55,0.249,0.102,0.404,0.00179,0.00416,True,0.429,False,True
+category,Transfer Parameters: Definitions and Roles,llama-3.1-8b,rag_effect,P1 vs P6,55,0.816,0.562,1.065,0.0,0.0,True,0.852,True,True
+category,Transfer Parameters: Definitions and Roles,llama-3.1-8b,rag_effect,P4 vs P7,55,0.967,0.727,1.211,0.0,0.0,True,1.051,True,True
+category,Transfer Parameters: Definitions and Roles,llama-3.1-8b,rag_effect,P5 vs P8,55,0.787,0.518,1.053,0.0,1e-05,True,0.767,True,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-9b,closed_book,P1 vs P3,55,0.113,-0.1,0.32,0.16958,0.2442,False,0.141,False,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-9b,closed_book,P1 vs P4,55,0.198,-0.029,0.418,0.03449,0.06208,False,0.233,False,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-9b,closed_book,P3 vs P4,55,0.085,-0.104,0.273,0.28205,0.36264,False,0.117,False,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-9b,closed_book,P2 vs P5,55,0.033,-0.162,0.222,0.56925,0.64874,False,0.045,False,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-9b,closed_book,P1 vs P5,55,0.222,0.038,0.4,0.00461,0.01006,True,0.317,False,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-9b,open_book,P6 vs P7,55,0.033,-0.082,0.153,0.81588,0.82737,False,0.073,False,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-9b,open_book,P6 vs P8,55,0.027,-0.125,0.169,0.7949,0.81762,False,0.049,False,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-9b,rag_effect,P1 vs P6,55,0.873,0.638,1.109,0.0,0.0,True,0.967,True,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-9b,rag_effect,P4 vs P7,55,0.707,0.444,0.978,2e-05,7e-05,True,0.687,True,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-9b,rag_effect,P5 vs P8,55,0.678,0.471,0.893,0.0,2e-05,True,0.828,True,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-12b,closed_book,P1 vs P3,55,0.015,-0.215,0.229,0.69665,0.73763,False,0.017,False,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-12b,closed_book,P1 vs P4,55,-0.029,-0.282,0.238,0.64799,0.70689,False,-0.029,False,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-12b,closed_book,P3 vs P4,55,-0.044,-0.249,0.176,0.40103,0.48124,False,-0.053,False,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-12b,closed_book,P2 vs P5,55,0.256,0.007,0.502,0.03561,0.06254,False,0.269,False,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-12b,closed_book,P1 vs P5,55,0.038,-0.209,0.285,0.57728,0.64874,False,0.04,False,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-12b,open_book,P6 vs P7,55,-0.036,-0.158,0.093,0.17728,0.24873,False,-0.075,False,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-12b,open_book,P6 vs P8,55,-0.049,-0.176,0.093,0.06496,0.10393,False,-0.096,False,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-12b,rag_effect,P1 vs P6,55,0.976,0.695,1.26,0.0,0.0,True,0.899,True,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-12b,rag_effect,P4 vs P7,55,0.969,0.711,1.231,0.0,0.0,True,0.974,True,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-12b,rag_effect,P5 vs P8,55,0.889,0.627,1.156,0.0,0.0,True,0.871,True,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-27b,closed_book,P1 vs P3,55,-0.144,-0.404,0.113,0.34152,0.4314,False,-0.147,False,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-27b,closed_book,P2 vs P5,55,0.049,-0.14,0.244,0.67065,0.7207,False,0.067,False,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-27b,closed_book,P1 vs P5,55,0.007,-0.244,0.265,0.96429,0.96429,False,0.008,False,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-27b,open_book,P6 vs P8,55,-0.165,-0.278,-0.073,0.00025,0.00064,True,-0.425,False,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-27b,rag_effect,P1 vs P6,55,0.982,0.682,1.271,0.0,0.0,True,0.86,True,True
+category,Transfer Parameters: Definitions and Roles,gemma-3-27b,rag_effect,P5 vs P8,55,0.809,0.562,1.053,0.0,0.0,True,0.868,True,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-27b,closed_book,P1 vs P3,55,-0.202,-0.415,0.007,0.05015,0.08397,False,-0.252,False,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-27b,closed_book,P2 vs P5,55,0.278,0.102,0.462,0.00346,0.00778,True,0.406,True,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-27b,closed_book,P1 vs P5,55,0.087,-0.104,0.28,0.39547,0.48124,False,0.119,False,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-27b,open_book,P6 vs P8,55,0.045,-0.042,0.144,0.54629,0.6344,False,0.128,False,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-27b,rag_effect,P1 vs P6,55,0.482,0.289,0.696,4e-05,0.00012,True,0.611,True,True
+category,Transfer Parameters: Definitions and Roles,qwen3.5-27b,rag_effect,P5 vs P8,55,0.44,0.273,0.618,4e-05,0.00012,True,0.656,True,True
+difficulty,easy,llama-3.2-1b,closed_book,P1 vs P3,74,0.381,0.2,0.568,0.00033,0.00218,True,0.465,True,True
+difficulty,easy,llama-3.2-1b,closed_book,P1 vs P4,74,0.364,0.159,0.572,0.00028,0.00199,True,0.4,True,True
+difficulty,easy,llama-3.2-1b,closed_book,P3 vs P4,74,-0.018,-0.23,0.199,0.72646,0.84363,False,-0.019,False,True
+difficulty,easy,llama-3.2-1b,closed_book,P2 vs P5,74,-0.027,-0.192,0.139,0.79589,0.84507,False,-0.037,False,True
+difficulty,easy,llama-3.2-1b,closed_book,P1 vs P5,74,0.395,0.184,0.614,0.00025,0.00199,True,0.417,True,True
+difficulty,easy,llama-3.2-1b,open_book,P6 vs P7,74,-0.049,-0.262,0.168,0.99761,0.99761,False,-0.05,False,True
+difficulty,easy,llama-3.2-1b,open_book,P6 vs P8,74,0.07,-0.128,0.272,0.36975,0.49702,False,0.079,False,True
+difficulty,easy,llama-3.2-1b,rag_effect,P1 vs P6,74,0.55,0.332,0.773,2e-05,0.00019,True,0.569,True,True
+difficulty,easy,llama-3.2-1b,rag_effect,P4 vs P7,74,0.138,-0.108,0.378,0.20301,0.32481,False,0.128,False,True
+difficulty,easy,llama-3.2-1b,rag_effect,P5 vs P8,74,0.226,0.019,0.426,0.02015,0.05993,False,0.251,False,True
+difficulty,easy,gemma-3-1b,closed_book,P1 vs P3,74,0.341,0.153,0.526,0.00085,0.00406,True,0.415,True,True
+difficulty,easy,gemma-3-1b,closed_book,P1 vs P4,74,0.077,-0.112,0.266,0.30926,0.45443,False,0.092,False,True
+difficulty,easy,gemma-3-1b,closed_book,P3 vs P4,74,-0.264,-0.469,-0.064,0.02164,0.05993,False,-0.291,False,True
+difficulty,easy,gemma-3-1b,closed_book,P2 vs P5,74,0.099,-0.126,0.318,0.18886,0.31624,False,0.1,False,True
+difficulty,easy,gemma-3-1b,closed_book,P1 vs P5,74,0.457,0.246,0.661,6e-05,0.00058,True,0.495,True,True
+difficulty,easy,gemma-3-1b,open_book,P6 vs P7,74,-0.415,-0.634,-0.2,0.00074,0.00379,True,-0.43,True,True
+difficulty,easy,gemma-3-1b,open_book,P6 vs P8,74,-0.282,-0.499,-0.07,0.03633,0.0902,False,-0.298,False,True
+difficulty,easy,gemma-3-1b,rag_effect,P1 vs P6,74,0.773,0.531,1.012,0.0,0.0,True,0.728,True,True
+difficulty,easy,gemma-3-1b,rag_effect,P4 vs P7,74,0.281,0.058,0.504,0.01478,0.05068,False,0.283,False,True
+difficulty,easy,gemma-3-1b,rag_effect,P5 vs P8,74,0.034,-0.189,0.257,0.69157,0.81628,False,0.034,False,True
+difficulty,easy,qwen3.5-2b,closed_book,P1 vs P3,74,0.7,0.508,0.891,0.0,0.0,True,0.829,True,True
+difficulty,easy,qwen3.5-2b,closed_book,P1 vs P4,74,0.847,0.658,1.037,0.0,0.0,True,1.003,True,True
+difficulty,easy,qwen3.5-2b,closed_book,P3 vs P4,74,0.147,-0.019,0.322,0.12406,0.22331,False,0.194,False,True
+difficulty,easy,qwen3.5-2b,closed_book,P2 vs P5,74,0.197,-0.005,0.408,0.10909,0.22331,False,0.217,False,True
+difficulty,easy,qwen3.5-2b,closed_book,P1 vs P5,74,0.841,0.641,1.042,0.0,0.0,True,0.953,True,True
+difficulty,easy,qwen3.5-2b,open_book,P6 vs P7,74,-0.022,-0.208,0.166,0.80986,0.84507,False,-0.026,False,True
+difficulty,easy,qwen3.5-2b,open_book,P6 vs P8,74,0.061,-0.128,0.247,0.29364,0.44047,False,0.074,False,True
+difficulty,easy,qwen3.5-2b,rag_effect,P1 vs P6,74,0.928,0.692,1.155,0.0,0.0,True,0.913,True,True
+difficulty,easy,qwen3.5-2b,rag_effect,P4 vs P7,74,0.059,-0.173,0.291,0.33996,0.48954,False,0.058,False,True
+difficulty,easy,qwen3.5-2b,rag_effect,P5 vs P8,74,0.149,-0.099,0.388,0.16353,0.28718,False,0.137,False,True
+difficulty,easy,llama-3.1-8b,closed_book,P1 vs P3,74,0.132,-0.069,0.328,0.0331,0.08826,False,0.148,False,True
+difficulty,easy,llama-3.1-8b,closed_book,P1 vs P4,74,0.265,0.074,0.441,0.00058,0.00341,True,0.324,True,True
+difficulty,easy,llama-3.1-8b,closed_book,P3 vs P4,74,0.132,-0.07,0.326,0.09639,0.21031,False,0.15,False,True
+difficulty,easy,llama-3.1-8b,closed_book,P2 vs P5,74,-0.035,-0.222,0.147,0.79716,0.84507,False,-0.043,False,True
+difficulty,easy,llama-3.1-8b,closed_book,P1 vs P5,74,0.265,0.055,0.468,0.00326,0.01304,True,0.29,True,True
+difficulty,easy,llama-3.1-8b,open_book,P6 vs P7,74,-0.055,-0.177,0.064,0.64518,0.77742,False,-0.106,False,True
+difficulty,easy,llama-3.1-8b,open_book,P6 vs P8,74,-0.016,-0.119,0.092,0.79975,0.84507,False,-0.035,False,True
+difficulty,easy,llama-3.1-8b,rag_effect,P1 vs P6,74,0.407,0.222,0.595,5e-05,0.00055,True,0.49,True,True
+difficulty,easy,llama-3.1-8b,rag_effect,P4 vs P7,74,0.086,-0.147,0.326,0.48308,0.62111,False,0.083,False,True
+difficulty,easy,llama-3.1-8b,rag_effect,P5 vs P8,74,0.126,-0.095,0.347,0.37276,0.49702,False,0.128,False,True
+difficulty,easy,qwen3.5-9b,closed_book,P1 vs P3,74,-0.019,-0.216,0.176,0.5655,0.702,False,-0.021,False,True
+difficulty,easy,qwen3.5-9b,closed_book,P1 vs P4,74,0.165,-0.015,0.339,0.0095,0.03419,True,0.211,False,True
+difficulty,easy,qwen3.5-9b,closed_book,P3 vs P4,74,0.184,0.042,0.335,0.0361,0.0902,False,0.282,False,True
+difficulty,easy,qwen3.5-9b,closed_book,P2 vs P5,74,0.126,-0.032,0.291,0.34795,0.49122,False,0.176,False,True
+difficulty,easy,qwen3.5-9b,closed_book,P1 vs P5,74,0.112,-0.077,0.303,0.05332,0.12012,False,0.135,False,True
+difficulty,easy,qwen3.5-9b,open_book,P6 vs P7,74,-0.132,-0.273,-0.001,0.11378,0.22331,False,-0.221,False,True
+difficulty,easy,qwen3.5-9b,open_book,P6 vs P8,74,-0.157,-0.284,-0.036,0.02109,0.05993,False,-0.289,False,True
+difficulty,easy,qwen3.5-9b,rag_effect,P1 vs P6,74,0.288,0.103,0.474,0.00062,0.00341,True,0.348,True,True
+difficulty,easy,qwen3.5-9b,rag_effect,P4 vs P7,74,-0.009,-0.209,0.184,0.95308,0.9665,False,-0.011,False,True
+difficulty,easy,qwen3.5-9b,rag_effect,P5 vs P8,74,0.019,-0.182,0.216,0.74298,0.84507,False,0.021,False,True
+difficulty,easy,gemma-3-12b,closed_book,P1 vs P3,74,-0.223,-0.408,-0.042,0.05339,0.12012,False,-0.281,False,True
+difficulty,easy,gemma-3-12b,closed_book,P1 vs P4,74,-0.118,-0.293,0.059,0.12245,0.22331,False,-0.149,False,True
+difficulty,easy,gemma-3-12b,closed_book,P3 vs P4,74,0.105,-0.058,0.269,0.19991,0.32481,False,0.143,False,True
+difficulty,easy,gemma-3-12b,closed_book,P2 vs P5,74,0.057,-0.134,0.243,0.55376,0.69948,False,0.068,False,True
+difficulty,easy,gemma-3-12b,closed_book,P1 vs P5,74,-0.114,-0.296,0.062,0.35505,0.4916,False,-0.141,False,True
+difficulty,easy,gemma-3-12b,open_book,P6 vs P7,74,-0.174,-0.332,-0.03,0.01562,0.05112,False,-0.268,False,True
+difficulty,easy,gemma-3-12b,open_book,P6 vs P8,74,-0.074,-0.201,0.051,0.10024,0.21228,False,-0.134,False,True
+difficulty,easy,gemma-3-12b,rag_effect,P1 vs P6,74,0.197,0.004,0.391,0.01936,0.05993,False,0.231,False,True
+difficulty,easy,gemma-3-12b,rag_effect,P4 vs P7,74,0.141,-0.074,0.346,0.11734,0.22331,False,0.151,False,True
+difficulty,easy,gemma-3-12b,rag_effect,P5 vs P8,74,0.236,0.05,0.431,0.03965,0.09515,False,0.28,False,True
+difficulty,easy,gemma-3-27b,closed_book,P1 vs P3,74,-0.315,-0.492,-0.138,0.00107,0.00483,True,-0.401,True,True
+difficulty,easy,gemma-3-27b,closed_book,P2 vs P5,74,0.158,-0.008,0.334,0.11811,0.22331,False,0.211,False,True
+difficulty,easy,gemma-3-27b,closed_book,P1 vs P5,74,-0.054,-0.223,0.108,0.7517,0.84507,False,-0.074,False,True
+difficulty,easy,gemma-3-27b,open_book,P6 vs P8,74,-0.119,-0.245,0.014,0.00219,0.00926,True,-0.211,False,True
+difficulty,easy,gemma-3-27b,rag_effect,P1 vs P6,74,0.168,-0.038,0.359,0.00692,0.02622,True,0.192,False,True
+difficulty,easy,gemma-3-27b,rag_effect,P5 vs P8,74,0.103,-0.074,0.273,0.18615,0.31624,False,0.135,False,True
+difficulty,easy,qwen3.5-27b,closed_book,P1 vs P3,74,-0.145,-0.32,0.015,0.86197,0.8866,False,-0.195,False,True
+difficulty,easy,qwen3.5-27b,closed_book,P2 vs P5,74,0.005,-0.153,0.162,0.80208,0.84507,False,0.008,False,True
+difficulty,easy,qwen3.5-27b,closed_book,P1 vs P5,74,-0.095,-0.245,0.054,0.41839,0.54771,False,-0.143,False,True
+difficulty,easy,qwen3.5-27b,open_book,P6 vs P8,74,-0.031,-0.131,0.076,0.20855,0.32643,False,-0.069,False,True
+difficulty,easy,qwen3.5-27b,rag_effect,P1 vs P6,74,0.016,-0.158,0.181,0.24309,0.37239,False,0.021,False,True
+difficulty,easy,qwen3.5-27b,rag_effect,P5 vs P8,74,0.08,-0.085,0.249,0.64785,0.77742,False,0.109,False,True
+difficulty,hard,llama-3.2-1b,closed_book,P1 vs P3,63,0.305,0.163,0.448,0.00026,0.00079,True,0.517,True,True
+difficulty,hard,llama-3.2-1b,closed_book,P1 vs P4,63,0.468,0.317,0.617,0.0,1e-05,True,0.758,True,True
+difficulty,hard,llama-3.2-1b,closed_book,P3 vs P4,63,0.163,0.032,0.295,0.02203,0.04288,True,0.299,False,True
+difficulty,hard,llama-3.2-1b,closed_book,P2 vs P5,63,0.232,0.078,0.389,0.00573,0.01418,True,0.369,False,True
+difficulty,hard,llama-3.2-1b,closed_book,P1 vs P5,63,0.513,0.354,0.676,0.0,0.0,True,0.771,True,True
+difficulty,hard,llama-3.2-1b,open_book,P6 vs P7,63,0.216,-0.019,0.44,0.03357,0.05896,False,0.231,False,True
+difficulty,hard,llama-3.2-1b,open_book,P6 vs P8,63,0.186,-0.002,0.368,0.05544,0.09282,False,0.246,False,True
+difficulty,hard,llama-3.2-1b,rag_effect,P1 vs P6,63,0.621,0.402,0.843,0.0,1e-05,True,0.7,True,True
+difficulty,hard,llama-3.2-1b,rag_effect,P4 vs P7,63,0.368,0.119,0.632,0.01956,0.04006,True,0.352,True,True
+difficulty,hard,llama-3.2-1b,rag_effect,P5 vs P8,63,0.294,0.059,0.537,0.12416,0.17529,False,0.305,False,True
+difficulty,hard,gemma-3-1b,closed_book,P1 vs P3,63,0.105,-0.024,0.238,0.18665,0.23997,False,0.192,False,True
+difficulty,hard,gemma-3-1b,closed_book,P1 vs P4,63,0.157,-0.014,0.33,0.14922,0.1998,False,0.22,False,True
+difficulty,hard,gemma-3-1b,closed_book,P3 vs P4,63,0.052,-0.098,0.206,0.56605,0.62701,False,0.083,False,True
+difficulty,hard,gemma-3-1b,closed_book,P2 vs P5,63,0.141,-0.019,0.308,0.14985,0.1998,False,0.209,False,True
+difficulty,hard,gemma-3-1b,closed_book,P1 vs P5,63,0.268,0.106,0.441,0.00648,0.01506,True,0.39,True,True
+difficulty,hard,gemma-3-1b,open_book,P6 vs P7,63,0.032,-0.165,0.222,0.66688,0.69587,False,0.04,False,True
+difficulty,hard,gemma-3-1b,open_book,P6 vs P8,63,0.259,0.059,0.465,0.03013,0.05424,False,0.316,False,True
+difficulty,hard,gemma-3-1b,rag_effect,P1 vs P6,63,0.41,0.187,0.649,0.00336,0.00864,True,0.432,True,True
+difficulty,hard,gemma-3-1b,rag_effect,P4 vs P7,63,0.284,0.048,0.529,0.06546,0.10473,False,0.289,False,True
+difficulty,hard,gemma-3-1b,rag_effect,P5 vs P8,63,0.4,0.149,0.659,0.01385,0.03021,True,0.385,True,True
+difficulty,hard,qwen3.5-2b,closed_book,P1 vs P3,63,0.616,0.452,0.778,0.0,0.0,True,0.926,True,True
+difficulty,hard,qwen3.5-2b,closed_book,P1 vs P4,63,0.708,0.571,0.844,0.0,0.0,True,1.264,True,True
+difficulty,hard,qwen3.5-2b,closed_book,P3 vs P4,63,0.092,-0.07,0.259,0.33694,0.3977,False,0.136,False,True
+difficulty,hard,qwen3.5-2b,closed_book,P2 vs P5,63,0.073,-0.121,0.265,0.35968,0.41769,False,0.093,False,True
+difficulty,hard,qwen3.5-2b,closed_book,P1 vs P5,63,0.673,0.524,0.83,0.0,0.0,True,1.072,True,True
+difficulty,hard,qwen3.5-2b,open_book,P6 vs P7,63,0.225,0.002,0.449,0.02003,0.04006,True,0.247,False,True
+difficulty,hard,qwen3.5-2b,open_book,P6 vs P8,63,0.281,0.086,0.489,0.0152,0.0322,True,0.34,True,True
+difficulty,hard,qwen3.5-2b,rag_effect,P1 vs P6,63,1.359,1.116,1.6,0.0,0.0,True,1.39,True,True
+difficulty,hard,qwen3.5-2b,rag_effect,P4 vs P7,63,0.876,0.608,1.133,0.0,0.0,True,0.804,True,True
+difficulty,hard,qwen3.5-2b,rag_effect,P5 vs P8,63,0.967,0.687,1.238,0.0,0.0,True,0.871,True,True
+difficulty,hard,llama-3.1-8b,closed_book,P1 vs P3,63,0.197,-0.002,0.384,0.02665,0.0505,False,0.25,False,True
+difficulty,hard,llama-3.1-8b,closed_book,P1 vs P4,63,0.16,-0.048,0.373,0.11866,0.17435,False,0.187,False,True
+difficulty,hard,llama-3.1-8b,closed_book,P3 vs P4,63,-0.037,-0.237,0.16,0.93467,0.93467,False,-0.045,False,True
+difficulty,hard,llama-3.1-8b,closed_book,P2 vs P5,63,0.162,-0.021,0.352,0.10593,0.1589,False,0.212,False,True
+difficulty,hard,llama-3.1-8b,closed_book,P1 vs P5,63,0.376,0.156,0.597,0.0009,0.0024,True,0.417,True,True
+difficulty,hard,llama-3.1-8b,open_book,P6 vs P7,63,0.287,0.095,0.483,0.00763,0.01716,True,0.363,True,True
+difficulty,hard,llama-3.1-8b,open_book,P6 vs P8,63,0.392,0.19,0.598,0.00073,0.00203,True,0.475,True,True
+difficulty,hard,llama-3.1-8b,rag_effect,P1 vs P6,63,0.792,0.5,1.07,0.0,1e-05,True,0.695,True,True
+difficulty,hard,llama-3.1-8b,rag_effect,P4 vs P7,63,0.919,0.651,1.186,0.0,0.0,True,0.844,True,True
+difficulty,hard,llama-3.1-8b,rag_effect,P5 vs P8,63,0.808,0.532,1.076,0.0,1e-05,True,0.721,True,True
+difficulty,hard,qwen3.5-9b,closed_book,P1 vs P3,63,0.127,-0.11,0.357,0.21185,0.26761,False,0.131,False,True
+difficulty,hard,qwen3.5-9b,closed_book,P1 vs P4,63,0.286,0.048,0.517,0.00591,0.01418,True,0.298,True,True
+difficulty,hard,qwen3.5-9b,closed_book,P3 vs P4,63,0.159,-0.052,0.365,0.07779,0.12177,False,0.188,False,True
+difficulty,hard,qwen3.5-9b,closed_book,P2 vs P5,63,0.124,-0.084,0.329,0.14315,0.19821,False,0.147,False,True
+difficulty,hard,qwen3.5-9b,closed_book,P1 vs P5,63,0.338,0.13,0.541,0.00044,0.00126,True,0.399,True,True
+difficulty,hard,qwen3.5-9b,open_book,P6 vs P7,63,-0.019,-0.197,0.152,0.60757,0.65291,False,-0.026,False,True
+difficulty,hard,qwen3.5-9b,open_book,P6 vs P8,63,0.002,-0.187,0.175,0.746,0.76731,False,0.002,False,True
+difficulty,hard,qwen3.5-9b,rag_effect,P1 vs P6,63,1.195,0.965,1.425,0.0,0.0,True,1.276,True,True
+difficulty,hard,qwen3.5-9b,rag_effect,P4 vs P7,63,0.89,0.579,1.183,0.0,1e-05,True,0.722,True,True
+difficulty,hard,qwen3.5-9b,rag_effect,P5 vs P8,63,0.859,0.614,1.1,0.0,0.0,True,0.851,True,True
+difficulty,hard,gemma-3-12b,closed_book,P1 vs P3,63,0.159,-0.008,0.33,0.15825,0.20716,False,0.229,False,True
+difficulty,hard,gemma-3-12b,closed_book,P1 vs P4,63,0.121,-0.14,0.386,0.39621,0.45273,False,0.115,False,True
+difficulty,hard,gemma-3-12b,closed_book,P3 vs P4,63,-0.038,-0.24,0.178,0.40243,0.45273,False,-0.044,False,True
+difficulty,hard,gemma-3-12b,closed_book,P2 vs P5,63,0.149,-0.024,0.319,0.12386,0.17529,False,0.213,False,True
+difficulty,hard,gemma-3-12b,closed_book,P1 vs P5,63,0.187,-0.038,0.414,0.05147,0.08823,False,0.207,False,True
+difficulty,hard,gemma-3-12b,open_book,P6 vs P7,63,-0.151,-0.302,0.006,0.02784,0.0514,False,-0.24,False,True
+difficulty,hard,gemma-3-12b,open_book,P6 vs P8,63,-0.094,-0.26,0.078,0.06468,0.10473,False,-0.136,False,True
+difficulty,hard,gemma-3-12b,rag_effect,P1 vs P6,63,1.17,0.9,1.432,0.0,0.0,True,1.076,True,True
+difficulty,hard,gemma-3-12b,rag_effect,P4 vs P7,63,0.898,0.621,1.175,0.0,0.0,True,0.793,True,True
+difficulty,hard,gemma-3-12b,rag_effect,P5 vs P8,63,0.889,0.644,1.125,0.0,0.0,True,0.893,True,True
+difficulty,hard,gemma-3-27b,closed_book,P1 vs P3,63,-0.038,-0.29,0.205,0.88444,0.89689,False,-0.038,False,True
+difficulty,hard,gemma-3-27b,closed_book,P2 vs P5,63,0.048,-0.141,0.243,0.57696,0.62941,False,0.06,False,True
+difficulty,hard,gemma-3-27b,closed_book,P1 vs P5,63,0.13,-0.102,0.365,0.28521,0.34225,False,0.136,False,True
+difficulty,hard,gemma-3-27b,open_book,P6 vs P8,63,-0.344,-0.51,-0.189,3e-05,8e-05,True,-0.526,True,True
+difficulty,hard,gemma-3-27b,rag_effect,P1 vs P6,63,1.235,0.959,1.503,0.0,0.0,True,1.132,True,True
+difficulty,hard,gemma-3-27b,rag_effect,P5 vs P8,63,0.76,0.497,1.014,1e-05,2e-05,True,0.709,True,True
+difficulty,hard,qwen3.5-27b,closed_book,P1 vs P3,63,-0.071,-0.286,0.151,0.24917,0.30931,False,-0.08,False,True
+difficulty,hard,qwen3.5-27b,closed_book,P2 vs P5,63,0.167,-0.033,0.371,0.08835,0.13535,False,0.203,False,True
+difficulty,hard,qwen3.5-27b,closed_book,P1 vs P5,63,0.089,-0.105,0.279,0.27363,0.33392,False,0.115,False,True
+difficulty,hard,qwen3.5-27b,open_book,P6 vs P8,63,0.011,-0.114,0.146,0.63699,0.67446,False,0.021,False,True
+difficulty,hard,qwen3.5-27b,rag_effect,P1 vs P6,63,0.748,0.53,0.968,0.0,0.0,True,0.833,True,True
+difficulty,hard,qwen3.5-27b,rag_effect,P5 vs P8,63,0.67,0.451,0.883,0.0,0.0,True,0.77,True,True
+difficulty,medium,llama-3.2-1b,closed_book,P1 vs P3,96,0.17,0.04,0.301,0.01077,0.02095,True,0.261,False,True
+difficulty,medium,llama-3.2-1b,closed_book,P1 vs P4,96,0.293,0.142,0.452,0.00033,0.00081,True,0.38,True,True
+difficulty,medium,llama-3.2-1b,closed_book,P3 vs P4,96,0.123,-0.005,0.256,0.12517,0.18776,False,0.188,False,True
+difficulty,medium,llama-3.2-1b,closed_book,P2 vs P5,96,0.089,-0.044,0.219,0.14552,0.20149,False,0.132,False,True
+difficulty,medium,llama-3.2-1b,closed_book,P1 vs P5,96,0.381,0.226,0.535,0.0,1e-05,True,0.485,True,True
+difficulty,medium,llama-3.2-1b,open_book,P6 vs P7,96,0.093,-0.115,0.297,0.39373,0.47323,False,0.089,False,True
+difficulty,medium,llama-3.2-1b,open_book,P6 vs P8,96,0.293,0.122,0.459,0.00182,0.00437,True,0.346,True,True
+difficulty,medium,llama-3.2-1b,rag_effect,P1 vs P6,96,0.446,0.286,0.61,0.0,1e-05,True,0.546,True,True
+difficulty,medium,llama-3.2-1b,rag_effect,P4 vs P7,96,0.246,0.043,0.444,0.01723,0.03101,True,0.241,False,True
+difficulty,medium,llama-3.2-1b,rag_effect,P5 vs P8,96,0.357,0.162,0.552,0.00286,0.00625,True,0.361,True,True
+difficulty,medium,gemma-3-1b,closed_book,P1 vs P3,96,0.216,0.103,0.324,0.00021,0.00056,True,0.385,False,True
+difficulty,medium,gemma-3-1b,closed_book,P1 vs P4,96,0.117,-0.003,0.239,0.13796,0.19866,False,0.193,False,True
+difficulty,medium,gemma-3-1b,closed_book,P3 vs P4,96,-0.099,-0.229,0.039,0.10168,0.15576,False,-0.15,False,True
+difficulty,medium,gemma-3-1b,closed_book,P2 vs P5,96,0.131,0.019,0.246,0.06148,0.10061,False,0.234,False,True
+difficulty,medium,gemma-3-1b,closed_book,P1 vs P5,96,0.3,0.183,0.418,1e-05,3e-05,True,0.512,True,True
+difficulty,medium,gemma-3-1b,open_book,P6 vs P7,96,-0.127,-0.311,0.06,0.22495,0.29448,False,-0.137,False,True
+difficulty,medium,gemma-3-1b,open_book,P6 vs P8,96,-0.207,-0.382,-0.035,0.01042,0.02084,True,-0.238,False,True
+difficulty,medium,gemma-3-1b,rag_effect,P1 vs P6,96,0.622,0.449,0.793,0.0,0.0,True,0.72,True,True
+difficulty,medium,gemma-3-1b,rag_effect,P4 vs P7,96,0.378,0.208,0.55,0.00022,0.00058,True,0.442,True,True
+difficulty,medium,gemma-3-1b,rag_effect,P5 vs P8,96,0.115,-0.047,0.282,0.26219,0.33711,False,0.138,False,True
+difficulty,medium,qwen3.5-2b,closed_book,P1 vs P3,96,0.71,0.486,0.93,0.0,0.0,True,0.647,True,True
+difficulty,medium,qwen3.5-2b,closed_book,P1 vs P4,96,0.859,0.681,1.041,0.0,0.0,True,0.947,True,True
+difficulty,medium,qwen3.5-2b,closed_book,P3 vs P4,96,0.149,-0.04,0.34,0.0923,0.14446,False,0.158,False,True
+difficulty,medium,qwen3.5-2b,closed_book,P2 vs P5,96,0.067,-0.11,0.235,0.32944,0.40896,False,0.077,False,True
+difficulty,medium,qwen3.5-2b,closed_book,P1 vs P5,96,0.652,0.442,0.867,0.0,0.0,True,0.614,True,True
+difficulty,medium,qwen3.5-2b,open_book,P6 vs P7,96,-0.095,-0.296,0.106,0.73164,0.75254,False,-0.094,False,True
+difficulty,medium,qwen3.5-2b,open_book,P6 vs P8,96,0.06,-0.142,0.259,0.32289,0.40786,False,0.061,False,True
+difficulty,medium,qwen3.5-2b,rag_effect,P1 vs P6,96,1.419,1.209,1.624,0.0,0.0,True,1.378,True,True
+difficulty,medium,qwen3.5-2b,rag_effect,P4 vs P7,96,0.465,0.237,0.685,4e-05,0.00011,True,0.415,True,True
+difficulty,medium,qwen3.5-2b,rag_effect,P5 vs P8,96,0.827,0.623,1.03,0.0,0.0,True,0.812,True,True
+difficulty,medium,llama-3.1-8b,closed_book,P1 vs P3,96,0.058,-0.133,0.248,0.39436,0.47323,False,0.061,False,True
+difficulty,medium,llama-3.1-8b,closed_book,P1 vs P4,96,0.317,0.102,0.525,0.00255,0.00574,True,0.301,True,True
+difficulty,medium,llama-3.1-8b,closed_book,P3 vs P4,96,0.258,0.073,0.444,0.01027,0.02084,True,0.277,True,True
+difficulty,medium,llama-3.1-8b,closed_book,P2 vs P5,96,-0.063,-0.246,0.127,0.54587,0.63392,False,-0.067,False,True
+difficulty,medium,llama-3.1-8b,closed_book,P1 vs P5,96,0.152,-0.06,0.36,0.14836,0.20154,False,0.145,False,True
+difficulty,medium,llama-3.1-8b,open_book,P6 vs P7,96,0.16,0.028,0.29,0.00624,0.01321,True,0.245,False,True
+difficulty,medium,llama-3.1-8b,open_book,P6 vs P8,96,0.108,-0.042,0.25,0.01973,0.03465,True,0.148,False,True
+difficulty,medium,llama-3.1-8b,rag_effect,P1 vs P6,96,0.762,0.549,0.971,0.0,0.0,True,0.71,True,True
+difficulty,medium,llama-3.1-8b,rag_effect,P4 vs P7,96,0.606,0.407,0.805,0.0,0.0,True,0.606,True,True
+difficulty,medium,llama-3.1-8b,rag_effect,P5 vs P8,96,0.719,0.493,0.936,0.0,0.0,True,0.653,True,True
+difficulty,medium,qwen3.5-9b,closed_book,P1 vs P3,96,-0.074,-0.264,0.118,0.64287,0.70131,False,-0.077,False,True
+difficulty,medium,qwen3.5-9b,closed_book,P1 vs P4,96,-0.044,-0.224,0.135,0.69899,0.7401,False,-0.048,False,True
+difficulty,medium,qwen3.5-9b,closed_book,P3 vs P4,96,0.03,-0.144,0.204,0.78005,0.78855,False,0.034,False,True
+difficulty,medium,qwen3.5-9b,closed_book,P2 vs P5,96,0.026,-0.141,0.19,0.63339,0.70131,False,0.032,False,True
+difficulty,medium,qwen3.5-9b,closed_book,P1 vs P5,96,-0.084,-0.281,0.11,0.52969,0.62521,False,-0.086,False,True
+difficulty,medium,qwen3.5-9b,open_book,P6 vs P7,96,0.032,-0.092,0.159,0.72261,0.75254,False,0.051,False,True
+difficulty,medium,qwen3.5-9b,open_book,P6 vs P8,96,-0.094,-0.234,0.044,0.05486,0.09186,False,-0.135,False,True
+difficulty,medium,qwen3.5-9b,rag_effect,P1 vs P6,96,0.557,0.335,0.773,0.0,1e-05,True,0.501,True,True
+difficulty,medium,qwen3.5-9b,rag_effect,P4 vs P7,96,0.633,0.425,0.83,0.0,0.0,True,0.624,True,True
+difficulty,medium,qwen3.5-9b,rag_effect,P5 vs P8,96,0.548,0.329,0.754,0.0,0.0,True,0.509,True,True
+difficulty,medium,gemma-3-12b,closed_book,P1 vs P3,96,-0.152,-0.358,0.05,0.20437,0.27249,False,-0.151,False,True
+difficulty,medium,gemma-3-12b,closed_book,P1 vs P4,96,-0.165,-0.362,0.028,0.12965,0.19051,False,-0.167,False,True
+difficulty,medium,gemma-3-12b,closed_book,P3 vs P4,96,-0.013,-0.203,0.172,0.78855,0.78855,False,-0.013,False,True
+difficulty,medium,gemma-3-12b,closed_book,P2 vs P5,96,-0.01,-0.191,0.171,0.65981,0.70905,False,-0.011,False,True
+difficulty,medium,gemma-3-12b,closed_book,P1 vs P5,96,-0.206,-0.418,-0.002,0.07286,0.11657,False,-0.196,False,True
+difficulty,medium,gemma-3-12b,open_book,P6 vs P7,96,-0.256,-0.4,-0.118,0.0001,0.00027,True,-0.357,True,True
+difficulty,medium,gemma-3-12b,open_book,P6 vs P8,96,-0.282,-0.447,-0.127,0.00252,0.00574,True,-0.35,True,True
+difficulty,medium,gemma-3-12b,rag_effect,P1 vs P6,96,0.753,0.542,0.954,0.0,0.0,True,0.721,True,True
+difficulty,medium,gemma-3-12b,rag_effect,P4 vs P7,96,0.661,0.45,0.867,0.0,0.0,True,0.633,True,True
+difficulty,medium,gemma-3-12b,rag_effect,P5 vs P8,96,0.677,0.444,0.901,0.0,0.0,True,0.589,True,True
+difficulty,medium,gemma-3-27b,closed_book,P1 vs P3,96,-0.451,-0.654,-0.254,8e-05,0.00024,True,-0.456,True,True
+difficulty,medium,gemma-3-27b,closed_book,P2 vs P5,96,0.037,-0.153,0.226,0.5697,0.65108,False,0.039,False,True
+difficulty,medium,gemma-3-27b,closed_book,P1 vs P5,96,-0.242,-0.439,-0.042,0.01352,0.02495,True,-0.244,False,True
+difficulty,medium,gemma-3-27b,open_book,P6 vs P8,96,-0.369,-0.489,-0.254,0.0,0.0,True,-0.622,True,True
+difficulty,medium,gemma-3-27b,rag_effect,P1 vs P6,96,0.589,0.378,0.798,0.0,0.0,True,0.551,True,True
+difficulty,medium,gemma-3-27b,rag_effect,P5 vs P8,96,0.461,0.27,0.652,0.0,1e-05,True,0.48,True,True
+difficulty,medium,qwen3.5-27b,closed_book,P1 vs P3,96,-0.207,-0.374,-0.046,0.03833,0.0657,False,-0.25,False,True
+difficulty,medium,qwen3.5-27b,closed_book,P2 vs P5,96,0.024,-0.135,0.183,0.61952,0.69696,False,0.03,False,True
+difficulty,medium,qwen3.5-27b,closed_book,P1 vs P5,96,-0.118,-0.272,0.041,0.14168,0.20003,False,-0.151,False,True
+difficulty,medium,qwen3.5-27b,open_book,P6 vs P8,96,-0.135,-0.241,-0.036,0.01289,0.02442,True,-0.263,False,True
+difficulty,medium,qwen3.5-27b,rag_effect,P1 vs P6,96,0.436,0.282,0.593,0.0,0.0,True,0.559,True,True
+difficulty,medium,qwen3.5-27b,rag_effect,P5 vs P8,96,0.419,0.27,0.567,0.0,0.0,True,0.558,True,True

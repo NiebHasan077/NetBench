@@ -1,0 +1,175 @@
+{
+  "profile_type": "rag",
+  "model_path": "/work2/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-12b-cpt-full-sft",
+  "model_name": "gemma-3-12b-cpt-full-sft",
+  "run_name": "rag-cpu-benchmark5-S7-gemma-3-12b-RAG-CPT-SFT",
+  "device": "cpu",
+  "timestamp": "2026-06-08T22:07:53.188836",
+  "status": "complete",
+  "benchmark_file": "/work2/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+  "question_limit": 5,
+  "checkpoint": {
+    "complete": true,
+    "completed_questions": 5,
+    "total_questions": 5,
+    "question_signature": [
+      {
+        "id": "NB-HPN-0026-q1",
+        "question": "Why might a smart DTN implement network packet pacing specifically when transferring data from a high-bandwidth source to a low-bandwidth destination?"
+      },
+      {
+        "id": "NB-HPN-0159-q0",
+        "question": "In host-based RDMA load balancing, how can a system detect network congestion without relying on specialized switch hardware like ECN (Explicit Congestion Notification) markings?"
+      },
+      {
+        "id": "NB-HPN-2135-q1",
+        "question": "Why is a periodic retransmission of the INT request necessary even if the initial in-band request was successfully sent?"
+      },
+      {
+        "id": "NB-HPN-2121-q2",
+        "question": "Using the logic provided in the text, if a service has a Max-Min Fair (MmF) share of 40 Mbps but only achieves 30 Mbps under contention, what is the percentage of its MmF share that it has achieved, and what percentage of the total 40 Mbps share is the remaining unachieved bandwidth?"
+      },
+      {
+        "id": "NB-HPN-1401-q1",
+        "question": "Why might a parameter tuner choose to increase the number of TCP streams rather than simply increasing the size of a single TCP buffer when encountering kernel-level limitations?"
+      }
+    ],
+    "top_k": null,
+    "updated_at": "2026-06-08T22:07:53.188911"
+  },
+  "system": {
+    "timestamp": "2026-06-08T22:07:53.188973",
+    "hostname": "site-b-node-1",
+    "python": "3.12.11",
+    "torch": "2.11.0+cu128",
+    "device": "cpu",
+    "cpu": {
+      "model": "Intel(R) Xeon(R) Platinum 8468",
+      "physical_cores": 96,
+      "logical_cores": 96,
+      "total_ram_gb": 1006.9
+    }
+  },
+  "model_load": {
+    "retriever_load_time_s": 16.88,
+    "generator_load_time_s": 897.63
+  },
+  "benchmark_prompts": [
+    {
+      "id": "NB-HPN-0026-q1",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why might a smart DTN implement network packet pacing specifically when transferring data from a high-bandwidth source to a low-bandwidth destination?",
+      "retrieval_time_s": 252.238,
+      "generation_time_s": 1175.5897,
+      "total_time_s": 1427.8276,
+      "prompt_tokens": 4422,
+      "output_tokens": 152,
+      "generation_tokens_per_second": 0.13,
+      "retrieved_chunks": "Towards a Smart Data Transfer Node Zheng... \u00a72 Motivation | Toward a Smart Data Transfer Node Zhengc... \u00a72 Motivation | Toward a Smart Data Transfer Node Zhengc... \u00a71 Introduction | Towards a Smart Data Transfer Node Zheng... \u00a71 Introduction",
+      "reranker_scores": [
+        0.9945,
+        0.9889,
+        0.8418,
+        0.8287
+      ],
+      "answer_preview": "A smart DTN implements network packet pacing to optimize performance based on the disparity in available bandwidth between the source and destination endpoints [1]. Specifically, the decision criteria for applying pacing depend on whether the transfer involves a higher bandwidth endpoint communicati"
+    },
+    {
+      "id": "NB-HPN-0159-q0",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "hard",
+      "question_type": "concept",
+      "question": "In host-based RDMA load balancing, how can a system detect network congestion without relying on specialized switch hardware like ECN (Explicit Congestion Notification) markings?",
+      "retrieval_time_s": 213.8461,
+      "generation_time_s": 1464.4473,
+      "total_time_s": 1678.2934,
+      "prompt_tokens": 5000,
+      "output_tokens": 216,
+      "generation_tokens_per_second": 0.15,
+      "retrieved_chunks": "arXiv:2506.08132v1 cs. NI 9 Jun 2025 Pre... \u00a73 Evaluation | This work is licensed under a Creative C... \u00a71 Introduction | STrack: A Reliable Multipath Transport f... \u00a75 Related Work | REPS: Recycled Entropy Packet Spraying f... \u00a71 Introduction",
+      "reranker_scores": [
+        0.9964,
+        0.986,
+        0.9859,
+        0.9771
+      ],
+      "answer_preview": "While ECN is a common and simple way for switches to signal congestion\u2014by setting a bit in the IP header's traffic class field [4]\u2014it is not the only method. In the absence of ECN-enabled switches, a system can utilize delay-based signals, specifically measuring the Round-Trip Time (RTT) [3]. Severa"
+    },
+    {
+      "id": "NB-HPN-2135-q1",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why is a periodic retransmission of the INT request necessary even if the initial in-band request was successfully sent?",
+      "retrieval_time_s": 256.7086,
+      "generation_time_s": 1301.0647,
+      "total_time_s": 1557.7734,
+      "prompt_tokens": 4607,
+      "output_tokens": 176,
+      "generation_tokens_per_second": 0.14,
+      "retrieved_chunks": "A Flexible In-band Network Telemetry Fra... \u00a7III Int Framework | SPECIAL SECTION ON ARTIFICIAL INTELLIGEN... \u00a7II Related Work | noname manuscript No. will be inserted b... \u00a72 Related Work | FEDERAL UNIVERSITY OF PAMPA Ariel G es D... \u00a71 Overview",
+      "reranker_scores": [
+        0.9189,
+        0.6832,
+        0.6446,
+        0.4356
+      ],
+      "answer_preview": "While the initial INT request is sent in-band to the destination node embedded within the first data packet of a flow [1], several factors necessitate a periodic retransmission of this request. First, the request serves as a critical recovery mechanism; specifically, if the original in-band request "
+    },
+    {
+      "id": "NB-HPN-2121-q2",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "easy",
+      "question_type": "calculation",
+      "question": "Using the logic provided in the text, if a service has a Max-Min Fair (MmF) share of 40 Mbps but only achieves 30 Mbps under contention, what is the percentage of its MmF share that it has achieved, and what percentage of the total 40 Mbps share is the remaining unachieved bandwidth?",
+      "retrieval_time_s": 190.3604,
+      "generation_time_s": 1453.9761,
+      "total_time_s": 1644.3365,
+      "prompt_tokens": 5053,
+      "output_tokens": 203,
+      "generation_tokens_per_second": 0.14,
+      "retrieved_chunks": ". . Latest updates: h ps://dl.acm.org/do... \u00a71 Introduction | . . Latest updates: h ps://dl.acm.org/do... \u00a71 Introduction | . . Latest updates: h ps://dl.acm.org/do... \u00a73 Methodology | . . Latest updates: h ps://dl.acm.org/do... \u00a73 Methodology",
+      "reranker_scores": [
+        0.981,
+        0.9778,
+        0.8751,
+        0.8308
+      ],
+      "answer_preview": "To calculate the percentage of the Max-Min Fair (MmF) share achieved, we divide the actual throughput (30 Mbps) by the theoretical MmF share (40 Mbps): Percentage Achieved = (Actual Throughput / MmF Share) * 100 Percentage Achieved = (30 / 40) * 100 = 75% Therefore, the service has achieved 75% of i"
+    },
+    {
+      "id": "NB-HPN-1401-q1",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why might a parameter tuner choose to increase the number of TCP streams rather than simply increasing the size of a single TCP buffer when encountering kernel-level limitations?",
+      "retrieval_time_s": 257.6708,
+      "generation_time_s": 1247.4795,
+      "total_time_s": 1505.1502,
+      "prompt_tokens": 3974,
+      "output_tokens": 222,
+      "generation_tokens_per_second": 0.18,
+      "retrieved_chunks": "RUN-TIME ADAPTATION OF GRID DATA PLACEME... \u00a74 Implementation | Run-time Adaptation of Grid Data Placeme... \u00a74 Implementation | Dynamic Adaptation of Parallelism Level ... \u00a72 Related Work | Balancing TCP Buffer vs Parallel Streams... \u00a7Abstract",
+      "reranker_scores": [
+        0.9789,
+        0.9618,
+        0.9204,
+        0.91
+      ],
+      "answer_preview": "When facing kernel TCP buffer size limits, a parameter tuner cannot simply scale the existing buffer; instead, it must redistribute the necessary buffer capacity across additional streams [2]. According to the implementation logic, the tuner achieves this through a specific heuristic: it identifies "
+    }
+  ],
+  "summary": {
+    "question_count": 5,
+    "avg_total_time_s": 1562.6762,
+    "avg_retrieval_time_s": 234.1648,
+    "avg_generation_time_s": 1328.5115,
+    "avg_prompt_tokens": 4611.2,
+    "avg_output_tokens": 193.8,
+    "avg_generation_tokens_per_second": 0.15,
+    "peak_cpu_ram_mb": 52519,
+    "peak_gpu_vram_mb": 0
+  }
+}

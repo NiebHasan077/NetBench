@@ -1,0 +1,126 @@
+rater,response_id,question_no,question_id,base_model,p_id,setting,variant_run,category,difficulty,correctness,completeness,clarity,conciseness,overall
+human,Q01-a,Q01,NB-HPN-0026-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Adaptive and Online Optimization,easy,5,4,5,3,4.5
+human,Q01-b,Q01,NB-HPN-0026-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Adaptive and Online Optimization,easy,4,4,5,4,4.2
+human,Q01-c,Q01,NB-HPN-0026-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Adaptive and Online Optimization,easy,3,3,3,4,3.1
+human,Q01-d,Q01,NB-HPN-0026-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Adaptive and Online Optimization,easy,5,5,5,4,4.9
+human,Q01-e,Q01,NB-HPN-0026-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Adaptive and Online Optimization,easy,3,2,3,2,2.6
+human,Q02-a,Q02,NB-HPN-0159-q0,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Adaptive and Online Optimization,hard,4,5,4,2,4.1
+human,Q02-b,Q02,NB-HPN-0159-q0,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Adaptive and Online Optimization,hard,3,2,4,3,2.9
+human,Q02-c,Q02,NB-HPN-0159-q0,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Adaptive and Online Optimization,hard,1,1,3,2,1.5
+human,Q02-d,Q02,NB-HPN-0159-q0,gpt-4o,BASE-API,closed_book,gpt-4o,Adaptive and Online Optimization,hard,5,4,5,3,4.5
+human,Q02-e,Q02,NB-HPN-0159-q0,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Adaptive and Online Optimization,hard,3,3,4,4,3.3
+human,Q03-a,Q03,NB-HPN-2135-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Adaptive and Online Optimization,medium,5,5,5,4,4.9
+human,Q03-b,Q03,NB-HPN-2135-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Adaptive and Online Optimization,medium,2,2,4,3,2.5
+human,Q03-c,Q03,NB-HPN-2135-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Adaptive and Online Optimization,medium,5,5,5,5,5.0
+human,Q03-d,Q03,NB-HPN-2135-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Adaptive and Online Optimization,medium,1,1,3,1,1.4
+human,Q03-e,Q03,NB-HPN-2135-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Adaptive and Online Optimization,medium,4,4,5,3,4.1
+human,Q04-a,Q04,NB-HPN-1401-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,BDP-Based Reasoning and Window Sizing,hard,2,3,3,3,2.6
+human,Q04-b,Q04,NB-HPN-1401-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,BDP-Based Reasoning and Window Sizing,hard,5,5,4,3,4.6
+human,Q04-c,Q04,NB-HPN-1401-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,BDP-Based Reasoning and Window Sizing,hard,5,5,5,3,4.8
+human,Q04-d,Q04,NB-HPN-1401-q1,gpt-4o,BASE-API,closed_book,gpt-4o,BDP-Based Reasoning and Window Sizing,hard,5,4,5,3,4.5
+human,Q04-e,Q04,NB-HPN-1401-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,BDP-Based Reasoning and Window Sizing,hard,2,3,4,2,2.7
+human,Q05-a,Q05,NB-HPN-0176-q1,gpt-4o,BASE-API,closed_book,gpt-4o,BDP-Based Reasoning and Window Sizing,medium,5,4,5,4,4.6
+human,Q05-b,Q05,NB-HPN-0176-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,BDP-Based Reasoning and Window Sizing,medium,5,5,5,3,4.8
+human,Q05-c,Q05,NB-HPN-0176-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,BDP-Based Reasoning and Window Sizing,medium,4,3,4,4,3.7
+human,Q05-d,Q05,NB-HPN-0176-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,BDP-Based Reasoning and Window Sizing,medium,1,1,3,1,1.4
+human,Q05-e,Q05,NB-HPN-0176-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,BDP-Based Reasoning and Window Sizing,medium,3,3,4,4,3.3
+human,Q06-a,Q06,NB-HPN-2032-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Bottleneck Diagnosis and End-to-End Reasoning,easy,5,5,5,4,4.9
+human,Q06-b,Q06,NB-HPN-2032-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Bottleneck Diagnosis and End-to-End Reasoning,easy,4,4,5,4,4.2
+human,Q06-c,Q06,NB-HPN-2032-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Bottleneck Diagnosis and End-to-End Reasoning,easy,3,3,4,3,3.2
+human,Q06-d,Q06,NB-HPN-2032-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Bottleneck Diagnosis and End-to-End Reasoning,easy,5,5,4,4,4.7
+human,Q06-e,Q06,NB-HPN-2032-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Bottleneck Diagnosis and End-to-End Reasoning,easy,4,4,5,4,4.2
+human,Q07-a,Q07,NB-HPN-1278-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Bottleneck Diagnosis and End-to-End Reasoning,hard,2,2,5,4,2.8
+human,Q07-b,Q07,NB-HPN-1278-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Bottleneck Diagnosis and End-to-End Reasoning,hard,5,5,5,3,4.8
+human,Q07-c,Q07,NB-HPN-1278-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Bottleneck Diagnosis and End-to-End Reasoning,hard,2,2,4,2,2.4
+human,Q07-d,Q07,NB-HPN-1278-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Bottleneck Diagnosis and End-to-End Reasoning,hard,3,3,4,4,3.3
+human,Q07-e,Q07,NB-HPN-1278-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Bottleneck Diagnosis and End-to-End Reasoning,hard,5,5,5,4,4.9
+human,Q08-a,Q08,NB-HPN-1803-q3,gpt-4o,BASE-API,closed_book,gpt-4o,Bottleneck Diagnosis and End-to-End Reasoning,medium,5,5,5,4,4.9
+human,Q08-b,Q08,NB-HPN-1803-q3,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Bottleneck Diagnosis and End-to-End Reasoning,medium,3,3,4,2,3.1
+human,Q08-c,Q08,NB-HPN-1803-q3,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Bottleneck Diagnosis and End-to-End Reasoning,medium,3,3,4,3,3.2
+human,Q08-d,Q08,NB-HPN-1803-q3,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Bottleneck Diagnosis and End-to-End Reasoning,medium,5,5,5,4,4.9
+human,Q08-e,Q08,NB-HPN-1803-q3,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Bottleneck Diagnosis and End-to-End Reasoning,medium,5,5,4,4,4.7
+human,Q09-a,Q09,NB-HPN-0555-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Bottleneck Diagnosis and End-to-End Reasoning,medium,5,5,5,4,4.9
+human,Q09-b,Q09,NB-HPN-0555-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Bottleneck Diagnosis and End-to-End Reasoning,medium,4,3,5,4,3.9
+human,Q09-c,Q09,NB-HPN-0555-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Bottleneck Diagnosis and End-to-End Reasoning,medium,2,2,4,2,2.4
+human,Q09-d,Q09,NB-HPN-0555-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Bottleneck Diagnosis and End-to-End Reasoning,medium,5,5,5,5,5.0
+human,Q09-e,Q09,NB-HPN-0555-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Bottleneck Diagnosis and End-to-End Reasoning,medium,4,4,5,4,4.2
+human,Q10-a,Q10,NB-HPN-1163-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Concurrency Tuning and Scaling,easy,5,5,5,4,4.9
+human,Q10-b,Q10,NB-HPN-1163-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Concurrency Tuning and Scaling,easy,4,4,4,3,3.9
+human,Q10-c,Q10,NB-HPN-1163-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Concurrency Tuning and Scaling,easy,4,3,4,3,3.6
+human,Q10-d,Q10,NB-HPN-1163-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Concurrency Tuning and Scaling,easy,3,3,3,2,2.9
+human,Q10-e,Q10,NB-HPN-1163-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Concurrency Tuning and Scaling,easy,5,5,5,4,4.9
+human,Q11-a,Q11,NB-HPN-2155-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Concurrency Tuning and Scaling,medium,5,5,5,3,4.8
+human,Q11-b,Q11,NB-HPN-2155-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Concurrency Tuning and Scaling,medium,5,4,5,4,4.6
+human,Q11-c,Q11,NB-HPN-2155-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Concurrency Tuning and Scaling,medium,3,4,4,3,3.5
+human,Q11-d,Q11,NB-HPN-2155-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Concurrency Tuning and Scaling,medium,5,5,5,5,5.0
+human,Q11-e,Q11,NB-HPN-2155-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Concurrency Tuning and Scaling,medium,3,4,4,3,3.5
+human,Q12-a,Q12,NB-HPN-2121-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,"Fairness, Stability, and Shared Networks",medium,5,4,5,4,4.6
+human,Q12-b,Q12,NB-HPN-2121-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,"Fairness, Stability, and Shared Networks",medium,5,5,5,4,4.9
+human,Q12-c,Q12,NB-HPN-2121-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,"Fairness, Stability, and Shared Networks",medium,5,4,5,5,4.7
+human,Q12-d,Q12,NB-HPN-2121-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,"Fairness, Stability, and Shared Networks",medium,3,5,5,3,4.0
+human,Q12-e,Q12,NB-HPN-2121-q1,gpt-4o,BASE-API,closed_book,gpt-4o,"Fairness, Stability, and Shared Networks",medium,5,4,5,4,4.6
+human,Q13-a,Q13,NB-HPN-2136-q0,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Parallelism and Large-File Optimization,easy,3,4,4,2,3.4
+human,Q13-b,Q13,NB-HPN-2136-q0,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Parallelism and Large-File Optimization,easy,4,4,4,3,3.9
+human,Q13-c,Q13,NB-HPN-2136-q0,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Parallelism and Large-File Optimization,easy,5,5,4,3,4.6
+human,Q13-d,Q13,NB-HPN-2136-q0,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Parallelism and Large-File Optimization,easy,4,5,4,3,4.2
+human,Q13-e,Q13,NB-HPN-2136-q0,gpt-4o,BASE-API,closed_book,gpt-4o,Parallelism and Large-File Optimization,easy,5,5,5,4,4.9
+human,Q14-a,Q14,NB-HPN-0536-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Pipelining and Small-File Optimization,hard,5,5,5,4,4.9
+human,Q14-b,Q14,NB-HPN-0536-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Pipelining and Small-File Optimization,hard,2,2,3,2,2.2
+human,Q14-c,Q14,NB-HPN-0536-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Pipelining and Small-File Optimization,hard,3,5,4,4,3.9
+human,Q14-d,Q14,NB-HPN-0536-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Pipelining and Small-File Optimization,hard,3,3,4,4,3.3
+human,Q14-e,Q14,NB-HPN-0536-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Pipelining and Small-File Optimization,hard,3,3,4,4,3.3
+human,Q15-a,Q15,NB-HPN-1616-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Pipelining and Small-File Optimization,medium,5,5,5,3,4.8
+human,Q15-b,Q15,NB-HPN-1616-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Pipelining and Small-File Optimization,medium,5,5,5,4,4.9
+human,Q15-c,Q15,NB-HPN-1616-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Pipelining and Small-File Optimization,medium,4,5,4,3,4.2
+human,Q15-d,Q15,NB-HPN-1616-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Pipelining and Small-File Optimization,medium,3,3,4,4,3.3
+human,Q15-e,Q15,NB-HPN-1616-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Pipelining and Small-File Optimization,medium,4,4,4,2,3.8
+human,Q16-a,Q16,NB-HPN-2050-q3,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Practical HPN Scenarios and Design,easy,4,5,5,4,4.5
+human,Q16-b,Q16,NB-HPN-2050-q3,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Practical HPN Scenarios and Design,easy,4,5,5,5,4.6
+human,Q16-c,Q16,NB-HPN-2050-q3,gpt-4o,BASE-API,closed_book,gpt-4o,Practical HPN Scenarios and Design,easy,3,3,4,4,3.3
+human,Q16-d,Q16,NB-HPN-2050-q3,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Practical HPN Scenarios and Design,easy,2,3,3,4,2.7
+human,Q16-e,Q16,NB-HPN-2050-q3,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Practical HPN Scenarios and Design,easy,2,2,4,4,2.6
+human,Q17-a,Q17,NB-HPN-2024-q3,gpt-4o,BASE-API,closed_book,gpt-4o,Practical HPN Scenarios and Design,hard,4,4,5,3,4.1
+human,Q17-b,Q17,NB-HPN-2024-q3,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Practical HPN Scenarios and Design,hard,4,4,5,5,4.3
+human,Q17-c,Q17,NB-HPN-2024-q3,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Practical HPN Scenarios and Design,hard,2,2,4,2,2.4
+human,Q17-d,Q17,NB-HPN-2024-q3,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Practical HPN Scenarios and Design,hard,1,3,3,1,2.0
+human,Q17-e,Q17,NB-HPN-2024-q3,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Practical HPN Scenarios and Design,hard,4,4,4,4,4.0
+human,Q18-a,Q18,NB-HPN-1047-q3,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Practical HPN Scenarios and Design,medium,1,1,4,2,1.7
+human,Q18-b,Q18,NB-HPN-1047-q3,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Practical HPN Scenarios and Design,medium,4,4,5,3,4.1
+human,Q18-c,Q18,NB-HPN-1047-q3,gpt-4o,BASE-API,closed_book,gpt-4o,Practical HPN Scenarios and Design,medium,4,4,5,3,4.1
+human,Q18-d,Q18,NB-HPN-1047-q3,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Practical HPN Scenarios and Design,medium,2,2,4,4,2.6
+human,Q18-e,Q18,NB-HPN-1047-q3,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Practical HPN Scenarios and Design,medium,3,4,5,4,3.8
+human,Q19-a,Q19,NB-HPN-1629-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Transfer Parameters: Definitions and Roles,easy,5,5,5,4,4.9
+human,Q19-b,Q19,NB-HPN-1629-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Transfer Parameters: Definitions and Roles,easy,4,5,5,4,4.5
+human,Q19-c,Q19,NB-HPN-1629-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Transfer Parameters: Definitions and Roles,easy,4,5,5,4,4.5
+human,Q19-d,Q19,NB-HPN-1629-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Transfer Parameters: Definitions and Roles,easy,3,3,4,4,3.3
+human,Q19-e,Q19,NB-HPN-1629-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Transfer Parameters: Definitions and Roles,easy,2,2,3,2,2.2
+human,Q20-a,Q20,NB-HPN-0667-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Adaptive and Online Optimization,hard,2,2,4,3,2.5
+human,Q20-b,Q20,NB-HPN-0667-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Adaptive and Online Optimization,hard,3,3,4,3,3.2
+human,Q20-c,Q20,NB-HPN-0667-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Adaptive and Online Optimization,hard,4,3,5,4,3.9
+human,Q20-d,Q20,NB-HPN-0667-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Adaptive and Online Optimization,hard,2,3,4,3,2.8
+human,Q20-e,Q20,NB-HPN-0667-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Adaptive and Online Optimization,hard,3,3,4,4,3.3
+human,Q21-a,Q21,NB-HPN-0428-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,BDP-Based Reasoning and Window Sizing,easy,3,3,3,2,2.9
+human,Q21-b,Q21,NB-HPN-0428-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,BDP-Based Reasoning and Window Sizing,easy,4,5,5,4,4.5
+human,Q21-c,Q21,NB-HPN-0428-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,BDP-Based Reasoning and Window Sizing,easy,4,4,4,5,4.1
+human,Q21-d,Q21,NB-HPN-0428-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,BDP-Based Reasoning and Window Sizing,easy,4,3,4,4,3.7
+human,Q21-e,Q21,NB-HPN-0428-q1,gpt-4o,BASE-API,closed_book,gpt-4o,BDP-Based Reasoning and Window Sizing,easy,4,4,5,3,4.1
+human,Q22-a,Q22,NB-HPN-0027-q2,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,BDP-Based Reasoning and Window Sizing,easy,1,1,4,2,1.7
+human,Q22-b,Q22,NB-HPN-0027-q2,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,BDP-Based Reasoning and Window Sizing,easy,4,5,4,2,4.1
+human,Q22-c,Q22,NB-HPN-0027-q2,gpt-4o,BASE-API,closed_book,gpt-4o,BDP-Based Reasoning and Window Sizing,easy,5,5,5,4,4.9
+human,Q22-d,Q22,NB-HPN-0027-q2,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,BDP-Based Reasoning and Window Sizing,easy,5,5,5,4,4.9
+human,Q22-e,Q22,NB-HPN-0027-q2,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,BDP-Based Reasoning and Window Sizing,easy,4,5,5,3,4.4
+human,Q23-a,Q23,NB-HPN-0978-q0,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,BDP-Based Reasoning and Window Sizing,medium,3,3,4,4,3.3
+human,Q23-b,Q23,NB-HPN-0978-q0,gpt-4o,BASE-API,closed_book,gpt-4o,BDP-Based Reasoning and Window Sizing,medium,5,5,5,4,4.9
+human,Q23-c,Q23,NB-HPN-0978-q0,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,BDP-Based Reasoning and Window Sizing,medium,2,3,3,2,2.5
+human,Q23-d,Q23,NB-HPN-0978-q0,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,BDP-Based Reasoning and Window Sizing,medium,2,2,3,3,2.3
+human,Q23-e,Q23,NB-HPN-0978-q0,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,BDP-Based Reasoning and Window Sizing,medium,4,5,4,3,4.2
+human,Q24-a,Q24,NB-HPN-1676-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Dataset Partitioning and Mixed Workloads,hard,5,5,5,4,4.9
+human,Q24-b,Q24,NB-HPN-1676-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Dataset Partitioning and Mixed Workloads,hard,3,2,4,3,2.9
+human,Q24-c,Q24,NB-HPN-1676-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Dataset Partitioning and Mixed Workloads,hard,2,2,3,2,2.2
+human,Q24-d,Q24,NB-HPN-1676-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Dataset Partitioning and Mixed Workloads,hard,4,4,4,4,4.0
+human,Q24-e,Q24,NB-HPN-1676-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Dataset Partitioning and Mixed Workloads,hard,3,2,4,4,3.0
+human,Q25-a,Q25,NB-HPN-2032-q3,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Dataset Partitioning and Mixed Workloads,medium,5,5,5,3,4.8
+human,Q25-b,Q25,NB-HPN-2032-q3,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Dataset Partitioning and Mixed Workloads,medium,2,2,3,4,2.4
+human,Q25-c,Q25,NB-HPN-2032-q3,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Dataset Partitioning and Mixed Workloads,medium,2,2,3,2,2.2
+human,Q25-d,Q25,NB-HPN-2032-q3,gpt-4o,BASE-API,closed_book,gpt-4o,Dataset Partitioning and Mixed Workloads,medium,5,5,5,3,4.8
+human,Q25-e,Q25,NB-HPN-2032-q3,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Dataset Partitioning and Mixed Workloads,medium,5,5,4,3,4.6

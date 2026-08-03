@@ -1,0 +1,64 @@
+size_group,base_model,setting,p_id,variant_label,variant_run,correctness,completeness,clarity,conciseness,overall,overall_formula,n,provisional,pct_think_only
+api-baseline,claude-sonnet-4-6,closed_book,BASE-API,API baseline (no adaptation),claude-sonnet-4-6,4.597,4.313,4.785,3.133,4.289,4.403,233,False,0.0
+api-baseline,gemini-2.5-pro,closed_book,BASE-API,API baseline (no adaptation),gemini-2.5-pro,4.481,4.159,4.931,3.318,4.282,4.358,233,False,0.0
+api-baseline,gpt-4o,closed_book,BASE-API,API baseline (no adaptation),gpt-4o,4.369,3.983,4.79,3.193,4.167,4.22,233,False,0.0
+large,gemma-3-27b,closed_book,P1,Original Instruct,gemma-3-27b-it,3.76,3.592,4.541,3.06,3.786,3.796,233,False,0.0
+large,gemma-3-27b,closed_book,P2,LoRA SFT,gemma-3-27b-instruct-lora-sft-merged,3.575,3.296,4.386,3.395,3.658,3.636,233,False,0.0
+large,gemma-3-27b,closed_book,P3,Full SFT,gemma-3-27b-instruct-full-hpn-sft,3.412,3.12,4.305,3.378,3.536,3.5,233,False,0.0
+large,gemma-3-27b,closed_book,P5,LoRA CPT + LoRA SFT,gemma-3-27b-instruct-lora-cpt-then-sft-merged,3.695,3.352,4.438,3.429,3.733,3.714,233,False,0.0
+large,gemma-3-27b,open_book,P6,Instruct + RAG,RAG-gemma-3-27b-it,4.554,4.382,4.674,3.545,4.353,4.425,233,False,0.0
+large,gemma-3-27b,open_book,P8,LoRA CPT+SFT + RAG,RAG-gemma-3-27b-instruct-lora-cpt-then-sft-merged,4.262,4.197,4.283,3.219,4.067,4.142,233,False,0.0
+large,qwen3.5-27b,closed_book,P1,Original Instruct,Qwen3.5-27B,4.288,4.116,4.498,2.914,4.059,4.141,233,False,0.0
+large,qwen3.5-27b,closed_book,P2,LoRA SFT,Qwen3.5-27B-instruct-lora-sft-merged,4.064,3.67,4.691,3.648,4.044,4.03,233,False,0.0
+large,qwen3.5-27b,closed_book,P3,Full SFT,Qwen3.5-27B-instruct-full-hpn-sft,3.996,3.674,4.648,3.601,3.996,3.99,233,False,0.0
+large,qwen3.5-27b,closed_book,P5,LoRA CPT + LoRA SFT,Qwen3.5-27B-instruct-lora-cpt-then-sft-merged,4.142,3.751,4.682,3.678,4.093,4.086,233,False,0.0
+large,qwen3.5-27b,open_book,P6,Instruct + RAG,RAG-Qwen3.5-27B,4.67,4.674,4.717,3.146,4.376,4.528,233,False,0.0
+large,qwen3.5-27b,open_book,P8,LoRA CPT+SFT + RAG,RAG-Qwen3.5-27B-instruct-lora-cpt-then-sft-merged,4.639,4.536,4.549,3.386,4.359,4.465,233,False,0.0
+medium,gemma-3-12b,closed_book,P1,Original Instruct,gemma-3-12b-it,3.519,3.429,4.408,2.957,3.621,3.614,233,False,0.0
+medium,gemma-3-12b,closed_book,P2,LoRA SFT,gemma-3-12b-instruct-lora-sft-merged,3.421,3.094,4.292,3.343,3.538,3.489,233,False,0.0
+medium,gemma-3-12b,closed_book,P3,Full SFT,gemma-3-12b-instruct-full-hpn-sft,3.416,3.163,4.288,3.502,3.563,3.523,233,False,0.0
+medium,gemma-3-12b,closed_book,P4,Full CPT + Full SFT,gemma-3-12b-cpt-full-sft,3.451,3.185,4.335,3.386,3.573,3.541,233,False,0.0
+medium,gemma-3-12b,closed_book,P5,LoRA CPT + LoRA SFT,gemma-3-12b-instruct-lora-cpt-then-sft-merged,3.425,3.206,4.348,3.421,3.572,3.543,233,False,0.0
+medium,gemma-3-12b,open_book,P6,Instruct + RAG,RAG-gemma-3-12b-it,4.438,4.129,4.618,3.657,4.264,4.303,233,False,0.0
+medium,gemma-3-12b,open_book,P7,Full CPT+SFT + RAG,RAG-gemma-3-12b-cpt-full-sft,4.185,4.12,4.3,3.313,4.038,4.101,233,False,0.0
+medium,gemma-3-12b,open_book,P8,LoRA CPT+SFT + RAG,RAG-gemma-3-12b-instruct-lora-cpt-then-sft-merged,4.258,4.155,4.305,3.275,4.068,4.138,233,False,0.0
+medium,llama-3.1-8b,closed_book,P1,Original Instruct,Llama-3.1-8B-Instruct,3.15,3.047,4.197,2.906,3.336,3.304,233,False,0.0
+medium,llama-3.1-8b,closed_book,P2,LoRA SFT,Llama-3.1-8B-instruct-lora-sft-merged,3.425,3.193,4.313,3.554,3.584,3.546,233,False,0.0
+medium,llama-3.1-8b,closed_book,P3,Full SFT,Llama-3.1-8B-instruct-full-hpn-sft,3.266,3.069,4.245,3.476,3.468,3.424,233,False,0.0
+medium,llama-3.1-8b,closed_book,P4,Full CPT + Full SFT,Llama-3.1-8B-cpt-full-sft,3.438,3.146,4.399,3.635,3.586,3.562,233,False,0.0
+medium,llama-3.1-8b,closed_book,P5,LoRA CPT + LoRA SFT,Llama-3.1-8B-instruct-lora-cpt-then-sft-merged,3.442,3.18,4.343,3.532,3.586,3.553,233,False,0.0
+medium,llama-3.1-8b,open_book,P6,Instruct + RAG,RAG-Llama-3.1-8B-Instruct,4.086,3.966,4.262,2.854,3.889,3.962,233,False,0.0
+medium,llama-3.1-8b,open_book,P7,Full CPT+SFT + RAG,RAG-Llama-3.1-8B-cpt-full-sft,4.176,4.039,4.288,3.485,4.042,4.088,233,False,0.0
+medium,llama-3.1-8b,open_book,P8,LoRA CPT+SFT + RAG,RAG-Llama-3.1-8B-instruct-lora-cpt-then-sft-merged,4.227,4.12,4.27,3.262,4.043,4.107,233,False,0.0
+medium,qwen3.5-9b,closed_book,P1,Original Instruct,Qwen3.5-9B,3.734,3.661,4.236,2.742,3.691,3.713,233,False,0.0
+medium,qwen3.5-9b,closed_book,P2,LoRA SFT,Qwen3.5-9B-instruct-lora-sft-merged,3.678,3.335,4.476,3.545,3.745,3.721,233,False,0.0
+medium,qwen3.5-9b,closed_book,P3,Full SFT,Qwen3.5-9B-instruct-full-hpn-sft,3.635,3.343,4.481,3.579,3.741,3.711,233,False,0.0
+medium,qwen3.5-9b,closed_book,P4,Full CPT + Full SFT,Qwen3.5-9B-cpt-full-sft,3.785,3.502,4.532,3.536,3.837,3.825,233,False,0.0
+medium,qwen3.5-9b,closed_book,P5,LoRA CPT + LoRA SFT,Qwen3.5-9B-instruct-lora-cpt-then-sft-merged,3.781,3.459,4.506,3.541,3.825,3.806,233,False,0.0
+medium,qwen3.5-9b,open_book,P6,Instruct + RAG,RAG-Qwen3.5-9B,4.468,4.506,4.584,3.017,4.22,4.358,233,False,0.0
+medium,qwen3.5-9b,open_book,P7,Full CPT+SFT + RAG,RAG-Qwen3.5-9B-cpt-full-sft,4.494,4.386,4.433,3.236,4.212,4.324,233,False,0.0
+medium,qwen3.5-9b,open_book,P8,LoRA CPT+SFT + RAG,RAG-Qwen3.5-9B-instruct-lora-cpt-then-sft-merged,4.446,4.33,4.352,3.215,4.173,4.27,233,False,0.0
+small,gemma-3-1b,closed_book,P1,Original Instruct,gemma-3-1b-Instruct,2.052,2.026,3.7,2.343,2.528,2.403,233,False,0.0
+small,gemma-3-1b,closed_book,P2,LoRA SFT,gemma-3-1b-instruct-lora-sft-merged,2.232,2.137,3.837,3.189,2.706,2.62,233,False,0.0
+small,gemma-3-1b,closed_book,P3,Full SFT,gemma-3-1b-instruct-full-hpn-sft,2.258,2.167,3.798,3.15,2.717,2.628,233,False,0.0
+small,gemma-3-1b,closed_book,P4,Full CPT + Full SFT,gemma-3-1b-cpt-full-sft,2.133,2.047,3.742,3.017,2.604,2.518,233,False,0.0
+small,gemma-3-1b,closed_book,P5,LoRA CPT + LoRA SFT,gemma-3-1b-instruct-lora-cpt-then-sft-merged,2.459,2.309,3.785,3.103,2.825,2.744,233,False,0.0
+small,gemma-3-1b,open_book,P6,Instruct + RAG,RAG-gemma-3-1b-Instruct,2.863,2.717,3.884,2.781,3.078,3.015,233,False,0.0
+small,gemma-3-1b,open_book,P7,Full CPT+SFT + RAG,RAG-gemma-3-1b-cpt-full-sft,2.7,2.605,3.515,2.751,2.893,2.839,233,False,0.0
+small,gemma-3-1b,open_book,P8,LoRA CPT+SFT + RAG,RAG-gemma-3-1b-instruct-lora-cpt-then-sft-merged,2.777,2.717,3.519,2.803,2.951,2.91,233,False,0.0
+small,llama-3.2-1b,closed_book,P1,Original Instruct,Llama-3.2-1B-Instruct,2.017,1.983,3.742,2.532,2.511,2.403,233,False,0.0
+small,llama-3.2-1b,closed_book,P2,LoRA SFT,Llama-3.2-1B-instruct-lora-sft-merged,2.352,2.335,3.858,3.21,2.801,2.734,233,False,0.0
+small,llama-3.2-1b,closed_book,P3,Full SFT,Llama-3.2-1B-instruct-full-hpn-sft,2.292,2.215,3.88,3.197,2.756,2.677,233,False,0.0
+small,llama-3.2-1b,closed_book,P4,Full CPT + Full SFT,Llama-3.2-1B-cpt-full-sft,2.425,2.326,3.867,3.249,2.851,2.766,233,False,0.0
+small,llama-3.2-1b,closed_book,P5,LoRA CPT + LoRA SFT,Llama-3.2-1B-instruct-lora-cpt-then-sft-merged,2.485,2.416,3.901,3.253,2.89,2.824,233,False,0.0
+small,llama-3.2-1b,open_book,P6,Instruct + RAG,RAG-Llama-3.2-1B-Instruct,2.7,2.605,3.91,2.863,2.99,2.93,233,False,0.0
+small,llama-3.2-1b,open_book,P7,Full CPT+SFT + RAG,RAG-Llama-3.2-1B-cpt-full-sft,2.798,2.717,3.742,3.279,3.041,3.011,233,False,0.0
+small,llama-3.2-1b,open_book,P8,LoRA CPT+SFT + RAG,RAG-Llama-3.2-1B-instruct-lora-cpt-then-sft-merged,3.021,2.948,3.631,3.034,3.14,3.123,233,False,0.0
+small,qwen3.5-2b,closed_book,P1,Original Instruct,Qwen3.5-2B,2.326,2.425,3.682,2.395,2.712,2.634,233,False,0.0
+small,qwen3.5-2b,closed_book,P2,LoRA SFT,Qwen3.5-2B-instruct-lora-sft-merged,3.06,2.854,4.137,3.339,3.298,3.242,233,False,0.0
+small,qwen3.5-2b,closed_book,P3,Full SFT,Qwen3.5-2B-instruct-full-hpn-sft,3.163,2.927,4.185,3.352,3.363,3.315,233,False,0.0
+small,qwen3.5-2b,closed_book,P4,Full CPT + Full SFT,Qwen3.5-2B-cpt-full-sft,3.309,3.103,4.27,3.399,3.498,3.448,233,False,0.0
+small,qwen3.5-2b,closed_book,P5,LoRA CPT + LoRA SFT,Qwen3.5-2B-instruct-lora-cpt-then-sft-merged,3.202,2.97,4.21,3.378,3.406,3.352,233,False,0.0
+small,qwen3.5-2b,open_book,P6,Instruct + RAG,RAG-Qwen3.5-2B,3.777,3.961,4.275,3.266,3.857,3.881,233,False,0.0
+small,qwen3.5-2b,open_book,P7,Full CPT+SFT + RAG,RAG-Qwen3.5-2B-cpt-full-sft,3.918,3.893,4.176,3.253,3.821,3.896,233,False,0.0
+small,qwen3.5-2b,open_book,P8,LoRA CPT+SFT + RAG,RAG-Qwen3.5-2B-instruct-lora-cpt-then-sft-merged,4.107,4.082,4.124,3.086,3.922,4.001,233,False,0.0

@@ -1,0 +1,40 @@
+{
+  "benchmark_version": "v5.0",
+  "generated_at": "2026-04-27T02:02:50Z",
+  "seed": 42,
+  "counts": {
+    "dev": 30,
+    "test": 200,
+    "synthesis": 4,
+    "adversarial": 8,
+    "total": 242
+  },
+  "models": {
+    "card_generator": "qwen3.5:9b",
+    "question_generator": "gemma4:26b",
+    "critic": "gemma4:26b",
+    "calibration_weak": "llama3.2:3b",
+    "calibration_mid": "qwen3.5:9b",
+    "calibration_strong": "gemma4:26b",
+    "calibration_judge": "gemma4:26b",
+    "embedding": "BAAI/bge-large-en-v1.5"
+  },
+  "prompt_versions": {
+    "per_paper_5a": "v5.0-questions",
+    "adversarial_5c": "v5.0-adversarial",
+    "synthesis_5b": "v5.0-synthesis",
+    "calibration": "v5.0-calibration"
+  },
+  "corpus": {
+    "path": "../LLM-Training/data/raw/research_corpus_v3.json",
+    "sha256": "68c1148da5ec5688efd40c8f8c269cee51ee0617c6df28d33c43fcc1c5bb1048"
+  },
+  "enrichment": {
+    "stage": "stage_09_enrich",
+    "fields_added": [
+      "calibration",
+      "validation"
+    ],
+    "enriched_at": "2026-06-29T21:51:27Z"
+  }
+}

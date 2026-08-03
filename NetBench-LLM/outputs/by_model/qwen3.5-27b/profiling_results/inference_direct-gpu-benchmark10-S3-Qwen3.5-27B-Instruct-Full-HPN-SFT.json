@@ -1,0 +1,299 @@
+{
+  "model_path": "/share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruction/Qwen3.5-27B-instruct-full-hpn-sft",
+  "model_name": "Qwen3.5-27B-instruct-full-hpn-sft",
+  "device": "cuda",
+  "profile_type": "direct",
+  "prompt_source": "/share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+  "timestamp": "2026-06-11T14:08:41.249318",
+  "system": {
+    "timestamp": "2026-06-11T14:04:52.918646",
+    "hostname": "site-c-node-2",
+    "python": "3.11.7",
+    "torch": "2.12.0+cu130",
+    "device": "cuda",
+    "cpu": {
+      "model": "Intel(R) Xeon(R) Platinum 8480+",
+      "physical_cores": 112,
+      "logical_cores": 112,
+      "total_ram_gb": 1006.9
+    },
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA H100 80GB HBM3",
+        "total_memory_mb": 81071
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA H100 80GB HBM3",
+        "total_memory_mb": 81071
+      },
+      {
+        "index": 2,
+        "name": "NVIDIA H100 80GB HBM3",
+        "total_memory_mb": 81071
+      },
+      {
+        "index": 3,
+        "name": "NVIDIA H100 80GB HBM3",
+        "total_memory_mb": 81071
+      }
+    ],
+    "cuda_version": "13.0"
+  },
+  "model_load": {
+    "load_time_s": 28.38,
+    "gpu_vram_after_load_mb": 11474
+  },
+  "benchmark_prompts": [
+    {
+      "name": "NB-HPN-0026-q1",
+      "instruction_preview": "Why might a smart DTN implement network packet pacing specifically when transferring data from a high-bandwidth source t",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 44.7749,
+      "avg_tokens_per_second": 5.72,
+      "avg_ms_per_token": 174.9,
+      "avg_ttft_s": 0.0013,
+      "peak_gpu_vram_mb": 11213,
+      "runs": [
+        {
+          "input_tokens": 47,
+          "new_tokens": 256,
+          "total_time_s": 44.7749,
+          "ttft_s": 0.0013,
+          "tokens_per_second": 5.72,
+          "ms_per_token": 174.9,
+          "peak_gpu_vram_mb": 11213,
+          "cpu_ram_mb": 3408,
+          "text_preview": "When transferring data from a high-bandwidth source to a low-bandwidth destination, a smart Delay/Disruption Tolerant Networking (DTN) implementation might use network packet pacing to prevent buffer "
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-0159-q0",
+      "instruction_preview": "In host-based RDMA load balancing, how can a system detect network congestion without relying on specialized switch hard",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 16.7729,
+      "avg_tokens_per_second": 15.26,
+      "avg_ms_per_token": 65.52,
+      "avg_ttft_s": 0.0014,
+      "peak_gpu_vram_mb": 11213,
+      "runs": [
+        {
+          "input_tokens": 52,
+          "new_tokens": 256,
+          "total_time_s": 16.7729,
+          "ttft_s": 0.0014,
+          "tokens_per_second": 15.26,
+          "ms_per_token": 65.52,
+          "peak_gpu_vram_mb": 11213,
+          "cpu_ram_mb": 3436,
+          "text_preview": "In the absence of specialized switch hardware support, such as ECN markings, a system can implement a software-based congestion detection mechanism using packet sampling and timeout monitoring. The ap"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-2135-q1",
+      "instruction_preview": "Why is a periodic retransmission of the INT request necessary even if the initial in-band request was successfully sent?",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 16.5595,
+      "avg_tokens_per_second": 15.46,
+      "avg_ms_per_token": 64.69,
+      "avg_ttft_s": 0.0013,
+      "peak_gpu_vram_mb": 11212,
+      "runs": [
+        {
+          "input_tokens": 43,
+          "new_tokens": 256,
+          "total_time_s": 16.5595,
+          "ttft_s": 0.0013,
+          "tokens_per_second": 15.46,
+          "ms_per_token": 64.69,
+          "peak_gpu_vram_mb": 11212,
+          "cpu_ram_mb": 3456,
+          "text_preview": "In-band signaling, such as the INT (Interrupt) request mechanism used in certain network protocols, relies on the transmission of control information within the same channel as the data. While the ini"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-2121-q2",
+      "instruction_preview": "Using the logic provided in the text, if a service has a Max-Min Fair (MmF) share of 40 Mbps but only achieves 30 Mbps u",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 20.7973,
+      "avg_tokens_per_second": 12.31,
+      "avg_ms_per_token": 81.24,
+      "avg_ttft_s": 0.0012,
+      "peak_gpu_vram_mb": 11229,
+      "runs": [
+        {
+          "input_tokens": 92,
+          "new_tokens": 256,
+          "total_time_s": 20.7973,
+          "ttft_s": 0.0012,
+          "tokens_per_second": 12.31,
+          "ms_per_token": 81.24,
+          "peak_gpu_vram_mb": 11229,
+          "cpu_ram_mb": 3631,
+          "text_preview": "To determine the percentage of the Max-Min Fair (MmF) share achieved and the percentage of the remaining unachieved bandwidth, we can use the following calculations: 1. **Percentage of MmF share achie"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-1401-q1",
+      "instruction_preview": "Why might a parameter tuner choose to increase the number of TCP streams rather than simply increasing the size of a sin",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 16.0822,
+      "avg_tokens_per_second": 15.92,
+      "avg_ms_per_token": 62.82,
+      "avg_ttft_s": 0.0014,
+      "peak_gpu_vram_mb": 11213,
+      "runs": [
+        {
+          "input_tokens": 50,
+          "new_tokens": 256,
+          "total_time_s": 16.0822,
+          "ttft_s": 0.0014,
+          "tokens_per_second": 15.92,
+          "ms_per_token": 62.82,
+          "peak_gpu_vram_mb": 11213,
+          "cpu_ram_mb": 3639,
+          "text_preview": "When a parameter tuner encounters kernel-level limitations, such as a maximum socket buffer size, it may choose to increase the number of TCP streams instead of increasing the size of a single TCP buf"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-0176-q1",
+      "instruction_preview": "Why does the BBR Startup phase inherently cause a temporary increase in network latency and queue size at the bottleneck",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 16.2573,
+      "avg_tokens_per_second": 15.75,
+      "avg_ms_per_token": 63.51,
+      "avg_ttft_s": 0.0011,
+      "peak_gpu_vram_mb": 11212,
+      "runs": [
+        {
+          "input_tokens": 42,
+          "new_tokens": 256,
+          "total_time_s": 16.2573,
+          "ttft_s": 0.0011,
+          "tokens_per_second": 15.75,
+          "ms_per_token": 63.51,
+          "peak_gpu_vram_mb": 11212,
+          "cpu_ram_mb": 3647,
+          "text_preview": "The BBR (Bottleneck Bandwidth and Round-trip propagation time) congestion control algorithm, during its Startup (DRAIN) phase, is designed to rapidly probe for available bandwidth. This phase inherent"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-0178-q1",
+      "instruction_preview": "Why does packet reordering specifically degrade the performance of TCP-based network services compared to other protocol",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 16.4752,
+      "avg_tokens_per_second": 15.54,
+      "avg_ms_per_token": 64.36,
+      "avg_ttft_s": 0.0011,
+      "peak_gpu_vram_mb": 11212,
+      "runs": [
+        {
+          "input_tokens": 39,
+          "new_tokens": 256,
+          "total_time_s": 16.4752,
+          "ttft_s": 0.0011,
+          "tokens_per_second": 15.54,
+          "ms_per_token": 64.36,
+          "peak_gpu_vram_mb": 11212,
+          "cpu_ram_mb": 3665,
+          "text_preview": "Packet reordering significantly degrades the performance of TCP-based services due to the protocol's fundamental reliance on sequence numbers and its specific congestion control mechanisms. When packe"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-2032-q1",
+      "instruction_preview": "Why does a distributed multi-traffic scheduling approach, such as DMS, reduce the computational burden on the network co",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 16.2037,
+      "avg_tokens_per_second": 15.8,
+      "avg_ms_per_token": 63.3,
+      "avg_ttft_s": 0.0013,
+      "peak_gpu_vram_mb": 11213,
+      "runs": [
+        {
+          "input_tokens": 48,
+          "new_tokens": 256,
+          "total_time_s": 16.2037,
+          "ttft_s": 0.0013,
+          "tokens_per_second": 15.8,
+          "ms_per_token": 63.3,
+          "peak_gpu_vram_mb": 11213,
+          "cpu_ram_mb": 3673,
+          "text_preview": "In a centralized scheduling architecture, a single controller is responsible for collecting real-time state information from all network nodes and computing optimal transmission schedules for the enti"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-0733-q1",
+      "instruction_preview": "Why is it technically challenging for human operators to manage performance monitoring in modern 100 Gbps research netwo",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 15.9264,
+      "avg_tokens_per_second": 16.07,
+      "avg_ms_per_token": 62.21,
+      "avg_ttft_s": 0.0011,
+      "peak_gpu_vram_mb": 11213,
+      "runs": [
+        {
+          "input_tokens": 52,
+          "new_tokens": 256,
+          "total_time_s": 15.9264,
+          "ttft_s": 0.0011,
+          "tokens_per_second": 16.07,
+          "ms_per_token": 62.21,
+          "peak_gpu_vram_mb": 11213,
+          "cpu_ram_mb": 3673,
+          "text_preview": "Managing performance monitoring in modern 100 Gbps research networks is challenging for human operators due to the sheer scale and speed of the data. At these speeds, the volume of performance data is"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-1278-q1",
+      "instruction_preview": "Why does a 'full window loss' event in a TCP session lead to a much more severe throughput degradation than a single pac",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 16.2315,
+      "avg_tokens_per_second": 15.77,
+      "avg_ms_per_token": 63.4,
+      "avg_ttft_s": 0.0011,
+      "peak_gpu_vram_mb": 11213,
+      "runs": [
+        {
+          "input_tokens": 53,
+          "new_tokens": 256,
+          "total_time_s": 16.2315,
+          "ttft_s": 0.0011,
+          "tokens_per_second": 15.77,
+          "ms_per_token": 63.4,
+          "peak_gpu_vram_mb": 11213,
+          "cpu_ram_mb": 3680,
+          "text_preview": "The difference in severity between a 'full window loss' and a single packet loss lies in how the TCP congestion control algorithm responds to each scenario. When a single packet is lost, the sender ty"
+        }
+      ]
+    }
+  ],
+  "output_length_scaling": [],
+  "input_length_scaling": [],
+  "summary": {
+    "avg_tokens_per_second": 14.36,
+    "avg_ms_per_token": 76.59,
+    "peak_gpu_vram_mb": 11229,
+    "peak_cpu_ram_mb": 3680,
+    "avg_ttft_s": 0.0012
+  }
+}

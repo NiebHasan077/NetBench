@@ -1,0 +1,10 @@
+id,reason
+NB-HPN-2121-q2,"incorrect reference answer (substitutes its own values; arithmetic wrong) and dangling source reference"
+NB-HPN-0094-q2,"dangling source-text reference (question depends on un-provided source text)"
+NB-HPN-2361-q1,"dangling source-text reference (question depends on un-provided source text)"
+NB-HPN-1665-q3,"dangling source-text reference (question depends on un-provided source text)"
+NB-HPN-1183-q3,"dangling source-text reference (question depends on un-provided source text)"
+NB-HPN-1594-q0,"dangling source-text reference (question depends on un-provided source text)"
+NB-HPN-1109-q3,"dangling source-text reference (question depends on un-provided source text)"
+NB-HPN-0824-q2,"dangling source-text reference (question depends on un-provided source text)"
+NB-HPN-2216-q2,"internally inconsistent question wording (audit observation; excluded per author decision)"

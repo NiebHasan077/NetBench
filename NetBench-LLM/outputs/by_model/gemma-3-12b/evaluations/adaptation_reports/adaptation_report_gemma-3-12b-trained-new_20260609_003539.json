@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-06-09T00:28:39.336973",
+  "base_model_path": "/work2/11412/neom/my-projects/NetBench-LLM/models/base/gemma-3-12b",
+  "trained_model_path": "/work2/11412/neom/my-projects/NetBench-LLM/models/pretrained/gemma-3-12b-trained-new",
+  "hpn_data_dir": "/work2/11412/neom/my-projects/NetBench-LLM/data/processed/gemma-3-12b",
+  "config": {
+    "batch_size": 4,
+    "seq_len": 2048,
+    "max_hpn_batches": null,
+    "max_general_batches": null,
+    "quantize_4bit": false
+  },
+  "base": {
+    "hpn": {
+      "loss": 3.426816,
+      "perplexity": 30.7785,
+      "batches": 188,
+      "tokens": 1533952
+    },
+    "general": {
+      "loss": 3.282614,
+      "perplexity": 26.6453,
+      "batches": 36,
+      "tokens": 290816
+    }
+  },
+  "trained": {
+    "hpn": {
+      "loss": 2.067927,
+      "perplexity": 7.9084,
+      "batches": 188,
+      "tokens": 1533952
+    },
+    "general": {
+      "loss": 1.838243,
+      "perplexity": 6.2855,
+      "batches": 36,
+      "tokens": 290816
+    }
+  },
+  "forgetting_gap": -1.444371
+}

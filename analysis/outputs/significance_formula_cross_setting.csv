@@ -1,0 +1,15 @@
+base_model,size_group,contrast,provisional,description,n,mean_a,mean_b,mean_diff,median_diff,ci95_lo,ci95_hi,p_raw,cohens_dz,note
+llama-3.2-1b,small,P4 vs P6,False,best closed-adapted (CPT+SFT) vs Instruct+RAG,233,2.766,2.93,0.164,0.0,0.047,0.282,0.00945,0.179,information-access contrast; NOT a model-quality claim
+llama-3.2-1b,small,P5 vs P6,False,best closed-adapted (LoRA CPT+SFT) vs Instruct+RAG,233,2.824,2.93,0.105,0.0,-0.007,0.219,0.1826,0.12,information-access contrast; NOT a model-quality claim
+gemma-3-1b,small,P4 vs P6,False,best closed-adapted (CPT+SFT) vs Instruct+RAG,233,2.518,3.015,0.497,0.5,0.38,0.619,0.0,0.531,information-access contrast; NOT a model-quality claim
+gemma-3-1b,small,P5 vs P6,False,best closed-adapted (LoRA CPT+SFT) vs Instruct+RAG,233,2.744,3.015,0.271,0.2,0.153,0.394,5e-05,0.295,information-access contrast; NOT a model-quality claim
+qwen3.5-2b,small,P4 vs P6,False,best closed-adapted (CPT+SFT) vs Instruct+RAG,233,3.448,3.881,0.432,0.5,0.301,0.56,0.0,0.428,information-access contrast; NOT a model-quality claim
+qwen3.5-2b,small,P5 vs P6,False,best closed-adapted (LoRA CPT+SFT) vs Instruct+RAG,233,3.352,3.881,0.529,0.5,0.397,0.664,0.0,0.502,information-access contrast; NOT a model-quality claim
+llama-3.1-8b,medium,P4 vs P6,False,best closed-adapted (CPT+SFT) vs Instruct+RAG,233,3.562,3.962,0.4,0.3,0.266,0.532,0.0,0.386,information-access contrast; NOT a model-quality claim
+llama-3.1-8b,medium,P5 vs P6,False,best closed-adapted (LoRA CPT+SFT) vs Instruct+RAG,233,3.553,3.962,0.409,0.4,0.276,0.536,0.0,0.399,information-access contrast; NOT a model-quality claim
+qwen3.5-9b,medium,P4 vs P6,False,best closed-adapted (CPT+SFT) vs Instruct+RAG,233,3.825,4.358,0.533,0.5,0.393,0.667,0.0,0.505,information-access contrast; NOT a model-quality claim
+qwen3.5-9b,medium,P5 vs P6,False,best closed-adapted (LoRA CPT+SFT) vs Instruct+RAG,233,3.806,4.358,0.552,0.5,0.415,0.683,0.0,0.53,information-access contrast; NOT a model-quality claim
+gemma-3-12b,medium,P4 vs P6,False,best closed-adapted (CPT+SFT) vs Instruct+RAG,233,3.541,4.303,0.762,0.7,0.624,0.899,0.0,0.711,information-access contrast; NOT a model-quality claim
+gemma-3-12b,medium,P5 vs P6,False,best closed-adapted (LoRA CPT+SFT) vs Instruct+RAG,233,3.543,4.303,0.76,0.7,0.624,0.893,0.0,0.726,information-access contrast; NOT a model-quality claim
+gemma-3-27b,large,P5 vs P6,False,best closed-adapted (LoRA CPT+SFT) vs Instruct+RAG,233,3.714,4.425,0.711,0.6,0.59,0.831,0.0,0.734,information-access contrast; NOT a model-quality claim
+qwen3.5-27b,large,P5 vs P6,False,best closed-adapted (LoRA CPT+SFT) vs Instruct+RAG,233,4.086,4.528,0.442,0.3,0.341,0.543,0.0,0.566,information-access contrast; NOT a model-quality claim

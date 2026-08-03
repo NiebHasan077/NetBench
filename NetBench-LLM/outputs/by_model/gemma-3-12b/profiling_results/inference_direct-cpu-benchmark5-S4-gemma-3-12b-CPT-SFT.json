@@ -1,0 +1,156 @@
+{
+  "model_path": "/work2/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-12b-cpt-full-sft",
+  "model_name": "gemma-3-12b-cpt-full-sft",
+  "device": "cpu",
+  "profile_type": "direct",
+  "prompt_source": "/work2/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+  "timestamp": "2026-06-07T14:25:12.310248",
+  "system": {
+    "timestamp": "2026-06-07T13:27:34.971031",
+    "hostname": "site-b-node-2",
+    "python": "3.12.11",
+    "torch": "2.11.0+cu128",
+    "device": "cpu",
+    "cpu": {
+      "model": "Intel(R) Xeon(R) Platinum 8468",
+      "physical_cores": 96,
+      "logical_cores": 96,
+      "total_ram_gb": 1006.9
+    }
+  },
+  "model_load": {
+    "load_time_s": 830.19,
+    "gpu_vram_after_load_mb": 0
+  },
+  "benchmark_prompts": [
+    {
+      "name": "NB-HPN-0026-q1",
+      "instruction_preview": "Why might a smart DTN implement network packet pacing specifically when transferring data from a high-bandwidth source t",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 540.8865,
+      "avg_tokens_per_second": 0.47,
+      "avg_ms_per_token": 2112.84,
+      "avg_ttft_s": 0.0021,
+      "peak_gpu_vram_mb": 0,
+      "runs": [
+        {
+          "input_tokens": 48,
+          "new_tokens": 256,
+          "total_time_s": 540.8865,
+          "ttft_s": 0.0021,
+          "tokens_per_second": 0.47,
+          "ms_per_token": 2112.84,
+          "peak_gpu_vram_mb": 0,
+          "cpu_ram_mb": 47527,
+          "text_preview": "In a Delay-Tolerant Networking (DTN) environment, implementing network packet pacing is a critical design choice when managing data transfers between significantly disparate network capacities. Specif"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-0159-q0",
+      "instruction_preview": "In host-based RDMA load balancing, how can a system detect network congestion without relying on specialized switch hard",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 542.3902,
+      "avg_tokens_per_second": 0.47,
+      "avg_ms_per_token": 2118.71,
+      "avg_ttft_s": 0.0021,
+      "peak_gpu_vram_mb": 0,
+      "runs": [
+        {
+          "input_tokens": 54,
+          "new_tokens": 256,
+          "total_time_s": 542.3902,
+          "ttft_s": 0.0021,
+          "tokens_per_second": 0.47,
+          "ms_per_token": 2118.71,
+          "peak_gpu_vram_mb": 0,
+          "cpu_ram_mb": 47527,
+          "text_preview": "In environments where programmable switch hardware is unavailable, such as in cloud or virtualized settings, RDMA networks cannot utilize ECN markings to signal congestion. To address this, systems ca"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-2135-q1",
+      "instruction_preview": "Why is a periodic retransmission of the INT request necessary even if the initial in-band request was successfully sent?",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 540.1938,
+      "avg_tokens_per_second": 0.47,
+      "avg_ms_per_token": 2110.13,
+      "avg_ttft_s": 0.0021,
+      "peak_gpu_vram_mb": 0,
+      "runs": [
+        {
+          "input_tokens": 44,
+          "new_tokens": 256,
+          "total_time_s": 540.1938,
+          "ttft_s": 0.0021,
+          "tokens_per_second": 0.47,
+          "ms_per_token": 2110.13,
+          "peak_gpu_vram_mb": 0,
+          "cpu_ram_mb": 47528,
+          "text_preview": "In LTE, the INT (Initial Transmission) request is sent in-band during the contention resolution period. While the initial in-band request carries critical information such as the UE identity and reque"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-2121-q2",
+      "instruction_preview": "Using the logic provided in the text, if a service has a Max-Min Fair (MmF) share of 40 Mbps but only achieves 30 Mbps u",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 549.753,
+      "avg_tokens_per_second": 0.47,
+      "avg_ms_per_token": 2147.47,
+      "avg_ttft_s": 0.0021,
+      "peak_gpu_vram_mb": 0,
+      "runs": [
+        {
+          "input_tokens": 91,
+          "new_tokens": 256,
+          "total_time_s": 549.753,
+          "ttft_s": 0.0021,
+          "tokens_per_second": 0.47,
+          "ms_per_token": 2147.47,
+          "peak_gpu_vram_mb": 0,
+          "cpu_ram_mb": 47530,
+          "text_preview": "To calculate the percentage of the Max-Min Fair (MmF) share achieved, we use the following formula: (Achieved Bandwidth / MmF Share) * 100. In this scenario, the service has achieved 30 Mbps out of a "
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-1401-q1",
+      "instruction_preview": "Why might a parameter tuner choose to increase the number of TCP streams rather than simply increasing the size of a sin",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 420.5258,
+      "avg_tokens_per_second": 0.47,
+      "avg_ms_per_token": 2123.87,
+      "avg_ttft_s": 0.0021,
+      "peak_gpu_vram_mb": 0,
+      "runs": [
+        {
+          "input_tokens": 52,
+          "new_tokens": 198,
+          "total_time_s": 420.5258,
+          "ttft_s": 0.0021,
+          "tokens_per_second": 0.47,
+          "ms_per_token": 2123.87,
+          "peak_gpu_vram_mb": 0,
+          "cpu_ram_mb": 47536,
+          "text_preview": "When tuning TCP parameters, increasing the number of TCP streams (such as going from 10 streams to 100 streams) serves as a strategic workaround for kernel-level limitations. The primary driver for th"
+        }
+      ]
+    }
+  ],
+  "output_length_scaling": [],
+  "input_length_scaling": [],
+  "summary": {
+    "avg_tokens_per_second": 0.47,
+    "avg_ms_per_token": 2122.6,
+    "peak_gpu_vram_mb": 0,
+    "peak_cpu_ram_mb": 47536,
+    "avg_ttft_s": 0.0021
+  }
+}

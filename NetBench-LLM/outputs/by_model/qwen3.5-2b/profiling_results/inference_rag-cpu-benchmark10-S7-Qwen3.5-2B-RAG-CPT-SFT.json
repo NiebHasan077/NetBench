@@ -1,0 +1,250 @@
+{
+  "profile_type": "rag",
+  "model_path": "/workspace/portables/NetBench-LLM/models/instruction/Qwen3.5-2B-cpt-full-sft",
+  "model_name": "Qwen3.5-2B-cpt-full-sft",
+  "run_name": "rag-cpu-benchmark10-S7-Qwen3.5-2B-RAG-CPT-SFT",
+  "device": "cpu",
+  "timestamp": "2026-05-13T16:55:25.556028",
+  "benchmark_file": "/workspace/portables/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+  "question_limit": 10,
+  "system": {
+    "timestamp": "2026-05-13T16:55:25.558864",
+    "hostname": "site-a",
+    "python": "3.11.2",
+    "torch": "2.11.0+cu128",
+    "device": "cpu",
+    "cpu": {
+      "model": "Intel(R) Xeon(R) w7-3455",
+      "physical_cores": 24,
+      "logical_cores": 48,
+      "total_ram_gb": 250.9
+    }
+  },
+  "model_load": {
+    "retriever_load_time_s": 8.72,
+    "generator_load_time_s": 2.01
+  },
+  "benchmark_prompts": [
+    {
+      "id": "NB-HPN-0026-q1",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why might a smart DTN implement network packet pacing specifically when transferring data from a high-bandwidth source to a low-bandwidth destination?",
+      "retrieval_time_s": 11.2011,
+      "generation_time_s": 21.7096,
+      "total_time_s": 32.9107,
+      "prompt_tokens": 4422,
+      "output_tokens": 129,
+      "generation_tokens_per_second": 5.94,
+      "retrieved_chunks": "Towards a Smart Data Transfer Node Zheng... \u00a72 Motivation | Toward a Smart Data Transfer Node Zhengc... \u00a72 Motivation | Toward a Smart Data Transfer Node Zhengc... \u00a71 Introduction | Towards a Smart Data Transfer Node Zheng... \u00a71 Introduction",
+      "reranker_scores": [
+        0.9945,
+        0.9889,
+        0.8418,
+        0.8287
+      ],
+      "answer_preview": "I am sorry, but the provided excerpts do not contain enough information to answer this question. While the text mentions that network packet pacing can improve performance and that its value depends on the characteristics of the destination endpoint, it does not explicitly explain why it would be be"
+    },
+    {
+      "id": "NB-HPN-0159-q0",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "hard",
+      "question_type": "concept",
+      "question": "In host-based RDMA load balancing, how can a system detect network congestion without relying on specialized switch hardware like ECN (Explicit Congestion Notification) markings?",
+      "retrieval_time_s": 12.6619,
+      "generation_time_s": 25.6563,
+      "total_time_s": 38.3182,
+      "prompt_tokens": 5021,
+      "output_tokens": 150,
+      "generation_tokens_per_second": 5.85,
+      "retrieved_chunks": "arXiv:2506.08132v1 cs. NI 9 Jun 2025 Pre... \u00a73 Evaluation | This work is licensed under a Creative C... \u00a71 Introduction | STrack: A Reliable Multipath Transport f... \u00a75 Related Work | REPS: Recycled Entropy Packet Spraying f... \u00a71 Introduction",
+      "reranker_scores": [
+        0.9964,
+        0.986,
+        0.9859,
+        0.9771
+      ],
+      "answer_preview": "I am sorry, but the provided excerpts do not contain enough information to answer this question. While the text discusses various congestion signals\u2014such as ECN, RTT (Round-Trip Time), and packet loss\u2014it specifically notes that detecting congestion solely through packet loss can lead to delayed resp"
+    },
+    {
+      "id": "NB-HPN-2135-q1",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why is a periodic retransmission of the INT request necessary even if the initial in-band request was successfully sent?",
+      "retrieval_time_s": 12.0504,
+      "generation_time_s": 30.151,
+      "total_time_s": 42.2015,
+      "prompt_tokens": 4597,
+      "output_tokens": 206,
+      "generation_tokens_per_second": 6.83,
+      "retrieved_chunks": "A Flexible In-band Network Telemetry Fra... \u00a7III Int Framework | SPECIAL SECTION ON ARTIFICIAL INTELLIGEN... \u00a7II Related Work | noname manuscript No. will be inserted b... \u00a72 Related Work | FEDERAL UNIVERSITY OF PAMPA Ariel G es D... \u00a71 Overview",
+      "reranker_scores": [
+        0.9189,
+        0.6832,
+        0.6446,
+        0.4356
+      ],
+      "answer_preview": "In the context of the INTManager framework, the periodic retransmission of the INT request\u2014specifically every 60 seconds by default\u2014is essential for maintaining the integrity and continuity of the monitoring process. While the initial INT request is sent in-band to the destination node to instruct t"
+    },
+    {
+      "id": "NB-HPN-2121-q2",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "easy",
+      "question_type": "calculation",
+      "question": "Using the logic provided in the text, if a service has a Max-Min Fair (MmF) share of 40 Mbps but only achieves 30 Mbps under contention, what is the percentage of its MmF share that it has achieved, and what percentage of the total 40 Mbps share is the remaining unachieved bandwidth?",
+      "retrieval_time_s": 13.5006,
+      "generation_time_s": 34.0148,
+      "total_time_s": 47.5154,
+      "prompt_tokens": 5082,
+      "output_tokens": 234,
+      "generation_tokens_per_second": 6.88,
+      "retrieved_chunks": ". . Latest updates: h ps://dl.acm.org/do... \u00a71 Introduction | . . Latest updates: h ps://dl.acm.org/do... \u00a71 Introduction | . . Latest updates: h ps://dl.acm.org/do... \u00a73 Methodology | . . Latest updates: h ps://dl.acm.org/do... \u00a73 Methodology",
+      "reranker_scores": [
+        0.981,
+        0.9778,
+        0.8751,
+        0.8308
+      ],
+      "answer_preview": "To calculate the percentage of the Max-Min Fair (MmF) share achieved, we use the formula provided in the text: (Achieved Throughput / MmF Share) * 100. In this scenario, the service achieved 30 Mbps while its MmF share is 40 Mbps. Therefore, the calculation is (30 / 40) * 100 = 75%. This means the s"
+    },
+    {
+      "id": "NB-HPN-1401-q1",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why might a parameter tuner choose to increase the number of TCP streams rather than simply increasing the size of a single TCP buffer when encountering kernel-level limitations?",
+      "retrieval_time_s": 13.4236,
+      "generation_time_s": 26.5241,
+      "total_time_s": 39.9477,
+      "prompt_tokens": 3964,
+      "output_tokens": 194,
+      "generation_tokens_per_second": 7.31,
+      "retrieved_chunks": "RUN-TIME ADAPTATION OF GRID DATA PLACEME... \u00a74 Implementation | Run-time Adaptation of Grid Data Placeme... \u00a74 Implementation | Dynamic Adaptation of Parallelism Level ... \u00a72 Related Work | Balancing TCP Buffer vs Parallel Streams... \u00a7Abstract",
+      "reranker_scores": [
+        0.9789,
+        0.9618,
+        0.9204,
+        0.91
+      ],
+      "answer_preview": "In scenarios where a machine's maximum TCP buffer size limit is smaller than the optimal buffer size required for a transfer, the parameter tuner employs a strategy to compensate for the lack of available buffer space [1]. Rather than relying solely on increasing the TCP buffer size, the tuner incre"
+    },
+    {
+      "id": "NB-HPN-0176-q1",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why does the BBR Startup phase inherently cause a temporary increase in network latency and queue size at the bottleneck?",
+      "retrieval_time_s": 11.5246,
+      "generation_time_s": 35.2469,
+      "total_time_s": 46.7715,
+      "prompt_tokens": 4951,
+      "output_tokens": 259,
+      "generation_tokens_per_second": 7.35,
+      "retrieved_chunks": "Received January 19 2021 accepted Februa... \u00a7I Introduction | Received January 19 2021 accepted Februa... \u00a7I Introduction | FaiRTT: An Empirical Approach for Enhanc... \u00a7II Related Work | 2BRobust - Overcoming TCP BBR Performanc... \u00a71 Introduction",
+      "reranker_scores": [
+        0.9689,
+        0.9629,
+        0.9588,
+        0.9583
+      ],
+      "answer_preview": "The BBR Startup phase introduces latency and queue buildup because the algorithm's exponential growth strategy prioritizes rapid bandwidth measurement over immediate stability [1]. During the Startup phase, BBR exponentially increases the sending rate\u2014specifically by doubling the pacing rate with ea"
+    },
+    {
+      "id": "NB-HPN-0178-q1",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why does packet reordering specifically degrade the performance of TCP-based network services compared to other protocols?",
+      "retrieval_time_s": 13.306,
+      "generation_time_s": 29.7123,
+      "total_time_s": 43.0183,
+      "prompt_tokens": 4440,
+      "output_tokens": 211,
+      "generation_tokens_per_second": 7.1,
+      "retrieved_chunks": "Scaling Stateful Network Services on Mul... \u00a71 Introduction | 1 Wai-xi Liu* Member IEEE Jun Cai Sen Li... \u00a7V Data-Driven Qall | Received January 8 2021 accepted Februar... \u00a7III Motivation | 1 On Packet Reordering in Time-Sensitive... \u00a7I Introduction",
+      "reranker_scores": [
+        0.9763,
+        0.9677,
+        0.8793,
+        0.8709
+      ],
+      "answer_preview": "Packet reordering degrades TCP performance primarily because TCP relies on detecting packet loss to regulate its transmission rate [1]. When packets arrive out of order, the protocol may trigger a duplicate ACK mechanism, signaling packet loss [2]. Once detected, TCP responds by reducing its congest"
+    },
+    {
+      "id": "NB-HPN-2032-q1",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why does a distributed multi-traffic scheduling approach, such as DMS, reduce the computational burden on the network compared to a centralized controller?",
+      "retrieval_time_s": 11.334,
+      "generation_time_s": 33.0312,
+      "total_time_s": 44.3652,
+      "prompt_tokens": 4496,
+      "output_tokens": 250,
+      "generation_tokens_per_second": 7.57,
+      "retrieved_chunks": "arXiv:1708.07320v1 cs. NI 24 Aug 2017 A ... \u00a7I Introduction | DATACENTER TRAFFIC CONTROL TECHNIQUES AN... \u00a7IV Datacenter Traffic Control Management | arXiv:1708.07320v1 cs. NI 24 Aug 2017 A ... \u00a7III Ssbr | DATACENTER TRAFFIC CONTROL TECHNIQUES AN... \u00a7IV Datacenter Traffic Control Management",
+      "reranker_scores": [
+        0.9941,
+        0.9543,
+        0.9477,
+        0.8989
+      ],
+      "answer_preview": "In a traditional centralized approach to managing interference control, such as the Almost Blank Sub-frame (ABSF) scheme, a single controller must manage the entire network [1]. This creates significant scalability issues because the controller must exchange large volumes of Channel State Informatio"
+    },
+    {
+      "id": "NB-HPN-0733-q1",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why is it technically challenging for human operators to manage performance monitoring in modern 100 Gbps research networks, and how does real-time telemetry address this?",
+      "retrieval_time_s": 14.2576,
+      "generation_time_s": 38.6139,
+      "total_time_s": 52.8716,
+      "prompt_tokens": 4499,
+      "output_tokens": 302,
+      "generation_tokens_per_second": 7.82,
+      "retrieved_chunks": "DOE Network 2025: Network Research Probl... \u00a73 Design | IEEE TRANSACTIONS ON NETWORK AND SERVICE... \u00a7I Introduction | Corresponding author: Oluwatosin Oladayo... \u00a71.1 Overview | Postprint This is the accepted version o... \u00a7I Introduction",
+      "reranker_scores": [
+        0.7731,
+        0.7138,
+        0.5951,
+        0.5138
+      ],
+      "answer_preview": "In modern research networks, such as the Energy Sciences Network (ESnet), operators face significant challenges in managing performance due to the transition toward high-speed infrastructure. While routers once lacked the ability to collect the necessary information for monitoring and diagnosing app"
+    },
+    {
+      "id": "NB-HPN-1278-q1",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why does a 'full window loss' event in a TCP session lead to a much more severe throughput degradation than a single packet loss that triggers fast retransmit?",
+      "retrieval_time_s": 11.2621,
+      "generation_time_s": 32.08,
+      "total_time_s": 43.3421,
+      "prompt_tokens": 4784,
+      "output_tokens": 237,
+      "generation_tokens_per_second": 7.39,
+      "retrieved_chunks": "The Nucleus 58 No. 1-4 2021 1-8 www.then... \u00a71 Introduction | International Journal of Science and Res... \u00a71 Introduction | TCP Behavior of a Busy Intemet Server: A... \u00a73 Analysis | TCP Behavior of a Busy Internet Server: ... \u00a73 Analysis",
+      "reranker_scores": [
+        0.9917,
+        0.9692,
+        0.9673,
+        0.9645
+      ],
+      "answer_preview": "A 'full window loss' event\u2014where no feedback ACKs are received for a period\u2014leads to significantly worse throughput degradation than a single packet loss because it prevents the TCP protocol from entering fast retransmission or fast recovery modes [1]. In a standard TCP session, the absence of ACKs "
+    }
+  ],
+  "summary": {
+    "question_count": 10,
+    "avg_total_time_s": 43.1262,
+    "avg_retrieval_time_s": 12.4522,
+    "avg_generation_time_s": 30.674,
+    "avg_prompt_tokens": 4625.6,
+    "avg_output_tokens": 217.2,
+    "avg_generation_tokens_per_second": 7.08,
+    "peak_cpu_ram_mb": 13914,
+    "peak_gpu_vram_mb": 0
+  }
+}

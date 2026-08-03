@@ -1,0 +1,53 @@
+You are generating HPN (high-performance networking) benchmark questions from a structured paper card and the cited passages.
+
+Output ONE JSON object only. No preamble, no markdown fences. The first character must be `{` and the last must be `}`.
+
+REQUIRED OUTPUT
+{
+  "questions": [
+    <question 1 — concept>,
+    <question 2 — reasoning>,
+    <question 3 — calculation OR diagnosis>,
+    <question 4 — scenario>
+  ]
+}
+
+Exactly 4 questions, in that order.
+
+EACH QUESTION MUST HAVE THESE FIELDS
+- question_type (string): one of "concept", "reasoning", "calculation", "diagnosis", "scenario"
+- question (string): 1-3 sentences. Self-contained — the reader does NOT have access to the paper. Define acronyms inline. Do not say "according to the paper" or "in this paper".
+- reference_answer (string): 60-180 words. Technically grounded. Include numbers, thresholds, or units when relevant. Explain the WHY, not just the WHAT.
+- evidence (array of {"passage_id": str, "quote": str}): 1-3 items. Each `passage_id` MUST be one of the passage IDs listed in the card's evidence_anchors. The `quote` should be a short verbatim excerpt (≤ 240 chars) from that passage's text, copied as-is from the input.
+- difficulty (string): "easy" | "medium" | "hard"
+- category (string): one of the 10 categories listed below
+- keywords (array of 3-7 short strings)
+- requires_calculation (bool): true iff answering needs an explicit numeric computation
+- synthetic_scenario (bool): true iff the question presents a hypothetical setup (numbers/conditions) that is plausible but not literally taken from the paper
+
+QUESTION-TYPE RULES
+- Q1 concept: define a specific HPN term, mechanism, or architectural choice from the card. Not a generic networking textbook fact.
+- Q2 reasoning: a "why" or "how" question that requires multi-step inference; answer must explain a causal chain.
+- Q3 calculation OR diagnosis:
+   - calculation if the card has `important_numbers` you can build a question around (BDP, throughput, stream count, etc.). Set requires_calculation=true.
+   - diagnosis otherwise: present symptoms (CPU%, RTT, loss, throughput, storage rates) and ask which subsystem is the bottleneck.
+- Q4 scenario: realistic HPN setup (link rate, RTT, file count/size, competing traffic, storage). Ask for a concrete tuning or design recommendation. Set synthetic_scenario=true if you invented the numbers.
+
+CATEGORIES (pick the closest one for each question)
+- Transfer Parameters: Definitions and Roles
+- Concurrency Tuning and Scaling
+- Pipelining and Small-File Optimization
+- Parallelism and Large-File Optimization
+- Dataset Partitioning and Mixed Workloads
+- BDP-Based Reasoning and Window Sizing
+- Bottleneck Diagnosis and End-to-End Reasoning
+- Adaptive and Online Optimization
+- Fairness, Stability, and Shared Networks
+- Practical HPN Scenarios and Design
+
+HARD CONSTRAINTS
+1. Every `passage_id` in `evidence` MUST appear verbatim in the input card's evidence_anchors. Never invent passage IDs.
+2. `quote` must be a verbatim substring of the passage text supplied for that passage_id. If you cannot find a clean substring, pick a different passage from the card.
+3. Do NOT reference the paper, authors, figures, or tables in the question text. Questions must read as standalone HPN questions.
+4. Do NOT generate paper-recall questions ("what does Falcon report in Figure 7?"). Test transferable HPN skill.
+5. Output JSON only.

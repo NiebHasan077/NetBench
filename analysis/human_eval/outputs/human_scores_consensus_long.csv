@@ -1,0 +1,126 @@
+response_id,rater,question_no,question_id,base_model,p_id,setting,variant_run,category,difficulty,correctness,completeness,clarity,conciseness,overall
+Q01-a,consensus,Q01,NB-HPN-0026-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Adaptive and Online Optimization,easy,5.0,4.0,5.0,3.0,4.5
+Q01-b,consensus,Q01,NB-HPN-0026-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Adaptive and Online Optimization,easy,4.0,4.0,4.5,4.0,4.1
+Q01-c,consensus,Q01,NB-HPN-0026-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Adaptive and Online Optimization,easy,3.5,3.0,3.0,4.0,3.3
+Q01-d,consensus,Q01,NB-HPN-0026-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Adaptive and Online Optimization,easy,5.0,5.0,5.0,4.0,4.9
+Q01-e,consensus,Q01,NB-HPN-0026-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Adaptive and Online Optimization,easy,2.5,2.0,2.5,2.0,2.3
+Q02-a,consensus,Q02,NB-HPN-0159-q0,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Adaptive and Online Optimization,hard,4.0,5.0,4.0,2.0,4.1
+Q02-b,consensus,Q02,NB-HPN-0159-q0,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Adaptive and Online Optimization,hard,2.5,2.0,4.0,3.0,2.7
+Q02-c,consensus,Q02,NB-HPN-0159-q0,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Adaptive and Online Optimization,hard,1.0,1.0,3.0,2.0,1.5
+Q02-d,consensus,Q02,NB-HPN-0159-q0,gpt-4o,BASE-API,closed_book,gpt-4o,Adaptive and Online Optimization,hard,4.5,4.0,4.5,2.5,4.15
+Q02-e,consensus,Q02,NB-HPN-0159-q0,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Adaptive and Online Optimization,hard,2.5,2.5,3.5,4.0,2.85
+Q03-a,consensus,Q03,NB-HPN-2135-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Adaptive and Online Optimization,medium,5.0,4.5,5.0,3.5,4.7
+Q03-b,consensus,Q03,NB-HPN-2135-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Adaptive and Online Optimization,medium,1.5,1.5,3.5,3.0,2.05
+Q03-c,consensus,Q03,NB-HPN-2135-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Adaptive and Online Optimization,medium,5.0,4.5,5.0,4.5,4.8
+Q03-d,consensus,Q03,NB-HPN-2135-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Adaptive and Online Optimization,medium,1.0,1.0,2.5,1.0,1.3
+Q03-e,consensus,Q03,NB-HPN-2135-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Adaptive and Online Optimization,medium,4.0,4.0,4.5,2.5,3.95
+Q04-a,consensus,Q04,NB-HPN-1401-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,BDP-Based Reasoning and Window Sizing,hard,1.5,2.0,3.0,3.0,2.1
+Q04-b,consensus,Q04,NB-HPN-1401-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,BDP-Based Reasoning and Window Sizing,hard,4.5,5.0,4.0,3.0,4.4
+Q04-c,consensus,Q04,NB-HPN-1401-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,BDP-Based Reasoning and Window Sizing,hard,5.0,5.0,4.5,3.0,4.7
+Q04-d,consensus,Q04,NB-HPN-1401-q1,gpt-4o,BASE-API,closed_book,gpt-4o,BDP-Based Reasoning and Window Sizing,hard,4.5,3.5,5.0,3.0,4.15
+Q04-e,consensus,Q04,NB-HPN-1401-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,BDP-Based Reasoning and Window Sizing,hard,1.5,2.0,4.0,2.0,2.2
+Q05-a,consensus,Q05,NB-HPN-0176-q1,gpt-4o,BASE-API,closed_book,gpt-4o,BDP-Based Reasoning and Window Sizing,medium,4.5,4.0,5.0,3.5,4.35
+Q05-b,consensus,Q05,NB-HPN-0176-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,BDP-Based Reasoning and Window Sizing,medium,4.5,5.0,5.0,3.0,4.6
+Q05-c,consensus,Q05,NB-HPN-0176-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,BDP-Based Reasoning and Window Sizing,medium,4.0,3.5,4.0,3.5,3.8
+Q05-d,consensus,Q05,NB-HPN-0176-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,BDP-Based Reasoning and Window Sizing,medium,1.0,1.0,3.0,1.0,1.4
+Q05-e,consensus,Q05,NB-HPN-0176-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,BDP-Based Reasoning and Window Sizing,medium,2.5,2.5,4.0,4.0,2.95
+Q06-a,consensus,Q06,NB-HPN-2032-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Bottleneck Diagnosis and End-to-End Reasoning,easy,5.0,5.0,4.5,3.5,4.75
+Q06-b,consensus,Q06,NB-HPN-2032-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Bottleneck Diagnosis and End-to-End Reasoning,easy,4.0,4.0,5.0,4.0,4.2
+Q06-c,consensus,Q06,NB-HPN-2032-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Bottleneck Diagnosis and End-to-End Reasoning,easy,2.5,3.0,4.0,2.5,2.95
+Q06-d,consensus,Q06,NB-HPN-2032-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Bottleneck Diagnosis and End-to-End Reasoning,easy,5.0,5.0,3.5,3.5,4.55
+Q06-e,consensus,Q06,NB-HPN-2032-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Bottleneck Diagnosis and End-to-End Reasoning,easy,4.0,4.0,5.0,4.0,4.2
+Q07-a,consensus,Q07,NB-HPN-1278-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Bottleneck Diagnosis and End-to-End Reasoning,hard,1.5,1.5,4.5,4.0,2.35
+Q07-b,consensus,Q07,NB-HPN-1278-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Bottleneck Diagnosis and End-to-End Reasoning,hard,4.5,5.0,5.0,3.0,4.6
+Q07-c,consensus,Q07,NB-HPN-1278-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Bottleneck Diagnosis and End-to-End Reasoning,hard,1.5,1.5,4.0,2.0,2.05
+Q07-d,consensus,Q07,NB-HPN-1278-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Bottleneck Diagnosis and End-to-End Reasoning,hard,3.0,3.0,4.0,4.0,3.3
+Q07-e,consensus,Q07,NB-HPN-1278-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Bottleneck Diagnosis and End-to-End Reasoning,hard,5.0,5.0,5.0,4.0,4.9
+Q08-a,consensus,Q08,NB-HPN-1803-q3,gpt-4o,BASE-API,closed_book,gpt-4o,Bottleneck Diagnosis and End-to-End Reasoning,medium,5.0,4.5,5.0,4.0,4.75
+Q08-b,consensus,Q08,NB-HPN-1803-q3,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Bottleneck Diagnosis and End-to-End Reasoning,medium,2.5,3.0,4.0,2.0,2.9
+Q08-c,consensus,Q08,NB-HPN-1803-q3,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Bottleneck Diagnosis and End-to-End Reasoning,medium,2.0,2.5,4.0,2.5,2.6
+Q08-d,consensus,Q08,NB-HPN-1803-q3,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Bottleneck Diagnosis and End-to-End Reasoning,medium,5.0,4.5,4.0,3.5,4.5
+Q08-e,consensus,Q08,NB-HPN-1803-q3,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Bottleneck Diagnosis and End-to-End Reasoning,medium,5.0,4.5,3.5,3.0,4.35
+Q09-a,consensus,Q09,NB-HPN-0555-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Bottleneck Diagnosis and End-to-End Reasoning,medium,5.0,5.0,5.0,3.5,4.85
+Q09-b,consensus,Q09,NB-HPN-0555-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Bottleneck Diagnosis and End-to-End Reasoning,medium,4.0,3.0,5.0,3.5,3.85
+Q09-c,consensus,Q09,NB-HPN-0555-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Bottleneck Diagnosis and End-to-End Reasoning,medium,2.0,2.0,4.0,2.0,2.4
+Q09-d,consensus,Q09,NB-HPN-0555-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Bottleneck Diagnosis and End-to-End Reasoning,medium,4.5,4.5,5.0,4.5,4.6
+Q09-e,consensus,Q09,NB-HPN-0555-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Bottleneck Diagnosis and End-to-End Reasoning,medium,4.0,3.5,5.0,4.0,4.05
+Q10-a,consensus,Q10,NB-HPN-1163-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Concurrency Tuning and Scaling,easy,5.0,4.5,5.0,3.5,4.7
+Q10-b,consensus,Q10,NB-HPN-1163-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Concurrency Tuning and Scaling,easy,3.5,3.5,4.0,2.5,3.5
+Q10-c,consensus,Q10,NB-HPN-1163-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Concurrency Tuning and Scaling,easy,3.5,2.5,4.0,3.0,3.25
+Q10-d,consensus,Q10,NB-HPN-1163-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Concurrency Tuning and Scaling,easy,2.5,2.5,3.0,1.5,2.5
+Q10-e,consensus,Q10,NB-HPN-1163-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Concurrency Tuning and Scaling,easy,5.0,5.0,4.0,3.0,4.6
+Q11-a,consensus,Q11,NB-HPN-2155-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Concurrency Tuning and Scaling,medium,5.0,5.0,5.0,3.0,4.8
+Q11-b,consensus,Q11,NB-HPN-2155-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Concurrency Tuning and Scaling,medium,4.5,3.5,5.0,4.0,4.25
+Q11-c,consensus,Q11,NB-HPN-2155-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Concurrency Tuning and Scaling,medium,2.5,3.0,4.0,2.5,2.95
+Q11-d,consensus,Q11,NB-HPN-2155-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Concurrency Tuning and Scaling,medium,5.0,5.0,4.5,5.0,4.9
+Q11-e,consensus,Q11,NB-HPN-2155-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Concurrency Tuning and Scaling,medium,2.5,3.5,4.0,2.5,3.1
+Q12-a,consensus,Q12,NB-HPN-2121-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,"Fairness, Stability, and Shared Networks",medium,5.0,4.0,5.0,4.0,4.6
+Q12-b,consensus,Q12,NB-HPN-2121-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,"Fairness, Stability, and Shared Networks",medium,5.0,5.0,5.0,3.5,4.85
+Q12-c,consensus,Q12,NB-HPN-2121-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,"Fairness, Stability, and Shared Networks",medium,4.5,4.0,4.5,4.5,4.35
+Q12-d,consensus,Q12,NB-HPN-2121-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,"Fairness, Stability, and Shared Networks",medium,2.5,3.5,4.5,2.5,3.2
+Q12-e,consensus,Q12,NB-HPN-2121-q1,gpt-4o,BASE-API,closed_book,gpt-4o,"Fairness, Stability, and Shared Networks",medium,4.0,3.5,4.5,3.0,3.85
+Q13-a,consensus,Q13,NB-HPN-2136-q0,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Parallelism and Large-File Optimization,easy,2.5,3.5,4.0,2.0,3.05
+Q13-b,consensus,Q13,NB-HPN-2136-q0,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Parallelism and Large-File Optimization,easy,3.5,4.0,4.0,3.0,3.7
+Q13-c,consensus,Q13,NB-HPN-2136-q0,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Parallelism and Large-File Optimization,easy,4.5,5.0,4.0,3.0,4.4
+Q13-d,consensus,Q13,NB-HPN-2136-q0,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Parallelism and Large-File Optimization,easy,4.0,5.0,4.0,3.0,4.2
+Q13-e,consensus,Q13,NB-HPN-2136-q0,gpt-4o,BASE-API,closed_book,gpt-4o,Parallelism and Large-File Optimization,easy,5.0,5.0,5.0,4.0,4.9
+Q14-a,consensus,Q14,NB-HPN-0536-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Pipelining and Small-File Optimization,hard,5.0,5.0,5.0,4.0,4.9
+Q14-b,consensus,Q14,NB-HPN-0536-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Pipelining and Small-File Optimization,hard,2.0,2.0,3.0,2.0,2.2
+Q14-c,consensus,Q14,NB-HPN-0536-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Pipelining and Small-File Optimization,hard,3.0,4.5,3.5,4.0,3.65
+Q14-d,consensus,Q14,NB-HPN-0536-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Pipelining and Small-File Optimization,hard,2.5,2.5,4.0,4.0,2.95
+Q14-e,consensus,Q14,NB-HPN-0536-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Pipelining and Small-File Optimization,hard,3.5,2.5,4.0,3.5,3.3
+Q15-a,consensus,Q15,NB-HPN-1616-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Pipelining and Small-File Optimization,medium,5.0,5.0,4.5,3.0,4.7
+Q15-b,consensus,Q15,NB-HPN-1616-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Pipelining and Small-File Optimization,medium,5.0,4.5,5.0,3.5,4.7
+Q15-c,consensus,Q15,NB-HPN-1616-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Pipelining and Small-File Optimization,medium,4.0,4.5,4.0,3.0,4.05
+Q15-d,consensus,Q15,NB-HPN-1616-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Pipelining and Small-File Optimization,medium,2.5,2.5,4.0,3.5,2.9
+Q15-e,consensus,Q15,NB-HPN-1616-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Pipelining and Small-File Optimization,medium,3.0,3.0,4.0,2.0,3.1
+Q16-a,consensus,Q16,NB-HPN-2050-q3,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Practical HPN Scenarios and Design,easy,3.5,5.0,5.0,3.5,4.25
+Q16-b,consensus,Q16,NB-HPN-2050-q3,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Practical HPN Scenarios and Design,easy,4.0,5.0,5.0,4.5,4.55
+Q16-c,consensus,Q16,NB-HPN-2050-q3,gpt-4o,BASE-API,closed_book,gpt-4o,Practical HPN Scenarios and Design,easy,2.5,2.5,4.0,3.5,2.9
+Q16-d,consensus,Q16,NB-HPN-2050-q3,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Practical HPN Scenarios and Design,easy,2.0,2.0,3.0,3.0,2.3
+Q16-e,consensus,Q16,NB-HPN-2050-q3,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Practical HPN Scenarios and Design,easy,1.5,1.5,4.0,3.5,2.2
+Q17-a,consensus,Q17,NB-HPN-2024-q3,gpt-4o,BASE-API,closed_book,gpt-4o,Practical HPN Scenarios and Design,hard,4.0,4.0,5.0,3.0,4.1
+Q17-b,consensus,Q17,NB-HPN-2024-q3,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Practical HPN Scenarios and Design,hard,4.0,3.5,5.0,4.5,4.1
+Q17-c,consensus,Q17,NB-HPN-2024-q3,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Practical HPN Scenarios and Design,hard,1.5,2.5,4.0,2.0,2.35
+Q17-d,consensus,Q17,NB-HPN-2024-q3,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Practical HPN Scenarios and Design,hard,1.0,2.5,3.5,1.5,2.0
+Q17-e,consensus,Q17,NB-HPN-2024-q3,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Practical HPN Scenarios and Design,hard,4.0,4.0,4.0,3.5,3.95
+Q18-a,consensus,Q18,NB-HPN-1047-q3,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Practical HPN Scenarios and Design,medium,1.5,1.0,3.5,2.0,1.8
+Q18-b,consensus,Q18,NB-HPN-1047-q3,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Practical HPN Scenarios and Design,medium,3.5,4.0,4.5,2.5,3.75
+Q18-c,consensus,Q18,NB-HPN-1047-q3,gpt-4o,BASE-API,closed_book,gpt-4o,Practical HPN Scenarios and Design,medium,4.0,4.0,5.0,3.0,4.1
+Q18-d,consensus,Q18,NB-HPN-1047-q3,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Practical HPN Scenarios and Design,medium,2.0,1.5,3.5,3.5,2.3
+Q18-e,consensus,Q18,NB-HPN-1047-q3,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Practical HPN Scenarios and Design,medium,3.0,3.5,4.5,3.5,3.5
+Q19-a,consensus,Q19,NB-HPN-1629-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Transfer Parameters: Definitions and Roles,easy,5.0,5.0,5.0,4.0,4.9
+Q19-b,consensus,Q19,NB-HPN-1629-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Transfer Parameters: Definitions and Roles,easy,4.0,5.0,5.0,4.0,4.5
+Q19-c,consensus,Q19,NB-HPN-1629-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Transfer Parameters: Definitions and Roles,easy,4.0,5.0,4.5,4.0,4.4
+Q19-d,consensus,Q19,NB-HPN-1629-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Transfer Parameters: Definitions and Roles,easy,2.5,2.5,3.5,4.0,2.85
+Q19-e,consensus,Q19,NB-HPN-1629-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Transfer Parameters: Definitions and Roles,easy,1.5,2.0,3.0,2.0,2.0
+Q20-a,consensus,Q20,NB-HPN-0667-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Adaptive and Online Optimization,hard,1.5,2.0,4.0,3.0,2.3
+Q20-b,consensus,Q20,NB-HPN-0667-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Adaptive and Online Optimization,hard,2.5,2.5,4.0,3.0,2.85
+Q20-c,consensus,Q20,NB-HPN-0667-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Adaptive and Online Optimization,hard,4.0,2.5,4.5,3.5,3.6
+Q20-d,consensus,Q20,NB-HPN-0667-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Adaptive and Online Optimization,hard,1.5,2.0,4.0,2.5,2.25
+Q20-e,consensus,Q20,NB-HPN-0667-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Adaptive and Online Optimization,hard,2.5,2.5,4.0,3.5,2.9
+Q21-a,consensus,Q21,NB-HPN-0428-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,BDP-Based Reasoning and Window Sizing,easy,2.5,3.0,3.0,2.0,2.7
+Q21-b,consensus,Q21,NB-HPN-0428-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,BDP-Based Reasoning and Window Sizing,easy,4.0,4.5,5.0,4.0,4.35
+Q21-c,consensus,Q21,NB-HPN-0428-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,BDP-Based Reasoning and Window Sizing,easy,4.0,4.0,4.0,4.5,4.05
+Q21-d,consensus,Q21,NB-HPN-0428-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,BDP-Based Reasoning and Window Sizing,easy,4.0,3.5,4.0,3.5,3.8
+Q21-e,consensus,Q21,NB-HPN-0428-q1,gpt-4o,BASE-API,closed_book,gpt-4o,BDP-Based Reasoning and Window Sizing,easy,4.0,3.5,4.5,3.0,3.85
+Q22-a,consensus,Q22,NB-HPN-0027-q2,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,BDP-Based Reasoning and Window Sizing,easy,1.0,1.0,4.0,2.0,1.7
+Q22-b,consensus,Q22,NB-HPN-0027-q2,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,BDP-Based Reasoning and Window Sizing,easy,4.0,5.0,4.0,2.0,4.1
+Q22-c,consensus,Q22,NB-HPN-0027-q2,gpt-4o,BASE-API,closed_book,gpt-4o,BDP-Based Reasoning and Window Sizing,easy,5.0,5.0,5.0,3.5,4.85
+Q22-d,consensus,Q22,NB-HPN-0027-q2,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,BDP-Based Reasoning and Window Sizing,easy,5.0,5.0,4.5,4.0,4.8
+Q22-e,consensus,Q22,NB-HPN-0027-q2,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,BDP-Based Reasoning and Window Sizing,easy,4.0,5.0,5.0,3.0,4.4
+Q23-a,consensus,Q23,NB-HPN-0978-q0,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,BDP-Based Reasoning and Window Sizing,medium,2.5,3.0,4.0,3.5,3.05
+Q23-b,consensus,Q23,NB-HPN-0978-q0,gpt-4o,BASE-API,closed_book,gpt-4o,BDP-Based Reasoning and Window Sizing,medium,4.5,5.0,5.0,4.0,4.7
+Q23-c,consensus,Q23,NB-HPN-0978-q0,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,BDP-Based Reasoning and Window Sizing,medium,1.5,2.5,3.0,2.0,2.15
+Q23-d,consensus,Q23,NB-HPN-0978-q0,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,BDP-Based Reasoning and Window Sizing,medium,2.0,2.0,3.0,2.5,2.25
+Q23-e,consensus,Q23,NB-HPN-0978-q0,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,BDP-Based Reasoning and Window Sizing,medium,3.5,4.5,4.0,2.5,3.8
+Q24-a,consensus,Q24,NB-HPN-1676-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Dataset Partitioning and Mixed Workloads,hard,5.0,5.0,5.0,4.0,4.9
+Q24-b,consensus,Q24,NB-HPN-1676-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Dataset Partitioning and Mixed Workloads,hard,2.5,1.5,4.0,2.5,2.5
+Q24-c,consensus,Q24,NB-HPN-1676-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Dataset Partitioning and Mixed Workloads,hard,1.5,1.5,3.0,2.0,1.85
+Q24-d,consensus,Q24,NB-HPN-1676-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Dataset Partitioning and Mixed Workloads,hard,3.5,4.0,3.5,4.0,3.7
+Q24-e,consensus,Q24,NB-HPN-1676-q1,gpt-4o,BASE-API,closed_book,gpt-4o,Dataset Partitioning and Mixed Workloads,hard,2.5,2.0,4.0,3.5,2.75
+Q25-a,consensus,Q25,NB-HPN-2032-q3,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,Dataset Partitioning and Mixed Workloads,medium,5.0,5.0,5.0,3.0,4.8
+Q25-b,consensus,Q25,NB-HPN-2032-q3,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,Dataset Partitioning and Mixed Workloads,medium,2.5,2.0,3.0,3.0,2.5
+Q25-c,consensus,Q25,NB-HPN-2032-q3,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,Dataset Partitioning and Mixed Workloads,medium,1.5,2.0,3.0,2.0,2.0
+Q25-d,consensus,Q25,NB-HPN-2032-q3,gpt-4o,BASE-API,closed_book,gpt-4o,Dataset Partitioning and Mixed Workloads,medium,5.0,4.5,5.0,3.0,4.65
+Q25-e,consensus,Q25,NB-HPN-2032-q3,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,Dataset Partitioning and Mixed Workloads,medium,5.0,5.0,4.0,2.5,4.55

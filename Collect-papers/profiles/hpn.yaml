@@ -1,0 +1,135 @@
+# ─────────────────────────────────────────────────────────────────────────
+# Profile: High Performance Networking (HPN)
+# ─────────────────────────────────────────────────────────────────────────
+# Matches all behaviour of the original hardcoded collect_papers.py.
+
+name: "High Performance Networking"
+mailto: "your_email@example.com"
+
+year_min: 2022
+year_max: 2026
+max_per_query: 1000
+
+# Path to the paperbase index for this domain.
+# The paperbase/ directory is now part of this project (merged from Check-Exists).
+# Relative paths are resolved from the directory containing this file.
+paperbase_dir: "../paperbase"
+
+# Downloaded PDFs and metadata land here.
+# Default would be: ../downloads/high_performance_networking/
+# Override to keep the same layout as the original script:
+downloads_dir: "../downloads/hpn"
+
+domain_description: >
+  Papers about high-performance networking and datacenter network infrastructure.
+  This includes: RDMA, InfiniBand, RoCE, lossless datacenter fabrics, and
+  congestion control (DCQCN, PFC, ECN, TCP BBR, TCP incast, QUIC); programmable
+  networking (P4, eBPF/XDP, SmartNICs, DPDK, kernel bypass, FPGA NICs);
+  network telemetry and measurement (INT, in-band telemetry, network benchmarking);
+  datacenter topology and interconnects (fat-tree, Clos, optical interconnects,
+  reconfigurable networks, 100/400 Gbps links, CXL interconnects, NVMe-oF);
+  data transfer and transport (bulk data transfer, parallel transfer, GridFTP,
+  NVMe over Fabrics, zero-copy I/O, DMA); and load balancing and routing in
+  datacenters (ECMP, MPTCP, flow scheduling). Papers should address networking
+  protocols, hardware, or systems — not general ML, IoT, edge/fog computing,
+  wireless networking, or non-networking uses of these terms.
+
+# OpenAlex subfield IDs that restrict keyword searches to relevant CS subfields.
+# Prevents cross-domain noise (TCP proteins, P4-ATPase, electric vehicles, etc.)
+#   1705 = Computer Networks and Communications
+#   1708 = Hardware and Architecture
+# subfield_filter: "primary_topic.subfield.id:subfields/1705|subfields/1708"
+
+# ── Journals ─────────────────────────────────────────────────────────────
+# Only journals with stable OpenAlex source IDs are listed here.
+# Conferences (SIGCOMM, NSDI, CoNEXT, INFOCOM) do NOT have stable source IDs
+# and are covered by keyword search instead.
+journals:
+  - search: "IEEE/ACM Transactions on Networking"
+    match: "Transactions on Networking"
+  - search: "SIGCOMM Computer Communication Review"
+    match: "Communication Review"
+
+# ── Keyword buckets ───────────────────────────────────────────────────────
+# Each entry is one OpenAlex full-text search query.
+# Queries use two or more co-occurring HPN-specific terms to minimise
+# cross-domain false positives.
+keywords:
+  # ── RDMA / fabric ──────────────────────────────────────────────────────
+  - 'InfiniBand OR RoCE OR "RDMA" datacenter'
+  - '"DCQCN" OR "RDMA congestion" OR "lossless datacenter"'
+  - '"ECN" datacenter OR "PFC" datacenter'
+
+  # ── NIC / offload ──────────────────────────────────────────────────────
+  - 'SmartNIC offload OR "BlueField" OR "FPGA" NIC network'
+  - 'DPDK "data plane" OR "kernel bypass" network'
+  - 'eBPF XDP network OR "AF_XDP"'
+
+  # ── Programmable networking ────────────────────────────────────────────
+  - '"P4" "programmable switch" OR "P4" "data plane"'
+  - '"in-band network telemetry"'
+
+  # ── Datacenter architecture ────────────────────────────────────────────
+  - '"NVMe-oF" OR "NVMe over Fabrics"'
+  - '"datacenter network" topology OR "fat-tree" OR "Clos network"'
+  - '"load balancing" datacenter flow'
+  - '"ECMP" network OR "MPTCP" datacenter'
+  - '"optical interconnect" datacenter OR "reconfigurable optical" network'
+
+  # ── Transfer & protocol tuning ─────────────────────────────────────────
+  - '"GridFTP" OR "Globus transfer"'
+  - '"QUIC" performance latency OR "HTTP/3" network throughput'
+  - '"bulk data transfer" network OR "parallel data transfer" throughput'
+  - '"TCP BBR" OR "TCP incast"'
+  - '"high performance networking" OR "high-performance network"'
+
+  # ── High-speed links ───────────────────────────────────────────────────
+  - '"100 Gbps" network OR "400 Gbps" network'
+  - '"zero-copy" network OR "DMA" network storage'
+  - '"network measurement" datacenter OR "network benchmark" throughput'
+
+# ── LLM VALIDATION ────────────────────────────────────────────────────────
+# Set enabled: true and configure model to filter abstracts before download.
+# Leave enabled: false to use keyword + journal search without LLM validation.
+llm_validation:
+  enabled: true
+  backend: ollama
+  model: "qwen3.5:9b"
+  base_url: "http://localhost:11434"
+  api_key: ""                         # optional fallback; prefer S2_API_KEYtemperature: 0
+  timeout: 120
+  fallback_on_no_abstract: "download"
+  skip_journal_papers: true
+
+# ── SEMANTIC SCHOLAR ───────────────────────────────────────────────────────
+# Additional paper source via Semantic Scholar API.
+# Run with --sources s2 or --sources all to activate.
+# Register for a free API key at https://www.semanticscholar.org/product/api
+semantic_scholar:
+  enabled: true
+  api_key: ""                         # optional fallback; prefer S2_API_KEY
+  api_key_env: "S2_API_KEY"
+  fields_of_study: ["Computer Science"]
+  max_per_query: 500
+  keywords:
+    # ── RDMA / fabric ──────────────────────────────────────────────────────
+    - 'RDMA | RoCE | InfiniBand datacenter'
+    - 'DCQCN | lossless datacenter | PFC deadlock'
+    # ── NIC / offload ──────────────────────────────────────────────────────
+    - 'SmartNIC offload | BlueField DPU'
+    - 'DPDK kernel bypass | AF_XDP | eBPF XDP networking'
+    # ── Programmable networking ────────────────────────────────────────────
+    - 'P4 programmable switch | data plane programming'
+    - 'in-band network telemetry'
+    # ── Datacenter architecture ────────────────────────────────────────────
+    - 'NVMe-oF | NVMe over Fabrics'
+    - 'datacenter network topology | fat-tree | Clos'
+    - 'optical interconnect datacenter | reconfigurable network'
+    # ── Transfer & protocol ────────────────────────────────────────────────
+    - 'QUIC performance | HTTP/3 throughput'
+    - 'TCP BBR | TCP incast congestion'
+    - 'bulk data transfer | GridFTP | Globus'
+    # ── High-speed / CXL ──────────────────────────────────────────────────
+    - 'CXL interconnect | compute express link memory'
+    - '400G Ethernet | 800G datacenter network'
+    - 'zero-copy networking | DMA offload'

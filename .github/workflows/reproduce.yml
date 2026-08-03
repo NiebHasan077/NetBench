@@ -1,0 +1,44 @@
+name: reproduce
+
+# Re-derives every reported number from the committed judged workbooks and
+# fails if anything comes back different. This is the repository's central
+# claim, checked on every push rather than asserted in prose.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version-file: .python-version
+          cache: pip
+          cache-dependency-path: requirements.lock
+
+      - name: Install the pinned analysis environment
+        run: pip install -r requirements.lock
+
+      - name: Reproduce all results, tables, and figures
+        env:
+          MPLBACKEND: Agg
+        run: make reproduce PYTHON=python
+
+      - name: Upload the regenerated assets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: regenerated-assets
+          # The whole outputs directory, not just the assets: when verify fails
+          # on this runner and passes locally, the regenerated CSVs are the only
+          # way to see what actually moved.
+          path: analysis/outputs
+          if-no-files-found: error

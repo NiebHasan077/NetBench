@@ -1,0 +1,25 @@
+\begin{table*}[tp]\centering\footnotesize
+\caption{Supplementary paired contrasts, reported \emph{outside} the pre-specified primary family to back the LoRA-vs-full-SFT comparisons with uncertainty: P1~vs~P2 isolates LoRA SFT alone, P2~vs~P3 compares LoRA SFT against full SFT. Same test, CI, effect size, and practical rule as Table~\ref{tab:sig}; BH correction within this supplementary family.}
+\label{tab:sigsupp}
+\begin{tabular}{lllrrrc}
+\toprule
+Model & Contrast & Description & $\Delta$ [95\% CI] & $p_{BH}$ & $d_z$ & PS \\ \midrule
+gemma-3-12b & P1 vs P2 & Instruct vs LoRA SFT & -0.12 [-0.24,-0.00] & 0.133 & -0.13 &  \\
+gemma-3-12b & P2 vs P3 & LoRA SFT vs full SFT & +0.03 [-0.07,+0.14] & 0.512 & +0.04 &  \\
+gemma-3-1b & P1 vs P2 & Instruct vs LoRA SFT & +0.22 [+0.13,+0.31] & <.001 & +0.31 &  \\
+gemma-3-1b & P2 vs P3 & LoRA SFT vs full SFT & +0.01 [-0.08,+0.09] & 0.700 & +0.01 &  \\
+gemma-3-27b & P1 vs P2 & Instruct vs LoRA SFT & -0.16 [-0.27,-0.05] & 0.018 & -0.19 &  \\
+gemma-3-27b & P2 vs P3 & LoRA SFT vs full SFT & -0.14 [-0.24,-0.03] & 0.018 & -0.17 &  \\
+llama-3.1-8b & P1 vs P2 & Instruct vs LoRA SFT & +0.24 [+0.13,+0.35] & <.001 & +0.29 &  \\
+llama-3.1-8b & P2 vs P3 & LoRA SFT vs full SFT & -0.12 [-0.22,-0.03] & 0.080 & -0.16 &  \\
+llama-3.2-1b & P1 vs P2 & Instruct vs LoRA SFT & +0.33 [+0.23,+0.42] & <.001 & +0.45 & \checkmark \\
+llama-3.2-1b & P2 vs P3 & LoRA SFT vs full SFT & -0.06 [-0.14,+0.03] & 0.178 & -0.09 &  \\
+qwen3.5-27b & P1 vs P2 & Instruct vs LoRA SFT & -0.11 [-0.21,-0.01] & 0.106 & -0.14 &  \\
+qwen3.5-27b & P2 vs P3 & LoRA SFT vs full SFT & -0.04 [-0.12,+0.04] & 0.350 & -0.06 &  \\
+qwen3.5-2b & P1 vs P2 & Instruct vs LoRA SFT & +0.61 [+0.50,+0.71] & <.001 & +0.72 & \checkmark \\
+qwen3.5-2b & P2 vs P3 & LoRA SFT vs full SFT & +0.07 [-0.03,+0.18] & 0.345 & +0.09 &  \\
+qwen3.5-9b & P1 vs P2 & Instruct vs LoRA SFT & +0.01 [-0.10,+0.12] & 0.650 & +0.01 &  \\
+qwen3.5-9b & P2 vs P3 & LoRA SFT vs full SFT & -0.01 [-0.11,+0.09] & 0.688 & -0.01 &  \\
+\bottomrule
+\end{tabular}
+\end{table*}

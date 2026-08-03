@@ -1,0 +1,17 @@
+\begin{table*}[t]\centering\footnotesize
+\caption{Evaluated open-weight models and adaptation-variant coverage. \checkmark{}: variant run; --: P4/P7 (full-parameter CPT from base) disabled by design for the 27B tier (\S\ref{sec:setup}). The three frontier API baselines (GPT-4o, Gemini-2.5-Pro, Claude-Sonnet-4.6) are evaluated closed-book under the identical protocol.}
+\label{tab:models}
+\begin{tabular}{llllcccccccc}
+\toprule
+Tier & Model & Family & Params & P1 & P2 & P3 & P4 & P5 & P6 & P7 & P8 \\ \midrule
+small & gemma-3-1b & Gemma & 1B & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+ & llama-3.2-1b & Llama & 1.2B & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+ & qwen3.5-2b & Qwen & 2B & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+medium & llama-3.1-8b & Llama & 8B & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+ & qwen3.5-9b & Qwen & 9B & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+ & gemma-3-12b & Gemma & 12B & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+large & gemma-3-27b & Gemma & 27B & \checkmark & \checkmark & \checkmark & -- & \checkmark & \checkmark & -- & \checkmark \\
+ & qwen3.5-27b & Qwen & 27B & \checkmark & \checkmark & \checkmark & -- & \checkmark & \checkmark & -- & \checkmark \\
+\bottomrule
+\end{tabular}
+\end{table*}

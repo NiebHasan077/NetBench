@@ -1,0 +1,18 @@
+\begin{table}[t]\centering\footnotesize
+\begin{tabular}{@{}llr@{}}
+\toprule
+System & & Overall \\
+\midrule
+\textbf{qwen3.5-27b (P6)} & open & 4.53 \\
+\textbf{gemma-3-27b (P6)} & open & 4.42 \\
+claude-sonnet-4-6 & API & 4.40 \\
+gemini-2.5-pro & API & 4.36 \\
+\textbf{qwen3.5-9b (P6)} & open & 4.36 \\
+\textbf{gemma-3-12b (P6)} & open & 4.30 \\
+gpt-4o & API & 4.22 \\
+\textbf{llama-3.1-8b (P8)} & open & 4.11 \\
+\bottomrule
+\end{tabular}
+\caption{Frontier baselines vs.\ each open-weight model's best variant (bold), ranked. Open-weight rows are open-book (retrieval), API rows closed-book---information access, not model quality (\S\ref{sec:discussion}). Full grid: Table~\ref{tab:main}.}
+\label{tab:frontier}
+\end{table}

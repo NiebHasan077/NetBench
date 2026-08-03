@@ -1,0 +1,6 @@
+openpyxl>=3.1
+pandas>=2.0
+scipy>=1.13
+tabulate>=0.9
+matplotlib>=3.8
+tiktoken>=0.7        # corpus token count (count_corpus_tokens.py)

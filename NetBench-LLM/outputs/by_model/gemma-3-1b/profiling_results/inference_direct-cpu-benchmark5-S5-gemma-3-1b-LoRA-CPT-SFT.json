@@ -1,0 +1,156 @@
+{
+  "model_path": "/work2/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-cpt-then-sft-merged",
+  "model_name": "gemma-3-1b-instruct-lora-cpt-then-sft-merged",
+  "device": "cpu",
+  "profile_type": "direct",
+  "prompt_source": "/work2/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+  "timestamp": "2026-05-14T19:26:03.079321",
+  "system": {
+    "timestamp": "2026-05-14T19:21:26.531774",
+    "hostname": "site-b-node-1",
+    "python": "3.12.11",
+    "torch": "2.11.0+cu128",
+    "device": "cpu",
+    "cpu": {
+      "model": "Intel(R) Xeon(R) Platinum 8468",
+      "physical_cores": 96,
+      "logical_cores": 96,
+      "total_ram_gb": 1006.9
+    }
+  },
+  "model_load": {
+    "load_time_s": 3.24,
+    "gpu_vram_after_load_mb": 0
+  },
+  "benchmark_prompts": [
+    {
+      "name": "NB-HPN-0026-q1",
+      "instruction_preview": "Why might a smart DTN implement network packet pacing specifically when transferring data from a high-bandwidth source t",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 56.0287,
+      "avg_tokens_per_second": 4.57,
+      "avg_ms_per_token": 218.86,
+      "avg_ttft_s": 0.0014,
+      "peak_gpu_vram_mb": 0,
+      "runs": [
+        {
+          "input_tokens": 48,
+          "new_tokens": 256,
+          "total_time_s": 56.0287,
+          "ttft_s": 0.0014,
+          "tokens_per_second": 4.57,
+          "ms_per_token": 218.86,
+          "peak_gpu_vram_mb": 0,
+          "cpu_ram_mb": 4630,
+          "text_preview": "Smart Decision Tree (S DT) implementation in the data plane is driven by two primary factors: the source-to-destination bandwidth ratio and the packet arrival rate. When a high-bandwidth source is use"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-0159-q0",
+      "instruction_preview": "In host-based RDMA load balancing, how can a system detect network congestion without relying on specialized switch hard",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 56.1518,
+      "avg_tokens_per_second": 4.56,
+      "avg_ms_per_token": 219.34,
+      "avg_ttft_s": 0.0012,
+      "peak_gpu_vram_mb": 0,
+      "runs": [
+        {
+          "input_tokens": 54,
+          "new_tokens": 256,
+          "total_time_s": 56.1518,
+          "ttft_s": 0.0012,
+          "tokens_per_second": 4.56,
+          "ms_per_token": 219.34,
+          "peak_gpu_vram_mb": 0,
+          "cpu_ram_mb": 4636,
+          "text_preview": "Detecting network congestion without specialized hardware like ECN markings requires the system to infer congestion based on the occurrence of specific packet sequences. Specifically, the system shoul"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-2135-q1",
+      "instruction_preview": "Why is a periodic retransmission of the INT request necessary even if the initial in-band request was successfully sent?",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 43.29,
+      "avg_tokens_per_second": 4.57,
+      "avg_ms_per_token": 218.64,
+      "avg_ttft_s": 0.0013,
+      "peak_gpu_vram_mb": 0,
+      "runs": [
+        {
+          "input_tokens": 44,
+          "new_tokens": 198,
+          "total_time_s": 43.29,
+          "ttft_s": 0.0013,
+          "tokens_per_second": 4.57,
+          "ms_per_token": 218.64,
+          "peak_gpu_vram_mb": 0,
+          "cpu_ram_mb": 4636,
+          "text_preview": "The system relies on an out-of-band retransmission protocol to ensure reliable delivery of the INT request. When a request is successfully sent, the data plane can immediately send a confirmation back"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-2121-q2",
+      "instruction_preview": "Using the logic provided in the text, if a service has a Max-Min Fair (MmF) share of 40 Mbps but only achieves 30 Mbps u",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 56.8291,
+      "avg_tokens_per_second": 4.5,
+      "avg_ms_per_token": 221.99,
+      "avg_ttft_s": 0.0014,
+      "peak_gpu_vram_mb": 0,
+      "runs": [
+        {
+          "input_tokens": 91,
+          "new_tokens": 256,
+          "total_time_s": 56.8291,
+          "ttft_s": 0.0014,
+          "tokens_per_second": 4.5,
+          "ms_per_token": 221.99,
+          "peak_gpu_vram_mb": 0,
+          "cpu_ram_mb": 4642,
+          "text_preview": "To calculate the percentage of the MmF share that is left unachieved, we first identify the MmF share: 40 Mbps. The user provided that the service's MmF share is 40 Mbps. Now, we divide the achieved M"
+        }
+      ]
+    },
+    {
+      "name": "NB-HPN-1401-q1",
+      "instruction_preview": "Why might a parameter tuner choose to increase the number of TCP streams rather than simply increasing the size of a sin",
+      "max_new_tokens": 256,
+      "num_runs": 1,
+      "avg_total_time_s": 56.1113,
+      "avg_tokens_per_second": 4.56,
+      "avg_ms_per_token": 219.18,
+      "avg_ttft_s": 0.0014,
+      "peak_gpu_vram_mb": 0,
+      "runs": [
+        {
+          "input_tokens": 52,
+          "new_tokens": 256,
+          "total_time_s": 56.1113,
+          "ttft_s": 0.0014,
+          "tokens_per_second": 4.56,
+          "ms_per_token": 219.18,
+          "peak_gpu_vram_mb": 0,
+          "cpu_ram_mb": 4642,
+          "text_preview": "Increasing the number of TCP streams allows the system to utilize the full bandwidth of the network path, which is a more effective way to overcome kernel-level limitations compared to increasing the "
+        }
+      ]
+    }
+  ],
+  "output_length_scaling": [],
+  "input_length_scaling": [],
+  "summary": {
+    "avg_tokens_per_second": 4.55,
+    "avg_ms_per_token": 219.6,
+    "peak_gpu_vram_mb": 0,
+    "peak_cpu_ram_mb": 4642,
+    "avg_ttft_s": 0.0013
+  }
+}

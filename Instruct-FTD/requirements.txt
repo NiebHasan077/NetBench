@@ -1,0 +1,5 @@
+# Instruct-FTD uses the Python standard library for the core pipeline.
+# The dependency below is only needed for Phase 8 when importing
+# OpenOrca/Dolly directly from Hugging Face instead of local JSON/JSONL files.
+
+datasets>=2.20,<4

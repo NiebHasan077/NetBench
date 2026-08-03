@@ -1,0 +1,18 @@
+\begin{table}[t]\centering\footnotesize
+\caption{Effect of LoRA-CPT on perplexity (lower is better). $\Delta$Gen.\ is the signed change in general (WikiText-2) perplexity ($-$ improved, $+$ degraded).}
+\label{tab:cptppl}
+\begin{tabular}{@{}lccr@{}}
+\toprule
+& HPN-domain PPL & General PPL & \\
+Model & (before$\to$after) & (WikiText-2) & $\Delta$Gen. \\ \midrule
+gemma-3-1b & 28.0$\to$11.6 & 27.4$\to$23.8 & -13\% \\
+llama-3.2-1b & 17.4$\to$11.2 & 13.0$\to$17.6 & +36\% \\
+qwen3.5-2b & 11.9$\to$9.2 & 12.1$\to$15.7 & +30\% \\
+llama-3.1-8b & 9.8$\to$8.2 & 7.2$\to$9.9 & +38\% \\
+qwen3.5-9b & 8.4$\to$7.4 & 8.5$\to$10.3 & +21\% \\
+gemma-3-12b & 28.2$\to$7.7 & 25.8$\to$10.6 & -59\% \\
+gemma-3-27b & 19.6$\to$7.3 & 15.3$\to$9.1 & -41\% \\
+qwen3.5-27b & 7.2$\to$6.4 & 6.8$\to$8.1 & +18\% \\
+\bottomrule
+\end{tabular}
+\end{table}

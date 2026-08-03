@@ -1,0 +1,14 @@
+\begin{table}[H]\centering\footnotesize
+\caption{Deviation of the judge-reported \texttt{overall} from the instructed weighted formula, over all released judgements. Bias is judge $-$ formula; the setting-correlated sign is the drift toward the \emph{unweighted} dimension mean discussed in the text.}
+\label{tab:judgedev}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Slice & $n$ & MAD & Bias & Exact & $|{\cdot}|{>}0.25$ \\ \midrule
+All judgements & 14,679 & 0.100 & +0.005 & 26\% & 3.9\% \\
+Closed-book (P1--P5) & 8,854 & 0.094 & +0.041 & 27\% & 2.3\% \\
+Open-book (P6--P8) & 5,126 & 0.108 & -0.046 & 28\% & 5.4\% \\
+API baselines & 699 & 0.128 & -0.081 & 16\% & 12.3\% \\
+\bottomrule
+\end{tabular}
+\end{table}

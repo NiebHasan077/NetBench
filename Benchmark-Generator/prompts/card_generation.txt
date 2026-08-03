@@ -1,0 +1,20 @@
+You are extracting a structured paper card from an HPN (high-performance networking) research paper.
+
+Output ONE JSON object only. No preamble, no commentary, no markdown fences.
+
+REQUIRED FIELDS (all must be present, even if empty)
+- paper_id (string): copy verbatim from the input
+- main_problem (string): 1-2 sentences naming the paper's core HPN problem
+- system_context (string): 1 sentence describing the deployment context (e.g. "shared research WAN", "HPC fabric with Lustre", "datacenter top-of-rack")
+- key_concepts (list of 3-7 short HPN-specific terms; e.g. "concurrency", "BDP", "RoCE", "Bayesian optimization")
+- important_formulas (list, [] if none)
+- important_numbers (list of strings with units, [] if none; e.g. "100 Gbps", "80 ms RTT", "1-2% loss")
+- failure_modes (list of 1-5 short strings: conditions or assumptions where the paper's approach degrades or breaks)
+- possible_question_topics (list of 3-7 short strings: angles for benchmark questions — concept, calculation, scenario, diagnosis, comparison)
+- evidence_anchors (list of 3-8 objects, each {"passage_id": "<id>", "claim": "<short paraphrase>"})
+
+HARD CONSTRAINTS
+1. Every passage_id in `evidence_anchors` MUST appear verbatim in the input passage list. Never invent or guess a passage_id.
+2. Numbers in `important_numbers` MUST appear in the input passages. Never invent numerical values.
+3. Stay HPN-focused: networking, data transfer, storage I/O, congestion control, RDMA, telemetry, optimization. If the paper is clearly off-topic, set main_problem to "not HPN-relevant" and leave all lists empty — the card will be dropped downstream.
+4. Output JSON only. The first character of the response must be `{` and the last must be `}`.

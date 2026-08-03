@@ -1,0 +1,2489 @@
+{
+  "code_artifacts": [
+    {
+      "bytes": 8161,
+      "mtime_utc": "2026-05-11T22:00:28+00:00",
+      "path": "training/prepare_data.py",
+      "sha256": "b56fec7019239a3acf12aad3bf59b19922df1a9bbe931be9a4de2554fd72e49e"
+    },
+    {
+      "bytes": 11709,
+      "mtime_utc": "2026-05-11T22:00:28+00:00",
+      "path": "training/prepare_lora_data.py",
+      "sha256": "f27b2b82d4c50b02e94fb724c20c802cbbb95d70dfdba5532d45d129db2d9180"
+    },
+    {
+      "bytes": 23667,
+      "mtime_utc": "2026-05-11T22:00:28+00:00",
+      "path": "training/prepare_instruction_data.py",
+      "sha256": "3596d69af041ad32c88c6f11ff2a4f72c0862fb62dc5ec58dcc8c5e2f2bc354e"
+    },
+    {
+      "bytes": 18079,
+      "mtime_utc": "2026-05-15T17:14:02+00:00",
+      "path": "training/pretrain_transformers.py",
+      "sha256": "40a406ba02d1e8ee44ed2cf32daee1e3a8c7c8d00049a4aa3b712d90ec772153"
+    },
+    {
+      "bytes": 19105,
+      "mtime_utc": "2026-05-15T17:14:28+00:00",
+      "path": "training/instruction_finetune.py",
+      "sha256": "7185beb4157f2435aba508b268ef38ac2af15094f677d4c5c00589d150de59fe"
+    },
+    {
+      "bytes": 32157,
+      "mtime_utc": "2026-05-13T04:12:27+00:00",
+      "path": "training/lora_finetune.py",
+      "sha256": "995a74f83552797390467be7e85aa5f78ac03452d8fe13555c132ac792121e2a"
+    },
+    {
+      "bytes": 7121,
+      "mtime_utc": "2026-05-11T22:00:28+00:00",
+      "path": "training/merge_lora_adapter.py",
+      "sha256": "19d719b58db4867295cca82e5c396c53c6cd98edbd17a4622e6c1f5483619939"
+    },
+    {
+      "bytes": 53299,
+      "mtime_utc": "2026-05-13T20:49:46+00:00",
+      "path": "evaluation/hpn_qa_benchmark.py",
+      "sha256": "e083480797f619a45b2d8b1d3e0927fe9e5e7f7b3f10057027fa8483f8bb7329"
+    },
+    {
+      "bytes": 42882,
+      "mtime_utc": "2026-05-13T23:24:22+00:00",
+      "path": "evaluation/judge_responses.py",
+      "sha256": "97ac938896c634ee9ee7834166df86818e43c79380c8b75bf68357ba0f498215"
+    },
+    {
+      "bytes": 37565,
+      "mtime_utc": "2026-05-11T22:00:25+00:00",
+      "path": "evaluation/benchmark_report.py",
+      "sha256": "956cc1338b7ed5a17f4950f8eadc19797aff112c2bc2f46f2d56d73ac2bf7c2c"
+    },
+    {
+      "bytes": 24280,
+      "mtime_utc": "2026-05-11T22:00:25+00:00",
+      "path": "evaluation/lm_adaptation_report.py",
+      "sha256": "97db74ca6df03765ccc3e9aaaaee7b991f49a9b367707cb94f25271e6bd1049a"
+    },
+    {
+      "bytes": 24077,
+      "mtime_utc": "2026-05-11T22:00:26+00:00",
+      "path": "profiling/profile_inference.py",
+      "sha256": "8172aa4e3c0bc2c7cfdd038ae3aaf825142c75ce06f7c46bb3761a7f079ea67e"
+    },
+    {
+      "bytes": 9668,
+      "mtime_utc": "2026-05-11T22:00:26+00:00",
+      "path": "profiling/profile_rag_inference.py",
+      "sha256": "7b260d1662f53bb49d5231b6530c1e172b764b1ea861da873b927c36938a8e69"
+    },
+    {
+      "bytes": 4403,
+      "mtime_utc": "2026-05-11T22:00:26+00:00",
+      "path": "profiling/summarize_inference_profiles.py",
+      "sha256": "622adb3f804f9500153b8dde78986f896502b1a04ccf4c4404f1eb2037b62ec7"
+    },
+    {
+      "bytes": 6247,
+      "mtime_utc": "2026-05-11T22:00:30+00:00",
+      "path": "utils/model_utils.py",
+      "sha256": "7a703f3d414c15f0c85610b06d57db50ea3d9d09251a40cba103679f72b9d27a"
+    },
+    {
+      "bytes": 992,
+      "mtime_utc": "2026-05-11T22:00:33+00:00",
+      "path": "requirements.txt",
+      "sha256": "aefae3fdceea867ddec407d0c32819d5002c05dad6e00038a0c9e5becc366180"
+    },
+    {
+      "bytes": 7073,
+      "mtime_utc": "2026-05-08T15:05:55+00:00",
+      "path": "/work2/11412/neom/my-projects/NetBench-RAG/config.yaml",
+      "sha256": "5486af0f5ed6199a4450626aee5822eb5e13ebee0ca36fb2a9d41de77d55c8dd"
+    },
+    {
+      "bytes": 14249,
+      "mtime_utc": "2026-05-11T22:03:32+00:00",
+      "path": "/work2/11412/neom/my-projects/NetBench-RAG/index_corpus.py",
+      "sha256": "a0c3794f493d37513692908e791f28696816120d3c278d7f7068889f0af6b820"
+    },
+    {
+      "bytes": 9211,
+      "mtime_utc": "2026-05-11T22:03:33+00:00",
+      "path": "/work2/11412/neom/my-projects/NetBench-RAG/query.py",
+      "sha256": "6ea4da2265a4a3031aff8250936789eabe43952b12b315e00e0d8e60b648821f"
+    },
+    {
+      "bytes": 30091,
+      "mtime_utc": "2026-05-13T21:53:38+00:00",
+      "path": "/work2/11412/neom/my-projects/NetBench-RAG/evaluation/evaluate_rag.py",
+      "sha256": "d4aaeedc2e78d27a61e822b038cc4a7c579a7756773c26bb231a8c07ba17da7e"
+    },
+    {
+      "bytes": 42941,
+      "mtime_utc": "2026-05-11T22:03:31+00:00",
+      "path": "/work2/11412/neom/my-projects/NetBench-RAG/evaluation/judge_responses.py",
+      "sha256": "69545a88d8278a896f843d24fa7052eba036aeb2de10581c8eb1f9ca7283c99c"
+    },
+    {
+      "bytes": 35821,
+      "mtime_utc": "2026-05-11T22:03:31+00:00",
+      "path": "/work2/11412/neom/my-projects/NetBench-RAG/evaluation/benchmark_report.py",
+      "sha256": "5f83ab78f286f7695d74e37a6f6c979bbc714f9ec7902b61bf87a6f07e00ecb5"
+    },
+    {
+      "bytes": 11465,
+      "mtime_utc": "2026-05-11T22:03:32+00:00",
+      "path": "/work2/11412/neom/my-projects/NetBench-RAG/src/retriever.py",
+      "sha256": "49e132cbcbf52f7325e1b444e887c3fd01e6f484fa13692e71dc49c8a9937714"
+    },
+    {
+      "bytes": 28415,
+      "mtime_utc": "2026-05-13T21:52:16+00:00",
+      "path": "/work2/11412/neom/my-projects/NetBench-RAG/src/generator.py",
+      "sha256": "290ef87662da1590fa1e4e8c5796a03f1248900c178b605d040cd38783a12e3d"
+    },
+    {
+      "bytes": 14286,
+      "mtime_utc": "2026-05-11T22:03:32+00:00",
+      "path": "/work2/11412/neom/my-projects/NetBench-RAG/src/store.py",
+      "sha256": "12d918ab92d4bdf15506871e2a9e424190cbd76e84a15bb1c7c7b76fb7e0249f"
+    },
+    {
+      "bytes": 18641,
+      "mtime_utc": "2026-05-11T22:03:32+00:00",
+      "path": "/work2/11412/neom/my-projects/NetBench-RAG/src/chunker.py",
+      "sha256": "824b92ac239ac458c24620f8fd31d03faf03fa55396f5b8f53f29c49a983f086"
+    },
+    {
+      "bytes": 4239,
+      "mtime_utc": "2026-05-11T22:03:32+00:00",
+      "path": "/work2/11412/neom/my-projects/NetBench-RAG/src/embedder.py",
+      "sha256": "13cd501da8f1ab5a021c3177454423fa577a56fbe4e41efeeaf4ab362bc6aa9f"
+    },
+    {
+      "bytes": 30043,
+      "mtime_utc": "2026-05-11T22:03:32+00:00",
+      "path": "/work2/11412/neom/my-projects/NetBench-RAG/src/parser.py",
+      "sha256": "acb0504a39755762f8221ac95d87b3f7fbce28cacec7965091e3c987baf87148"
+    },
+    {
+      "bytes": 3210,
+      "mtime_utc": "2026-05-11T22:03:33+00:00",
+      "path": "/work2/11412/neom/my-projects/NetBench-RAG/requirements.txt",
+      "sha256": "770cfd6f4096798de4e61ebda8780425117b20ecfce970ad1ec3493529c15bb0"
+    }
+  ],
+  "data_files": [
+    {
+      "bytes": 133709863,
+      "json_records": 2371,
+      "mtime_utc": "2026-05-11T22:03:09+00:00",
+      "path": "data/raw/research_corpus_v3.json",
+      "sha256": "68c1148da5ec5688efd40c8f8c269cee51ee0617c6df28d33c43fcc1c5bb1048"
+    },
+    {
+      "bytes": 277528,
+      "jsonl_lines": 242,
+      "mtime_utc": "2026-05-11T22:02:46+00:00",
+      "path": "data/prompts/hpn_benchmark_v5.0.jsonl",
+      "sha256": "598edbece4c03ab135ae4787e5917b44b0ed192a43c7473952c770a31e80c772"
+    },
+    {
+      "bytes": 18977960,
+      "jsonl_lines": 3320,
+      "mtime_utc": "2026-05-11T22:03:13+00:00",
+      "path": "data/Instruct-FTD/v3_run_plus_json/train.jsonl",
+      "sha256": "a7d01645b3f35c78a74da8f944ecbbf371bf7d805bb8e0e57d384295feafa2e6"
+    },
+    {
+      "bytes": 988260,
+      "jsonl_lines": 174,
+      "mtime_utc": "2026-05-11T22:03:11+00:00",
+      "path": "data/Instruct-FTD/v3_run_plus_json/validation.jsonl",
+      "sha256": "5abd7b48d08a59e1cdf98cb075ed01d9c27f7c6006bec72d39d9e74e535b08bf"
+    },
+    {
+      "bytes": 1956,
+      "json_keys": [
+        "available_json_anchor_count",
+        "available_json_anchor_count_after_existing_dedup",
+        "created_at_utc",
+        "input_total_count",
+        "input_train_count",
+        "input_validation_count",
+        "mode",
+        "output_total_count",
+        "output_train_count",
+        "output_validation_count",
+        "requested_json_count",
+        "run_id",
+        "selected_json_count",
+        "train_category_counts",
+        "train_json_count",
+        "train_task_type_counts",
+        "validation_category_counts",
+        "validation_json_count",
+        "validation_task_type_counts"
+      ],
+      "mtime_utc": "2026-05-11T22:03:11+00:00",
+      "path": "data/Instruct-FTD/v3_run_plus_json/json_append_report.json",
+      "sha256": "fa4c8809e897626da05a118f9cda9094535d37124f34f75d4c3425766f7b78ef"
+    }
+  ],
+  "effective_preflight_from_latest_log": {
+    "corpus": "/work2/11412/neom/my-projects/NetBench-LLM/data/raw/research_corpus_v3.json selected (133709863 bytes \u2014 largest candidate)",
+    "hardware": "4x GPU, 94 GB VRAM per card",
+    "hyperparams": "CPT batch=4x4  SFT batch=4x4  LoRA batch=4x4  rank=64",
+    "model": "gemma-3-1b",
+    "source_log": "outputs/by_model/gemma-3-1b/logs/hpn-gemma-3-1b-20260514-185958.log"
+  },
+  "environment": {
+    "collected_at_utc": "2026-05-24T23:17:00.043652+00:00",
+    "cwd": "/work2/11412/neom/my-projects/NetBench-LLM",
+    "executable": "/work2/11412/neom/my-projects/NetBench-LLM/.venv/bin/python",
+    "git_branch": "master",
+    "git_commit": "cdd85199ad2cb50c908238be84301921619647a9",
+    "git_status_short": "D =0.10.0\n D =0.8.0\n M chat.sh\n D data/prompts/hpn_benchmark_v5.0_all.jsonl\n D data/prompts/hpn_qa_benchmark.json\n D data/prompts/hpn_qa_benchmark_v2_general_skills.json\n D data/prompts/hpn_qa_benchmark_v4_general_skills.json\n M evaluation/hpn_qa_benchmark.py\n M evaluation/judge_responses.py\n M profiling/profile_inference.py\n M requirements.txt\n M scripts/ADAPT_PROMPT.md\n M scripts/run_pipeline.sh\n M test_instruct.sh\n M training/instruction_finetune.py\n M training/lora_finetune.py\n M training/prepare_data.py\n M training/prepare_instruction_data.py\n M training/prepare_lora_data.py\n M training/pretrain_transformers.py\n M utils/download_models.py\n?? .triton_cache/\n?? configs/\n?? outputs/by_model/\n?? profiling/profile_rag_inference.py\n?? profiling/summarize_inference_profiles.py\n?? scripts/collect_run_metadata.py",
+    "nvidia_smi_query": null,
+    "platform": "Linux-5.14.0-611.24.1.el9_7.x86_64-x86_64-with-glibc2.34",
+    "python": "3.12.11 (main, Jan 15 2026, 17:05:33) [GCC 11.5.0 20240719 (Red Hat 11.5.0-5)]",
+    "torch": {
+      "cuda": "12.8",
+      "cuda_available": false,
+      "device_count": 0,
+      "version": "2.11.0+cu128"
+    }
+  },
+  "logs": [
+    {
+      "bytes": 11252,
+      "interesting_lines_count": 24,
+      "interesting_lines_sample": [
+        "  HPN LLM Pipeline  \u2014  Model: gemma-3-1b",
+        "[14:37:04] Model: gemma-3-1b (gemma, shortcut=custom)",
+        "[14:39:19] Hardware: 4x GPU, 94 GB VRAM per card",
+        "[14:39:19] Hyperparams: CPT batch=4x4  SFT batch=4x4  LoRA batch=4x4  rank=64",
+        "[14:39:19] Corpus: /work/11412/neom/my-projects/NetBench-LLM/data/raw/research_corpus_v3.json selected (133709863 bytes \u2014 largest candidate)",
+        "[14:39:19] OK Preflight passed \u2014 GPUs: 4x94GB  Corpus: research_corpus_v3.json",
+        "[14:39:19] WARN  SKIP base model \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/base/gemma-3-1b-Base",
+        "[14:39:19] WARN  SKIP instruct-official model \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/instruct-official/gemma-3-1b-Instruct",
+        "[14:39:19] WARN  SKIP CPT data \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/data/processed/gemma-3-1b",
+        "[14:39:19] WARN  SKIP LoRA CPT data \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/data/processed/lora/gemma-3-1b",
+        "[14:39:19] WARN  SKIP HPN SFT data \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/data/instruction/gemma-3-1b-hpn",
+        "[14:39:19] WARN  SKIP S4 Full HPN-CPT (custom) \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/pretrained/gemma-3-1b-trained-new",
+        "[14:39:20] WARN  SKIP S4 Full HPN-SFT \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-cpt-full-sft",
+        "[14:39:20] WARN  SKIP S3 Full HPN-SFT \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-instruct-full-hpn-sft",
+        "[14:39:20] WARN  SKIP S2 LoRA HPN-SFT \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-sft",
+        "[14:39:20] WARN  SKIP S2 LoRA SFT merged \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-sft-merged",
+        "[14:39:20] WARN  SKIP S5 LoRA HPN-CPT \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-cpt",
+        "[14:39:20] WARN  SKIP S5 LoRA CPT merged \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-cpt-merged",
+        "[14:39:20] WARN  SKIP S5 LoRA HPN-SFT \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-cpt-then-sft",
+        "[14:39:20] WARN  SKIP S5 LoRA SFT merged \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-cpt-then-sft-merged",
+        "[14:39:21] WARN  SKIP RAG index \u2014 already built (marker or /work2/11412/neom/my-projects/NetBench-RAG/data/qdrant_store/ found)",
+        "[14:39:21] RUN benchmark S1-gemma-3-1b-Instruct-Official",
+        "   temperature   = 0.0 (greedy / deterministic)",
+        "   max_new_tokens= 512"
+      ],
+      "mtime_utc": "2026-05-13T19:55:41+00:00",
+      "path": "outputs/by_model/gemma-3-1b/logs/hpn-gemma-3-1b-20260513-143703.log",
+      "sha256": "7807340c038988f69ee9facb342bf702e2545f46525b25fe13135a77c337238c"
+    },
+    {
+      "bytes": 51104,
+      "interesting_lines_count": 52,
+      "interesting_lines_sample": [
+        "  HPN LLM Pipeline  \u2014  Model: gemma-3-1b",
+        "[15:51:47] Model: gemma-3-1b (gemma, shortcut=custom)",
+        "[15:52:00] Hardware: 4x GPU, 94 GB VRAM per card",
+        "[15:52:00] Hyperparams: CPT batch=4x4  SFT batch=4x4  LoRA batch=4x4  rank=64",
+        "[15:52:00] Corpus: /work/11412/neom/my-projects/NetBench-LLM/data/raw/research_corpus_v3.json selected (133709863 bytes \u2014 largest candidate)",
+        "[15:52:01] OK Preflight passed \u2014 GPUs: 4x94GB  Corpus: research_corpus_v3.json",
+        "[15:52:01] WARN  SKIP base model \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/base/gemma-3-1b-Base",
+        "[15:52:01] WARN  SKIP instruct-official model \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/instruct-official/gemma-3-1b-Instruct",
+        "[15:52:01] WARN  SKIP CPT data \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/data/processed/gemma-3-1b",
+        "[15:52:01] WARN  SKIP LoRA CPT data \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/data/processed/lora/gemma-3-1b",
+        "[15:52:01] WARN  SKIP HPN SFT data \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/data/instruction/gemma-3-1b-hpn",
+        "[15:52:01] WARN  SKIP S4 Full HPN-CPT (custom) \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/pretrained/gemma-3-1b-trained-new",
+        "[15:52:01] WARN  SKIP S4 Full HPN-SFT \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-cpt-full-sft",
+        "[15:52:01] WARN  SKIP S3 Full HPN-SFT \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-instruct-full-hpn-sft",
+        "[15:52:01] WARN  SKIP S2 LoRA HPN-SFT \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-sft",
+        "[15:52:01] WARN  SKIP S2 LoRA SFT merged \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-sft-merged",
+        "[15:52:01] WARN  SKIP S5 LoRA HPN-CPT \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-cpt",
+        "[15:52:01] WARN  SKIP S5 LoRA CPT merged \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-cpt-merged",
+        "[15:52:02] WARN  SKIP S5 LoRA HPN-SFT \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-cpt-then-sft",
+        "[15:52:02] WARN  SKIP S5 LoRA SFT merged \u2014 already complete: /work/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-cpt-then-sft-merged",
+        "[15:52:02] WARN  SKIP RAG index \u2014 already built (marker or /work2/11412/neom/my-projects/NetBench-RAG/data/qdrant_store/ found)",
+        "[15:52:02] RUN benchmark S1-gemma-3-1b-Instruct-Official",
+        "   temperature   = 0.0 (greedy / deterministic)",
+        "   max_new_tokens= 512",
+        "\ud83d\udcbe Saved: /work/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-Instruct_v5.0.xlsx",
+        "\ud83c\udfc1 All done! 1 model(s) benchmarked in 621.8s",
+        "[16:02:33] RUN benchmark S2-gemma-3-1b-Instruct-LoRA-SFT",
+        "   temperature   = 0.0 (greedy / deterministic)",
+        "   max_new_tokens= 512",
+        "\ud83d\udcbe Saved: /work/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-instruct-lora-sft-merged_v5.0.xlsx",
+        "\ud83c\udfc1 All done! 1 model(s) benchmarked in 403.3s",
+        "[16:09:26] RUN benchmark S3-gemma-3-1b-Instruct-Full-HPN-SFT",
+        "   temperature   = 0.0 (greedy / deterministic)",
+        "   max_new_tokens= 512",
+        "\ud83d\udcbe Saved: /work/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-instruct-full-hpn-sft_v5.0.xlsx",
+        "\ud83c\udfc1 All done! 1 model(s) benchmarked in 437.4s",
+        "[16:16:52] RUN benchmark S4-gemma-3-1b-CPT-SFT",
+        "   temperature   = 0.0 (greedy / deterministic)",
+        "   max_new_tokens= 512",
+        "\ud83d\udcbe Saved: /work/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-cpt-full-sft_v5.0.xlsx",
+        "\ud83c\udfc1 All done! 1 model(s) benchmarked in 500.1s",
+        "[16:25:21] RUN benchmark S5-gemma-3-1b-LoRA-CPT-SFT",
+        "   temperature   = 0.0 (greedy / deterministic)",
+        "   max_new_tokens= 512",
+        "\ud83d\udcbe Saved: /work/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+        "\ud83c\udfc1 All done! 1 model(s) benchmarked in 417.3s",
+        "[16:32:28] RUN RAG benchmark S6-gemma-3-1b-Instruct-Official",
+        "\ud83d\udd04 Model: /work/11412/neom/my-projects/NetBench-LLM/models/instruct-official/gemma-3-1b-Instruct",
+        "\ud83d\udcbe Saved: /work/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_RAG-gemma-3-1b-Instruct_v5.0.xlsx",
+        "\ud83c\udfc1 All done! 1 model(s) benchmarked in 4775.5s",
+        "[17:52:28] RUN RAG benchmark S7-gemma-3-1b-CPT-SFT",
+        "\ud83d\udd04 Model: /work/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-cpt-full-sft"
+      ],
+      "mtime_utc": "2026-05-13T22:57:55+00:00",
+      "path": "outputs/by_model/gemma-3-1b/logs/hpn-gemma-3-1b-20260513-155146.log",
+      "sha256": "e6a23e955c82d848062a3d57f11ae99a1b48b9b3ab27b6c53d9c1038847c4872"
+    },
+    {
+      "bytes": 113359,
+      "interesting_lines_count": 58,
+      "interesting_lines_sample": [
+        "  HPN LLM Pipeline  \u2014  Model: gemma-3-1b",
+        "[18:24:02] Model: gemma-3-1b (gemma, shortcut=custom)",
+        "[18:26:08] Hardware: 4x GPU, 94 GB VRAM per card",
+        "[18:26:08] Hyperparams: CPT batch=4x4  SFT batch=4x4  LoRA batch=4x4  rank=64",
+        "[18:26:08] Corpus: /work2/11412/neom/my-projects/NetBench-LLM/data/raw/research_corpus_v3.json selected (133709863 bytes \u2014 largest candidate)",
+        "[18:26:08] OK Preflight passed \u2014 GPUs: 4x94GB  Corpus: research_corpus_v3.json",
+        "[18:26:08] WARN  SKIP base model \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/base/gemma-3-1b-Base",
+        "[18:26:08] WARN  SKIP instruct-official model \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/instruct-official/gemma-3-1b-Instruct",
+        "[18:26:08] WARN  SKIP CPT data \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/data/processed/gemma-3-1b",
+        "[18:26:08] WARN  SKIP LoRA CPT data \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/data/processed/lora/gemma-3-1b",
+        "[18:26:08] WARN  SKIP HPN SFT data \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/data/instruction/gemma-3-1b-hpn",
+        "[18:26:08] WARN  SKIP S4 Full HPN-CPT (custom) \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/pretrained/gemma-3-1b-trained-new",
+        "[18:26:08] WARN  SKIP S4 Full HPN-SFT \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-cpt-full-sft",
+        "[18:26:08] WARN  SKIP S3 Full HPN-SFT \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-instruct-full-hpn-sft",
+        "[18:26:08] WARN  SKIP S2 LoRA HPN-SFT \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-sft",
+        "[18:26:08] WARN  SKIP S2 LoRA SFT merged \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-sft-merged",
+        "[18:26:09] WARN  SKIP S5 LoRA HPN-CPT \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-cpt",
+        "[18:26:09] WARN  SKIP S5 LoRA CPT merged \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-cpt-merged",
+        "[18:26:09] WARN  SKIP S5 LoRA HPN-SFT \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-cpt-then-sft",
+        "[18:26:09] WARN  SKIP S5 LoRA SFT merged \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-cpt-then-sft-merged",
+        "[18:26:09] WARN  SKIP RAG index \u2014 already built (marker or /work2/11412/neom/my-projects/NetBench-RAG/data/qdrant_store/ found)",
+        "[18:26:09] WARN  SKIP benchmark S1-gemma-3-1b-Instruct-Official \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-Instruct_v5.0.xlsx",
+        "[18:26:09] WARN  SKIP benchmark S2-gemma-3-1b-Instruct-LoRA-SFT \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-instruct-lora-sft-merged_v5.0.xlsx",
+        "[18:26:09] WARN  SKIP benchmark S3-gemma-3-1b-Instruct-Full-HPN-SFT \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-instruct-full-hpn-sft_v5.0.xlsx",
+        "[18:26:09] WARN  SKIP benchmark S4-gemma-3-1b-CPT-SFT \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-cpt-full-sft_v5.0.xlsx",
+        "[18:26:09] WARN  SKIP benchmark S5-gemma-3-1b-LoRA-CPT-SFT \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+        "[18:26:09] WARN  SKIP RAG benchmark S6-gemma-3-1b-Instruct-Official \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_RAG-gemma-3-1b-Instruct_v5.0.xlsx",
+        "[18:26:09] RUN RAG benchmark S7-gemma-3-1b-CPT-SFT",
+        "\ud83d\udd04 Model: /work2/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-cpt-full-sft",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_RAG-gemma-3-1b-cpt-full-sft_v5.0.xlsx",
+        "\ud83c\udfc1 All done! 1 model(s) benchmarked in 962.4s",
+        "[18:42:26] RUN RAG benchmark S8-gemma-3-1b-LoRA-CPT-SFT",
+        "\ud83d\udd04 Model: /work2/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-cpt-then-sft-merged",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_RAG-gemma-3-1b-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+        "\ud83c\udfc1 All done! 1 model(s) benchmarked in 918.3s",
+        "[18:57:54] RUN judge all answers",
+        "   Output dir        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-Instruct_by_gpt-5.1.xlsx",
+        "   Newly judged : 242",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-Instruct_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "   Newly judged : 242",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "   Newly judged : 242",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-cpt-full-sft_by_gpt-5.1.xlsx",
+        "   Newly judged : 242",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-cpt-full-sft_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-full-hpn-sft_by_gpt-5.1.xlsx",
+        "   Newly judged : 242",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-full-hpn-sft_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-Instruct_by_gpt-5.1.xlsx",
+        "   Newly judged : 242",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-Instruct_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-cpt-full-sft_by_gpt-5.1.xlsx",
+        "   Newly judged : 242",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-cpt-full-sft_by_gpt-5.1.xlsx"
+      ],
+      "mtime_utc": "2026-05-14T01:34:53+00:00",
+      "path": "outputs/by_model/gemma-3-1b/logs/hpn-gemma-3-1b-20260513-182401.log",
+      "sha256": "206fcd992dc48ff301e40b664c11d06a20d7954c13012422e0820b38c0ffb68f"
+    },
+    {
+      "bytes": 48929,
+      "interesting_lines_count": 120,
+      "interesting_lines_sample": [
+        "  HPN LLM Pipeline  \u2014  Model: gemma-3-1b",
+        "[12:08:13] Model: gemma-3-1b (gemma, shortcut=custom)",
+        "[12:10:39] Hardware: 4x GPU, 94 GB VRAM per card",
+        "[12:10:39] Hyperparams: CPT batch=4x4  SFT batch=4x4  LoRA batch=4x4  rank=64",
+        "[12:10:39] Corpus: /work2/11412/neom/my-projects/NetBench-LLM/data/raw/research_corpus_v3.json selected (133709863 bytes \u2014 largest candidate)",
+        "[12:10:39] OK Preflight passed \u2014 GPUs: 4x94GB  Corpus: research_corpus_v3.json",
+        "[12:10:39] WARN  SKIP base model \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/base/gemma-3-1b-Base",
+        "[12:10:39] WARN  SKIP instruct-official model \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/instruct-official/gemma-3-1b-Instruct",
+        "[12:10:39] WARN  SKIP CPT data \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/data/processed/gemma-3-1b",
+        "[12:10:39] WARN  SKIP LoRA CPT data \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/data/processed/lora/gemma-3-1b",
+        "[12:10:39] WARN  SKIP HPN SFT data \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/data/instruction/gemma-3-1b-hpn",
+        "[12:10:39] WARN  SKIP S4 Full HPN-CPT (custom) \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/pretrained/gemma-3-1b-trained-new",
+        "[12:10:40] WARN  SKIP S4 Full HPN-SFT \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-cpt-full-sft",
+        "[12:10:40] WARN  SKIP S3 Full HPN-SFT \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-instruct-full-hpn-sft",
+        "[12:10:40] WARN  SKIP S2 LoRA HPN-SFT \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-sft",
+        "[12:10:40] WARN  SKIP S2 LoRA SFT merged \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-sft-merged",
+        "[12:10:40] WARN  SKIP S5 LoRA HPN-CPT \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-cpt",
+        "[12:10:40] WARN  SKIP S5 LoRA CPT merged \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-cpt-merged",
+        "[12:10:40] WARN  SKIP S5 LoRA HPN-SFT \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-cpt-then-sft",
+        "[12:10:40] WARN  SKIP S5 LoRA SFT merged \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-cpt-then-sft-merged",
+        "[12:10:40] WARN  SKIP RAG index \u2014 already built (marker or /work2/11412/neom/my-projects/NetBench-RAG/data/qdrant_store/ found)",
+        "[12:10:41] WARN  SKIP benchmark S1-gemma-3-1b-Instruct-Official \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-Instruct_v5.0.xlsx",
+        "[12:10:41] WARN  SKIP benchmark S2-gemma-3-1b-Instruct-LoRA-SFT \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-instruct-lora-sft-merged_v5.0.xlsx",
+        "[12:10:41] WARN  SKIP benchmark S3-gemma-3-1b-Instruct-Full-HPN-SFT \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-instruct-full-hpn-sft_v5.0.xlsx",
+        "[12:10:41] WARN  SKIP benchmark S4-gemma-3-1b-CPT-SFT \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-cpt-full-sft_v5.0.xlsx",
+        "[12:10:41] WARN  SKIP benchmark S5-gemma-3-1b-LoRA-CPT-SFT \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+        "[12:10:41] WARN  SKIP RAG benchmark S6-gemma-3-1b-Instruct-Official \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_RAG-gemma-3-1b-Instruct_v5.0.xlsx",
+        "[12:10:41] WARN  SKIP RAG benchmark S7-gemma-3-1b-CPT-SFT \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_RAG-gemma-3-1b-cpt-full-sft_v5.0.xlsx",
+        "[12:10:41] WARN  SKIP RAG benchmark S8-gemma-3-1b-LoRA-CPT-SFT \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_RAG-gemma-3-1b-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+        "[12:10:41] RUN judge all answers",
+        "   Output dir        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged",
+        "\u267b\ufe0f  Found 242 already-judged questions in /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-Instruct_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-Instruct_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-Instruct_by_gpt-5.1.xlsx",
+        "\u267b\ufe0f  Found 242 already-judged questions in /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "\u267b\ufe0f  Found 242 already-judged questions in /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "\u267b\ufe0f  Found 242 already-judged questions in /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-cpt-full-sft_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-cpt-full-sft_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-cpt-full-sft_by_gpt-5.1.xlsx",
+        "\u267b\ufe0f  Found 242 already-judged questions in /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-full-hpn-sft_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-full-hpn-sft_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-full-hpn-sft_by_gpt-5.1.xlsx",
+        "\u267b\ufe0f  Found 242 already-judged questions in /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-Instruct_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-Instruct_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-Instruct_by_gpt-5.1.xlsx",
+        "\u267b\ufe0f  Found 242 already-judged questions in /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-cpt-full-sft_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-cpt-full-sft_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-cpt-full-sft_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-lora-sft-merged_by_gpt-5.1.xlsx",
+        "   Newly judged : 242",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-lora-sft-merged_by_gpt-5.1.xlsx",
+        "\ud83c\udfc1 All done! 8 file(s) judged in 869.1s",
+        "   Output files in: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/",
+        "[12:25:19] OK judge all answers done",
+        "[12:25:19] RUN profile gpu S1-gemma-3-1b-Instruct-Official",
+        "2026-05-14 12:26:14 - INFO -   \ud83d\udcdd NB-HPN-0026-q1  (max_new_tokens=256)",
+        "2026-05-14 12:27:56 - INFO -   \ud83d\udcdd NB-HPN-0159-q0  (max_new_tokens=256)",
+        "2026-05-14 12:28:05 - INFO -   \ud83d\udcdd NB-HPN-2135-q1  (max_new_tokens=256)",
+        "2026-05-14 12:28:12 - INFO -   \ud83d\udcdd NB-HPN-2121-q2  (max_new_tokens=256)",
+        "2026-05-14 12:28:32 - INFO -   \ud83d\udcdd NB-HPN-1401-q1  (max_new_tokens=256)",
+        "2026-05-14 12:28:39 - INFO -   \ud83d\udcdd NB-HPN-0176-q1  (max_new_tokens=256)",
+        "2026-05-14 12:28:45 - INFO -   \ud83d\udcdd NB-HPN-0178-q1  (max_new_tokens=256)",
+        "2026-05-14 12:28:52 - INFO -   \ud83d\udcdd NB-HPN-2032-q1  (max_new_tokens=256)",
+        "2026-05-14 12:28:58 - INFO -   \ud83d\udcdd NB-HPN-0733-q1  (max_new_tokens=256)",
+        "2026-05-14 12:29:03 - INFO -   \ud83d\udcdd NB-HPN-1278-q1  (max_new_tokens=256)",
+        "[12:29:13] RUN profile gpu S4-gemma-3-1b-CPT-SFT",
+        "2026-05-14 12:29:33 - INFO -   \ud83d\udcdd NB-HPN-0026-q1  (max_new_tokens=256)",
+        "2026-05-14 12:31:15 - INFO -   \ud83d\udcdd NB-HPN-0159-q0  (max_new_tokens=256)",
+        "2026-05-14 12:31:20 - INFO -   \ud83d\udcdd NB-HPN-2135-q1  (max_new_tokens=256)",
+        "2026-05-14 12:31:28 - INFO -   \ud83d\udcdd NB-HPN-2121-q2  (max_new_tokens=256)",
+        "2026-05-14 12:31:50 - INFO -   \ud83d\udcdd NB-HPN-1401-q1  (max_new_tokens=256)",
+        "2026-05-14 12:31:56 - INFO -   \ud83d\udcdd NB-HPN-0176-q1  (max_new_tokens=256)",
+        "2026-05-14 12:32:03 - INFO -   \ud83d\udcdd NB-HPN-0178-q1  (max_new_tokens=256)",
+        "2026-05-14 12:32:10 - INFO -   \ud83d\udcdd NB-HPN-2032-q1  (max_new_tokens=256)",
+        "2026-05-14 12:32:16 - INFO -   \ud83d\udcdd NB-HPN-0733-q1  (max_new_tokens=256)",
+        "2026-05-14 12:32:21 - INFO -   \ud83d\udcdd NB-HPN-1278-q1  (max_new_tokens=256)",
+        "[12:32:29] RUN profile gpu S5-gemma-3-1b-LoRA-CPT-SFT",
+        "2026-05-14 12:32:48 - INFO -   \ud83d\udcdd NB-HPN-0026-q1  (max_new_tokens=256)",
+        "2026-05-14 12:34:30 - INFO -   \ud83d\udcdd NB-HPN-0159-q0  (max_new_tokens=256)",
+        "2026-05-14 12:34:34 - INFO -   \ud83d\udcdd NB-HPN-2135-q1  (max_new_tokens=256)",
+        "2026-05-14 12:34:42 - INFO -   \ud83d\udcdd NB-HPN-2121-q2  (max_new_tokens=256)",
+        "2026-05-14 12:34:48 - INFO -   \ud83d\udcdd NB-HPN-1401-q1  (max_new_tokens=256)",
+        "2026-05-14 12:34:55 - INFO -   \ud83d\udcdd NB-HPN-0176-q1  (max_new_tokens=256)",
+        "2026-05-14 12:35:02 - INFO -   \ud83d\udcdd NB-HPN-0178-q1  (max_new_tokens=256)",
+        "2026-05-14 12:35:08 - INFO -   \ud83d\udcdd NB-HPN-2032-q1  (max_new_tokens=256)",
+        "2026-05-14 12:35:14 - INFO -   \ud83d\udcdd NB-HPN-0733-q1  (max_new_tokens=256)",
+        "2026-05-14 12:35:20 - INFO -   \ud83d\udcdd NB-HPN-1278-q1  (max_new_tokens=256)",
+        "[12:35:28] RUN profile cpu S1-gemma-3-1b-Instruct-Official",
+        "2026-05-14 12:35:44 - INFO -   \ud83d\udcdd NB-HPN-0026-q1  (max_new_tokens=256)",
+        "2026-05-14 12:36:42 - INFO -   \ud83d\udcdd NB-HPN-0159-q0  (max_new_tokens=256)",
+        "2026-05-14 12:37:40 - INFO -   \ud83d\udcdd NB-HPN-2135-q1  (max_new_tokens=256)",
+        "2026-05-14 12:38:38 - INFO -   \ud83d\udcdd NB-HPN-2121-q2  (max_new_tokens=256)",
+        "2026-05-14 12:39:36 - INFO -   \ud83d\udcdd NB-HPN-1401-q1  (max_new_tokens=256)",
+        "2026-05-14 12:40:34 - INFO -   \ud83d\udcdd NB-HPN-0176-q1  (max_new_tokens=256)",
+        "2026-05-14 12:41:32 - INFO -   \ud83d\udcdd NB-HPN-0178-q1  (max_new_tokens=256)",
+        "2026-05-14 12:42:30 - INFO -   \ud83d\udcdd NB-HPN-2032-q1  (max_new_tokens=256)",
+        "2026-05-14 12:43:27 - INFO -   \ud83d\udcdd NB-HPN-0733-q1  (max_new_tokens=256)",
+        "2026-05-14 12:44:25 - INFO -   \ud83d\udcdd NB-HPN-1278-q1  (max_new_tokens=256)",
+        "[12:45:24] RUN profile cpu S4-gemma-3-1b-CPT-SFT",
+        "2026-05-14 12:45:38 - INFO -   \ud83d\udcdd NB-HPN-0026-q1  (max_new_tokens=256)",
+        "2026-05-14 12:46:35 - INFO -   \ud83d\udcdd NB-HPN-0159-q0  (max_new_tokens=256)",
+        "2026-05-14 12:47:31 - INFO -   \ud83d\udcdd NB-HPN-2135-q1  (max_new_tokens=256)",
+        "2026-05-14 12:48:28 - INFO -   \ud83d\udcdd NB-HPN-2121-q2  (max_new_tokens=256)",
+        "2026-05-14 12:49:14 - INFO -   \ud83d\udcdd NB-HPN-1401-q1  (max_new_tokens=256)",
+        "2026-05-14 12:50:10 - INFO -   \ud83d\udcdd NB-HPN-0176-q1  (max_new_tokens=256)",
+        "2026-05-14 12:51:07 - INFO -   \ud83d\udcdd NB-HPN-0178-q1  (max_new_tokens=256)",
+        "2026-05-14 12:52:03 - INFO -   \ud83d\udcdd NB-HPN-2032-q1  (max_new_tokens=256)",
+        "2026-05-14 12:52:59 - INFO -   \ud83d\udcdd NB-HPN-0733-q1  (max_new_tokens=256)",
+        "2026-05-14 12:53:56 - INFO -   \ud83d\udcdd NB-HPN-1278-q1  (max_new_tokens=256)"
+      ],
+      "mtime_utc": "2026-05-14T17:53:56+00:00",
+      "path": "outputs/by_model/gemma-3-1b/logs/hpn-gemma-3-1b-20260514-120812.log",
+      "sha256": "5d4d9493d04ac6042bf8007c4287e5f0727cfc129ee24c3e5a2a5037d0d59c2c"
+    },
+    {
+      "bytes": 65772,
+      "interesting_lines_count": 119,
+      "interesting_lines_sample": [
+        "  HPN LLM Pipeline  \u2014  Model: gemma-3-1b",
+        "[18:59:59] Model: gemma-3-1b (gemma, shortcut=custom)",
+        "[19:02:21] Hardware: 4x GPU, 94 GB VRAM per card",
+        "[19:02:21] Hyperparams: CPT batch=4x4  SFT batch=4x4  LoRA batch=4x4  rank=64",
+        "[19:02:21] Corpus: /work2/11412/neom/my-projects/NetBench-LLM/data/raw/research_corpus_v3.json selected (133709863 bytes \u2014 largest candidate)",
+        "[19:02:22] OK Preflight passed \u2014 GPUs: 4x94GB  Corpus: research_corpus_v3.json",
+        "[19:02:22] WARN  SKIP base model \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/base/gemma-3-1b-Base",
+        "[19:02:22] WARN  SKIP instruct-official model \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/instruct-official/gemma-3-1b-Instruct",
+        "[19:02:22] WARN  SKIP CPT data \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/data/processed/gemma-3-1b",
+        "[19:02:22] WARN  SKIP LoRA CPT data \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/data/processed/lora/gemma-3-1b",
+        "[19:02:22] WARN  SKIP HPN SFT data \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/data/instruction/gemma-3-1b-hpn",
+        "[19:02:22] WARN  SKIP S4 Full HPN-CPT (custom) \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/pretrained/gemma-3-1b-trained-new",
+        "[19:02:22] WARN  SKIP S4 Full HPN-SFT \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-cpt-full-sft",
+        "[19:02:22] WARN  SKIP S3 Full HPN-SFT \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-instruct-full-hpn-sft",
+        "[19:02:22] WARN  SKIP S2 LoRA HPN-SFT \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-sft",
+        "[19:02:22] WARN  SKIP S2 LoRA SFT merged \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-sft-merged",
+        "[19:02:22] WARN  SKIP S5 LoRA HPN-CPT \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-cpt",
+        "[19:02:22] WARN  SKIP S5 LoRA CPT merged \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-cpt-merged",
+        "[19:02:23] WARN  SKIP S5 LoRA HPN-SFT \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-cpt-then-sft",
+        "[19:02:23] WARN  SKIP S5 LoRA SFT merged \u2014 already complete: /work2/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-cpt-then-sft-merged",
+        "[19:02:23] WARN  SKIP RAG index \u2014 already built (marker or /work2/11412/neom/my-projects/NetBench-RAG/data/qdrant_store/ found)",
+        "[19:02:23] WARN  SKIP benchmark S1-gemma-3-1b-Instruct-Official \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-Instruct_v5.0.xlsx",
+        "[19:02:23] WARN  SKIP benchmark S2-gemma-3-1b-Instruct-LoRA-SFT \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-instruct-lora-sft-merged_v5.0.xlsx",
+        "[19:02:23] WARN  SKIP benchmark S3-gemma-3-1b-Instruct-Full-HPN-SFT \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-instruct-full-hpn-sft_v5.0.xlsx",
+        "[19:02:23] WARN  SKIP benchmark S4-gemma-3-1b-CPT-SFT \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-cpt-full-sft_v5.0.xlsx",
+        "[19:02:23] WARN  SKIP benchmark S5-gemma-3-1b-LoRA-CPT-SFT \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+        "[19:02:23] WARN  SKIP RAG benchmark S6-gemma-3-1b-Instruct-Official \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_RAG-gemma-3-1b-Instruct_v5.0.xlsx",
+        "[19:02:23] WARN  SKIP RAG benchmark S7-gemma-3-1b-CPT-SFT \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_RAG-gemma-3-1b-cpt-full-sft_v5.0.xlsx",
+        "[19:02:23] WARN  SKIP RAG benchmark S8-gemma-3-1b-LoRA-CPT-SFT \u2014 already exists: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_RAG-gemma-3-1b-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+        "[19:02:23] RUN judge all answers",
+        "   Output dir        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged",
+        "\u267b\ufe0f  Found 242 already-judged questions in /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-Instruct_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-Instruct_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-Instruct_by_gpt-5.1.xlsx",
+        "\u267b\ufe0f  Found 242 already-judged questions in /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "\u267b\ufe0f  Found 242 already-judged questions in /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "\u267b\ufe0f  Found 242 already-judged questions in /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-cpt-full-sft_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-cpt-full-sft_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-cpt-full-sft_by_gpt-5.1.xlsx",
+        "\u267b\ufe0f  Found 242 already-judged questions in /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-full-hpn-sft_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-full-hpn-sft_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-full-hpn-sft_by_gpt-5.1.xlsx",
+        "\u267b\ufe0f  Found 242 already-judged questions in /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-Instruct_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-Instruct_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-Instruct_by_gpt-5.1.xlsx",
+        "\u267b\ufe0f  Found 242 already-judged questions in /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-cpt-full-sft_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-cpt-full-sft_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-cpt-full-sft_by_gpt-5.1.xlsx",
+        "\u267b\ufe0f  Found 242 already-judged questions in /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-lora-sft-merged_by_gpt-5.1.xlsx",
+        "\ud83d\udcbe Saved: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-lora-sft-merged_by_gpt-5.1.xlsx",
+        "   Newly judged : 0",
+        "   Output        : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-lora-sft-merged_by_gpt-5.1.xlsx",
+        "\ud83c\udfc1 All done! 8 file(s) judged in 1.7s",
+        "   Output files in: /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged/",
+        "[19:02:33] OK judge all answers done",
+        "[19:02:33] RUN profile gpu S1-gemma-3-1b-Instruct-Official",
+        "2026-05-14 19:03:34 - INFO -   \ud83d\udcdd NB-HPN-0026-q1  (max_new_tokens=256)",
+        "2026-05-14 19:05:17 - INFO -   \ud83d\udcdd NB-HPN-0159-q0  (max_new_tokens=256)",
+        "2026-05-14 19:05:26 - INFO -   \ud83d\udcdd NB-HPN-2135-q1  (max_new_tokens=256)",
+        "2026-05-14 19:05:34 - INFO -   \ud83d\udcdd NB-HPN-2121-q2  (max_new_tokens=256)",
+        "2026-05-14 19:05:38 - INFO -   \ud83d\udcdd NB-HPN-1401-q1  (max_new_tokens=256)",
+        "[19:05:47] RUN profile gpu S4-gemma-3-1b-CPT-SFT",
+        "2026-05-14 19:06:15 - INFO -   \ud83d\udcdd NB-HPN-0026-q1  (max_new_tokens=256)",
+        "2026-05-14 19:07:55 - INFO -   \ud83d\udcdd NB-HPN-0159-q0  (max_new_tokens=256)",
+        "2026-05-14 19:08:04 - INFO -   \ud83d\udcdd NB-HPN-2135-q1  (max_new_tokens=256)",
+        "2026-05-14 19:08:12 - INFO -   \ud83d\udcdd NB-HPN-2121-q2  (max_new_tokens=256)",
+        "2026-05-14 19:08:31 - INFO -   \ud83d\udcdd NB-HPN-1401-q1  (max_new_tokens=256)",
+        "[19:08:39] RUN profile gpu S5-gemma-3-1b-LoRA-CPT-SFT",
+        "2026-05-14 19:09:04 - INFO -   \ud83d\udcdd NB-HPN-0026-q1  (max_new_tokens=256)",
+        "2026-05-14 19:10:23 - INFO -   \ud83d\udcdd NB-HPN-0159-q0  (max_new_tokens=256)",
+        "2026-05-14 19:10:55 - INFO -   \ud83d\udcdd NB-HPN-2135-q1  (max_new_tokens=256)",
+        "2026-05-14 19:11:03 - INFO -   \ud83d\udcdd NB-HPN-2121-q2  (max_new_tokens=256)",
+        "2026-05-14 19:11:23 - INFO -   \ud83d\udcdd NB-HPN-1401-q1  (max_new_tokens=256)",
+        "[19:11:30] RUN profile cpu S1-gemma-3-1b-Instruct-Official",
+        "2026-05-14 19:11:53 - INFO -   \ud83d\udcdd NB-HPN-0026-q1  (max_new_tokens=256)",
+        "2026-05-14 19:12:49 - INFO -   \ud83d\udcdd NB-HPN-0159-q0  (max_new_tokens=256)",
+        "2026-05-14 19:13:46 - INFO -   \ud83d\udcdd NB-HPN-2135-q1  (max_new_tokens=256)",
+        "2026-05-14 19:14:42 - INFO -   \ud83d\udcdd NB-HPN-2121-q2  (max_new_tokens=256)",
+        "2026-05-14 19:15:16 - INFO -   \ud83d\udcdd NB-HPN-1401-q1  (max_new_tokens=256)",
+        "[19:16:13] RUN profile cpu S4-gemma-3-1b-CPT-SFT",
+        "2026-05-14 19:16:33 - INFO -   \ud83d\udcdd NB-HPN-0026-q1  (max_new_tokens=256)",
+        "2026-05-14 19:17:30 - INFO -   \ud83d\udcdd NB-HPN-0159-q0  (max_new_tokens=256)",
+        "2026-05-14 19:18:23 - INFO -   \ud83d\udcdd NB-HPN-2135-q1  (max_new_tokens=256)",
+        "2026-05-14 19:19:20 - INFO -   \ud83d\udcdd NB-HPN-2121-q2  (max_new_tokens=256)",
+        "2026-05-14 19:20:14 - INFO -   \ud83d\udcdd NB-HPN-1401-q1  (max_new_tokens=256)",
+        "[19:21:13] RUN profile cpu S5-gemma-3-1b-LoRA-CPT-SFT",
+        "2026-05-14 19:21:34 - INFO -   \ud83d\udcdd NB-HPN-0026-q1  (max_new_tokens=256)",
+        "2026-05-14 19:22:30 - INFO -   \ud83d\udcdd NB-HPN-0159-q0  (max_new_tokens=256)",
+        "2026-05-14 19:23:26 - INFO -   \ud83d\udcdd NB-HPN-2135-q1  (max_new_tokens=256)",
+        "2026-05-14 19:24:10 - INFO -   \ud83d\udcdd NB-HPN-2121-q2  (max_new_tokens=256)",
+        "2026-05-14 19:25:06 - INFO -   \ud83d\udcdd NB-HPN-1401-q1  (max_new_tokens=256)",
+        "[19:26:04] RUN profile RAG gpu S7-gemma-3-1b-RAG-CPT-SFT",
+        "[19:32:52] RUN profile RAG gpu S8-gemma-3-1b-RAG-LoRA-CPT-SFT",
+        "[19:38:39] RUN profile RAG cpu S7-gemma-3-1b-RAG-CPT-SFT",
+        "[20:04:38] RUN profile RAG cpu S8-gemma-3-1b-RAG-LoRA-CPT-SFT",
+        "[20:29:50] RUN inference profiling summary",
+        "[20:29:50] RUN S4 adaptation report",
+        "[20:32:32] RUN S5 LoRA-CPT adaptation report",
+        "[20:33:59] RUN benchmark comparison report",
+        "   \ud83d\udccb Loaded 242 scored rows from: gemma-3-1b-Instruct (judged by gpt-5.1)",
+        "   \ud83d\udccb Loaded 242 scored rows from: RAG-gemma-3-1b-cpt-full-sft (judged by gpt-5.1)",
+        "   \ud83d\udccb Loaded 242 scored rows from: gemma-3-1b-instruct-lora-cpt-then-sft-merged (judged by gpt-5.1)",
+        "   \ud83d\udccb Loaded 242 scored rows from: RAG-gemma-3-1b-Instruct (judged by gpt-5.1)",
+        "   \ud83d\udccb Loaded 242 scored rows from: RAG-gemma-3-1b-instruct-lora-cpt-then-sft-merged (judged by gpt-5.1)",
+        "   \ud83d\udccb Loaded 242 scored rows from: gemma-3-1b-cpt-full-sft (judged by gpt-5.1)",
+        "   \ud83d\udccb Loaded 242 scored rows from: gemma-3-1b-instruct-lora-sft-merged (judged by gpt-5.1)",
+        "   \ud83d\udccb Loaded 242 scored rows from: gemma-3-1b-instruct-full-hpn-sft (judged by gpt-5.1)",
+        "Judged    : /work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/judged"
+      ],
+      "mtime_utc": "2026-05-15T01:34:00+00:00",
+      "path": "outputs/by_model/gemma-3-1b/logs/hpn-gemma-3-1b-20260514-185958.log",
+      "sha256": "5bd82eb576e65f1d5eddcf609548c11e6cc6c3f5befd6fa27eeb726a362678e2"
+    }
+  ],
+  "lora_adapters": [
+    {
+      "adapter_config": {
+        "base_model_name_or_path": "/work2/11412/neom/my-projects/NetBench-LLM/models/instruct-official/gemma-3-1b-Instruct",
+        "bias": "none",
+        "lora_alpha": 128,
+        "lora_dropout": 0.05,
+        "modules_to_save": null,
+        "peft_type": "LORA",
+        "r": 64,
+        "target_modules": [
+          "gate_proj",
+          "v_proj",
+          "down_proj",
+          "q_proj",
+          "up_proj",
+          "k_proj",
+          "o_proj"
+        ],
+        "task_type": "CAUSAL_LM",
+        "use_rslora": false
+      },
+      "bytes": 1167,
+      "mtime_utc": "2026-05-13T06:00:28+00:00",
+      "path": "models/lora/gemma-3-1b-instruct-lora-cpt/adapter_config.json",
+      "sha256": "0b5333d8d345e98b30d0d90c541df2d415a9332fdc00c3f5417fde406a5bb593"
+    },
+    {
+      "adapter_config": {
+        "base_model_name_or_path": "/work2/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-cpt-merged",
+        "bias": "none",
+        "lora_alpha": 128,
+        "lora_dropout": 0.05,
+        "modules_to_save": null,
+        "peft_type": "LORA",
+        "r": 64,
+        "target_modules": [
+          "up_proj",
+          "q_proj",
+          "v_proj",
+          "o_proj",
+          "k_proj",
+          "gate_proj",
+          "down_proj"
+        ],
+        "task_type": "CAUSAL_LM",
+        "use_rslora": false
+      },
+      "bytes": 1177,
+      "mtime_utc": "2026-05-13T06:15:07+00:00",
+      "path": "models/lora/gemma-3-1b-instruct-lora-cpt-then-sft/adapter_config.json",
+      "sha256": "e81c57c0f7f03d0f9cb94fadea71c681ab4451a24aa5dcb5d37471235d12c96e"
+    },
+    {
+      "adapter_config": {
+        "base_model_name_or_path": "/work2/11412/neom/my-projects/NetBench-LLM/models/instruct-official/gemma-3-1b-Instruct",
+        "bias": "none",
+        "lora_alpha": 128,
+        "lora_dropout": 0.05,
+        "modules_to_save": null,
+        "peft_type": "LORA",
+        "r": 64,
+        "target_modules": [
+          "o_proj",
+          "q_proj",
+          "k_proj",
+          "down_proj",
+          "gate_proj",
+          "up_proj",
+          "v_proj"
+        ],
+        "task_type": "CAUSAL_LM",
+        "use_rslora": false
+      },
+      "bytes": 1167,
+      "mtime_utc": "2026-05-13T04:37:03+00:00",
+      "path": "models/lora/gemma-3-1b-instruct-lora-sft/adapter_config.json",
+      "sha256": "fc139a4bafab8c51b00d76a728b7822973f4edb7b3ecd938efe02d0ebda2dba8"
+    }
+  ],
+  "model_configs": [
+    {
+      "bytes": 880,
+      "config": {
+        "architectures": [
+          "Gemma3ForCausalLM"
+        ],
+        "hidden_size": 1152,
+        "intermediate_size": 6912,
+        "max_position_embeddings": 32768,
+        "model_type": "gemma3_text",
+        "num_attention_heads": 4,
+        "num_hidden_layers": 26,
+        "num_key_value_heads": 1,
+        "sliding_window": 512,
+        "torch_dtype": "bfloat16",
+        "vocab_size": 262144
+      },
+      "mtime_utc": "2026-05-11T23:07:06+00:00",
+      "path": "models/base/gemma-3-1b-Base/config.json",
+      "sha256": "4dd5218cebc4fdea9004b944d34672a2d47f9ef930e3bb16a3fc4bbbe0fcee81"
+    },
+    {
+      "bytes": 1775,
+      "config": {
+        "architectures": [
+          "Gemma3ForCausalLM"
+        ],
+        "hidden_size": 1152,
+        "intermediate_size": 6912,
+        "max_position_embeddings": 32768,
+        "model_type": "gemma3_text",
+        "num_attention_heads": 4,
+        "num_hidden_layers": 26,
+        "num_key_value_heads": 1,
+        "sliding_window": 512,
+        "tie_word_embeddings": true,
+        "vocab_size": 262144
+      },
+      "mtime_utc": "2026-05-11T23:07:24+00:00",
+      "path": "models/instruct-official/gemma-3-1b-Instruct/config.json",
+      "sha256": "f9d98827e260db80a36a07d42518c25b63ebc613e6c10d2567ae54eeeaa75b94"
+    },
+    {
+      "bytes": 1757,
+      "config": {
+        "architectures": [
+          "Gemma3ForCausalLM"
+        ],
+        "hidden_size": 1152,
+        "intermediate_size": 6912,
+        "max_position_embeddings": 32768,
+        "model_type": "gemma3_text",
+        "num_attention_heads": 4,
+        "num_hidden_layers": 26,
+        "num_key_value_heads": 1,
+        "sliding_window": 512,
+        "tie_word_embeddings": true,
+        "vocab_size": 262144
+      },
+      "mtime_utc": "2026-05-13T03:55:03+00:00",
+      "path": "models/instruction/gemma-3-1b-cpt-full-sft/checkpoints/checkpoint-100/config.json",
+      "sha256": "e657a0fe448ef00bd936520ea13428042488c94bfd304729103ac4dd009241d0"
+    },
+    {
+      "bytes": 1757,
+      "config": {
+        "architectures": [
+          "Gemma3ForCausalLM"
+        ],
+        "hidden_size": 1152,
+        "intermediate_size": 6912,
+        "max_position_embeddings": 32768,
+        "model_type": "gemma3_text",
+        "num_attention_heads": 4,
+        "num_hidden_layers": 26,
+        "num_key_value_heads": 1,
+        "sliding_window": 512,
+        "tie_word_embeddings": true,
+        "vocab_size": 262144
+      },
+      "mtime_utc": "2026-05-13T03:56:57+00:00",
+      "path": "models/instruction/gemma-3-1b-cpt-full-sft/checkpoints/checkpoint-153/config.json",
+      "sha256": "e657a0fe448ef00bd936520ea13428042488c94bfd304729103ac4dd009241d0"
+    },
+    {
+      "bytes": 1757,
+      "config": {
+        "architectures": [
+          "Gemma3ForCausalLM"
+        ],
+        "hidden_size": 1152,
+        "intermediate_size": 6912,
+        "max_position_embeddings": 32768,
+        "model_type": "gemma3_text",
+        "num_attention_heads": 4,
+        "num_hidden_layers": 26,
+        "num_key_value_heads": 1,
+        "sliding_window": 512,
+        "tie_word_embeddings": true,
+        "vocab_size": 262144
+      },
+      "mtime_utc": "2026-05-13T03:57:04+00:00",
+      "path": "models/instruction/gemma-3-1b-cpt-full-sft/config.json",
+      "sha256": "e657a0fe448ef00bd936520ea13428042488c94bfd304729103ac4dd009241d0"
+    },
+    {
+      "bytes": 1776,
+      "config": {
+        "architectures": [
+          "Gemma3ForCausalLM"
+        ],
+        "hidden_size": 1152,
+        "intermediate_size": 6912,
+        "max_position_embeddings": 32768,
+        "model_type": "gemma3_text",
+        "num_attention_heads": 4,
+        "num_hidden_layers": 26,
+        "num_key_value_heads": 1,
+        "sliding_window": 512,
+        "tie_word_embeddings": true,
+        "vocab_size": 262144
+      },
+      "mtime_utc": "2026-05-13T04:00:43+00:00",
+      "path": "models/instruction/gemma-3-1b-instruct-full-hpn-sft/checkpoints/checkpoint-100/config.json",
+      "sha256": "27122fb8f30ffa0cd800484eed82ad750fe468d3df19379bcf3f889f5fb6de64"
+    },
+    {
+      "bytes": 1776,
+      "config": {
+        "architectures": [
+          "Gemma3ForCausalLM"
+        ],
+        "hidden_size": 1152,
+        "intermediate_size": 6912,
+        "max_position_embeddings": 32768,
+        "model_type": "gemma3_text",
+        "num_attention_heads": 4,
+        "num_hidden_layers": 26,
+        "num_key_value_heads": 1,
+        "sliding_window": 512,
+        "tie_word_embeddings": true,
+        "vocab_size": 262144
+      },
+      "mtime_utc": "2026-05-13T04:02:36+00:00",
+      "path": "models/instruction/gemma-3-1b-instruct-full-hpn-sft/checkpoints/checkpoint-153/config.json",
+      "sha256": "27122fb8f30ffa0cd800484eed82ad750fe468d3df19379bcf3f889f5fb6de64"
+    },
+    {
+      "bytes": 1776,
+      "config": {
+        "architectures": [
+          "Gemma3ForCausalLM"
+        ],
+        "hidden_size": 1152,
+        "intermediate_size": 6912,
+        "max_position_embeddings": 32768,
+        "model_type": "gemma3_text",
+        "num_attention_heads": 4,
+        "num_hidden_layers": 26,
+        "num_key_value_heads": 1,
+        "sliding_window": 512,
+        "tie_word_embeddings": true,
+        "vocab_size": 262144
+      },
+      "mtime_utc": "2026-05-13T04:02:43+00:00",
+      "path": "models/instruction/gemma-3-1b-instruct-full-hpn-sft/config.json",
+      "sha256": "27122fb8f30ffa0cd800484eed82ad750fe468d3df19379bcf3f889f5fb6de64"
+    },
+    {
+      "bytes": 1775,
+      "config": {
+        "architectures": [
+          "Gemma3ForCausalLM"
+        ],
+        "hidden_size": 1152,
+        "intermediate_size": 6912,
+        "max_position_embeddings": 32768,
+        "model_type": "gemma3_text",
+        "num_attention_heads": 4,
+        "num_hidden_layers": 26,
+        "num_key_value_heads": 1,
+        "sliding_window": 512,
+        "tie_word_embeddings": true,
+        "vocab_size": 262144
+      },
+      "mtime_utc": "2026-05-13T06:02:30+00:00",
+      "path": "models/lora-merged/gemma-3-1b-instruct-lora-cpt-merged/config.json",
+      "sha256": "f9d98827e260db80a36a07d42518c25b63ebc613e6c10d2567ae54eeeaa75b94"
+    },
+    {
+      "bytes": 1775,
+      "config": {
+        "architectures": [
+          "Gemma3ForCausalLM"
+        ],
+        "hidden_size": 1152,
+        "intermediate_size": 6912,
+        "max_position_embeddings": 32768,
+        "model_type": "gemma3_text",
+        "num_attention_heads": 4,
+        "num_hidden_layers": 26,
+        "num_key_value_heads": 1,
+        "sliding_window": 512,
+        "tie_word_embeddings": true,
+        "vocab_size": 262144
+      },
+      "mtime_utc": "2026-05-13T06:15:26+00:00",
+      "path": "models/lora-merged/gemma-3-1b-instruct-lora-cpt-then-sft-merged/config.json",
+      "sha256": "f9d98827e260db80a36a07d42518c25b63ebc613e6c10d2567ae54eeeaa75b94"
+    },
+    {
+      "bytes": 1775,
+      "config": {
+        "architectures": [
+          "Gemma3ForCausalLM"
+        ],
+        "hidden_size": 1152,
+        "intermediate_size": 6912,
+        "max_position_embeddings": 32768,
+        "model_type": "gemma3_text",
+        "num_attention_heads": 4,
+        "num_hidden_layers": 26,
+        "num_key_value_heads": 1,
+        "sliding_window": 512,
+        "tie_word_embeddings": true,
+        "vocab_size": 262144
+      },
+      "mtime_utc": "2026-05-13T04:37:21+00:00",
+      "path": "models/lora-merged/gemma-3-1b-instruct-lora-sft-merged/config.json",
+      "sha256": "f9d98827e260db80a36a07d42518c25b63ebc613e6c10d2567ae54eeeaa75b94"
+    },
+    {
+      "bytes": 1757,
+      "config": {
+        "architectures": [
+          "Gemma3ForCausalLM"
+        ],
+        "hidden_size": 1152,
+        "intermediate_size": 6912,
+        "max_position_embeddings": 32768,
+        "model_type": "gemma3_text",
+        "num_attention_heads": 4,
+        "num_hidden_layers": 26,
+        "num_key_value_heads": 1,
+        "sliding_window": 512,
+        "tie_word_embeddings": true,
+        "vocab_size": 262144
+      },
+      "mtime_utc": "2026-05-12T21:33:19+00:00",
+      "path": "models/pretrained/gemma-3-1b-trained-new/checkpoints/checkpoint-669/config.json",
+      "sha256": "e657a0fe448ef00bd936520ea13428042488c94bfd304729103ac4dd009241d0"
+    },
+    {
+      "bytes": 1757,
+      "config": {
+        "architectures": [
+          "Gemma3ForCausalLM"
+        ],
+        "hidden_size": 1152,
+        "intermediate_size": 6912,
+        "max_position_embeddings": 32768,
+        "model_type": "gemma3_text",
+        "num_attention_heads": 4,
+        "num_hidden_layers": 26,
+        "num_key_value_heads": 1,
+        "sliding_window": 512,
+        "tie_word_embeddings": true,
+        "vocab_size": 262144
+      },
+      "mtime_utc": "2026-05-12T21:37:00+00:00",
+      "path": "models/pretrained/gemma-3-1b-trained-new/checkpoints/checkpoint-672/config.json",
+      "sha256": "e657a0fe448ef00bd936520ea13428042488c94bfd304729103ac4dd009241d0"
+    },
+    {
+      "bytes": 1757,
+      "config": {
+        "architectures": [
+          "Gemma3ForCausalLM"
+        ],
+        "hidden_size": 1152,
+        "intermediate_size": 6912,
+        "max_position_embeddings": 32768,
+        "model_type": "gemma3_text",
+        "num_attention_heads": 4,
+        "num_hidden_layers": 26,
+        "num_key_value_heads": 1,
+        "sliding_window": 512,
+        "tie_word_embeddings": true,
+        "vocab_size": 262144
+      },
+      "mtime_utc": "2026-05-12T21:37:07+00:00",
+      "path": "models/pretrained/gemma-3-1b-trained-new/config.json",
+      "sha256": "e657a0fe448ef00bd936520ea13428042488c94bfd304729103ac4dd009241d0"
+    }
+  ],
+  "model_slug": "gemma-3-1b",
+  "outputs": {
+    "adaptation_reports": [
+      {
+        "bytes": 1075,
+        "json_preview": {
+          "base": {
+            "general": {
+              "batches": 36,
+              "loss": 3.310089,
+              "perplexity": 27.3876,
+              "tokens": 290816
+            },
+            "hpn": {
+              "batches": 188,
+              "loss": 3.331889,
+              "perplexity": 27.9912,
+              "tokens": 1533952
+            }
+          },
+          "base_model_path": "/work2/11412/neom/my-projects/NetBench-LLM/models/instruct-official/gemma-3-1b-Instruct",
+          "config": {
+            "batch_size": 4,
+            "max_general_batches": null,
+            "max_hpn_batches": null,
+            "quantize_4bit": false,
+            "seq_len": 2048
+          },
+          "forgetting_gap": -0.138653,
+          "hpn_data_dir": "/work2/11412/neom/my-projects/NetBench-LLM/data/processed/lora/gemma-3-1b",
+          "timestamp": "2026-05-14T20:32:45.829317",
+          "trained": {
+            "general": {
+              "batches": 36,
+              "loss": 3.171436,
+              "perplexity": 23.8417,
+              "tokens": 290816
+            },
+            "hpn": {
+              "batches": 188,
+              "loss": 2.448203,
+              "perplexity": 11.5675,
+              "tokens": 1533952
+            }
+          },
+          "trained_model_path": "/work2/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-cpt-merged"
+        },
+        "mtime_utc": "2026-05-15T01:33:58+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/adaptation_reports/adaptation_report_gemma-3-1b-instruct-lora-cpt-merged_20260514_203358.json",
+        "sha256": "7ea4633f0c8c318c4fef0863d3440ca0794967e4bfd41d0c06d4c79db802ddab"
+      },
+      {
+        "bytes": 5405,
+        "excel": {
+          "sheets": [
+            "Adaptation Report"
+          ]
+        },
+        "mtime_utc": "2026-05-15T01:33:58+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/adaptation_reports/adaptation_report_gemma-3-1b-instruct-lora-cpt-merged_20260514_203358.xlsx",
+        "sha256": "1092f812b3652eac203f92e525b683c9a29158c1cfeea9a174f142440a659b9e"
+      },
+      {
+        "bytes": 1038,
+        "json_preview": {
+          "base": {
+            "general": {
+              "batches": 36,
+              "loss": 2.642599,
+              "perplexity": 14.0497,
+              "tokens": 290816
+            },
+            "hpn": {
+              "batches": 188,
+              "loss": 2.937844,
+              "perplexity": 18.8751,
+              "tokens": 1533952
+            }
+          },
+          "base_model_path": "/work2/11412/neom/my-projects/NetBench-LLM/models/base/gemma-3-1b-Base",
+          "config": {
+            "batch_size": 4,
+            "max_general_batches": null,
+            "max_hpn_batches": null,
+            "quantize_4bit": false,
+            "seq_len": 2048
+          },
+          "forgetting_gap": -0.166478,
+          "hpn_data_dir": "/work2/11412/neom/my-projects/NetBench-LLM/data/processed/gemma-3-1b",
+          "timestamp": "2026-05-14T20:30:54.062111",
+          "trained": {
+            "general": {
+              "batches": 36,
+              "loss": 2.476121,
+              "perplexity": 11.895,
+              "tokens": 290816
+            },
+            "hpn": {
+              "batches": 188,
+              "loss": 2.399558,
+              "perplexity": 11.0183,
+              "tokens": 1533952
+            }
+          },
+          "trained_model_path": "/work2/11412/neom/my-projects/NetBench-LLM/models/pretrained/gemma-3-1b-trained-new"
+        },
+        "mtime_utc": "2026-05-15T01:32:29+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/adaptation_reports/adaptation_report_gemma-3-1b-trained-new_20260514_203229.json",
+        "sha256": "b3d8871ea78986c34fa93898ba8e59e77731d3899d0254818d93352d832b6a56"
+      },
+      {
+        "bytes": 5390,
+        "excel": {
+          "sheets": [
+            "Adaptation Report"
+          ]
+        },
+        "mtime_utc": "2026-05-15T01:32:29+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/adaptation_reports/adaptation_report_gemma-3-1b-trained-new_20260514_203229.xlsx",
+        "sha256": "d8fb8fb271bf13f9dffab4cb68eb07eb30f8f69572e6f3aac4891a03a7577ffc"
+      }
+    ],
+    "answer_files": [
+      {
+        "bytes": 267597,
+        "excel": {
+          "metadata": {
+            "avg_pipeline_time_sec": "19.58",
+            "backend": "local",
+            "benchmark_file": "/work/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "bm25_top_k": "30",
+            "generation_max_tokens": "512",
+            "generation_temperature": "0.0",
+            "model_name": "RAG-gemma-3-1b-Instruct",
+            "reranker_model": "BAAI/bge-reranker-v2-m3",
+            "reranker_top_n": "4",
+            "rrf_top_n": "20",
+            "timestamp": "2026-05-13T17:52:23.897318",
+            "total_pipeline_time_sec": "4737.3",
+            "total_questions": "242",
+            "vector_top_k": "30"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-13T22:52:24+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/answers/hpn_answers_RAG-gemma-3-1b-Instruct_v5.0.xlsx",
+        "sha256": "a65c0132a3a0e1a1c8e663350f36db9e788f3c54c72df9cab05a78109e9305c4"
+      },
+      {
+        "bytes": 198074,
+        "excel": {
+          "metadata": {
+            "avg_pipeline_time_sec": "3.83",
+            "backend": "local",
+            "benchmark_file": "/work2/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "bm25_top_k": "30",
+            "generation_max_tokens": "512",
+            "generation_temperature": "0.0",
+            "model_name": "RAG-gemma-3-1b-cpt-full-sft",
+            "reranker_model": "BAAI/bge-reranker-v2-m3",
+            "reranker_top_n": "4",
+            "rrf_top_n": "20",
+            "timestamp": "2026-05-13T18:42:21.653218",
+            "total_pipeline_time_sec": "927.0",
+            "total_questions": "242",
+            "vector_top_k": "30"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-13T23:42:21+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/answers/hpn_answers_RAG-gemma-3-1b-cpt-full-sft_v5.0.xlsx",
+        "sha256": "7648b1ded44a3b9c34d36a228bc6c6ad07419d0ebe11511fb2ca3b91f7b07706"
+      },
+      {
+        "bytes": 197395,
+        "excel": {
+          "metadata": {
+            "avg_pipeline_time_sec": "3.71",
+            "backend": "local",
+            "benchmark_file": "/work2/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "bm25_top_k": "30",
+            "generation_max_tokens": "512",
+            "generation_temperature": "0.0",
+            "model_name": "RAG-gemma-3-1b-instruct-lora-cpt-then-sft-merged",
+            "reranker_model": "BAAI/bge-reranker-v2-m3",
+            "reranker_top_n": "4",
+            "rrf_top_n": "20",
+            "timestamp": "2026-05-13T18:57:52.113852",
+            "total_pipeline_time_sec": "897.0",
+            "total_questions": "242",
+            "vector_top_k": "30"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-13T23:57:52+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/answers/hpn_answers_RAG-gemma-3-1b-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+        "sha256": "4ab858530d443b114bc83c2940af97a3bdb54e5ead7e902e940037d8977efb27"
+      },
+      {
+        "bytes": 231677,
+        "excel": {
+          "metadata": {
+            "avg_generation_time_sec": "2.54",
+            "benchmark_file": "/work/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "max_new_tokens": "512",
+            "model_name": "gemma-3-1b-Instruct",
+            "model_path": "/work/11412/neom/my-projects/NetBench-LLM/models/instruct-official/gemma-3-1b-Instruct",
+            "temperature": "0.0",
+            "timestamp": "2026-05-13T16:02:32.140935",
+            "top_p": "0.9",
+            "total_generation_time_sec": "614.6",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-13T21:02:32+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-Instruct_v5.0.xlsx",
+        "sha256": "f615759ee77f526c85ed0af69530616ff84db584149177939bca920374f203b4"
+      },
+      {
+        "bytes": 159152,
+        "excel": {
+          "metadata": {
+            "avg_generation_time_sec": "2.03",
+            "benchmark_file": "/work/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "max_new_tokens": "512",
+            "model_name": "gemma-3-1b-cpt-full-sft",
+            "model_path": "/work/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-cpt-full-sft",
+            "temperature": "0.0",
+            "timestamp": "2026-05-13T16:25:20.407212",
+            "top_p": "0.9",
+            "total_generation_time_sec": "491.5",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-13T21:25:20+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-cpt-full-sft_v5.0.xlsx",
+        "sha256": "eb55c000088b7c40b27c59135b64d056d000fdf4b45ee16956af02f6a5aa53fb"
+      },
+      {
+        "bytes": 157737,
+        "excel": {
+          "metadata": {
+            "avg_generation_time_sec": "1.77",
+            "benchmark_file": "/work/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "max_new_tokens": "512",
+            "model_name": "gemma-3-1b-instruct-full-hpn-sft",
+            "model_path": "/work/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-instruct-full-hpn-sft",
+            "temperature": "0.0",
+            "timestamp": "2026-05-13T16:16:51.328651",
+            "top_p": "0.9",
+            "total_generation_time_sec": "429.2",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-13T21:16:51+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-instruct-full-hpn-sft_v5.0.xlsx",
+        "sha256": "df70b297c14b34606932599e1b3a4957d9be981fe427d85719c367c8bd36130e"
+      },
+      {
+        "bytes": 164837,
+        "excel": {
+          "metadata": {
+            "avg_generation_time_sec": "1.69",
+            "benchmark_file": "/work/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "max_new_tokens": "512",
+            "model_name": "gemma-3-1b-instruct-lora-cpt-then-sft-merged",
+            "model_path": "/work/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-cpt-then-sft-merged",
+            "temperature": "0.0",
+            "timestamp": "2026-05-13T16:32:26.806852",
+            "top_p": "0.9",
+            "total_generation_time_sec": "408.8",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-13T21:32:26+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+        "sha256": "baacc78c21d5e3f0f7b105b386addcccdfd143a1e5dc0099411d21e3f610a508"
+      },
+      {
+        "bytes": 162582,
+        "excel": {
+          "metadata": {
+            "avg_generation_time_sec": "1.63",
+            "benchmark_file": "/work/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "max_new_tokens": "512",
+            "model_name": "gemma-3-1b-instruct-lora-sft-merged",
+            "model_path": "/work/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-sft-merged",
+            "temperature": "0.0",
+            "timestamp": "2026-05-13T16:09:24.865563",
+            "top_p": "0.9",
+            "total_generation_time_sec": "393.8",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Answers"
+          ]
+        },
+        "mtime_utc": "2026-05-13T21:09:24+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-instruct-lora-sft-merged_v5.0.xlsx",
+        "sha256": "a4b47e6331a440e9b95892af20904f719599adcaa5b57b454dbc7ed093ddc413"
+      }
+    ],
+    "judged_files": [
+      {
+        "bytes": 278126,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "0.00",
+            "benchmark_file": "/work/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "RAG-gemma-3-1b-Instruct",
+            "source_answer_file": "/work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_RAG-gemma-3-1b-Instruct_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-14T19:02:33.012275",
+            "total_judging_time_sec": "0.0",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-15T00:02:33+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-Instruct_by_gpt-5.1.xlsx",
+        "sha256": "d022cf4418392d886c4fad44577ed1b92c9be7f67a18f7acde26a113bb5dc366"
+      },
+      {
+        "bytes": 210783,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "0.00",
+            "benchmark_file": "/work2/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "RAG-gemma-3-1b-cpt-full-sft",
+            "source_answer_file": "/work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_RAG-gemma-3-1b-cpt-full-sft_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-14T19:02:32.606279",
+            "total_judging_time_sec": "0.0",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-15T00:02:32+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-cpt-full-sft_by_gpt-5.1.xlsx",
+        "sha256": "acadaddfe714996975c05175f37dc6583f6a9f68edb1926a1d13b9c707996def"
+      },
+      {
+        "bytes": 209761,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "0.00",
+            "benchmark_file": "/work2/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "RAG-gemma-3-1b-instruct-lora-cpt-then-sft-merged",
+            "source_answer_file": "/work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_RAG-gemma-3-1b-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-14T19:02:32.176835",
+            "total_judging_time_sec": "0.0",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-15T00:02:32+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/judged/hpn_judged_RAG-gemma-3-1b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "sha256": "b7c3bb859ebc60f2855b3f2a5b2962478c6c8cf1d564b0a5dfb8c9924d885774"
+      },
+      {
+        "bytes": 277044,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "0.00",
+            "benchmark_file": "/work/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "gemma-3-1b-Instruct",
+            "source_answer_file": "/work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-Instruct_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-14T19:02:31.950167",
+            "total_judging_time_sec": "0.0",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-15T00:02:32+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-Instruct_by_gpt-5.1.xlsx",
+        "sha256": "3fc484f596cd843057344bf20446101c6d2003823b1d0df22f528ac06cee944b"
+      },
+      {
+        "bytes": 201175,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "0.00",
+            "benchmark_file": "/work/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "gemma-3-1b-cpt-full-sft",
+            "source_answer_file": "/work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-cpt-full-sft_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-14T19:02:33.227565",
+            "total_judging_time_sec": "0.0",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-15T00:02:33+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-cpt-full-sft_by_gpt-5.1.xlsx",
+        "sha256": "ad0a44d419694ddcbc98610a9837e7e7db42ffdd064ea80f56e372a513b1792e"
+      },
+      {
+        "bytes": 200352,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "0.00",
+            "benchmark_file": "/work/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "gemma-3-1b-instruct-full-hpn-sft",
+            "source_answer_file": "/work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-instruct-full-hpn-sft_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-14T19:02:32.798674",
+            "total_judging_time_sec": "0.0",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-15T00:02:32+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-full-hpn-sft_by_gpt-5.1.xlsx",
+        "sha256": "67a0fff7e0cb9a7ca6b3ac83ccfc46bc6ec1498d8abff4f0c06124b1c50a4d2d"
+      },
+      {
+        "bytes": 207774,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "0.00",
+            "benchmark_file": "/work/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "gemma-3-1b-instruct-lora-cpt-then-sft-merged",
+            "source_answer_file": "/work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-instruct-lora-cpt-then-sft-merged_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-14T19:02:32.401283",
+            "total_judging_time_sec": "0.0",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-15T00:02:32+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-lora-cpt-then-sft-merged_by_gpt-5.1.xlsx",
+        "sha256": "7a4f82ec43c41d0c049b14d9e7781f72b9a89d38bb4cef5903bcb573cba43358"
+      },
+      {
+        "bytes": 204807,
+        "excel": {
+          "metadata": {
+            "avg_judging_time_sec": "0.00",
+            "benchmark_file": "/work/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+            "failed_judgments": "0",
+            "judge_model": "gpt-5.1",
+            "model_name": "gemma-3-1b-instruct-lora-sft-merged",
+            "source_answer_file": "/work2/11412/neom/my-projects/NetBench-LLM/outputs/gemma-3-1b/evaluations/answers/hpn_answers_gemma-3-1b-instruct-lora-sft-merged_v5.0.xlsx",
+            "successfully_judged": "242",
+            "timestamp": "2026-05-14T19:02:33.430532",
+            "total_judging_time_sec": "0.0",
+            "total_questions": "242"
+          },
+          "sheets": [
+            "Metadata",
+            "Judged",
+            "Summary"
+          ]
+        },
+        "mtime_utc": "2026-05-15T00:02:33+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/judged/hpn_judged_gemma-3-1b-instruct-lora-sft-merged_by_gpt-5.1.xlsx",
+        "sha256": "da6a1e9a958382d822a394d039d9836496bd87337cd2935c1be6a1d4d34eb4c0"
+      }
+    ],
+    "rag_answer_files": [],
+    "report_files": [
+      {
+        "bytes": 6174,
+        "mtime_utc": "2026-05-15T01:34:00+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/reports/HPN_BENCHMARK_REPORT_by_gpt-5.1.md",
+        "sha256": "7cd74ddaccf8e8982d90fa6f944ed57a3f08661ccf276089747ac90abe90686d"
+      },
+      {
+        "bytes": 46762,
+        "excel": {
+          "sheets": [
+            "Comparison",
+            "Overall Summary",
+            "By Category",
+            "By Difficulty"
+          ]
+        },
+        "mtime_utc": "2026-05-15T01:34:00+00:00",
+        "path": "outputs/by_model/gemma-3-1b/evaluations/reports/hpn_benchmark_report_by_gpt-5.1.xlsx",
+        "sha256": "373160b6dfed454f620826ea3da128b17f650327e8281877c0effcceb4529a19"
+      }
+    ]
+  },
+  "parallel_worker_files": [],
+  "pipeline_script": {
+    "bytes": 70720,
+    "mtime_utc": "2026-05-15T17:13:19+00:00",
+    "path": "scripts/run_pipeline.sh",
+    "sha256": "cb3411052a7c9b2a9b7cf72921517522a90ec032517b941ba928f71ef7024ae7"
+  },
+  "pipeline_variables": {
+    "BENCHMARK_FILE": "${LLM_DIR}/data/prompts/hpn_benchmark_v5.0.jsonl",
+    "BENCH_BATCH_SIZE": "4",
+    "BOLD": "\\033[1m",
+    "CORPUS_FILE": "${best}",
+    "CPT_BATCH": "1",
+    "CPT_EPOCHS": "3",
+    "CPT_GRAD_ACCUM": "${safe_accum}",
+    "CPT_LR": "2e-5",
+    "CYAN": "'\\033[0",
+    "DATA_CPT_DIR": "${LLM_DIR}/data/processed/${slug}",
+    "DATA_GENERAL_SFT_DIR": "${LLM_DIR}/data/instruction/${slug}-general",
+    "DATA_HPN_SFT_DIR": "${LLM_DIR}/data/instruction/${slug}-hpn",
+    "DATA_LORA_CPT_DIR": "${LLM_DIR}/data/processed/lora/${slug}",
+    "DS_ZERO3_CONFIG": "${LLM_DIR}/configs/ds_zero3.json",
+    "GEMINI_KEY_FILE": "${LLM_DIR}/gemini_api_key.txt",
+    "GPU_COUNT": "$(awk 'END { print NR }' <<< \"${gpu_names}\")",
+    "GREEN": "'\\033[0",
+    "HF_TOKEN_FILE": "${LLM_DIR}/hf_token.txt",
+    "HPN_INSTRUCT_JSONL": "${LLM_DIR}/data/Instruct-FTD/v3_run_plus_json",
+    "JUDGE_MODEL": "gpt-5.1",
+    "LLM_DIR": "$(cd \"${SCRIPT_DIR}/..\" && pwd)",
+    "LORA_ALPHA": "128",
+    "LORA_BATCH": "4",
+    "LORA_EPOCHS": "3",
+    "LORA_GRAD_ACCUM": "4",
+    "LORA_LR": "2e-4",
+    "LORA_RANK": "64",
+    "MODEL_BASE_DIR": "models/base/gemma-3-12b",
+    "MODEL_FAMILY": "gemma",
+    "MODEL_HF_BASE": "google/gemma-3-12b-pt",
+    "MODEL_HF_INSTRUCT": "google/gemma-3-12b-it",
+    "MODEL_INSTRUCT_DIR": "models/instruct-official/gemma-3-12b-it",
+    "MODEL_NAME": "gemma-3-12b",
+    "MODEL_PRETRAINED_DIR": "models/pretrained/gemma-3-12b-trained-new",
+    "MODEL_SHORTCUT": "custom",
+    "M_BASE": "$(path_from_llm_root \"${MODEL_BASE_DIR}\")",
+    "M_INSTRUCT_OFFICIAL": "$(path_from_llm_root \"${MODEL_INSTRUCT_DIR}\")",
+    "M_PRETRAINED": "$(path_from_llm_root \"${MODEL_PRETRAINED_DIR}\")",
+    "M_S2_LORA_SFT_ADAPTER": "${LLM_DIR}/models/lora/${MODEL_NAME}-instruct-lora-sft",
+    "M_S2_LORA_SFT_MERGED": "${LLM_DIR}/models/lora-merged/${MODEL_NAME}-instruct-lora-sft-merged",
+    "M_S3_FULL_HPN_SFT": "${LLM_DIR}/models/instruction/${MODEL_NAME}-instruct-full-hpn-sft",
+    "M_S4_FULL_SFT": "${LLM_DIR}/models/instruction/${MODEL_NAME}-cpt-full-sft",
+    "M_S4_LORA_SFT_ADAPTER": "${LLM_DIR}/models/lora/${MODEL_NAME}-cpt-lora-sft",
+    "M_S4_LORA_SFT_MERGED": "${LLM_DIR}/models/lora-merged/${MODEL_NAME}-cpt-lora-sft-merged",
+    "M_S5_LORA_CPT_ADAPTER": "${LLM_DIR}/models/lora/${MODEL_NAME}-instruct-lora-cpt",
+    "M_S5_LORA_CPT_MERGED": "${LLM_DIR}/models/lora-merged/${MODEL_NAME}-instruct-lora-cpt-merged",
+    "M_S5_LORA_SFT_ADAPTER": "${LLM_DIR}/models/lora/${MODEL_NAME}-instruct-lora-cpt-then-sft",
+    "M_S5_LORA_SFT_MERGED": "${LLM_DIR}/models/lora-merged/${MODEL_NAME}-instruct-lora-cpt-then-sft-merged",
+    "NC": "\\033[0m",
+    "OLLAMA_WAS_RUNNING": "false",
+    "OPENAI_KEY_FILE": "${LLM_DIR}/openai_api_key.txt",
+    "OUT_ADAPT": "${OUT_BASE}/evaluations/adaptation_reports",
+    "OUT_ANSWERS": "${OUT_BASE}/evaluations/answers",
+    "OUT_BASE": "${LLM_DIR}/outputs/${MODEL_NAME,,}",
+    "OUT_JUDGED": "${OUT_BASE}/evaluations/judged",
+    "OUT_PROFILE": "${OUT_BASE}/profiling_results",
+    "OUT_REPORTS": "${OUT_BASE}/evaluations/reports",
+    "PROFILE_BENCHMARK_LIMIT": "5",
+    "PROFILE_DIRECT_S1": "true",
+    "PROFILE_DIRECT_S2": "false",
+    "PROFILE_DIRECT_S3": "false",
+    "PROFILE_DIRECT_S4": "true",
+    "PROFILE_DIRECT_S5": "true",
+    "PROFILE_MAX_NEW_TOKENS": "256",
+    "PROFILE_NUM_RUNS": "1",
+    "PROFILE_RAG_S6": "false",
+    "PROFILE_RAG_S7": "true",
+    "PROFILE_RAG_S8": "true",
+    "PROFILE_WARMUP_RUNS": "1",
+    "RAG_DIR": "$(realpath -m \"${LLM_DIR}/../NetBench-RAG\")",
+    "RAG_ENV_ACTIVATED": "false",
+    "RAG_VENV_DIR": "",
+    "RED": "'\\033[0",
+    "RUN_DIRECT_CPU_PROFILING": "true",
+    "RUN_DIRECT_GPU_PROFILING": "true",
+    "RUN_RAG_CPU_PROFILING": "true",
+    "RUN_RAG_GPU_PROFILING": "true",
+    "RUN_S1": "true",
+    "RUN_S2": "true",
+    "RUN_S3": "true",
+    "RUN_S4": "true",
+    "RUN_S5": "true",
+    "RUN_S6": "true",
+    "RUN_S7": "true",
+    "RUN_S8": "true",
+    "S4_FULL_SFT_DATASET": "hpn",
+    "S4_USE_LORA_SFT": "false",
+    "SCREEN_LOG_FILE": "${SCREEN_LOG_FILE:-}",
+    "SCRIPT_DIR": "$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)",
+    "SFT_BATCH": "1",
+    "SFT_EPOCHS": "3",
+    "SFT_GRAD_ACCUM": "${safe_accum}",
+    "SFT_LR": "2e-5",
+    "SFT_MAX_SAMPLES": "5000",
+    "USE_GNU_SCREEN": "true bash ${BASH_SOURCE[0]}",
+    "USE_QLORA": "false",
+    "VRAM_GB": "$(( (vram_mib + 1023) / 1024 ))",
+    "YELLOW": "'\\033[1"
+  },
+  "rag": {
+    "artifacts": [
+      {
+        "bytes": 513,
+        "mtime_utc": "2026-05-13T06:15:48+00:00",
+        "path": "/work2/11412/neom/my-projects/NetBench-RAG/data/qdrant_store/meta.json",
+        "sha256": "e5ab8340151eb451f18db9c3bfc25cece61a8fb7a39e93de883cbc7a9324e9e5"
+      },
+      {
+        "bytes": 102959301,
+        "mtime_utc": "2026-05-13T06:29:10+00:00",
+        "path": "/work2/11412/neom/my-projects/NetBench-RAG/data/bm25_index.pkl",
+        "sha256": "f5642a0b40481c520cd19ffec5592b4682cf83f7a54a19562f44adc84184c043"
+      },
+      {
+        "bytes": 141501898,
+        "mtime_utc": "2026-05-13T06:28:59+00:00",
+        "path": "/work2/11412/neom/my-projects/NetBench-RAG/data/chunks_cache.pkl",
+        "sha256": "d855b3523422c889b7b5417a725e9af3d8735fbda9c29ec5e73989a315a2e53a"
+      },
+      {
+        "bytes": 0,
+        "mtime_utc": "2026-05-13T06:29:12+00:00",
+        "path": "/work2/11412/neom/my-projects/NetBench-RAG/.index_done",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "bytes": 7073,
+    "config": {
+      "chunking": {
+        "min_tokens": 100,
+        "overlap_tokens": 150,
+        "target_tokens": 1200,
+        "tokenizer_model": "bert-base-uncased"
+      },
+      "embedding": {
+        "batch_size": 64,
+        "device": "cuda",
+        "dimension": 1024,
+        "model": "BAAI/bge-large-en-v1.5",
+        "normalize": true,
+        "passage_instruction": "",
+        "query_instruction": "Represent this sentence for searching relevant passages: "
+      },
+      "generation": {
+        "backend": "openai",
+        "local": {
+          "device_map": "auto",
+          "do_sample": false,
+          "dtype": "bfloat16",
+          "max_new_tokens": 512,
+          "repetition_penalty": 1.1,
+          "temperature": 0.0
+        },
+        "openai": {
+          "max_tokens": 512,
+          "model": "gpt-4o",
+          "temperature": 0.0
+        },
+        "system_prompt": "You are an expert in high-performance networking (HPN),\nHPC data transfer systems, and computer networking.\n\nAnswer the question below in a focused response (100-350 words)\nusing the provided excerpts as your primary source.\nBe technically precise: include specific numbers, thresholds, or\nformulas where relevant. Explain the underlying reasoning, not just\nthe conclusion.\n"
+      },
+      "judge": {
+        "model": "gemini-2.5-flash",
+        "rate_limit_rpm": 15,
+        "retry_attempts": 3,
+        "retry_backoff_base": 2.0,
+        "weights": {
+          "clarity": 0.2,
+          "completeness": 0.3,
+          "conciseness": 0.1,
+          "correctness": 0.4
+        }
+      },
+      "parsing": {
+        "max_header_len": 120,
+        "min_abstract_chars": 100,
+        "min_header_len": 3,
+        "section_confidence_threshold": 0.4
+      },
+      "paths": {
+        "answers_dir": "outputs/answers/",
+        "benchmark": "data/prompts/hpn_qa_benchmark_v5_general_skills.json",
+        "bm25_index": "data/bm25_index.pkl",
+        "chunks_cache": "data/chunks_cache.pkl",
+        "corpus_json": "data/raw/research_corpus_v3.json",
+        "gemini_api_key": "gemini_api_key.txt",
+        "judged_dir": "outputs/judged/",
+        "local_model": "/workspace/NetBench-LLM/models/instruction/gemma-4-e4b-it",
+        "openai_api_key": "openai_api_key.txt",
+        "pdfs_dir": "pdfs/",
+        "qdrant_dir": "data/qdrant_store/",
+        "reports_dir": "outputs/reports/"
+      },
+      "qdrant": {
+        "collection_name": "netbench_rag",
+        "distance": "Cosine",
+        "indexed_fields": [
+          "paper_title",
+          "section_heading",
+          "source_file",
+          "parse_confidence"
+        ]
+      },
+      "retrieval": {
+        "acronym_expansion": {
+          "BBR": "bottleneck bandwidth and round-trip propagation",
+          "BDP": "bandwidth delay product",
+          "CC": "congestion control",
+          "CWND": "congestion window",
+          "DRL": "deep reinforcement learning",
+          "ECN": "explicit congestion notification",
+          "GridFTP": "grid file transfer protocol",
+          "HPCC": "high performance computing cluster",
+          "HPN": "high performance networking",
+          "MPI": "message passing interface",
+          "MPTCP": "multipath tcp",
+          "MTCP": "multi-path tcp",
+          "NIC": "network interface card",
+          "RDMA": "remote direct memory access",
+          "RL": "reinforcement learning",
+          "RPC": "remote procedure call",
+          "RTT": "round trip time",
+          "SDN": "software defined networking",
+          "TCP": "transmission control protocol",
+          "UDP": "user datagram protocol"
+        },
+        "bm25_lowercase": true,
+        "bm25_top_k": 30,
+        "reranker_device": "cuda",
+        "reranker_model": "BAAI/bge-reranker-v2-m3",
+        "reranker_top_n": 4,
+        "rrf_k": 60,
+        "rrf_top_n": 20,
+        "vector_top_k": 30
+      }
+    },
+    "mtime_utc": "2026-05-08T15:05:55+00:00",
+    "path": "/work2/11412/neom/my-projects/NetBench-RAG/config.yaml",
+    "sha256": "5486af0f5ed6199a4450626aee5822eb5e13ebee0ca36fb2a9d41de77d55c8dd"
+  },
+  "schema_version": "netbench-run-metadata-v1",
+  "training_args": [
+    {
+      "bytes": 5329,
+      "mtime_utc": "2026-05-13T03:55:05+00:00",
+      "path": "models/instruction/gemma-3-1b-cpt-full-sft/checkpoints/checkpoint-100/training_args.bin",
+      "sha256": "b767dec48787fbdbb992f08511f4ed8ae38195199afb53e815e17a5bc5992e90",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 50,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": false,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/work2/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-cpt-full-sft/checkpoints",
+        "per_device_eval_batch_size": 4,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 50,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5329,
+      "mtime_utc": "2026-05-13T03:56:59+00:00",
+      "path": "models/instruction/gemma-3-1b-cpt-full-sft/checkpoints/checkpoint-153/training_args.bin",
+      "sha256": "b767dec48787fbdbb992f08511f4ed8ae38195199afb53e815e17a5bc5992e90",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 50,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": false,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/work2/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-cpt-full-sft/checkpoints",
+        "per_device_eval_batch_size": 4,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 50,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5329,
+      "mtime_utc": "2026-05-13T03:57:05+00:00",
+      "path": "models/instruction/gemma-3-1b-cpt-full-sft/training_args.bin",
+      "sha256": "b767dec48787fbdbb992f08511f4ed8ae38195199afb53e815e17a5bc5992e90",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 50,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": false,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/work2/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-cpt-full-sft/checkpoints",
+        "per_device_eval_batch_size": 4,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 50,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5329,
+      "mtime_utc": "2026-05-13T04:00:44+00:00",
+      "path": "models/instruction/gemma-3-1b-instruct-full-hpn-sft/checkpoints/checkpoint-100/training_args.bin",
+      "sha256": "8abede46aee7999e48676310ef744661009f9e5e7b9e39604476a7730b712376",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 50,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": false,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/work2/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-instruct-full-hpn-sft/checkpoints",
+        "per_device_eval_batch_size": 4,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 50,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5329,
+      "mtime_utc": "2026-05-13T04:02:38+00:00",
+      "path": "models/instruction/gemma-3-1b-instruct-full-hpn-sft/checkpoints/checkpoint-153/training_args.bin",
+      "sha256": "8abede46aee7999e48676310ef744661009f9e5e7b9e39604476a7730b712376",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 50,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": false,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/work2/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-instruct-full-hpn-sft/checkpoints",
+        "per_device_eval_batch_size": 4,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 50,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5329,
+      "mtime_utc": "2026-05-13T04:02:45+00:00",
+      "path": "models/instruction/gemma-3-1b-instruct-full-hpn-sft/training_args.bin",
+      "sha256": "8abede46aee7999e48676310ef744661009f9e5e7b9e39604476a7730b712376",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 50,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": false,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/work2/11412/neom/my-projects/NetBench-LLM/models/instruction/gemma-3-1b-instruct-full-hpn-sft/checkpoints",
+        "per_device_eval_batch_size": 4,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 50,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5329,
+      "mtime_utc": "2026-05-13T05:51:30+00:00",
+      "path": "models/lora/gemma-3-1b-instruct-lora-cpt/checkpoints/checkpoint-2412/training_args.bin",
+      "sha256": "c2cab540713c9ee1628a795020144ae9a6e2391e05142572707aeee0058a71df",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 268,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": false,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/work2/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-cpt/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 268,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 268,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5329,
+      "mtime_utc": "2026-05-13T05:59:41+00:00",
+      "path": "models/lora/gemma-3-1b-instruct-lora-cpt/checkpoints/checkpoint-2680/training_args.bin",
+      "sha256": "c2cab540713c9ee1628a795020144ae9a6e2391e05142572707aeee0058a71df",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 268,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": false,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/work2/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-cpt/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 268,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 268,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5329,
+      "mtime_utc": "2026-05-13T06:00:27+00:00",
+      "path": "models/lora/gemma-3-1b-instruct-lora-cpt/checkpoints/checkpoint-2688/training_args.bin",
+      "sha256": "c2cab540713c9ee1628a795020144ae9a6e2391e05142572707aeee0058a71df",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 268,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": false,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/work2/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-cpt/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 268,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 268,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5329,
+      "mtime_utc": "2026-05-13T06:13:41+00:00",
+      "path": "models/lora/gemma-3-1b-instruct-lora-cpt-then-sft/checkpoints/checkpoint-540/training_args.bin",
+      "sha256": "c9a985345126b417dbbebf64b60eeb9f66f6fcdd72777e81815c723b37105787",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 60,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": false,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/work2/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-cpt-then-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 60,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5329,
+      "mtime_utc": "2026-05-13T06:14:51+00:00",
+      "path": "models/lora/gemma-3-1b-instruct-lora-cpt-then-sft/checkpoints/checkpoint-600/training_args.bin",
+      "sha256": "c9a985345126b417dbbebf64b60eeb9f66f6fcdd72777e81815c723b37105787",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 60,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": false,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/work2/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-cpt-then-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 60,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5329,
+      "mtime_utc": "2026-05-13T06:15:06+00:00",
+      "path": "models/lora/gemma-3-1b-instruct-lora-cpt-then-sft/checkpoints/checkpoint-609/training_args.bin",
+      "sha256": "c9a985345126b417dbbebf64b60eeb9f66f6fcdd72777e81815c723b37105787",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 60,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": false,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/work2/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-cpt-then-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 60,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5329,
+      "mtime_utc": "2026-05-13T04:35:37+00:00",
+      "path": "models/lora/gemma-3-1b-instruct-lora-sft/checkpoints/checkpoint-540/training_args.bin",
+      "sha256": "f1744b40e18e9d8bb4a3c325826ed2dcb4d4a306d367fe5c79c0bb4a48d6a520",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 60,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": false,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/work2/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 60,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5329,
+      "mtime_utc": "2026-05-13T04:36:47+00:00",
+      "path": "models/lora/gemma-3-1b-instruct-lora-sft/checkpoints/checkpoint-600/training_args.bin",
+      "sha256": "f1744b40e18e9d8bb4a3c325826ed2dcb4d4a306d367fe5c79c0bb4a48d6a520",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 60,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": false,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/work2/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 60,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5329,
+      "mtime_utc": "2026-05-13T04:37:02+00:00",
+      "path": "models/lora/gemma-3-1b-instruct-lora-sft/checkpoints/checkpoint-609/training_args.bin",
+      "sha256": "f1744b40e18e9d8bb4a3c325826ed2dcb4d4a306d367fe5c79c0bb4a48d6a520",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 60,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": false,
+        "learning_rate": 0.0002,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch_fused",
+        "output_dir": "/work2/11412/neom/my-projects/NetBench-LLM/models/lora/gemma-3-1b-instruct-lora-sft/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 60,
+        "save_total_limit": 3,
+        "seed": 42,
+        "warmup_steps": 61,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5329,
+      "mtime_utc": "2026-05-12T21:33:21+00:00",
+      "path": "models/pretrained/gemma-3-1b-trained-new/checkpoints/checkpoint-669/training_args.bin",
+      "sha256": "969c71cf942a4e5e7c59048d9c03b538bfae690bce018f28be15bb3e46d0896b",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 223,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": false,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/work2/11412/neom/my-projects/NetBench-LLM/models/pretrained/gemma-3-1b-trained-new/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 223,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 268,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5329,
+      "mtime_utc": "2026-05-12T21:37:02+00:00",
+      "path": "models/pretrained/gemma-3-1b-trained-new/checkpoints/checkpoint-672/training_args.bin",
+      "sha256": "969c71cf942a4e5e7c59048d9c03b538bfae690bce018f28be15bb3e46d0896b",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 223,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": false,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/work2/11412/neom/my-projects/NetBench-LLM/models/pretrained/gemma-3-1b-trained-new/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 223,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 268,
+        "weight_decay": 0.01
+      }
+    },
+    {
+      "bytes": 5329,
+      "mtime_utc": "2026-05-12T21:37:09+00:00",
+      "path": "models/pretrained/gemma-3-1b-trained-new/training_args.bin",
+      "sha256": "969c71cf942a4e5e7c59048d9c03b538bfae690bce018f28be15bb3e46d0896b",
+      "training_args": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "adam_epsilon": 1e-08,
+        "bf16": true,
+        "dataloader_num_workers": 4,
+        "eval_steps": 223,
+        "fp16": false,
+        "gradient_accumulation_steps": 4,
+        "gradient_checkpointing": false,
+        "learning_rate": 2e-05,
+        "logging_steps": 10,
+        "lr_scheduler_type": "cosine",
+        "max_grad_norm": 1.0,
+        "max_steps": -1,
+        "num_train_epochs": 3,
+        "optim": "adamw_torch",
+        "output_dir": "/work2/11412/neom/my-projects/NetBench-LLM/models/pretrained/gemma-3-1b-trained-new/checkpoints",
+        "per_device_eval_batch_size": 2,
+        "per_device_train_batch_size": 4,
+        "report_to": [
+          "tensorboard"
+        ],
+        "save_steps": 223,
+        "save_total_limit": 2,
+        "seed": 42,
+        "warmup_steps": 268,
+        "weight_decay": 0.01
+      }
+    }
+  ]
+}

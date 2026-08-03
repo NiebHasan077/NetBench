@@ -1,0 +1,84 @@
+\begin{table*}[p]\centering\scriptsize
+\caption{Pre-specified primary contrasts re-run within each difficulty level (exploratory per-stratum analysis, \S\ref{sec:stats}). Cell: paired mean difference $\Delta$ on overall score; $^{*}$: BH-significant; \textbf{bold}: also practically significant; --: stratum skipped ($n<10$). Full per-stratum statistics (CIs, $p$, $d_z$) ship in the released CSV.}
+\label{tab:stratdiff}
+\begin{tabular}{llrrr}
+\toprule
+Model & Contrast & Easy & Medium & Hard \\
+\midrule \multicolumn{5}{l}{\textit{Closed-book adaptation}} \\ \midrule
+gemma-3-12b & P1 vs P3 & -0.22 & -0.15 & +0.16 \\
+gemma-3-12b & P1 vs P4 & -0.12 & -0.17 & +0.12 \\
+gemma-3-12b & P1 vs P5 & -0.11 & -0.21 & +0.19 \\
+gemma-3-12b & P2 vs P5 & +0.06 & -0.01 & +0.15 \\
+gemma-3-12b & P3 vs P4 & +0.10 & -0.01 & -0.04 \\
+gemma-3-1b & P1 vs P3 & \textbf{+0.34$^{*}$} & +0.22$^{*}$ & +0.10 \\
+gemma-3-1b & P1 vs P4 & +0.08 & +0.12 & +0.16 \\
+gemma-3-1b & P1 vs P5 & \textbf{+0.46$^{*}$} & \textbf{+0.30$^{*}$} & \textbf{+0.27$^{*}$} \\
+gemma-3-1b & P2 vs P5 & +0.10 & +0.13 & +0.14 \\
+gemma-3-1b & P3 vs P4 & -0.26 & -0.10 & +0.05 \\
+gemma-3-27b & P1 vs P3 & \textbf{-0.32$^{*}$} & \textbf{-0.45$^{*}$} & -0.04 \\
+gemma-3-27b & P1 vs P5 & -0.05 & -0.24$^{*}$ & +0.13 \\
+gemma-3-27b & P2 vs P5 & +0.16 & +0.04 & +0.05 \\
+llama-3.1-8b & P1 vs P3 & +0.13 & +0.06 & +0.20 \\
+llama-3.1-8b & P1 vs P4 & \textbf{+0.27$^{*}$} & \textbf{+0.32$^{*}$} & +0.16 \\
+llama-3.1-8b & P1 vs P5 & \textbf{+0.27$^{*}$} & +0.15 & \textbf{+0.38$^{*}$} \\
+llama-3.1-8b & P2 vs P5 & -0.04 & -0.06 & +0.16 \\
+llama-3.1-8b & P3 vs P4 & +0.13 & \textbf{+0.26$^{*}$} & -0.04 \\
+llama-3.2-1b & P1 vs P3 & \textbf{+0.38$^{*}$} & +0.17$^{*}$ & \textbf{+0.30$^{*}$} \\
+llama-3.2-1b & P1 vs P4 & \textbf{+0.36$^{*}$} & \textbf{+0.29$^{*}$} & \textbf{+0.47$^{*}$} \\
+llama-3.2-1b & P1 vs P5 & \textbf{+0.40$^{*}$} & \textbf{+0.38$^{*}$} & \textbf{+0.51$^{*}$} \\
+llama-3.2-1b & P2 vs P5 & -0.03 & +0.09 & +0.23$^{*}$ \\
+llama-3.2-1b & P3 vs P4 & -0.02 & +0.12 & +0.16$^{*}$ \\
+qwen3.5-27b & P1 vs P3 & -0.14 & -0.21 & -0.07 \\
+qwen3.5-27b & P1 vs P5 & -0.10 & -0.12 & +0.09 \\
+qwen3.5-27b & P2 vs P5 & +0.01 & +0.02 & +0.17 \\
+qwen3.5-2b & P1 vs P3 & \textbf{+0.70$^{*}$} & \textbf{+0.71$^{*}$} & \textbf{+0.62$^{*}$} \\
+qwen3.5-2b & P1 vs P4 & \textbf{+0.85$^{*}$} & \textbf{+0.86$^{*}$} & \textbf{+0.71$^{*}$} \\
+qwen3.5-2b & P1 vs P5 & \textbf{+0.84$^{*}$} & \textbf{+0.65$^{*}$} & \textbf{+0.67$^{*}$} \\
+qwen3.5-2b & P2 vs P5 & +0.20 & +0.07 & +0.07 \\
+qwen3.5-2b & P3 vs P4 & +0.15 & +0.15 & +0.09 \\
+qwen3.5-9b & P1 vs P3 & -0.02 & -0.07 & +0.13 \\
+qwen3.5-9b & P1 vs P4 & +0.17$^{*}$ & -0.04 & \textbf{+0.29$^{*}$} \\
+qwen3.5-9b & P1 vs P5 & +0.11 & -0.08 & \textbf{+0.34$^{*}$} \\
+qwen3.5-9b & P2 vs P5 & +0.13 & +0.03 & +0.12 \\
+qwen3.5-9b & P3 vs P4 & +0.18 & +0.03 & +0.16 \\
+\midrule \multicolumn{5}{l}{\textit{Open-book adaptation}} \\ \midrule
+gemma-3-12b & P6 vs P7 & -0.17 & \textbf{-0.26$^{*}$} & -0.15 \\
+gemma-3-12b & P6 vs P8 & -0.07 & \textbf{-0.28$^{*}$} & -0.09 \\
+gemma-3-1b & P6 vs P7 & \textbf{-0.41$^{*}$} & -0.13 & +0.03 \\
+gemma-3-1b & P6 vs P8 & -0.28 & -0.21$^{*}$ & +0.26 \\
+gemma-3-27b & P6 vs P8 & -0.12$^{*}$ & \textbf{-0.37$^{*}$} & \textbf{-0.34$^{*}$} \\
+llama-3.1-8b & P6 vs P7 & -0.06 & +0.16$^{*}$ & \textbf{+0.29$^{*}$} \\
+llama-3.1-8b & P6 vs P8 & -0.02 & +0.11$^{*}$ & \textbf{+0.39$^{*}$} \\
+llama-3.2-1b & P6 vs P7 & -0.05 & +0.09 & +0.22 \\
+llama-3.2-1b & P6 vs P8 & +0.07 & \textbf{+0.29$^{*}$} & +0.19 \\
+qwen3.5-27b & P6 vs P8 & -0.03 & -0.14$^{*}$ & +0.01 \\
+qwen3.5-2b & P6 vs P7 & -0.02 & -0.10 & +0.23$^{*}$ \\
+qwen3.5-2b & P6 vs P8 & +0.06 & +0.06 & \textbf{+0.28$^{*}$} \\
+qwen3.5-9b & P6 vs P7 & -0.13 & +0.03 & -0.02 \\
+qwen3.5-9b & P6 vs P8 & -0.16 & -0.09 & +0.00 \\
+\midrule \multicolumn{5}{l}{\textit{Matched-model RAG effect}} \\ \midrule
+gemma-3-12b & P1 vs P6 & +0.20 & \textbf{+0.75$^{*}$} & \textbf{+1.17$^{*}$} \\
+gemma-3-12b & P4 vs P7 & +0.14 & \textbf{+0.66$^{*}$} & \textbf{+0.90$^{*}$} \\
+gemma-3-12b & P5 vs P8 & +0.24 & \textbf{+0.68$^{*}$} & \textbf{+0.89$^{*}$} \\
+gemma-3-1b & P1 vs P6 & \textbf{+0.77$^{*}$} & \textbf{+0.62$^{*}$} & \textbf{+0.41$^{*}$} \\
+gemma-3-1b & P4 vs P7 & +0.28 & \textbf{+0.38$^{*}$} & +0.28 \\
+gemma-3-1b & P5 vs P8 & +0.03 & +0.12 & \textbf{+0.40$^{*}$} \\
+gemma-3-27b & P1 vs P6 & +0.17$^{*}$ & \textbf{+0.59$^{*}$} & \textbf{+1.24$^{*}$} \\
+gemma-3-27b & P5 vs P8 & +0.10 & \textbf{+0.46$^{*}$} & \textbf{+0.76$^{*}$} \\
+llama-3.1-8b & P1 vs P6 & \textbf{+0.41$^{*}$} & \textbf{+0.76$^{*}$} & \textbf{+0.79$^{*}$} \\
+llama-3.1-8b & P4 vs P7 & +0.09 & \textbf{+0.61$^{*}$} & \textbf{+0.92$^{*}$} \\
+llama-3.1-8b & P5 vs P8 & +0.13 & \textbf{+0.72$^{*}$} & \textbf{+0.81$^{*}$} \\
+llama-3.2-1b & P1 vs P6 & \textbf{+0.55$^{*}$} & \textbf{+0.45$^{*}$} & \textbf{+0.62$^{*}$} \\
+llama-3.2-1b & P4 vs P7 & +0.14 & +0.25$^{*}$ & \textbf{+0.37$^{*}$} \\
+llama-3.2-1b & P5 vs P8 & +0.23 & \textbf{+0.36$^{*}$} & +0.29 \\
+qwen3.5-27b & P1 vs P6 & +0.02 & \textbf{+0.44$^{*}$} & \textbf{+0.75$^{*}$} \\
+qwen3.5-27b & P5 vs P8 & +0.08 & \textbf{+0.42$^{*}$} & \textbf{+0.67$^{*}$} \\
+qwen3.5-2b & P1 vs P6 & \textbf{+0.93$^{*}$} & \textbf{+1.42$^{*}$} & \textbf{+1.36$^{*}$} \\
+qwen3.5-2b & P4 vs P7 & +0.06 & \textbf{+0.47$^{*}$} & \textbf{+0.88$^{*}$} \\
+qwen3.5-2b & P5 vs P8 & +0.15 & \textbf{+0.83$^{*}$} & \textbf{+0.97$^{*}$} \\
+qwen3.5-9b & P1 vs P6 & \textbf{+0.29$^{*}$} & \textbf{+0.56$^{*}$} & \textbf{+1.20$^{*}$} \\
+qwen3.5-9b & P4 vs P7 & -0.01 & \textbf{+0.63$^{*}$} & \textbf{+0.89$^{*}$} \\
+qwen3.5-9b & P5 vs P8 & +0.02 & \textbf{+0.55$^{*}$} & \textbf{+0.86$^{*}$} \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,13 @@
+PLACEHOLDER — finalized in Phase 6.
+prompt_version: v5.0-critic
+
+Goal: single combined critic pass over a candidate question. Output JSON:
+{
+  "grounded": bool,           // claims supported by provided evidence quotes?
+  "answerable": bool,         // can a knowledgeable HPN expert answer without the source paper?
+  "non_generic": bool,        // does it require HPN-specific knowledge, not basic CS?
+  "reasons": [string],
+  "rewrite_suggestion": string  // empty if no rewrite needed
+}
+
+A question passes only if grounded AND answerable AND non_generic.

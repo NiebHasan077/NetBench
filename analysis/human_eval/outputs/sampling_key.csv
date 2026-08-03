@@ -1,0 +1,126 @@
+response_id,question_no,question_id,base_model,p_id,setting,variant_run,judged_file,category,difficulty,question_type,requires_calculation
+Q01-a,Q01,NB-HPN-0026-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,Adaptive and Online Optimization,easy,reasoning,False
+Q01-b,Q01,NB-HPN-0026-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,Adaptive and Online Optimization,easy,reasoning,False
+Q01-c,Q01,NB-HPN-0026-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,Adaptive and Online Optimization,easy,reasoning,False
+Q01-d,Q01,NB-HPN-0026-q1,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,Adaptive and Online Optimization,easy,reasoning,False
+Q01-e,Q01,NB-HPN-0026-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,Adaptive and Online Optimization,easy,reasoning,False
+Q02-a,Q02,NB-HPN-0159-q0,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,Adaptive and Online Optimization,hard,concept,False
+Q02-b,Q02,NB-HPN-0159-q0,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,Adaptive and Online Optimization,hard,concept,False
+Q02-c,Q02,NB-HPN-0159-q0,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,Adaptive and Online Optimization,hard,concept,False
+Q02-d,Q02,NB-HPN-0159-q0,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,Adaptive and Online Optimization,hard,concept,False
+Q02-e,Q02,NB-HPN-0159-q0,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,Adaptive and Online Optimization,hard,concept,False
+Q03-a,Q03,NB-HPN-2135-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,Adaptive and Online Optimization,medium,reasoning,False
+Q03-b,Q03,NB-HPN-2135-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,Adaptive and Online Optimization,medium,reasoning,False
+Q03-c,Q03,NB-HPN-2135-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,Adaptive and Online Optimization,medium,reasoning,False
+Q03-d,Q03,NB-HPN-2135-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,Adaptive and Online Optimization,medium,reasoning,False
+Q03-e,Q03,NB-HPN-2135-q1,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,Adaptive and Online Optimization,medium,reasoning,False
+Q04-a,Q04,NB-HPN-1401-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,hard,reasoning,False
+Q04-b,Q04,NB-HPN-1401-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,hard,reasoning,False
+Q04-c,Q04,NB-HPN-1401-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,hard,reasoning,False
+Q04-d,Q04,NB-HPN-1401-q1,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,hard,reasoning,False
+Q04-e,Q04,NB-HPN-1401-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,hard,reasoning,False
+Q05-a,Q05,NB-HPN-0176-q1,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,medium,reasoning,False
+Q05-b,Q05,NB-HPN-0176-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,medium,reasoning,False
+Q05-c,Q05,NB-HPN-0176-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,medium,reasoning,False
+Q05-d,Q05,NB-HPN-0176-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,medium,reasoning,False
+Q05-e,Q05,NB-HPN-0176-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,medium,reasoning,False
+Q06-a,Q06,NB-HPN-2032-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,Bottleneck Diagnosis and End-to-End Reasoning,easy,reasoning,False
+Q06-b,Q06,NB-HPN-2032-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,Bottleneck Diagnosis and End-to-End Reasoning,easy,reasoning,False
+Q06-c,Q06,NB-HPN-2032-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,Bottleneck Diagnosis and End-to-End Reasoning,easy,reasoning,False
+Q06-d,Q06,NB-HPN-2032-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,Bottleneck Diagnosis and End-to-End Reasoning,easy,reasoning,False
+Q06-e,Q06,NB-HPN-2032-q1,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,Bottleneck Diagnosis and End-to-End Reasoning,easy,reasoning,False
+Q07-a,Q07,NB-HPN-1278-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,Bottleneck Diagnosis and End-to-End Reasoning,hard,reasoning,False
+Q07-b,Q07,NB-HPN-1278-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,Bottleneck Diagnosis and End-to-End Reasoning,hard,reasoning,False
+Q07-c,Q07,NB-HPN-1278-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,Bottleneck Diagnosis and End-to-End Reasoning,hard,reasoning,False
+Q07-d,Q07,NB-HPN-1278-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,Bottleneck Diagnosis and End-to-End Reasoning,hard,reasoning,False
+Q07-e,Q07,NB-HPN-1278-q1,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,Bottleneck Diagnosis and End-to-End Reasoning,hard,reasoning,False
+Q08-a,Q08,NB-HPN-1803-q3,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,Bottleneck Diagnosis and End-to-End Reasoning,medium,diagnosis,False
+Q08-b,Q08,NB-HPN-1803-q3,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,Bottleneck Diagnosis and End-to-End Reasoning,medium,diagnosis,False
+Q08-c,Q08,NB-HPN-1803-q3,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,Bottleneck Diagnosis and End-to-End Reasoning,medium,diagnosis,False
+Q08-d,Q08,NB-HPN-1803-q3,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,Bottleneck Diagnosis and End-to-End Reasoning,medium,diagnosis,False
+Q08-e,Q08,NB-HPN-1803-q3,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,Bottleneck Diagnosis and End-to-End Reasoning,medium,diagnosis,False
+Q09-a,Q09,NB-HPN-0555-q1,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,Bottleneck Diagnosis and End-to-End Reasoning,medium,reasoning,False
+Q09-b,Q09,NB-HPN-0555-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,Bottleneck Diagnosis and End-to-End Reasoning,medium,reasoning,False
+Q09-c,Q09,NB-HPN-0555-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,Bottleneck Diagnosis and End-to-End Reasoning,medium,reasoning,False
+Q09-d,Q09,NB-HPN-0555-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,Bottleneck Diagnosis and End-to-End Reasoning,medium,reasoning,False
+Q09-e,Q09,NB-HPN-0555-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,Bottleneck Diagnosis and End-to-End Reasoning,medium,reasoning,False
+Q10-a,Q10,NB-HPN-1163-q1,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,Concurrency Tuning and Scaling,easy,reasoning,False
+Q10-b,Q10,NB-HPN-1163-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,Concurrency Tuning and Scaling,easy,reasoning,False
+Q10-c,Q10,NB-HPN-1163-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,Concurrency Tuning and Scaling,easy,reasoning,False
+Q10-d,Q10,NB-HPN-1163-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,Concurrency Tuning and Scaling,easy,reasoning,False
+Q10-e,Q10,NB-HPN-1163-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,Concurrency Tuning and Scaling,easy,reasoning,False
+Q11-a,Q11,NB-HPN-2155-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,Concurrency Tuning and Scaling,medium,reasoning,False
+Q11-b,Q11,NB-HPN-2155-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,Concurrency Tuning and Scaling,medium,reasoning,False
+Q11-c,Q11,NB-HPN-2155-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,Concurrency Tuning and Scaling,medium,reasoning,False
+Q11-d,Q11,NB-HPN-2155-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,Concurrency Tuning and Scaling,medium,reasoning,False
+Q11-e,Q11,NB-HPN-2155-q1,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,Concurrency Tuning and Scaling,medium,reasoning,False
+Q12-a,Q12,NB-HPN-2121-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,"Fairness, Stability, and Shared Networks",medium,reasoning,False
+Q12-b,Q12,NB-HPN-2121-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,"Fairness, Stability, and Shared Networks",medium,reasoning,False
+Q12-c,Q12,NB-HPN-2121-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,"Fairness, Stability, and Shared Networks",medium,reasoning,False
+Q12-d,Q12,NB-HPN-2121-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,"Fairness, Stability, and Shared Networks",medium,reasoning,False
+Q12-e,Q12,NB-HPN-2121-q1,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,"Fairness, Stability, and Shared Networks",medium,reasoning,False
+Q13-a,Q13,NB-HPN-2136-q0,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,Parallelism and Large-File Optimization,easy,concept,False
+Q13-b,Q13,NB-HPN-2136-q0,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,Parallelism and Large-File Optimization,easy,concept,False
+Q13-c,Q13,NB-HPN-2136-q0,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,Parallelism and Large-File Optimization,easy,concept,False
+Q13-d,Q13,NB-HPN-2136-q0,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,Parallelism and Large-File Optimization,easy,concept,False
+Q13-e,Q13,NB-HPN-2136-q0,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,Parallelism and Large-File Optimization,easy,concept,False
+Q14-a,Q14,NB-HPN-0536-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,Pipelining and Small-File Optimization,hard,reasoning,False
+Q14-b,Q14,NB-HPN-0536-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,Pipelining and Small-File Optimization,hard,reasoning,False
+Q14-c,Q14,NB-HPN-0536-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,Pipelining and Small-File Optimization,hard,reasoning,False
+Q14-d,Q14,NB-HPN-0536-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,Pipelining and Small-File Optimization,hard,reasoning,False
+Q14-e,Q14,NB-HPN-0536-q1,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,Pipelining and Small-File Optimization,hard,reasoning,False
+Q15-a,Q15,NB-HPN-1616-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,Pipelining and Small-File Optimization,medium,reasoning,False
+Q15-b,Q15,NB-HPN-1616-q1,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,Pipelining and Small-File Optimization,medium,reasoning,False
+Q15-c,Q15,NB-HPN-1616-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,Pipelining and Small-File Optimization,medium,reasoning,False
+Q15-d,Q15,NB-HPN-1616-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,Pipelining and Small-File Optimization,medium,reasoning,False
+Q15-e,Q15,NB-HPN-1616-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,Pipelining and Small-File Optimization,medium,reasoning,False
+Q16-a,Q16,NB-HPN-2050-q3,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,Practical HPN Scenarios and Design,easy,scenario,True
+Q16-b,Q16,NB-HPN-2050-q3,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,Practical HPN Scenarios and Design,easy,scenario,True
+Q16-c,Q16,NB-HPN-2050-q3,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,Practical HPN Scenarios and Design,easy,scenario,True
+Q16-d,Q16,NB-HPN-2050-q3,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,Practical HPN Scenarios and Design,easy,scenario,True
+Q16-e,Q16,NB-HPN-2050-q3,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,Practical HPN Scenarios and Design,easy,scenario,True
+Q17-a,Q17,NB-HPN-2024-q3,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,Practical HPN Scenarios and Design,hard,scenario,False
+Q17-b,Q17,NB-HPN-2024-q3,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,Practical HPN Scenarios and Design,hard,scenario,False
+Q17-c,Q17,NB-HPN-2024-q3,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,Practical HPN Scenarios and Design,hard,scenario,False
+Q17-d,Q17,NB-HPN-2024-q3,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,Practical HPN Scenarios and Design,hard,scenario,False
+Q17-e,Q17,NB-HPN-2024-q3,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,Practical HPN Scenarios and Design,hard,scenario,False
+Q18-a,Q18,NB-HPN-1047-q3,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,Practical HPN Scenarios and Design,medium,scenario,False
+Q18-b,Q18,NB-HPN-1047-q3,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,Practical HPN Scenarios and Design,medium,scenario,False
+Q18-c,Q18,NB-HPN-1047-q3,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,Practical HPN Scenarios and Design,medium,scenario,False
+Q18-d,Q18,NB-HPN-1047-q3,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,Practical HPN Scenarios and Design,medium,scenario,False
+Q18-e,Q18,NB-HPN-1047-q3,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,Practical HPN Scenarios and Design,medium,scenario,False
+Q19-a,Q19,NB-HPN-1629-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,Transfer Parameters: Definitions and Roles,easy,reasoning,False
+Q19-b,Q19,NB-HPN-1629-q1,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,Transfer Parameters: Definitions and Roles,easy,reasoning,False
+Q19-c,Q19,NB-HPN-1629-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,Transfer Parameters: Definitions and Roles,easy,reasoning,False
+Q19-d,Q19,NB-HPN-1629-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,Transfer Parameters: Definitions and Roles,easy,reasoning,False
+Q19-e,Q19,NB-HPN-1629-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,Transfer Parameters: Definitions and Roles,easy,reasoning,False
+Q20-a,Q20,NB-HPN-0667-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,Adaptive and Online Optimization,hard,reasoning,False
+Q20-b,Q20,NB-HPN-0667-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,Adaptive and Online Optimization,hard,reasoning,False
+Q20-c,Q20,NB-HPN-0667-q1,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,Adaptive and Online Optimization,hard,reasoning,False
+Q20-d,Q20,NB-HPN-0667-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,Adaptive and Online Optimization,hard,reasoning,False
+Q20-e,Q20,NB-HPN-0667-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,Adaptive and Online Optimization,hard,reasoning,False
+Q21-a,Q21,NB-HPN-0428-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,easy,reasoning,False
+Q21-b,Q21,NB-HPN-0428-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,easy,reasoning,False
+Q21-c,Q21,NB-HPN-0428-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,easy,reasoning,False
+Q21-d,Q21,NB-HPN-0428-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,easy,reasoning,False
+Q21-e,Q21,NB-HPN-0428-q1,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,easy,reasoning,False
+Q22-a,Q22,NB-HPN-0027-q2,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,easy,calculation,True
+Q22-b,Q22,NB-HPN-0027-q2,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,easy,calculation,True
+Q22-c,Q22,NB-HPN-0027-q2,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,easy,calculation,True
+Q22-d,Q22,NB-HPN-0027-q2,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,easy,calculation,True
+Q22-e,Q22,NB-HPN-0027-q2,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,easy,calculation,True
+Q23-a,Q23,NB-HPN-0978-q0,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,medium,concept,False
+Q23-b,Q23,NB-HPN-0978-q0,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,medium,concept,False
+Q23-c,Q23,NB-HPN-0978-q0,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,medium,concept,False
+Q23-d,Q23,NB-HPN-0978-q0,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,medium,concept,False
+Q23-e,Q23,NB-HPN-0978-q0,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,BDP-Based Reasoning and Window Sizing,medium,concept,False
+Q24-a,Q24,NB-HPN-1676-q1,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,Dataset Partitioning and Mixed Workloads,hard,reasoning,False
+Q24-b,Q24,NB-HPN-1676-q1,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,Dataset Partitioning and Mixed Workloads,hard,reasoning,False
+Q24-c,Q24,NB-HPN-1676-q1,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,Dataset Partitioning and Mixed Workloads,hard,reasoning,False
+Q24-d,Q24,NB-HPN-1676-q1,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,Dataset Partitioning and Mixed Workloads,hard,reasoning,False
+Q24-e,Q24,NB-HPN-1676-q1,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,Dataset Partitioning and Mixed Workloads,hard,reasoning,False
+Q25-a,Q25,NB-HPN-2032-q3,qwen3.5-2b,P6,open_book,RAG-Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_RAG-Qwen3.5-2B_by_gpt-5.1.xlsx,Dataset Partitioning and Mixed Workloads,medium,scenario,True
+Q25-b,Q25,NB-HPN-2032-q3,qwen3.5-2b,P4,closed_book,Qwen3.5-2B-cpt-full-sft,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B-cpt-full-sft_by_gpt-5.1.xlsx,Dataset Partitioning and Mixed Workloads,medium,scenario,True
+Q25-c,Q25,NB-HPN-2032-q3,qwen3.5-2b,P1,closed_book,Qwen3.5-2B,qwen3.5-2b/evaluations/judged/hpn_judged_Qwen3.5-2B_by_gpt-5.1.xlsx,Dataset Partitioning and Mixed Workloads,medium,scenario,True
+Q25-d,Q25,NB-HPN-2032-q3,gpt-4o,BASE-API,closed_book,gpt-4o,gpt-4o/evaluations/judged/hpn_judged_gpt-4o_by_gpt-5.1.xlsx,Dataset Partitioning and Mixed Workloads,medium,scenario,True
+Q25-e,Q25,NB-HPN-2032-q3,qwen3.5-9b,P6,open_book,RAG-Qwen3.5-9B,qwen3.5-9b/evaluations/judged/hpn_judged_RAG-Qwen3.5-9B_by_gpt-5.1.xlsx,Dataset Partitioning and Mixed Workloads,medium,scenario,True

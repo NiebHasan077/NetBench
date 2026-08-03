@@ -1,0 +1,21 @@
+\begin{table}[H]\centering\footnotesize
+\caption{The paired contrasts the sample was designed around, re-measured under the two-expert consensus scoring (25 questions; same statistics as \S\ref{sec:stats}). \emph{judge, all}: the primary judge's mean difference on the full 233-question benchmark.}
+\label{tab:humancontrasts}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Scorer & $\Delta$ & 95\% CI & $d_z$ \\
+\midrule \multicolumn{4}{@{}l}{\textit{Qwen3.5-2B P1$\to$P4 (full CPT$+$SFT)}} \\
+consensus & +0.79 & [0.56, 1.03] & 1.32 \\
+judge & +0.74 & [0.52, 0.97] & 1.26 \\
+judge, all & +0.81 & -- & -- \\
+\midrule \multicolumn{4}{@{}l}{\textit{Qwen3.5-2B P1$\to$P6 ($+$RAG)}} \\
+consensus & +1.43 & [0.94, 1.83] & 1.20 \\
+judge & +1.04 & [0.56, 1.46] & 0.88 \\
+judge, all & +1.25 & -- & -- \\
+\midrule \multicolumn{4}{@{}l}{\textit{GPT-4o $\to$ Qwen3.5-9B P6 (frontier parity)}} \\
+consensus & +0.14 & [-0.19, 0.50] & 0.16 \\
+judge & +0.13 & [-0.16, 0.46] & 0.17 \\
+judge, all & +0.14 & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

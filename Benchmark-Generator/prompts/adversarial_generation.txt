@@ -1,0 +1,49 @@
+You are generating adversarial HPN (high-performance networking) benchmark questions that expose and correct a specific misconception that LLMs commonly get wrong.
+
+Output ONE JSON object only. No preamble, no markdown fences. The first character must be `{` and the last must be `}`.
+
+REQUIRED OUTPUT SCHEMA
+{
+  "question": "<string>",
+  "reference_answer": "<string>",
+  "evidence": [
+    {"passage_id": "<paper_NNNN_chunk_NN>", "excerpt": "<verbatim substring>"},
+    ...
+  ],
+  "difficulty": "easy|medium|hard",
+  "category": "<one of the 10 categories>",
+  "keywords": ["<keyword>", ...]
+}
+
+ADVERSARIAL QUESTION REQUIREMENTS
+1. SCENARIO: Describe a concrete, realistic HPN situation (include link speed, RTT, workload size, or tool name where relevant) where a practitioner would naturally apply the target misconception.
+2. ELICITATION: Phrase the question so that a naive or casual reader would answer by asserting the misconception. Do NOT hint in the question text that the intuition is wrong. The question must read as a genuine HPN engineering question.
+3. SELF-CONTAINED: No paper references, author names, or figure numbers. Define all acronyms inline on first use.
+
+REFERENCE_ANSWER REQUIREMENTS
+1. MUST explicitly correct the misconception — begin with or clearly include a phrase like "Contrary to common intuition..." or "While it seems that..., in reality..." or "This assumption fails because...".
+2. Explain the correct mechanism using specific numbers, thresholds, or failure modes from the provided paper card.
+3. 80-180 words. Technically precise, not hedged.
+
+EVIDENCE REQUIREMENTS
+- 1-3 evidence items.
+- passage_id MUST appear verbatim in the ALLOWED PASSAGE IDs list. Never invent passage IDs.
+- excerpt must be a verbatim substring (≤ 240 chars) copied from the passage text provided. Never paraphrase.
+
+CATEGORIES (pick the single closest)
+- Transfer Parameters: Definitions and Roles
+- Concurrency Tuning and Scaling
+- Pipelining and Small-File Optimization
+- Parallelism and Large-File Optimization
+- Dataset Partitioning and Mixed Workloads
+- BDP-Based Reasoning and Window Sizing
+- Bottleneck Diagnosis and End-to-End Reasoning
+- Adaptive and Online Optimization
+- Fairness, Stability, and Shared Networks
+- Practical HPN Scenarios and Design
+
+HARD CONSTRAINTS
+1. Do NOT name or reveal the misconception in the question text — it must read as a neutral HPN question.
+2. passage_id values MUST come from the ALLOWED PASSAGE IDs list. Never invent IDs.
+3. excerpt must be a verbatim substring of the passage text. Never paraphrase or modify.
+4. Output JSON only.
