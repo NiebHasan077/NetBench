@@ -1,0 +1,12 @@
+| label | profile_type | device | model_name | question_count | avg_total_time_s | avg_retrieval_time_s | avg_generation_time_s | avg_tokens_per_second | avg_ms_per_token | avg_ttft_s | peak_gpu_vram_mb | peak_cpu_ram_mb | load_time_s |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| direct-gpu-benchmark5-S1-gemma-3-12b-Instruct-Official | direct | cuda | gemma-3-12b-it | 5 | 102.1376 |  | 102.1376 | 8.43 | 401.1 | 0.002 | 5786 | 3666 | 41.86 |
+| direct-gpu-benchmark5-S4-gemma-3-12b-CPT-SFT | direct | cuda | gemma-3-12b-cpt-full-sft | 5 | 104.95 |  | 104.95 | 8.47 | 409.96 | 0.002 | 5787 | 3784 | 23.88 |
+| direct-gpu-benchmark5-S5-gemma-3-12b-LoRA-CPT-SFT | direct | cuda | gemma-3-12b-instruct-lora-cpt-then-sft-merged | 5 | 88.3108 |  | 88.3108 | 9.87 | 380.15 | 0.002 | 5784 | 3601 | 22.4 |
+| direct-cpu-benchmark5-S1-gemma-3-12b-Instruct-Official | direct | cpu | gemma-3-12b-it | 5 | 533.6284 |  | 533.6284 | 0.47 | 2119.75 | 0.0019 | 0 | 47514 | 8.55 |
+| direct-cpu-benchmark5-S4-gemma-3-12b-CPT-SFT | direct | cpu | gemma-3-12b-cpt-full-sft | 5 | 518.7499 |  | 518.7499 | 0.47 | 2122.6 | 0.0021 | 0 | 47536 | 830.19 |
+| direct-cpu-benchmark5-S5-gemma-3-12b-LoRA-CPT-SFT | direct | cpu | gemma-3-12b-instruct-lora-cpt-then-sft-merged | 5 | 425.7381 |  | 425.7381 | 0.46 | 2150.02 | 0.002 | 0 | 47544 | 961.91 |
+| rag-gpu-benchmark5-S7-gemma-3-12b-RAG-CPT-SFT | rag | cuda | gemma-3-12b-cpt-full-sft | 5 | 258.124 | 2.3902 | 255.7338 | 0.75 |  |  | 10550 | 8569 | 48.36 |
+| rag-gpu-benchmark5-S8-gemma-3-12b-RAG-LoRA-CPT-SFT | rag | cuda | gemma-3-12b-instruct-lora-cpt-then-sft-merged | 5 | 276.7598 | 1.1149 | 275.6449 | 0.78 |  |  | 10550 | 8922 | 32.93 |
+| rag-cpu-benchmark5-S7-gemma-3-12b-RAG-CPT-SFT | rag | cpu | gemma-3-12b-cpt-full-sft | 5 | 1562.6762 | 234.1648 | 1328.5115 | 0.15 |  |  | 0 | 52519 | 914.51 |
+| rag-cpu-benchmark5-S8-gemma-3-12b-RAG-LoRA-CPT-SFT | rag | cpu | gemma-3-12b-instruct-lora-cpt-then-sft-merged | 5 | 1506.5023 | 194.9656 | 1311.5367 | 0.14 |  |  | 0 | 51147 | 793.53 |

@@ -1,0 +1,66 @@
+# Credentials and local environment configuration
+**/hf_token.txt
+**/openai_api_key.txt
+**/gemini_api_key.txt
+**/*api_key*.txt
+**/credentials.json
+**/.env
+**/.env.*
+**/*.key
+
+# Private recovery and intake material
+*.bundle
+recovery_packages/
+incoming/
+NetBench-LLM-recovery/
+NetBench-LLM-incoming/
+
+# Python environments and generated caches
+**/.venv/
+**/venv/
+**/env/
+**/__pycache__/
+**/.cache/
+**/*.py[cod]
+
+# Logs and generated profiling captures retained outside the publication tree
+**/*.log
+**/*.nsys-rep
+**/*.sqlite
+
+# Model weights, checkpoints, and generated trainer state
+/NetBench-LLM/models/
+/NetBench-LLM/checkpoints/
+/NetBench-LLM/**/checkpoint-*/
+**/*.safetensors
+**/*.gguf
+**/*.ckpt
+**/pytorch_model*.bin
+**/adapter_model*.bin
+**/optimizer.pt
+**/scheduler.pt
+**/rng_state*.pth
+
+# Direct Pipeline derived/tokenized training data; reviewed raw inputs are allowed
+/NetBench-LLM/data/processed/
+/NetBench-LLM/data/instruction/
+/NetBench-LLM/data/Instruct-FTD/
+/NetBench-LLM/processed_data*/
+/NetBench-LLM/tokenized_data*/
+/NetBench-LLM/instruction_data*/
+
+# RAG derived retrieval/index stores; reviewed raw inputs are allowed
+/NetBench-RAG/data/qdrant_store/
+/NetBench-RAG/data/bm25_index.pkl
+/NetBench-RAG/data/chunks_cache.pkl
+/NetBench-RAG/.index_done
+/NetBench-RAG/data/backup_corpus*
+/NetBench-RAG/data/processed/
+/NetBench-RAG/data/embeddings/
+/NetBench-RAG/data/**/*.faiss
+/NetBench-RAG/data/**/*.index
+/NetBench-RAG/data/**/*index*.pkl
+
+# Previously recovered corpora remain private/screened; do not publish accidentally
+/NetBench-LLM/data/raw/research_corpus*
+/NetBench-RAG/data/raw/research_corpus*

@@ -1,0 +1,6 @@
+stage,source,train_batch,eval_batch,grad_accum,effective_batch,learning_rate,epochs,rank,lora_alpha,precision,notes
+CPT full-weight continual pre-training,scripts/run_pipeline.sh + logs,1,,16,16,2e-5,3,,,bf16 evidence in recovered scripts/logs,Gemma 3 12B profile used model-sharded single-process training on 4x94GB GPUs.
+Full-weight instruction SFT,scripts/run_pipeline.sh + logs,1,,16,16,2e-5,3,,,bf16 evidence in recovered scripts/logs,Same Gemma 3 12B full-weight profile as CPT.
+LoRA CPT/SFT variants,scripts/run_pipeline.sh + logs,4,,4,16,2e-4,3,64,128,bf16 evidence in recovered scripts/logs,Gemma LoRA profile forced 4x4 to avoid fp32 logits OOM; USE_QLORA=false.
+Benchmark answer generation,scripts/run_pipeline.sh + workbook metadata,,,,,,,,,,"batch_size=4, temperature=0.0, max_tokens=512; direct top_p=0.9 where recorded."
+Judge scoring,scripts/run_pipeline.sh + judged workbooks,,,,,,,,,,judge_model=gpt-5.1; recovered judge implementation uses temperature=0.0.
