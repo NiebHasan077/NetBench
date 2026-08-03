@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-06-11T16:43:44.358645",
+  "base_model_path": "/share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/instruct-official/Qwen3.5-27B",
+  "trained_model_path": "/share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/models/lora-merged/Qwen3.5-27B-instruct-lora-cpt-merged",
+  "hpn_data_dir": "/share/ceph/scratch/user/my-projects-qwen27b/NetBench-LLM/data/processed/lora/qwen3.5-27b",
+  "config": {
+    "batch_size": 4,
+    "seq_len": 2048,
+    "max_hpn_batches": null,
+    "max_general_batches": null,
+    "quantize_4bit": false
+  },
+  "base": {
+    "hpn": {
+      "loss": 1.977272,
+      "perplexity": 7.223,
+      "batches": 187,
+      "tokens": 1525760
+    },
+    "general": {
+      "loss": 1.917459,
+      "perplexity": 6.8036,
+      "batches": 37,
+      "tokens": 296960
+    }
+  },
+  "trained": {
+    "hpn": {
+      "loss": 1.858353,
+      "perplexity": 6.4132,
+      "batches": 187,
+      "tokens": 1525760
+    },
+    "general": {
+      "loss": 2.086071,
+      "perplexity": 8.0532,
+      "batches": 37,
+      "tokens": 296960
+    }
+  },
+  "forgetting_gap": 0.168612
+}
