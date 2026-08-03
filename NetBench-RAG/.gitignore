@@ -1,0 +1,54 @@
+# Source PDFs — never commit raw documents
+pdfs/
+
+# Python virtual environment
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Offline index artifacts — large binary files, rebuilt by index_corpus.py
+data/qdrant_store/
+data/bm25_index.pkl
+data/chunks_cache.pkl
+data/backup_corpus*
+data/raw/research_corpus*
+
+# Processed/tokenized data
+data/processed/
+
+# Model outputs and evaluation results
+outputs/answers/
+outputs/judged/
+
+# API keys — never commit
+openai_api_key.txt
+gemini_api_key.txt
+hf_token.txt
+*.key
+.env
+.env.*
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs and profiling
+*.log
+runs/
