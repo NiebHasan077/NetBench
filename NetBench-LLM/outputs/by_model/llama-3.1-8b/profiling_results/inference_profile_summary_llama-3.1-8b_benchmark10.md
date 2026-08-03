@@ -1,0 +1,12 @@
+| label | profile_type | device | model_name | question_count | avg_total_time_s | avg_retrieval_time_s | avg_generation_time_s | avg_tokens_per_second | avg_ms_per_token | avg_ttft_s | peak_gpu_vram_mb | peak_cpu_ram_mb | load_time_s |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| direct-cpu-benchmark10-S1-Llama-3.1-8B-Instruct-Official | direct | cpu | Llama-3.1-8B-Instruct | 10 | 98.3362 |  | 98.3362 | 2.6 | 384.12 | 0.0014 | 0 | 31451 | 9.96 |
+| direct-cpu-benchmark10-S4-Llama-3.1-8B-CPT-SFT | direct | cpu | Llama-3.1-8B-cpt-full-sft | 10 | 52.0668 |  | 52.0668 | 2.6 | 383.95 | 0.0013 | 0 | 31434 | 9.05 |
+| direct-cpu-benchmark10-S5-Llama-3.1-8B-LoRA-CPT-SFT | direct | cpu | Llama-3.1-8B-instruct-lora-cpt-then-sft-merged | 10 | 57.3634 |  | 57.3634 | 2.61 | 382.74 | 0.0013 | 0 | 31449 | 9.5 |
+| direct-gpu-benchmark10-S1-Llama-3.1-8B-Instruct-Official | direct | cuda | Llama-3.1-8B-Instruct | 10 | 11.0736 |  | 11.0736 | 23.12 | 43.26 | 0.0014 | 3117 | 2248 | 10.75 |
+| direct-gpu-benchmark10-S4-Llama-3.1-8B-CPT-SFT | direct | cuda | Llama-3.1-8B-cpt-full-sft | 10 | 5.4098 |  | 5.4098 | 23.16 | 43.18 | 0.0014 | 3110 | 2246 | 9.75 |
+| direct-gpu-benchmark10-S5-Llama-3.1-8B-LoRA-CPT-SFT | direct | cuda | Llama-3.1-8B-instruct-lora-cpt-then-sft-merged | 10 | 5.2536 |  | 5.2536 | 23.09 | 43.31 | 0.0014 | 3111 | 1749 | 12.28 |
+| rag-cpu-benchmark10-S7-Llama-3.1-8B-RAG-CPT-SFT | rag | cpu | Llama-3.1-8B-cpt-full-sft | 10 | 263.3942 | 23.9052 | 239.4891 | 0.8 |  |  | 0 | 36338 | 17.93 |
+| rag-cpu-benchmark10-S8-Llama-3.1-8B-RAG-LoRA-CPT-SFT | rag | cpu | Llama-3.1-8B-instruct-lora-cpt-then-sft-merged | 10 | 284.9733 | 23.9114 | 261.0618 | 0.83 |  |  | 0 | 38017 | 18.41 |
+| rag-gpu-benchmark10-S7-Llama-3.1-8B-RAG-CPT-SFT | rag | cuda | Llama-3.1-8B-cpt-full-sft | 10 | 19.3713 | 2.4656 | 16.9057 | 11.16 |  |  | 16653 | 4897 | 23.52 |
+| rag-gpu-benchmark10-S8-Llama-3.1-8B-RAG-LoRA-CPT-SFT | rag | cuda | Llama-3.1-8B-instruct-lora-cpt-then-sft-merged | 10 | 20.8518 | 2.4329 | 18.4189 | 11.54 |  |  | 16653 | 4410 | 22.04 |

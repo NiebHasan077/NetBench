@@ -1,0 +1,57 @@
+# LLM Pre-training & Instruction Fine-tuning Requirements
+# For CUDA 11.8 on Linux with Tesla V100 GPUs (CC 7.0)
+
+# Core PyTorch — CUDA 11.8 wheel required for Tesla V100 (CC 7.0).
+# cu128/cu130 wheels drop SM70; cu118 is the last build that includes it.
+# torch 2.5.1 is the last release with cu118 wheels (2.6+ dropped CUDA 11.8).
+# Install from the login node (internet access) using the venv pip:
+#   /home/user/portables/NetBench-LLM/.venv/bin/pip install "torch==2.5.1+cu118" \
+#       --extra-index-url https://download.pytorch.org/whl/cu118
+--extra-index-url https://download.pytorch.org/whl/cu118
+torch==2.5.1+cu118
+
+# Transformers and training (>=4.49.0 required for Gemma 3 support)
+transformers>=4.49.0
+datasets>=2.18.0
+accelerate>=0.28.0
+tokenizers>=0.15.0
+peft>=0.10.0
+trl>=0.8.0
+
+# DeepSpeed for multi-GPU training
+deepspeed>=0.14.0
+ninja
+
+# Memory optimization
+bitsandbytes>=0.43.0
+
+# Evaluation and metrics
+evaluate>=0.4.0
+sacrebleu>=2.4.0
+rouge-score>=0.1.2
+
+# Utilities
+tqdm>=4.66.0
+psutil>=5.9.0
+nvidia-ml-py>=12.0.0
+sentencepiece>=0.2.0
+protobuf>=4.25.0
+safetensors>=0.4.0
+
+# For interactive sessions
+rich>=13.7.0
+tensorboard>=2.16.0
+
+# HuggingFace Hub for model downloads
+huggingface-hub>=0.22.0
+
+# Profiling reports (Excel + plots)
+openpyxl>=3.1.0
+matplotlib>=3.8.0
+
+# HPN Q&A Benchmark (LLM-as-Judge)
+google-genai>=1.0.0
+openai>=1.30.0
+
+# Frontend (Gradio dashboard)
+gradio>=5.0.0

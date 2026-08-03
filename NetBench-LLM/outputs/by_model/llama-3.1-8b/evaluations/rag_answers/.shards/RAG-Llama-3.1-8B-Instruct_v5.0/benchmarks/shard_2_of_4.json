@@ -1,0 +1,979 @@
+{
+  "metadata": {
+    "title": "Shard of hpn_benchmark_v5.0.jsonl",
+    "source_benchmark": "/share/ceph/scratch/user/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+    "shard_index": 2,
+    "num_shards": 4
+  },
+  "questions": [
+    {
+      "id": "NB-HPN-2135-q1",
+      "benchmark_version": "v5.0",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why is a periodic retransmission of the INT request necessary even if the initial in-band request was successfully sent?",
+      "reference_answer": "The periodic retransmission of the INT request, which occurs every 60 seconds by default, serves two critical functions in a dynamic network. First, it acts as a recovery mechanism in the event that the initial in-band request is lost due to network congestion or packet loss. Second, it ensures that if the network topology changes—such as when an intermediate node is reset or a new route is established—any new nodes introduced into the path can begin collecting and appending telemetry metadata to the packets, maintaining continuous end-to-end visibility.",
+      "keywords": [
+        "INT request",
+        "route change",
+        "recovery mechanism",
+        "topology change"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0178-q1",
+      "benchmark_version": "v5.0",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why does packet reordering specifically degrade the performance of TCP-based network services compared to other protocols?",
+      "reference_answer": "Packet reordering is highly damaging to TCP because it interferes with the protocol's congestion control and reliability mechanisms. When packets arrive out of order, it can block the TCP sending window, as the receiver may be unable to acknowledge subsequent data until the missing sequence numbers are recovered. This often triggers unnecessary retransmissions and can lead to a reduction in the congestion window size, ultimately resulting in lower goodput and degraded throughput for the connection.",
+      "keywords": [
+        "TCP",
+        "Packet Reordering",
+        "Congestion Window",
+        "Goodput"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0850-q2",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "hard",
+      "question_type": "diagnosis",
+      "question": "An application experiencing a many-to-one traffic pattern shows high packet loss at the switch level and frequent TCP timeouts. While the network has 100 Gbps capacity, the application-level throughput is significantly lower than the link rate. Which metric should be analyzed to determine the actual efficiency of the data delivery, and what is the likely cause of the performance gap?",
+      "reference_answer": "The metric to analyze is goodput, which represents the number of useful information bits delivered to the destination per unit of time. The performance gap is likely caused by TCP incast congestion. In this scenario, multiple synchronized senders cause packet drops at the Top-of-Rack switches. These losses trigger TCP timeouts and retransmissions, meaning a large portion of the 100 Gbps bandwidth is consumed by redundant or failed packets rather than useful application data, thus reducing the goodput relative to the raw link capacity.",
+      "keywords": [
+        "goodput",
+        "TCP incast",
+        "packet loss",
+        "efficiency"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1163-q1",
+      "benchmark_version": "v5.0",
+      "category": "Concurrency Tuning and Scaling",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why might increasing the concurrency of transfers at a destination endpoint lead to unintended consequences for other active users on that same server?",
+      "reference_answer": "Increasing concurrency involves initiating additional processes to handle multiple simultaneous transfers. While this can improve I/O performance by utilizing the asynchronous event model more effectively, it also increases the net computational and resource load on the server. This additional overhead from managing more processes can degrade the performance of other concurrent transfer jobs executing on the same server, potentially impacting the throughput of unrelated users.",
+      "keywords": [
+        "server load",
+        "concurrency",
+        "resource contention",
+        "impact"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0536-q1",
+      "benchmark_version": "v5.0",
+      "category": "Pipelining and Small-File Optimization",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "How does increasing the Maximum Transmission Unit (MTU) from 1500 bytes to 9000 bytes impact the theoretical maximum TCP bandwidth for a single stream?",
+      "reference_answer": "Increasing the MTU from 1500 bytes to 9000 bytes (jumbo frames) significantly boosts the maximum achievable TCP bandwidth. This is because the Maximum Segment Size (MSS) is a linear multiplier in the throughput equation. When the MTU is increased by a factor of 6 (from 1500 to 9000 bytes), the right-hand side of the throughput expression increases proportionally. Consequently, the theoretical maximum TCP bandwidth increases by the same factor of 6, assuming other parameters like Round Trip Time (RTT) and packet loss rate remain constant.",
+      "keywords": [
+        "MTU",
+        "jumbo frames",
+        "MSS",
+        "bandwidth scaling"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1047-q3",
+      "benchmark_version": "v5.0",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "You are designing a workflow to transfer large datasets between two global research sites. You need to ensure a high-bandwidth path is reserved before the transfer begins. How would you integrate a service like Terapaths into a GridFTP-based transfer architecture?",
+      "reference_answer": "To integrate Terapaths, you must implement a high-level service that utilizes the Terapaths API via SOAP Web Services. The workflow must be designed such that the client invokes the Terapaths API to reserve a dedicated quality-of-service (QoS) path across the wide-area network *before* the GridFTP transfer is initiated. Once the path reservation is confirmed and the high-bandwidth resources are provisioned, the GridFTP transfer can then be triggered. This ensures that the subsequent data movement benefits from the pre-allocated network resources, mitigating contention with other traffic.",
+      "keywords": [
+        "Terapaths",
+        "GridFTP",
+        "QoS",
+        "SOAP",
+        "path reservation"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0320-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "hard",
+      "question_type": "concept",
+      "question": "In the context of Software-Defined Networking (SDN) for datacenter load balancing, how does the 'bang-bang' control structure of the MaxWeight algorithm differ from algorithms that allow link-capacity sharing?",
+      "reference_answer": "The MaxWeight algorithm utilizes a 'bang-bang' control structure, which means that for a given link, it allocates the entire available capacity to a single commodity (the one with the maximum non-negative weight) during a specific interval. This prevents the simultaneous use of a link by multiple flows. In contrast, capacity-sharing algorithms allow the link capacity to be distributed among multiple commodities during the same update interval. This sharing capability is crucial for reducing queue occupancy and latency, as it prevents the extreme fluctuations in queue depth that occur when a single flow is prioritized at the expense of others.",
+      "keywords": [
+        "MaxWeight",
+        "bang-bang control",
+        "link-capacity sharing",
+        "SDN"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1147-q0",
+      "benchmark_version": "v5.0",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "In the context of prediction-guided network control, what is the purpose of a 'model residual' and how is it utilized to improve performance estimation?",
+      "reference_answer": "A model residual represents the discrepancy or difference between the performance predicted by a fast, approximate simulator and the actual measurements observed on the live network system. Instead of relying solely on the potentially inaccurate simulator, the control system uses an online-learned corrective overlay to capture this residual. By integrating this error term back into the predictive process, the system can use a corrected version of the model that more accurately reflects real-world performance, thereby enabling more precise optimization of network configurations while maintaining a safety envelope.",
+      "keywords": [
+        "model residual",
+        "predictive accuracy",
+        "corrective overlay",
+        "network simulation"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0732-q1",
+      "benchmark_version": "v5.0",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "How does the use of compressed signals and hierarchical propagation in a congestion control system mitigate the communication overhead typically found in centralized control architectures?",
+      "reference_answer": "Centralized congestion control architectures often suffer from high state-space communication overhead because every flow or switch must report detailed, granular status to a central controller. In a hierarchical system like HCC, the use of compressed signals and flow consolidation reduces the volume of data being transmitted. Instead of transmitting individual flow states, the system propagates aggregated, compressed signals through the hierarchy. This reduction in the granularity of transmitted information leads to massive overhead reductions—potentially up to 99.5%—by minimizing the frequency and size of control messages required to maintain network-wide visibility.",
+      "keywords": [
+        "overhead reduction",
+        "compressed signals",
+        "centralized control",
+        "hierarchy"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0216-q1",
+      "benchmark_version": "v5.0",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why might Explicit Congestion Notification (ECN) be considered a more timely signal for adaptive packet spraying than Round-Trip Time (RTT) fluctuations in a high-speed network?",
+      "reference_answer": "ECN provides a more immediate signal for congestion because an ECN-marked ACK can arrive as soon as a switch marks a packet, indicating that a queue has begun to build up, even before that congestion has significantly impacted the end-to-end RTT. In contrast, RTT changes are a lagging indicator; a measurable increase in RTT only occurs after the congestion has persisted long enough to increase the queuing delay across the entire path. Therefore, using ECN allows the transport layer to initiate adaptive packet spraying or path selection before the RTT-based congestion signal becomes noticeable, preventing the formation of larger queues.",
+      "keywords": [
+        "ECN",
+        "RTT",
+        "packet spraying",
+        "congestion signal"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1650-q1",
+      "benchmark_version": "v5.0",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why is it critical for an HPC benchmark to allow for the tuning of 'busy-work' computation relative to I/O time when evaluating system performance?",
+      "reference_answer": "Tuning the computation-to-I/O ratio is essential to investigate a system's ability to hide I/O latency behind computation. By adjusting the computational intensity (e.g., using a tuning parameter for operations), researchers can determine the threshold at which the I/O time matches the calculation time. If the computation is too small, the system's performance is limited by I/O latency; if it is sufficiently large, the I/O can be effectively overlapped with computation. This allows for the measurement of the 'asynchronicity' of the system and identifies the point where I/O becomes the primary bottleneck.",
+      "keywords": [
+        "latency hiding",
+        "asynchronicity",
+        "tuning parameter",
+        "I/O overlap"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1935-q3",
+      "benchmark_version": "v5.0",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "hard",
+      "question_type": "scenario",
+      "question": "You are monitoring a GridFTP transfer where the number of parallel connections is being increased. You observe that the goodput increases from 68 Mbit/s to 97 Mbit/s, but then suddenly drops to 68 Mbit/s when adding another connection. How should the tuning algorithm define the search bracket for the optimal number of connections?",
+      "reference_answer": "The tuning algorithm should identify a 'bracket'—a range of parallel connections where the goodput function is convex. Based on the observation, the algorithm has detected a peak. Since the goodput increased and then decreased, the optimal value lies within the range encompassing the last increasing step and the first decreasing step. Specifically, the algorithm uses the points where the goodput trend reversed to establish the boundaries for the Golden Section Search, ensuring it searches the interval containing the maximum value without testing every possible integer.",
+      "keywords": [
+        "bracket",
+        "Golden Section Search",
+        "convexity",
+        "optimization"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1059-q3",
+      "benchmark_version": "v5.0",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "You are designing a P4-based trimming control loop for a 100 Gbps link. You implement a 'pessimistic mode' that trims traffic to 25 Gb/s. If a congestion signal is received and the trimming period is set to 6 microseconds, how many packets (assuming 1500-byte MTU) can pass through the pipeline during this specific window before the rate reverts?",
+      "reference_answer": "To solve this, we first calculate the total bits transmitted during the 6-microsecond window at the target rate. Total bits = 25 Gb/s * 6 * 10^-6 s = 150,000 bits. Next, we convert the MTU to bits: 1500 bytes * 8 bits/byte = 12,000 bits per packet. Finally, we divide the total bits by the bits per packet: 150,000 / 12,000 = 12.5 packets. In the context of the hardware implementation described, the trimming period of 6us is specifically designed to be long enough to trim approximately 12 packets, ensuring the congestion signal has time to propagate and the rate reduction is effective before the period expires.",
+      "keywords": [
+        "pessimistic mode",
+        "MTU",
+        "trimming period",
+        "packet count"
+      ],
+      "requires_calculation": true
+    },
+    {
+      "id": "NB-HPN-0169-q1",
+      "benchmark_version": "v5.0",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why does a periodic packet stream with a transmission rate $R_0$ result in increasing one-way delays (OWD) if $R_0$ exceeds the available bandwidth $A$?",
+      "reference_answer": "When the stream rate $R_0$ is greater than the available bandwidth $A$, the incoming packets arrive at the bottleneck (tight link) faster than the link can drain them. This causes a buildup in the queue size ($q_k$) at the link. As successive packets encounter progressively larger queues, the queuing delay component of the one-way delay increases for each subsequent packet in the stream, leading to an observable increasing trend in the OWD.",
+      "keywords": [
+        "one-way delay",
+        "queuing delay",
+        "available bandwidth",
+        "packet stream"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1743-q1",
+      "benchmark_version": "v5.0",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why might using a non-concave utility function for bandwidth allocation present significant challenges for distributed optimization in a datacenter network?",
+      "reference_answer": "In Network Utility Maximization (NUM) problems, the choice of utility function is critical for the tractability of the optimization. Concave utility functions are preferred because they ensure that the optimization problem is tractable and possesses a unique global optimum. If a non-concave utility function is used, such as those required for certain bandwidth guarantees for inelastic flows, the global optimization problem generally becomes intractable. This makes it extremely difficult for distributed algorithms to find or converge to a stable, optimal solution across the network.",
+      "keywords": [
+        "non-concave",
+        "tractability",
+        "global optimum",
+        "optimization"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1303-q1",
+      "benchmark_version": "v5.0",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why might the observed aggregate I/O bandwidth for a read-heavy workload exceed the theoretical throughput limit of the ION-to-storage network in a system like Blue Gene/P?",
+      "reference_answer": "The theoretical limit of the ION-to-storage network (approximately 350 MiB/s) represents the raw capacity of the network interconnecting the I/O Nodes to the storage backend. However, for read workloads, the file system (such as GPFS) can utilize mechanisms like read-ahead (prefetching) and client-side caching. These techniques allow data to be fetched into memory before it is explicitly requested by the application, effectively masking network latency and allowing the system to temporarily exceed the steady-state throughput of the storage network by leveraging available cache capacity and bandwidth from the compute node network.",
+      "keywords": [
+        "read-ahead",
+        "caching",
+        "ION network",
+        "GPFS"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0176-q2",
+      "benchmark_version": "v5.0",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "medium",
+      "question_type": "calculation",
+      "question": "A network engineer is monitoring a high-speed link with a measured Bottleneck Bandwidth (BtlBw) of 10 Gbps and a Round-Trip Propagation Time (RTprop) of 100 ms. Calculate the Bandwidth-Delay Product (BDP) in Megabytes (MB).",
+      "reference_answer": "To calculate the BDP, we use the formula BDP = BtlBw * RTprop. First, convert the bandwidth to bits per second: 10 Gbps = 10,000,000,000 bps. Next, convert the RTT to seconds: 100 ms = 0.1 seconds. The BDP in bits is 10,000,000,000 * 0.1 = 1,000,000,000 bits. To convert bits to bytes, divide by 8: 1,000,000,000 / 8 = 125,000,000 bytes. Finally, convert bytes to Megabytes (MB) by dividing by 1,000,000 (or 1,048,576 for MiB, but standard decimal MB is common in networking): 125,000,000 / 1,000,000 = 125 MB. Thus, the BDP is 125 MB.",
+      "keywords": [
+        "BDP",
+        "bandwidth",
+        "RTT",
+        "calculation",
+        "throughput"
+      ],
+      "requires_calculation": true
+    },
+    {
+      "id": "NB-HPN-1539-q1",
+      "benchmark_version": "v5.0",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why is TCP window scaling considered a critical component for maintaining link utilization in modern 100 Gbps data center networks, even when latencies are extremely low?",
+      "reference_answer": "Even in low-latency Data Center Networks (DCNs), the Bandwidth-Delay Product (BDP) can exceed the standard 64KB TCP window limit. As link speeds increase to 10-100 Gbps, the amount of data 'in flight' required to saturate the pipe grows significantly. Without window scaling, the sender would be forced to stop and wait for ACKs after transmitting only 64KB, leaving the high-capacity link underutilized. Scaling the window up to 1GB allows the sender to keep enough data in the network to fill the available bandwidth, ensuring that the high-speed interfaces are not bottlenecked by the protocol's original window constraints.",
+      "keywords": [
+        "TCP Window Scaling",
+        "Bandwidth-Delay Product",
+        "Link Utilization",
+        "100 Gbps"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1594-q1",
+      "benchmark_version": "v5.0",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why does a large feedback delay $d$ make the use of exact dynamic programming for optimal packet scheduling computationally unfeasible?",
+      "reference_answer": "When feedback is delayed by $d$ slots, the transmitter does not know the outcome (success or erasure) of the last $d$ transmitted packets. To make an optimal decision, the transmitter must account for all possible combinations of successes and erasures for those $d$ in-flight packets. As $d$ increases, the number of possible states in the state space grows combinatorially. This exponential growth in complexity quickly makes the dynamic programming approach unmanageable for real-time decision-making in high-speed networks.",
+      "keywords": [
+        "feedback delay",
+        "dynamic programming",
+        "state space",
+        "combinatorial complexity"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1296-q2",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "easy",
+      "question_type": "diagnosis",
+      "question": "A distributed sensor network is using a threshold-based algorithm for K-report Distributed Information Aggregation (K-DIA). You observe that while the total number of transmitted messages is very low, the total latency penalty is significantly higher than the theoretical optimum. Which part of the threshold-based mechanism is likely misconfigured?",
+      "reference_answer": "The issue lies in the threshold value used by the algorithm. A threshold-based algorithm triggers a report when the ratio of latency penalty to communication cost exceeds a specific value. If the threshold is set too high, the algorithm prioritizes minimizing communication cost (by waiting longer to aggregate more events) at the expense of latency. This results in fewer, but much later, report messages, which causes the accumulated latency penalty to grow excessively. To fix this, the threshold should be lowered to trigger reports more frequently, thereby reducing the latency penalty at the cost of slightly higher communication overhead.",
+      "keywords": [
+        "threshold tuning",
+        "latency penalty",
+        "communication cost",
+        "K-DIA"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1526-q2",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "easy",
+      "question_type": "diagnosis",
+      "question": "A network engineer observes that during a period of high cross-traffic, the packet loss rate on a bottleneck link has risen from 0.1% to 3%. What is the likely impact on the performance of HTTP/1.1 transfers using small 8 KB objects?",
+      "reference_answer": "An increase in loss rate from 0.1% to 3% significantly degrades performance, especially for small objects. At 3% loss, the probability of a packet loss occurring during the initial handshake or the first few packets of the transfer increases drastically. For small 8 KB objects that fit in just a few packets, a single lost packet can trigger a Retransmission Timeout (RTO) or force the TCP window into a slow-start phase, significantly increasing the end-to-end latency. The overhead of retransmissions and the disruption of the initial congestion window growth will make the setup/teardown cost even more dominant relative to the payload.",
+      "keywords": [
+        "packet loss",
+        "bottleneck",
+        "latency",
+        "TCP throughput"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0046-q1",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why does the 'concurrency explosion' in modern high-end computation make it difficult to isolate the cause and effect of performance bottlenecks in parallel file systems?",
+      "reference_answer": "The concurrency explosion refers to the massive increase in the number of parallel tasks (e.g., 10K MPI tasks) accessing shared resources simultaneously. This high level of concurrency introduces complex interactions between applications, middleware, and the underlying file system. Because so many independent processes are competing for the same network and storage bandwidth, a performance degradation in one area can be obscured by or attributed to various overlapping factors, making it extremely difficult to distinguish whether a bottleneck originates from application-level code, middleware bugs, or network infrastructure limitations.",
+      "keywords": [
+        "concurrency explosion",
+        "bottleneck isolation",
+        "parallel I/O",
+        "cause and effect"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1969-q1",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why might using a 60-second sampling interval for system-wide I/O monitoring lead to an incomplete understanding of the relationship between application I/O and system-wide traffic?",
+      "reference_answer": "Using a coarse sampling interval, such as 60 seconds, can obscure the fine-grained temporal correlations between specific application I/O bursts and system-wide activity. If an application performs a high-intensity I/O burst that lasts only a few seconds, that activity is averaged into a much larger 60-second window of system-wide data. This loss of measurement granularity can hide the true impact of concurrent I/O interference, potentially leading to an underestimation of the causal relationship between system-wide volume and application-specific performance degradation.",
+      "keywords": [
+        "measurement granularity",
+        "sampling interval",
+        "iostat",
+        "temporal correlation"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0570-q1",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why does the transition from 4G to 5G deployment models in high-speed rail environments lead to a significant reduction in TCP bandwidth utilization?",
+      "reference_answer": "The reduction in TCP bandwidth utilization is caused by a causal chain starting with the smaller cell size in 5G, which leads to more frequent handovers. Specifically, 5G experiences 3 more frequent handovers and a 1.87 times longer handover duration on average compared to 4G. These frequent and prolonged handover events create 'handover-induced illusions' where the transport layer perceives packet loss or delay, causing the TCP congestion window to shrink. Because the upper-layer protocols react sluggishly to these frequent interruptions, the network fails to maintain high throughput, resulting in a low utilization rate of approximately 26.6%.",
+      "keywords": [
+        "TCP utilization",
+        "5G",
+        "Handover frequency",
+        "High-speed rail",
+        "Congestion window"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-2020-q1",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why might a throughput prediction based on periodic ICMP ping probes significantly deviate from the actual throughput experienced by a large TCP transfer?",
+      "reference_answer": "The deviation occurs because TCP and periodic probing utilities (like ping) exhibit different sampling behaviors. A TCP flow reduces its transmission rate when it encounters packet loss, meaning it samples the RTT and loss processes less frequently during periods of congestion. Furthermore, TCP often sends data in bursts due to phenomena like ACK compression, which creates a different sampling pattern compared to the steady, periodic packet intervals of a ping utility. Therefore, the network characteristics measured by a non-intrusive probe may not accurately represent the state of the path during the bursty, load-inducing behavior of a heavy TCP transfer.",
+      "keywords": [
+        "sampling behavior",
+        "TCP vs ping",
+        "congestion",
+        "RTT estimation"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0706-q1",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why is it insufficient to use simple queuing delay measurements at a single point in time to distinguish between elastic and inelastic cross traffic?",
+      "reference_answer": "A single-point measurement of queuing delay fails because a flow's share of queue occupancy is fundamentally proportional to its throughput, regardless of whether the competing traffic is elastic or inelastic. In both scenarios, if the throughput of the flows remains the same, the resulting queue occupancy and self-inflicted delay will appear nearly identical. Therefore, observing a spike in delay does not reveal the underlying nature of the competing traffic; one must instead observe how the cross-traffic rate fluctuates in response to controlled perturbations to determine if it is reacting to available bandwidth (elastic) or not (inelastic).",
+      "keywords": [
+        "queuing delay",
+        "queue occupancy",
+        "throughput",
+        "elasticity detection"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1184-q2",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "medium",
+      "question_type": "diagnosis",
+      "question": "A network administrator observes that after implementing a coupled congestion control mechanism, the total aggregate throughput of a set of flows has decreased by 2.5%, but the average queuing delay and packet loss rates have significantly dropped. Is this outcome consistent with the expected performance of ctrlTCP?",
+      "reference_answer": "Yes, this outcome is entirely consistent with the expected performance of ctrlTCP. The primary design goal of the coupling mechanism is to reduce latency-inducing metrics like queuing delay and packet loss, rather than maximizing raw throughput at all costs. Experimental results indicate that while coupling the flows may lead to a small reduction in total throughput, this reduction is minimal and never exceeds a 3% threshold. Therefore, a 2.5% reduction in throughput accompanied by a significant decrease in queuing delay and loss represents a successful implementation of the trade-off intended by the protocol, prioritizing flow completion time and stability over marginal throughput gains.",
+      "keywords": [
+        "throughput reduction",
+        "queuing delay",
+        "performance trade-off",
+        "ctrlTCP"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0595-q3",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "medium",
+      "question_type": "diagnosis",
+      "question": "A system administrator observes that a server running a traditional kernel-based TCP stack is unable to saturate a new 100Gbps network link, despite low packet loss and low RTT. The CPU usage is pinned at 100%, with a significant portion of cycles spent in kernel-space memory management. Which specific bottleneck is most likely occurring?",
+      "reference_answer": "The bottleneck is likely the CPU overhead caused by the kernel-based TCP stack's inability to handle high-speed data rates, specifically due to memory copying and interrupt processing. In 100Gbps+ environments, the kernel-based stack becomes inefficient because it cannot leverage the high throughput without consuming excessive CPU cycles—often exceeding 40% just for memory copies. The high CPU usage despite low loss and RTT suggests that the system is 'CPU-bound' by the overhead of the protocol stack and data movement (the 'datacenter tax') rather than being 'network-bound' by congestion or physical link limitations.",
+      "keywords": [
+        "kernel TCP",
+        "CPU bottleneck",
+        "100Gbps",
+        "memory bandwidth"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1687-q3",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "An engineer is deploying a 100G NFV element on COTS hardware. They observe that despite adding more CPU cores, the throughput remains stagnant and packet drops increase during high traffic. Which specific virtualization-induced bottlenecks should be investigated first?",
+      "reference_answer": "The engineer should first investigate the overhead introduced by the virtualization layer, specifically focusing on queue scheduling and packet copying mechanisms. In NFV environments, the transition from specialized hardware to COTS software-based forwarding often incurs performance penalties due to these virtualization constraints. Additionally, the engineer should check for global fragmented I/Os caused by shared resource competition among virtual machines (VMs) and potential serialization bottlenecks arising from lock competition between the newly added cores.",
+      "keywords": [
+        "100G",
+        "virtualization overhead",
+        "packet drop",
+        "COTS"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0117-q2",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "medium",
+      "question_type": "diagnosis",
+      "question": "A network administrator observes that at 100Gbps, a congestion control algorithm is struggling to drain queues effectively, and the congestion signal appears to be delayed by a duration roughly equal to the sum of propagation time and queuing delay. What is the primary architectural bottleneck in this feedback loop?",
+      "reference_answer": "The bottleneck is the RTT-based feedback loop mechanism. In this scenario, the congestion notification is being carried by the standard ACK path (receiver to sender), meaning the sender only learns of the congestion after one full RTT. Because the notification delay is tied to the RTT (which includes the queuing delay itself), the sender's reaction is inherently reactive and delayed. As the queue grows, the RTT increases, further delaying the signal and preventing the sender from draining the queue promptly. This is characteristic of traditional RTT-based control rather than sub-RTT notification which bypasses the receiver-to-sender delay.",
+      "keywords": [
+        "congestion signal",
+        "RTT-based",
+        "queuing delay",
+        "feedback delay"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1687-q1",
+      "benchmark_version": "v5.0",
+      "category": "Concurrency Tuning and Scaling",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why does increasing the number of user-plane processing cores in a multi-core packet forwarding architecture often result in diminishing performance returns?",
+      "reference_answer": "Increasing the number of processing cores does not lead to linear performance scaling due to the introduction of cumulative overhead factors and inter-core interactions. As the number of cores increases, the overhead associated with parallel computing—such as lock competition, synchronization, and the management of shared resources—grows. Specifically, in multi-core environments, the interaction and processing load between cores can become a bottleneck once a certain threshold of cores is reached, eventually causing the overall performance to degrade rather than improve.",
+      "keywords": [
+        "multi-core",
+        "overhead",
+        "scalability",
+        "bottleneck"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1446-q1",
+      "benchmark_version": "v5.0",
+      "category": "Concurrency Tuning and Scaling",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why might traditional linear programming (LP) relaxation techniques be unsuitable for implementing coflow schedulers in large-scale production datacenters?",
+      "reference_answer": "While linear programming relaxation techniques can provide solutions within a constant fraction of the optimal value, they face significant scalability challenges. In modern production datacenters, the number of simultaneous flows and coflows can reach tens of thousands per job. As the number of coflows increases, the number of variables in the LP formulation grows substantially, making the computational overhead of solving these large-scale optimization problems impractical or infeasible for real-time, low-latency scheduling requirements.",
+      "keywords": [
+        "linear programming",
+        "scalability",
+        "complexity",
+        "coflows"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-2032-q3",
+      "benchmark_version": "v5.0",
+      "category": "Dataset Partitioning and Mixed Workloads",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "You are designing a scheduler for a dense network with two traffic types: Guaranteed Bit Rate (GBR) and Best-Effort (BE). If the GBR traffic requires a minimum of 5 TTIs to satisfy all user demands and the total available window is 10 TTIs, how should the scheduler prioritize the remaining 5 TTIs for the BE traffic to maximize efficiency?",
+      "reference_answer": "The scheduler should follow a two-tier approach. First, the GBR traffic must be accommodated with higher priority to satisfy its strict rate constraints and latency requirements, using the minimum necessary resources (in this case, the 5 required TTIs). Once the GBR demands are met, the remaining 5 TTIs should be allocated to the Best-Effort (BE) traffic. The goal for the BE traffic is to maximize network spectral efficiency and fairness within these leftover resources. Since BE traffic is elastic and has no stringent latency or bandwidth requirements, it can be served using the capacity left over after the inelastic GBR demands are satisfied.",
+      "keywords": [
+        "GBR",
+        "Best-Effort",
+        "resource allocation",
+        "priority"
+      ],
+      "requires_calculation": true
+    },
+    {
+      "id": "NB-HPN-1665-q3",
+      "benchmark_version": "v5.0",
+      "category": "Fairness, Stability, and Shared Networks",
+      "difficulty": "easy",
+      "question_type": "scenario",
+      "question": "You are deploying a new BBRv3 implementation in a shared network environment where BBRv3 flows must compete with existing CUBIC flows in a shallow-buffer scenario. Based on known performance characteristics, what is the likely impact on bandwidth distribution?",
+      "reference_answer": "In shallow-buffer scenarios, BBRv3 tends to dominate the available bandwidth when competing against CUBIC flows. While BBRv3 was introduced in 2023 to address issues like premature exit from bandwidth probing and unfairness seen in BBRv2, it still faces challenges in bandwidth sharing. Specifically, in environments with small buffers, the aggressive nature of BBRv3's probing mechanism can lead to an unfair advantage, potentially starving the loss-based CUBDC flows of their fair share of the bottleneck capacity.",
+      "keywords": [
+        "BBRv3",
+        "CUBIC",
+        "bandwidth sharing",
+        "shallow buffer"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1413-q3",
+      "benchmark_version": "v5.0",
+      "category": "Fairness, Stability, and Shared Networks",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "You are designing a multi-tenant cloud environment using BlueField-3 SmartNICs for an object storage service. If you enable RDMA-based direct memory access for different tenants, what specific security risk must you mitigate to prevent unauthorized data access?",
+      "reference_answer": "The primary security risk to mitigate is cross-tenant access caused by the nature of RDMA's zero-copy mechanism. RDMA allows remote nodes to access memory directly using rkeys (remote keys) and target addresses without CPU intervention. If a tenant manages to obtain a valid rkey and the target memory address of another tenant through misconfiguration or rkey leakage, they could perform unauthorized remote reads or writes. Therefore, the design must implement strict isolation and robust management of memory registration and rkey distribution to ensure that memory regions are not overly broad and that keys are cryptographically protected or strictly scoped to authorized tenants.",
+      "keywords": [
+        "multi-tenancy",
+        "RDMA security",
+        "rkey leakage",
+        "cross-tenant access",
+        "cloud security"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1927-q0",
+      "benchmark_version": "v5.0",
+      "category": "Fairness, Stability, and Shared Networks",
+      "difficulty": "medium",
+      "question_type": "concept",
+      "question": "In the context of high-speed network optimization, why is a linear utility function, where utility is directly proportional to throughput, insufficient for ensuring fair resource sharing among competing transfers?",
+      "reference_answer": "A linear utility function is insufficient because it fails the mathematical requirement for convergence to a fair state, which is that the second derivative of the utility function must be negative (strict concavity). In a linear model, the second derivative is zero. This lack of strict concavity means the system cannot guarantee fairness; for example, a new transfer could choose settings that favor its own throughput at the expense of existing transfers, potentially yielding significantly higher throughput (e.g., 50% higher) without a mathematical penalty that stabilizes the system toward a Nash Equilibrium.",
+      "keywords": [
+        "utility function",
+        "fairness",
+        "concavity",
+        "second derivative"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1303-q2",
+      "benchmark_version": "v5.0",
+      "category": "Parallelism and Large-File Optimization",
+      "difficulty": "easy",
+      "question_type": "calculation",
+      "question": "An application is running on a massive-scale job involving 163,840 compute nodes. If the ION-to-storage network is limited to 350 MiB/s, calculate the theoretical maximum I/O rate per compute node (MiB/s/CN) for this job.",
+      "reference_answer": "To find the theoretical maximum performance per compute node (CN), you divide the total available network bandwidth by the total number of processes/nodes participating in the I/O. Given a storage network capacity of 350 MiB/s and a job size of 163,840 processes, the calculation is: 350 MiB/s / 163,840 processes ≈ 0.002136 MiB/s/CN. Converting this to a more readable unit, it is approximately 2.14 KiB/s per compute node. This demonstrates how extreme scale significantly reduces the per-node bandwidth available when the bottleneck is the I/O node network.",
+      "keywords": [
+        "throughput",
+        "per-node bandwidth",
+        "scaling",
+        "MiB/s/CN"
+      ],
+      "requires_calculation": true
+    },
+    {
+      "id": "NB-HPN-0348-q1",
+      "benchmark_version": "v5.0",
+      "category": "Parallelism and Large-File Optimization",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why does increasing the number of concurrent tasks in an MPI (Message Passing Interface) collective operation amplify the impact of infrequent, high-latency messages?",
+      "reference_answer": "In a fully synchronizing MPI collective operation, each task must participate in the communication pattern, which involves a number of messages proportional to the concurrency (the number of tasks). If a single message experiences a significant delay due to system noise or contention, the entire collective operation must wait for that specific task to complete its part of the communication. Consequently, as concurrency increases, the probability of encountering one of these infrequent 'slow' messages increases, and the cumulative delay scales with the number of tasks, potentially becoming the dominant bottleneck to parallel scaling.",
+      "keywords": [
+        "MPI",
+        "concurrency",
+        "collective operations",
+        "latency"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0885-q1",
+      "benchmark_version": "v5.0",
+      "category": "Pipelining and Small-File Optimization",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why does increasing the maximum batch processing size beyond a specific threshold, such as 32, fail to improve saturation throughput and instead negatively impact latency?",
+      "reference_answer": "While batch processing is essential for improving performance metrics by reducing the per-packet overhead, it follows a principle of diminishing returns. Once the batch size reaches a certain point (e.g., 32), the gains in throughput or reduction in costs per packet become negligible because the overhead of managing the batch is already minimized. However, larger batches force subsequent packets to wait longer in the Rx ring buffer until the entire batch is filled or processed, which directly increases the waiting time and, consequently, the end-to-end latency.",
+      "keywords": [
+        "batch size",
+        "latency",
+        "throughput",
+        "diminishing returns"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1242-q1",
+      "benchmark_version": "v5.0",
+      "category": "Pipelining and Small-File Optimization",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why does reducing the segment size below the Maximum Segment Size (MSS) help mitigate incast congestion in data center networks with shallow-buffered switches?",
+      "reference_answer": "Incast congestion occurs when many workers simultaneously send bursts of traffic to an aggregator, overwhelming the shallow buffers of Top-of-Rack (ToR) switches. When the virtual congestion window (vwnd) becomes smaller than Wmin, the protocol reduces the segment size proportionally. By decreasing the segment size, the amount of data arriving in a single burst is reduced, which decreases the number of packets that must be buffered simultaneously. This reduction in the burst size helps prevent the buffer occupancy from exceeding the switch's capacity, thereby reducing packet drops and subsequent retransmission timeouts (RTO) that otherwise significantly increase query completion times.",
+      "keywords": [
+        "incast congestion",
+        "segment size",
+        "MSS",
+        "buffer overflow",
+        "shallow-buffered"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0476-q3",
+      "benchmark_version": "v5.0",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "easy",
+      "question_type": "scenario",
+      "question": "In a dynamic network environment where traffic demands and link capacities change over time, what are the potential consequences for a real-time traffic allocation system if the underlying model fails to account for the temporal dependencies (such as Markovian properties) of the demand fluctuations?",
+      "reference_answer": "If the traffic demands do not satisfy the Markov properties (meaning the current state does not sufficiently represent the transition probabilities), the FNC policy's performance will degrade. In such a scenario, the learned embeddings and sub-policy decisions will fail to accurately predict future requirements, leading to sub-optimal traffic allocation. This results in a failure to maximize long-term throughput and potentially causes frequent violations of link capacity constraints or inefficient use of available bandwidth, as the controller cannot anticipate the time-varying topology and demand shifts effectively.",
+      "keywords": [
+        "Markov property",
+        "satellite constellation",
+        "throughput",
+        "dynamic topology"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1539-q3",
+      "benchmark_version": "v5.0",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "hard",
+      "question_type": "scenario",
+      "question": "You are designing a congestion control strategy for a 100 Gbps network with a round-trip time (RTT) of 0.5ms. If a single TCP flow is limited to a window size of 64KB due to a lack of window scaling support, calculate the maximum achievable throughput and suggest whether this setup is viable for high-performance computing workloads.",
+      "reference_answer": "To calculate the throughput, use the formula: Throughput = Window Size / RTT. Given a window of 64KB (65,536 bytes) and an RTT of 0.0005 seconds, the throughput is 65,536 / 0.0005 = 131,072,000 bytes/s, which is approximately 1.05 Gbps. This is significantly lower than the available 100 Gbps capacity, representing a massive underutilization of the network (only ~1% utilization). Therefore, this setup is not viable for high-performance computing workloads that require high bandwidth. To fix this, TCP window scaling must be enabled to allow the window to scale up to the 1GB range, accommodating the large Bandwidth-Delay Product of a 100 Gbps link.",
+      "keywords": [
+        "Throughput calculation",
+        "Bandwidth-Delay Product",
+        "Link utilization",
+        "Window scaling"
+      ],
+      "requires_calculation": true
+    },
+    {
+      "id": "NB-HPN-1425-q3",
+      "benchmark_version": "v5.0",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "You are managing a Lustre-based parallel file system. You observe that two different batch jobs, both running on 100 compute nodes, are experiencing a 50% drop in I/O throughput when scheduled simultaneously, despite the total system bandwidth being 1 TB/s. How would you use the concept of 'OST footprint' to diagnose and resolve this?",
+      "reference_answer": "The drop in throughput suggests I/O contention, likely because the two jobs are 'stepping on each other's toes' by accessing the same subset of Object Storage Targets (OSTs). To diagnose, you should analyze the per-OST traffic logs to determine the OST footprint (the number of OSTs used simultaneously) for each job. If both jobs have overlapping footprints on the same OSTs, they are competing for the same disk/network resources. To resolve this, you should implement I/O-aware scheduling recommendations that stagger the jobs or assign them to different time windows to ensure their I/O bursts do not overlap on the same OSTs.",
+      "keywords": [
+        "OST footprint",
+        "I/O contention",
+        "scheduling",
+        "Lustre"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-2155-q3",
+      "benchmark_version": "v5.0",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "An enterprise needs to replicate a 500 TB database from a US-based cluster to an EU-based cluster. The transfer must avoid peak-hour bandwidth costs. If the system can utilize opportunistic transfers when compute costs are low, how should the transfer be scheduled to minimize total cost?",
+      "reference_answer": "The transfer should be scheduled as an opportunistic transfer, specifically during periods when the cost of moving the data (bandwidth) is lower than the potential savings in computational costs. The system should initiate the transfer only when the cost of the data movement is strictly smaller than the difference in computational costs between the two regions. To maintain the objective of smooth bandwidth usage, the transfer should be spread out to avoid bursts, utilizing the available capacity in a way that avoids hitting the WAN bandwidth quotas or triggering expensive peak-rate pricing, effectively using the 'store-and-forward' mechanism to buffer data during low-cost windows.",
+      "keywords": [
+        "opportunistic transfer",
+        "cost optimization",
+        "bandwidth usage",
+        "compute costs"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1594-q3",
+      "benchmark_version": "v5.0",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "A high-speed link operates at 50Mbps with a Round Trip Time (RTT) of 25ms and a packet erasure rate of 1%. If the transmitter uses a window-based approach where the left-hand edge $L$ is updated only upon receiving feedback, how does a feedback delay of 400ms impact the transmitter's ability to optimize the coding window?",
+      "reference_answer": "A feedback delay of 400ms is significantly larger than the 25ms RTT, meaning the transmitter is operating on information that is 16 RTTs old. Because the transmitter updates the left-hand edge $L$ (the start of the coding window) based on acknowledged packets, a 400ms delay means the transmitter cannot exclude successfully received packets from the coding window for a long duration. This prevents the transmitter from shrinking the window effectively, leading to redundant coding or inefficient use of coded packets, as it must assume the worst-case erasure scenario for all packets in flight during that 400ms window.",
+      "keywords": [
+        "feedback delay",
+        "coding window",
+        "RTT",
+        "packet erasure"
+      ],
+      "requires_calculation": true
+    },
+    {
+      "id": "NB-HPN-2323-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "In the context of Research and Education Networks (RENs), how is the distinction between on-demand and best-effort transfers utilized to manage network utilization?",
+      "reference_answer": "The distinction relies on classifying transfers based on their latency sensitivity. On-demand transfers are time-critical and require immediate service with minimal delay to meet tight constraints. In contrast, best-effort transfers, such as data replication, backups, or archiving, are delay-tolerant and can be scheduled within a window several times longer than their average transfer time. By prioritizing on-demand traffic and allowing best-error traffic to utilize available capacity, network operators can increase average utilization and reduce the gap between peak and average loads without compromising the performance of critical applications.",
+      "keywords": [
+        "on-demand",
+        "best-effort",
+        "latency-sensitive",
+        "RENs"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1298-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "In the context of Reinforcement Learning (RL) for datacenter congestion control, what is meant by the term 'partial-observability'?",
+      "reference_answer": "Partial-observability refers to a state where an RL agent cannot perceive the complete state of the network environment. In datacenter congestion control, an individual agent (representing a single flow) can only observe information relevant to its own flow, such as its specific transmission rate and the Round-Trip Time (RTT). It lacks direct access to the global network state, such as the congestion levels at all intermediate switches or the transmission rates of other competing flows, making the environment a Partially Observable Markov Decision Process (POMDP).",
+      "keywords": [
+        "partial-observability",
+        "RL",
+        "congestion control",
+        "RTT"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1969-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "In the context of shared high-performance computing (HPC) storage, how does system-wide I/O activity impact individual application performance?",
+      "reference_answer": "In shared HPC storage environments, storage resources are shared across all user applications. Consequently, the performance of a specific application's I/O operations is not solely determined by its own workload but is also significantly influenced by the concurrent I/O activity of other applications running across the system. This interference, often referred to as I/O contention, introduces performance variability, making it difficult to predict job execution times for scheduling or capacity planning.",
+      "keywords": [
+        "shared storage",
+        "I/O contention",
+        "performance variability"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0885-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "In high-speed packet I/O frameworks, what is the primary purpose of utilizing techniques such as memory preallocation, zero copy, and batch processing instead of traditional kernel-based interrupt handling?",
+      "reference_answer": "High-speed packet I/O frameworks use these techniques to minimize the computational overhead associated with processing 10 Gbps or higher speed links. Traditional OS kernel stacks rely on interrupts and system calls, which are costly operations due to context switching and data copying. By using memory preallocation, zero copy, and batch processing, the framework reduces the 'costs per packet' by avoiding expensive CPU cycles spent on packet copying and interrupt servicing, thereby increasing the saturation throughput and reducing latency.",
+      "keywords": [
+        "zero copy",
+        "batch processing",
+        "interrupts",
+        "overhead"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0088-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "hard",
+      "question_type": "concept",
+      "question": "In the context of Traffic-aware Rerouting (TR), how is the classification of a flow as either 'short' or 'long' determined during the transmission process?",
+      "reference_answer": "Flow classification is determined by monitoring the cumulative volume of data transmitted within a single flow. A flow is initially treated as a short flow, but once the amount of data sent exceeds a predefined threshold of 100KB, the system reclassifies it as a long flow. This threshold-based approach allows the network to apply different routing strategies to optimize for delay-sensitive short flows and throughput-oriented long flows, though it introduces a period of uncertainty during the initial 100KB of transmission.",
+      "keywords": [
+        "flow classification",
+        "100KB threshold",
+        "short flows",
+        "long flows"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1650-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "hard",
+      "question_type": "concept",
+      "question": "In the context of high-performance computing (HPC) benchmarking, what is the primary design philosophy behind creating a benchmark like MADbench2 from an existing scientific application?",
+      "reference_answer": "The design philosophy is to create a lightweight, portable, and realistic benchmark that retains the full computational complexity, communication patterns, and I/O characteristics of the original scientific application while removing redundant scientific details. By deriving the benchmark from a real-world workload, such as Cosmic Microwave Background (CMB) analysis, developers can ensure that the benchmark accurately reflects the I/O patterns, such as the ratio of calculation to I/O, that real-world data-intensive applications encounter on parallel file systems, rather than relying on purely synthetic, non-representative patterns.",
+      "keywords": [
+        "MADbench2",
+        "benchmark derivation",
+        "computational complexity",
+        "I/O patterns"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0954-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "hard",
+      "question_type": "concept",
+      "question": "In the context of data center storage clusters, define the 'Incast' phenomenon and explain its primary impact on network performance.",
+      "reference_answer": "Incast is a network phenomenon that occurs when multiple storage senders simultaneously transmit data to a single receiver, overwhelming either the switch buffer or the receiver's memory. This congestion causes the concurrent senders to enter a state where they must stop and wait for buffer or memory availability. The primary impact is a significant increase in latency due to packet loss and subsequent retransmissions, which can lead to a massive degradation in application-level throughput.",
+      "keywords": [
+        "Incast",
+        "storage senders",
+        "packet loss",
+        "latency"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0853-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "hard",
+      "question_type": "concept",
+      "question": "In the context of In-Network Computation (INC), what are Reliable In-Network Primitives (RIPs) and how do they relate to the NetRPC programming model?",
+      "reference_answer": "Reliable In-Network Primitives (RIPs) are a set of five fundamental, high-level operations designed to implement complex INC tasks. In the NetRPC architecture, these primitives (such as map access, stream modification, and synchronization) allow developers to describe computation logic via a NetFilter configuration. This abstracts away the underlying ASIC architecture and chip-specific programming languages, enabling developers to use a familiar RPC-based interface to define how the network should process data types like integers, floats, arrays, and maps without manual network engineering.",
+      "keywords": [
+        "RIPs",
+        "NetRPC",
+        "In-Network Computation",
+        "NetFilter"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-2290-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "medium",
+      "question_type": "concept",
+      "question": "In the context of traffic engineering for elastic demands, how is the relationship between the network operator and the end-to-end congestion control mechanism modeled?",
+      "reference_answer": "The interaction is modeled as a Stackelberg game, a hierarchical game-theoretic framework. In this model, the network operator acts as the 'leader,' making the first move by choosing routing paths for the traffic demands. The end-to-end congestion control mechanism, such as TCP, acts as the 'follower.' Once the paths are established by the leader, the follower responds by determining a fair bandwidth allocation (such as Max-Min Fairness or Proportional Fairness) based on the chosen paths and available link capacities. The operator's objective is to maximize a network utility function subject to the equilibrium reached by the follower.",
+      "keywords": [
+        "Stackelberg game",
+        "traffic engineering",
+        "network operator",
+        "congestion control"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0534-q1",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why does the use of UDT (UDP-based Data Transfer) often lead to higher host CPU consumption compared to standard TCP, even if UDT provides better performance on lossy, long-haul networks?",
+      "reference_answer": "While UDT is designed to overcome TCP's limitations regarding packet loss and jitter on long-haul networks, it relies on user-level processing to manage its custom congestion control and reliability mechanisms. This user-level processing requires significantly more host computing resources than the kernel-level implementation of standard TCP. Consequently, the intensive CPU cycles required to process UDT messages can become a bottleneck, potentially preventing the realization of UDT's throughput benefits as the processing time for messages may eventually exceed the actual data transfer time.",
+      "keywords": [
+        "UDT",
+        "TCP",
+        "user-level processing",
+        "CPU overhead"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0824-q2",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "medium",
+      "question_type": "calculation",
+      "question": "A network interface card (NIC) is processing a high-throughput stream. If the hardware implementation uses 128-bit bitmaps for packet tracking as described in the architecture, how many individual packets can be tracked in a single bitmap window?",
+      "reference_answer": "The question asks for the number of packets tracked by a 128-bit bitmap. In a bitmap-based tracking system, each bit represents the status (received or not received) of a specific packet or sequence number. Therefore, a 128-bit bitmap can track exactly 128 packets within its window. This size is chosen to balance the hardware implementation feasibility (die size and complexity) against the overhead of piggybacking the bitmap on outgoing Acknowledgements (ACKs).",
+      "keywords": [
+        "128-bit bitmap",
+        "packet tracking",
+        "hardware efficiency",
+        "ACK overhead"
+      ],
+      "requires_calculation": true
+    },
+    {
+      "id": "NB-HPN-1211-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "medium",
+      "question_type": "concept",
+      "question": "In the context of GridFTP wide-area transfers, distinguish between the mechanisms of parallelism and concurrency.",
+      "reference_answer": "In GridFTP, parallelism refers to the use of multiple connections (streams) within a single transfer request to move portions of the same file or multiple files. In contrast, concurrency involves managing multiple independent transfer processes or requests simultaneously, such as transferring multiple different files or chunks of a file using separate processes. While parallelism focuses on increasing the throughput of a single logical transfer via multiple streams, concurrency focuses on the simultaneous execution of multiple transfer requests, making it a more potent lever for bandwidth allocation and scheduling.",
+      "keywords": [
+        "GridFTP",
+        "parallelism",
+        "concurrency",
+        "streams",
+        "processes"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-SYN-1135-2109",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "medium",
+      "question_type": "comparison",
+      "question": "In a high-performance computing environment where multiple applications are scaling to hundreds of processors, evaluate the trade-off between using a one-file-per-processor I/O pattern and implementing a cross-application coordination strategy like CALCioM. Specifically, under what conditions does the risk of metadata bottlenecks outweigh the potential benefits of reducing I/O interference?",
+      "reference_answer": "When scaling applications to high concurrency (e.g., 256 CPUs), a one-file-per-processor approach can lead to a 'data management nightmare' due to the massive number of files, which creates a bottleneck at the metadata server. While cross-application coordination strategies like CALCioM aim to mitigate I/O interference—where uncoordinated concurrent accesses break optimized access patterns and degrade machine-wide efficiency—the decision to use coordination must account for the underlying file structure. If the coordination strategy focuses on serializing access to prevent interference (which can improve global efficiency compared to fair sharing), it must be balanced against the metadata overhead. In scenarios with high concurrency, the metadata server performance becomes the primary constraint; therefore, the benefits of reducing I/O interference through coordination are negated if the chosen I/O pattern (like one-file-per-processor) inherently triggers metadata-driven performance collapses.",
+      "keywords": [
+        "metadata server",
+        "I/O interference",
+        "one-file-per-processor",
+        "cross-application coordination",
+        "concurrency"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-ADV-M006-1627",
+      "benchmark_version": "v5.0",
+      "category": "Fairness, Stability, and Shared Networks",
+      "difficulty": "hard",
+      "question_type": "scenario",
+      "question": "We are deploying a new high-speed wide-area network (WAN) link with a 10 Gbps capacity and a round-trip time (RTT) of 100ms. To optimize throughput for large file transfers, we are considering migrating our congestion control from CUBIC to BBR. Given that BBR is designed to ignore packet loss and focus on bottleneck bandwidth and RTT, should we expect BBR to consistently provide superior throughput compared to CUBIC on this high-RTT link, especially if we introduce a secondary flow with a much lower RTT (e.g., 20ms) on the same bottleneck?",
+      "reference_answer": "While it seems that BBR would provide superior throughput due to its bandwidth-centric approach on high-RTT links, this assumption fails because BBR exhibits severe RTT fairness issues when multiple flows with varying RTTs coexist on a common bottleneck. Contrary to the intuition that BBR is universally better for high-latency paths, BBR's fixed pacing gain rates of 1.25 to probe up and 0.75 to probe down during the probeBW phase can cause long RTT flows to starve short RTT flows. Specifically, when a 100ms flow and a 20ms flow compete, BBR injects extra data during the probe up session that can lead to persistent queue formation and unfairness, potentially causing the short RTT flows to be suppressed or starved.",
+      "keywords": [
+        "BBR",
+        "RTT fairness",
+        "pacing gain rates",
+        "congestion control",
+        "throughput",
+        "starvation"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-ADV-M002-0765",
+      "benchmark_version": "v5.0",
+      "category": "Fairness, Stability, and Shared Networks",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "We are deploying a high-performance data transfer service across a 10 Gb/sec wide-area network. To maximize throughput and overcome the limitations of single-stream bandwidth-delay product (BDP) constraints, we have configured our transfer engine to use multiple parallel TCP streams. Given that these streams are part of the same application-level transfer, we expect that the standard TCP congestion control mechanisms will naturally ensure that our parallel streams coexist fairly with other background traffic on the shared network links without requiring manual tuning of the congestion window or additive increase parameters.",
+      "reference_answer": "This assumption fails because, while parallel TCP streams can effectively consume unused bandwidth on underutilized networks, they do not maintain automatic fairness when the bottleneck is saturated. Contrary to common intuition, if the network bottleneck is fully utilized, using parallel TCP streams to boost throughput results in the application unfairly stealing bandwidth from competing, unmodulated TCP streams. While a single stream might be limited by non-congestion packet loss, the aggregate effect of multiple parallel streams increases the total demand on the bottleneck, leading to a disproportionate capture of available capacity at the expense of other network users.",
+      "keywords": [
+        "parallel TCP",
+        "bandwidth stealing",
+        "network utilization",
+        "throughput",
+        "fairness"
+      ],
+      "requires_calculation": false
+    }
+  ]
+}

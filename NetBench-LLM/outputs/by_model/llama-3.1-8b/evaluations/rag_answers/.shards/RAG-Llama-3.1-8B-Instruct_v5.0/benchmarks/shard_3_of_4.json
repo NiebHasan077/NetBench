@@ -1,0 +1,974 @@
+{
+  "metadata": {
+    "title": "Shard of hpn_benchmark_v5.0.jsonl",
+    "source_benchmark": "/share/ceph/scratch/user/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+    "shard_index": 3,
+    "num_shards": 4
+  },
+  "questions": [
+    {
+      "id": "NB-HPN-2121-q2",
+      "benchmark_version": "v5.0",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "easy",
+      "question_type": "calculation",
+      "question": "Using the logic provided in the text, if a service has a Max-Min Fair (MmF) share of 40 Mbps but only achieves 30 Mbps under contention, what is the percentage of its MmF share that it has achieved, and what percentage of the total 40 Mbps share is the remaining unachieved bandwidth?",
+      "reference_answer": "First, to find the percentage of the Max-Min Fair share for Service A, we use the formula (Achieved Throughput / MmF Share) * 100. If the MmF share is 50 Mbps (assuming no other flows) and it achieves 40 Mbps, it achieves 80% of its share. However, the question implies the share is the available capacity. If we assume the MmF share for Service A was 50 Mbps, then 40/50 = 80%. Second, the remaining bandwidth for Service B is 50 Mbps - 40 Mbps = 10 Mbps. The percentage of the total link bandwidth (50 Mbps) that Service B receives is (10/50) * 100 = 20%.",
+      "keywords": [
+        "Max-Min Fair share",
+        "throughput calculation",
+        "bandwidth allocation",
+        "percentage"
+      ],
+      "requires_calculation": true
+    },
+    {
+      "id": "NB-HPN-2032-q1",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why does a distributed multi-traffic scheduling approach, such as DMS, reduce the computational burden on the network compared to a centralized controller?",
+      "reference_answer": "A distributed approach like Distributed Multi-traffic Scheduling (DMS) reduces the computational burden by shifting the optimization tasks from a single centralized controller to the individual base stations. Instead of one central entity solving a massive, complex global optimization problem for all users and cells, each base station performs its own local scheduling optimization. This decentralization avoids the need for a central processor to manage every single resource allocation decision across the entire network, significantly reducing the computational load and the signaling overhead required to communicate all state information to a central point.",
+      "keywords": [
+        "DMS",
+        "computational burden",
+        "decentralization",
+        "signaling overhead"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1803-q3",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "medium",
+      "question_type": "diagnosis",
+      "question": "A network engineer observes that a TCP connection's throughput is consistently capped, even though the congestion window is growing. The receiver's advertised window is frequently observed at 4 KB, while the sender's congestion window has reached 16 KB. What is the likely bottleneck and why?",
+      "reference_answer": "The bottleneck is the receiver's advertised window (rwnd), specifically caused by a small socket buffer size. In TCP, the effective transmission window is the minimum of the congestion window (cwnd) and the advertised window (rwnd). Since the rwnd is stuck at 4 KB while the cwnd has expanded to 16 KB, the sender is forced to stop sending once it reaches the 4 KB limit, regardless of available network bandwidth. This is often due to the application's chosen socket buffer size being too small to accommodate the Bandwidth-Delay Product (BDP).",
+      "keywords": [
+        "receiver window",
+        "socket buffer",
+        "bottleneck",
+        "congestion window"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-2155-q1",
+      "benchmark_version": "v5.0",
+      "category": "Concurrency Tuning and Scaling",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why does Engo utilize decentralized heuristics for transfer management instead of a centralized coordinator like Tempus or Amoeba?",
+      "reference_answer": "Engo employs decentralized heuristics to ensure high scalability and to limit the scope of failure domains. A centralized coordinator can become a single point of failure and a bottleneck as the system grows. By using decentralized decisions, Engo ensures that a failure or a performance issue in one part of the network is contained within a single cluster, preventing a global impact. This approach allows the system to manage the massive scale of transferring over an exabyte of data daily across a global infrastructure without the overhead of a global lock or central bottleneck.",
+      "keywords": [
+        "decentralized heuristics",
+        "failure domains",
+        "scalability",
+        "centralized coordinator"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1616-q1",
+      "benchmark_version": "v5.0",
+      "category": "Pipelining and Small-File Optimization",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why is it necessary to use piecewise cubic spline interpolation rather than simple linear interpolation when constructing throughput surfaces for protocol parameters?",
+      "reference_answer": "Simple linear interpolation creates sharp corners (discontinuities in the first derivative) at the data points, which does not accurately represent the smooth nature of throughput changes as parameters like concurrency or parallelism vary. Using piecewise cubic spline interpolation allows the model to ensure smoothness up to the second derivatives. This mathematical continuity is crucial for creating a reliable 'throughput surface' that can be used by the adaptive sampling module to accurately predict performance and calculate gradients for optimization without encountering artificial jumps in the predicted throughput values.",
+      "keywords": [
+        "cubic spline",
+        "interpolation",
+        "throughput surface",
+        "continuity"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1629-q1",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why must a media-aware congestion control algorithm incorporate delay deadlines and distortion impacts when adjusting the congestion window size?",
+      "reference_answer": "Standard TCP congestion control primarily adapts to network congestion indicators like packet loss or Round Trip Time (RTT). However, multimedia applications have unique requirements where the value of a packet depends on its impact on video quality (distortion reduction) and whether it arrives before a specific deadline. By incorporating distortion impacts and delay deadlines, the algorithm can optimize the congestion window to maximize the long-term expected quality of the received stream, rather than just maximizing throughput, ensuring that the transmission policy is specifically tuned to the application's sensitivity to packet timing and loss.",
+      "keywords": [
+        "delay deadlines",
+        "distortion impacts",
+        "congestion window",
+        "multimedia quality"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1446-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "hard",
+      "question_type": "concept",
+      "question": "In the context of datacenter traffic engineering, what is the Big Switch model and where does it assume network congestion primarily occurs?",
+      "reference_answer": "The Big Switch model is a standard abstraction used for resource allocation in datacenter networks. It simplifies the network topology by assuming that the core fabric is sufficiently over-provision and that congestion is not an issue in the inner network. Instead, it focuses on the edge of the network, specifically assuming that congestion events occur only at the Top-of-Rack (ToR) switches, which are the ingress and egress points for application traffic.",
+      "keywords": [
+        "Big Switch model",
+        "ToR switches",
+        "congestion",
+        "abstraction"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1853-q0",
+      "benchmark_version": "v5.0",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "In the context of a data placement scheduler like Stork, what is the mechanism for dynamic protocol selection and how does it handle protocol unavailability?",
+      "reference_answer": "Dynamic protocol selection allows a scheduler to automatically determine the most appropriate transfer protocol for a specific task at runtime. The mechanism works by performing a pre-transfer check to identify which protocols are supported by both the source and destination hosts. If the primary preferred protocol is unavailable or fails during the transfer process, the system utilizes an alternate protocol fall-back capability. This approach ensures both high performance by using the best available protocol and high fault tolerance by switching to secondary options when the primary protocol encounters errors or is unsupported.",
+      "keywords": [
+        "Stork",
+        "protocol selection",
+        "fault tolerance",
+        "fallback"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1654-q1",
+      "benchmark_version": "v5.0",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why does the optimization model incorporate a Gaussian confidence region around the constructed throughput surfaces?",
+      "reference_answer": "The Gaussian confidence region is implemented to account for the inherent stochasticity and uncertainty in high-performance network transfers. Even when protocol parameters are identical, throughput can deviate due to measurement errors, varying packet routes in the network layer, and transient queuing delays. By modeling these deviations with a Gaussian distribution, the system can represent the probability of achieving certain throughput levels, allowing the adaptive sampling module to distinguish between true performance trends and random network noise or measurement inaccuracies.",
+      "keywords": [
+        "Gaussian distribution",
+        "uncertainty",
+        "network noise",
+        "confidence region"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0975-q1",
+      "benchmark_version": "v5.0",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why might using an Autoregressive (AR) model for throughput forecasting lead to unreliable conclusions in an online optimization loop?",
+      "reference_answer": "While Autoregressive (AR) models can effectively reduce sample transfer time to below six seconds by capturing instantaneous throughput behavior, they possess a significant limitation in accuracy. Specifically, the error rate of the AR model can reach up to 30%. In an online optimization environment, such a high error rate can cause the optimization algorithm to make incorrect decisions regarding the optimal transfer configuration, potentially selecting parameters that do not actually maximize throughput or minimize delay in the real-world deployment.",
+      "keywords": [
+        "Autoregressive",
+        "error rate",
+        "optimization",
+        "throughput forecasting"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0513-q0",
+      "benchmark_version": "v5.0",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "hard",
+      "question_type": "concept",
+      "question": "In the context of optimizing BBR (Bottleneck Bandwidth and Round-trip propagation time) parameters using reinforcement learning, what is the primary purpose of the reward function's structure?",
+      "reference_answer": "The reward function is designed to guide the reinforcement learning agent toward accurate network state estimation. It specifically combines measured link utilization (throughput) with the error in RTT estimation, which is the difference between the actual RRTT and the estimated RTprop. By penalizing the gap between actual and estimated RTT, the function incentivizes the agent to find parameter settings that minimize estimation error while maintaining high throughput, ensuring the protocol operates at the optimal point without causing excessive buffering.",
+      "keywords": [
+        "reward function",
+        "BBR",
+        "RTprop",
+        "link utilization"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0037-q0",
+      "benchmark_version": "v5.0",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "medium",
+      "question_type": "concept",
+      "question": "In the context of data center networking, how does Multipath TCP (MPTCP) differ from Randomized Load Balancing (RLB) in its approach to congestion management?",
+      "reference_answer": "Unlike Randomized Load Balancing (RLB), which assigns flows to paths without regard to current network state, MPTCP utilizes linked congestion control across multiple subflows. This allows MPTCP to explicitly monitor the congestion levels of different paths and dynamically shift traffic away from congested links toward less congested ones. By linking the congestion control dynamics, MPTCP can actively relieve hotspots and improve both aggregate throughput and fairness, whereas RLB is prone to collisions where multiple flows randomly select the same path, leading to underutilized links elsewhere.",
+      "keywords": [
+        "MPTCP",
+        "Congestion Control",
+        "Randomized Load Balancing",
+        "Subflows"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0316-q3",
+      "benchmark_version": "v5.0",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "You are designing a new congestion control mechanism for a 40 Gbps data center network with an average RTT of 12 seconds. If you implement a per-hop mechanism that reacts within a 1.5-second 1-hop RTT, by what factor can you potentially reduce the feedback delay compared to a standard end-to-end protocol?",
+      "reference_answer": "To find the reduction factor, divide the end-to-end RTT by the 1-hop RTT. Given an end-to-end RTT of 12 seconds and a 1-hop RTT of 1.5 seconds, the calculation is 12 / 1.5 = 8. Therefore, the per-hop mechanism can reduce the feedback delay by a factor of 8. This reduction is critical because a faster feedback loop allows the network to react to congestion-induced buffer growth much earlier, preventing the packet drops and high tail latencies that occur when end-to-end protocols are unable to track the rapidly changing fair-share rates of the network during bursts.",
+      "keywords": [
+        "feedback delay",
+        "reduction factor",
+        "RTT",
+        "performance"
+      ],
+      "requires_calculation": true
+    },
+    {
+      "id": "NB-HPN-1414-q3",
+      "benchmark_version": "v5.0",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "easy",
+      "question_type": "scenario",
+      "question": "You are designing a benchmark to test the efficiency of a new TCP variant on a 1Gb/s link. The path has a propagation delay of 100ms. If the network queue is provisioned at only 20% of the Bandwidth-Delay Product (BDP), what is the expected impact on link utilization compared to a queue sized at 100% BDP?",
+      "reference_answer": "In this scenario, the link utilization is expected to decrease significantly. It is a known principle in high-speed networking that the efficiency of standard TCP is heavily influenced by queue provisioning. When the queue size is reduced below the path's Bandwidth-Delay Product (BDP)—in this case, being only 20% of the BDP—the link utilization falls. While a 100% BDP queue allows the sender to keep the pipe full even during fluctuations, a 20% BDP queue provides very little buffer to absorb the effects of the additive-increase/multiplicative-decrease (AIMD) cycle, leading to periods where the link remains underutilized.",
+      "keywords": [
+        "link utilization",
+        "BDP",
+        "queue provisioning",
+        "efficiency"
+      ],
+      "requires_calculation": true
+    },
+    {
+      "id": "NB-HPN-2329-q0",
+      "benchmark_version": "v5.0",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "hard",
+      "question_type": "concept",
+      "question": "In the context of high-performance networking, what are the consequences of incorrectly sizing router buffers for long-lived TCP Reno flows?",
+      "reference_answer": "For a single TCP Reno flow, the classic rule of thumb is that the buffer size should be at least one BDP. This ensures that even when the congestion window is reduced due to packet loss (e.g., by half), there is enough buffered capacity to prevent the sender from running out of in-flight data, thereby maintaining 100% link utilization. If the buffer is smaller than the BDP, the link may experience periods of underutilization during the recovery phase of the congestion control algorithm.",
+      "keywords": [
+        "TCP Reno",
+        "BDP",
+        "Buffer Sizing",
+        "Link Utilization"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1025-q1",
+      "benchmark_version": "v5.0",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why might a network designer choose to prioritize link-based INT signals over queue-based INT signals when the primary performance objective is minimizing latency?",
+      "reference_answer": "The choice between signal types depends on the specific performance objective being optimized. In-network signals exhibit a clear trade-off: link-based signals, which reflect the available capacity or utilization of a physical interface, are often more effective at controlling and predicting delay. Conversely, queue-based signals, which monitor buffer occupancy, are better suited for maximizing throughput by utilizing available buffer space. Therefore, if the goal is to minimize RTT and jitter (delay), link-based signals provide more direct feedback on the congestion state of the path before buffers even begin to fill.",
+      "keywords": [
+        "link-based",
+        "queue-based",
+        "delay",
+        "throughput"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0591-q1",
+      "benchmark_version": "v5.0",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why might setting a static queue length threshold in a shallow-buffered Fat-Tree network lead to suboptimal performance during bursty traffic?",
+      "reference_answer": "Setting a static threshold creates a trade-off between underutilization and latency. If the threshold is set too low, the sender may abruptly reduce its transmission rate, leading to the underutilization of the bottleneck link bandwidth. Conversely, if the threshold is set too high, packets will accumulate in the switch buffers, which increases queuing delay and overall network latency. In environments with bursty traffic, a static threshold cannot adapt to the changing occupancy of queues, whereas a dynamic approach can reallocate buffer resources from idle queues to busy queues to mitigate congestion.",
+      "keywords": [
+        "Queue Threshold",
+        "Latency",
+        "Underutilization",
+        "Buffer Management"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0596-q2",
+      "benchmark_version": "v5.0",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "medium",
+      "question_type": "calculation",
+      "question": "A wide-area network connection has a measured Round-Trip Time (RTT) of 100ms and a link capacity of 1 Gbps. To ensure the connection is not limited by the receiver window, what is the minimum required advertised window size in megabytes (MB)?",
+      "reference_answer": "To calculate the minimum required advertised window, we first find the Delay-Bandwidth Product (BDP). The BDP is calculated as Bandwidth × RTT. Given a bandwidth of 1 Gbps (1,000,000,000 bits per second) and an RTT of 100ms (0.1 seconds), the BDP is 100,000,000 bits. Converting this to bytes: 100,000,000 / 8 = 12,500,000 bytes. To convert to megabytes (using decimal MB for simplicity in networking, or 12.5 MB), we see the window must be at least 12.5 MB. Note that for optimal performance with SACK, the window should ideally be at least twice the BDP, which would be 25 MB.",
+      "keywords": [
+        "BDP",
+        "throughput",
+        "RTT",
+        "Gbps",
+        "window size"
+      ],
+      "requires_calculation": true
+    },
+    {
+      "id": "NB-HPN-0850-q1",
+      "benchmark_version": "v5.0",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why might reducing the TCP receive socket buffer size to below 64kB be used as a mitigation strategy for incast congestion, and what is the potential trade-off regarding network utilization?",
+      "reference_answer": "Reducing the receive socket buffer size to under 64kB helps mitigate incast congestion by limiting the amount of data any single sender can have in flight, thereby reducing the total volume of data that can simultaneously overwhelm the Top-of-Rack switch buffers. By capping the window size, the burstiness of the aggregate traffic is constrained. However, the trade-off is that a smaller receive window can prevent the sender from fully utilizing the available Bandwidth-Delay Product (BDP), potentially leading to lower throughput for individual long-lived flows if the window is smaller than the BDP.",
+      "keywords": [
+        "receive window",
+        "mitigation",
+        "buffer size",
+        "throughput"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0923-q1",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why might a simple additive composition of the peak throughput of a Lustre filesystem and a 10 Gbps network subsystem result in an overestimated end-to-end transfer rate?",
+      "reference_answer": "Simple composition fails because it ignores the non-linear, complex interactions between the host I/O subsystem and the network transport layer. While the Lustre filesystem and the 10 Gbps network might each support 10 Gbps individually, the interaction between file I/O patterns (like buffer sizes and stripe counts) and TCP dynamics (like window scaling and congestion control) can create bottlenecks. For instance, specific I/O configurations can cause throughput to drop significantly below the theoretical maximum of the individual components due to resource contention or suboptimal TCP window utilization.",
+      "keywords": [
+        "subsystem interaction",
+        "overestimation",
+        "Lustre",
+        "TCP"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1115-q1",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why does the rapid increase in compute performance relative to parallel filesystem bandwidth lead to an 'IO wall' in exascale systems?",
+      "reference_answer": "An 'IO wall' occurs because the growth rate of peak compute performance significantly outpaces the growth rate of parallel filesystem (PFS) throughput. For example, while compute performance increased by a factor of 7.4 between Titan and Summit, the parallel bandwidth only increased by a factor of 2.5. As compute capabilities scale toward exascale, the ability of the filesystem to ingest or provide data becomes a primary bottleneck, as the processing power can generate or consume data much faster than the underlying storage infrastructure can sustain, leading to massive performance degradation during regular data dumps.",
+      "keywords": [
+        "IO wall",
+        "compute performance",
+        "bandwidth scaling",
+        "exascale"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0477-q3",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "easy",
+      "question_type": "scenario",
+      "question": "A network controller is managing a channel where an uncooperative user transmits whenever its queue is non-empty. If the controller observes that the adaptive users' throughput is dropping significantly while the uncooperative user's arrival rate remains constant, what is the most likely cause of the performance degradation?",
+      "reference_answer": "The most likely cause is that the uncooperative user's arrival rate has increased to a point where it exceeds the remaining capacity available for adaptive users, or the uncooperative user's queue backlog is growing in a way that consumes disproportionate channel time. Since uncooperative users do not report backlogs and follow a fixed transmission pattern (transmitting one packet whenever the queue is non-empty), their traffic acts as a fundamental constraint on the throughput-stability region. If their arrival rate approaches the channel capacity, the available region for adaptive users shrinks, leading to instability or reduced throughput for the controlled users.",
+      "keywords": [
+        "uncooperative user",
+        "throughput degradation",
+        "channel capacity"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1438-q1",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why can increasing the number of concurrent transfer threads beyond a certain threshold lead to a decrease in aggregate throughput even if the network bandwidth remains available?",
+      "reference_answer": "Increasing concurrency beyond an optimal point triggers a causal chain of performance degradation. First, excessive threads create a high volume of network connections and processes, which can overwhelm the CPU and memory of end hosts and storage systems. Second, at the network level, high concurrency can lead to congestion at bottleneck links, significantly increasing packet loss. For example, in a 100 Mbps environment, moving from 10 to 32 concurrent transfers can cause packet loss to spike from under 2% to as high as 10%. This increased packet loss necessitates retransmissions and disrupts the TCP congestion window, ultimately reducing the effective aggregate throughput and wasting available bandwidth.",
+      "keywords": [
+        "concurrency",
+        "packet loss",
+        "network congestion",
+        "resource exhaustion"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0536-q3",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "hard",
+      "question_type": "scenario",
+      "question": "You are designing a data transfer system for a 2 Petabyte annual workload over a wide-area network. You observe that as you increase the number of parallel TCP sockets from 1 to 10, the aggregate throughput rises, but after 10 sockets, the packet loss rate spikes and throughput plateaus. What is the likely cause of this behavior, and how should you adjust your configuration?",
+      "reference_answer": "The observed behavior indicates that the system has reached the 'knee' of the congestion curve. At 10 sockets, the aggregate packet stream has reached a level of intensity that triggers congestion-related packet loss in the intermediate routers or switches. Beyond this point, the increased packet loss rate (p) offsets the gains from additional parallelism, leading to a plateau or degradation in aggregate throughput. To optimize performance, you should identify the number of sockets just before the loss rate spikes (in this case, approximately 10) and avoid adding more connections. Additionally, if the network path supports it, increasing the MTU to use jumbo frames could allow for higher bandwidth with fewer, more efficient streams.",
+      "keywords": [
+        "congestion",
+        "throughput plateau",
+        "packet loss",
+        "tuning"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0094-q2",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "hard",
+      "question_type": "diagnosis",
+      "question": "An edge-cloud network is experiencing a significant increase in the 'regret' metric, but the 'constraint violation' metric remains within acceptable limits. Based on the optimization framework, what is the most likely cause of this performance degradation?",
+      "reference_answer": "The most likely cause is an increase in the error between the predicted and actual gradients of the cost function, without a corresponding increase in the error of the constraint function gradients. In the OCO framework, the regret bound is sensitive to the accuracy of the cost function gradient predictions. If the system's predictions for resource costs (such as edge/cloud computing or communication costs) become inaccurate, the learner incurs higher regret as it fails to track the optimal decision path. Since the constraint violation bound is specifically tied to the error in the constraint function gradients, the stability of the violation metric suggests that the QoS-related predictions (like delay thresholds) are still relatively accurate, even though the cost-related predictions are failing.",
+      "keywords": [
+        "regret",
+        "constraint violation",
+        "prediction error",
+        "cost function"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1398-q1",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why does a centralized service architecture struggle to maintain performance isolation when a high-throughput application and a latency-critical application are co-located on the same host?",
+      "reference_answer": "Centralized service architectures often rely on coarse-grained resource allocation, such as assigning entire CPU cores to I/O processing. When a high-throughput application (e.g., sending data at 4 Gbps) and a latency-critical application share the same server, the heavy load from the high-throughput stream can cause contention on shared cores. This coarse allocation leads to a situation where CPU resources are either underutilized (idle cores) or become a bottleneck during traffic bursts, preventing the latency-critical application from meeting its Service Level Objectives (SLO) due to interference from the high-throughput workload.",
+      "keywords": [
+        "performance isolation",
+        "core allocation",
+        "resource contention",
+        "centralized service"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0316-q2",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "medium",
+      "question_type": "diagnosis",
+      "question": "A network administrator observes that at 90% link utilization on a 100 Gbps port, the number of active flows is approximately 9. If the switch is configured with only 4 available queues for this port, what is the most likely impact on traffic performance?",
+      "reference_answer": "The most likely impact is Head-of-Line (HoL) blocking and increased tail latency due to flow collisions. When the number of active flows (9) exceeds the number of available queues (4), multiple flows are forced to share the same FIFO queue. This creates a situation where a single large or bursty flow can delay smaller, latency-sensitive flows trapped in the same queue. This phenomenon is often driven by the birthday paradox in stochastic mapping. While the number of flows is manageable, the mismatch between flow count and queue count leads to performance degradation, specifically in the tail latency of short flows, as they are no longer isolated from the congestion caused by other flows.",
+      "keywords": [
+        "HoL blocking",
+        "queue collision",
+        "active flows",
+        "tail latency"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1367-q1",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why does TCP BBR exhibit a significant performance collapse in Virtual Machines (VMs) during periods of high CPU contention, whereas loss-based algorithms like Cubic remain relatively stable?",
+      "reference_answer": "The performance collapse in BBR occurs because CPU contention in a VM environment—often characterized by low CPU credits or reduced CPU shares—disrupts the algorithm's ability to maintain a steady pacing rate and accurate bandwidth estimation. While loss-based algorithms like Cubic primarily react to packet loss and can continue to transmit during brief CPU scheduling delays, BBR's reliance on precise timing for its probing phases makes it highly sensitive to the irregular packet delivery and processing delays caused by hypervisor scheduling and CPU starvation.",
+      "keywords": [
+        "BBR",
+        "Cubic",
+        "CPU contention",
+        "VM performance"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0555-q2",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "medium",
+      "question_type": "diagnosis",
+      "question": "A data transfer between two Lustre-based clusters is currently achieving only 600 Mbps, despite the network interface supporting 10 Gbps. If increasing the number of parallel streams to 4 increases throughput to 1000 Mbps, but increasing them to 16 causes the throughput to stagnate, what is the most likely bottleneck?",
+      "reference_answer": "The initial bottleneck is likely single disk access on the Lustre file system. The increase from 600 Mbps to 1000 Mbps when moving from one to four streams indicates that parallelizing the I/O allows the system to overcome the single-disk throughput limit. However, the stagnation at 16 streams suggests that the system has hit a new bottleneck, likely either CPU saturation (where the processor can no longer manage the overhead of additional streams) or the exhaustion of available disk stripes/bandwidth. The transition from a disk-bound state to a CPU or NIC-bound state is a classic symptom of end-to-end bottleneck shifting.",
+      "keywords": [
+        "Lustre",
+        "throughput",
+        "disk bottleneck",
+        "parallel streams"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-2339-q1",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why do persistent TCP connections in data center workloads exacerbate the TCP Incast problem compared to connections that undergo a standard slow-start phase?",
+      "reference_answer": "Persistent connections exacerbate Incast because they bypass the TCP slow-start phase, meaning the connection is already open and ready to transmit at a high rate when a new request arrives. In barrier-synchronized workloads, many servers initiate transfers simultaneously. Without the gradual window increase provided by slow-start, the aggregate burst of traffic from all concurrent senders can instantly overwhelm the switch buffer, leading to packet loss, massive timeouts, and the 'Block Head Time Out' phenomenon where the entire synchronized process stalls.",
+      "keywords": [
+        "persistent connections",
+        "slow start",
+        "Incast",
+        "barrier synchronization"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1103-q1",
+      "benchmark_version": "v5.0",
+      "category": "Concurrency Tuning and Scaling",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why might a developer choose a lock-based parallel implementation over a shared-nothing architecture when deploying a Network Function?",
+      "reference_answer": "A developer might choose a lock-based implementation when the Network Function's state dependencies are too complex or incompatible with the available RSS hashing fields. If the NF requires packets to be processed based on fields not present in the RSS hash key, or if there are disjoint dependencies that cannot be resolved by sharding traffic, a shared-on-nothing approach is impossible. In such cases, a lock-based approach—using mechanisms like read-write locks—allows multiple cores to access shared state. While this introduces inter-core coordination overhead and is generally less performant than shared-nothing, it maintains the functional semantics of the NF while still providing some level of parallelization under typical traffic patterns.",
+      "keywords": [
+        "lock-based",
+        "shared-nothing",
+        "state dependencies",
+        "RSS compatibility"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1977-q1",
+      "benchmark_version": "v5.0",
+      "category": "Dataset Partitioning and Mixed Workloads",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why does a static ECN marking threshold configuration lead to performance degradation in a datacenter environment characterized by shifting workloads such as OLTP and OLAP?",
+      "reference_answer": "Static ECN parameters are not adaptive to the temporal variations in traffic patterns. For instance, Online Transaction Processing (OLTP) workloads, which are delay-sensitive, typically occur during the day, while Online Analytical Processing (OLPN) workloads, which are throughput-intensive, dominate at night. Because traffic patterns change, a fixed threshold cannot maintain the optimal balance between queue depth and throughput. This lack of adaptability can lead to issues like the Incast problem, where sudden bursts of traffic from multiple senders cause buffer overflows and significant performance drops in high-speed networks.",
+      "keywords": [
+        "OLTP",
+        "OLAP",
+        "traffic patterns",
+        "static ECN"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-2201-q1",
+      "benchmark_version": "v5.0",
+      "category": "Dataset Partitioning and Mixed Workloads",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why is the application of statistical multiplexing more beneficial in the aggregation and core layers of an IP-RAN network compared to the access layer?",
+      "reference_answer": "Statistical multiplexing is more effective in the aggregation and core layers because these layers handle a much larger number of services and higher aggregate capacities. In these higher layers, the probability that all individual services will be active simultaneously is lower, allowing operators to reserve only a portion of the bandwidth based on statistical coexistence data, thereby reducing over-provisioning costs. In contrast, the access layer typically involves fewer, more direct connections where the traffic is more deterministic or requires full capacity reservation to ensure the requested QoS for the specific base station or client, making the overhead of statistical modeling less impactful or unnecessary.",
+      "keywords": [
+        "statistical multiplexing",
+        "IP-RAN",
+        "aggregation layer",
+        "over-provisioning"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1919-q1",
+      "benchmark_version": "v5.0",
+      "category": "Fairness, Stability, and Shared Networks",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why does increasing the number of parallel TCP streams eventually lead to a decrease in aggregate throughput in a congested network?",
+      "reference_answer": "While using multiple parallel streams can theoretically multiply throughput, excessive parallelism increases the packet loss rate due to network congestion. As the packet loss rate increases, the TCP congestion avoidance algorithm is triggered, which forces the sending rate to decrease to mitigate the losses. Therefore, the benefit of parallelism is offset by the performance degradation caused by the resulting congestion-induced packet loss.",
+      "keywords": [
+        "parallelism",
+        "packet loss",
+        "congestion avoidance",
+        "throughput"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1331-q0",
+      "benchmark_version": "v5.0",
+      "category": "Fairness, Stability, and Shared Networks",
+      "difficulty": "medium",
+      "question_type": "concept",
+      "question": "In the context of H-TCP, what specific condition must be met regarding the Perron eigenvector to ensure that all competing flows achieve window fairness?",
+      "reference_answer": "To achieve window fairness in a network, the Perron eigenvector of the system's transition matrix must be a scalar multiple of the all-ones vector. This mathematical condition implies that the steady-state window sizes for all participating sources are equal, regardless of their individual parameters. When the eigenvector is proportional to the vector [1, 1, ..., 1], it ensures that no single source maintains a disproportionately larger share of the bottleneck bandwidth, thereby establishing a state where all flows converge to an approximately equal number of packets in flight.",
+      "keywords": [
+        "Perron eigenvector",
+        "window fairness",
+        "steady-state",
+        "all-ones vector"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-2351-q1",
+      "benchmark_version": "v5.0",
+      "category": "Parallelism and Large-File Optimization",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why does parallelizing a file transfer across multiple equivalent hosts improve both the aggregate bandwidth and the overall resilience of the transfer process?",
+      "reference_answer": "Parallelization improves performance by aggregating the available CPU, memory, I/O bandwidth, and network bandwidth from all participating hosts, allowing the transfer to utilize more resources than a single host could provide. Simultaneously, it enhances resilience by eliminating single points of failure; if one host in the parallel set fails or a specific network path becomes unavailable, the remaining active clients can continue the transfer, ensuring the operation can still complete despite individual component failures.",
+      "keywords": [
+        "parallelization",
+        "bandwidth",
+        "resilience",
+        "single point of failure"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1116-q0",
+      "benchmark_version": "v5.0",
+      "category": "Parallelism and Large-File Optimization",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "In the context of optimizing wide-area network (WAN) performance, what is the primary difference in how a single tuned TCP buffer and multiple parallel TCP streams handle network failures?",
+      "reference_answer": "While tuning the TCP buffer size can significantly increase application throughput by allowing more bits to be in flight, parallel streams offer a distinct advantage in resilience. Specifically, parallel streams are more capable of recovering from packet loss and network failures more quickly than a single stream with an optimized buffer. Additionally, parallel streams can more effectively capture available bandwidth by competing with other streams sharing the network, whereas a single tuned stream is limited by its individual congestion window dynamics.",
+      "keywords": [
+        "TCP buffer",
+        "parallel streams",
+        "recovery",
+        "throughput"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0104-q2",
+      "benchmark_version": "v5.0",
+      "category": "Pipelining and Small-File Optimization",
+      "difficulty": "easy",
+      "question_type": "calculation",
+      "question": "A network engineer is evaluating a new congestion control deployment. If the original LSTM-based RL-CC model has an inference latency of 450 seconds and the distilled decision tree model achieves a latency of 0.9 seconds, what is the speedup factor achieved by the distillation process?",
+      "reference_answer": "To find the speedup factor, you divide the original latency by the new latency. Calculation: 450 seconds / 0.9 seconds = 500. The distillation process provides a 500x speedup. This massive reduction is essential for meeting the 1-2 second decision-time requirement necessary for modern RDMA-based datacenter environments, allowing the congestion control logic to execute on the NIC hardware without causing significant packet loss or reduced goodput due to delayed responses.",
+      "keywords": [
+        "speedup",
+        "latency",
+        "distillation",
+        "throughput"
+      ],
+      "requires_calculation": true
+    },
+    {
+      "id": "NB-HPN-2151-q1",
+      "benchmark_version": "v5.0",
+      "category": "Pipelining and Small-File Optimization",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "How does the implementation of early packet classification and multiplexing within the network driver help prevent application starvation in congested IoT environments?",
+      "reference_answer": "In congested network paths, the arrival of high volumes of packets can cause persistent crowding of application processes, preventing them from executing and leading to data starvation. By implementing early packet classification and multiplexing, the system can identify the receiving process for each packet and prioritize the execution of the protocol stack within that process's context. This architecture enables 'early discarding' of packets on congested paths, which prevents the network stack from consuming all available CPU resources on low-priority traffic and ensures that application-level processing remains responsive.",
+      "keywords": [
+        "packet classification",
+        "application starvation",
+        "early discarding",
+        "multiplexing"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1887-q1",
+      "benchmark_version": "v5.0",
+      "category": "Pipelining and Small-File Optimization",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why might increasing the pipelining level for large files lead to increased energy consumption without a corresponding increase in throughput?",
+      "reference_answer": "Increasing the pipelining level for large files can lead to higher energy consumption because it may trigger the creation of more active threads or processes, increasing the utilization of CPU, memory, and NIC components. If the pipelining level exceeds the capacity provided by the BDP (the amount of data required to fill the network pipe), the additional overhead of managing extra chunks does not improve the data transfer rate. Consequently, the system incurs the power costs of higher component utilization—specifically CPU and memory—without any gain in throughput, resulting in decreased energy efficiency.",
+      "keywords": [
+        "pipelining",
+        "energy efficiency",
+        "throughput",
+        "resource utilization"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0094-q3",
+      "benchmark_version": "v5.0",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "easy",
+      "question_type": "scenario",
+      "question": "A network operator is deploying a slicing framework where task arrival rates at a base station fluctuate significantly. If the operator observes that the slice reconfiguration cost is rising sharply, what specific architectural or operational change should be investigated to stabilize the system costs?",
+      "reference_answer": "The operator should investigate the frequency and magnitude of changes in user density and task arrival rates. The slice reconfiguration cost is explicitly driven by variations in these parameters, as the SDN controller must adjust resources to match the new demand. Specifically, the cost function $f_{r}^{t}$ quantifies the resource increases required when transitioning between slicing windows. To stabilize costs, the operator should look for ways to smooth the transition of resources or implement more robust workload distribution strategies that minimize the need for frequent, large-scale resource increases. Reducing the volatility in task arrival or implementing more predictive resource buffering could mitigate the need for costly reconfiguration events.",
+      "keywords": [
+        "slice reconfiguration",
+        "SDN controller",
+        "user density",
+        "system cost"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1109-q3",
+      "benchmark_version": "v5.0",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "hard",
+      "question_type": "scenario",
+      "question": "You are designing a distributed query engine for a cluster using InfiniBand 4 QDR. You notice that the receiver CPU utilization is hitting 190% during large transfers, causing significant latency spikes. To optimize this, you decide to implement a strategy to reduce interrupt handling overhead. Based on known performance characteristics, what specific thread-pinning strategy should you implement to improve throughput, and what is the potential trade-off?",
+      "reference_answer": "To improve throughput, you should explicitly pin the network thread to a different core than the one handling the interrupt requests (IRQ). This strategy has been shown to increase TCP throughput by an additional 44% (up to 2.17 GB/s). However, the primary trade-off is an increase in CPU overhead, as this configuration requires the use of two separate cores (one for the network thread and one for the interrupt handler) to manage the incoming data stream, rather than consolidating the work on a single core.",
+      "keywords": [
+        "thread pinning",
+        "CPU overhead",
+        "interrupt handling",
+        "throughput optimization"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1811-q3",
+      "benchmark_version": "v5.0",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "You are deploying a CSMA-based sensor network where nodes experience significant processing delays. If you implement a protocol where links in a collision component do not start transmitting simultaneously, how will this impact the stability and the ability to use a product-form stationary distribution for throughput calculation?",
+      "reference_answer": "If links in a collision component are not synchronized (i.e., they do not start and end at the same time), the fundamental assumption of the 'almost time-reversible' Markov chain model is violated. This loss of synchronization breaks the property that all links in a component share the same remaining time. Consequently, the Markov chain may no longer yield a simple product-form stationary distribution, making the derivation of an explicit, simple throughput formula much more complex. Furthermore, without controlled transmission lengths and synchronization, the stability and convergence of the scheduling algorithm toward the capacity region cannot be guaranteed.",
+      "keywords": [
+        "synchronization",
+        "stability",
+        "Markov chain",
+        "throughput formula"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-2291-q3",
+      "benchmark_version": "v5.0",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "In a network with 10 users and 10 channels, a designer implements a coordination scheme where the super-frame is divided into 20 slots. If the number of users suddenly increases to 25 due to a dynamic entry, how will this impact the system's ability to maintain an orthogonal configuration?",
+      "reference_answer": "If the number of users (25) exceeds the number of available channels (10), it is mathematically impossible to achieve an orthogonal configuration where each user has a unique channel. In this scenario, the system will inevitably face collisions, as multiple users must share the same channels. Furthermore, if the number of users becomes highly dynamic relative to the super-frame duration, the coordination overhead may become inefficient. The system's performance will degrade because the 'Stable Marriage' stability cannot be maintained in an orthogonal sense when the resource constraint (channels < users) is violated, leading to unavoidable reward loss for colliding users.",
+      "keywords": [
+        "Dynamic Users",
+        "Collision",
+        "Resource Constraint",
+        "Scalability"
+      ],
+      "requires_calculation": true
+    },
+    {
+      "id": "NB-HPN-0404-q3",
+      "benchmark_version": "v5.0",
+      "category": "Practical HPN Scenarios and Design",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "You are designing a congestion control mechanism for an LTE cellular network with a 30ms RTT and a 150KB buffer. You observe that your current learning-based CCA exhibits high performance variability and fails to provide safety assurance during repeated experiments. Which architectural change should you implement to stabilize performance and ensure fairness?",
+      "reference_answer": "To address high variability and lack of safety assurance, you should move away from a pure learning-based CCA toward a unified framework that integrates classic CCAs with reinforcement learning. By adopting a structure where a classic CCA (like CUBIC) handles the base sending rate and explores network conditions, and the RL-based component acts as a backup or optimizer, you can leverage the stability of proven algorithms. This hybrid approach allows the system to maintain high Jain's fairness (e.g., over 98%) and reduce the uncertainty inherent in purely neural-network-driven decision-making processes, providing a more predictable and safe control loop.",
+      "keywords": [
+        "LTE",
+        "safety assurance",
+        "hybrid CCA",
+        "stability"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1303-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "In the context of large-scale HPC I/O characterization, what is the primary advantage of using application-level instrumentation like Darshan compared to storage-level block device monitoring?",
+      "reference_answer": "Application-level instrumentation captures I/O access patterns at the source, before they are modified or aggregated by high-level libraries (such as MPI-IO) or the underlying file system (such as GPFS). While block device monitoring captures all data movement and total throughput, it cannot distinguish the nature of the I/O requests, such as specific file offsets, access patterns, or the specific application-level intent. Application-level characterization provides the granularity needed to understand the actual computational science workloads, whereas block-level monitoring only shows the resulting physical data movement on the storage hardware.",
+      "keywords": [
+        "Darshan",
+        "application-level",
+        "I/O characterization",
+        "instrumentation"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1695-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "easy",
+      "question_type": "concept",
+      "question": "In the context of TCP performance over Wide Area Networks (WAN), what is the relationship between the congestion window (CWND) size and the achievable throughput?",
+      "reference_answer": "The congestion window (CWND) determines the number of packets a sender can transmit before requiring an acknowledgement from the receiver. In high-performance networking, a larger congestion window size directly enables higher throughput because it allows more data to be in flight across the network path. If the CWND is too small, the sender is forced to wait for acknowledg_ments frequently, preventing the connection from saturating the available bandwidth, especially in high Bandwidth-Delay Product (BDP) environments.",
+      "keywords": [
+        "TCP",
+        "congestion window",
+        "CWND",
+        "throughput"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1298-q2",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "easy",
+      "question_type": "calculation",
+      "question": "An RL-based congestion control agent is currently transmitting at 50 Gbps. If the agent selects an action from its defined range of 0.8 to 1.2, what is the maximum possible transmission rate it can achieve in the next step?",
+      "reference_answer": "The agent's action is defined as a multiplicative factor applied to the previous transmission rate. The range for this factor is between 0.8 and 1.2. To find the maximum possible rate, multiply the current rate by the upper bound of the action space: 50 Gbps * 1.2 = 60 Gbps. Therefore, the maximum achievable rate in the next time step is 60 Gbps.",
+      "keywords": [
+        "multiplicative factor",
+        "transmission rate",
+        "action space"
+      ],
+      "requires_calculation": true
+    },
+    {
+      "id": "NB-HPN-2093-q1",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why must performance evaluation for DC-CE (Data Center-to-Customer Equipment) applications prioritize subjective performance metrics differently than DC-DC (Data Center-to-Data Center) applications?",
+      "reference_answer": "The distinction lies in the nature of the end-user. In DC-DC applications, the 'user' is typically another machine, making application-level performance (such as raw throughput) the primary concern. In contrast, DC-CE applications involve human users at the edge of a wireless or communication network. Because humans are involved, subjective performance (Quality of Experience or QoE) becomes critical alongside application-level performance, as human perception of latency and interaction smoothness directly impacts the perceived quality of the service.",
+      "keywords": [
+        "DC-DC",
+        "DC-CE",
+        "QoE",
+        "subjective performance"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-2135-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "hard",
+      "question_type": "concept",
+      "question": "In the context of In-band Network Telemetry (INT) for heterogeneous networks, what is the primary purpose of the INTManager element?",
+      "reference_answer": "The INTManager serves as the central control component that provides an API for the runtime configuration of the Source, Sink, and Intermediate (INTInter) elements. It manages the control structure, which includes the specification of monitoring rules and the temporary storage of telemetry data. By using a ZeroMQ-based messaging API, it enables the framework to be runtime-reconfigurable, allowing network administrators to adjust telemetry parameters without hardware changes, which is essential for addressing the limitations of specialized hardware in flexible, software-defined environments.",
+      "keywords": [
+        "INTManager",
+        "runtime configuration",
+        "API",
+        "telemetry storage"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1379-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "hard",
+      "question_type": "concept",
+      "question": "In the context of BBR (Bottleneck Bandwidth and Round-trip propagation time) congestion control, what is the primary functional difference between the 'Start-up' and 'Drain' states?",
+      "reference_answer": "The Start-up state is designed to exponentially increase the sending rate using a pacing gain of 2/ln2 to rapidly probe for available capacity, similar to TCP slow start, until the delivery rate growth falls below a 1.25x threshold over three RTTs. Conversely, the Drain state is triggered after the queue has been filled to clear excessive packets. During this state, BBR uses an inverse of the startup pacing gain to reduce the amount of inflight data until the congestion window drops back down to approximately one BDP (Bandwidth Delay Product), effectively draining the bottleneck buffer.",
+      "keywords": [
+        "BBR",
+        "Start-up state",
+        "Drain state",
+        "pacing gain",
+        "BDP"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0269-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "hard",
+      "question_type": "concept",
+      "question": "In the context of inter-datacenter optical networks, what is the primary functional purpose of implementing edge storage for bulk data transfers?",
+      "reference_answer": "Edge storage is utilized to temporarily hold bulk data transfers at the network periphery, allowing them to be delayed until off-peak hours. The primary goal of this mechanism is to mitigate bandwidth contention that occurs during peak hours between long-lasting bulk flows and short-lived traffic. By shifting the transfer window to periods of lower demand, the system can improve overall bandwidth utilization and enhance network utility across the inter-datacenter links.",
+      "keywords": [
+        "edge storage",
+        "bandwidth contention",
+        "off-peak",
+        "utility"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0732-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "hard",
+      "question_type": "concept",
+      "question": "In the context of Hierarchical Congestion Control (HCC), what is the primary purpose of implementing flow aggregation and hierarchical grouping?",
+      "reference_answer": "The primary purpose of hierarchical flow aggregation in HCC is to overcome the limitations of end-host visibility and information scarcity. By grouping flows into a hierarchy, the system enables flow cooperation and information sharing across different network layers. This mechanism allows flows to share congestion information within their respective groups and propagate compressed signals up the hierarchy. This structured approach leads to expanded visibility for individual flows, improved max-min fairness, and significantly faster convergence compared to traditional decentralized congestion control methods.",
+      "keywords": [
+        "HCC",
+        "flow aggregation",
+        "visibility",
+        "convergence"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1413-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "medium",
+      "question_type": "concept",
+      "question": "In the context of RDMA-first object storage, what is the primary functional difference between the control plane and the data plane in a system like ROS2?",
+      "reference_answer": "The control plane and data plane are architecturally separated to optimize performance. The control plane, often utilizing gRPC, is responsible for lightweight tasks such as namespace management and the exchange of capabilities between nodes. In contrast, the data plane is designed for high-throughput operations, utilizing frameworks like UCX or libfabric over RDMA or TCP to move actual I/O payloads. This separation allows the system to handle metadata and permissions without bottlenecking the high-speed movement of large-scale AI datasets.",
+      "keywords": [
+        "control plane",
+        "data plane",
+        "gRPC",
+        "UCX",
+        "ROS2"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-2032-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "medium",
+      "question_type": "concept",
+      "question": "In the context of inter-cell interference coordination (ICIC), what is the primary function of Almost Blank SubFrames (ABSF) within a semi-distributed scheduling framework?",
+      "reference_answer": "Almost Blank SubFrames (ABSF) are a mechanism used in inter-cell interference coordination to mitigate interference in dense cellular networks. In a semi-distributed framework, ABSF patterns are used to manage the scheduling of different traffic types by intentionally leaving certain subframes blank or underutilized to reduce the interference caused to neighboring cells. This approach allows base stations to coordinate resource usage without the massive signaling overhead and computational complexity required by a fully centralized controller, which would otherwise be unaffordable in dense deployments.",
+      "keywords": [
+        "ABSF",
+        "ICIC",
+        "interference coordination",
+        "dense networks"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-1903-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "medium",
+      "question_type": "concept",
+      "question": "In the context of switch-based congestion management, how does the mechanism utilize the TCP Receiver Window (Rwnd) field to signal congestion without modifying endpoint software?",
+      "reference_answer": "The mechanism migrates the congestion controller from the end-host to the network switch. Instead of relying on end-to-end TCP congestion window (Cwnd) adjustments, the switch overwrites the Receiver Window (Rwnd) field in the TCP ACK headers as they traverse the switch. By modifying this field, the switch can explicitly communicate the bottleneck fair share of bandwidth and available buffer space to the sender. This allows the switch to regulate the sender's transmission rate using existing TCP flow control logic, effectively treating the window size as a signal for the available fair share of the output port.",
+      "keywords": [
+        "TCP Receiver Window",
+        "Rwnd",
+        "Congestion Signaling",
+        "Switch-based AQM"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-HPN-0600-q0",
+      "benchmark_version": "v5.0",
+      "category": "Transfer Parameters: Definitions and Roles",
+      "difficulty": "medium",
+      "question_type": "concept",
+      "question": "In the context of high-speed wide area networks, what is the fundamental difference between application-level network striping and traditional TCP window size tuning?",
+      "reference_answer": "Traditional TCP window size tuning involves system administrators manually adjusting the TCP buffer settings at both the sender and receiver ends to match the bandwidth-delay product (BDP). This process can be time-consuming, often taking days or weeks to implement across a network. In contrast, application-level network striping, such as the PSockets approach, involves partitioning data into equal segments and transmitting them asynchronously across multiple parallel TCP sockets. This mechanism allows the application to achieve high throughput and utilize available bandwidth effectively without requiring any manual configuration or administrative changes to the underlying network drivers or system-level TCP parameters.",
+      "keywords": [
+        "network striping",
+        "TCP window tuning",
+        "PSockets",
+        "application-level"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-SYN-2075-2370",
+      "benchmark_version": "v5.0",
+      "category": "Bottleneck Diagnosis and End-to-End Reasoning",
+      "difficulty": "hard",
+      "question_type": "comparison",
+      "question": "When designing a performance prediction system for a wide-area network, how should an engineer reconcile the impact of application-level startup overheads with the physical limitations of endpoint hardware to ensure accurate throughput estimation for large-scale transfers?",
+      "reference_answer": "To ensure accurate prediction, an engineer must account for both the temporal overheads of the protocol and the physical throughput ceilings of the endpoints. According to the DualPats approach, TCP flow duration includes a startup overhead (B) representing factors like authentication and residual slow start effects, which can significantly skew predictions if not modeled. However, even if these protocol-level overheads are accounted for, the maximum achievable transfer rate is fundamentally constrained by the minimum of the disk read, memory-to-memory, and disk write rates (DRmax, MMmax, and DWmax). Therefore, a complete model must integrate the linear relationship of flow size and throughput (T = Ax + B) with the hardware-bound upper bounds of the endpoint's I/O subsystem to prevent overestimating performance when the network capacity exceeds the disk's capability.",
+      "keywords": [
+        "startup overhead",
+        "disk I/O",
+        "throughput prediction",
+        "endpoint constraints",
+        "TCP flow duration"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-ADV-M002-1331",
+      "benchmark_version": "v5.0",
+      "category": "Fairness, Stability, and Shared Networks",
+      "difficulty": "medium",
+      "question_type": "scenario",
+      "question": "We are deploying a new high-speed transfer service across a 10Gbps bottleneck link with a 100ms Round-Trip Time (RTT). The network currently carries several established TCP Reno flows. To optimize performance, we plan to introduce a new congestion control variant using a larger additive increase parameter (alpha) to utilize the large bandwidth-delay product more quickly. Since all flows are competing for the same shared bottleneck, will the standard Additive Increase Multiplicative Decrease (AIMD) mechanism ensure that our new high-speed flows and the existing Reno flows reach a fair equilibrium without manual parameter tuning?",
+      "reference_answer": "While it seems that the AIMD mechanism inherently balances competing flows, in reality, fairness is not automatic when using different congestion control parameters. This assumption fails because the stability and fairness of the network depend on the specific relationship between the increase and decrease factors. For a new protocol to be both fair and TCP-friendly to conventional sources, it must satisfy the condition i = 2(1 - sqrt(alpha)). If the additive increase parameter (alpha) is tuned too aggressively without maintaining this specific mathematical relationship, the new flows can dominate the link, preventing the system from reaching a state where the Perron eigenvector is a scalar multiple of the all-ones vector, which is required for window fairness.",
+      "keywords": [
+        "AIMD",
+        "TCP-friendliness",
+        "window fairness",
+        "Perron eigenvector",
+        "congestion control"
+      ],
+      "requires_calculation": false
+    },
+    {
+      "id": "NB-ADV-M003-1927",
+      "benchmark_version": "v5.0",
+      "category": "Parallelism and Large-File Optimization",
+      "difficulty": "easy",
+      "question_type": "scenario",
+      "question": "We are optimizing a large-scale data migration across a 100 Gbps wide-area network with an 89 ms RTT. Our current transfer setup uses a single file transfer with 16 parallel streams to maximize throughput. However, we are still seeing significant I/O bottlenecks and sub-optimal bandwidth utilization. To resolve this and maximize the utilization of the available 100 Gbps capacity, should we focus on increasing the number of parallel streams within the existing file transfer, or should we increase the concurrency by initiating multiple simultaneous file transfers?",
+      "reference_answer": "While it seems that increasing parallel streams and increasing concurrency are interchangeable methods to boost throughput, in reality, they address different bottlenecks. Increasing parallelism (the number of streams within a single file) only optimizes the utilization of the network path for that specific file by overcoming single-stream TCP limitations. In contrast, increasing concurrency (initiating multiple simultaneous file transfers) adds both network parallelism and I/O parallelism by utilizing separate processes and I/O paths. In the described scenario, if I/O is the bottleneck, increasing concurrency is necessary to exploit the I/O capabilities of the storage systems, whereas simply increasing parallel streams within one transfer may fail to bypass the fundamental read/write limitations of a single file's I/O path.",
+      "keywords": [
+        "concurrency",
+        "parallelism",
+        "I/O bottleneck",
+        "throughput",
+        "network utilization"
+      ],
+      "requires_calculation": false
+    }
+  ]
+}
