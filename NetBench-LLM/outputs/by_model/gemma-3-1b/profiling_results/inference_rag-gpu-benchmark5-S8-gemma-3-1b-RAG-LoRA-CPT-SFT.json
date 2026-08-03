@@ -1,0 +1,168 @@
+{
+  "profile_type": "rag",
+  "model_path": "/work2/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-cpt-then-sft-merged",
+  "model_name": "gemma-3-1b-instruct-lora-cpt-then-sft-merged",
+  "run_name": "rag-gpu-benchmark5-S8-gemma-3-1b-RAG-LoRA-CPT-SFT",
+  "device": "cuda",
+  "timestamp": "2026-05-14T19:38:36.561476",
+  "benchmark_file": "/work2/11412/neom/my-projects/NetBench-LLM/data/prompts/hpn_benchmark_v5.0.jsonl",
+  "question_limit": 5,
+  "system": {
+    "timestamp": "2026-05-14T19:38:36.568269",
+    "hostname": "site-b-node-1",
+    "python": "3.12.11",
+    "torch": "2.11.0+cu128",
+    "device": "cuda",
+    "cpu": {
+      "model": "Intel(R) Xeon(R) Platinum 8468",
+      "physical_cores": 96,
+      "logical_cores": 96,
+      "total_ram_gb": 1006.9
+    },
+    "cuda_version": "12.8",
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA H100",
+        "total_memory_mb": 95321
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA H100",
+        "total_memory_mb": 95321
+      },
+      {
+        "index": 2,
+        "name": "NVIDIA H100",
+        "total_memory_mb": 95321
+      },
+      {
+        "index": 3,
+        "name": "NVIDIA H100",
+        "total_memory_mb": 95321
+      }
+    ]
+  },
+  "model_load": {
+    "retriever_load_time_s": 12.42,
+    "generator_load_time_s": 3.11
+  },
+  "benchmark_prompts": [
+    {
+      "id": "NB-HPN-0026-q1",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "easy",
+      "question_type": "reasoning",
+      "question": "Why might a smart DTN implement network packet pacing specifically when transferring data from a high-bandwidth source to a low-bandwidth destination?",
+      "retrieval_time_s": 1.0957,
+      "generation_time_s": 48.5744,
+      "total_time_s": 49.6701,
+      "prompt_tokens": 4422,
+      "output_tokens": 114,
+      "generation_tokens_per_second": 2.35,
+      "retrieved_chunks": "Towards a Smart Data Transfer Node Zheng... \u00a72 Motivation | Toward a Smart Data Transfer Node Zhengc... \u00a72 Motivation | Toward a Smart Data Transfer Node Zhengc... \u00a71 Introduction | Towards a Smart Data Transfer Node Zheng... \u00a71 Introduction",
+      "reranker_scores": [
+        0.9945,
+        0.9889,
+        0.8418,
+        0.8287
+      ],
+      "answer_preview": "I am sorry, but the provided excerpts do not contain enough information to answer this question. While the text mentions that network congestion control can be used to automate these protocols, it does not provide a specific scenario, objective, or context regarding why a smart DTN would choose to u"
+    },
+    {
+      "id": "NB-HPN-0159-q0",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "hard",
+      "question_type": "concept",
+      "question": "In host-based RDMA load balancing, how can a system detect network congestion without relying on specialized switch hardware like ECN (Explicit Congestion Notification) markings?",
+      "retrieval_time_s": 1.1139,
+      "generation_time_s": 80.9149,
+      "total_time_s": 82.0289,
+      "prompt_tokens": 5000,
+      "output_tokens": 201,
+      "generation_tokens_per_second": 2.48,
+      "retrieved_chunks": "arXiv:2506.08132v1 cs. NI 9 Jun 2025 Pre... \u00a73 Evaluation | This work is licensed under a Creative C... \u00a71 Introduction | STrack: A Reliable Multipath Transport f... \u00a75 Related Work | REPS: Recycled Entropy Packet Spraying f... \u00a71 Introduction",
+      "reranker_scores": [
+        0.9964,
+        0.986,
+        0.9859,
+        0.9771
+      ],
+      "answer_preview": "Detecting network congestion in host-based RDMA traffic is challenging because traditional methods often fail to distinguish between minor queuing caused by packet collisions and genuine congestion events [4]. Specifically, relying solely on ECN marking\u2014a widely used technique in datacenters\u2014can lea"
+    },
+    {
+      "id": "NB-HPN-2135-q1",
+      "category": "Adaptive and Online Optimization",
+      "difficulty": "medium",
+      "question_type": "reasoning",
+      "question": "Why is a periodic retransmission of the INT request necessary even if the initial in-band request was successfully sent?",
+      "retrieval_time_s": 1.0176,
+      "generation_time_s": 67.1121,
+      "total_time_s": 68.1297,
+      "prompt_tokens": 4607,
+      "output_tokens": 164,
+      "generation_tokens_per_second": 2.44,
+      "retrieved_chunks": "A Flexible In-band Network Telemetry Fra... \u00a7III Int Framework | SPECIAL SECTION ON ARTIFICIAL INTELLIGEN... \u00a7II Related Work | noname manuscript No. will be inserted b... \u00a72 Related Work | FEDERAL UNIVERSITY OF PAMPA Ariel G es D... \u00a71 Overview",
+      "reranker_scores": [
+        0.9189,
+        0.6832,
+        0.6446,
+        0.4356
+      ],
+      "answer_preview": "In the context of the INTRequest message format, the requirement for a successful in-band request despite a failed transmission\u2014where the packet may have reached the destination but not yet been processed\u2014is driven by the need to enable the monitoring process in new nodes [1]. Once a packet with INT"
+    },
+    {
+      "id": "NB-HPN-2121-q2",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "easy",
+      "question_type": "calculation",
+      "question": "Using the logic provided in the text, if a service has a Max-Min Fair (MmF) share of 40 Mbps but only achieves 30 Mbps under contention, what is the percentage of its MmF share that it has achieved, and what percentage of the total 40 Mbps share is the remaining unachieved bandwidth?",
+      "retrieval_time_s": 1.2782,
+      "generation_time_s": 6.2655,
+      "total_time_s": 7.5437,
+      "prompt_tokens": 5053,
+      "output_tokens": 88,
+      "generation_tokens_per_second": 14.05,
+      "retrieved_chunks": ". . Latest updates: h ps://dl.acm.org/do... \u00a71 Introduction | . . Latest updates: h ps://dl.acm.org/do... \u00a71 Introduction | . . Latest updates: h ps://dl.acm.org/do... \u00a73 Methodology | . . Latest updates: h ps://dl.acm.org/do... \u00a73 Methodology",
+      "reranker_scores": [
+        0.981,
+        0.9778,
+        0.8751,
+        0.8308
+      ],
+      "answer_preview": "To calculate the percentage of the MmF share that remains unachieved, we look at the provided metrics: - Maximum MmF share: 40 Mbps - Current achievement: 30 Mbps - Percentage of unachieved share: 100% Of the total 40 Mbps share, 100% of the MmF share has been achieved. Therefore, the remaining unac"
+    },
+    {
+      "id": "NB-HPN-1401-q1",
+      "category": "BDP-Based Reasoning and Window Sizing",
+      "difficulty": "hard",
+      "question_type": "reasoning",
+      "question": "Why might a parameter tuner choose to increase the number of TCP streams rather than simply increasing the size of a single TCP buffer when encountering kernel-level limitations?",
+      "retrieval_time_s": 0.9821,
+      "generation_time_s": 97.0356,
+      "total_time_s": 98.0177,
+      "prompt_tokens": 3974,
+      "output_tokens": 241,
+      "generation_tokens_per_second": 2.48,
+      "retrieved_chunks": "RUN-TIME ADAPTATION OF GRID DATA PLACEME... \u00a74 Implementation | Run-time Adaptation of Grid Data Placeme... \u00a74 Implementation | Dynamic Adaptation of Parallelism Level ... \u00a72 Related Work | Balancing TCP Buffer vs Parallel Streams... \u00a7Abstract",
+      "reranker_scores": [
+        0.9789,
+        0.9618,
+        0.9204,
+        0.91
+      ],
+      "answer_preview": "When a parameter tuner encounters a scenario where it cannot increase the number of TCP streams\u2014specifically because it reaches the theoretical upper limit defined by the Round-Trip Time (RTT) and TCP buffer size\u2014it must rely on adjusting the existing parallelism levels [3]. While increasing the num"
+    }
+  ],
+  "summary": {
+    "question_count": 5,
+    "avg_total_time_s": 61.078,
+    "avg_retrieval_time_s": 1.0975,
+    "avg_generation_time_s": 59.9805,
+    "avg_prompt_tokens": 4611.2,
+    "avg_output_tokens": 161.6,
+    "avg_generation_tokens_per_second": 2.69,
+    "peak_cpu_ram_mb": 5418,
+    "peak_gpu_vram_mb": 4833
+  }
+}

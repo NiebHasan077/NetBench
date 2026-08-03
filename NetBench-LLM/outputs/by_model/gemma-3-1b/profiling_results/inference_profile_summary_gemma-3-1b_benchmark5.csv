@@ -1,0 +1,5 @@
+label,profile_type,device,model_name,question_count,avg_total_time_s,avg_retrieval_time_s,avg_generation_time_s,avg_tokens_per_second,avg_ms_per_token,avg_ttft_s,peak_gpu_vram_mb,peak_cpu_ram_mb,load_time_s
+rag-gpu-benchmark5-S7-gemma-3-1b-RAG-CPT-SFT,rag,cuda,gemma-3-1b-cpt-full-sft,5,71.3387,1.7634,69.5753,2.9,,,4833,5502,30.05
+rag-gpu-benchmark5-S8-gemma-3-1b-RAG-LoRA-CPT-SFT,rag,cuda,gemma-3-1b-instruct-lora-cpt-then-sft-merged,5,61.078,1.0975,59.9805,2.69,,,4833,5418,15.53
+rag-cpu-benchmark5-S7-gemma-3-1b-RAG-CPT-SFT,rag,cpu,gemma-3-1b-cpt-full-sft,5,305.5177,182.8588,122.6589,1.86,,,0,9697,13.62
+rag-cpu-benchmark5-S8-gemma-3-1b-RAG-LoRA-CPT-SFT,rag,cpu,gemma-3-1b-instruct-lora-cpt-then-sft-merged,5,293.6501,182.555,111.095,1.62,,,0,9768,13.42

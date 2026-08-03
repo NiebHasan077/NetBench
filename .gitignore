@@ -1,0 +1,41 @@
+# Credentials and local environment configuration
+**/hf_token.txt
+**/openai_api_key.txt
+**/gemini_api_key.txt
+**/*api_key*.txt
+**/.env
+**/.env.*
+**/*.key
+
+# Private recovery material
+*.bundle
+recovery_packages/
+
+# Python environments and generated caches
+**/.venv/
+**/venv/
+**/__pycache__/
+**/.cache/
+**/*.py[cod]
+
+# Logs and profiling captures retained outside the publication tree
+**/*.log
+**/*.nsys-rep
+**/*.sqlite
+
+# Direct Pipeline model and large training artifacts
+/NetBench-LLM/models/
+/NetBench-LLM/checkpoints/
+/NetBench-LLM/**/checkpoint-*/
+/NetBench-LLM/data/processed/
+/NetBench-LLM/data/instruction/
+/NetBench-LLM/data/raw/
+/NetBench-LLM/data/Instruct-FTD/
+
+# RAG indexes and large/raw corpus artifacts
+/NetBench-RAG/data/qdrant_store/
+/NetBench-RAG/data/bm25_index.pkl
+/NetBench-RAG/data/chunks_cache.pkl
+/NetBench-RAG/.index_done
+/NetBench-RAG/data/backup_corpus*
+/NetBench-RAG/data/raw/research_corpus*

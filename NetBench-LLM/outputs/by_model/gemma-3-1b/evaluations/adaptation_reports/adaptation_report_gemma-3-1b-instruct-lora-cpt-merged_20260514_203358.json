@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-05-14T20:32:45.829317",
+  "base_model_path": "/work2/11412/neom/my-projects/NetBench-LLM/models/instruct-official/gemma-3-1b-Instruct",
+  "trained_model_path": "/work2/11412/neom/my-projects/NetBench-LLM/models/lora-merged/gemma-3-1b-instruct-lora-cpt-merged",
+  "hpn_data_dir": "/work2/11412/neom/my-projects/NetBench-LLM/data/processed/lora/gemma-3-1b",
+  "config": {
+    "batch_size": 4,
+    "seq_len": 2048,
+    "max_hpn_batches": null,
+    "max_general_batches": null,
+    "quantize_4bit": false
+  },
+  "base": {
+    "hpn": {
+      "loss": 3.331889,
+      "perplexity": 27.9912,
+      "batches": 188,
+      "tokens": 1533952
+    },
+    "general": {
+      "loss": 3.310089,
+      "perplexity": 27.3876,
+      "batches": 36,
+      "tokens": 290816
+    }
+  },
+  "trained": {
+    "hpn": {
+      "loss": 2.448203,
+      "perplexity": 11.5675,
+      "batches": 188,
+      "tokens": 1533952
+    },
+    "general": {
+      "loss": 3.171436,
+      "perplexity": 23.8417,
+      "batches": 36,
+      "tokens": 290816
+    }
+  },
+  "forgetting_gap": -0.138653
+}

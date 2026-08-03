@@ -1,0 +1,152 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# NetBench-RAG Configuration
+# All tunable parameters for the RAG pipeline live here.
+# ═══════════════════════════════════════════════════════════════════════════════
+
+# ── Paths ─────────────────────────────────────────────────────────────────────
+paths:
+  # Input data
+  corpus_json: data/raw/research_corpus_v3.json     # flat-text JSON from LLM-Training
+  pdfs_dir: pdfs/                                   # source PDFs (never committed)
+  benchmark: data/prompts/hpn_qa_benchmark_v5_general_skills.json  # 242-question HPN general-skills QA dataset (v5)
+
+  # Index artifacts (produced by index_corpus.py, never committed)
+  qdrant_dir: data/qdrant_store/
+  bm25_index: data/bm25_index.pkl
+  chunks_cache: data/chunks_cache.pkl
+
+  # API keys (never committed)
+  openai_api_key: openai_api_key.txt
+  gemini_api_key: gemini_api_key.txt
+
+  # Local LLM model (reuse from LLM-Training project)
+  local_model: /workspace/NetBench-LLM/models/instruction/gemma-4-e4b-it
+
+  # Outputs
+  answers_dir: outputs/answers/
+  judged_dir: outputs/judged/
+  reports_dir: outputs/reports/
+
+# ── Parsing ───────────────────────────────────────────────────────────────────
+parsing:
+  # Minimum character length for a line to be considered a section header
+  min_header_len: 3
+  max_header_len: 120
+  # Minimum abstract length to create a dedicated abstract chunk (chars)
+  min_abstract_chars: 100
+  # Confidence threshold below which we fall back to paragraph chunking
+  section_confidence_threshold: 0.4
+
+# ── Chunking ──────────────────────────────────────────────────────────────────
+chunking:
+  target_tokens: 1200        # target chunk size in tokens
+  overlap_tokens: 150        # overlap between consecutive chunks
+  min_tokens: 100            # discard chunks shorter than this
+  # Tokenizer used for token counting (fast, model-agnostic)
+  tokenizer_model: bert-base-uncased
+
+# ── Embedding ─────────────────────────────────────────────────────────────────
+embedding:
+  model: BAAI/bge-large-en-v1.5
+  dimension: 1024
+  device: cuda                # cuda | cpu
+  batch_size: 64              # chunks per GPU batch during indexing
+  normalize: true             # L2-normalize vectors (required for cosine similarity)
+  # BGE instruction prefixes — these matter for retrieval quality
+  query_instruction: "Represent this sentence for searching relevant passages: "
+  passage_instruction: ""     # BGE large v1.5 does not need a passage prefix
+
+# ── Vector Store (Qdrant) ──────────────────────────────────────────────────────
+qdrant:
+  collection_name: netbench_rag
+  distance: Cosine            # Cosine | Dot | Euclid
+  # Payload fields to index for metadata filtering
+  indexed_fields:
+    - paper_title
+    - section_heading
+    - source_file
+    - parse_confidence
+
+# ── Retrieval ─────────────────────────────────────────────────────────────────
+retrieval:
+  # Stage 1 — Dual search
+  vector_top_k: 30
+  bm25_top_k: 30
+  # BM25 tokenization
+  bm25_lowercase: true
+
+  # Stage 2 — Reciprocal Rank Fusion
+  rrf_k: 60                   # standard RRF smoothing constant
+  rrf_top_n: 20               # candidates passed to reranker
+
+  # Stage 3 — Cross-encoder reranking
+  reranker_model: BAAI/bge-reranker-v2-m3
+  reranker_device: cuda       # cuda | cpu
+  reranker_top_n: 4           # final chunks passed to LLM
+                              # 4 × 1200 tokens ≈ 4800 tokens — fits Llama 3.1 8B 8K ctx
+
+  # HPN domain acronym expansion for BM25 (applied to raw query before BM25 only)
+  acronym_expansion:
+    BDP: "bandwidth delay product"
+    RDMA: "remote direct memory access"
+    RPC: "remote procedure call"
+    TCP: "transmission control protocol"
+    UDP: "user datagram protocol"
+    RTT: "round trip time"
+    NIC: "network interface card"
+    SDN: "software defined networking"
+    HPN: "high performance networking"
+    MPI: "message passing interface"
+    HPCC: "high performance computing cluster"
+    GridFTP: "grid file transfer protocol"
+    MTCP: "multi-path tcp"
+    MPTCP: "multipath tcp"
+    DRL: "deep reinforcement learning"
+    RL: "reinforcement learning"
+    CC: "congestion control"
+    ECN: "explicit congestion notification"
+    BBR: "bottleneck bandwidth and round-trip propagation"
+    CWND: "congestion window"
+
+# ── Generation ────────────────────────────────────────────────────────────────
+generation:
+  # Active backend: openai | local
+  backend: openai
+
+  openai:
+    model: gpt-4o
+    max_tokens: 512
+    temperature: 0.0
+
+  local:
+    max_new_tokens: 512
+    temperature: 0.0
+    do_sample: false          # greedy decoding (temperature ignored when false)
+    repetition_penalty: 1.1   # penalize repeated tokens (matches LLM-Training)
+    dtype: bfloat16
+    device_map: auto          # distribute across available GPUs
+
+  # System prompt (shared across backends)
+  system_prompt: |
+    You are an expert in high-performance networking (HPN),
+    HPC data transfer systems, and computer networking.
+
+    Answer the question below in a focused response (100-350 words)
+    using the provided excerpts as your primary source.
+    Be technically precise: include specific numbers, thresholds, or
+    formulas where relevant. Explain the underlying reasoning, not just
+    the conclusion.
+
+# ── Evaluation (LLM-as-Judge) ─────────────────────────────────────────────────
+judge:
+  model: gemini-2.5-flash
+  rate_limit_rpm: 15          # Gemini free-tier limit
+  retry_attempts: 3
+  retry_backoff_base: 2.0     # exponential backoff base (seconds)
+
+  # Scoring weights (must sum to 1.0)
+  weights:
+    correctness: 0.40
+    completeness: 0.30
+    clarity: 0.20
+    conciseness: 0.10
