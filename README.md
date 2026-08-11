@@ -1,5 +1,7 @@
 # NetBench
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21892017.svg)](https://doi.org/10.5281/zenodo.21892017)
+
 A benchmark and an experimental framework for measuring how domain adaptation
 changes what a language model knows about **high-performance networking** —
 bulk data transfer, congestion control, bottleneck diagnosis, and the parameters
@@ -124,9 +126,13 @@ Nieb Hasan Neom, Rasman Mubtasim Swargo, and Md Arifuzzaman, Department of
 Computer Science, Missouri University of Science and Technology.
 
 Machine-readable metadata is in [CITATION.cff](CITATION.cff); GitHub renders it
-under *Cite this repository*. Each release is archived on Zenodo with a DOI —
-**cite the concept DOI**, which always resolves to the newest version, rather
-than a single version's DOI.
+under *Cite this repository*.
+
+Every release is archived on Zenodo. **Cite the concept DOI,
+[10.5281/zenodo.21892017](https://doi.org/10.5281/zenodo.21892017)**, which
+always resolves to the newest version. Each release also gets its own version
+DOI — `10.5281/zenodo.21892018` is v1.0.0 — which is the one to use only when
+you need to pin an exact snapshot.
 
 A journal article describing the study is under review. This section and
 `CITATION.cff` will be updated with its citation on publication; until then,

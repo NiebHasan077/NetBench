@@ -18,10 +18,11 @@ abstract: >-
   analysis code that regenerates every reported number.
 type: software
 version: v1.0.0
-date-released: 2026-08-10
+date-released: 2026-08-11
 license: Apache-2.0
 repository-code: https://github.com/NiebHasan077/NetBench
 url: https://github.com/NiebHasan077/NetBench
+doi: 10.5281/zenodo.21892017
 authors:
   - given-names: Nieb Hasan
     family-names: Neom
