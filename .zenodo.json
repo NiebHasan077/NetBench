@@ -1,0 +1,40 @@
+{
+  "upload_type": "software",
+  "title": "NetBench: benchmark, framework, and analysis code for a controlled study of LLM domain adaptation in high-performance networking",
+  "version": "v1.0.0",
+  "language": "eng",
+  "access_right": "open",
+  "license": "apache-2.0",
+  "creators": [
+    {
+      "name": "Neom, Nieb Hasan",
+      "affiliation": "Department of Computer Science, Missouri University of Science and Technology, Rolla, MO, USA",
+      "orcid": "0000-0002-6765-8873"
+    },
+    {
+      "name": "Swargo, Rasman Mubtasim",
+      "affiliation": "Department of Computer Science, Missouri University of Science and Technology, Rolla, MO, USA",
+      "orcid": "0009-0002-2725-5161"
+    },
+    {
+      "name": "Arifuzzaman, Md",
+      "affiliation": "Department of Computer Science, Missouri University of Science and Technology, Rolla, MO, USA",
+      "orcid": "0000-0003-3056-8636"
+    }
+  ],
+  "keywords": [
+    "large language models",
+    "domain adaptation",
+    "continued pre-training",
+    "supervised fine-tuning",
+    "LoRA",
+    "retrieval-augmented generation",
+    "LLM-as-a-judge",
+    "benchmark",
+    "reproducibility",
+    "data-centric AI",
+    "high-performance networking"
+  ],
+  "description": "<p>NetBench is the benchmark, experimental framework, and analysis code behind a controlled study of how domain data becomes model competence. It measures four adaptation mechanisms &mdash; continued pre-training, supervised fine-tuning, LoRA, and retrieval-augmented generation &mdash; across eight open-weight models and three frontier APIs, on high-performance networking as the target domain.</p>\n\n<p><strong>What this archive contains</strong></p>\n<ul>\n  <li><strong>HPN-QA v5.0</strong> &mdash; 242 generated open-ended questions (233 scored), each carrying its source evidence quotes with DOI and licence, its calibration outcome, and its validation results.</li>\n  <li><strong>The pipeline that produced it</strong> &mdash; open-access paper acquisition, PDF-to-corpus conversion, benchmark generation, and instruction-set construction.</li>\n  <li><strong>The adaptation and evaluation experiments</strong> &mdash; the direct (closed-book) and retrieval-augmented stacks, which run the same three-phase evaluation with identical judge prompts, rubric, and output schema.</li>\n  <li><strong>The judged model outputs of record</strong> and the analysis code that turns them into every number, table, and figure reported in the accompanying paper.</li>\n</ul>\n\n<p><strong>Reproducibility.</strong> <code>make setup &amp;&amp; make reproduce</code> re-derives every reported CSV, table, and figure from the committed judged outputs and exits non-zero if anything comes back different. The same target runs in CI on every push. <code>REPRODUCING.md</code> separates the three distinct claims this archive makes &mdash; what reproduces exactly, what re-runs approximately, and what cannot be re-acquired at all &mdash; and states the cause of each limit.</p>\n\n<p><strong>Not redistributed:</strong> source PDFs, the extracted text corpus, model weights, checkpoints, LoRA adapters, and retrieval indexes. Checksums for these are recorded as provenance, not as download links. Weights, adapters, and indexes regenerate from the released scripts; the corpus does not, because acquisition queries live scholarly indexes. See <code>ARTIFACTS.md</code>.</p>\n\n<p><strong>Licensing is split.</strong> Code is Apache-2.0. The benchmark, evaluation outputs, and derived data are CC-BY-4.0, with one carve-out: the verbatim evidence quotes belong to their source publications and are not ours to relicense. Read <code>LICENSE-DATA</code> before redistributing.</p>\n\n<p>Compute sites are recorded under anonymised identifiers (<code>site-a</code>, <code>site-b</code>, <code>site-c</code>) throughout the run registry and recorded metadata; <code>docs/COMPUTE_SITES.md</code> maps them to the real resources.</p>",
+  "notes": "Supplement to a manuscript submitted to the Journal of Big Data. Cite the concept DOI, which always resolves to the newest version of this archive."
+}

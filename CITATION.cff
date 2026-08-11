@@ -1,0 +1,55 @@
+cff-version: 1.2.0
+message: >-
+  If you use NetBench, the HPN-QA benchmark, or the analysis code in this
+  repository, please cite it using the metadata below. A journal article
+  describing the study is under review; this file will be updated with its
+  citation once it is published.
+title: >-
+  NetBench: benchmark, framework, and analysis code for a controlled study of
+  LLM domain adaptation in high-performance networking
+abstract: >-
+  NetBench measures how domain data becomes model competence. It compares four
+  adaptation mechanisms - continued pre-training, supervised fine-tuning, LoRA,
+  and retrieval-augmented generation - across eight open-weight models and three
+  frontier APIs, using HPN-QA v5.0, a 233-question expert-audited benchmark
+  generated from open-access high-performance networking literature. The
+  repository holds the benchmark, the pipeline that produced it, the adaptation
+  and evaluation experiments, the judged model outputs of record, and the
+  analysis code that regenerates every reported number.
+type: software
+version: v1.0.0
+date-released: 2026-08-10
+license: Apache-2.0
+repository-code: https://github.com/NiebHasan077/NetBench
+url: https://github.com/NiebHasan077/NetBench
+authors:
+  - given-names: Nieb Hasan
+    family-names: Neom
+    orcid: https://orcid.org/0000-0002-6765-8873
+    affiliation: >-
+      Department of Computer Science, Missouri University of Science and
+      Technology, Rolla, MO, USA
+  - given-names: Rasman Mubtasim
+    family-names: Swargo
+    orcid: https://orcid.org/0009-0002-2725-5161
+    affiliation: >-
+      Department of Computer Science, Missouri University of Science and
+      Technology, Rolla, MO, USA
+  - given-names: Md
+    family-names: Arifuzzaman
+    orcid: https://orcid.org/0000-0003-3056-8636
+    affiliation: >-
+      Department of Computer Science, Missouri University of Science and
+      Technology, Rolla, MO, USA
+keywords:
+  - large language models
+  - domain adaptation
+  - continued pre-training
+  - supervised fine-tuning
+  - LoRA
+  - retrieval-augmented generation
+  - LLM-as-a-judge
+  - benchmark
+  - reproducibility
+  - data-centric AI
+  - high-performance networking

@@ -88,6 +88,7 @@ rubric, and output schema, so their results are directly comparable.
 | [REPRODUCIBILITY.md](REPRODUCIBILITY.md) | evidence policy and what a run's snapshot means |
 | [ARTIFACTS.md](ARTIFACTS.md) · [DATA_PROVENANCE.md](DATA_PROVENANCE.md) | large-artifact handling and the generation chain |
 | [docs/SYSTEM_OVERVIEW.md](docs/SYSTEM_OVERVIEW.md) · [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | how the system fits together |
+| [docs/COMPUTE_SITES.md](docs/COMPUTE_SITES.md) | what `site-a`, `site-b`, and `site-c` are, and what that means for the cost numbers |
 | [experiment_registry/](experiment_registry/) | per-run index: snapshot tag, evidence status, limitations |
 | [analysis/outputs/](analysis/outputs/) | the aggregated results of record, and the generated tables and figures |
 
@@ -116,3 +117,17 @@ Code is **Apache-2.0** ([LICENSE](LICENSE)). The benchmark, evaluation outputs,
 and derived data are **CC-BY-4.0** — with one carve-out: the verbatim evidence
 quotes belong to their source publications and are not ours to relicense. Read
 **[LICENSE-DATA](LICENSE-DATA)** before redistributing.
+
+## Citation
+
+Nieb Hasan Neom, Rasman Mubtasim Swargo, and Md Arifuzzaman, Department of
+Computer Science, Missouri University of Science and Technology.
+
+Machine-readable metadata is in [CITATION.cff](CITATION.cff); GitHub renders it
+under *Cite this repository*. Each release is archived on Zenodo with a DOI —
+**cite the concept DOI**, which always resolves to the newest version, rather
+than a single version's DOI.
+
+A journal article describing the study is under review. This section and
+`CITATION.cff` will be updated with its citation on publication; until then,
+citing the archive is the stable reference.
