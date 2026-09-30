@@ -1,0 +1,24 @@
+run,n,recall_at_4_lower,recall_at_4_upper
+hpn_answers_RAG-gemma-3-12b-cpt-full-sft_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-gemma-3-12b-instruct-lora-cpt-then-sft-merged_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-gemma-3-12b-it_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-gemma-3-1b-Instruct_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-gemma-3-1b-cpt-full-sft_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-gemma-3-1b-instruct-lora-cpt-then-sft-merged_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-gemma-3-27b-instruct-lora-cpt-then-sft-merged_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-gemma-3-27b-it_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-Llama-3.1-8B-Instruct_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-Llama-3.1-8B-cpt-full-sft_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-Llama-3.1-8B-instruct-lora-cpt-then-sft-merged_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-Llama-3.2-1B-Instruct_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-Llama-3.2-1B-cpt-full-sft_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-Llama-3.2-1B-instruct-lora-cpt-then-sft-merged_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-Qwen3.5-27B-instruct-lora-cpt-then-sft-merged_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-Qwen3.5-27B_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-Qwen3.5-2B-cpt-full-sft_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-Qwen3.5-2B-instruct-lora-cpt-then-sft-merged_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-Qwen3.5-2B_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-Qwen3.5-9B-cpt-full-sft_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-Qwen3.5-9B-instruct-lora-cpt-then-sft-merged_v5.0.xlsx,233.0,0.794,0.8798
+hpn_answers_RAG-Qwen3.5-9B_v5.0.xlsx,233.0,0.794,0.8798
+EXACT (retrieval rerun),233.0,0.8755,0.8755

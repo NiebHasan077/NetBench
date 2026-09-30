@@ -1,0 +1,9 @@
+base_model,n_gpus,gpu_name,gpu_memory_gb,shard_load_mb,shard_peak_mb,params_b,bf16_weights_gb,aggregate_gpu_memory_gb,shard_load_gb,shard_peak_gb,implied_shards,weights_total_gb
+gemma-3-1b,4,NVIDIA H100,93.1,0,4833,1.0,2.0,372.0,0.0,4.7,,
+llama-3.2-1b,2,NVIDIA RTX A6000,47.4,1262,6087,1.24,2.5,95.0,1.2,5.9,2.1,2.4
+qwen3.5-2b,2,NVIDIA RTX A6000,47.4,1791,6633,2.0,4.0,95.0,1.7,6.5,2.4,3.4
+llama-3.1-8b,4,Tesla V100-SXM2-32GB,31.7,3306,16653,8.0,16.0,127.0,3.2,16.3,5.0,12.8
+qwen3.5-9b,2,NVIDIA RTX A6000,47.4,7081,11778,9.0,18.0,95.0,6.9,11.5,2.6,13.8
+gemma-3-12b,4,NVIDIA H100,93.1,5943,10550,12.0,24.0,372.0,5.8,10.3,4.1,23.2
+gemma-3-27b,4,NVIDIA H100 80GB HBM3,79.2,13387,17858,27.0,54.0,317.0,13.1,17.4,4.1,52.4
+qwen3.5-27b,4,NVIDIA H100 80GB HBM3,79.2,11474,16242,27.0,54.0,317.0,11.2,15.9,4.8,44.8

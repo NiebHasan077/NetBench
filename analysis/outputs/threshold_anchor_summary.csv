@@ -1,0 +1,6 @@
+quantity,n,mean,sd,p95_abs
+"level offset (second - primary), per system",63,0.2075,0.1809,0.4043
+paired-difference shift when the grader changes,72,0.0567,0.1416,0.2849
+"human consensus vs judge, P1 vs P4",25,0.056,,0.056
+"human consensus vs judge, P1 vs P6",25,0.386,,0.386
+"human consensus vs judge, P4 vs P6",25,0.33,,0.33

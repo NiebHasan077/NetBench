@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: >-
   If you use NetBench, the HPN-QA benchmark, or the analysis code in this
-  repository, please cite it using the metadata below. A journal article
-  describing the study is under review; this file will be updated with its
-  citation once it is published.
+  repository, please cite it using the metadata below. A paper describing
+  the study is in preparation; this file will be updated with its citation
+  once it is published.
 title: >-
   NetBench: benchmark, framework, and analysis code for a controlled study of
   LLM domain adaptation in high-performance networking
@@ -17,8 +17,8 @@ abstract: >-
   and evaluation experiments, the judged model outputs of record, and the
   analysis code that regenerates every reported number.
 type: software
-version: v1.0.0
-date-released: 2026-08-11
+version: v1.1.0
+date-released: 2026-09-30
 license: Apache-2.0
 repository-code: https://github.com/NiebHasan077/NetBench
 url: https://github.com/NiebHasan077/NetBench

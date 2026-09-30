@@ -20,7 +20,7 @@ TMP    := .verify
 PY := $(if $(findstring /,$(PYTHON)),$(abspath $(PYTHON)),$(PYTHON))
 
 .DEFAULT_GOAL := help
-.PHONY: help setup results assets reproduce verify audit clean
+.PHONY: help setup results assets reproduce verify audit audit-sft clean
 
 help:
 	@echo "NetBench targets:"
@@ -30,6 +30,7 @@ help:
 	@echo "  verify     assert the regenerated outputs match the committed ones"
 	@echo "  reproduce  results + assets + verify   <- the one that matters"
 	@echo "  audit      corpus-dependent audits; needs CORPUS=/path/to/corpus.json"
+	@echo "  audit-sft  SFT-vs-benchmark overlap audit; needs SFT=/path/to/v3_run_plus_json"
 
 setup:
 	python3 -m venv analysis/.venv
@@ -59,6 +60,26 @@ results:
 	    --overall_field overall_formula --output_dir ../$(OUT)
 	$(PY) analysis/judge_vendor_overlap.py
 	$(PY) analysis/human_eval/human_judge_agreement.py
+# Added in v1.1.0: source-paper clustering, API equivalence tests, the scale
+# trend, the practical-threshold anchor, serving cost, and the contamination
+# check. The first four read scores_long.csv and so must follow
+# aggregate_scores; threshold_anchor and deployment_cost read the judged
+# workbooks and profiling JSONs directly.
+	$(PY) analysis/clustered_uncertainty.py
+	$(PY) analysis/equivalence_tests.py
+	$(PY) analysis/scale_trend.py
+	$(PY) analysis/threshold_anchor.py
+	$(PY) analysis/deployment_cost.py
+	$(PY) analysis/contamination.py
+# Per-system CIs on the composite (reads scores_long.csv) and intervals for
+# the two-judge agreement (reads the judged workbooks through
+# judge_agreement.py's loader).
+	$(PY) analysis/system_cis.py
+	$(PY) analysis/judge_agreement_ci.py
+# analysis/retrieval_recall.py is deliberately NOT here: it needs the RAG
+# chunk cache (135 MB), which ARTIFACTS.md excludes from distribution, so it
+# cannot run on a fresh clone. Its CSVs are committed like every other number
+# and regenerate only where the index exists.
 
 # The paper's tables and figures, emitted next to the CSVs they came from.
 assets:
@@ -89,6 +110,12 @@ audit:
 	@test -n "$(CORPUS)" || { echo "usage: make audit CORPUS=/path/to/research_corpus_v3.json"; exit 2; }
 	$(PY) tools/audit_evidence_quotes.py --corpus $(CORPUS)
 	$(PY) tools/annotate_benchmark_release.py --dry-run
+
+# The final SFT records are not redistributed either; the committed
+# sft_overlap_audit.csv is the record, re-runnable only where a copy exists.
+audit-sft:
+	@test -n "$(SFT)" || { echo "usage: make audit-sft SFT=/path/to/Instruct-FTD/v3_run_plus_json"; exit 2; }
+	$(PY) tools/audit_sft_overlap.py --sft $(SFT)
 
 clean:
 	rm -rf $(TMP) $(OUT)/tables $(OUT)/figures

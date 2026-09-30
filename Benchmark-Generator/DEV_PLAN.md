@@ -453,6 +453,12 @@ whole system roster rather than a 100-question sample:
 systems) and `analysis/human_eval/` (two domain experts, blind, same rubric).
 Stage 09 in this pipeline became `stage_09_enrich`, an offline provenance join.
 
+**Correction (2026-09-28, per the authors):** the human-grader and
+GPT-4o/Gemini 2.5 Pro comparison of the critic *was* carried out, outside the
+stage scripts. What did not happen is the stage as specified above
+(`stage_09_judge.py`, `reports/judge_calibration.md`), which is why those boxes
+stay unticked. Its results are not in this repository.
+
 ---
 
 ## Phase 10 — Wire into existing evaluator   `[x] done`

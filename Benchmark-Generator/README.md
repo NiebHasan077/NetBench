@@ -4,12 +4,19 @@ Automated pipeline that turns the 2371-paper HPN research corpus into a
 **242-question HPN-skill benchmark** for evaluating locally-trained LLMs.
 
 Generation runs entirely on local Ollama models. Paid APIs (GPT-4o,
-Gemini 2.5 Pro) are reserved for Phase 9 inter-judge calibration only.
+Gemini 2.5 Pro) were used only for the Phase 9 critic calibration against a
+human grader, which ran outside the stage scripts (see Status).
 
 ## Status
 
-**Phases 0-8 complete.** Phase 9 (paid-API judge calibration) is the only
-remaining stage and is optional for v1 release.
+**Phases 0-8 complete; Phase 9 done outside the pipeline.** The critic's
+grading was compared against a human grader and two API judges (GPT-4o,
+Gemini 2.5 Pro), but not as a stage script: there is no `stage_09_judge.py`,
+and the results are not in this repository. Stage 09 in the pipeline is
+`stage_09_enrich`, an offline provenance join. Judge validation for the
+evaluation itself is separate and lives downstream: two independent judges
+across all 63 systems (`NetBench-LLM/evaluation/judge_agreement.py`) and a
+blind two-expert human study (`analysis/human_eval/`).
 
 | Phase | Stage | Output | Status |
 |---|---|---|---|
@@ -24,7 +31,7 @@ remaining stage and is optional for v1 release.
 | 6 | Validation gauntlet | 366 accepted (29.2%) | done |
 | 7 | Difficulty calibration | 262 accepted (71.6%) | done |
 | 8 | Splits + manifest | **242 question benchmark** | done |
-| 9 | Judge calibration | dual-API kappa | not started |
+| 9 | Judge calibration | dual-API kappa | done outside the pipeline |
 
 Detailed phase notes, decision log, and daily log: [DEV_PLAN.md](DEV_PLAN.md).
 

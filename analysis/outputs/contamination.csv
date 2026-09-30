@@ -1,0 +1,9 @@
+analysis,series,rho,rho_lo,rho_hi,slope_per_decade,slope_lo,slope_hi,cutoff,n_before,n_after,step,step_lo,step_hi,p_raw,p_bh
+gradient,closed-book only (confounded),0.035,-0.1,0.171,0.041,-0.034,0.147,,,,,,,,
+gradient,open-book only (control),0.053,-0.078,0.183,0.03,-0.035,0.124,,,,,,,,
+gradient,closed - open (the test),-0.031,-0.163,0.103,0.012,-0.089,0.114,,,,,,,,
+discontinuity,,,,,,,,2020.0,148.0,75.0,0.082,-0.094,0.263,0.3746,0.3746
+discontinuity,,,,,,,,2021.0,157.0,66.0,0.171,-0.001,0.351,0.0502,0.1433
+discontinuity,,,,,,,,2022.0,169.0,54.0,0.168,-0.022,0.361,0.086,0.1433
+discontinuity,,,,,,,,2023.0,189.0,34.0,0.205,-0.024,0.441,0.0754,0.1433
+discontinuity,,,,,,,,2024.0,208.0,15.0,0.093,-0.133,0.269,0.3728,0.3746

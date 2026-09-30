@@ -1,0 +1,2 @@
+n,depth,recall_at_1,recall_at_4,recall_at_10,recall_at_20,mrr_at_20,median_gold_rank,n_scored,n_excluded_unmatchable,evidence_recall_at_1,evidence_recall_at_4,evidence_recall_at_10,evidence_recall_at_20,evidence_mrr_at_20,median_evidence_rank
+233.0,20.0,0.7081545064377682,0.8755364806866953,0.9098712446351931,0.9399141630901288,0.785121804756998,1.0,209.0,24.0,0.5119617224880383,0.7655502392344498,0.8181818181818182,0.8373205741626795,0.6273656433943516,1.0

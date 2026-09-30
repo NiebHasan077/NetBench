@@ -60,7 +60,7 @@ python utils/download_models.py --model qwen-2b
 ### 3. Continual Pre-training (CPT)
 ```bash
 python training/prepare_data.py \
-    --input_file data/raw/research_corpus_new.json \
+    --input_file data/raw/research_corpus_v3.json \
     --model_name Qwen/Qwen3.5-2B-Base \
     --output_dir data/processed/qwen3.5-2b
 

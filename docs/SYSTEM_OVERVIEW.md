@@ -109,6 +109,12 @@ large tier (above).
 - **Judge:** `gpt-5.1`, scoring every answer on **Correctness, Completeness,
   Clarity, Conciseness** (1–5), with an `overall` mean. The judge family is
   deliberately distinct from the generated/adapted models (cross-vendor).
+- **Judge validation:** a second judge (`gemini-3.5-flash`) scored every answer
+  independently (model-ranking Spearman ρ = 0.987), and two domain experts
+  (authors) blind-scored 125 responses (5 systems × 25 stratified questions)
+  under the judge's rubric; their system ranking matches GPT-5.1's exactly
+  (Kendall τ = 1.0). Reports: `analysis/outputs/HPN_JUDGE_AGREEMENT_*`; study
+  design: `analysis/human_eval/README.md`.
 - **Coverage:** all 242 questions × 63 model-variants were judged
   (8 models × their variant sets + 3 API baselines); zero missing cells.
 - **"Thinking" caveat:** some instruct checkpoints emit chain-of-thought traces
@@ -160,9 +166,8 @@ Paired Wilcoxon + bootstrap CIs on per-question `overall`:
 ## Scope and limitations
 
 - **Not implemented (future work):** LLM-as-optimizer / agentic networking
-  optimization; multi-seed variance; human-judge validation of the GPT-5.1
-  scores; an API-baseline + RAG (open-book) condition for a like-for-like
-  frontier comparison.
+  optimization; multi-seed variance; an API-baseline + RAG (open-book)
+  condition for a like-for-like frontier comparison.
 - **RAG evaluation** is folded into the per-model GPT-5.1 reports; the standalone
   `NetBench-RAG/outputs` reports are stale (older v4 / different judges) and are
   being reconciled.

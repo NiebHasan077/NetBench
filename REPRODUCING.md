@@ -27,7 +27,7 @@ make reproduce   # regenerate everything, then verify it matches
 ```
 
 `make reproduce` exits non-zero if anything comes back different. It runs the
-nine analysis steps in order, then compares:
+seventeen analysis steps in order, then compares:
 
 - **CSV, Markdown, LaTeX** — byte for byte, no normalisation.
 - **XLSX and PDF** — by content, ignoring the creation timestamp each format
@@ -37,6 +37,13 @@ nine analysis steps in order, then compares:
 
 This runs on every push (`.github/workflows/reproduce.yml`), so the claim is
 checked by something other than the authors' laptop.
+
+**Two committed records are outside the gate** because their inputs are not
+redistributed (`ARTIFACTS.md`): the retrieval-audit CSVs
+(`analysis/retrieval_recall.py`, which needs the RAG chunk cache) and
+`analysis/outputs/sft_overlap_audit.csv` (`make audit-sft`, which needs the
+final instruction-tuning records). Both scripts ship and re-run wherever those
+inputs exist.
 
 **Where the chain starts.** Tier 1 consumes the *committed judged workbooks*
 under `NetBench-LLM/outputs/` and `NetBench-RAG/outputs/`, plus the merged

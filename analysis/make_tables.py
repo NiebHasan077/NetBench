@@ -25,13 +25,22 @@ import argparse
 import glob
 import json
 import os
+import re
 import statistics
 import openpyxl
 import pandas as pd
 
 OUT = "paper/tables"
-PAPER = "ieee"              # target paper; "eacl" narrows layouts for ACL columns
-SUBS: dict[str, str] = {}   # caption cross-reference rewrites (set for --paper eacl)
+# Two independent axes. They used to be one, which worked while there were only
+# two targets; jbd wants eacl's content with neither paper's column geometry.
+#   PAPER   content profile: which captions, which metric, which tables exist.
+#           "ieee" or "eacl" only -- jbd sets it to "eacl" because their content
+#           is identical, including the corrected source-paper count.
+#   LAYOUT  column geometry: "ieee", "eacl", or "jbd". Gate anything that exists
+#           because a column is narrow or wide on THIS, never on PAPER.
+PAPER = "ieee"
+LAYOUT = "ieee"
+SUBS: dict[str, str] = {}   # caption cross-reference rewrites (set for --paper eacl/jbd)
 # Score metric (docs/JUDGE_OVERALL_AUDIT.md): ieee keeps the judge-reported
 # overall; eacl switches both to the deterministic rubric aggregate.
 OV = "overall"              # score column in summary/scores CSVs
@@ -55,9 +64,384 @@ def cell(v, prov):
     return f"\\provisional{{{s}}}" if prov else s
 
 
+def single_column_floats(text):
+    """Rewrite two-column float syntax for the single-column Springer class.
+
+    Two things break there, both found by the first Overleaf compile:
+      * table*/figure* are twocolumn-only. sn-jnl is single column, so a
+        starred float raises "Not in outer par mode" and kills the build.
+      * [H] needs the float package, which the Springer preamble deliberately
+        does not load (the manual discourages forced placement). sn-jnl wraps
+        every table in threeparttable (sn-jnl.cls:1332), so an unrecognised
+        specifier unravels that nesting into a confusing "Extra }" instead of
+        a clear error.
+    Applied at the single point every table passes through, so no emitter can
+    forget it.
+
+    Placement is normalised to [htbp] here, and `p` is the load-bearing letter.
+    Measured on the compiled PDFs: tab:sig was 519pt tall and tab:sigrag 539pt,
+    against sn-jnl's 552pt text block. (Those two numbers are pre-caption-split;
+    both floats later grew past 552pt, which is what TALL_JBD_TABLES fixes.) Read the class, not the LaTeX defaults:
+    sn-jnl.cls:356 sets \topfraction{.921}, so the [t] ceiling is 508pt, and
+    sn-jnl.cls:364 sets \floatpagefraction{.887}, so a float page needs 490pt.
+    Both tables sit in the 11pt-wide window above 508 and below 552: too tall
+    for any top slot, tall enough to fill a float page. Since LaTeX emits
+    floats of one class strictly in order, the eight shorter tables queued
+    behind them could not be placed either, and all ten fell through to
+    end-of-document float pages -- tab:sig printed on p77 having been first
+    cited on p37, tab:bycat on p79 for a p23 citation, and the same cascade hit
+    the appendix (tab:stratdiff and friends, 497-539pt).
+    fit_narrow_column already shrank these to fit ON a page, but fitting a page
+    is not fitting a top, and only `p` asks for a float page. Do not narrow
+    this back to [t]: the 2026-08-12 build confirms the repair, with all 22
+    generated tables landing on a page that cites them.
+    """
+    text = re.sub(r"\\(begin|end)\{(table|figure)\*\}", r"\\\1{\2}", text)
+    text = re.sub(r"(\\begin\{(?:table|figure)\})(?:\[[^\]]*\])?", r"\1[htbp]", text)
+    return fit_narrow_column(text)
+
+
+# The paired-contrast tables (significance*, significance_supp) carry a
+# Description column that is a deterministic function of Contrast: five distinct
+# strings repeated over 37 rows. Measured against sn-jnl's 372pt block with real
+# Computer Modern advances, it costs 31% of the measure in tab:sig and 39% in
+# tab:sigrag -- which is what put the latter at 108% and over the right margin.
+# Dropping it for jbd leaves them at 61% of the measure at the class's own 8bp
+# table size, so they end up both narrower and larger-typed than the two-column
+# originals rather than needing a size cut to fit. The gloss moves to
+# the caption, read once instead of 37 times; the per-stratum matrices
+# (stratified_*) already report bare P-codes exactly this way.
+PCODE_LEGEND = (r" Variants (\S\ref{sec:setup}): P1 instruct; P2 LoRA SFT; "
+                r"P3 full SFT; P4 full CPT+SFT; P5 LoRA CPT+SFT; P6--P8 are "
+                r"P1/P4/P5 answering with retrieval.")
+# How to read a cell of the stratified_* matrices. Shared because jbd repeats it
+# verbatim as the tablenotes legend of all four (JBD_CAPTION), and a second copy
+# would drift.
+STRAT_CELL_LEGEND = (r"Cell: paired mean difference $\Delta$ on overall score; "
+                     r"$^{*}$: BH-significant; \textbf{bold}: also practically "
+                     r"significant; --: stratum skipped ($n<10$). Full "
+                     r"per-stratum statistics (CIs, $p$, $d_z$) ship in the "
+                     r"released CSV.")
+HDR_CONTRAST = r"Model & Contrast & Description & $\Delta$ [95\% CI] & $p_{BH}$ & $d_z$ & PS"
+HDR_CONTRAST_JBD = r"Model & Contrast & $\Delta$ [95\% CI] & $p_{BH}$ & $d_z$ & PS"
+
+
+def pbh_fmt(p):
+    r"""Format a BH-adjusted p-value.
+
+    "<.001" is a text-mode "<". sn-jnl leaves OT1 in force (it comments out the
+    T1 \fontenc line at :144) and OT1 maps "<" to an inverted exclamation, so
+    the first compiled PDF printed this column as "¡.001". Math mode gives
+    the real glyph under any encoding. ieee/eacl load T1 and are byte-frozen, so
+    they keep the bare form.
+    """
+    if p >= 0.001:
+        return f"{p:.3f}"
+    return r"$<$.001" if LAYOUT == "jbd" else "<.001"
+
+
+def contrast_head():
+    """(tabular spec, header cells, column count) for the paired-contrast tables."""
+    if LAYOUT == "jbd":
+        return "llrrrc", HDR_CONTRAST_JBD, 6
+    return "lllrrrc", HDR_CONTRAST, 7
+
+
+def contrast_row(r, ci, pbh, ps):
+    cells = [str(r.base_model), str(r.contrast)]
+    if LAYOUT != "jbd":
+        cells.append(str(r.description))
+    cells += [ci, pbh, f"{r.cohens_dz:+.2f}", ps]
+    return " & ".join(cells) + r" \\"
+
+
+def fit_narrow_column(text):
+    r"""Refit a float authored for a wide two-column span to sn-jnl's 31pc column.
+
+    Two independent overflows, both measured against the 372pt x 552pt text
+    block (sn-jnl.cls:270) and both seen in the first compile:
+
+    Vertical. The [referee] option makes sn-jnl load setspace and \doublespacing
+    the whole document (sn-jnl.cls:125-130). That stretch is applied by
+    \@setfontsize, so it reaches tabular rows too, not just prose: rows come out
+    ~1.67x apart and long tables run off the bottom of the page. The 73-row
+    stratified tables measured 1.76x the text height that way. \baselinestretch
+    is the kernel hook setspace itself sets, so assigning it directly needs no
+    package and keeps working if [referee] is dropped for the camera-ready; it
+    must precede the float's size command, which is what re-selects the font and
+    applies the new stretch. Scoped to the float, so prose stays double-spaced
+    for the reviewers.
+
+    Horizontal. \tabcolsep is sized for a 7in measure; at 372pt the 7- to
+    12-column tables spend 72-132pt of the line on gutters alone and run past
+    the right margin into the lineno numbers. 4pt recovers 4pt per gutter. The
+    paired-contrast tables need more than a gutter trim and drop a whole
+    redundant column instead -- see PCODE_LEGEND.
+
+    Size. sn-jnl inverts the standard ladder: \footnotesize is 7pt and
+    \scriptsize is 9pt (sn-jnl.cls:187-198), so the two-column targets' size
+    commands mean the opposite of what they read as -- the tables inherited from
+    ieee/eacl were landing at the smallest non-tiny size the class offers. Both
+    are dropped for an explicit size, which is also the only form that cannot be
+    inverted by a class. 9bp/11bp is \small's pairing and one point above the
+    \tablebodyfont = 8bp the class picks itself (sn-jnl.cls:1216, applied by the
+    redefined table environment at :1332); the extra point is spent because the
+    measurements leave room for it and the reviewers' copy is double-spaced
+    around these tables, which makes small type read smaller still. Worst case
+    over the 23 jbd tables is 85% of the 372pt measure and 81% of the 552pt
+    height, both on the 37-row matrices. Written out rather than calling
+    \tablebodyfont, which runs before the \baselinestretch reset above and would
+    keep the doubled leading.
+    """
+    return re.sub(r"(\\begin\{table\}(?:\[[^\]]*\])?\\centering)"
+                  r"(?:\\footnotesize|\\scriptsize)?",
+                  r"\1\\renewcommand{\\baselinestretch}{1}"
+                  r"\\setlength{\\tabcolsep}{4pt}"
+                  r"\\fontsize{9bp}{11bp}\\selectfont", text)
+
+
+# Springer requires a table *title* of at most 15 words above the table and,
+# separately, a legend of at most 300 words underneath it. Thirty-six of the
+# paper's 38 captions were single blocks of 40 words on average, written for
+# venues that have no such rule, so every one had to be split. This is a split
+# and not a truncation: no wording is dropped, it just moves below the tabular.
+#
+# The titles are written out rather than derived by cutting the first sentence.
+# A mechanical cut produces titles that read as fragments and that silently
+# change whenever an emitter's caption is reworded; these are keyed to the
+# label, so what a reader sees above each table is deliberate.
+#
+# Gated on LAYOUT == "jbd" at the single point every table passes through. ieee
+# and eacl keep the one-block caption their emitters build and stay
+# byte-identical -- nothing below is reachable from those targets.
+#
+# A value of None means "already within 15 words, leave it whole". A label that
+# is missing entirely raises, so a newly added table cannot quietly ship a
+# non-compliant caption.
+_L = PCODE_LEGEND.lstrip()
+JBD_CAPTION: dict[str, tuple[str, str] | None] = {
+    "tab:baselines": None,
+    "tab:bycat": (
+        r"Mean overall score by HPN skill category, closed- versus open-book",
+        r"Mean over the eight adapted models. $\Delta$: retrieval gain; "
+        r"$n$: questions in category."),
+    "tab:bydim": (
+        r"Mean judge score by quality dimension",
+        r"Scores are 1--5. Open-weight closed-book and open-book (RAG) against "
+        r"the frontier API baselines."),
+    "tab:equiv": (
+        r"Frontier comparison as an equivalence test rather than a ranking",
+        r"Each open-weight model's best variant against each API, paired over "
+        r"the same 233 questions and resampled by source paper. $\Delta$ is "
+        r"open-weight minus API. \emph{equivalent}: the difference lies inside "
+        r"the pre-registered $\pm0.25$ margin by two one-sided tests. "
+        r"\textbf{higher}/lower: distinguishable from zero and outside that "
+        r"margin. \textsuperscript{*}distinguishable from zero but inside "
+        r"it: real, yet smaller than the bar this paper sets for acting on a "
+        r"difference. No comparison is inconclusive, so the benchmark is "
+        r"adequately powered for its own margin at $n{=}233$ "
+        r"(\S\ref{sec:stats})."),
+    "tab:composition": (
+        r"Composition of the 233-item HPN-QA evaluation set",
+        r"After the expert audit of \S\ref{sec:benchmark}. Per-category counts "
+        r"and scores are in Table~\ref{tab:bycat}."),
+    "tab:cptppl": (
+        r"Effect of LoRA-CPT on domain and general perplexity",
+        r"Lower is better. $\Delta$Gen.\ is the signed change in general "
+        r"(WikiText-2) perplexity ($-$ improved, $+$ degraded)."),
+    "tab:frontier": (
+        r"Frontier baselines against each open-weight model's best variant, ranked",
+        r"Best variant in bold. Open-weight rows are open-book (retrieval), API "
+        r"rows closed-book; the difference is information access, not model "
+        r"quality (\S\ref{sec:discussion}). Full grid: Table~\ref{tab:main}."),
+    "tab:humanagree": (
+        r"Alignment between the LLM judge and the two-expert human consensus",
+        r"Two domain experts (authors) independently blind-scored all 125 "
+        r"responses (5 systems $\times$ 25 stratified questions) under the "
+        r"judge's exact rubric and information set; the human reference is "
+        r"their per-response consensus (mean). Bias is judge $-$ consensus "
+        r"(positive $=$ judge more lenient)."),
+    "tab:humancontrasts": (
+        r"Headline paired contrasts re-measured under the two-expert consensus",
+        r"The contrasts the sample was designed around, over its 25 questions, "
+        r"with the same statistics as \S\ref{sec:stats}. \emph{judge, all}: the "
+        r"primary judge's mean difference on the full 233-question benchmark."),
+    "tab:interrater": (
+        r"Inter-rater reliability between the two expert raters",
+        r"Over the same $125$ responses: Pearson $r$, quadratic-weighted "
+        r"$\kappa$ (QWK), and Krippendorff's $\alpha$ (interval). "
+        r"$\alpha$\,(+judge) adds the primary judge as a third coder; "
+        r"R1$-$R2 is the raters' mean leniency offset."),
+    "tab:judgeagree": (
+        r"Agreement between the primary judge and the second judge",
+        r"GPT-5.1 against Gemini-3.5-Flash over 14,679 paired per-question "
+        r"judgements across 63 evaluated systems."),
+    "tab:judgedev": (
+        r"Deviation of the judge-reported overall from the instructed formula",
+        r"Over all released judgements. Bias is judge $-$ formula; the "
+        r"setting-correlated sign is the drift toward the \emph{unweighted} "
+        r"dimension mean discussed in the text."),
+    "tab:main": (
+        r"Overall HPN-QA score by model and adaptation variant",
+        r"Scores are 1--5 under the GPT-5.1 judge. Closed-book P1--P5; "
+        # 12.3b removed tab:models from the jbd document but left this
+        # pointer, so the compiled PDF printed "(Table ??)". The label still
+        # exists in tables/model_variants.tex, which is why a label-existence
+        # check passed -- that file is simply no longer \input. Point at the
+        # section that gives the reason instead, which is also more use to a
+        # reader than a coverage grid was.
+        r"open-book (RAG) P6--P8. Blank cells are the 27B P4/P7 variants, "
+        r"omitted by design (\S\ref{sec:variants}). Bottom tier: frontier API baselines "
+        r"(closed-book, no adaptation; shown under P1). Paired differences "
+        r"quoted in the text are computed on unrounded per-question scores and "
+        r"can differ from differences of the rounded cells shown here by $0.01$."),
+    "tab:models": (
+        r"Evaluated open-weight models and adaptation-variant coverage",
+        r"\checkmark{}: variant run; --: P4/P7 (full-parameter CPT from base) "
+        r"disabled by design for the 27B tier (\S\ref{sec:setup}). The three "
+        r"frontier API baselines (GPT-4o, Gemini-2.5-Pro, Claude-Sonnet-4.6) "
+        r"are evaluated closed-book under the identical protocol."),
+    "tab:profiling": (
+        r"Per-model inference cost for closed-book generation",
+        r"Measured on each model's own serving configuration (GPUs column; "
+        r"fixed across that model's variants). Throughput is comparable within "
+        r"a configuration and indicative across them. VRAM is the peak "
+        r"\emph{per-GPU} allocation under the listed sharding, not a "
+        r"single-GPU footprint. Weights are recovered by summing each model's "
+        r"per-shard load allocation, which returns $77$--$97\%$ of the "
+        r"$2$-bytes-per-parameter expectation under uneven sharding, so the "
+        r"totals are lower bounds; gemma-3-1b's was logged as $0$\,MB, so its "
+        r"total is unknown rather than zero and is left blank."),
+    "tab:sig": (
+        r"Primary paired contrasts on overall score: closed-book adaptation",
+        r"The open-book and matched-RAG contrasts continue in "
+        r"Table~\ref{tab:sigrag}. $\Delta$: mean paired difference; $p_{BH}$: "
+        r"Benjamini--Hochberg-adjusted $p$-value; $d_z$: paired effect size; "
+        r"\textbf{PS}: practically significant. Test, FDR control, and "
+        r"thresholds in \S\ref{sec:stats}. " + _L),
+    "tab:sigrag": (
+        r"Primary paired contrasts on overall score: open-book and matched-model retrieval",
+        r"Continuing Table~\ref{tab:sig}. $\Delta$: mean paired difference; "
+        r"$p_{BH}$: Benjamini--Hochberg-adjusted $p$-value; $d_z$: paired "
+        r"effect size; \textbf{PS}: practically significant. Test, FDR "
+        r"control, and thresholds in \S\ref{sec:stats}. " + _L),
+    "tab:sigsupp": (
+        r"Supplementary paired contrasts outside the pre-specified primary family",
+        r"Reported to back the LoRA-vs-full-SFT comparisons with uncertainty: "
+        r"P1~vs~P2 isolates LoRA SFT alone, P2~vs~P3 compares LoRA SFT against "
+        r"full SFT. Same test, CI, effect size, and practical rule as "
+        r"Table~\ref{tab:sig}; BH correction within this supplementary family."),
+    "tab:stratcat": (
+        r"Primary contrasts re-run within each skill category: closed-book adaptation",
+        r"Categories abbreviated; full names in Table~\ref{tab:bycat}. "
+        r"Exploratory per-stratum analysis (\S\ref{sec:stats}). The remaining "
+        r"contrasts continue in Table~\ref{tab:stratcatb}. " + STRAT_CELL_LEGEND),
+    "tab:stratcatb": (
+        r"Primary contrasts re-run within each skill category: open-book and retrieval",
+        r"Categories abbreviated; full names in Table~\ref{tab:bycat}. "
+        r"Exploratory per-stratum analysis (\S\ref{sec:stats}). "
+        + STRAT_CELL_LEGEND),
+    "tab:stratdiff": (
+        r"Primary contrasts re-run within each difficulty level: closed-book adaptation",
+        r"Exploratory per-stratum analysis (\S\ref{sec:stats}). The remaining "
+        r"contrasts continue in Table~\ref{tab:stratdiffb}. " + STRAT_CELL_LEGEND),
+    "tab:stratdiffb": (
+        r"Primary contrasts re-run within each difficulty level: open-book and retrieval",
+        r"Exploratory per-stratum analysis (\S\ref{sec:stats}). "
+        + STRAT_CELL_LEGEND),
+    "tab:threshsens": (
+        r"Sensitivity of the practical-significance verdict to its thresholds",
+        r"Of the $54$ BH-significant primary contrasts, the number also "
+        r"clearing each $(|\Delta|, |d_z|)$ minimum. The paper's pre-specified "
+        r"rule ($0.25$, $0.2$; \textbf{bold}) sits on a plateau: nearby "
+        r"conventions move the count, not the conclusion."),
+    "tab:traindata": (
+        r"Adaptation-data scale across the corpus, instruction set, and benchmark",
+        r"Tokens are \texttt{cl100k\_base}. The SFT set is held disjoint from "
+        r"the benchmark's source material (\S\ref{sec:framework}); the corpus "
+        r"is by design the common source for CPT, retrieval, and benchmark "
+        r"generation (\S\ref{sec:threats}). The SFT source mix and split are "
+        r"detailed in \S\ref{sec:setup}."),
+}
+
+
+def _caption_body(text, start):
+    """Return (body, end_index) for the \\caption{...} whose brace opens at start."""
+    depth, i = 0, start
+    while i < len(text):
+        if text[i] == "{":
+            depth += 1
+        elif text[i] == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start + 1:i], i
+        i += 1
+    raise ValueError("unbalanced \\caption{")
+
+
+def split_caption(text):
+    r"""Split a one-block caption into a Springer title and a tablenotes legend.
+
+    See JBD_CAPTION for why. The class supplies \begin{tablenotes}
+    (sn-jnl.cls:1264) for exactly this, so the legend needs no package; it is
+    placed after the tabular and before \end{table}, which is where Springer
+    wants it. \raggedright is needed because the float's \centering would
+    otherwise centre the legend's lines.
+
+    A caption whose label is absent from JBD_CAPTION raises rather than passing
+    through: a new table would otherwise ship a 40-word title and only be caught
+    by a human reading the proof. The converse -- an emitter's caption reworded
+    without updating the entry here -- is not detectable this way, so the entry
+    is the source of truth for what jbd prints.
+    """
+    m = re.search(r"\\caption\{", text)
+    if not m:
+        return text
+    body, end = _caption_body(text, m.end() - 1)
+    lab = re.search(r"\\label\{([^}]+)\}", text)
+    key = lab.group(1) if lab else None
+    if key not in JBD_CAPTION:
+        raise KeyError(f"no jbd caption title recorded for {key!r}; add one to "
+                       f"JBD_CAPTION (Springer: table titles are max 15 words)")
+    entry = JBD_CAPTION[key]
+    if entry is None:
+        return text
+    title, legend = entry
+    text = text[:m.end()] + title + text[end:]
+    # tablenotes is a list environment: its content must sit inside an \item,
+    # or LaTeX raises "Something's wrong--perhaps a missing \item" for every
+    # table. Non-fatal under nonstopmode, which is why it went unseen.
+    notes = ("\\begin{tablenotes}\\raggedright\n\\item[]" + legend
+             + "\n\\end{tablenotes}\n")
+    i = text.rindex(r"\end{table}")
+    return text[:i] + notes + text[i:]
+
+
+# The six 37-row matrices outgrew fit_narrow_column's 9bp/11bp sizing. That
+# sizing was chosen against a measurement of tab:sigrag at 539pt (see
+# normalise_float), which the Springer caption split then invalidated: moving a
+# 300-word legend below the rule added lines to every one of these floats, and
+# the first local compile reported tab:sigrag at 572pt and tab:stratdiffb at
+# 562pt against sn-jnl's 552pt text block -- "Float too large for page", which
+# no page can hold. 8bp on 10bp leading is the class's own \tablebodyfont size
+# (sn-jnl.cls:1216) and brings both back under the ceiling.
+#
+# Applied to all six, not just the two that overflowed: they print as adjacent
+# pairs (sig/sigrag, stratdiff/stratdiffb, stratcat/stratcatb) and a type-size
+# change in one half of a pair is visible on the page.
+TALL_JBD_TABLES = {"significance.tex", "significance_rag.tex",
+                   "stratified_difficulty.tex", "stratified_difficulty_b.tex",
+                   "stratified_category.tex", "stratified_category_b.tex"}
+
+
 def write(name, text):
     for old, new in SUBS.items():
         text = text.replace(old, new)
+    if LAYOUT == "jbd":
+        text = single_column_floats(text)
+        if name in TALL_JBD_TABLES:
+            text = text.replace(r"\fontsize{9bp}{11bp}", r"\fontsize{8bp}{10bp}")
+        text = split_caption(text)
     os.makedirs(OUT, exist_ok=True)
     open(os.path.join(OUT, name), "w").write(text)
     print("wrote", os.path.join(OUT, name))
@@ -142,21 +526,69 @@ def frontier(summ):
     best["kind"] = "open"
     rows = pd.concat([api, best])[["label", "kind", OV]].sort_values(OV, ascending=False)
 
-    L = [r"\begin{table}[t]\centering\footnotesize",
-         r"\begin{tabular}{@{}llr@{}}", r"\toprule",
-         r"System & & Overall \\", r"\midrule"]
+    cap = (r"\caption{Frontier baselines vs.\ each open-weight model's best "
+           r"variant (bold), ranked. Open-weight rows are open-book (retrieval), "
+           r"API rows closed-book---information access, not model quality "
+           r"(\S\ref{sec:discussion}). Full grid: Table~\ref{tab:main}.}"
+           "\n" r"\label{tab:frontier}")
+    head = [r"\begin{table}[t]\centering\footnotesize"]
+    # Caption above the tabular, matching every other table in the paper and
+    # Springer's house style; the eacl/ieee emission keeps the historical order.
+    if LAYOUT == "jbd":
+        head.append(cap)
+    L = head + [r"\begin{tabular}{@{}llr@{}}", r"\toprule",
+                r"System & & Overall \\", r"\midrule"]
     for _, r in rows.iterrows():
         name = r.label.replace("_", r"\_")
         if r.kind == "open":
             name = r"\textbf{" + name + "}"
         L.append(f"{name} & {r.kind} & {r[OV]:.2f} " + r"\\")
-    L += [r"\bottomrule", r"\end{tabular}",
-          r"\caption{Frontier baselines vs.\ each open-weight model's best variant "
-          r"(bold), ranked. Open-weight rows are open-book (retrieval), API rows "
-          r"closed-book---information access, not model quality "
-          r"(\S\ref{sec:discussion}). Full grid: Table~\ref{tab:main}.}",
-         r"\label{tab:frontier}", r"\end{table}"]
+    L += [r"\bottomrule", r"\end{tabular}"]
+    if LAYOUT != "jbd":
+        L.append(cap)
+    L.append(r"\end{table}")
     write("frontier.tex", "\n".join(L) + "\n")
+
+
+def equivalence(path):
+    """R1/R6 (Phase 12), jbd-only: the frontier comparison as a test rather than
+    a ranking. tab:frontier orders point estimates, which cannot establish
+    parity -- and "not significantly different" is not "equivalent". This
+    reports both decisions TOST produces: distinguishable from zero, and inside
+    the pre-registered +-0.25 margin. Gated on LAYOUT so the frozen eacl tree
+    and the dormant ieee tree cannot move (decision 0.7)."""
+    d = pd.read_csv(path)
+    short = {"claude-sonnet-4-6": "Claude-Sonnet-4.6",
+             "gemini-2.5-pro": "Gemini-2.5-Pro", "gpt-4o": "GPT-4o"}
+    mark = {"equivalent": r"equivalent",
+            "meaningfully higher": r"\textbf{higher}",
+            "meaningfully lower": r"lower",
+            "higher, but below the practical margin": r"higher\textsuperscript{*}",
+            "lower, but below the practical margin": r"lower\textsuperscript{*}",
+            "inconclusive": r"inconclusive"}
+    rows = []
+    for _, r in d.iterrows():
+        rows.append(f"{r.open_system} & {short.get(r.api, r.api)} & "
+                    f"{r.mean_diff:+.2f} & [{r.ci90_lo:+.2f},\\,{r.ci90_hi:+.2f}] & "
+                    f"{mark.get(r.verdict, r.verdict)} \\\\")
+    cap = (r"\caption{Frontier comparison as an equivalence test rather than a "
+           r"ranking. Each open-weight model's best variant against each API, "
+           r"paired over the same 233 questions and resampled by source paper. "
+           r"$\Delta$ is open-weight minus API. \emph{equivalent}: the "
+           r"difference lies inside the pre-registered $\pm0.25$ margin by two "
+           r"one-sided tests. \textbf{higher}/lower: distinguishable from zero "
+           r"and outside that margin. \textsuperscript{*}distinguishable from "
+           r"zero but inside it---real, yet smaller than the bar this paper "
+           r"sets for acting on a difference. No comparison is inconclusive, so "
+           r"the benchmark is adequately powered for its own margin at "
+           r"$n{=}233$ (\S\ref{sec:stats}).}" "\n" r"\label{tab:equiv}")
+    text = ("\n".join([r"\begin{table}[t]\centering\footnotesize", cap,
+                       r"\setlength{\tabcolsep}{4pt}",
+                       r"\begin{tabular}{@{}llrrl@{}}", r"\toprule",
+                       r"Open-weight system & vs.\ API & $\Delta$ & 90\% CI & Verdict \\",
+                       r"\midrule"] + rows
+                      + [r"\bottomrule", r"\end{tabular}", r"\end{table}", ""]))
+    write("equivalence.tex", text)
 
 
 def significance(sig):
@@ -172,25 +604,26 @@ def significance(sig):
     # (its missing gloss is deferred to the main-branch sweep).
     pbh_def = (r"$p_{BH}$: Benjamini--Hochberg-adjusted $p$-value; "
                if PAPER == "eacl" else "")
+    legend = PCODE_LEGEND if LAYOUT == "jbd" else ""
     cap_tail = (r" $\Delta$: mean paired difference; " + pbh_def +
                 r"$d_z$: paired effect "
                 r"size; \textbf{PS}: practically significant. Test, FDR control, and thresholds "
-                r"in \S\ref{sec:stats}." + prov_note + r"}")
+                r"in \S\ref{sec:stats}." + prov_note + legend + r"}")
+    spec, hdr, ncol = contrast_head()
 
     def emit(fname, label, caption, groups):
         L = [r"\begin{table*}[t]\centering\footnotesize", caption, label,
-             r"\begin{tabular}{lllrrrc}", r"\toprule",
-             r"Model & Contrast & Description & $\Delta$ [95\% CI] & $p_{BH}$ & $d_z$ & PS \\"]
+             r"\begin{tabular}{" + spec + "}", r"\toprule", hdr + r" \\"]
         for g in groups:
             sub = s[s.group == g]
             if sub.empty:
                 continue
-            L.append(r"\midrule \multicolumn{7}{l}{\textit{" + gl[g] + r"}} \\ \midrule")
+            L.append(r"\midrule \multicolumn{" + str(ncol) + r"}{l}{\textit{" + gl[g] + r"}} \\ \midrule")
             for _, r in sub.iterrows():
                 ps = r"\checkmark" if r.practically_sig else ""
                 ci = f"{r.mean_diff:+.2f} [{r.ci95_lo:+.2f},{r.ci95_hi:+.2f}]"
-                pbh = "<.001" if r.p_bh < 0.001 else f"{r.p_bh:.3f}"
-                L.append(f"{r.base_model} & {r.contrast} & {r.description} & {ci} & {pbh} & {r.cohens_dz:+.2f} & {ps} " + r"\\")
+                pbh = pbh_fmt(r.p_bh)
+                L.append(contrast_row(r, ci, pbh, ps))
         L += [r"\bottomrule", r"\end{tabular}", r"\end{table*}"]
         write(fname, "\n".join(L) + "\n")
 
@@ -249,6 +682,17 @@ def gpu_config():
 def profiling():
     num = {"gemma-3-1b": 1.0, "llama-3.2-1b": 1.2, "qwen3.5-2b": 2, "llama-3.1-8b": 8,
            "qwen3.5-9b": 9, "gemma-3-12b": 12, "gemma-3-27b": 27, "qwen3.5-27b": 27}
+    # R7 (Phase 12), jbd only: the reviewer is right that a per-GPU peak under
+    # 4-way sharding says nothing about a model's memory need. The weight total
+    # does, so carry it beside the per-GPU peak. Recovered from the per-shard
+    # load allocation by analysis/deployment_cost.py; eacl/ieee keep the frozen
+    # six-column form (decision 0.7).
+    global WEIGHTS_GB
+    WEIGHTS_GB = {}
+    wt_path = f"{A}/deployment_footprint.csv"
+    if LAYOUT == "jbd" and os.path.exists(wt_path):
+        wf = pd.read_csv(wt_path)
+        WEIGHTS_GB = dict(zip(wf.base_model, wf.weights_total_gb))
     gpus = gpu_config()
     rows = []
     for f in sorted(glob.glob("NetBench-LLM/outputs/by_model/*/profiling_results/inference_profile_summary_*.csv")):
@@ -273,6 +717,7 @@ def profiling():
         ram = c.get("peak_cpu_ram_mb", float("nan")) if c is not None else float("nan")
         rows.append({
             "model": model, "gpus": gpus.get(model, "?"),
+            "wt_gb": WEIGHTS_GB.get(model, float("nan")),
             "gpu_tps": g.get("avg_tokens_per_second", float("nan")),
             "cpu_tps": c.get("avg_tokens_per_second", float("nan")) if c is not None else float("nan"),
             "vram_gb": (vram / 1024) if pd.notna(vram) else float("nan"),
@@ -283,24 +728,39 @@ def profiling():
         return
     pf = pd.DataFrame(rows).sort_values("model", key=lambda s: s.map(lambda m: num.get(m, 99)))
     # eacl: the ACL column is narrower than the IEEE one; scriptsize + trimmed
-    # padding keep the six columns inside it (the ieee strings stay byte-identical)
-    size = r"\scriptsize" if PAPER == "eacl" else r"\footnotesize"
+    # padding keep the six columns inside it (the ieee strings stay byte-identical).
+    # jbd is single column and wider than either, so it takes the roomier form.
+    size = r"\scriptsize" if LAYOUT == "eacl" else r"\footnotesize"
+    jbd = LAYOUT == "jbd" and bool(WEIGHTS_GB)
     tabline = (r"\setlength{\tabcolsep}{3pt}\begin{tabular}{@{}llrrrr@{}}"
-               if PAPER == "eacl" else
+               if LAYOUT == "eacl" else
+               r"\setlength{\tabcolsep}{3.2pt}\begin{tabular}{llrrrrr}" if jbd else
                r"\setlength{\tabcolsep}{3.2pt}\begin{tabular}{llrrrr}")
-    L = [r"\begin{table}[t]\centering" + size,
-         r"\caption{Per-model inference cost (closed-book generation profiles), "
-         r"measured on each model's own serving configuration (GPUs column; fixed "
-         r"across that model's variants). Throughput is comparable within a "
-         r"configuration and indicative across them. VRAM is the peak \emph{per-GPU} "
-         r"allocation under the listed sharding, not a single-GPU footprint.}",
-         r"\label{tab:profiling}", tabline, r"\toprule",
-         r"Model & GPUs & \shortstack[r]{GPU\\tok/s} & \shortstack[r]{CPU\\tok/s} & "
-         r"\shortstack[r]{VRAM/GPU\\(GB)} & \shortstack[r]{RAM\\(GB)} \\ \midrule"]
+    cap = (r"\caption{Per-model inference cost (closed-book generation profiles), "
+           r"measured on each model's own serving configuration (GPUs column; fixed "
+           r"across that model's variants). Throughput is comparable within a "
+           r"configuration and indicative across them. VRAM is the peak \emph{per-GPU} "
+           r"allocation under the listed sharding, not a single-GPU footprint.}")
+    if jbd:
+        cap = (r"\caption{Per-model inference cost (closed-book generation profiles), "
+               r"measured on each model's own serving configuration (GPUs column; fixed "
+               r"across that model's variants). Throughput is comparable within a "
+               r"configuration and indicative across them. \emph{Weights} is the model's "
+               r"total parameter footprint summed back across its shards, which is the "
+               r"binding memory constraint; \emph{VRAM/GPU} is the peak allocation on "
+               r"the device holding the first shard, so it is neither a per-model total "
+               r"nor a single-GPU footprint. No model was profiled on a single GPU "
+               r"(\S\ref{sec:threats}).}")
+    hdr = (r"Model & GPUs & \shortstack[r]{GPU\\tok/s} & \shortstack[r]{CPU\\tok/s} & "
+           + (r"\shortstack[r]{Weights\\(GB)} & " if jbd else "")
+           + r"\shortstack[r]{VRAM/GPU\\(GB)} & \shortstack[r]{RAM\\(GB)} \\ \midrule")
+    L = [r"\begin{table}[t]\centering" + size, cap,
+         r"\label{tab:profiling}", tabline, r"\toprule", hdr]
     for _, r in pf.iterrows():
         def f(x, d=2):
             return "--" if pd.isna(x) else f"{x:.{d}f}"
-        L.append(f"{r.model} & {r.gpus} & {f(r.gpu_tps)} & {f(r.cpu_tps)} & {f(r.vram_gb,1)} & {f(r.ram_gb,1)} " + r"\\")
+        wt = f"{f(r.wt_gb, 1)} & " if jbd else ""
+        L.append(f"{r.model} & {r.gpus} & {f(r.gpu_tps)} & {f(r.cpu_tps)} & {wt}{f(r.vram_gb,1)} & {f(r.ram_gb,1)} " + r"\\")
     L += [r"\bottomrule", r"\end{tabular}", r"\end{table}"]
     write("profiling.tex", "\n".join(L) + "\n")
 
@@ -315,7 +775,20 @@ def by_category(path):
     L = [r"\begin{table}[t]\centering\footnotesize",
          r"\caption{Mean overall score by HPN skill category (eight adapted models), "
          r"closed- vs.\ open-book (RAG). $\Delta$: retrieval gain; $n$: questions in category.}",
-         r"\label{tab:bycat}", r"\begin{tabular}{@{}p{0.46\columnwidth}rrrr@{}}", r"\toprule",
+         r"\label{tab:bycat}",
+         # The category column was p{0.46\columnwidth}. That silently depends on
+         # what \columnwidth is *inside* the float, and sn-jnl wraps every table
+         # in threeparttable (sn-jnl.cls:1332), where it is not the 372pt text
+         # block: labels measuring 153pt were wrapping in a box nominally 171pt
+         # wide. The wrap then hyphenated "Mixed Work-/loads" hard against the
+         # n column, which is the collision the first compile showed. An
+         # explicit width measured against the real text block removes the
+         # dependency. 180pt clears the longest label (Bottleneck Diagnosis and
+         # End-to-End Reasoning, 171.8pt at 9bp) and leaves the table at ~76%
+         # of the measure. ieee/eacl keep the fraction: their columns are
+         # narrower and the labels already wrap there by design.
+         (r"\begin{tabular}{@{}p{180pt}rrrr@{}}" if LAYOUT == "jbd"
+          else r"\begin{tabular}{@{}p{0.46\columnwidth}rrrr@{}}"), r"\toprule",
          r"Skill category & $n$ & Closed & Open & $\Delta$ \\ \midrule"]
     for cat, r in g.iterrows():
         L.append(f"{cat} & {int(r.nq)} & {r.closed_book:.2f} & {r.open_book:.2f} & {r.delta:+.2f} " + r"\\")
@@ -407,10 +880,10 @@ def composition():
     label = {"diagnosis": "Diagnosis (troubleshooting)"}
     pct = lambda c: f"{round(100 * c / n)}\\%"
     # ACL columns are narrower than IEEE's: shorten the widest row there and
-    # move its legend into the caption.
+    # move its legend into the caption. jbd is wider still and keeps the full label.
     wl_note = (r" Reference-answer length is mean\,/\,median\,/\,range."
-               if PAPER == "eacl" else "")
-    wl_label = ("Ref.-answer length (words)" if PAPER == "eacl"
+               if LAYOUT == "eacl" else "")
+    wl_label = ("Ref.-answer length (words)" if LAYOUT == "eacl"
                 else "Ref.-answer length (words: mean/median/range)")
     L = [r"\begin{table}[t]\centering\footnotesize",
          r"\caption{Composition of the $233$-item HPN-QA evaluation set (after the expert "
@@ -487,13 +960,13 @@ def significance_supp(path):
          r"LoRA SFT against full SFT. Same test, CI, effect size, and practical "
          r"rule as Table~\ref{tab:sig}; BH correction within this supplementary "
          r"family.}",
-         r"\label{tab:sigsupp}", r"\begin{tabular}{lllrrrc}", r"\toprule",
-         r"Model & Contrast & Description & $\Delta$ [95\% CI] & $p_{BH}$ & $d_z$ & PS \\ \midrule"]
+         r"\label{tab:sigsupp}", r"\begin{tabular}{" + contrast_head()[0] + "}", r"\toprule",
+         contrast_head()[1] + r" \\ \midrule"]
     for _, r in s.iterrows():
         ps = r"\checkmark" if r.practically_sig else ""
         ci = f"{r.mean_diff:+.2f} [{r.ci95_lo:+.2f},{r.ci95_hi:+.2f}]"
-        pbh = "<.001" if r.p_bh < 0.001 else f"{r.p_bh:.3f}"
-        L.append(f"{r.base_model} & {r.contrast} & {r.description} & {ci} & {pbh} & {r.cohens_dz:+.2f} & {ps} " + r"\\")
+        pbh = pbh_fmt(r.p_bh)
+        L.append(contrast_row(r, ci, pbh, ps))
     L += [r"\bottomrule", r"\end{tabular}", r"\end{table*}"]
     write("significance_supp.tex", "\n".join(L) + "\n")
 
@@ -574,10 +1047,15 @@ def model_variants(grid_path):
     write("model_variants.tex", "\n".join(L) + "\n")
 
 
-def stratified_matrix(path, stratum_type, fname, label):
+def stratified_matrix(path, stratum_type, fname, label, groups=None, cont=None):
     """Appendix matrix of per-stratum contrasts: rows model x contrast, columns strata.
     Cell: paired mean difference; * BH-significant; bold also practically significant;
-    -- stratum skipped (n<10). Compact form of significance_stratified.csv."""
+    -- stratum skipped (n<10). Compact form of significance_stratified.csv.
+
+    groups restricts the contrast families emitted (None = all three), and cont
+    is the label of the float this one continues into. Both are for jbd only:
+    all 73 rows fit an ACL [p] float page but not sn-jnl's 194.25mm text block,
+    so jbd emits the table in two parts split on the family boundary."""
     short_cat = {
         "Transfer Parameters: Definitions and Roles": "Transf.",
         "Bottleneck Diagnosis and End-to-End Reasoning": "Bottl.",
@@ -606,13 +1084,17 @@ def stratified_matrix(path, stratum_type, fname, label):
                          key=lambda s: s.map(gorder) if s.name == "group" else s))
     gl = {"closed_book": "Closed-book adaptation", "open_book": "Open-book adaptation",
           "rag_effect": "Matched-model RAG effect"}
+    if groups is not None:
+        keys = keys[keys.group.isin(groups)]
     idx = df.set_index(["base_model", "contrast", "stratum"])
+    scope = "" if groups is None else \
+        ", " + " and ".join(gl[g].lower() for g in groups) + " contrasts"
+    tail = "" if cont is None else \
+        r" The remaining contrasts continue in Table~\ref{" + cont + "}."
     L = [r"\begin{table*}[p]\centering\scriptsize",
-         r"\caption{Pre-specified primary contrasts re-run within each " + which + r" "
-         r"(exploratory per-stratum analysis, \S\ref{sec:stats}). Cell: paired mean "
-         r"difference $\Delta$ on overall score; $^{*}$: BH-significant; \textbf{bold}: "
-         r"also practically significant; --: stratum skipped ($n<10$). Full per-stratum "
-         r"statistics (CIs, $p$, $d_z$) ship in the released CSV.}",
+         r"\caption{Pre-specified primary contrasts re-run within each " + which + scope +
+         r" (exploratory per-stratum analysis, \S\ref{sec:stats})." + tail + " " +
+         STRAT_CELL_LEGEND + "}",
          r"\label{" + label + "}",
          r"\begin{tabular}{ll" + "r" * len(cols) + "}", r"\toprule",
          r"Model & Contrast & " + " & ".join(heads) + r" \\"]
@@ -760,19 +1242,24 @@ def interrater_agreement(path):
 
 
 def main():
-    global OUT, SUBS, PAPER, OV, SIGF
+    global OUT, SUBS, PAPER, LAYOUT, OV, SIGF
     ap = argparse.ArgumentParser()
-    ap.add_argument("--paper", choices=["ieee", "eacl"], default="ieee",
-                    help="target paper: ieee -> paper/tables (default), eacl -> paper_eacl/tables")
+    ap.add_argument("--paper", choices=["ieee", "eacl", "jbd"], default="ieee",
+                    help="target paper: ieee -> paper/tables (default), "
+                         "eacl -> paper_eacl/tables, jbd -> paper_jbd/tables")
     ap.add_argument("--outdir", default=None,
                     help="write .tex here instead of the paper directory; "
                          "--paper still selects layout and cross-references, so "
                          "the artifact release can regenerate every table "
                          "without a paper/ tree present")
     args = ap.parse_args()
-    PAPER = args.paper
-    if args.paper == "eacl":
-        OUT = "paper_eacl/tables"
+    LAYOUT = args.paper
+    # jbd shares eacl's content profile entirely: same composite metric, same
+    # captions, same set of tables. Only the geometry differs, and that is
+    # LAYOUT's job.
+    PAPER = "eacl" if args.paper in ("eacl", "jbd") else args.paper
+    if PAPER == "eacl":
+        OUT = f"paper_{LAYOUT}/tables"
         SUBS = {"sec:methodology": "sec:setup"}
         # EACL primary metric: deterministic rubric aggregate (plan v2 §13).
         # To revert to the judge-reported metric, delete the next line.
@@ -797,13 +1284,23 @@ def main():
     by_dimension(f"{A}/scores_overall.csv")
     cpt_perplexity()
     profiling()
-    if args.paper == "eacl":
+    if PAPER == "eacl":   # eacl and jbd both take this set
         frontier(summ)
         model_variants(f"{A}/completeness_grid.csv")
-        stratified_matrix(f"{A}/{SIGF}_stratified.csv", "difficulty",
-                          "stratified_difficulty.tex", "tab:stratdiff")
-        stratified_matrix(f"{A}/{SIGF}_stratified.csv", "category",
-                          "stratified_category.tex", "tab:stratcat")
+        # 73 contrast rows: one ACL [p] float page holds them, sn-jnl's 552pt
+        # text block does not (~584pt single-spaced, more with the caption), so
+        # jbd splits each matrix on the closed-book/open-book family boundary.
+        # Part A keeps the original label, so every existing \ref still resolves.
+        for st, stem, lab in (("difficulty", "stratified_difficulty", "tab:stratdiff"),
+                              ("category", "stratified_category", "tab:stratcat")):
+            src = f"{A}/{SIGF}_stratified.csv"
+            if LAYOUT == "jbd":
+                stratified_matrix(src, st, f"{stem}.tex", lab,
+                                  groups=["closed_book"], cont=lab + "b")
+                stratified_matrix(src, st, f"{stem}_b.tex", lab + "b",
+                                  groups=["open_book", "rag_effect"])
+            else:
+                stratified_matrix(src, st, f"{stem}.tex", lab)
         agr_suf = "_formula" if OV == "overall_formula" else ""
         judge_agreement(f"{A}/HPN_JUDGE_AGREEMENT_gpt-5.1_vs_gemini-3.5-flash{agr_suf}.xlsx")
         human_agreement(f"{A}/HPN_JUDGE_AGREEMENT_human_vs_gpt-5.1.xlsx")
@@ -811,6 +1308,8 @@ def main():
         judge_deviation(f"{A}/judge_overall_deviation.csv")
         significance_supp(f"{A}/significance_formula_supplementary.csv")
         threshold_sens(f"{A}/threshold_sensitivity.csv")
+        if LAYOUT == "jbd":   # Phase 12 additions; eacl/ieee stay frozen
+            equivalence(f"{A}/equivalence_frontier.csv")
     print("done.")
 
 

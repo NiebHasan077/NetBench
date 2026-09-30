@@ -40,6 +40,10 @@ INSTITUTIONAL = re.compile(
     r"\b[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*"
     r"\.(?:edu|gov|mil|ac\.[a-z]{2}|mill|cluster|hpc|internal|lan|corp)\b", re.I)
 
+# Open-access repositories named inside source-paper text (a paper's own
+# "eprints whiterose.ac.uk" banner, carried into retrieval labels) are content,
+# like the publisher domains above, not a machine or an author.
+REPOSITORY = re.compile(r"(?:^|\.)whiterose\.ac\.uk$", re.I)
 ALLOWED_ACCOUNT = {"user"}                  # the neutral placeholder
 ALLOWED_EMAIL_DOMAIN = re.compile(r"@(example|test|placeholder|invalid)\.", re.I)
 
@@ -91,6 +95,8 @@ for rel, text in text_files():
                 if not ALLOWED_EMAIL_DOMAIN.search(m.group(0)):
                     add("email address", f"{rel}:{i}: {m.group(0)}")
         for m in INSTITUTIONAL.finditer(line):
+            if REPOSITORY.search(m.group(0)):
+                continue
             add("academic / government / cluster hostname", f"{rel}:{i}: {m.group(0)}")
 
 # Recorded hostnames in run metadata and profiling captures.

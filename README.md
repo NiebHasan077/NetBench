@@ -134,6 +134,6 @@ always resolves to the newest version. Each release also gets its own version
 DOI — `10.5281/zenodo.21892018` is v1.0.0 — which is the one to use only when
 you need to pin an exact snapshot.
 
-A journal article describing the study is under review. This section and
+A paper describing the study is in preparation. This section and
 `CITATION.cff` will be updated with its citation on publication; until then,
 citing the archive is the stable reference.

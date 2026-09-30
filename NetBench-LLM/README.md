@@ -49,8 +49,8 @@ LLM-Training/
 │
 ├── data/                           ← ALL TRAINING & EVALUATION DATA
 │   ├── raw/                        ← Raw JSON corpora
-│   │   ├── research_corpus_new.json  (753 docs — default corpus)
-│   │   └── research_corpus_v3.json   (alternative corpus variant)
+│   │   ├── research_corpus_new.json  (753 docs — legacy; still the script default)
+│   │   └── research_corpus_v3.json   (2,371 docs — used for every reported run)
 │   ├── processed/                  ← Tokenized pre-training data
 │   │   ├── llama-3.2-1b/
 │   │   ├── llama-3.1-8b/
@@ -189,7 +189,7 @@ python utils/download_models.py --model gemma-e4b-it # Gemma-4-E4B-IT (official 
 ```bash
 # ── Llama shortcut ────────────────────────────────────
 python training/prepare_data.py \
-    --input_file data/raw/research_corpus_new.json \
+    --input_file data/raw/research_corpus_v3.json \
     --model_name meta-llama/Llama-3.1-8B \
     --output_dir data/processed/llama-3.1-8b
 
@@ -200,7 +200,7 @@ python training/pretrain_transformers.py \
 
 # ── Qwen shortcut ─────────────────────────────────────
 python training/prepare_data.py \
-    --input_file data/raw/research_corpus_new.json \
+    --input_file data/raw/research_corpus_v3.json \
     --model_name Qwen/Qwen3.5-2B-Base \
     --output_dir data/processed/qwen3.5-2b
 
@@ -211,7 +211,7 @@ python training/pretrain_transformers.py \
 
 # ── Gemma shortcut ────────────────────────────────────
 python training/prepare_data.py \
-    --input_file data/raw/research_corpus_new.json \
+    --input_file data/raw/research_corpus_v3.json \
     --model_name google/gemma-3-4b-pt \
     --output_dir data/processed/gemma-3-4b
 
