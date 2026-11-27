@@ -1,0 +1,1009 @@
+population,n_questions,judge,base_model,contrast,n,n_clusters,mean_diff,ci95_lo_clustered,ci95_hi_clustered,cohens_dz,p_perm_clustered,p_bh,bh_sig,practically_sig
+All scored,233,primary,gemma-3-12b,P1 vs P3,233,167,-0.0906,-0.2009,0.0169,-0.1034,0.10629,0.13257,False,False
+All scored,233,primary,gemma-3-12b,P1 vs P4,233,167,-0.0725,-0.1917,0.0475,-0.0763,0.24628,0.27706,False,False
+All scored,233,primary,gemma-3-12b,P3 vs P4,233,167,0.018,-0.0973,0.1385,0.0212,0.77772,0.81153,False,False
+All scored,233,primary,gemma-3-12b,P2 vs P5,233,167,0.0541,-0.0478,0.1538,0.0639,0.27687,0.29753,False,False
+All scored,233,primary,gemma-3-12b,P1 vs P5,233,167,-0.0704,-0.1959,0.0506,-0.0742,0.27167,0.29637,False,False
+All scored,233,primary,gemma-3-12b,P6 vs P7,233,167,-0.2017,-0.2912,-0.1116,-0.2997,0.0001,0.00023,True,False
+All scored,233,primary,gemma-3-12b,P6 vs P8,233,167,-0.1652,-0.2595,-0.0738,-0.2337,0.0006,0.0012,True,False
+All scored,233,primary,gemma-3-12b,P1 vs P6,233,167,0.6893,0.5455,0.8327,0.6472,0.0001,0.00023,True,True
+All scored,233,primary,gemma-3-12b,P4 vs P7,233,167,0.5601,0.4156,0.7038,0.5214,0.0001,0.00023,True,True
+All scored,233,primary,gemma-3-12b,P5 vs P8,233,167,0.5944,0.4561,0.7348,0.5675,0.0001,0.00023,True,True
+All scored,233,primary,gemma-3-1b,P1 vs P3,233,167,0.2253,0.1424,0.3102,0.3442,0.0001,0.00023,True,False
+All scored,233,primary,gemma-3-1b,P1 vs P4,233,167,0.115,0.0233,0.209,0.1613,0.015,0.02512,True,False
+All scored,233,primary,gemma-3-1b,P3 vs P4,233,167,-0.1103,-0.2112,-0.0087,-0.1474,0.0371,0.05451,False,False
+All scored,233,primary,gemma-3-1b,P2 vs P5,233,167,0.1236,0.0292,0.2165,0.1652,0.0117,0.02055,True,False
+All scored,233,primary,gemma-3-1b,P1 vs P5,233,167,0.3412,0.2483,0.4332,0.4639,0.0001,0.00023,True,True
+All scored,233,primary,gemma-3-1b,P6 vs P7,233,167,-0.1755,-0.2921,-0.0571,-0.1913,0.0063,0.01134,True,False
+All scored,233,primary,gemma-3-1b,P6 vs P8,233,167,-0.1052,-0.2221,0.0149,-0.1158,0.08179,0.10516,False,False
+All scored,233,primary,gemma-3-1b,P1 vs P6,233,167,0.6124,0.4892,0.7364,0.6386,0.0001,0.00023,True,True
+All scored,233,primary,gemma-3-1b,P4 vs P7,233,167,0.3219,0.2056,0.4403,0.3451,0.0001,0.00023,True,True
+All scored,233,primary,gemma-3-1b,P5 vs P8,233,167,0.1661,0.0363,0.2964,0.1752,0.0146,0.02503,True,False
+All scored,233,primary,gemma-3-27b,P1 vs P3,233,167,-0.2961,-0.4179,-0.1756,-0.3139,0.0001,0.00023,True,True
+All scored,233,primary,gemma-3-27b,P2 vs P5,233,167,0.0785,-0.0329,0.1896,0.0926,0.17268,0.20722,False,False
+All scored,233,primary,gemma-3-27b,P1 vs P5,233,167,-0.0815,-0.2061,0.0387,-0.0891,0.19848,0.23427,False,False
+All scored,233,primary,gemma-3-27b,P6 vs P8,233,167,-0.2828,-0.3628,-0.2049,-0.464,0.0001,0.00023,True,True
+All scored,233,primary,gemma-3-27b,P1 vs P6,233,167,0.6296,0.4722,0.7763,0.5765,0.0001,0.00023,True,True
+All scored,233,primary,gemma-3-27b,P5 vs P8,233,167,0.4283,0.2962,0.5581,0.4438,0.0001,0.00023,True,True
+All scored,233,primary,llama-3.1-8b,P1 vs P3,233,167,0.1193,0.0099,0.2263,0.1337,0.0319,0.04887,True,False
+All scored,233,primary,llama-3.1-8b,P1 vs P4,233,167,0.2579,0.1282,0.3904,0.2775,0.0004,0.00085,True,True
+All scored,233,primary,llama-3.1-8b,P3 vs P4,233,167,0.1386,0.0244,0.2531,0.1558,0.0209,0.03344,True,False
+All scored,233,primary,llama-3.1-8b,P2 vs P5,233,167,0.0069,-0.096,0.111,0.008,0.90391,0.91664,False,False
+All scored,233,primary,llama-3.1-8b,P1 vs P5,233,167,0.2485,0.1212,0.3748,0.2563,0.0001,0.00023,True,False
+All scored,233,primary,llama-3.1-8b,P6 vs P7,233,167,0.1262,0.0461,0.2069,0.1888,0.003,0.00568,True,False
+All scored,233,primary,llama-3.1-8b,P6 vs P8,233,167,0.1455,0.0536,0.2351,0.2064,0.0024,0.00467,True,False
+All scored,233,primary,llama-3.1-8b,P1 vs P6,233,167,0.6575,0.5221,0.7921,0.637,0.0001,0.00023,True,True
+All scored,233,primary,llama-3.1-8b,P4 vs P7,233,167,0.5258,0.3884,0.6641,0.4856,0.0001,0.00023,True,True
+All scored,233,primary,llama-3.1-8b,P5 vs P8,233,167,0.5545,0.4062,0.7,0.5015,0.0001,0.00023,True,True
+All scored,233,primary,llama-3.2-1b,P1 vs P3,233,167,0.2734,0.1853,0.361,0.3921,0.0001,0.00023,True,True
+All scored,233,primary,llama-3.2-1b,P1 vs P4,233,167,0.3627,0.2685,0.4615,0.4642,0.0001,0.00023,True,True
+All scored,233,primary,llama-3.2-1b,P3 vs P4,233,167,0.0893,-0.0042,0.185,0.1214,0.07019,0.09359,False,False
+All scored,233,primary,llama-3.2-1b,P2 vs P5,233,167,0.0906,0.0062,0.1775,0.1327,0.0421,0.06062,False,False
+All scored,233,primary,llama-3.2-1b,P1 vs P5,233,167,0.421,0.3237,0.5206,0.5197,0.0001,0.00023,True,True
+All scored,233,primary,llama-3.2-1b,P6 vs P7,233,167,0.0811,-0.047,0.2035,0.0819,0.20578,0.23897,False,False
+All scored,233,primary,llama-3.2-1b,P6 vs P8,233,167,0.1931,0.093,0.2952,0.2297,0.0006,0.0012,True,False
+All scored,233,primary,llama-3.2-1b,P1 vs P6,233,167,0.5262,0.4174,0.6387,0.5948,0.0001,0.00023,True,True
+All scored,233,primary,llama-3.2-1b,P4 vs P7,233,167,0.2446,0.1139,0.3803,0.2342,0.0004,0.00085,True,False
+All scored,233,primary,llama-3.2-1b,P5 vs P8,233,167,0.2983,0.181,0.4192,0.3131,0.0001,0.00023,True,True
+All scored,233,primary,qwen3.5-27b,P1 vs P3,233,167,-0.1506,-0.2531,-0.0531,-0.184,0.0037,0.00683,True,False
+All scored,233,primary,qwen3.5-27b,P2 vs P5,233,167,0.0567,-0.0413,0.1526,0.0731,0.25417,0.28154,False,False
+All scored,233,primary,qwen3.5-27b,P1 vs P5,233,167,-0.0545,-0.1429,0.0298,-0.0733,0.21918,0.25049,False,False
+All scored,233,primary,qwen3.5-27b,P6 vs P8,233,167,-0.0627,-0.1277,0.0035,-0.1247,0.06059,0.08231,False,False
+All scored,233,primary,qwen3.5-27b,P1 vs P6,233,167,0.3871,0.2789,0.4947,0.4539,0.0001,0.00023,True,True
+All scored,233,primary,qwen3.5-27b,P5 vs P8,233,167,0.379,0.2791,0.4816,0.4687,0.0001,0.00023,True,True
+All scored,233,primary,qwen3.5-2b,P1 vs P3,233,167,0.6815,0.5663,0.7926,0.7443,0.0001,0.00023,True,True
+All scored,233,primary,qwen3.5-2b,P1 vs P4,233,167,0.8146,0.7143,0.9138,1.0105,0.0001,0.00023,True,True
+All scored,233,primary,qwen3.5-2b,P3 vs P4,233,167,0.133,0.0271,0.2389,0.1629,0.0164,0.02684,True,False
+All scored,233,primary,qwen3.5-2b,P2 vs P5,233,167,0.1099,0.0008,0.2196,0.1278,0.05069,0.07156,False,False
+All scored,233,primary,qwen3.5-2b,P1 vs P5,233,167,0.7176,0.6097,0.8272,0.7929,0.0001,0.00023,True,True
+All scored,233,primary,qwen3.5-2b,P6 vs P7,233,167,0.015,-0.1061,0.1319,0.016,0.81302,0.83625,False,False
+All scored,233,primary,qwen3.5-2b,P6 vs P8,233,167,0.1202,-0.0009,0.2417,0.1332,0.05309,0.07351,False,False
+All scored,233,primary,qwen3.5-2b,P1 vs P6,233,167,1.2468,1.1146,1.3744,1.2096,0.0001,0.00023,True,True
+All scored,233,primary,qwen3.5-2b,P4 vs P7,233,167,0.4472,0.3048,0.587,0.3977,0.0001,0.00023,True,True
+All scored,233,primary,qwen3.5-2b,P5 vs P8,233,167,0.6494,0.5044,0.7907,0.5824,0.0001,0.00023,True,True
+All scored,233,primary,qwen3.5-9b,P1 vs P3,233,167,-0.0021,-0.1204,0.1147,-0.0023,0.9765,0.9765,False,False
+All scored,233,primary,qwen3.5-9b,P1 vs P4,233,167,0.1116,-0.0136,0.2366,0.1248,0.08119,0.10516,False,False
+All scored,233,primary,qwen3.5-9b,P3 vs P4,233,167,0.1137,0.014,0.2124,0.1412,0.0301,0.04711,True,False
+All scored,233,primary,qwen3.5-9b,P2 vs P5,233,167,0.0841,-0.0159,0.1826,0.1058,0.10679,0.13257,False,False
+All scored,233,primary,qwen3.5-9b,P1 vs P5,233,167,0.0923,-0.0231,0.2081,0.101,0.12669,0.1546,False,False
+All scored,233,primary,qwen3.5-9b,P6 vs P7,233,167,-0.0339,-0.1135,0.0433,-0.0522,0.40236,0.42603,False,False
+All scored,233,primary,qwen3.5-9b,P6 vs P8,233,167,-0.088,-0.1667,-0.0082,-0.1319,0.0344,0.0516,False,False
+All scored,233,primary,qwen3.5-9b,P1 vs P6,233,167,0.6442,0.5179,0.7696,0.6195,0.0001,0.00023,True,True
+All scored,233,primary,qwen3.5-9b,P4 vs P7,233,167,0.4987,0.36,0.6339,0.4552,0.0001,0.00023,True,True
+All scored,233,primary,qwen3.5-9b,P5 vs P8,233,167,0.4639,0.3333,0.5922,0.4407,0.0001,0.00023,True,True
+Test-labeled,192,primary,gemma-3-12b,P1 vs P3,192,148,-0.101,-0.2263,0.0238,-0.1136,0.11269,0.15672,False,False
+Test-labeled,192,primary,gemma-3-12b,P1 vs P4,192,148,-0.0911,-0.2259,0.0427,-0.0986,0.18568,0.21916,False,False
+Test-labeled,192,primary,gemma-3-12b,P3 vs P4,192,148,0.0099,-0.1182,0.1437,0.0116,0.88091,0.88091,False,False
+Test-labeled,192,primary,gemma-3-12b,P2 vs P5,192,148,0.0672,-0.0441,0.1791,0.0773,0.23898,0.26885,False,False
+Test-labeled,192,primary,gemma-3-12b,P1 vs P5,192,148,-0.0937,-0.2292,0.0415,-0.0997,0.17558,0.2107,False,False
+Test-labeled,192,primary,gemma-3-12b,P6 vs P7,192,148,-0.1964,-0.3031,-0.0924,-0.2851,0.0004,0.00093,True,False
+Test-labeled,192,primary,gemma-3-12b,P6 vs P8,192,148,-0.2073,-0.3173,-0.1011,-0.2859,0.0002,0.00048,True,False
+Test-labeled,192,primary,gemma-3-12b,P1 vs P6,192,148,0.7104,0.5552,0.8628,0.6688,0.0001,0.00026,True,True
+Test-labeled,192,primary,gemma-3-12b,P4 vs P7,192,148,0.6052,0.4421,0.7667,0.5602,0.0001,0.00026,True,True
+Test-labeled,192,primary,gemma-3-12b,P5 vs P8,192,148,0.5969,0.4423,0.7508,0.5532,0.0001,0.00026,True,True
+Test-labeled,192,primary,gemma-3-1b,P1 vs P3,192,148,0.2359,0.1437,0.3312,0.3533,0.0001,0.00026,True,False
+Test-labeled,192,primary,gemma-3-1b,P1 vs P4,192,148,0.1318,0.0312,0.233,0.1854,0.0127,0.02194,True,False
+Test-labeled,192,primary,gemma-3-1b,P3 vs P4,192,148,-0.1042,-0.2062,0.0027,-0.1427,0.05989,0.08984,False,False
+Test-labeled,192,primary,gemma-3-1b,P2 vs P5,192,148,0.1234,0.0175,0.2294,0.1683,0.0241,0.03856,True,False
+Test-labeled,192,primary,gemma-3-1b,P1 vs P5,192,148,0.3625,0.2598,0.4624,0.4877,0.0001,0.00026,True,True
+Test-labeled,192,primary,gemma-3-1b,P6 vs P7,192,148,-0.2208,-0.3513,-0.0958,-0.244,0.001,0.00212,True,False
+Test-labeled,192,primary,gemma-3-1b,P6 vs P8,192,148,-0.1573,-0.2881,-0.0306,-0.1726,0.0207,0.03387,True,False
+Test-labeled,192,primary,gemma-3-1b,P1 vs P6,192,148,0.6677,0.5384,0.8016,0.6909,0.0001,0.00026,True,True
+Test-labeled,192,primary,gemma-3-1b,P4 vs P7,192,148,0.3151,0.1798,0.4508,0.3306,0.0001,0.00026,True,True
+Test-labeled,192,primary,gemma-3-1b,P5 vs P8,192,148,0.1479,0.0031,0.295,0.1539,0.0487,0.0746,False,False
+Test-labeled,192,primary,gemma-3-27b,P1 vs P3,192,148,-0.2625,-0.4,-0.1328,-0.2782,0.0008,0.00175,True,True
+Test-labeled,192,primary,gemma-3-27b,P2 vs P5,192,148,0.0891,-0.031,0.2086,0.1027,0.15198,0.19197,False,False
+Test-labeled,192,primary,gemma-3-27b,P1 vs P5,192,148,-0.0698,-0.2072,0.0649,-0.0759,0.32217,0.35687,False,False
+Test-labeled,192,primary,gemma-3-27b,P6 vs P8,192,148,-0.2865,-0.3825,-0.1968,-0.453,0.0001,0.00026,True,True
+Test-labeled,192,primary,gemma-3-27b,P1 vs P6,192,148,0.6464,0.478,0.8103,0.58,0.0001,0.00026,True,True
+Test-labeled,192,primary,gemma-3-27b,P5 vs P8,192,148,0.4297,0.2833,0.5761,0.432,0.0001,0.00026,True,True
+Test-labeled,192,primary,llama-3.1-8b,P1 vs P3,192,148,0.1203,-0.0104,0.2502,0.1343,0.07279,0.10696,False,False
+Test-labeled,192,primary,llama-3.1-8b,P1 vs P4,192,148,0.2292,0.0851,0.3753,0.2427,0.0026,0.00535,True,False
+Test-labeled,192,primary,llama-3.1-8b,P3 vs P4,192,148,0.1089,-0.0265,0.2417,0.1172,0.12119,0.16159,False,False
+Test-labeled,192,primary,llama-3.1-8b,P2 vs P5,192,148,0.0286,-0.0948,0.15,0.0331,0.65613,0.69473,False,False
+Test-labeled,192,primary,llama-3.1-8b,P1 vs P5,192,148,0.2578,0.114,0.3984,0.2668,0.0005,0.00113,True,True
+Test-labeled,192,primary,llama-3.1-8b,P6 vs P7,192,148,0.112,0.0226,0.2005,0.1728,0.0197,0.03299,True,False
+Test-labeled,192,primary,llama-3.1-8b,P6 vs P8,192,148,0.1531,0.0516,0.2526,0.214,0.0037,0.0072,True,False
+Test-labeled,192,primary,llama-3.1-8b,P1 vs P6,192,148,0.6984,0.5485,0.8463,0.6916,0.0001,0.00026,True,True
+Test-labeled,192,primary,llama-3.1-8b,P4 vs P7,192,148,0.5812,0.4353,0.7289,0.5391,0.0001,0.00026,True,True
+Test-labeled,192,primary,llama-3.1-8b,P5 vs P8,192,148,0.5937,0.4237,0.7623,0.5246,0.0001,0.00026,True,True
+Test-labeled,192,primary,llama-3.2-1b,P1 vs P3,192,148,0.2708,0.1709,0.3695,0.3865,0.0001,0.00026,True,True
+Test-labeled,192,primary,llama-3.2-1b,P1 vs P4,192,148,0.3609,0.2476,0.4785,0.4358,0.0001,0.00026,True,True
+Test-labeled,192,primary,llama-3.2-1b,P3 vs P4,192,148,0.0901,-0.0196,0.2,0.1192,0.11139,0.15672,False,False
+Test-labeled,192,primary,llama-3.2-1b,P2 vs P5,192,148,0.1229,0.0307,0.2134,0.1815,0.0103,0.01902,True,False
+Test-labeled,192,primary,llama-3.2-1b,P1 vs P5,192,148,0.449,0.3429,0.557,0.5394,0.0001,0.00026,True,True
+Test-labeled,192,primary,llama-3.2-1b,P6 vs P7,192,148,0.0292,-0.1206,0.1742,0.0282,0.70053,0.73099,False,False
+Test-labeled,192,primary,llama-3.2-1b,P6 vs P8,192,148,0.1568,0.0361,0.2776,0.1821,0.0128,0.02194,True,False
+Test-labeled,192,primary,llama-3.2-1b,P1 vs P6,192,148,0.5615,0.4328,0.6911,0.6149,0.0001,0.00026,True,True
+Test-labeled,192,primary,llama-3.2-1b,P4 vs P7,192,148,0.2297,0.0868,0.3765,0.2171,0.0033,0.0066,True,False
+Test-labeled,192,primary,llama-3.2-1b,P5 vs P8,192,148,0.2693,0.1337,0.409,0.2758,0.0002,0.00048,True,True
+Test-labeled,192,primary,qwen3.5-27b,P1 vs P3,192,148,-0.1391,-0.2473,-0.0346,-0.1757,0.0112,0.02016,True,False
+Test-labeled,192,primary,qwen3.5-27b,P2 vs P5,192,148,0.0844,-0.0213,0.1863,0.1114,0.11839,0.16083,False,False
+Test-labeled,192,primary,qwen3.5-27b,P1 vs P5,192,148,-0.037,-0.1326,0.0573,-0.0524,0.44976,0.48332,False,False
+Test-labeled,192,primary,qwen3.5-27b,P6 vs P8,192,148,-0.051,-0.1219,0.0222,-0.1007,0.17498,0.2107,False,False
+Test-labeled,192,primary,qwen3.5-27b,P1 vs P6,192,148,0.3896,0.2723,0.5081,0.4518,0.0001,0.00026,True,True
+Test-labeled,192,primary,qwen3.5-27b,P5 vs P8,192,148,0.3755,0.2668,0.491,0.4624,0.0001,0.00026,True,True
+Test-labeled,192,primary,qwen3.5-2b,P1 vs P3,192,148,0.6516,0.5115,0.7829,0.6878,0.0001,0.00026,True,True
+Test-labeled,192,primary,qwen3.5-2b,P1 vs P4,192,148,0.826,0.71,0.9383,0.9938,0.0001,0.00026,True,True
+Test-labeled,192,primary,qwen3.5-2b,P3 vs P4,192,148,0.1745,0.0538,0.2963,0.209,0.0054,0.01023,True,False
+Test-labeled,192,primary,qwen3.5-2b,P2 vs P5,192,148,0.0932,-0.0269,0.2168,0.1079,0.13169,0.17239,False,False
+Test-labeled,192,primary,qwen3.5-2b,P1 vs P5,192,148,0.7047,0.5776,0.8261,0.7572,0.0001,0.00026,True,True
+Test-labeled,192,primary,qwen3.5-2b,P6 vs P7,192,148,0.0172,-0.1176,0.1524,0.0179,0.80462,0.81595,False,False
+Test-labeled,192,primary,qwen3.5-2b,P6 vs P8,192,148,0.1078,-0.0367,0.2518,0.1133,0.14409,0.18526,False,False
+Test-labeled,192,primary,qwen3.5-2b,P1 vs P6,192,148,1.2729,1.1237,1.4133,1.22,0.0001,0.00026,True,True
+Test-labeled,192,primary,qwen3.5-2b,P4 vs P7,192,148,0.4641,0.302,0.6249,0.4059,0.0001,0.00026,True,True
+Test-labeled,192,primary,qwen3.5-2b,P5 vs P8,192,148,0.676,0.5122,0.8394,0.5887,0.0001,0.00026,True,True
+Test-labeled,192,primary,qwen3.5-9b,P1 vs P3,192,148,0.0234,-0.1026,0.1526,0.0252,0.73373,0.75469,False,False
+Test-labeled,192,primary,qwen3.5-9b,P1 vs P4,192,148,0.0943,-0.0323,0.226,0.1098,0.17408,0.2107,False,False
+Test-labeled,192,primary,qwen3.5-9b,P3 vs P4,192,148,0.0708,-0.0347,0.1755,0.0904,0.21498,0.24965,False,False
+Test-labeled,192,primary,qwen3.5-9b,P2 vs P5,192,148,0.0703,-0.0436,0.1836,0.0874,0.23268,0.26592,False,False
+Test-labeled,192,primary,qwen3.5-9b,P1 vs P5,192,148,0.1042,-0.0237,0.2306,0.1172,0.11319,0.15672,False,False
+Test-labeled,192,primary,qwen3.5-9b,P6 vs P7,192,148,-0.0422,-0.132,0.0523,-0.0624,0.38376,0.41865,False,False
+Test-labeled,192,primary,qwen3.5-9b,P6 vs P8,192,148,-0.101,-0.1942,-0.006,-0.1442,0.0371,0.05807,False,False
+Test-labeled,192,primary,qwen3.5-9b,P1 vs P6,192,148,0.6542,0.5058,0.801,0.607,0.0001,0.00026,True,True
+Test-labeled,192,primary,qwen3.5-9b,P4 vs P7,192,148,0.5177,0.3631,0.6693,0.4655,0.0001,0.00026,True,True
+Test-labeled,192,primary,qwen3.5-9b,P5 vs P8,192,148,0.449,0.301,0.5963,0.4203,0.0001,0.00026,True,True
+Nondev,204,primary,gemma-3-12b,P1 vs P3,204,152,-0.0936,-0.212,0.0262,-0.1061,0.12649,0.16205,False,False
+Nondev,204,primary,gemma-3-12b,P1 vs P4,204,152,-0.1034,-0.2333,0.0233,-0.1112,0.12829,0.16205,False,False
+Nondev,204,primary,gemma-3-12b,P3 vs P4,204,152,-0.0098,-0.1327,0.115,-0.0116,0.88451,0.89697,False,False
+Nondev,204,primary,gemma-3-12b,P2 vs P5,204,152,0.05,-0.0585,0.1591,0.0578,0.37196,0.40577,False,False
+Nondev,204,primary,gemma-3-12b,P1 vs P5,204,152,-0.1123,-0.2416,0.0175,-0.1196,0.10189,0.13585,False,False
+Nondev,204,primary,gemma-3-12b,P6 vs P7,204,152,-0.1897,-0.2882,-0.0935,-0.2763,0.0004,0.00093,True,False
+Nondev,204,primary,gemma-3-12b,P6 vs P8,204,152,-0.1887,-0.2953,-0.0854,-0.2599,0.0006,0.00131,True,False
+Nondev,204,primary,gemma-3-12b,P1 vs P6,204,152,0.673,0.5226,0.8194,0.6345,0.0001,0.00024,True,True
+Nondev,204,primary,gemma-3-12b,P4 vs P7,204,152,0.5868,0.433,0.7377,0.5389,0.0001,0.00024,True,True
+Nondev,204,primary,gemma-3-12b,P5 vs P8,204,152,0.5966,0.4466,0.7457,0.5567,0.0001,0.00024,True,True
+Nondev,204,primary,gemma-3-1b,P1 vs P3,204,152,0.2167,0.1238,0.309,0.3217,0.0001,0.00024,True,False
+Nondev,204,primary,gemma-3-1b,P1 vs P4,204,152,0.1005,0.001,0.199,0.1411,0.0498,0.07795,False,False
+Nondev,204,primary,gemma-3-1b,P3 vs P4,204,152,-0.1162,-0.2214,-0.0089,-0.1575,0.0401,0.06416,False,False
+Nondev,204,primary,gemma-3-1b,P2 vs P5,204,152,0.1265,0.0218,0.2299,0.1712,0.0193,0.03232,True,False
+Nondev,204,primary,gemma-3-1b,P1 vs P5,204,152,0.3407,0.238,0.4416,0.4616,0.0001,0.00024,True,True
+Nondev,204,primary,gemma-3-1b,P6 vs P7,204,152,-0.2235,-0.3447,-0.1019,-0.2481,0.0006,0.00131,True,False
+Nondev,204,primary,gemma-3-1b,P6 vs P8,204,152,-0.1235,-0.2493,-0.0005,-0.1362,0.05609,0.08593,False,False
+Nondev,204,primary,gemma-3-1b,P1 vs P6,204,152,0.6275,0.4976,0.7567,0.6563,0.0001,0.00024,True,True
+Nondev,204,primary,gemma-3-1b,P4 vs P7,204,152,0.3034,0.1736,0.4271,0.3253,0.0001,0.00024,True,True
+Nondev,204,primary,gemma-3-1b,P5 vs P8,204,152,0.1632,0.0236,0.3,0.1722,0.0234,0.03829,True,False
+Nondev,204,primary,gemma-3-27b,P1 vs P3,204,152,-0.298,-0.4314,-0.1665,-0.3111,0.0001,0.00024,True,True
+Nondev,204,primary,gemma-3-27b,P2 vs P5,204,152,0.1025,-0.014,0.2242,0.1188,0.10119,0.13585,False,False
+Nondev,204,primary,gemma-3-27b,P1 vs P5,204,152,-0.0868,-0.2196,0.0439,-0.0945,0.19758,0.23321,False,False
+Nondev,204,primary,gemma-3-27b,P6 vs P8,204,152,-0.2848,-0.3737,-0.1985,-0.4566,0.0001,0.00024,True,True
+Nondev,204,primary,gemma-3-27b,P1 vs P6,204,152,0.6108,0.4456,0.7686,0.5509,0.0001,0.00024,True,True
+Nondev,204,primary,gemma-3-27b,P5 vs P8,204,152,0.4127,0.2676,0.5507,0.4208,0.0001,0.00024,True,True
+Nondev,204,primary,llama-3.1-8b,P1 vs P3,204,152,0.1132,-0.0085,0.2369,0.1235,0.06769,0.09747,False,False
+Nondev,204,primary,llama-3.1-8b,P1 vs P4,204,152,0.2118,0.0751,0.3535,0.2235,0.0035,0.00681,True,False
+Nondev,204,primary,llama-3.1-8b,P3 vs P4,204,152,0.0985,-0.0312,0.2236,0.1081,0.14009,0.17096,False,False
+Nondev,204,primary,llama-3.1-8b,P2 vs P5,204,152,0.0059,-0.1106,0.1219,0.0068,0.93021,0.93021,False,False
+Nondev,204,primary,llama-3.1-8b,P1 vs P5,204,152,0.2348,0.0954,0.3742,0.2387,0.0011,0.00233,True,False
+Nondev,204,primary,llama-3.1-8b,P6 vs P7,204,152,0.1255,0.0389,0.2116,0.1881,0.0051,0.00918,True,False
+Nondev,204,primary,llama-3.1-8b,P6 vs P8,204,152,0.1623,0.0614,0.2626,0.2246,0.0024,0.0048,True,False
+Nondev,204,primary,llama-3.1-8b,P1 vs P6,204,152,0.6544,0.5068,0.798,0.6366,0.0001,0.00024,True,True
+Nondev,204,primary,llama-3.1-8b,P4 vs P7,204,152,0.5681,0.4267,0.7103,0.5298,0.0001,0.00024,True,True
+Nondev,204,primary,llama-3.1-8b,P5 vs P8,204,152,0.5819,0.4159,0.7429,0.5148,0.0001,0.00024,True,True
+Nondev,204,primary,llama-3.2-1b,P1 vs P3,204,152,0.2706,0.1792,0.3638,0.3888,0.0001,0.00024,True,True
+Nondev,204,primary,llama-3.2-1b,P1 vs P4,204,152,0.3716,0.2644,0.4812,0.4528,0.0001,0.00024,True,True
+Nondev,204,primary,llama-3.2-1b,P3 vs P4,204,152,0.101,0.0009,0.202,0.1356,0.05789,0.08684,False,False
+Nondev,204,primary,llama-3.2-1b,P2 vs P5,204,152,0.1167,0.03,0.2061,0.1746,0.0095,0.01629,True,False
+Nondev,204,primary,llama-3.2-1b,P1 vs P5,204,152,0.4309,0.3282,0.538,0.5222,0.0001,0.00024,True,True
+Nondev,204,primary,llama-3.2-1b,P6 vs P7,204,152,0.0377,-0.0971,0.1732,0.0373,0.59664,0.62258,False,False
+Nondev,204,primary,llama-3.2-1b,P6 vs P8,204,152,0.1735,0.0645,0.284,0.2044,0.0021,0.00432,True,False
+Nondev,204,primary,llama-3.2-1b,P1 vs P6,204,152,0.5348,0.4171,0.6543,0.5933,0.0001,0.00024,True,True
+Nondev,204,primary,llama-3.2-1b,P4 vs P7,204,152,0.201,0.0676,0.3377,0.1926,0.0041,0.00757,True,False
+Nondev,204,primary,llama-3.2-1b,P5 vs P8,204,152,0.2775,0.1502,0.4094,0.2874,0.0001,0.00024,True,True
+Nondev,204,primary,qwen3.5-27b,P1 vs P3,204,152,-0.1627,-0.2715,-0.0562,-0.1979,0.0037,0.00701,True,False
+Nondev,204,primary,qwen3.5-27b,P2 vs P5,204,152,0.0569,-0.0465,0.1552,0.0742,0.27137,0.30529,False,False
+Nondev,204,primary,qwen3.5-27b,P1 vs P5,204,152,-0.0725,-0.1647,0.0172,-0.098,0.12569,0.16205,False,False
+Nondev,204,primary,qwen3.5-27b,P6 vs P8,204,152,-0.0564,-0.1276,0.0173,-0.1077,0.13499,0.16757,False,False
+Nondev,204,primary,qwen3.5-27b,P1 vs P6,204,152,0.3652,0.2517,0.4798,0.4223,0.0001,0.00024,True,True
+Nondev,204,primary,qwen3.5-27b,P5 vs P8,204,152,0.3814,0.2759,0.4904,0.4691,0.0001,0.00024,True,True
+Nondev,204,primary,qwen3.5-2b,P1 vs P3,204,152,0.6554,0.5228,0.7822,0.702,0.0001,0.00024,True,True
+Nondev,204,primary,qwen3.5-2b,P1 vs P4,204,152,0.8181,0.7088,0.9277,0.985,0.0001,0.00024,True,True
+Nondev,204,primary,qwen3.5-2b,P3 vs P4,204,152,0.1627,0.0475,0.2772,0.1958,0.0067,0.01177,True,False
+Nondev,204,primary,qwen3.5-2b,P2 vs P5,204,152,0.0838,-0.0311,0.197,0.0955,0.15658,0.1879,False,False
+Nondev,204,primary,qwen3.5-2b,P1 vs P5,204,152,0.6922,0.5749,0.8103,0.7513,0.0001,0.00024,True,True
+Nondev,204,primary,qwen3.5-2b,P6 vs P7,204,152,0.0397,-0.09,0.1696,0.0417,0.55664,0.58938,False,False
+Nondev,204,primary,qwen3.5-2b,P6 vs P8,204,152,0.1196,-0.016,0.2513,0.1279,0.08389,0.11843,False,False
+Nondev,204,primary,qwen3.5-2b,P1 vs P6,204,152,1.2363,1.0922,1.3705,1.1912,0.0001,0.00024,True,True
+Nondev,204,primary,qwen3.5-2b,P4 vs P7,204,152,0.4578,0.3038,0.6102,0.4075,0.0001,0.00024,True,True
+Nondev,204,primary,qwen3.5-2b,P5 vs P8,204,152,0.6637,0.5069,0.8145,0.5842,0.0001,0.00024,True,True
+Nondev,204,primary,qwen3.5-9b,P1 vs P3,204,152,-0.0103,-0.1371,0.1172,-0.0107,0.88161,0.89697,False,False
+Nondev,204,primary,qwen3.5-9b,P1 vs P4,204,152,0.0809,-0.05,0.2106,0.0904,0.23438,0.26786,False,False
+Nondev,204,primary,qwen3.5-9b,P3 vs P4,204,152,0.0912,-0.0135,0.1943,0.116,0.09359,0.12959,False,False
+Nondev,204,primary,qwen3.5-9b,P2 vs P5,204,152,0.0681,-0.0396,0.1722,0.0862,0.22298,0.25894,False,False
+Nondev,204,primary,qwen3.5-9b,P1 vs P5,204,152,0.0672,-0.0627,0.1893,0.0724,0.31337,0.34712,False,False
+Nondev,204,primary,qwen3.5-9b,P6 vs P7,204,152,-0.0353,-0.1228,0.0555,-0.0531,0.44296,0.47602,False,False
+Nondev,204,primary,qwen3.5-9b,P6 vs P8,204,152,-0.0873,-0.1773,0.0016,-0.127,0.06149,0.09035,False,False
+Nondev,204,primary,qwen3.5-9b,P1 vs P6,204,152,0.6294,0.4871,0.77,0.5935,0.0001,0.00024,True,True
+Nondev,204,primary,qwen3.5-9b,P4 vs P7,204,152,0.5132,0.3629,0.6622,0.4611,0.0001,0.00024,True,True
+Nondev,204,primary,qwen3.5-9b,P5 vs P8,204,152,0.475,0.33,0.6211,0.4405,0.0001,0.00024,True,True
+Without weak quotes,226,primary,gemma-3-12b,P1 vs P3,226,163,-0.1071,-0.2161,0.0017,-0.1216,0.05629,0.07794,False,False
+Without weak quotes,226,primary,gemma-3-12b,P1 vs P4,226,163,-0.085,-0.2078,0.0352,-0.0892,0.16668,0.20002,False,False
+Without weak quotes,226,primary,gemma-3-12b,P3 vs P4,226,163,0.0221,-0.0996,0.1448,0.0257,0.73343,0.76532,False,False
+Without weak quotes,226,primary,gemma-3-12b,P2 vs P5,226,163,0.0553,-0.0425,0.1569,0.065,0.28467,0.30591,False,False
+Without weak quotes,226,primary,gemma-3-12b,P1 vs P5,226,163,-0.0814,-0.2093,0.048,-0.0849,0.19648,0.22922,False,False
+Without weak quotes,226,primary,gemma-3-12b,P6 vs P7,226,163,-0.1956,-0.2838,-0.1051,-0.2883,0.0002,0.00045,True,False
+Without weak quotes,226,primary,gemma-3-12b,P6 vs P8,226,163,-0.1619,-0.2562,-0.0694,-0.2329,0.0003,0.00064,True,False
+Without weak quotes,226,primary,gemma-3-12b,P1 vs P6,226,163,0.7004,0.5535,0.8453,0.6552,0.0001,0.00024,True,True
+Without weak quotes,226,primary,gemma-3-12b,P4 vs P7,226,163,0.5898,0.4446,0.7341,0.5539,0.0001,0.00024,True,True
+Without weak quotes,226,primary,gemma-3-12b,P5 vs P8,226,163,0.6199,0.4835,0.7581,0.5939,0.0001,0.00024,True,True
+Without weak quotes,226,primary,gemma-3-1b,P1 vs P3,226,163,0.2257,0.1396,0.3107,0.3486,0.0001,0.00024,True,False
+Without weak quotes,226,primary,gemma-3-1b,P1 vs P4,226,163,0.1181,0.0242,0.2142,0.1654,0.017,0.02847,True,False
+Without weak quotes,226,primary,gemma-3-1b,P3 vs P4,226,163,-0.1075,-0.2085,-0.0053,-0.1448,0.0455,0.06508,False,False
+Without weak quotes,226,primary,gemma-3-1b,P2 vs P5,226,163,0.1226,0.0256,0.2176,0.1623,0.0159,0.02726,True,False
+Without weak quotes,226,primary,gemma-3-1b,P1 vs P5,226,163,0.342,0.2482,0.4327,0.4666,0.0001,0.00024,True,True
+Without weak quotes,226,primary,gemma-3-1b,P6 vs P7,226,163,-0.1788,-0.2995,-0.0542,-0.1947,0.0056,0.01008,True,False
+Without weak quotes,226,primary,gemma-3-1b,P6 vs P8,226,163,-0.1022,-0.2222,0.0161,-0.1115,0.09119,0.11938,False,False
+Without weak quotes,226,primary,gemma-3-1b,P1 vs P6,226,163,0.6239,0.4978,0.7483,0.6503,0.0001,0.00024,True,True
+Without weak quotes,226,primary,gemma-3-1b,P4 vs P7,226,163,0.327,0.2046,0.4496,0.351,0.0001,0.00024,True,True
+Without weak quotes,226,primary,gemma-3-1b,P5 vs P8,226,163,0.1796,0.05,0.3097,0.188,0.0093,0.01633,True,False
+Without weak quotes,226,primary,gemma-3-27b,P1 vs P3,226,163,-0.3031,-0.4277,-0.18,-0.3185,0.0001,0.00024,True,True
+Without weak quotes,226,primary,gemma-3-27b,P2 vs P5,226,163,0.0637,-0.0477,0.1783,0.0755,0.28007,0.30553,False,False
+Without weak quotes,226,primary,gemma-3-27b,P1 vs P5,226,163,-0.0929,-0.2195,0.0311,-0.1023,0.14809,0.18384,False,False
+Without weak quotes,226,primary,gemma-3-27b,P6 vs P8,226,163,-0.2841,-0.3642,-0.2063,-0.4718,0.0001,0.00024,True,True
+Without weak quotes,226,primary,gemma-3-27b,P1 vs P6,226,163,0.6403,0.4858,0.7912,0.5871,0.0001,0.00024,True,True
+Without weak quotes,226,primary,gemma-3-27b,P5 vs P8,226,163,0.4491,0.3196,0.5793,0.4733,0.0001,0.00024,True,True
+Without weak quotes,226,primary,llama-3.1-8b,P1 vs P3,226,163,0.1022,-0.0069,0.2139,0.1149,0.06899,0.09372,False,False
+Without weak quotes,226,primary,llama-3.1-8b,P1 vs P4,226,163,0.2438,0.1142,0.3777,0.2608,0.0006,0.00123,True,False
+Without weak quotes,226,primary,llama-3.1-8b,P3 vs P4,226,163,0.1416,0.0256,0.2568,0.1583,0.0196,0.03207,True,False
+Without weak quotes,226,primary,llama-3.1-8b,P2 vs P5,226,163,0.0066,-0.0991,0.1149,0.0078,0.91091,0.91091,False,False
+Without weak quotes,226,primary,llama-3.1-8b,P1 vs P5,226,163,0.235,0.106,0.3623,0.2403,0.0008,0.0016,True,False
+Without weak quotes,226,primary,llama-3.1-8b,P6 vs P7,226,163,0.1283,0.046,0.2101,0.1906,0.0034,0.00628,True,False
+Without weak quotes,226,primary,llama-3.1-8b,P6 vs P8,226,163,0.1535,0.0625,0.2439,0.2179,0.002,0.00379,True,False
+Without weak quotes,226,primary,llama-3.1-8b,P1 vs P6,226,163,0.6624,0.5259,0.8028,0.6353,0.0001,0.00024,True,True
+Without weak quotes,226,primary,llama-3.1-8b,P4 vs P7,226,163,0.5469,0.4088,0.6853,0.5035,0.0001,0.00024,True,True
+Without weak quotes,226,primary,llama-3.1-8b,P5 vs P8,226,163,0.581,0.43,0.7285,0.5238,0.0001,0.00024,True,True
+Without weak quotes,226,primary,llama-3.2-1b,P1 vs P3,226,163,0.2739,0.1865,0.3653,0.3905,0.0001,0.00024,True,True
+Without weak quotes,226,primary,llama-3.2-1b,P1 vs P4,226,163,0.3624,0.2668,0.4603,0.4584,0.0001,0.00024,True,True
+Without weak quotes,226,primary,llama-3.2-1b,P3 vs P4,226,163,0.0885,-0.0081,0.1844,0.1196,0.07619,0.10159,False,False
+Without weak quotes,226,primary,llama-3.2-1b,P2 vs P5,226,163,0.0929,0.0078,0.1769,0.137,0.0308,0.04718,True,False
+Without weak quotes,226,primary,llama-3.2-1b,P1 vs P5,226,163,0.4177,0.3181,0.5159,0.5106,0.0001,0.00024,True,True
+Without weak quotes,226,primary,llama-3.2-1b,P6 vs P7,226,163,0.081,-0.0446,0.2097,0.0816,0.21918,0.24544,False,False
+Without weak quotes,226,primary,llama-3.2-1b,P6 vs P8,226,163,0.2088,0.1052,0.3126,0.2494,0.0003,0.00064,True,False
+Without weak quotes,226,primary,llama-3.2-1b,P1 vs P6,226,163,0.5327,0.4227,0.6487,0.5981,0.0001,0.00024,True,True
+Without weak quotes,226,primary,llama-3.2-1b,P4 vs P7,226,163,0.2513,0.117,0.3838,0.2401,0.0002,0.00045,True,True
+Without weak quotes,226,primary,llama-3.2-1b,P5 vs P8,226,163,0.3239,0.2043,0.4444,0.3414,0.0001,0.00024,True,True
+Without weak quotes,226,primary,qwen3.5-27b,P1 vs P3,226,163,-0.1646,-0.2678,-0.065,-0.2011,0.0016,0.00311,True,False
+Without weak quotes,226,primary,qwen3.5-27b,P2 vs P5,226,163,0.0637,-0.036,0.1624,0.0819,0.22158,0.24544,False,False
+Without weak quotes,226,primary,qwen3.5-27b,P1 vs P5,226,163,-0.058,-0.1461,0.0287,-0.0775,0.20368,0.23278,False,False
+Without weak quotes,226,primary,qwen3.5-27b,P6 vs P8,226,163,-0.0668,-0.1282,-0.0045,-0.1408,0.0364,0.0546,False,False
+Without weak quotes,226,primary,qwen3.5-27b,P1 vs P6,226,163,0.3912,0.284,0.4965,0.4574,0.0001,0.00024,True,True
+Without weak quotes,226,primary,qwen3.5-27b,P5 vs P8,226,163,0.3823,0.2813,0.4872,0.4708,0.0001,0.00024,True,True
+Without weak quotes,226,primary,qwen3.5-2b,P1 vs P3,226,163,0.6867,0.5664,0.8022,0.7465,0.0001,0.00024,True,True
+Without weak quotes,226,primary,qwen3.5-2b,P1 vs P4,226,163,0.8133,0.7075,0.9141,1.0042,0.0001,0.00024,True,True
+Without weak quotes,226,primary,qwen3.5-2b,P3 vs P4,226,163,0.1265,0.0186,0.2331,0.1544,0.0253,0.0396,True,False
+Without weak quotes,226,primary,qwen3.5-2b,P2 vs P5,226,163,0.0894,-0.0225,0.1982,0.1051,0.11539,0.14576,False,False
+Without weak quotes,226,primary,qwen3.5-2b,P1 vs P5,226,163,0.7097,0.5964,0.822,0.7867,0.0001,0.00024,True,True
+Without weak quotes,226,primary,qwen3.5-2b,P6 vs P7,226,163,0.0199,-0.1018,0.1394,0.021,0.75522,0.7768,False,False
+Without weak quotes,226,primary,qwen3.5-2b,P6 vs P8,226,163,0.1301,0.0062,0.2526,0.1426,0.0461,0.06508,False,False
+Without weak quotes,226,primary,qwen3.5-2b,P1 vs P6,226,163,1.2611,1.1257,1.3882,1.2189,0.0001,0.00024,True,True
+Without weak quotes,226,primary,qwen3.5-2b,P4 vs P7,226,163,0.4677,0.3219,0.6077,0.4142,0.0001,0.00024,True,True
+Without weak quotes,226,primary,qwen3.5-2b,P5 vs P8,226,163,0.6814,0.5388,0.819,0.622,0.0001,0.00024,True,True
+Without weak quotes,226,primary,qwen3.5-9b,P1 vs P3,226,163,-0.0142,-0.131,0.1036,-0.0151,0.81842,0.82995,False,False
+Without weak quotes,226,primary,qwen3.5-9b,P1 vs P4,226,163,0.1084,-0.0152,0.2341,0.1204,0.09679,0.12444,False,False
+Without weak quotes,226,primary,qwen3.5-9b,P3 vs P4,226,163,0.1226,0.0218,0.2249,0.1512,0.0238,0.03808,True,False
+Without weak quotes,226,primary,qwen3.5-9b,P2 vs P5,226,163,0.0748,-0.0258,0.1734,0.0941,0.15248,0.18608,False,False
+Without weak quotes,226,primary,qwen3.5-9b,P1 vs P5,226,163,0.0796,-0.0385,0.1991,0.0863,0.19738,0.22922,False,False
+Without weak quotes,226,primary,qwen3.5-9b,P6 vs P7,226,163,-0.0305,-0.1111,0.0496,-0.0471,0.45945,0.48648,False,False
+Without weak quotes,226,primary,qwen3.5-9b,P6 vs P8,226,163,-0.0845,-0.1641,-0.0036,-0.1277,0.0414,0.06083,False,False
+Without weak quotes,226,primary,qwen3.5-9b,P1 vs P6,226,163,0.6496,0.525,0.7728,0.6225,0.0001,0.00024,True,True
+Without weak quotes,226,primary,qwen3.5-9b,P4 vs P7,226,163,0.5106,0.3685,0.6488,0.4634,0.0001,0.00024,True,True
+Without weak quotes,226,primary,qwen3.5-9b,P5 vs P8,226,163,0.4854,0.3541,0.618,0.4589,0.0001,0.00024,True,True
+"Test, no weak quotes",185,primary,gemma-3-12b,P1 vs P3,185,144,-0.1216,-0.2469,0.0017,-0.1359,0.06339,0.09508,False,False
+"Test, no weak quotes",185,primary,gemma-3-12b,P1 vs P4,185,144,-0.107,-0.2412,0.0251,-0.1156,0.11499,0.15922,False,False
+"Test, no weak quotes",185,primary,gemma-3-12b,P3 vs P4,185,144,0.0146,-0.1165,0.1458,0.0169,0.84182,0.85368,False,False
+"Test, no weak quotes",185,primary,gemma-3-12b,P2 vs P5,185,144,0.0692,-0.0413,0.1842,0.079,0.23958,0.27822,False,False
+"Test, no weak quotes",185,primary,gemma-3-12b,P1 vs P5,185,144,-0.1081,-0.244,0.0287,-0.1137,0.12899,0.16886,False,False
+"Test, no weak quotes",185,primary,gemma-3-12b,P6 vs P7,185,144,-0.1886,-0.2959,-0.0833,-0.2712,0.0007,0.00158,True,False
+"Test, no weak quotes",185,primary,gemma-3-12b,P6 vs P8,185,144,-0.2049,-0.3155,-0.0979,-0.2878,0.0006,0.00139,True,False
+"Test, no weak quotes",185,primary,gemma-3-12b,P1 vs P6,185,144,0.7249,0.5635,0.8831,0.6795,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,gemma-3-12b,P4 vs P7,185,144,0.6432,0.4768,0.8045,0.6025,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,gemma-3-12b,P5 vs P8,185,144,0.6281,0.4722,0.7894,0.5839,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,gemma-3-1b,P1 vs P3,185,144,0.2368,0.1432,0.3316,0.359,0.0001,0.00026,True,False
+"Test, no weak quotes",185,primary,gemma-3-1b,P1 vs P4,185,144,0.1362,0.0327,0.2401,0.1914,0.0107,0.01834,True,False
+"Test, no weak quotes",185,primary,gemma-3-1b,P3 vs P4,185,144,-0.1005,-0.2049,0.004,-0.1392,0.07129,0.10475,False,False
+"Test, no weak quotes",185,primary,gemma-3-1b,P2 vs P5,185,144,0.1222,0.0156,0.2292,0.1647,0.0302,0.04832,True,False
+"Test, no weak quotes",185,primary,gemma-3-1b,P1 vs P5,185,144,0.3643,0.2604,0.4654,0.4919,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,gemma-3-1b,P6 vs P7,185,144,-0.2265,-0.3574,-0.0968,-0.2502,0.0014,0.00305,True,False
+"Test, no weak quotes",185,primary,gemma-3-1b,P6 vs P8,185,144,-0.1557,-0.2857,-0.0253,-0.1689,0.0224,0.03665,True,False
+"Test, no weak quotes",185,primary,gemma-3-1b,P1 vs P6,185,144,0.6838,0.5495,0.8195,0.7076,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,gemma-3-1b,P4 vs P7,185,144,0.3211,0.1848,0.4602,0.3372,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,gemma-3-1b,P5 vs P8,185,144,0.1638,0.0187,0.3115,0.1687,0.0325,0.05087,False,False
+"Test, no weak quotes",185,primary,gemma-3-27b,P1 vs P3,185,144,-0.2697,-0.409,-0.1328,-0.2828,0.0004,0.00096,True,True
+"Test, no weak quotes",185,primary,gemma-3-27b,P2 vs P5,185,144,0.0714,-0.0511,0.1939,0.0827,0.26127,0.29859,False,False
+"Test, no weak quotes",185,primary,gemma-3-27b,P1 vs P5,185,144,-0.0832,-0.2211,0.0535,-0.0914,0.22928,0.27063,False,False
+"Test, no weak quotes",185,primary,gemma-3-27b,P6 vs P8,185,144,-0.2881,-0.3835,-0.1973,-0.4614,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,gemma-3-27b,P1 vs P6,185,144,0.66,0.4845,0.8313,0.593,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,gemma-3-27b,P5 vs P8,185,144,0.4551,0.3084,0.6028,0.4662,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,llama-3.1-8b,P1 vs P3,185,144,0.0995,-0.0307,0.228,0.1114,0.13699,0.17304,False,False
+"Test, no weak quotes",185,primary,llama-3.1-8b,P1 vs P4,185,144,0.2108,0.0627,0.3566,0.2218,0.0058,0.01099,True,False
+"Test, no weak quotes",185,primary,llama-3.1-8b,P3 vs P4,185,144,0.1114,-0.0265,0.25,0.1189,0.12529,0.16705,False,False
+"Test, no weak quotes",185,primary,llama-3.1-8b,P2 vs P5,185,144,0.0292,-0.094,0.1526,0.0338,0.65523,0.69377,False,False
+"Test, no weak quotes",185,primary,llama-3.1-8b,P1 vs P5,185,144,0.2416,0.0947,0.3865,0.2475,0.0021,0.00432,True,False
+"Test, no weak quotes",185,primary,llama-3.1-8b,P6 vs P7,185,144,0.1141,0.0204,0.2064,0.1746,0.0205,0.03433,True,False
+"Test, no weak quotes",185,primary,llama-3.1-8b,P6 vs P8,185,144,0.1632,0.0585,0.2647,0.2282,0.0028,0.0056,True,False
+"Test, no weak quotes",185,primary,llama-3.1-8b,P1 vs P6,185,144,0.7059,0.55,0.8622,0.6909,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,llama-3.1-8b,P4 vs P7,185,144,0.6092,0.455,0.7601,0.5636,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,llama-3.1-8b,P5 vs P8,185,144,0.6276,0.4506,0.7977,0.5526,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,llama-3.2-1b,P1 vs P3,185,144,0.2714,0.1689,0.3739,0.3844,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,llama-3.2-1b,P1 vs P4,185,144,0.3605,0.244,0.4806,0.4289,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,llama-3.2-1b,P3 vs P4,185,144,0.0892,-0.0225,0.2063,0.117,0.13359,0.17176,False,False
+"Test, no weak quotes",185,primary,llama-3.2-1b,P2 vs P5,185,144,0.127,0.0379,0.2179,0.1891,0.0062,0.01116,True,False
+"Test, no weak quotes",185,primary,llama-3.2-1b,P1 vs P5,185,144,0.4459,0.3352,0.5597,0.5292,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,llama-3.2-1b,P6 vs P7,185,144,0.027,-0.1217,0.1793,0.026,0.72993,0.76167,False,False
+"Test, no weak quotes",185,primary,llama-3.2-1b,P6 vs P8,185,144,0.1746,0.0511,0.2973,0.2034,0.0062,0.01116,True,False
+"Test, no weak quotes",185,primary,llama-3.2-1b,P1 vs P6,185,144,0.5708,0.4389,0.706,0.6198,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,llama-3.2-1b,P4 vs P7,185,144,0.2373,0.0913,0.3867,0.2236,0.0021,0.00432,True,False
+"Test, no weak quotes",185,primary,llama-3.2-1b,P5 vs P8,185,144,0.2995,0.1656,0.4394,0.3077,0.0002,0.0005,True,True
+"Test, no weak quotes",185,primary,qwen3.5-27b,P1 vs P3,185,144,-0.1557,-0.2659,-0.0489,-0.1969,0.0044,0.00856,True,False
+"Test, no weak quotes",185,primary,qwen3.5-27b,P2 vs P5,185,144,0.0941,-0.0126,0.1989,0.1239,0.08269,0.11907,False,False
+"Test, no weak quotes",185,primary,qwen3.5-27b,P1 vs P5,185,144,-0.0405,-0.1403,0.0571,-0.0571,0.42486,0.46348,False,False
+"Test, no weak quotes",185,primary,qwen3.5-27b,P6 vs P8,185,144,-0.0557,-0.1261,0.0133,-0.1177,0.11179,0.15782,False,False
+"Test, no weak quotes",185,primary,qwen3.5-27b,P1 vs P6,185,144,0.3946,0.2764,0.5148,0.456,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,qwen3.5-27b,P5 vs P8,185,144,0.3795,0.2663,0.4951,0.4647,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,qwen3.5-2b,P1 vs P3,185,144,0.6568,0.5152,0.7977,0.6887,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,qwen3.5-2b,P1 vs P4,185,144,0.8249,0.7073,0.9405,0.9859,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,qwen3.5-2b,P3 vs P4,185,144,0.1681,0.0456,0.2919,0.2003,0.0075,0.01317,True,False
+"Test, no weak quotes",185,primary,qwen3.5-2b,P2 vs P5,185,144,0.0676,-0.0575,0.188,0.0792,0.28377,0.31924,False,False
+"Test, no weak quotes",185,primary,qwen3.5-2b,P1 vs P5,185,144,0.6946,0.5674,0.8197,0.7484,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,qwen3.5-2b,P6 vs P7,185,144,0.0232,-0.1197,0.1602,0.0239,0.74813,0.76951,False,False
+"Test, no weak quotes",185,primary,qwen3.5-2b,P6 vs P8,185,144,0.1195,-0.0293,0.2661,0.1238,0.12019,0.16328,False,False
+"Test, no weak quotes",185,primary,qwen3.5-2b,P1 vs P6,185,144,1.2914,1.1341,1.4367,1.2322,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,qwen3.5-2b,P4 vs P7,185,144,0.4897,0.3255,0.6549,0.4262,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,qwen3.5-2b,P5 vs P8,185,144,0.7162,0.5521,0.8777,0.6363,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,qwen3.5-9b,P1 vs P3,185,144,0.0097,-0.1235,0.141,0.0105,0.89641,0.89641,False,False
+"Test, no weak quotes",185,primary,qwen3.5-9b,P1 vs P4,185,144,0.0897,-0.0436,0.2234,0.1037,0.19868,0.23842,False,False
+"Test, no weak quotes",185,primary,qwen3.5-9b,P3 vs P4,185,144,0.08,-0.0287,0.1928,0.1013,0.16868,0.2094,False,False
+"Test, no weak quotes",185,primary,qwen3.5-9b,P2 vs P5,185,144,0.0584,-0.0568,0.1717,0.0727,0.34157,0.37835,False,False
+"Test, no weak quotes",185,primary,qwen3.5-9b,P1 vs P5,185,144,0.0892,-0.0401,0.2197,0.0992,0.19118,0.2333,False,False
+"Test, no weak quotes",185,primary,qwen3.5-9b,P6 vs P7,185,144,-0.0384,-0.1308,0.056,-0.0568,0.43676,0.46935,False,False
+"Test, no weak quotes",185,primary,qwen3.5-9b,P6 vs P8,185,144,-0.0973,-0.1914,-0.0011,-0.1398,0.0483,0.07399,False,False
+"Test, no weak quotes",185,primary,qwen3.5-9b,P1 vs P6,185,144,0.6611,0.5077,0.8126,0.6103,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,qwen3.5-9b,P4 vs P7,185,144,0.533,0.3789,0.6939,0.4759,0.0001,0.00026,True,True
+"Test, no weak quotes",185,primary,qwen3.5-9b,P5 vs P8,185,144,0.4746,0.3257,0.6242,0.4414,0.0001,0.00026,True,True
+Source unflagged,164,primary,gemma-3-12b,P1 vs P3,164,116,-0.1055,-0.2273,0.0161,-0.1271,0.09849,0.13975,False,False
+Source unflagged,164,primary,gemma-3-12b,P1 vs P4,164,116,-0.0701,-0.2198,0.0753,-0.0718,0.36206,0.42057,False,False
+Source unflagged,164,primary,gemma-3-12b,P3 vs P4,164,116,0.0354,-0.1013,0.1782,0.0413,0.63304,0.67028,False,False
+Source unflagged,164,primary,gemma-3-12b,P2 vs P5,164,116,0.022,-0.0959,0.1438,0.0252,0.73133,0.74406,False,False
+Source unflagged,164,primary,gemma-3-12b,P1 vs P5,164,116,-0.0598,-0.2096,0.0884,-0.0622,0.44476,0.48519,False,False
+Source unflagged,164,primary,gemma-3-12b,P6 vs P7,164,116,-0.161,-0.2644,-0.0596,-0.2477,0.0019,0.0038,True,False
+Source unflagged,164,primary,gemma-3-12b,P6 vs P8,164,116,-0.1817,-0.3,-0.0673,-0.245,0.0042,0.00817,True,False
+Source unflagged,164,primary,gemma-3-12b,P1 vs P6,164,116,0.6671,0.4846,0.8528,0.5941,0.0001,0.00026,True,True
+Source unflagged,164,primary,gemma-3-12b,P4 vs P7,164,116,0.5762,0.4019,0.7422,0.541,0.0001,0.00026,True,True
+Source unflagged,164,primary,gemma-3-12b,P5 vs P8,164,116,0.5451,0.3773,0.7146,0.5124,0.0001,0.00026,True,True
+Source unflagged,164,primary,gemma-3-1b,P1 vs P3,164,116,0.2177,0.1137,0.3235,0.3228,0.0003,0.00067,True,False
+Source unflagged,164,primary,gemma-3-1b,P1 vs P4,164,116,0.1049,-0.0061,0.2151,0.1534,0.06389,0.09584,False,False
+Source unflagged,164,primary,gemma-3-1b,P3 vs P4,164,116,-0.1128,-0.2453,0.0151,-0.1433,0.09899,0.13975,False,False
+Source unflagged,164,primary,gemma-3-1b,P2 vs P5,164,116,0.1213,0.004,0.2365,0.156,0.042,0.06574,False,False
+Source unflagged,164,primary,gemma-3-1b,P1 vs P5,164,116,0.3494,0.2361,0.4582,0.4698,0.0001,0.00026,True,True
+Source unflagged,164,primary,gemma-3-1b,P6 vs P7,164,116,-0.2537,-0.3957,-0.1101,-0.2686,0.0003,0.00067,True,True
+Source unflagged,164,primary,gemma-3-1b,P6 vs P8,164,116,-0.1878,-0.3305,-0.0446,-0.2022,0.0129,0.02211,True,False
+Source unflagged,164,primary,gemma-3-1b,P1 vs P6,164,116,0.661,0.5122,0.8088,0.7065,0.0001,0.00026,True,True
+Source unflagged,164,primary,gemma-3-1b,P4 vs P7,164,116,0.3024,0.1596,0.4485,0.3226,0.0003,0.00067,True,True
+Source unflagged,164,primary,gemma-3-1b,P5 vs P8,164,116,0.1238,-0.0375,0.2819,0.1281,0.13479,0.17972,False,False
+Source unflagged,164,primary,gemma-3-27b,P1 vs P3,164,116,-0.3976,-0.5396,-0.2568,-0.4225,0.0001,0.00026,True,True
+Source unflagged,164,primary,gemma-3-27b,P2 vs P5,164,116,0.0677,-0.0539,0.1963,0.083,0.30817,0.37607,False,False
+Source unflagged,164,primary,gemma-3-27b,P1 vs P5,164,116,-0.1793,-0.3315,-0.0321,-0.1942,0.0206,0.03449,True,False
+Source unflagged,164,primary,gemma-3-27b,P6 vs P8,164,116,-0.3091,-0.4055,-0.2121,-0.5009,0.0001,0.00026,True,True
+Source unflagged,164,primary,gemma-3-27b,P1 vs P6,164,116,0.5213,0.3323,0.7024,0.4723,0.0001,0.00026,True,True
+Source unflagged,164,primary,gemma-3-27b,P5 vs P8,164,116,0.3915,0.2316,0.5497,0.3945,0.0001,0.00026,True,True
+Source unflagged,164,primary,llama-3.1-8b,P1 vs P3,164,116,0.1348,0.005,0.2669,0.1455,0.0464,0.07108,False,False
+Source unflagged,164,primary,llama-3.1-8b,P1 vs P4,164,116,0.2616,0.0993,0.4255,0.2772,0.0019,0.0038,True,True
+Source unflagged,164,primary,llama-3.1-8b,P3 vs P4,164,116,0.1268,-0.0157,0.2649,0.1388,0.08749,0.12856,False,False
+Source unflagged,164,primary,llama-3.1-8b,P2 vs P5,164,116,0.028,-0.0935,0.1503,0.0326,0.67603,0.70542,False,False
+Source unflagged,164,primary,llama-3.1-8b,P1 vs P5,164,116,0.272,0.1322,0.4112,0.2868,0.0002,0.0005,True,True
+Source unflagged,164,primary,llama-3.1-8b,P6 vs P7,164,116,0.1262,0.0345,0.2167,0.1865,0.0108,0.01897,True,False
+Source unflagged,164,primary,llama-3.1-8b,P6 vs P8,164,116,0.1744,0.0706,0.2834,0.2539,0.0016,0.00339,True,False
+Source unflagged,164,primary,llama-3.1-8b,P1 vs P6,164,116,0.6427,0.4724,0.8115,0.6103,0.0001,0.00026,True,True
+Source unflagged,164,primary,llama-3.1-8b,P4 vs P7,164,116,0.5073,0.3506,0.6647,0.4635,0.0001,0.00026,True,True
+Source unflagged,164,primary,llama-3.1-8b,P5 vs P8,164,116,0.5451,0.3669,0.7136,0.5031,0.0001,0.00026,True,True
+Source unflagged,164,primary,llama-3.2-1b,P1 vs P3,164,116,0.2354,0.1333,0.3367,0.3274,0.0001,0.00026,True,False
+Source unflagged,164,primary,llama-3.2-1b,P1 vs P4,164,116,0.3091,0.203,0.4174,0.402,0.0001,0.00026,True,True
+Source unflagged,164,primary,llama-3.2-1b,P3 vs P4,164,116,0.0738,-0.0367,0.1839,0.0998,0.20668,0.26107,False,False
+Source unflagged,164,primary,llama-3.2-1b,P2 vs P5,164,116,0.1366,0.041,0.2323,0.2044,0.0069,0.01307,True,False
+Source unflagged,164,primary,llama-3.2-1b,P1 vs P5,164,116,0.3659,0.2525,0.4767,0.4516,0.0001,0.00026,True,True
+Source unflagged,164,primary,llama-3.2-1b,P6 vs P7,164,116,0.0921,-0.0676,0.249,0.0892,0.26307,0.32657,False,False
+Source unflagged,164,primary,llama-3.2-1b,P6 vs P8,164,116,0.1646,0.0415,0.2851,0.1872,0.0094,0.01735,True,False
+Source unflagged,164,primary,llama-3.2-1b,P1 vs P6,164,116,0.5384,0.4081,0.6719,0.5801,0.0001,0.00026,True,True
+Source unflagged,164,primary,llama-3.2-1b,P4 vs P7,164,116,0.3213,0.1618,0.4787,0.3216,0.0004,0.00087,True,True
+Source unflagged,164,primary,llama-3.2-1b,P5 vs P8,164,116,0.3372,0.2006,0.4817,0.3537,0.0001,0.00026,True,True
+Source unflagged,164,primary,qwen3.5-27b,P1 vs P3,164,116,-0.1494,-0.2811,-0.0225,-0.1645,0.0278,0.04448,True,False
+Source unflagged,164,primary,qwen3.5-27b,P2 vs P5,164,116,0.0506,-0.0704,0.172,0.0636,0.41366,0.45821,False,False
+Source unflagged,164,primary,qwen3.5-27b,P1 vs P5,164,116,-0.0732,-0.179,0.0325,-0.0941,0.17228,0.22553,False,False
+Source unflagged,164,primary,qwen3.5-27b,P6 vs P8,164,116,-0.0488,-0.1213,0.0221,-0.1013,0.18928,0.24336,False,False
+Source unflagged,164,primary,qwen3.5-27b,P1 vs P6,164,116,0.3567,0.2343,0.4772,0.4154,0.0001,0.00026,True,True
+Source unflagged,164,primary,qwen3.5-27b,P5 vs P8,164,116,0.3811,0.2687,0.494,0.4884,0.0001,0.00026,True,True
+Source unflagged,164,primary,qwen3.5-2b,P1 vs P3,164,116,0.6744,0.548,0.7988,0.7883,0.0001,0.00026,True,True
+Source unflagged,164,primary,qwen3.5-2b,P1 vs P4,164,116,0.8402,0.7291,0.9546,1.1072,0.0001,0.00026,True,True
+Source unflagged,164,primary,qwen3.5-2b,P3 vs P4,164,116,0.1659,0.0427,0.2894,0.201,0.0103,0.01854,True,False
+Source unflagged,164,primary,qwen3.5-2b,P2 vs P5,164,116,0.1098,-0.0214,0.2449,0.1278,0.11059,0.15312,False,False
+Source unflagged,164,primary,qwen3.5-2b,P1 vs P5,164,116,0.7238,0.5988,0.8494,0.8359,0.0001,0.00026,True,True
+Source unflagged,164,primary,qwen3.5-2b,P6 vs P7,164,116,0.0451,-0.0932,0.1764,0.0492,0.52735,0.5667,False,False
+Source unflagged,164,primary,qwen3.5-2b,P6 vs P8,164,116,0.1134,-0.0293,0.2532,0.1312,0.11799,0.16029,False,False
+Source unflagged,164,primary,qwen3.5-2b,P1 vs P6,164,116,1.2439,1.0814,1.3977,1.1766,0.0001,0.00026,True,True
+Source unflagged,164,primary,qwen3.5-2b,P4 vs P7,164,116,0.4488,0.2794,0.6193,0.3863,0.0001,0.00026,True,True
+Source unflagged,164,primary,qwen3.5-2b,P5 vs P8,164,116,0.6335,0.4583,0.8043,0.5629,0.0001,0.00026,True,True
+Source unflagged,164,primary,qwen3.5-9b,P1 vs P3,164,116,-0.0677,-0.2129,0.0762,-0.0702,0.36216,0.42057,False,False
+Source unflagged,164,primary,qwen3.5-9b,P1 vs P4,164,116,0.0768,-0.0756,0.2296,0.0837,0.33627,0.40352,False,False
+Source unflagged,164,primary,qwen3.5-9b,P3 vs P4,164,116,0.1445,0.0216,0.2674,0.1746,0.0244,0.03993,True,False
+Source unflagged,164,primary,qwen3.5-9b,P2 vs P5,164,116,0.0543,-0.0643,0.1667,0.0701,0.37586,0.42955,False,False
+Source unflagged,164,primary,qwen3.5-9b,P1 vs P5,164,116,0.0128,-0.1329,0.1574,0.0137,0.88021,0.88021,False,False
+Source unflagged,164,primary,qwen3.5-9b,P6 vs P7,164,116,0.0177,-0.0846,0.1182,0.0251,0.73373,0.74406,False,False
+Source unflagged,164,primary,qwen3.5-9b,P6 vs P8,164,116,-0.0433,-0.1405,0.0571,-0.0626,0.40396,0.45446,False,False
+Source unflagged,164,primary,qwen3.5-9b,P1 vs P6,164,116,0.5409,0.3971,0.6877,0.5069,0.0001,0.00026,True,True
+Source unflagged,164,primary,qwen3.5-9b,P4 vs P7,164,116,0.4817,0.3057,0.657,0.418,0.0001,0.00026,True,True
+Source unflagged,164,primary,qwen3.5-9b,P5 vs P8,164,116,0.4848,0.3225,0.647,0.4466,0.0001,0.00026,True,True
+Source flagged,69,primary,gemma-3-12b,P1 vs P3,69,51,-0.0551,-0.2862,0.1554,-0.0561,0.64814,0.71348,False,False
+Source flagged,69,primary,gemma-3-12b,P1 vs P4,69,51,-0.0783,-0.2857,0.1279,-0.0877,0.47925,0.5751,False,False
+Source flagged,69,primary,gemma-3-12b,P3 vs P4,69,51,-0.0232,-0.2373,0.1968,-0.0274,0.84942,0.87369,False,False
+Source flagged,69,primary,gemma-3-12b,P2 vs P5,69,51,0.1304,-0.027,0.3014,0.1667,0.12499,0.21113,False,False
+Source flagged,69,primary,gemma-3-12b,P1 vs P5,69,51,-0.0957,-0.3152,0.1062,-0.1029,0.37996,0.48891,False,False
+Source flagged,69,primary,gemma-3-12b,P6 vs P7,69,51,-0.2986,-0.4797,-0.1347,-0.4141,0.001,0.003,True,True
+Source flagged,69,primary,gemma-3-12b,P6 vs P8,69,51,-0.1261,-0.2818,0.0206,-0.2033,0.11449,0.20492,False,False
+Source flagged,69,primary,gemma-3-12b,P1 vs P6,69,51,0.742,0.5516,0.9397,0.8077,0.0001,0.00045,True,True
+Source flagged,69,primary,gemma-3-12b,P4 vs P7,69,51,0.5217,0.2541,0.7773,0.4733,0.0006,0.00206,True,True
+Source flagged,69,primary,gemma-3-12b,P5 vs P8,69,51,0.7116,0.4818,0.948,0.7077,0.0001,0.00045,True,True
+Source flagged,69,primary,gemma-3-1b,P1 vs P3,69,51,0.2435,0.1101,0.3763,0.3996,0.001,0.003,True,False
+Source flagged,69,primary,gemma-3-1b,P1 vs P4,69,51,0.1391,-0.0304,0.3122,0.1774,0.11629,0.20492,False,False
+Source flagged,69,primary,gemma-3-1b,P3 vs P4,69,51,-0.1043,-0.2582,0.058,-0.16,0.21968,0.31014,False,False
+Source flagged,69,primary,gemma-3-1b,P2 vs P5,69,51,0.129,-0.0294,0.2845,0.1903,0.11669,0.20492,False,False
+Source flagged,69,primary,gemma-3-1b,P1 vs P5,69,51,0.3217,0.153,0.4871,0.4466,0.0008,0.00262,True,True
+Source flagged,69,primary,gemma-3-1b,P6 vs P7,69,51,0.0101,-0.1896,0.2074,0.0123,0.93801,0.93801,False,False
+Source flagged,69,primary,gemma-3-1b,P6 vs P8,69,51,0.0913,-0.0943,0.2758,0.1099,0.34877,0.46503,False,False
+Source flagged,69,primary,gemma-3-1b,P1 vs P6,69,51,0.4971,0.2815,0.7066,0.4921,0.0001,0.00045,True,True
+Source flagged,69,primary,gemma-3-1b,P4 vs P7,69,51,0.3681,0.1578,0.5703,0.3973,0.0023,0.00571,True,True
+Source flagged,69,primary,gemma-3-1b,P5 vs P8,69,51,0.2667,0.0412,0.4925,0.2951,0.0241,0.04958,True,True
+Source flagged,69,primary,gemma-3-27b,P1 vs P3,69,51,-0.0551,-0.2851,0.1597,-0.0604,0.64584,0.71348,False,False
+Source flagged,69,primary,gemma-3-27b,P2 vs P5,69,51,0.1043,-0.1281,0.3235,0.1126,0.38026,0.48891,False,False
+Source flagged,69,primary,gemma-3-27b,P1 vs P5,69,51,0.1507,-0.05,0.3549,0.1751,0.15518,0.23772,False,False
+Source flagged,69,primary,gemma-3-27b,P6 vs P8,69,51,-0.2203,-0.3578,-0.0955,-0.3731,0.0013,0.00347,True,False
+Source flagged,69,primary,gemma-3-27b,P1 vs P6,69,51,0.887,0.6464,1.1221,0.864,0.0001,0.00045,True,True
+Source flagged,69,primary,gemma-3-27b,P5 vs P8,69,51,0.5159,0.2941,0.7328,0.5744,0.0001,0.00045,True,True
+Source flagged,69,primary,llama-3.1-8b,P1 vs P3,69,51,0.0826,-0.1123,0.281,0.1018,0.42076,0.51347,False,False
+Source flagged,69,primary,llama-3.1-8b,P1 vs P4,69,51,0.2493,0.0426,0.4652,0.2763,0.0217,0.04595,True,False
+Source flagged,69,primary,llama-3.1-8b,P3 vs P4,69,51,0.1667,-0.0406,0.3698,0.1995,0.12609,0.21113,False,False
+Source flagged,69,primary,llama-3.1-8b,P2 vs P5,69,51,-0.0435,-0.2424,0.1582,-0.0515,0.68863,0.72914,False,False
+Source flagged,69,primary,llama-3.1-8b,P1 vs P5,69,51,0.1928,-0.082,0.4627,0.1884,0.16418,0.24627,False,False
+Source flagged,69,primary,llama-3.1-8b,P6 vs P7,69,51,0.1261,-0.0378,0.2971,0.1931,0.15148,0.2371,False,False
+Source flagged,69,primary,llama-3.1-8b,P6 vs P8,69,51,0.0768,-0.1015,0.2493,0.1029,0.41426,0.51347,False,False
+Source flagged,69,primary,llama-3.1-8b,P1 vs P6,69,51,0.6928,0.4692,0.923,0.7017,0.0001,0.00045,True,True
+Source flagged,69,primary,llama-3.1-8b,P4 vs P7,69,51,0.5696,0.3,0.8273,0.5371,0.0002,0.0008,True,True
+Source flagged,69,primary,llama-3.1-8b,P5 vs P8,69,51,0.5768,0.2753,0.8565,0.4951,0.0006,0.00206,True,True
+Source flagged,69,primary,llama-3.2-1b,P1 vs P3,69,51,0.3638,0.2077,0.5264,0.5695,0.0004,0.00152,True,True
+Source flagged,69,primary,llama-3.2-1b,P1 vs P4,69,51,0.4899,0.3055,0.6864,0.6115,0.0001,0.00045,True,True
+Source flagged,69,primary,llama-3.2-1b,P3 vs P4,69,51,0.1261,-0.0473,0.3138,0.1729,0.18108,0.26076,False,False
+Source flagged,69,primary,llama-3.2-1b,P2 vs P5,69,51,-0.0188,-0.1862,0.152,-0.0266,0.84212,0.87369,False,False
+Source flagged,69,primary,llama-3.2-1b,P1 vs P5,69,51,0.5522,0.3672,0.7563,0.6896,0.0001,0.00045,True,True
+Source flagged,69,primary,llama-3.2-1b,P6 vs P7,69,51,0.0551,-0.1514,0.2572,0.0619,0.60684,0.70472,False,False
+Source flagged,69,primary,llama-3.2-1b,P6 vs P8,69,51,0.2609,0.0897,0.4373,0.3516,0.0062,0.01353,True,True
+Source flagged,69,primary,llama-3.2-1b,P1 vs P6,69,51,0.4971,0.3147,0.6919,0.6397,0.0001,0.00045,True,True
+Source flagged,69,primary,llama-3.2-1b,P4 vs P7,69,51,0.0623,-0.1838,0.2985,0.0551,0.61854,0.7069,False,False
+Source flagged,69,primary,llama-3.2-1b,P5 vs P8,69,51,0.2058,-0.0242,0.4329,0.2163,0.07959,0.1508,False,False
+Source flagged,69,primary,qwen3.5-27b,P1 vs P3,69,51,-0.1536,-0.2788,-0.0214,-0.276,0.0358,0.0716,False,False
+Source flagged,69,primary,qwen3.5-27b,P2 vs P5,69,51,0.071,-0.0986,0.2243,0.0972,0.41366,0.51347,False,False
+Source flagged,69,primary,qwen3.5-27b,P1 vs P5,69,51,-0.0101,-0.1597,0.1356,-0.0154,0.90441,0.91715,False,False
+Source flagged,69,primary,qwen3.5-27b,P6 vs P8,69,51,-0.0957,-0.23,0.0403,-0.1735,0.17908,0.26076,False,False
+Source flagged,69,primary,qwen3.5-27b,P1 vs P6,69,51,0.4594,0.2614,0.6696,0.5464,0.0001,0.00045,True,True
+Source flagged,69,primary,qwen3.5-27b,P5 vs P8,69,51,0.3739,0.1681,0.5912,0.4259,0.0011,0.00305,True,True
+Source flagged,69,primary,qwen3.5-2b,P1 vs P3,69,51,0.6986,0.4389,0.938,0.6641,0.0001,0.00045,True,True
+Source flagged,69,primary,qwen3.5-2b,P1 vs P4,69,51,0.7536,0.5408,0.9556,0.8267,0.0001,0.00045,True,True
+Source flagged,69,primary,qwen3.5-2b,P3 vs P4,69,51,0.0551,-0.1463,0.2483,0.0691,0.59314,0.7001,False,False
+Source flagged,69,primary,qwen3.5-2b,P2 vs P5,69,51,0.1101,-0.0766,0.3058,0.1271,0.26337,0.36467,False,False
+Source flagged,69,primary,qwen3.5-2b,P1 vs P5,69,51,0.7029,0.4738,0.9131,0.7038,0.0001,0.00045,True,True
+Source flagged,69,primary,qwen3.5-2b,P6 vs P7,69,51,-0.0565,-0.3123,0.1868,-0.0573,0.66303,0.71348,False,False
+Source flagged,69,primary,qwen3.5-2b,P6 vs P8,69,51,0.1362,-0.1078,0.3688,0.1373,0.28097,0.3817,False,False
+Source flagged,69,primary,qwen3.5-2b,P1 vs P6,69,51,1.2536,1.0246,1.4696,1.2891,0.0001,0.00045,True,True
+Source flagged,69,primary,qwen3.5-2b,P4 vs P7,69,51,0.4435,0.1843,0.6877,0.4272,0.0019,0.00489,True,True
+Source flagged,69,primary,qwen3.5-2b,P5 vs P8,69,51,0.687,0.4381,0.921,0.6263,0.0001,0.00045,True,True
+Source flagged,69,primary,qwen3.5-9b,P1 vs P3,69,51,0.1536,-0.0381,0.358,0.1772,0.13869,0.2219,False,False
+Source flagged,69,primary,qwen3.5-9b,P1 vs P4,69,51,0.1942,-0.0013,0.393,0.2328,0.06259,0.1218,False,False
+Source flagged,69,primary,qwen3.5-9b,P3 vs P4,69,51,0.0406,-0.1333,0.2076,0.0541,0.66393,0.71348,False,False
+Source flagged,69,primary,qwen3.5-9b,P2 vs P5,69,51,0.1551,-0.0433,0.3437,0.1838,0.13339,0.21827,False,False
+Source flagged,69,primary,qwen3.5-9b,P1 vs P5,69,51,0.2812,0.1053,0.4603,0.3365,0.0031,0.00744,True,True
+Source flagged,69,primary,qwen3.5-9b,P6 vs P7,69,51,-0.1565,-0.2681,-0.0536,-0.332,0.0033,0.00766,True,False
+Source flagged,69,primary,qwen3.5-9b,P6 vs P8,69,51,-0.1942,-0.3403,-0.0635,-0.3261,0.0061,0.01353,True,False
+Source flagged,69,primary,qwen3.5-9b,P1 vs P6,69,51,0.8899,0.67,1.109,0.9522,0.0001,0.00045,True,True
+Source flagged,69,primary,qwen3.5-9b,P4 vs P7,69,51,0.5391,0.3313,0.7306,0.565,0.0002,0.0008,True,True
+Source flagged,69,primary,qwen3.5-9b,P5 vs P8,69,51,0.4145,0.1879,0.625,0.4244,0.0011,0.00305,True,True
+All scored,233,second,gemma-3-12b,P1 vs P3,233,167,-0.1279,-0.2614,0.0033,-0.1236,0.06229,0.09343,False,False
+All scored,233,second,gemma-3-12b,P1 vs P4,233,167,-0.1004,-0.2366,0.0372,-0.093,0.16478,0.21417,False,False
+All scored,233,second,gemma-3-12b,P3 vs P4,233,167,0.0275,-0.107,0.1671,0.0269,0.70453,0.73516,False,False
+All scored,233,second,gemma-3-12b,P2 vs P5,233,167,0.0811,-0.0388,0.2,0.0784,0.18358,0.22789,False,False
+All scored,233,second,gemma-3-12b,P1 vs P5,233,167,-0.0395,-0.1792,0.1025,-0.0368,0.59394,0.62888,False,False
+All scored,233,second,gemma-3-12b,P6 vs P7,233,167,-0.0579,-0.1487,0.0317,-0.0855,0.21378,0.25654,False,False
+All scored,233,second,gemma-3-12b,P6 vs P8,233,167,-0.073,-0.1751,0.0255,-0.0982,0.16658,0.21417,False,False
+All scored,233,second,gemma-3-12b,P1 vs P6,233,167,0.6863,0.5284,0.8412,0.5896,0.0001,0.00021,True,True
+All scored,233,second,gemma-3-12b,P4 vs P7,233,167,0.7288,0.5677,0.8906,0.5828,0.0001,0.00021,True,True
+All scored,233,second,gemma-3-12b,P5 vs P8,233,167,0.6528,0.4942,0.816,0.5319,0.0001,0.00021,True,True
+All scored,233,second,gemma-3-1b,P1 vs P3,233,167,0.1811,0.0724,0.2939,0.2153,0.0018,0.00309,True,False
+All scored,233,second,gemma-3-1b,P1 vs P4,233,167,0.0987,-0.0208,0.2205,0.1059,0.11309,0.15659,False,False
+All scored,233,second,gemma-3-1b,P3 vs P4,233,167,-0.0824,-0.2176,0.0504,-0.0862,0.23468,0.277,False,False
+All scored,233,second,gemma-3-1b,P2 vs P5,233,167,0.1631,0.0441,0.2844,0.167,0.009,0.0144,True,False
+All scored,233,second,gemma-3-1b,P1 vs P5,233,167,0.4597,0.3352,0.5848,0.4659,0.0001,0.00021,True,True
+All scored,233,second,gemma-3-1b,P6 vs P7,233,167,-0.0034,-0.1545,0.1433,-0.003,0.9685,0.9777,False,False
+All scored,233,second,gemma-3-1b,P6 vs P8,233,167,0.0845,-0.0686,0.2399,0.0718,0.28717,0.3181,False,False
+All scored,233,second,gemma-3-1b,P1 vs P6,233,167,0.7807,0.6327,0.9338,0.6691,0.0001,0.00021,True,True
+All scored,233,second,gemma-3-1b,P4 vs P7,233,167,0.6785,0.5286,0.8285,0.5511,0.0001,0.00021,True,True
+All scored,233,second,gemma-3-1b,P5 vs P8,233,167,0.4056,0.2285,0.5792,0.3094,0.0001,0.00021,True,True
+All scored,233,second,gemma-3-27b,P1 vs P3,233,167,-0.333,-0.4646,-0.2025,-0.3247,0.0001,0.00021,True,True
+All scored,233,second,gemma-3-27b,P2 vs P5,233,167,0.0803,-0.0551,0.2171,0.0817,0.25957,0.29258,False,False
+All scored,233,second,gemma-3-27b,P1 vs P5,233,167,-0.0785,-0.2143,0.0541,-0.0767,0.26007,0.29258,False,False
+All scored,233,second,gemma-3-27b,P6 vs P8,233,167,-0.1399,-0.2272,-0.0593,-0.2145,0.0016,0.00281,True,False
+All scored,233,second,gemma-3-27b,P1 vs P6,233,167,0.5451,0.3887,0.6987,0.4856,0.0001,0.00021,True,True
+All scored,233,second,gemma-3-27b,P5 vs P8,233,167,0.4837,0.3348,0.6317,0.4238,0.0001,0.00021,True,True
+All scored,233,second,llama-3.1-8b,P1 vs P3,233,167,0.2717,0.1263,0.4188,0.2377,0.0005,0.00092,True,True
+All scored,233,second,llama-3.1-8b,P1 vs P4,233,167,0.4086,0.2553,0.5621,0.3645,0.0001,0.00021,True,True
+All scored,233,second,llama-3.1-8b,P3 vs P4,233,167,0.1369,-0.0161,0.2975,0.1219,0.09459,0.13621,False,False
+All scored,233,second,llama-3.1-8b,P2 vs P5,233,167,0.0064,-0.1293,0.1453,0.006,0.93371,0.96039,False,False
+All scored,233,second,llama-3.1-8b,P1 vs P5,233,167,0.43,0.2775,0.5855,0.3669,0.0001,0.00021,True,True
+All scored,233,second,llama-3.1-8b,P6 vs P7,233,167,0.3052,0.2052,0.406,0.3631,0.0001,0.00021,True,True
+All scored,233,second,llama-3.1-8b,P6 vs P8,233,167,0.3421,0.2362,0.4445,0.4016,0.0001,0.00021,True,True
+All scored,233,second,llama-3.1-8b,P1 vs P6,233,167,0.8086,0.6388,0.9857,0.5961,0.0001,0.00021,True,True
+All scored,233,second,llama-3.1-8b,P4 vs P7,233,167,0.7052,0.5468,0.8647,0.5598,0.0001,0.00021,True,True
+All scored,233,second,llama-3.1-8b,P5 vs P8,233,167,0.7206,0.5569,0.8847,0.5727,0.0001,0.00021,True,True
+All scored,233,second,llama-3.2-1b,P1 vs P3,233,167,0.4369,0.3219,0.5561,0.4683,0.0001,0.00021,True,True
+All scored,233,second,llama-3.2-1b,P1 vs P4,233,167,0.4781,0.351,0.6078,0.4709,0.0001,0.00021,True,True
+All scored,233,second,llama-3.2-1b,P3 vs P4,233,167,0.0412,-0.077,0.1667,0.0417,0.51035,0.54844,False,False
+All scored,233,second,llama-3.2-1b,P2 vs P5,233,167,0.1073,-0.0076,0.229,0.1121,0.07599,0.11166,False,False
+All scored,233,second,llama-3.2-1b,P1 vs P5,233,167,0.6107,0.4728,0.7451,0.5623,0.0001,0.00021,True,True
+All scored,233,second,llama-3.2-1b,P6 vs P7,233,167,0.2567,0.087,0.421,0.1906,0.0032,0.00524,True,False
+All scored,233,second,llama-3.2-1b,P6 vs P8,233,167,0.4884,0.3558,0.6204,0.4414,0.0001,0.00021,True,True
+All scored,233,second,llama-3.2-1b,P1 vs P6,233,167,0.7858,0.6544,0.9248,0.7162,0.0001,0.00021,True,True
+All scored,233,second,llama-3.2-1b,P4 vs P7,233,167,0.5644,0.3872,0.75,0.391,0.0001,0.00021,True,True
+All scored,233,second,llama-3.2-1b,P5 vs P8,233,167,0.6635,0.5099,0.8188,0.522,0.0001,0.00021,True,True
+All scored,233,second,qwen3.5-27b,P1 vs P3,233,167,-0.2549,-0.3664,-0.1473,-0.2899,0.0001,0.00021,True,True
+All scored,233,second,qwen3.5-27b,P2 vs P5,233,167,0.0742,-0.0303,0.1767,0.0892,0.17138,0.21648,False,False
+All scored,233,second,qwen3.5-27b,P1 vs P5,233,167,-0.1815,-0.2857,-0.0777,-0.2169,0.001,0.0018,True,False
+All scored,233,second,qwen3.5-27b,P6 vs P8,233,167,-0.03,-0.0939,0.0307,-0.0621,0.35876,0.39137,False,False
+All scored,233,second,qwen3.5-27b,P1 vs P6,233,167,0.1987,0.1004,0.297,0.2614,0.0002,0.00039,True,False
+All scored,233,second,qwen3.5-27b,P5 vs P8,233,167,0.3502,0.2418,0.4544,0.4099,0.0001,0.00021,True,True
+All scored,233,second,qwen3.5-2b,P1 vs P3,233,167,0.5622,0.4204,0.7,0.5001,0.0001,0.00021,True,True
+All scored,233,second,qwen3.5-2b,P1 vs P4,233,167,0.7695,0.6388,0.9025,0.7392,0.0001,0.00021,True,True
+All scored,233,second,qwen3.5-2b,P3 vs P4,233,167,0.2073,0.0843,0.3324,0.2042,0.002,0.00335,True,False
+All scored,233,second,qwen3.5-2b,P2 vs P5,233,167,0.1013,-0.0232,0.2315,0.0992,0.11799,0.16029,False,False
+All scored,233,second,qwen3.5-2b,P1 vs P5,233,167,0.6395,0.5046,0.7719,0.5695,0.0001,0.00021,True,True
+All scored,233,second,qwen3.5-2b,P6 vs P7,233,167,-0.1176,-0.2568,0.02,-0.1085,0.10239,0.14455,False,False
+All scored,233,second,qwen3.5-2b,P6 vs P8,233,167,0.0021,-0.1248,0.1305,0.0023,0.9777,0.9777,False,False
+All scored,233,second,qwen3.5-2b,P1 vs P6,233,167,1.5232,1.3609,1.6743,1.1999,0.0001,0.00021,True,True
+All scored,233,second,qwen3.5-2b,P4 vs P7,233,167,0.6361,0.459,0.807,0.4441,0.0001,0.00021,True,True
+All scored,233,second,qwen3.5-2b,P5 vs P8,233,167,0.8858,0.7185,1.0494,0.6893,0.0001,0.00021,True,True
+All scored,233,second,qwen3.5-9b,P1 vs P3,233,167,-0.2451,-0.3621,-0.1312,-0.2697,0.0002,0.00039,True,False
+All scored,233,second,qwen3.5-9b,P1 vs P4,233,167,-0.1391,-0.2651,-0.0133,-0.1485,0.0342,0.05353,False,False
+All scored,233,second,qwen3.5-9b,P3 vs P4,233,167,0.106,-0.0031,0.2174,0.1237,0.06039,0.09251,False,False
+All scored,233,second,qwen3.5-9b,P2 vs P5,233,167,0.2262,0.1099,0.3391,0.2661,0.0004,0.00076,True,False
+All scored,233,second,qwen3.5-9b,P1 vs P5,233,167,-0.0897,-0.2117,0.0328,-0.0941,0.16478,0.21417,False,False
+All scored,233,second,qwen3.5-9b,P6 vs P7,233,167,-0.0412,-0.1143,0.0251,-0.0749,0.25747,0.29258,False,False
+All scored,233,second,qwen3.5-9b,P6 vs P8,233,167,-0.0541,-0.1362,0.0239,-0.0866,0.19468,0.23758,False,False
+All scored,233,second,qwen3.5-9b,P1 vs P6,233,167,0.3983,0.2784,0.523,0.3989,0.0001,0.00021,True,True
+All scored,233,second,qwen3.5-9b,P4 vs P7,233,167,0.4961,0.346,0.6434,0.4271,0.0001,0.00021,True,True
+All scored,233,second,qwen3.5-9b,P5 vs P8,233,167,0.4339,0.2947,0.5703,0.3996,0.0001,0.00021,True,True
+Test-labeled,192,second,gemma-3-12b,P1 vs P3,192,148,-0.1484,-0.3016,0.0016,-0.1426,0.05499,0.08424,False,False
+Test-labeled,192,second,gemma-3-12b,P1 vs P4,192,148,-0.137,-0.278,0.0092,-0.1327,0.06029,0.08903,False,False
+Test-labeled,192,second,gemma-3-12b,P3 vs P4,192,148,0.0115,-0.1376,0.164,0.011,0.88581,0.89829,False,False
+Test-labeled,192,second,gemma-3-12b,P2 vs P5,192,148,0.0875,-0.0545,0.2291,0.0814,0.22558,0.27528,False,False
+Test-labeled,192,second,gemma-3-12b,P1 vs P5,192,148,-0.074,-0.2403,0.093,-0.0677,0.38546,0.44053,False,False
+Test-labeled,192,second,gemma-3-12b,P6 vs P7,192,148,-0.087,-0.1905,0.0112,-0.1261,0.09719,0.13706,False,False
+Test-labeled,192,second,gemma-3-12b,P6 vs P8,192,148,-0.112,-0.2324,-0.0026,-0.1472,0.06059,0.08903,False,False
+Test-labeled,192,second,gemma-3-12b,P1 vs P6,192,148,0.6984,0.5277,0.8665,0.6057,0.0001,0.00023,True,True
+Test-labeled,192,second,gemma-3-12b,P4 vs P7,192,148,0.7484,0.5675,0.9263,0.5917,0.0001,0.00023,True,True
+Test-labeled,192,second,gemma-3-12b,P5 vs P8,192,148,0.6604,0.4789,0.8444,0.5222,0.0001,0.00023,True,True
+Test-labeled,192,second,gemma-3-1b,P1 vs P3,192,148,0.1339,0.013,0.2609,0.1552,0.0397,0.06352,False,False
+Test-labeled,192,second,gemma-3-1b,P1 vs P4,192,148,0.0859,-0.046,0.2184,0.0904,0.20318,0.25665,False,False
+Test-labeled,192,second,gemma-3-1b,P3 vs P4,192,148,-0.0479,-0.1848,0.0917,-0.0504,0.51025,0.55664,False,False
+Test-labeled,192,second,gemma-3-1b,P2 vs P5,192,148,0.1313,-0.0036,0.2665,0.1321,0.06829,0.09834,False,False
+Test-labeled,192,second,gemma-3-1b,P1 vs P5,192,148,0.4115,0.2719,0.5487,0.4142,0.0001,0.00023,True,True
+Test-labeled,192,second,gemma-3-1b,P6 vs P7,192,148,-0.0276,-0.1945,0.1323,-0.0239,0.74153,0.77377,False,False
+Test-labeled,192,second,gemma-3-1b,P6 vs P8,192,148,0.0125,-0.1485,0.1694,0.0109,0.88331,0.89829,False,False
+Test-labeled,192,second,gemma-3-1b,P1 vs P6,192,148,0.7974,0.6414,0.961,0.674,0.0001,0.00023,True,True
+Test-labeled,192,second,gemma-3-1b,P4 vs P7,192,148,0.6839,0.5128,0.8575,0.5405,0.0001,0.00023,True,True
+Test-labeled,192,second,gemma-3-1b,P5 vs P8,192,148,0.3984,0.2113,0.5942,0.2988,0.0002,0.00041,True,True
+Test-labeled,192,second,gemma-3-27b,P1 vs P3,192,148,-0.2922,-0.4353,-0.1542,-0.2966,0.0003,0.0006,True,True
+Test-labeled,192,second,gemma-3-27b,P2 vs P5,192,148,0.0818,-0.0603,0.2198,0.087,0.26187,0.30411,False,False
+Test-labeled,192,second,gemma-3-27b,P1 vs P5,192,148,-0.063,-0.2079,0.0799,-0.0631,0.40016,0.45018,False,False
+Test-labeled,192,second,gemma-3-27b,P6 vs P8,192,148,-0.1448,-0.2446,-0.054,-0.2129,0.0034,0.00612,True,False
+Test-labeled,192,second,gemma-3-27b,P1 vs P6,192,148,0.5536,0.3871,0.7191,0.4932,0.0001,0.00023,True,True
+Test-labeled,192,second,gemma-3-27b,P5 vs P8,192,148,0.4719,0.3025,0.6409,0.4058,0.0001,0.00023,True,True
+Test-labeled,192,second,llama-3.1-8b,P1 vs P3,192,148,0.262,0.0902,0.4335,0.229,0.0036,0.00632,True,True
+Test-labeled,192,second,llama-3.1-8b,P1 vs P4,192,148,0.3786,0.2021,0.5539,0.3302,0.0002,0.00041,True,True
+Test-labeled,192,second,llama-3.1-8b,P3 vs P4,192,148,0.1167,-0.0535,0.2891,0.1016,0.20308,0.25665,False,False
+Test-labeled,192,second,llama-3.1-8b,P2 vs P5,192,148,0.0068,-0.1475,0.1609,0.0062,0.93991,0.93991,False,False
+Test-labeled,192,second,llama-3.1-8b,P1 vs P5,192,148,0.4297,0.2672,0.5914,0.3739,0.0001,0.00023,True,True
+Test-labeled,192,second,llama-3.1-8b,P6 vs P7,192,148,0.2807,0.175,0.3854,0.3571,0.0001,0.00023,True,True
+Test-labeled,192,second,llama-3.1-8b,P6 vs P8,192,148,0.3401,0.2227,0.4559,0.4078,0.0001,0.00023,True,True
+Test-labeled,192,second,llama-3.1-8b,P1 vs P6,192,148,0.8583,0.6562,1.0595,0.6372,0.0001,0.00023,True,True
+Test-labeled,192,second,llama-3.1-8b,P4 vs P7,192,148,0.7604,0.5909,0.9314,0.6009,0.0001,0.00023,True,True
+Test-labeled,192,second,llama-3.1-8b,P5 vs P8,192,148,0.7688,0.5859,0.9487,0.6169,0.0001,0.00023,True,True
+Test-labeled,192,second,llama-3.2-1b,P1 vs P3,192,148,0.4484,0.314,0.5844,0.4807,0.0001,0.00023,True,True
+Test-labeled,192,second,llama-3.2-1b,P1 vs P4,192,148,0.4927,0.3419,0.6419,0.458,0.0001,0.00023,True,True
+Test-labeled,192,second,llama-3.2-1b,P3 vs P4,192,148,0.0443,-0.0979,0.1877,0.0437,0.55724,0.59883,False,False
+Test-labeled,192,second,llama-3.2-1b,P2 vs P5,192,148,0.1625,0.0347,0.2945,0.1669,0.0159,0.02662,True,False
+Test-labeled,192,second,llama-3.2-1b,P1 vs P5,192,148,0.6542,0.5011,0.8079,0.5783,0.0001,0.00023,True,True
+Test-labeled,192,second,llama-3.2-1b,P6 vs P7,192,148,0.1656,-0.0301,0.3589,0.1193,0.09899,0.13706,False,False
+Test-labeled,192,second,llama-3.2-1b,P6 vs P8,192,148,0.4073,0.2557,0.5608,0.371,0.0001,0.00023,True,True
+Test-labeled,192,second,llama-3.2-1b,P1 vs P6,192,148,0.8844,0.7309,1.0419,0.7929,0.0001,0.00023,True,True
+Test-labeled,192,second,llama-3.2-1b,P4 vs P7,192,148,0.5573,0.3604,0.7567,0.3856,0.0001,0.00023,True,True
+Test-labeled,192,second,llama-3.2-1b,P5 vs P8,192,148,0.6375,0.4543,0.8198,0.491,0.0001,0.00023,True,True
+Test-labeled,192,second,qwen3.5-27b,P1 vs P3,192,148,-0.2323,-0.3479,-0.1203,-0.2797,0.0002,0.00041,True,False
+Test-labeled,192,second,qwen3.5-27b,P2 vs P5,192,148,0.1104,0.0005,0.2228,0.1371,0.05429,0.08424,False,False
+Test-labeled,192,second,qwen3.5-27b,P1 vs P5,192,148,-0.1432,-0.2515,-0.0379,-0.1846,0.0109,0.01869,True,False
+Test-labeled,192,second,qwen3.5-27b,P6 vs P8,192,148,-0.024,-0.0896,0.0398,-0.0524,0.48855,0.54116,False,False
+Test-labeled,192,second,qwen3.5-27b,P1 vs P6,192,148,0.2063,0.0974,0.3144,0.2672,0.0004,0.00078,True,False
+Test-labeled,192,second,qwen3.5-27b,P5 vs P8,192,148,0.3255,0.2117,0.4418,0.3851,0.0001,0.00023,True,True
+Test-labeled,192,second,qwen3.5-2b,P1 vs P3,192,148,0.5328,0.3724,0.6922,0.4533,0.0001,0.00023,True,True
+Test-labeled,192,second,qwen3.5-2b,P1 vs P4,192,148,0.7917,0.6441,0.9412,0.7371,0.0001,0.00023,True,True
+Test-labeled,192,second,qwen3.5-2b,P3 vs P4,192,148,0.2589,0.1169,0.4015,0.2533,0.0009,0.00171,True,True
+Test-labeled,192,second,qwen3.5-2b,P2 vs P5,192,148,0.1063,-0.0361,0.2566,0.1031,0.15318,0.20424,False,False
+Test-labeled,192,second,qwen3.5-2b,P1 vs P5,192,148,0.6474,0.4909,0.8016,0.5559,0.0001,0.00023,True,True
+Test-labeled,192,second,qwen3.5-2b,P6 vs P7,192,148,-0.1318,-0.2922,0.026,-0.1246,0.10629,0.14439,False,False
+Test-labeled,192,second,qwen3.5-2b,P6 vs P8,192,148,-0.0411,-0.1862,0.1064,-0.044,0.59794,0.63311,False,False
+Test-labeled,192,second,qwen3.5-2b,P1 vs P6,192,148,1.5448,1.3595,1.7243,1.1725,0.0001,0.00023,True,True
+Test-labeled,192,second,qwen3.5-2b,P4 vs P7,192,148,0.6214,0.4175,0.8168,0.4306,0.0001,0.00023,True,True
+Test-labeled,192,second,qwen3.5-2b,P5 vs P8,192,148,0.8563,0.6686,1.0428,0.6463,0.0001,0.00023,True,True
+Test-labeled,192,second,qwen3.5-9b,P1 vs P3,192,148,-0.2422,-0.37,-0.1128,-0.2653,0.0002,0.00041,True,False
+Test-labeled,192,second,qwen3.5-9b,P1 vs P4,192,148,-0.1667,-0.2984,-0.0332,-0.1863,0.0185,0.03027,True,False
+Test-labeled,192,second,qwen3.5-9b,P3 vs P4,192,148,0.0755,-0.0479,0.1963,0.0864,0.24368,0.28762,False,False
+Test-labeled,192,second,qwen3.5-9b,P2 vs P5,192,148,0.2021,0.0797,0.3281,0.2357,0.0024,0.00443,True,False
+Test-labeled,192,second,qwen3.5-9b,P1 vs P5,192,148,-0.0901,-0.2223,0.047,-0.0967,0.20868,0.25905,False,False
+Test-labeled,192,second,qwen3.5-9b,P6 vs P7,192,148,-0.0505,-0.1355,0.0287,-0.087,0.23418,0.28102,False,False
+Test-labeled,192,second,qwen3.5-9b,P6 vs P8,192,148,-0.062,-0.155,0.0295,-0.0949,0.20008,0.25665,False,False
+Test-labeled,192,second,qwen3.5-9b,P1 vs P6,192,148,0.3714,0.2332,0.5138,0.3667,0.0001,0.00023,True,True
+Test-labeled,192,second,qwen3.5-9b,P4 vs P7,192,148,0.4875,0.3165,0.6557,0.4068,0.0001,0.00023,True,True
+Test-labeled,192,second,qwen3.5-9b,P5 vs P8,192,148,0.3995,0.2461,0.5508,0.3653,0.0001,0.00023,True,True
+Nondev,204,second,gemma-3-12b,P1 vs P3,204,152,-0.1441,-0.2856,-0.0015,-0.1404,0.05179,0.07768,False,False
+Nondev,204,second,gemma-3-12b,P1 vs P4,204,152,-0.148,-0.2901,-0.008,-0.1435,0.05109,0.07768,False,False
+Nondev,204,second,gemma-3-12b,P3 vs P4,204,152,-0.0039,-0.1466,0.1404,-0.0038,0.9648,0.9649,False,False
+Nondev,204,second,gemma-3-12b,P2 vs P5,204,152,0.0662,-0.0676,0.201,0.0621,0.33597,0.38303,False,False
+Nondev,204,second,gemma-3-12b,P1 vs P5,204,152,-0.0941,-0.2467,0.0668,-0.0867,0.25177,0.31254,False,False
+Nondev,204,second,gemma-3-12b,P6 vs P7,204,152,-0.0603,-0.1617,0.0384,-0.0845,0.24448,0.30882,False,False
+Nondev,204,second,gemma-3-12b,P6 vs P8,204,152,-0.0897,-0.2087,0.0188,-0.1162,0.13449,0.1827,False,False
+Nondev,204,second,gemma-3-12b,P1 vs P6,204,152,0.6539,0.4874,0.8147,0.565,0.0001,0.00022,True,True
+Nondev,204,second,gemma-3-12b,P4 vs P7,204,152,0.7417,0.5665,0.9167,0.5823,0.0001,0.00022,True,True
+Nondev,204,second,gemma-3-12b,P5 vs P8,204,152,0.6583,0.4817,0.8315,0.5203,0.0001,0.00022,True,True
+Nondev,204,second,gemma-3-1b,P1 vs P3,204,152,0.1397,0.0252,0.2604,0.1646,0.0237,0.03968,True,False
+Nondev,204,second,gemma-3-1b,P1 vs P4,204,152,0.0642,-0.0635,0.1904,0.068,0.34047,0.38303,False,False
+Nondev,204,second,gemma-3-1b,P3 vs P4,204,152,-0.0755,-0.2173,0.0681,-0.0779,0.31317,0.3758,False,False
+Nondev,204,second,gemma-3-1b,P2 vs P5,204,152,0.1377,0.0047,0.2698,0.1404,0.0454,0.07106,False,False
+Nondev,204,second,gemma-3-1b,P1 vs P5,204,152,0.4147,0.274,0.5493,0.425,0.0001,0.00022,True,True
+Nondev,204,second,gemma-3-1b,P6 vs P7,204,152,-0.024,-0.1757,0.1317,-0.021,0.76222,0.79536,False,False
+Nondev,204,second,gemma-3-1b,P6 vs P8,204,152,0.0755,-0.0843,0.2387,0.0643,0.36476,0.40076,False,False
+Nondev,204,second,gemma-3-1b,P1 vs P6,204,152,0.7569,0.6,0.9105,0.6477,0.0001,0.00022,True,True
+Nondev,204,second,gemma-3-1b,P4 vs P7,204,152,0.6686,0.5064,0.8256,0.5411,0.0001,0.00022,True,True
+Nondev,204,second,gemma-3-1b,P5 vs P8,204,152,0.4176,0.228,0.6057,0.3153,0.0001,0.00022,True,True
+Nondev,204,second,gemma-3-27b,P1 vs P3,204,152,-0.3294,-0.4775,-0.1872,-0.3221,0.0001,0.00022,True,True
+Nondev,204,second,gemma-3-27b,P2 vs P5,204,152,0.1088,-0.0299,0.2478,0.1133,0.13109,0.18151,False,False
+Nondev,204,second,gemma-3-27b,P1 vs P5,204,152,-0.0691,-0.2086,0.0717,-0.0691,0.33847,0.38303,False,False
+Nondev,204,second,gemma-3-27b,P6 vs P8,204,152,-0.1456,-0.2423,-0.0569,-0.2154,0.0015,0.0027,True,False
+Nondev,204,second,gemma-3-27b,P1 vs P6,204,152,0.5333,0.3689,0.699,0.4697,0.0001,0.00022,True,True
+Nondev,204,second,gemma-3-27b,P5 vs P8,204,152,0.4569,0.2945,0.6147,0.397,0.0001,0.00022,True,True
+Nondev,204,second,llama-3.1-8b,P1 vs P3,204,152,0.2569,0.0986,0.4188,0.222,0.0018,0.00316,True,True
+Nondev,204,second,llama-3.1-8b,P1 vs P4,204,152,0.3701,0.2021,0.5379,0.3221,0.0002,0.00039,True,True
+Nondev,204,second,llama-3.1-8b,P3 vs P4,204,152,0.1132,-0.0561,0.277,0.0992,0.19978,0.26153,False,False
+Nondev,204,second,llama-3.1-8b,P2 vs P5,204,152,-0.0078,-0.1546,0.1413,-0.0072,0.92071,0.94702,False,False
+Nondev,204,second,llama-3.1-8b,P1 vs P5,204,152,0.4167,0.2457,0.5849,0.3498,0.0001,0.00022,True,True
+Nondev,204,second,llama-3.1-8b,P6 vs P7,204,152,0.2956,0.1863,0.404,0.345,0.0001,0.00022,True,True
+Nondev,204,second,llama-3.1-8b,P6 vs P8,204,152,0.3436,0.2232,0.4623,0.3959,0.0001,0.00022,True,True
+Nondev,204,second,llama-3.1-8b,P1 vs P6,204,152,0.8088,0.6157,1.0028,0.5935,0.0001,0.00022,True,True
+Nondev,204,second,llama-3.1-8b,P4 vs P7,204,152,0.7343,0.5654,0.907,0.5743,0.0001,0.00022,True,True
+Nondev,204,second,llama-3.1-8b,P5 vs P8,204,152,0.7358,0.5486,0.9185,0.5753,0.0001,0.00022,True,True
+Nondev,204,second,llama-3.2-1b,P1 vs P3,204,152,0.4412,0.3143,0.5723,0.4685,0.0001,0.00022,True,True
+Nondev,204,second,llama-3.2-1b,P1 vs P4,204,152,0.4951,0.3534,0.6386,0.4673,0.0001,0.00022,True,True
+Nondev,204,second,llama-3.2-1b,P3 vs P4,204,152,0.0539,-0.0736,0.1833,0.0537,0.43726,0.46989,False,False
+Nondev,204,second,llama-3.2-1b,P2 vs P5,204,152,0.1441,0.0222,0.2714,0.1502,0.0263,0.04208,True,False
+Nondev,204,second,llama-3.2-1b,P1 vs P5,204,152,0.6196,0.4715,0.7706,0.5551,0.0001,0.00022,True,True
+Nondev,204,second,llama-3.2-1b,P6 vs P7,204,152,0.1799,-0.0028,0.3605,0.1325,0.05779,0.08492,False,False
+Nondev,204,second,llama-3.2-1b,P6 vs P8,204,152,0.4392,0.2936,0.5834,0.4026,0.0001,0.00022,True,True
+Nondev,204,second,llama-3.2-1b,P1 vs P6,204,152,0.8245,0.6779,0.9765,0.7389,0.0001,0.00022,True,True
+Nondev,204,second,llama-3.2-1b,P4 vs P7,204,152,0.5093,0.3218,0.6984,0.3542,0.0001,0.00022,True,True
+Nondev,204,second,llama-3.2-1b,P5 vs P8,204,152,0.6441,0.4725,0.8174,0.5022,0.0001,0.00022,True,True
+Nondev,204,second,qwen3.5-27b,P1 vs P3,204,152,-0.252,-0.3693,-0.1371,-0.2838,0.0002,0.00039,True,True
+Nondev,204,second,qwen3.5-27b,P2 vs P5,204,152,0.0843,-0.0295,0.1937,0.1015,0.14999,0.19999,False,False
+Nondev,204,second,qwen3.5-27b,P1 vs P5,204,152,-0.1711,-0.2798,-0.062,-0.208,0.0023,0.00394,True,False
+Nondev,204,second,qwen3.5-27b,P6 vs P8,204,152,-0.0255,-0.0951,0.0433,-0.0502,0.48085,0.50914,False,False
+Nondev,204,second,qwen3.5-27b,P1 vs P6,204,152,0.1926,0.0865,0.303,0.2427,0.0002,0.00039,True,False
+Nondev,204,second,qwen3.5-27b,P5 vs P8,204,152,0.3382,0.2271,0.4544,0.3976,0.0001,0.00022,True,True
+Nondev,204,second,qwen3.5-2b,P1 vs P3,204,152,0.5549,0.4,0.7052,0.4824,0.0001,0.00022,True,True
+Nondev,204,second,qwen3.5-2b,P1 vs P4,204,152,0.8044,0.6612,0.9502,0.7461,0.0001,0.00022,True,True
+Nondev,204,second,qwen3.5-2b,P3 vs P4,204,152,0.2495,0.1167,0.3813,0.2452,0.0004,0.00076,True,False
+Nondev,204,second,qwen3.5-2b,P2 vs P5,204,152,0.0892,-0.05,0.2338,0.085,0.20858,0.26817,False,False
+Nondev,204,second,qwen3.5-2b,P1 vs P5,204,152,0.6328,0.4863,0.7793,0.5497,0.0001,0.00022,True,True
+Nondev,204,second,qwen3.5-2b,P6 vs P7,204,152,-0.0873,-0.2395,0.0602,-0.0814,0.25897,0.31603,False,False
+Nondev,204,second,qwen3.5-2b,P6 vs P8,204,152,-0.0034,-0.1407,0.1335,-0.0036,0.9649,0.9649,False,False
+Nondev,204,second,qwen3.5-2b,P1 vs P6,204,152,1.5181,1.3373,1.6889,1.1697,0.0001,0.00022,True,True
+Nondev,204,second,qwen3.5-2b,P4 vs P7,204,152,0.6265,0.4322,0.8142,0.4394,0.0001,0.00022,True,True
+Nondev,204,second,qwen3.5-2b,P5 vs P8,204,152,0.8819,0.7019,1.0592,0.6659,0.0001,0.00022,True,True
+Nondev,204,second,qwen3.5-9b,P1 vs P3,204,152,-0.2549,-0.3819,-0.1284,-0.2728,0.0002,0.00039,True,True
+Nondev,204,second,qwen3.5-9b,P1 vs P4,204,152,-0.1598,-0.2961,-0.0264,-0.1679,0.0258,0.04208,True,False
+Nondev,204,second,qwen3.5-9b,P3 vs P4,204,152,0.0951,-0.023,0.2128,0.108,0.12479,0.17617,False,False
+Nondev,204,second,qwen3.5-9b,P2 vs P5,204,152,0.2039,0.089,0.3219,0.2431,0.001,0.00185,True,False
+Nondev,204,second,qwen3.5-9b,P1 vs P5,204,152,-0.1103,-0.2447,0.0226,-0.1153,0.11599,0.16703,False,False
+Nondev,204,second,qwen3.5-9b,P6 vs P7,204,152,-0.0368,-0.1167,0.0383,-0.0641,0.36736,0.40076,False,False
+Nondev,204,second,qwen3.5-9b,P6 vs P8,204,152,-0.0456,-0.1365,0.0426,-0.07,0.33247,0.38303,False,False
+Nondev,204,second,qwen3.5-9b,P1 vs P6,204,152,0.3789,0.2458,0.5186,0.3748,0.0001,0.00022,True,True
+Nondev,204,second,qwen3.5-9b,P4 vs P7,204,152,0.502,0.3345,0.6662,0.4169,0.0001,0.00022,True,True
+Nondev,204,second,qwen3.5-9b,P5 vs P8,204,152,0.4436,0.2898,0.598,0.3939,0.0001,0.00022,True,True
+Without weak quotes,226,second,gemma-3-12b,P1 vs P3,226,163,-0.1456,-0.2792,-0.0113,-0.1398,0.0335,0.05243,False,False
+Without weak quotes,226,second,gemma-3-12b,P1 vs P4,226,163,-0.1177,-0.2575,0.0218,-0.1091,0.09659,0.13374,False,False
+Without weak quotes,226,second,gemma-3-12b,P3 vs P4,226,163,0.0279,-0.1101,0.168,0.027,0.69523,0.72546,False,False
+Without weak quotes,226,second,gemma-3-12b,P2 vs P5,226,163,0.0717,-0.0493,0.1955,0.0685,0.25997,0.3019,False,False
+Without weak quotes,226,second,gemma-3-12b,P1 vs P5,226,163,-0.058,-0.1968,0.0848,-0.0542,0.41776,0.44894,False,False
+Without weak quotes,226,second,gemma-3-12b,P6 vs P7,226,163,-0.0407,-0.1297,0.0463,-0.0614,0.37376,0.41401,False,False
+Without weak quotes,226,second,gemma-3-12b,P6 vs P8,226,163,-0.0606,-0.1619,0.0362,-0.0844,0.24118,0.29432,False,False
+Without weak quotes,226,second,gemma-3-12b,P1 vs P6,226,163,0.6938,0.5359,0.8488,0.5975,0.0001,0.00019,True,True
+Without weak quotes,226,second,gemma-3-12b,P4 vs P7,226,163,0.7708,0.6111,0.9296,0.6285,0.0001,0.00019,True,True
+Without weak quotes,226,second,gemma-3-12b,P5 vs P8,226,163,0.6912,0.5339,0.8491,0.5821,0.0001,0.00019,True,True
+Without weak quotes,226,second,gemma-3-1b,P1 vs P3,226,163,0.1903,0.0775,0.304,0.2284,0.0008,0.00144,True,False
+Without weak quotes,226,second,gemma-3-1b,P1 vs P4,226,163,0.1093,-0.0144,0.234,0.1178,0.09089,0.12832,False,False
+Without weak quotes,226,second,gemma-3-1b,P3 vs P4,226,163,-0.081,-0.2172,0.0522,-0.0845,0.25017,0.29741,False,False
+Without weak quotes,226,second,gemma-3-1b,P2 vs P5,226,163,0.1394,0.0184,0.2579,0.1461,0.0243,0.03888,True,False
+Without weak quotes,226,second,gemma-3-1b,P1 vs P5,226,163,0.4473,0.3233,0.5716,0.4601,0.0001,0.00019,True,True
+Without weak quotes,226,second,gemma-3-1b,P6 vs P7,226,163,0.0013,-0.1493,0.1577,0.0012,0.9911,1.0,False,False
+Without weak quotes,226,second,gemma-3-1b,P6 vs P8,226,163,0.0916,-0.0623,0.2467,0.0774,0.25197,0.29741,False,False
+Without weak quotes,226,second,gemma-3-1b,P1 vs P6,226,163,0.7925,0.6407,0.947,0.6826,0.0001,0.00019,True,True
+Without weak quotes,226,second,gemma-3-1b,P4 vs P7,226,163,0.6845,0.5352,0.8398,0.5595,0.0001,0.00019,True,True
+Without weak quotes,226,second,gemma-3-1b,P5 vs P8,226,163,0.4367,0.2606,0.6089,0.3327,0.0001,0.00019,True,True
+Without weak quotes,226,second,gemma-3-27b,P1 vs P3,226,163,-0.3407,-0.4742,-0.2046,-0.3337,0.0001,0.00019,True,True
+Without weak quotes,226,second,gemma-3-27b,P2 vs P5,226,163,0.0726,-0.0665,0.2138,0.0735,0.32667,0.37334,False,False
+Without weak quotes,226,second,gemma-3-27b,P1 vs P5,226,163,-0.0925,-0.2284,0.0456,-0.0902,0.19318,0.24541,False,False
+Without weak quotes,226,second,gemma-3-27b,P6 vs P8,226,163,-0.1301,-0.2144,-0.0502,-0.204,0.0016,0.00274,True,False
+Without weak quotes,226,second,gemma-3-27b,P1 vs P6,226,163,0.5372,0.3784,0.6916,0.475,0.0001,0.00019,True,True
+Without weak quotes,226,second,gemma-3-27b,P5 vs P8,226,163,0.4996,0.3511,0.646,0.4431,0.0001,0.00019,True,True
+Without weak quotes,226,second,llama-3.1-8b,P1 vs P3,226,163,0.2434,0.0971,0.3898,0.2132,0.0013,0.00228,True,False
+Without weak quotes,226,second,llama-3.1-8b,P1 vs P4,226,163,0.3889,0.2389,0.5439,0.3476,0.0001,0.00019,True,True
+Without weak quotes,226,second,llama-3.1-8b,P3 vs P4,226,163,0.1456,-0.0107,0.3043,0.1285,0.08069,0.11619,False,False
+Without weak quotes,226,second,llama-3.1-8b,P2 vs P5,226,163,-0.0004,-0.1357,0.1382,-0.0004,1.0,1.0,False,False
+Without weak quotes,226,second,llama-3.1-8b,P1 vs P5,226,163,0.4128,0.2582,0.5696,0.3507,0.0001,0.00019,True,True
+Without weak quotes,226,second,llama-3.1-8b,P6 vs P7,226,163,0.2925,0.1904,0.394,0.346,0.0001,0.00019,True,True
+Without weak quotes,226,second,llama-3.1-8b,P6 vs P8,226,163,0.346,0.237,0.4511,0.4037,0.0001,0.00019,True,True
+Without weak quotes,226,second,llama-3.1-8b,P1 vs P6,226,163,0.8111,0.6403,0.9857,0.5953,0.0001,0.00019,True,True
+Without weak quotes,226,second,llama-3.1-8b,P4 vs P7,226,163,0.7146,0.5548,0.8761,0.5607,0.0001,0.00019,True,True
+Without weak quotes,226,second,llama-3.1-8b,P5 vs P8,226,163,0.7442,0.5776,0.9091,0.5908,0.0001,0.00019,True,True
+Without weak quotes,226,second,llama-3.2-1b,P1 vs P3,226,163,0.4155,0.2996,0.5348,0.4522,0.0001,0.00019,True,True
+Without weak quotes,226,second,llama-3.2-1b,P1 vs P4,226,163,0.4659,0.3393,0.5955,0.4568,0.0001,0.00019,True,True
+Without weak quotes,226,second,llama-3.2-1b,P3 vs P4,226,163,0.0504,-0.0749,0.1767,0.0509,0.44616,0.4724,False,False
+Without weak quotes,226,second,llama-3.2-1b,P2 vs P5,226,163,0.0973,-0.0217,0.2148,0.102,0.10639,0.14453,False,False
+Without weak quotes,226,second,llama-3.2-1b,P1 vs P5,226,163,0.5854,0.4491,0.7204,0.5438,0.0001,0.00019,True,True
+Without weak quotes,226,second,llama-3.2-1b,P6 vs P7,226,163,0.2677,0.1009,0.4359,0.1994,0.0027,0.00452,True,False
+Without weak quotes,226,second,llama-3.2-1b,P6 vs P8,226,163,0.5301,0.4,0.6613,0.4873,0.0001,0.00019,True,True
+Without weak quotes,226,second,llama-3.2-1b,P1 vs P6,226,163,0.7735,0.6404,0.9098,0.7104,0.0001,0.00019,True,True
+Without weak quotes,226,second,llama-3.2-1b,P4 vs P7,226,163,0.5752,0.3937,0.7554,0.3968,0.0001,0.00019,True,True
+Without weak quotes,226,second,llama-3.2-1b,P5 vs P8,226,163,0.7181,0.5636,0.8712,0.5796,0.0001,0.00019,True,True
+Without weak quotes,226,second,qwen3.5-27b,P1 vs P3,226,163,-0.2721,-0.3865,-0.1618,-0.3104,0.0001,0.00019,True,True
+Without weak quotes,226,second,qwen3.5-27b,P2 vs P5,226,163,0.0721,-0.0352,0.178,0.0863,0.19428,0.24541,False,False
+Without weak quotes,226,second,qwen3.5-27b,P1 vs P5,226,163,-0.1947,-0.3013,-0.0902,-0.2347,0.0001,0.00019,True,False
+Without weak quotes,226,second,qwen3.5-27b,P6 vs P8,226,163,-0.042,-0.1014,0.0113,-0.0947,0.15878,0.21171,False,False
+Without weak quotes,226,second,qwen3.5-27b,P1 vs P6,226,163,0.1956,0.1026,0.2879,0.2726,0.0001,0.00019,True,False
+Without weak quotes,226,second,qwen3.5-27b,P5 vs P8,226,163,0.3482,0.2398,0.4581,0.404,0.0001,0.00019,True,True
+Without weak quotes,226,second,qwen3.5-2b,P1 vs P3,226,163,0.5876,0.4416,0.7277,0.5227,0.0001,0.00019,True,True
+Without weak quotes,226,second,qwen3.5-2b,P1 vs P4,226,163,0.777,0.6427,0.9098,0.7455,0.0001,0.00019,True,True
+Without weak quotes,226,second,qwen3.5-2b,P3 vs P4,226,163,0.1894,0.063,0.3147,0.1878,0.0046,0.00753,True,False
+Without weak quotes,226,second,qwen3.5-2b,P2 vs P5,226,163,0.0792,-0.0471,0.2083,0.0791,0.22458,0.27879,False,False
+Without weak quotes,226,second,qwen3.5-2b,P1 vs P5,226,163,0.6376,0.5,0.7756,0.5665,0.0001,0.00019,True,True
+Without weak quotes,226,second,qwen3.5-2b,P6 vs P7,226,163,-0.1305,-0.2727,0.0119,-0.119,0.07459,0.1096,False,False
+Without weak quotes,226,second,qwen3.5-2b,P6 vs P8,226,163,-0.0071,-0.1361,0.1253,-0.0075,0.92481,0.95123,False,False
+Without weak quotes,226,second,qwen3.5-2b,P1 vs P6,226,163,1.5558,1.4005,1.7041,1.2465,0.0001,0.00019,True,True
+Without weak quotes,226,second,qwen3.5-2b,P4 vs P7,226,163,0.6482,0.4728,0.8167,0.4562,0.0001,0.00019,True,True
+Without weak quotes,226,second,qwen3.5-2b,P5 vs P8,226,163,0.9111,0.7502,1.0688,0.7157,0.0001,0.00019,True,True
+Without weak quotes,226,second,qwen3.5-9b,P1 vs P3,226,163,-0.2442,-0.3648,-0.1256,-0.271,0.0001,0.00019,True,False
+Without weak quotes,226,second,qwen3.5-9b,P1 vs P4,226,163,-0.1327,-0.2602,-0.0054,-0.1419,0.05159,0.07903,False,False
+Without weak quotes,226,second,qwen3.5-9b,P3 vs P4,226,163,0.1115,0.0026,0.2235,0.1311,0.05469,0.08204,False,False
+Without weak quotes,226,second,qwen3.5-9b,P2 vs P5,226,163,0.227,0.1096,0.3446,0.2658,0.0005,0.00092,True,False
+Without weak quotes,226,second,qwen3.5-9b,P1 vs P5,226,163,-0.0907,-0.2159,0.0369,-0.0947,0.17418,0.22802,False,False
+Without weak quotes,226,second,qwen3.5-9b,P6 vs P7,226,163,-0.0301,-0.1019,0.035,-0.0566,0.39886,0.43512,False,False
+Without weak quotes,226,second,qwen3.5-9b,P6 vs P8,226,163,-0.0407,-0.1229,0.0402,-0.0664,0.33227,0.3738,False,False
+Without weak quotes,226,second,qwen3.5-9b,P1 vs P6,226,163,0.4035,0.282,0.53,0.4035,0.0001,0.00019,True,True
+Without weak quotes,226,second,qwen3.5-9b,P4 vs P7,226,163,0.5062,0.3557,0.655,0.4356,0.0001,0.00019,True,True
+Without weak quotes,226,second,qwen3.5-9b,P5 vs P8,226,163,0.4535,0.3138,0.5912,0.4162,0.0001,0.00019,True,True
+"Test, no weak quotes",185,second,gemma-3-12b,P1 vs P3,185,144,-0.1708,-0.3247,-0.0206,-0.1629,0.0288,0.04427,True,False
+"Test, no weak quotes",185,second,gemma-3-12b,P1 vs P4,185,144,-0.1595,-0.3017,-0.0171,-0.1549,0.0285,0.04427,True,False
+"Test, no weak quotes",185,second,gemma-3-12b,P3 vs P4,185,144,0.0114,-0.1413,0.1679,0.0108,0.89781,0.91046,False,False
+"Test, no weak quotes",185,second,gemma-3-12b,P2 vs P5,185,144,0.0762,-0.0649,0.2177,0.07,0.30937,0.35927,False,False
+"Test, no weak quotes",185,second,gemma-3-12b,P1 vs P5,185,144,-0.0978,-0.2609,0.0713,-0.0899,0.25117,0.30651,False,False
+"Test, no weak quotes",185,second,gemma-3-12b,P6 vs P7,185,144,-0.067,-0.1669,0.0299,-0.0995,0.20538,0.26406,False,False
+"Test, no weak quotes",185,second,gemma-3-12b,P6 vs P8,185,144,-0.0984,-0.2179,0.0106,-0.1343,0.09999,0.14116,False,False
+"Test, no weak quotes",185,second,gemma-3-12b,P1 vs P6,185,144,0.7081,0.5303,0.8786,0.6162,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,gemma-3-12b,P4 vs P7,185,144,0.8005,0.6188,0.9831,0.6482,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,gemma-3-12b,P5 vs P8,185,144,0.7076,0.5309,0.8863,0.5809,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,gemma-3-1b,P1 vs P3,185,144,0.1432,0.0196,0.2721,0.1678,0.0289,0.04427,True,False
+"Test, no weak quotes",185,second,gemma-3-1b,P1 vs P4,185,144,0.0984,-0.0384,0.2341,0.1039,0.16508,0.22426,False,False
+"Test, no weak quotes",185,second,gemma-3-1b,P3 vs P4,185,144,-0.0449,-0.1867,0.0984,-0.047,0.54495,0.57701,False,False
+"Test, no weak quotes",185,second,gemma-3-1b,P2 vs P5,185,144,0.1011,-0.0284,0.2364,0.1046,0.14849,0.2056,False,False
+"Test, no weak quotes",185,second,gemma-3-1b,P1 vs P5,185,144,0.3946,0.2545,0.5304,0.4046,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,gemma-3-1b,P6 vs P7,185,144,-0.0227,-0.1915,0.1447,-0.0197,0.79082,0.8252,False,False
+"Test, no weak quotes",185,second,gemma-3-1b,P6 vs P8,185,144,0.0184,-0.1441,0.1808,0.016,0.83172,0.85548,False,False
+"Test, no weak quotes",185,second,gemma-3-1b,P1 vs P6,185,144,0.8124,0.649,0.9778,0.6905,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,gemma-3-1b,P4 vs P7,185,144,0.6914,0.5134,0.8718,0.5499,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,gemma-3-1b,P5 vs P8,185,144,0.4362,0.2439,0.6353,0.3264,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,gemma-3-27b,P1 vs P3,185,144,-0.3,-0.4434,-0.1617,-0.3068,0.0002,0.00041,True,True
+"Test, no weak quotes",185,second,gemma-3-27b,P2 vs P5,185,144,0.0724,-0.0707,0.2191,0.0767,0.33087,0.37814,False,False
+"Test, no weak quotes",185,second,gemma-3-27b,P1 vs P5,185,144,-0.0795,-0.2262,0.0667,-0.0794,0.29467,0.34781,False,False
+"Test, no weak quotes",185,second,gemma-3-27b,P6 vs P8,185,144,-0.133,-0.2305,-0.0378,-0.2002,0.008,0.01405,True,False
+"Test, no weak quotes",185,second,gemma-3-27b,P1 vs P6,185,144,0.5443,0.3735,0.7136,0.4806,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,gemma-3-27b,P5 vs P8,185,144,0.4908,0.3226,0.6585,0.4279,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,llama-3.1-8b,P1 vs P3,185,144,0.227,0.0534,0.3994,0.1988,0.01,0.01714,True,False
+"Test, no weak quotes",185,second,llama-3.1-8b,P1 vs P4,185,144,0.3535,0.1796,0.5297,0.3088,0.0002,0.00041,True,True
+"Test, no weak quotes",185,second,llama-3.1-8b,P3 vs P4,185,144,0.1265,-0.0581,0.3102,0.1089,0.18518,0.24691,False,False
+"Test, no weak quotes",185,second,llama-3.1-8b,P2 vs P5,185,144,-0.0016,-0.1544,0.1536,-0.0015,0.9885,0.9885,False,False
+"Test, no weak quotes",185,second,llama-3.1-8b,P1 vs P5,185,144,0.4086,0.2411,0.5745,0.3538,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,llama-3.1-8b,P6 vs P7,185,144,0.2643,0.1533,0.3701,0.3346,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,llama-3.1-8b,P6 vs P8,185,144,0.3449,0.2263,0.4611,0.4104,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,llama-3.1-8b,P1 vs P6,185,144,0.8632,0.6613,1.0667,0.6376,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,llama-3.1-8b,P4 vs P7,185,144,0.7741,0.5925,0.9515,0.6032,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,llama-3.1-8b,P5 vs P8,185,144,0.7995,0.6138,0.9816,0.6416,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,llama-3.2-1b,P1 vs P3,185,144,0.4227,0.2895,0.5568,0.4616,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,llama-3.2-1b,P1 vs P4,185,144,0.4784,0.3223,0.6328,0.4414,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,llama-3.2-1b,P3 vs P4,185,144,0.0557,-0.0884,0.2059,0.0548,0.47465,0.5178,False,False
+"Test, no weak quotes",185,second,llama-3.2-1b,P2 vs P5,185,144,0.1524,0.0244,0.2842,0.1568,0.0262,0.04287,True,False
+"Test, no weak quotes",185,second,llama-3.2-1b,P1 vs P5,185,144,0.6249,0.4688,0.782,0.5566,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,llama-3.2-1b,P6 vs P7,185,144,0.1757,-0.0221,0.3739,0.1267,0.08289,0.11936,False,False
+"Test, no weak quotes",185,second,llama-3.2-1b,P6 vs P8,185,144,0.4551,0.3022,0.6102,0.4222,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,llama-3.2-1b,P1 vs P6,185,144,0.873,0.7187,1.0293,0.7886,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,llama-3.2-1b,P4 vs P7,185,144,0.5703,0.37,0.7729,0.3926,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,llama-3.2-1b,P5 vs P8,185,144,0.7032,0.5268,0.8855,0.5572,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,qwen3.5-27b,P1 vs P3,185,144,-0.2524,-0.3718,-0.1385,-0.3058,0.0002,0.00041,True,True
+"Test, no weak quotes",185,second,qwen3.5-27b,P2 vs P5,185,144,0.1092,-0.0047,0.2219,0.135,0.06109,0.09164,False,False
+"Test, no weak quotes",185,second,qwen3.5-27b,P1 vs P5,185,144,-0.1578,-0.2661,-0.0503,-0.2065,0.0051,0.00918,True,False
+"Test, no weak quotes",185,second,qwen3.5-27b,P6 vs P8,185,144,-0.0384,-0.0994,0.0152,-0.0951,0.20348,0.26406,False,False
+"Test, no weak quotes",185,second,qwen3.5-27b,P1 vs P6,185,144,0.2027,0.1016,0.3091,0.2813,0.0006,0.00117,True,False
+"Test, no weak quotes",185,second,qwen3.5-27b,P5 vs P8,185,144,0.3222,0.2058,0.4402,0.3771,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,qwen3.5-2b,P1 vs P3,185,144,0.5627,0.3941,0.7269,0.4777,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,qwen3.5-2b,P1 vs P4,185,144,0.8016,0.6497,0.9531,0.7447,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,qwen3.5-2b,P3 vs P4,185,144,0.2389,0.0957,0.3814,0.2353,0.0013,0.00246,True,False
+"Test, no weak quotes",185,second,qwen3.5-2b,P2 vs P5,185,144,0.0795,-0.0649,0.2249,0.079,0.28777,0.34532,False,False
+"Test, no weak quotes",185,second,qwen3.5-2b,P1 vs P5,185,144,0.6454,0.4879,0.7989,0.5519,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,qwen3.5-2b,P6 vs P7,185,144,-0.1481,-0.3113,0.0126,-0.1383,0.07639,0.11225,False,False
+"Test, no weak quotes",185,second,qwen3.5-2b,P6 vs P8,185,144,-0.0541,-0.2044,0.0975,-0.0574,0.49035,0.52694,False,False
+"Test, no weak quotes",185,second,qwen3.5-2b,P1 vs P6,185,144,1.5854,1.4011,1.7668,1.2258,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,qwen3.5-2b,P4 vs P7,185,144,0.6357,0.4363,0.8362,0.4446,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,qwen3.5-2b,P5 vs P8,185,144,0.8859,0.7016,1.075,0.675,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,qwen3.5-9b,P1 vs P3,185,144,-0.2411,-0.3747,-0.1108,-0.2666,0.0004,0.0008,True,False
+"Test, no weak quotes",185,second,qwen3.5-9b,P1 vs P4,185,144,-0.16,-0.2962,-0.0253,-0.1794,0.0222,0.03717,True,False
+"Test, no weak quotes",185,second,qwen3.5-9b,P3 vs P4,185,144,0.0811,-0.0443,0.2067,0.0934,0.21788,0.27047,False,False
+"Test, no weak quotes",185,second,qwen3.5-9b,P2 vs P5,185,144,0.2022,0.0783,0.3301,0.2343,0.0021,0.00388,True,False
+"Test, no weak quotes",185,second,qwen3.5-9b,P1 vs P5,185,144,-0.0914,-0.2316,0.0513,-0.0974,0.21288,0.2689,False,False
+"Test, no weak quotes",185,second,qwen3.5-9b,P6 vs P7,185,144,-0.0373,-0.119,0.0401,-0.0665,0.37276,0.4129,False,False
+"Test, no weak quotes",185,second,qwen3.5-9b,P6 vs P8,185,144,-0.0459,-0.1412,0.0478,-0.0716,0.34347,0.3864,False,False
+"Test, no weak quotes",185,second,qwen3.5-9b,P1 vs P6,185,144,0.3768,0.2366,0.521,0.371,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,qwen3.5-9b,P4 vs P7,185,144,0.4995,0.3265,0.6733,0.4161,0.0001,0.00023,True,True
+"Test, no weak quotes",185,second,qwen3.5-9b,P5 vs P8,185,144,0.4222,0.2622,0.5784,0.384,0.0001,0.00023,True,True
+Source unflagged,164,second,gemma-3-12b,P1 vs P3,164,116,-0.1439,-0.3026,0.0123,-0.1366,0.08119,0.11462,False,False
+Source unflagged,164,second,gemma-3-12b,P1 vs P4,164,116,-0.1037,-0.2778,0.0732,-0.0911,0.26037,0.33476,False,False
+Source unflagged,164,second,gemma-3-12b,P3 vs P4,164,116,0.0402,-0.1263,0.2138,0.0374,0.65173,0.70037,False,False
+Source unflagged,164,second,gemma-3-12b,P2 vs P5,164,116,0.0866,-0.0567,0.2344,0.0828,0.24598,0.32201,False,False
+Source unflagged,164,second,gemma-3-12b,P1 vs P5,164,116,-0.0293,-0.2012,0.15,-0.0265,0.75752,0.80208,False,False
+Source unflagged,164,second,gemma-3-12b,P6 vs P7,164,116,-0.0354,-0.1411,0.0635,-0.0549,0.51635,0.58089,False,False
+Source unflagged,164,second,gemma-3-12b,P6 vs P8,164,116,-0.1195,-0.2538,0.0042,-0.1508,0.07249,0.10439,False,False
+Source unflagged,164,second,gemma-3-12b,P1 vs P6,164,116,0.6616,0.4634,0.8584,0.535,0.0001,0.00021,True,True
+Source unflagged,164,second,gemma-3-12b,P4 vs P7,164,116,0.7299,0.5297,0.9253,0.5889,0.0001,0.00021,True,True
+Source unflagged,164,second,gemma-3-12b,P5 vs P8,164,116,0.5713,0.3694,0.773,0.447,0.0001,0.00021,True,True
+Source unflagged,164,second,gemma-3-1b,P1 vs P3,164,116,0.1707,0.0314,0.3123,0.1932,0.0208,0.03186,True,False
+Source unflagged,164,second,gemma-3-1b,P1 vs P4,164,116,0.0805,-0.073,0.2316,0.0844,0.30537,0.37265,False,False
+Source unflagged,164,second,gemma-3-1b,P3 vs P4,164,116,-0.0902,-0.2689,0.0815,-0.0896,0.31757,0.37484,False,False
+Source unflagged,164,second,gemma-3-1b,P2 vs P5,164,116,0.189,0.0342,0.3431,0.1829,0.0195,0.03052,True,False
+Source unflagged,164,second,gemma-3-1b,P1 vs P5,164,116,0.4677,0.3154,0.6176,0.4639,0.0001,0.00021,True,True
+Source unflagged,164,second,gemma-3-1b,P6 vs P7,164,116,-0.061,-0.2399,0.125,-0.0519,0.53195,0.58924,False,False
+Source unflagged,164,second,gemma-3-1b,P6 vs P8,164,116,-0.0012,-0.1826,0.1839,-0.0011,0.9944,0.9944,False,False
+Source unflagged,164,second,gemma-3-1b,P1 vs P6,164,116,0.8317,0.6491,1.0151,0.7068,0.0001,0.00021,True,True
+Source unflagged,164,second,gemma-3-1b,P4 vs P7,164,116,0.6902,0.5165,0.8703,0.5701,0.0001,0.00021,True,True
+Source unflagged,164,second,gemma-3-1b,P5 vs P8,164,116,0.3628,0.1564,0.5729,0.2786,0.0014,0.0028,True,True
+Source unflagged,164,second,gemma-3-27b,P1 vs P3,164,116,-0.4152,-0.5742,-0.26,-0.4027,0.0001,0.00021,True,True
+Source unflagged,164,second,gemma-3-27b,P2 vs P5,164,116,0.0598,-0.1035,0.2287,0.0596,0.49945,0.5708,False,False
+Source unflagged,164,second,gemma-3-27b,P1 vs P5,164,116,-0.1622,-0.324,0.0012,-0.1526,0.06329,0.093,False,False
+Source unflagged,164,second,gemma-3-27b,P6 vs P8,164,116,-0.1683,-0.2754,-0.0665,-0.2412,0.002,0.00369,True,False
+Source unflagged,164,second,gemma-3-27b,P1 vs P6,164,116,0.447,0.2643,0.633,0.3977,0.0001,0.00021,True,True
+Source unflagged,164,second,gemma-3-27b,P5 vs P8,164,116,0.4409,0.2618,0.616,0.377,0.0001,0.00021,True,True
+Source unflagged,164,second,llama-3.1-8b,P1 vs P3,164,116,0.2805,0.1035,0.453,0.241,0.0009,0.00185,True,True
+Source unflagged,164,second,llama-3.1-8b,P1 vs P4,164,116,0.4317,0.2466,0.6143,0.3833,0.0001,0.00021,True,True
+Source unflagged,164,second,llama-3.1-8b,P3 vs P4,164,116,0.1512,-0.0343,0.3394,0.1354,0.12049,0.16305,False,False
+Source unflagged,164,second,llama-3.1-8b,P2 vs P5,164,116,-0.0061,-0.1587,0.1475,-0.006,0.94811,0.96146,False,False
+Source unflagged,164,second,llama-3.1-8b,P1 vs P5,164,116,0.4213,0.2506,0.5908,0.3749,0.0001,0.00021,True,True
+Source unflagged,164,second,llama-3.1-8b,P6 vs P7,164,116,0.2921,0.1699,0.4096,0.3338,0.0001,0.00021,True,True
+Source unflagged,164,second,llama-3.1-8b,P6 vs P8,164,116,0.3762,0.2515,0.5039,0.4343,0.0001,0.00021,True,True
+Source unflagged,164,second,llama-3.1-8b,P1 vs P6,164,116,0.7884,0.5791,0.9953,0.5797,0.0001,0.00021,True,True
+Source unflagged,164,second,llama-3.1-8b,P4 vs P7,164,116,0.6488,0.458,0.8344,0.4989,0.0001,0.00021,True,True
+Source unflagged,164,second,llama-3.1-8b,P5 vs P8,164,116,0.7433,0.5538,0.9358,0.6032,0.0001,0.00021,True,True
+Source unflagged,164,second,llama-3.2-1b,P1 vs P3,164,116,0.3585,0.2327,0.4901,0.3865,0.0001,0.00021,True,True
+Source unflagged,164,second,llama-3.2-1b,P1 vs P4,164,116,0.4006,0.2515,0.5531,0.3837,0.0001,0.00021,True,True
+Source unflagged,164,second,llama-3.2-1b,P3 vs P4,164,116,0.0421,-0.1031,0.1933,0.0417,0.58754,0.64095,False,False
+Source unflagged,164,second,llama-3.2-1b,P2 vs P5,164,116,0.1707,0.0342,0.3091,0.1763,0.0166,0.02656,True,False
+Source unflagged,164,second,llama-3.2-1b,P1 vs P5,164,116,0.5201,0.3595,0.68,0.4678,0.0001,0.00021,True,True
+Source unflagged,164,second,llama-3.2-1b,P6 vs P7,164,116,0.2787,0.0676,0.4845,0.1986,0.0119,0.01964,True,False
+Source unflagged,164,second,llama-3.2-1b,P6 vs P8,164,116,0.478,0.3227,0.6355,0.4163,0.0001,0.00021,True,True
+Source unflagged,164,second,llama-3.2-1b,P1 vs P6,164,116,0.7909,0.6406,0.9487,0.7246,0.0001,0.00021,True,True
+Source unflagged,164,second,llama-3.2-1b,P4 vs P7,164,116,0.6689,0.4597,0.8777,0.4844,0.0001,0.00021,True,True
+Source unflagged,164,second,llama-3.2-1b,P5 vs P8,164,116,0.7488,0.5649,0.939,0.5886,0.0001,0.00021,True,True
+Source unflagged,164,second,qwen3.5-27b,P1 vs P3,164,116,-0.2335,-0.377,-0.0974,-0.2468,0.0016,0.00311,True,False
+Source unflagged,164,second,qwen3.5-27b,P2 vs P5,164,116,0.1049,-0.0194,0.2291,0.1242,0.11029,0.15271,False,False
+Source unflagged,164,second,qwen3.5-27b,P1 vs P5,164,116,-0.1561,-0.2752,-0.0368,-0.1918,0.0102,0.01749,True,False
+Source unflagged,164,second,qwen3.5-27b,P6 vs P8,164,116,-0.011,-0.0767,0.0516,-0.0259,0.78322,0.81727,False,False
+Source unflagged,164,second,qwen3.5-27b,P1 vs P6,164,116,0.1951,0.0731,0.3152,0.2418,0.0018,0.00341,True,False
+Source unflagged,164,second,qwen3.5-27b,P5 vs P8,164,116,0.3402,0.2291,0.4509,0.4354,0.0001,0.00021,True,True
+Source unflagged,164,second,qwen3.5-2b,P1 vs P3,164,116,0.5226,0.3622,0.6804,0.4771,0.0001,0.00021,True,True
+Source unflagged,164,second,qwen3.5-2b,P1 vs P4,164,116,0.7421,0.5909,0.8957,0.7281,0.0001,0.00021,True,True
+Source unflagged,164,second,qwen3.5-2b,P3 vs P4,164,116,0.2195,0.0865,0.3552,0.2234,0.0021,0.00378,True,False
+Source unflagged,164,second,qwen3.5-2b,P2 vs P5,164,116,0.0835,-0.0646,0.2404,0.0813,0.29227,0.36918,False,False
+Source unflagged,164,second,qwen3.5-2b,P1 vs P5,164,116,0.5671,0.4134,0.7221,0.5128,0.0001,0.00021,True,True
+Source unflagged,164,second,qwen3.5-2b,P6 vs P7,164,116,-0.0896,-0.2561,0.0707,-0.0823,0.29947,0.37176,False,False
+Source unflagged,164,second,qwen3.5-2b,P6 vs P8,164,116,0.011,-0.137,0.1575,0.0124,0.89531,0.92089,False,False
+Source unflagged,164,second,qwen3.5-2b,P1 vs P6,164,116,1.4726,1.2813,1.6613,1.13,0.0001,0.00021,True,True
+Source unflagged,164,second,qwen3.5-2b,P4 vs P7,164,116,0.6409,0.4304,0.8437,0.4361,0.0001,0.00021,True,True
+Source unflagged,164,second,qwen3.5-2b,P5 vs P8,164,116,0.9165,0.7206,1.1039,0.7035,0.0001,0.00021,True,True
+Source unflagged,164,second,qwen3.5-9b,P1 vs P3,164,116,-0.314,-0.4525,-0.1792,-0.348,0.0001,0.00021,True,True
+Source unflagged,164,second,qwen3.5-9b,P1 vs P4,164,116,-0.2018,-0.3532,-0.0497,-0.2084,0.012,0.01964,True,False
+Source unflagged,164,second,qwen3.5-9b,P3 vs P4,164,116,0.1122,-0.0263,0.2512,0.1243,0.12229,0.16305,False,False
+Source unflagged,164,second,qwen3.5-9b,P2 vs P5,164,116,0.228,0.0873,0.3667,0.2723,0.0026,0.00457,True,False
+Source unflagged,164,second,qwen3.5-9b,P1 vs P5,164,116,-0.1537,-0.3088,-0.003,-0.159,0.0498,0.0747,False,False
+Source unflagged,164,second,qwen3.5-9b,P6 vs P7,164,116,-0.0494,-0.1472,0.0388,-0.0797,0.31677,0.37484,False,False
+Source unflagged,164,second,qwen3.5-9b,P6 vs P8,164,116,-0.0354,-0.1341,0.0621,-0.0558,0.49565,0.5708,False,False
+Source unflagged,164,second,qwen3.5-9b,P1 vs P6,164,116,0.3201,0.1936,0.4594,0.3242,0.0001,0.00021,True,True
+Source unflagged,164,second,qwen3.5-9b,P4 vs P7,164,116,0.4726,0.2856,0.6533,0.387,0.0001,0.00021,True,True
+Source unflagged,164,second,qwen3.5-9b,P5 vs P8,164,116,0.4384,0.2715,0.6031,0.3976,0.0001,0.00021,True,True
+Source flagged,69,second,gemma-3-12b,P1 vs P3,69,51,-0.0899,-0.3412,0.1452,-0.0904,0.47955,0.60575,False,False
+Source flagged,69,second,gemma-3-12b,P1 vs P4,69,51,-0.0928,-0.3155,0.1192,-0.0995,0.42656,0.54843,False,False
+Source flagged,69,second,gemma-3-12b,P3 vs P4,69,51,-0.0029,-0.2131,0.2179,-0.0033,0.9899,1.0,False,False
+Source flagged,69,second,gemma-3-12b,P2 vs P5,69,51,0.0681,-0.1343,0.3014,0.0671,0.55394,0.65383,False,False
+Source flagged,69,second,gemma-3-12b,P1 vs P5,69,51,-0.0638,-0.2918,0.1784,-0.0633,0.60564,0.69216,False,False
+Source flagged,69,second,gemma-3-12b,P6 vs P7,69,51,-0.1116,-0.3029,0.052,-0.1484,0.24148,0.36993,False,False
+Source flagged,69,second,gemma-3-12b,P6 vs P8,69,51,0.0377,-0.1167,0.1855,0.0628,0.65303,0.72336,False,False
+Source flagged,69,second,gemma-3-12b,P1 vs P6,69,51,0.7449,0.5254,0.9641,0.7636,0.0001,0.00045,True,True
+Source flagged,69,second,gemma-3-12b,P4 vs P7,69,51,0.7261,0.4462,0.9984,0.5647,0.0001,0.00045,True,True
+Source flagged,69,second,gemma-3-12b,P5 vs P8,69,51,0.8464,0.5953,1.1,0.7825,0.0001,0.00045,True,True
+Source flagged,69,second,gemma-3-1b,P1 vs P3,69,51,0.2058,0.042,0.3736,0.2797,0.0215,0.04423,True,False
+Source flagged,69,second,gemma-3-1b,P1 vs P4,69,51,0.142,-0.0627,0.3388,0.1607,0.17478,0.29265,False,False
+Source flagged,69,second,gemma-3-1b,P3 vs P4,69,51,-0.0638,-0.2568,0.1343,-0.077,0.53065,0.63678,False,False
+Source flagged,69,second,gemma-3-1b,P2 vs P5,69,51,0.1014,-0.0797,0.2765,0.1222,0.29417,0.41429,False,False
+Source flagged,69,second,gemma-3-1b,P1 vs P5,69,51,0.4406,0.2118,0.6586,0.4683,0.0009,0.00249,True,True
+Source flagged,69,second,gemma-3-1b,P6 vs P7,69,51,0.1333,-0.121,0.3764,0.1234,0.30057,0.41429,False,False
+Source flagged,69,second,gemma-3-1b,P6 vs P8,69,51,0.2884,0.028,0.5478,0.2377,0.0355,0.06908,False,False
+Source flagged,69,second,gemma-3-1b,P1 vs P6,69,51,0.6594,0.4054,0.9167,0.5775,0.0001,0.00045,True,True
+Source flagged,69,second,gemma-3-1b,P4 vs P7,69,51,0.6507,0.3507,0.9324,0.5056,0.0002,0.00076,True,True
+Source flagged,69,second,gemma-3-1b,P5 vs P8,69,51,0.5072,0.194,0.8215,0.38,0.0024,0.0064,True,True
+Source flagged,69,second,gemma-3-27b,P1 vs P3,69,51,-0.1377,-0.3903,0.1129,-0.1388,0.30797,0.41429,False,False
+Source flagged,69,second,gemma-3-27b,P2 vs P5,69,51,0.129,-0.0957,0.3532,0.1375,0.27857,0.40933,False,False
+Source flagged,69,second,gemma-3-27b,P1 vs P5,69,51,0.1203,-0.097,0.3455,0.1337,0.30187,0.41429,False,False
+Source flagged,69,second,gemma-3-27b,P6 vs P8,69,51,-0.0725,-0.2078,0.0426,-0.1375,0.27317,0.40933,False,False
+Source flagged,69,second,gemma-3-27b,P1 vs P6,69,51,0.7783,0.5123,1.0471,0.7124,0.0001,0.00045,True,True
+Source flagged,69,second,gemma-3-27b,P5 vs P8,69,51,0.5855,0.3348,0.8439,0.5454,0.0002,0.00076,True,True
+Source flagged,69,second,llama-3.1-8b,P1 vs P3,69,51,0.2507,-0.0179,0.5214,0.2282,0.07319,0.13512,False,False
+Source flagged,69,second,llama-3.1-8b,P1 vs P4,69,51,0.3536,0.0848,0.6194,0.3174,0.0118,0.02499,True,True
+Source flagged,69,second,llama-3.1-8b,P3 vs P4,69,51,0.1029,-0.1896,0.3925,0.0899,0.50165,0.61218,False,False
+Source flagged,69,second,llama-3.1-8b,P2 vs P5,69,51,0.0362,-0.2423,0.3296,0.0305,0.80442,0.85174,False,False
+Source flagged,69,second,llama-3.1-8b,P1 vs P5,69,51,0.4507,0.1277,0.7806,0.3499,0.0074,0.01665,True,True
+Source flagged,69,second,llama-3.1-8b,P6 vs P7,69,51,0.3362,0.1526,0.5231,0.4438,0.0007,0.00202,True,True
+Source flagged,69,second,llama-3.1-8b,P6 vs P8,69,51,0.2609,0.0672,0.4417,0.3195,0.0094,0.02051,True,True
+Source flagged,69,second,llama-3.1-8b,P1 vs P6,69,51,0.8565,0.5436,1.1785,0.6312,0.0001,0.00045,True,True
+Source flagged,69,second,llama-3.1-8b,P4 vs P7,69,51,0.8391,0.5471,1.1174,0.7266,0.0001,0.00045,True,True
+Source flagged,69,second,llama-3.1-8b,P5 vs P8,69,51,0.6667,0.3169,0.9866,0.5028,0.0003,0.00094,True,True
+Source flagged,69,second,llama-3.2-1b,P1 vs P3,69,51,0.6232,0.3877,0.8667,0.6728,0.0001,0.00045,True,True
+Source flagged,69,second,llama-3.2-1b,P1 vs P4,69,51,0.6623,0.4493,0.8916,0.7166,0.0001,0.00045,True,True
+Source flagged,69,second,llama-3.2-1b,P3 vs P4,69,51,0.0391,-0.1803,0.2576,0.0415,0.74483,0.80041,False,False
+Source flagged,69,second,llama-3.2-1b,P2 vs P5,69,51,-0.0435,-0.2592,0.1721,-0.0474,0.70383,0.76781,False,False
+Source flagged,69,second,llama-3.2-1b,P1 vs P5,69,51,0.8261,0.5944,1.0682,0.828,0.0001,0.00045,True,True
+Source flagged,69,second,llama-3.2-1b,P6 vs P7,69,51,0.2043,-0.0681,0.4627,0.1691,0.15138,0.26584,False,False
+Source flagged,69,second,llama-3.2-1b,P6 vs P8,69,51,0.513,0.2773,0.753,0.5089,0.0003,0.00094,True,True
+Source flagged,69,second,llama-3.2-1b,P1 vs P6,69,51,0.7739,0.5147,1.0403,0.6917,0.0001,0.00045,True,True
+Source flagged,69,second,llama-3.2-1b,P4 vs P7,69,51,0.3159,-0.0302,0.6466,0.2019,0.09009,0.16216,False,False
+Source flagged,69,second,llama-3.2-1b,P5 vs P8,69,51,0.4609,0.1725,0.7361,0.3673,0.0042,0.01008,True,True
+Source flagged,69,second,qwen3.5-27b,P1 vs P3,69,51,-0.3058,-0.4716,-0.1513,-0.4374,0.0003,0.00094,True,True
+Source flagged,69,second,qwen3.5-27b,P2 vs P5,69,51,0.0014,-0.1985,0.175,0.0018,1.0,1.0,False,False
+Source flagged,69,second,qwen3.5-27b,P1 vs P5,69,51,-0.242,-0.4597,-0.0338,-0.271,0.0293,0.0586,False,False
+Source flagged,69,second,qwen3.5-27b,P6 vs P8,69,51,-0.0754,-0.2225,0.0588,-0.1244,0.31467,0.41429,False,False
+Source flagged,69,second,qwen3.5-27b,P1 vs P6,69,51,0.2072,0.0606,0.3623,0.3234,0.007,0.01626,True,False
+Source flagged,69,second,qwen3.5-27b,P5 vs P8,69,51,0.3739,0.1361,0.6242,0.3691,0.0042,0.01008,True,True
+Source flagged,69,second,qwen3.5-2b,P1 vs P3,69,51,0.6565,0.3731,0.9411,0.5502,0.0001,0.00045,True,True
+Source flagged,69,second,qwen3.5-2b,P1 vs P4,69,51,0.8348,0.5794,1.0929,0.7616,0.0001,0.00045,True,True
+Source flagged,69,second,qwen3.5-2b,P3 vs P4,69,51,0.1783,-0.0882,0.4435,0.1627,0.19568,0.31437,False,False
+Source flagged,69,second,qwen3.5-2b,P2 vs P5,69,51,0.1435,-0.0764,0.3824,0.1419,0.23158,0.36247,False,False
+Source flagged,69,second,qwen3.5-2b,P1 vs P5,69,51,0.8116,0.5573,1.0688,0.7045,0.0001,0.00045,True,True
+Source flagged,69,second,qwen3.5-2b,P6 vs P7,69,51,-0.1841,-0.4594,0.0595,-0.1708,0.16808,0.28814,False,False
+Source flagged,69,second,qwen3.5-2b,P6 vs P8,69,51,-0.0188,-0.2784,0.2342,-0.0178,0.89891,0.93799,False,False
+Source flagged,69,second,qwen3.5-2b,P1 vs P6,69,51,1.6435,1.3778,1.9,1.3859,0.0001,0.00045,True,True
+Source flagged,69,second,qwen3.5-2b,P4 vs P7,69,51,0.6246,0.3,0.9137,0.4627,0.0006,0.0018,True,True
+Source flagged,69,second,qwen3.5-2b,P5 vs P8,69,51,0.813,0.5127,1.1048,0.651,0.0001,0.00045,True,True
+Source flagged,69,second,qwen3.5-9b,P1 vs P3,69,51,-0.0812,-0.3,0.1476,-0.0893,0.49355,0.61218,False,False
+Source flagged,69,second,qwen3.5-9b,P1 vs P4,69,51,0.0101,-0.1986,0.2212,0.012,0.93861,0.96543,False,False
+Source flagged,69,second,qwen3.5-9b,P3 vs P4,69,51,0.0913,-0.0829,0.2671,0.1229,0.31647,0.41429,False,False
+Source flagged,69,second,qwen3.5-9b,P2 vs P5,69,51,0.2217,0.0162,0.4359,0.2506,0.0457,0.08659,False,False
+Source flagged,69,second,qwen3.5-9b,P1 vs P5,69,51,0.0623,-0.1474,0.2859,0.0687,0.58224,0.67615,False,False
+Source flagged,69,second,qwen3.5-9b,P6 vs P7,69,51,-0.0217,-0.1032,0.0543,-0.0648,0.62104,0.69867,False,False
+Source flagged,69,second,qwen3.5-9b,P6 vs P8,69,51,-0.0986,-0.2529,0.0328,-0.1635,0.19648,0.31437,False,False
+Source flagged,69,second,qwen3.5-9b,P1 vs P6,69,51,0.5841,0.3239,0.8473,0.5796,0.0002,0.00076,True,True
+Source flagged,69,second,qwen3.5-9b,P4 vs P7,69,51,0.5522,0.2985,0.7941,0.5456,0.0003,0.00094,True,True
+Source flagged,69,second,qwen3.5-9b,P5 vs P8,69,51,0.4232,0.1609,0.6691,0.4023,0.0029,0.00746,True,True

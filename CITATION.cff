@@ -17,8 +17,8 @@ abstract: >-
   and evaluation experiments, the judged model outputs of record, and the
   analysis code that regenerates every reported number.
 type: software
-version: v1.1.0
-date-released: 2026-09-30
+version: v1.2.0
+date-released: 2026-11-27
 license: Apache-2.0
 repository-code: https://github.com/NiebHasan077/NetBench
 url: https://github.com/NiebHasan077/NetBench

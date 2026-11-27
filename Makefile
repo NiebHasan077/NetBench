@@ -76,6 +76,11 @@ results:
 # judge_agreement.py's loader).
 	$(PY) analysis/system_cis.py
 	$(PY) analysis/judge_agreement_ci.py
+# Question-population sensitivity: the primary family, API equivalence, and
+# size trend re-run on restricted question subsets (test split, quote-
+# filtered, SFT-source flags), under both judges. Reads scores_long.csv, the
+# judged workbooks, and the audit CSVs.
+	$(PY) analysis/population_sensitivity.py
 # analysis/retrieval_recall.py is deliberately NOT here: it needs the RAG
 # chunk cache (135 MB), which ARTIFACTS.md excludes from distribution, so it
 # cannot run on a fresh clone. Its CSVs are committed like every other number

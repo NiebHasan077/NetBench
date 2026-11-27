@@ -1,0 +1,9 @@
+split,scorer,base_model,contrast,n,mean_diff
+dev,human consensus,qwen3.5-2b,P1 vs P4,19,0.8237
+dev,human consensus,qwen3.5-2b,P1 vs P6,19,1.6684
+dev,primary judge,qwen3.5-2b,P1 vs P4,19,0.7947
+dev,primary judge,qwen3.5-2b,P1 vs P6,19,1.2158
+test,human consensus,qwen3.5-2b,P1 vs P4,6,0.6917
+test,human consensus,qwen3.5-2b,P1 vs P6,6,0.6583
+test,primary judge,qwen3.5-2b,P1 vs P4,6,0.55
+test,primary judge,qwen3.5-2b,P1 vs P6,6,0.4833

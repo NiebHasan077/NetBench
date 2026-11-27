@@ -93,6 +93,7 @@ rubric, and output schema, so their results are directly comparable.
 | [docs/COMPUTE_SITES.md](docs/COMPUTE_SITES.md) | what `site-a`, `site-b`, and `site-c` are, and what that means for the cost numbers |
 | [experiment_registry/](experiment_registry/) | per-run index: snapshot tag, evidence status, limitations |
 | [analysis/outputs/](analysis/outputs/) | the aggregated results of record, and the generated tables and figures |
+| [analysis/outputs/population_\*.csv](analysis/outputs/) | subgroup sensitivity: the primary contrasts, API equivalence, and size trend re-run on the test split, quote-filtered, and SFT-source subsets, under both judges |
 
 ## What is not here
 

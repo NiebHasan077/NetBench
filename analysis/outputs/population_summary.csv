@@ -1,0 +1,15 @@
+population,n_questions,judge,contrasts,bh_sig,practical,practical_retrieval_p1_p6,practical_lora_cpt_p2_p5,retrieval_p1_p6_positive,retrieval_p1_p6_over_margin,practical_kept_from_all,practical_lost,practical_gained,practical_kept_from_primary,practical_changed_vs_primary
+All scored,233,primary,72,47,30,8,0,8,8,30,0,0,30,0
+Test-labeled,192,primary,72,45,30,8,0,8,8,29,1,1,30,0
+Nondev,204,primary,72,44,29,8,0,8,8,29,1,0,29,0
+Without weak quotes,226,primary,72,47,30,8,0,8,8,29,1,1,30,0
+"Test, no weak quotes",185,primary,72,45,29,8,0,8,8,29,1,0,29,0
+Source unflagged,164,primary,72,45,32,8,0,8,8,29,1,3,32,0
+Source flagged,69,primary,72,35,30,8,0,8,8,26,4,4,30,0
+All scored,233,second,72,45,36,7,0,8,7,36,0,0,28,10
+Test-labeled,192,second,72,44,36,7,0,8,7,35,1,1,28,10
+Nondev,204,second,72,45,37,7,0,8,7,36,0,1,27,12
+Without weak quotes,226,second,72,45,35,7,0,8,7,35,1,0,28,9
+"Test, no weak quotes",185,second,72,47,35,7,0,8,7,35,1,0,27,10
+Source unflagged,164,second,72,47,36,7,0,8,7,35,1,1,29,10
+Source flagged,69,second,72,35,33,7,0,8,7,33,3,0,27,9
