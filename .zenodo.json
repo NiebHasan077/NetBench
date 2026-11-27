@@ -1,7 +1,7 @@
 {
   "upload_type": "software",
   "title": "NetBench: benchmark, framework, and analysis code for a controlled study of LLM domain adaptation in high-performance networking",
-  "version": "v1.2.0",
+  "version": "v1.2.1",
   "language": "eng",
   "access_right": "open",
   "license": "apache-2.0",

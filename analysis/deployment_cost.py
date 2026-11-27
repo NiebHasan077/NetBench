@@ -97,7 +97,8 @@ def gpu_inventory(by_model: str) -> pd.DataFrame:
     # first shard's device and includes activations and KV cache, which flow
     # through the pipeline rather than being replicated per device, so
     # multiplying it by the GPU count would invent memory that never existed.
-    return df.sort_values("params_b").reset_index(drop=True)
+    # Ties (both 27B models) break by name: glob order differs by filesystem.
+    return df.sort_values(["params_b", "base_model"]).reset_index(drop=True)
 
 
 def rag_latency() -> pd.DataFrame:
@@ -152,7 +153,7 @@ def serving_mode_cost(by_model: str) -> pd.DataFrame:
             "cpu_retrieval_s", "gpu_tok_s", "cpu_tok_s",
             "gpu_n_runs", "cpu_n_runs"]
     wide["params_b"] = wide.base_model.map(PARAMS_B)
-    return (wide.sort_values(["profile_type", "params_b"])[keep]
+    return (wide.sort_values(["profile_type", "params_b", "base_model"])[keep]
                 .reset_index(drop=True))
 
 
